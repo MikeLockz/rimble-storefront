@@ -1,4 +1,6 @@
 import React from "react";
+import SEO from "../components/seo";
+
 // Import from old landing page
 import styled from "styled-components";
 import RimbleLink from "../components/landing/RimbleLink";
@@ -56,6 +58,7 @@ class Example extends Component {
 
 const IndexPage = () => (
   <ThemeProvider theme={defaultTheme}>
+    <SEO title="Rimble" />
     <React.Fragment>
       <Typography />
 
