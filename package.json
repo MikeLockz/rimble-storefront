@@ -1,0 +1,66 @@
+{
+  "name": "rimble-storefront",
+  "private": true,
+  "description": "Rimble UI landing page, design guidelines, rimble-ui and rimble-web3-component documentation.",
+  "version": "0.0.1",
+  "author": "ConsenSys Design",
+  "dependencies": {
+    "@babel/plugin-proposal-do-expressions": "^7.2.0",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@mdx-js/mdx": "^1.0.19",
+    "@mdx-js/react": "^1.0.16",
+    "@mdx-js/tag": "^0.20.3",
+    "@rimble/connection-banner": "^1.1.5",
+    "@rimble/network-indicator": "^1.1.5",
+    "babel-plugin-styled-components": "^1.10.0",
+    "gatsby": "^2.1.18",
+    "gatsby-image": "^2.0.30",
+    "gatsby-mdx": "^0.6.3",
+    "gatsby-plugin-manifest": "^2.0.19",
+    "gatsby-plugin-offline": "^2.0.24",
+    "gatsby-plugin-react-helmet": "^3.0.7",
+    "gatsby-plugin-sharp": "^2.0.22",
+    "gatsby-plugin-styled-components": "^3.0.6",
+    "gatsby-remark-images": "^3.0.11",
+    "gatsby-source-filesystem": "^2.0.23",
+    "gatsby-transformer-sharp": "^2.1.14",
+    "is-absolute-url": "^3.0.0",
+    "lodash.startcase": "^4.4.0",
+    "polished": "^3.3.2",
+    "prettier": "^1.16.4",
+    "prism-react-renderer": "^0.1.6",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-feather": "^1.1.6",
+    "react-helmet": "^5.2.0",
+    "react-live": "^2.1.1",
+    "react-svg": "^10.0.2",
+    "rimble-ui": "^0.8.0",
+    "styled-components": "^4.1.3",
+    "styled-system": "^4.2.2"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "gatsby",
+    "rimble",
+    "consensys",
+    "web3"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/consensys/rimble-storefront"
+  },
+  "bugs": {
+    "url": "https://github.com/consensys/rimble-storefront/issues"
+  }
+}
