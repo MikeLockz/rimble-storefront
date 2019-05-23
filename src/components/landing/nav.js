@@ -11,13 +11,7 @@ import defaultTheme from "../../theme";
 import RimbleGatsbyLink from "./RimbleGatsbyLink";
 
 const NavWrap = styled.nav`
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  right: 0;
-  left: 0;
-  max-width: 100vw;
-
+  
   ${space}
   ${width}
   ${color}
