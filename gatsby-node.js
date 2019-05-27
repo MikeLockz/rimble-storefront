@@ -80,6 +80,9 @@ exports.createPages = ({ graphql, actions }) => {
                   internal {
                     type
                   }
+                  fields {
+                    slug
+                  }
                 }
               }
             }
@@ -97,11 +100,10 @@ exports.createPages = ({ graphql, actions }) => {
             typeof node.internal !== "undefined" &&
             node.internal.type === `Mdx` &&
             typeof node.frontmatter !== "undefined" &&
-            typeof node.frontmatter.type !== "undefined" &&
-            node.frontmatter.type === "documentation"
+            typeof node.frontmatter.type !== "undefined"
           ) {
             createPage({
-              path: `/${node.frontmatter.navigation.toLowerCase()}/${node.parent.name.toLowerCase()}`,
+              path: `${node.fields.slug}`,
               component: componentWithMDXScope(
                 path.resolve("./src/templates/docs.js"),
                 node.code.scope

@@ -67,92 +67,6 @@ const reduceNavTwo = allMdx => {
 
 const RawLayout = props => <div>{props.children}</div>;
 
-const DocLayoutFunc = ({ children, data, ...props }) =>
-  props.location.pathname === "/" ? (
-    <RawLayout {...props}>{children}</RawLayout>
-  ) : (
-    <StaticQuery
-      query={graphql`
-        query($id: String, $componentName: String) {
-          site {
-            siteMetadata {
-              docsLocation
-            }
-          }
-          allMdx {
-            edges {
-              node {
-                frontmatter {
-                  title
-                  componentName
-                  navigation
-                  type
-                }
-                fields {
-                  slug
-                }
-              }
-            }
-          }
-          mdx(id: { eq: $id }) {
-            id
-            code {
-              body
-            }
-            tableOfContents
-            frontmatter {
-              title
-              navigation
-              componentName
-              type
-            }
-          }
-          componentMetadata(displayName: { eq: $componentName }) {
-            id
-            displayName
-            docblock
-            doclets
-            childrenComponentProp {
-              name
-              docblock
-              required
-              parentType {
-                name
-              }
-              type {
-                value
-              }
-              defaultValue {
-                value
-                computed
-              }
-            }
-            composes
-          }
-        }
-      `}
-      render={({ site, allMdx, mdx, componentMetadata }) => {
-        const itemList = reduceNavTwo(allMdx);
-        return (
-          <Layout {...props} itemList={itemList}>
-            <Helmet />
-            {children}
-            {console.log("allMdx: ", allMdx)}
-            {console.log("mdx: ", mdx)}
-            {console.log("componentMetadata: ", componentMetadata)}
-            {componentMetadata ? (
-              <PropsTable
-                propMetaData={componentMetadata.childrenComponentProp}
-              />
-            ) : null}
-
-            <ContributeBanner />
-          </Layout>
-        );
-      }}
-    />
-  );
-
 class DocLayout extends React.Component {
   render() {
     const { children, data, tableOfContents, ...props } = this.props;
@@ -173,10 +87,15 @@ class DocLayout extends React.Component {
             <MDXRenderer tableOfContents={tableOfContents}>
               {data.mdx.code.body}
             </MDXRenderer>
-            <h2 style={{ marginTop: "2rem" }}>Props:</h2>
-            <PropsTable
-              propMetaData={data.componentMetadata.childrenComponentProp}
-            />
+
+            {data.mdx.frontmatter.type === "documentation" ? (
+              <div>
+                <h2 style={{ marginTop: "2rem" }}>Props:</h2>
+                <PropsTable
+                  propMetaData={data.componentMetadata.childrenComponentProp}
+                />
+              </div>
+            ) : null}
           </div>
         </Layout>
       );

@@ -96,6 +96,6 @@ module.exports = {
         ignore: [`**/__snapshots__/**`, `**/*.test.js`, `**/*.snap`]
       }
     },
-    "gatsby-transformer-react-docgen"
+    `gatsby-transformer-react-docgen`
   ]
 };
