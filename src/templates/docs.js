@@ -3,6 +3,9 @@ import Helmet from "react-helmet";
 import { graphql, StaticQuery } from "gatsby";
 import ContributeBanner from "../components/documentation/ContributeBanner";
 import Layout from "../components/layout";
+import MDXRenderer from "gatsby-mdx/mdx-renderer";
+import { MDXProvider } from "@mdx-js/tag";
+import PropsTable from "../components/propstable";
 
 // force top-level navigation to be a certain order
 //const forcedNavOrder = ["/getting-started", "/guides"];
@@ -64,13 +67,13 @@ const reduceNavTwo = allMdx => {
 
 const RawLayout = props => <div>{props.children}</div>;
 
-const DocLayout = ({ children, ...props }) =>
+const DocLayoutFunc = ({ children, data, ...props }) =>
   props.location.pathname === "/" ? (
     <RawLayout {...props}>{children}</RawLayout>
   ) : (
     <StaticQuery
       query={graphql`
-        query {
+        query($id: String, $componentName: String) {
           site {
             siteMetadata {
               docsLocation
@@ -81,6 +84,9 @@ const DocLayout = ({ children, ...props }) =>
               node {
                 frontmatter {
                   title
+                  componentName
+                  navigation
+                  type
                 }
                 fields {
                   slug
@@ -88,14 +94,58 @@ const DocLayout = ({ children, ...props }) =>
               }
             }
           }
+          mdx(id: { eq: $id }) {
+            id
+            code {
+              body
+            }
+            tableOfContents
+            frontmatter {
+              title
+              navigation
+              componentName
+              type
+            }
+          }
+          componentMetadata(displayName: { eq: $componentName }) {
+            id
+            displayName
+            docblock
+            doclets
+            childrenComponentProp {
+              name
+              docblock
+              required
+              parentType {
+                name
+              }
+              type {
+                value
+              }
+              defaultValue {
+                value
+                computed
+              }
+            }
+            composes
+          }
         }
       `}
-      render={({ site, allMdx }) => {
+      render={({ site, allMdx, mdx, componentMetadata }) => {
         const itemList = reduceNavTwo(allMdx);
         return (
           <Layout {...props} itemList={itemList}>
             <Helmet />
             {children}
+            {console.log("allMdx: ", allMdx)}
+            {console.log("mdx: ", mdx)}
+            {console.log("componentMetadata: ", componentMetadata)}
+            {componentMetadata ? (
+              <PropsTable
+                propMetaData={componentMetadata.childrenComponentProp}
+              />
+            ) : null}
+
             <ContributeBanner />
           </Layout>
         );
@@ -103,4 +153,95 @@ const DocLayout = ({ children, ...props }) =>
     />
   );
 
+class DocLayout extends React.Component {
+  render() {
+    const { children, data, tableOfContents, ...props } = this.props;
+
+    if (props.location.pathname === "/") {
+      return <RawLayout {...props}>{children}</RawLayout>;
+    } else {
+      const itemList = reduceNavTwo(data.allMdx);
+
+      return (
+        <Layout {...props} itemList={itemList}>
+          <Helmet />
+          <div className="content">
+            {children}
+            {console.log("Data: ", data)}
+            <h1>{data.componentMetadata.displayName}</h1>
+            <p>{data.componentMetadata.docblock}</p>
+            <MDXRenderer tableOfContents={tableOfContents}>
+              {data.mdx.code.body}
+            </MDXRenderer>
+            <h2 style={{ marginTop: "2rem" }}>Props:</h2>
+            <PropsTable
+              propMetaData={data.componentMetadata.childrenComponentProp}
+            />
+          </div>
+        </Layout>
+      );
+    }
+  }
+}
+
 export default DocLayout;
+
+export const pageQuery = graphql`
+  query($id: String, $componentName: String) {
+    site {
+      siteMetadata {
+        docsLocation
+      }
+    }
+    allMdx {
+      edges {
+        node {
+          frontmatter {
+            title
+            componentName
+            navigation
+            type
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
+    mdx(id: { eq: $id }) {
+      id
+      code {
+        body
+      }
+      tableOfContents
+      frontmatter {
+        title
+        navigation
+        componentName
+        type
+      }
+    }
+    componentMetadata(displayName: { eq: $componentName }) {
+      id
+      displayName
+      docblock
+      doclets
+      childrenComponentProp {
+        name
+        docblock
+        required
+        parentType {
+          name
+        }
+        type {
+          value
+        }
+        defaultValue {
+          value
+          computed
+        }
+      }
+      composes
+    }
+  }
+`;

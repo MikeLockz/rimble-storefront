@@ -32,15 +32,41 @@ export default class MDXRuntimeTest extends Component {
 }
 
 export const pageQuery = graphql`
-  query($id: String!, $title: String!) {
+  query($id: String, $componentName: String) {
+    site {
+      siteMetadata {
+        docsLocation
+      }
+    }
+    allMdx {
+      edges {
+        node {
+          frontmatter {
+            title
+            componentName
+            navigation
+            type
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
     mdx(id: { eq: $id }) {
       id
       code {
         body
       }
       tableOfContents
+      frontmatter {
+        title
+        navigation
+        componentName
+        type
+      }
     }
-    componentMetadata(displayName: { eq: $title }) {
+    componentMetadata(displayName: { eq: $componentName }) {
       id
       displayName
       docblock

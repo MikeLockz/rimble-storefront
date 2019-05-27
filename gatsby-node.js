@@ -64,6 +64,9 @@ exports.createPages = ({ graphql, actions }) => {
                   id
                   frontmatter {
                     title
+                    componentName
+                    type
+                    navigation
                   }
                   parent {
                     ... on File {
@@ -90,24 +93,22 @@ exports.createPages = ({ graphql, actions }) => {
         console.log("Result: ", result);
         // Create blog posts pages.
         result.data.allMdx.edges.forEach(async ({ node }) => {
-          console.log("Node: ", node);
-          console.log(
-            "Check: ",
-            typeof node.internal !== "undefined" && node.internal.type === `Mdx`
-          );
           if (
             typeof node.internal !== "undefined" &&
-            node.internal.type === `Mdx`
+            node.internal.type === `Mdx` &&
+            typeof node.frontmatter !== "undefined" &&
+            typeof node.frontmatter.type !== "undefined" &&
+            node.frontmatter.type === "documentation"
           ) {
             createPage({
-              path: `/${node.parent.name.toLowerCase()}`,
+              path: `/${node.frontmatter.navigation.toLowerCase()}/${node.parent.name.toLowerCase()}`,
               component: componentWithMDXScope(
-                path.resolve("./src/templates/posts.js"),
+                path.resolve("./src/templates/docs.js"),
                 node.code.scope
               ),
               context: {
                 id: node.id,
-                title: node.frontmatter.title
+                componentName: node.frontmatter.componentName
               }
             });
           }
