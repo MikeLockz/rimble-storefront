@@ -1,5 +1,6 @@
 const path = require("path");
 const startCase = require("lodash.startcase");
+const componentWithMDXScope = require("gatsby-mdx/component-with-mdx-scope");
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -48,4 +49,70 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       value: node.frontmatter.title || startCase(parent.name)
     });
   }
+};
+
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
+  return new Promise((resolve, reject) => {
+    resolve(
+      graphql(
+        `
+          {
+            allMdx {
+              edges {
+                node {
+                  id
+                  frontmatter {
+                    title
+                  }
+                  parent {
+                    ... on File {
+                      name
+                      sourceInstanceName
+                    }
+                  }
+                  code {
+                    scope
+                  }
+                  internal {
+                    type
+                  }
+                }
+              }
+            }
+          }
+        `
+      ).then(result => {
+        if (result.errors) {
+          console.log(result.errors);
+          reject(result.errors);
+        }
+        console.log("Result: ", result);
+        // Create blog posts pages.
+        result.data.allMdx.edges.forEach(async ({ node }) => {
+          console.log("Node: ", node);
+          console.log(
+            "Check: ",
+            typeof node.internal !== "undefined" && node.internal.type === `Mdx`
+          );
+          if (
+            typeof node.internal !== "undefined" &&
+            node.internal.type === `Mdx`
+          ) {
+            createPage({
+              path: `/${node.parent.name.toLowerCase()}`,
+              component: componentWithMDXScope(
+                path.resolve("./src/templates/posts.js"),
+                node.code.scope
+              ),
+              context: {
+                id: node.id,
+                title: node.frontmatter.title
+              }
+            });
+          }
+        });
+      })
+    );
+  });
 };
