@@ -1,0 +1,231 @@
+---
+title: Transaction states
+---
+
+import {Tooltip, Flash, Pill, Field, Table, Pill, Box, Icon, Text, Link, Heading, ToastMessage, Button} from "rimble-ui"
+import DoDont from "../../components/documentation/DoDont";
+
+# Transaction states
+
+**Well-designed transaction states will build trust and confidence in your dApp by helping users understand what's going on and setting their expectations.**
+
+Transaction states are such a crucial part of dApp UX because they're so different to what we're used to when transacting with centralized products. While ridding the process of a "middleperson" might have given us more personal autonomy, it has left us with less immediacy and more complexity to design for. This means providing feedback to reassure or guide users is more important than ever.
+
+We built a demo to show rather than tell. Check it out, then read our guidelines below for some advice on giving your users the most helpful transaction experience.
+
+[Try the demo](https://rimble-app-demo.netlify.com/)
+
+### Set user expectations
+
+**Time**
+
+Ethereum transactions aren't quick by centralized standards. So for inexperienced dApp users, transaction speeds may produce anxiety around whether something has worked or not. Use messaging in your states to explain that parts of the process may take a while.
+
+<Button
+my={3}
+onClick={e =>
+window.toastProvider.addMessage('Processing transaction...', {
+secondaryMessage: 'This might take a few minutes',
+variant: 'processing',
+})
+}
+>
+Show example
+</Button>
+<ToastMessage.Provider ref={node => (window.toastProvider = node)} />
+
+**Gas**
+
+All blockchain actions require "Gas" or a "transaction fee". Users are not used to paying for actions in digital products. Make sure you introduce this concept in a timely manner. If you leave it until the user is in the process of confirming the transaction in their Ethereum account, this makes it feel like a hidden fee and is likely to cause uneasiness.
+
+<DoDont>
+  {{
+    positive: (
+    <Text>
+    Explain gas:
+    <ul>
+      <li>In product onboarding</li>
+      <li>In a transaction summary (before submission)</li>
+      <li>If the user's wallet/account balance is empty. For example, "your account doesn't have enough funds to use any of our blockchain features"</li>
+    </ul>
+    </Text>
+    ),
+    negative: (
+    <Text>
+    <ul>
+<li> Rely on your wallet provider (for example, MetaMask) to explain transaction fees</li>
+<li> Hope the user understands Gas</li>
+</ul>
+</Text>
+    ),
+  }}
+</DoDont>
+
+### Keep the user in the loop
+
+Ethereum transactions are complicated. Explaining everything under the hood isn't necessary, but you should still make sure your user is aware of big changes in the transaction cycle.
+
+1. Confirm that the button they pressed to initiate the transaction worked. Be sure to point them to their wallet if they need to confirm the transaction there.
+
+*Example*
+<ToastMessage
+  width={[1, 1, 1 / 2]}
+  message={'Change submitted'}
+  secondaryMessage={'Confirm in MetaMask'}
+/>
+
+2. Indicate that the transaction process is happening.
+
+*Example*
+<ToastMessage.Processing
+  width={[1, 1, 1 / 2]}
+  message={'Processing change...'}
+  secondaryMessage={'This might take a few minutes'}
+/>
+
+3. If your users are more experienced in blockchain, you may want to signal when you can confirm the transaction has been taken on by a miner. Note: this could cause confusion for new and inexperienced users, so consider skipping until the transaction has been a success or failure.
+
+*Example*
+<ToastMessage.Processing
+  width={[1, 1, 1 / 2]}
+  message={'First block confirmed'}
+  secondaryMessage={'Your change is in progress'}
+/>
+
+4.  Let users know once the thing they set out to do by pressing the button has happened. In the case of our demo, it was that the value of the smart contract had changed.
+
+*Example*
+<ToastMessage.Success
+  width={[1, 1, 1 / 2]}
+  message={'Smart contract value changed'}
+/>
+
+5. Let the user know if something has gone wrong and the transaction can't be completed. Include why the transaction failed and how to remedy the situation (if possible). Consider other UI for this state as it may require action from the user.
+
+*Example*
+<ToastMessage.Failure
+  width={[1, 1, 1 / 2]}
+  message={'Value change failed'}
+  secondaryMessage={'Insert reason why or how to fix'}
+/>
+
+### Show states persistently too
+Our demo uses toast messages as the transaction speed is pretty quick, but they disappear automatically. So use other parts of the interface to provide updates on the process. Your users may not just watch their screen after submitting a transaction.
+
+Our pills can be a handy way of giving users this info at a glance.
+
+<Table>
+        <thead>
+          <tr>
+            <th>Transaction hash</th>
+            <th>Time</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              0xeb2317a1ae818be05c1bfdc818d5e2a5aa7ec61b389a7df6268bfd0d5d8e8cc0
+            </td>
+            <td />
+            <td>
+              <Pill mx={3} color={'blue'}>
+                {'Started'}
+              </Pill>
+              <br />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              0xeb2317a1ae818be05c1bfdc818d5e2a5aa7ec61b389a7df6268bfd0d5d8e8cc0
+            </td>
+            <td />
+            <td>
+              <Pill mx={3} color={'orange'}>
+                {' '}
+                {'Processing'}
+              </Pill>
+              <br />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              0xeb2317a1ae818be05c1bfdc818d5e2a5aa7ec61b389a7df6268bfd0d5d8e8cc0
+            </td>
+            <td />
+            <td>
+              <Pill mx={3} color={'green'}>
+                {'Confirmed'}
+              </Pill>
+              <br />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              0xeb2317a1ae818be05c1bfdc818d5e2a5aa7ec61b389a7df6268bfd0d5d8e8cc0
+            </td>
+            <td />
+            <td>
+              <Pill mx={3} color={'red'}>
+                {'Failed'}
+              </Pill>
+              <br />
+            </td>
+          </tr>
+        </tbody>
+</Table>
+
+### Reference the action, not transaction
+
+Use specific language throughout. If the transaction is actually transferring a crypto asset, refer to that. Or if your users are casting a vote on the blockchain, reference the vote. This will spare users having to make connections in their head. Echo the language you'd use in the button to initiate the transaction e.g. Send CryptoKitty or Cast vote.
+
+<DoDont>
+  {{
+    positive: (
+    <Text>
+    <ul>
+      <li>Sending Ether...</li>
+      <li>Vote cast</li>
+      <li>Cryptokitty failed to send</li>
+    </ul>
+    </Text>
+    ),
+    negative: (
+    <Text>
+    <ul>
+<li> Processing transaction...</li>
+<li> Transaction confirmed</li>
+<li> Transaction failed</li>
+</ul>
+</Text>
+    ),
+  }}
+</DoDont>
+
+### Ensure the conditions are right pre-transaction
+
+Your dApp can detect a network as long as there's a web 3 provider. And once the user has connected their Ethereum address with your dApp you can read the account balance. Don't wait until a transaction to tell your user about an incorrect network or a 0 ETH balance. This is not what the failed state is for.
+
+<DoDont>
+  {{
+    positive: (
+    <ToastMessage.Failure
+        width={[1, 1, 1 / 2]}
+        message={'Payment failed'}
+        secondaryMessage={"You didn't sign the contract in MetaMask"}
+      />
+    ),
+    negative: (
+    ToastMessage.Failure
+        width={[1, 1, 1 / 2]}
+        message={'Payment failed'}
+        secondaryMessage={'You were on the wrong network'}
+      />
+      <ToastMessage.Failure
+        width={[1, 1, 1 / 2]}
+        message={'Payment failed'}
+        secondaryMessage={'Your balance is 0 Ether'}
+      />
+    ),
+  }}
+</DoDont>
