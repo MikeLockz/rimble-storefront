@@ -48,7 +48,7 @@ class Code extends React.Component {
 
     // if no `is` default to inline code
     if (!is) {
-      console.log("!is", is);
+      // console.log("!is", is);
       return (
         <Box display={"inline-block"}>
           <ThemeProvider theme={defaultTheme}>
@@ -83,7 +83,7 @@ class Code extends React.Component {
 
     // live component rendering
     if (is === "react-live") {
-      console.log("scope", localScope);
+      // console.log("scope", localScope);
       return (
         <LiveProvider
           language={prismMap[lang] || lang}
@@ -118,7 +118,7 @@ class Code extends React.Component {
       );
     }
 
-    console.log("default render", is === "react-live");
+    // console.log("default render", is === "react-live");
     // otherwise, use prism to render a code block
     return (
       <ThemeProvider theme={defaultTheme}>

@@ -1,8 +1,11 @@
 ---
-title: Flash
+title: Flash Stuff
+type: design
+componentName: Flash
+navigation: Components
 ---
 
-import {Flash, Box, Icon, Text, Link, Heading} from "rimble-ui"
+import { Flash, Box, Icon, Text, Link, Heading } from "rimble-ui";
 import DoDont from "../../components/documentation/DoDont";
 
 # Flash design guidelines
@@ -21,20 +24,18 @@ When you want to let the user know that something has been successful. You may w
 
 **Example scenarios**
 
-<Flash variant={'success'} display={'flex'}>
+<Flash variant={"success"} display={"flex"}>
   <Box mr={3}>
     <Icon name="Success" />
   </Box>
   <Box mr={3}>
-    <Heading color={'inherit'} fontsize={2} my={0}>
+    <Heading color={"inherit"} fontsize={2} my={0}>
       <strong>Cryptokitty received</strong>
     </Heading>
-    <Text color={'inherit'}>
+    <Text color={"inherit"}>
       Kitty #12345 is now yours! Want to take a look?
     </Text>
-    <Link>
-      View Cryptokitty
-    </Link>
+    <Link>View Cryptokitty</Link>
   </Box>
 </Flash>
 
@@ -46,34 +47,28 @@ When there's some important info in relation to the section (whole dApp, page, c
 
 **Example scenarios**
 
-<Flash variant={'info'} display={'flex'}>
+<Flash variant={"info"} display={"flex"}>
   <Box mr={3}>
     <Icon name="Info" />
   </Box>
   <Box mr={3}>
-    <Heading color={'inherit'} fontsize={2} my={0}>
+    <Heading color={"inherit"} fontsize={2} my={0}>
       <strong>Now accepting DAI</strong>
     </Heading>
-    <Text color={'inherit'}>
-      You can now use DAI in our online store
-    </Text>
+    <Text color={"inherit"}>You can now use DAI in our online store</Text>
   </Box>
 </Flash>
 
-<Flash variant={'info'} display={'flex'} mt={3}>
+<Flash variant={"info"} display={"flex"} mt={3}>
   <Box mr={3}>
     <Icon name="Info" />
   </Box>
   <Box mr={3}>
-    <Heading color={'inherit'} fontsize={2} my={0}>
+    <Heading color={"inherit"} fontsize={2} my={0}>
       <strong>Ether is booming!</strong>
     </Heading>
-    <Text color={'inherit'}>
-      ETH price surges show no sign of letting up.
-    </Text>
-    <Link>
-      See rates
-    </Link>
+    <Text color={"inherit"}>ETH price surges show no sign of letting up.</Text>
+    <Link>See rates</Link>
   </Box>
 </Flash>
 
@@ -84,16 +79,18 @@ When there's some important info in relation to the section (whole dApp, page, c
 If there's something that might prevent a user from achieving their task.
 
 **Example scenarios**
-<Flash variant={'warning'} display={'flex'}>
+
+<Flash variant={"warning"} display={"flex"}>
   <Box mr={3}>
     <Icon name="Warning" />
   </Box>
   <Box mr={3}>
-    <Heading color={'inherit'} fontsize={2} my={0}>
+    <Heading color={"inherit"} fontsize={2} my={0}>
       <strong>Slow transactions expected</strong>
     </Heading>
-    <Text color={'inherit'}>
-      The network is slower than usual today, so some transactions might take longer to process
+    <Text color={"inherit"}>
+      The network is slower than usual today, so some transactions might take
+      longer to process
     </Text>
   </Box>
 </Flash>
@@ -106,29 +103,29 @@ If there's something preventing a user from achieving key tasks, like a service 
 
 **Example scenarios**
 
-<Flash variant={'danger'} display={'flex'} mb={3}>
+<Flash variant={"danger"} display={"flex"} mb={3}>
   <Box mr={3}>
     <Icon name="Warning" />
   </Box>
   <Box mr={3}>
-    <Heading color={'inherit'} fontSize={2} my={0}>
+    <Heading color={"inherit"} fontSize={2} my={0}>
       <strong>Switch to the Main Ethereum network</strong>
     </Heading>
-    <Text color={'inherit'}>
+    <Text color={"inherit"}>
       Change your network in your browser settings. You’re currently on Rinkeby.
     </Text>
   </Box>
 </Flash>
 
-<Flash variant={'danger'} display={'flex'} mb={4}>
+<Flash variant={"danger"} display={"flex"} mb={4}>
   <Box mr={3}>
     <Icon name="Warning" />
   </Box>
   <Box mr={3}>
-    <Heading color={'inherit'} fontSize={2} my={0}>
+    <Heading color={"inherit"} fontSize={2} my={0}>
       <strong>Complete all required fields</strong>
     </Heading>
-    <Text color={'inherit'}>
+    <Text color={"inherit"}>
       Please fill in all fields marked with an asterisk below
     </Text>
   </Box>
@@ -143,28 +140,36 @@ Use the `Flash` banner if the information you want to get across remains relevan
 <DoDont>
   {{
     positive: (
-    <Flash variant={'danger'} display={'flex'}>
-                  <Box mr={3}>
-                    <Icon name="Warning" />
-                  </Box>
-                  <Box mr={3}>
-                    <Heading color={'inherit'} fontSize={2} my={0}>
-                      <strong>Switch to the Main Ethereum network</strong>
-                    </Heading>
-                    <Text color={'inherit'}>
-                      Change your network in your browser settings. You’re currently on Rinkeby.
-                    </Text>
-                  </Box>
-                </Flash>
+      <Flash variant={"danger"} display={"flex"}>
+        <Box mr={3}>
+          <Icon name="Warning" />
+        </Box>
+        <Box mr={3}>
+          <Heading color={"inherit"} fontSize={2} my={0}>
+            <strong>Switch to the Main Ethereum network</strong>
+          </Heading>
+          <Text color={"inherit"}>
+            Change your network in your browser settings. You’re currently on
+            Rinkeby.
+          </Text>
+        </Box>
+      </Flash>
     ),
-    negative: (<Flash variant={'success'} display={'flex'}>
-                    <Box mr={3}><Icon name="Mood"  /></Box>
-                    <Box mr={3}>
-                      <Heading color={'inherit'} fontSize={2} my={0}><strong>Connected!</strong></Heading>
-                      <Text color={'inherit'}>Your Ethereum account is now connected to my dApp.</Text>
-                    </Box>
-                  </Flash>
-                  ),
+    negative: (
+      <Flash variant={"success"} display={"flex"}>
+        <Box mr={3}>
+          <Icon name="Mood" />
+        </Box>
+        <Box mr={3}>
+          <Heading color={"inherit"} fontSize={2} my={0}>
+            <strong>Connected!</strong>
+          </Heading>
+          <Text color={"inherit"}>
+            Your Ethereum account is now connected to my dApp.
+          </Text>
+        </Box>
+      </Flash>
+    )
   }}
 </DoDont>
 
@@ -175,34 +180,41 @@ Flash banners should have a single purpose or message so should only contain a m
 <DoDont>
   {{
     positive: (
-    <Flash variant={'danger'} display={'flex'}>
-                    <Box mr={3}>
-                      <Icon name="Warning" />
-                    </Box>
-                    <Box mr={3}>
-                      <Heading color={'inherit'} fontSize={2} my={0}>
-                        <strong>No funds for transactions fees</strong>
-                      </Heading>
-                      <Text color={'inherit'}>
-                        You won't be able to use our blockchain features without some Ether in your account. <Link>Learn how to add funds</Link>
-                      </Text>
-                    </Box>
-                  </Flash>
+      <Flash variant={"danger"} display={"flex"}>
+        <Box mr={3}>
+          <Icon name="Warning" />
+        </Box>
+        <Box mr={3}>
+          <Heading color={"inherit"} fontSize={2} my={0}>
+            <strong>No funds for transactions fees</strong>
+          </Heading>
+          <Text color={"inherit"}>
+            You won't be able to use our blockchain features without some Ether
+            in your account. <Link>Learn how to add funds</Link>
+          </Text>
+        </Box>
+      </Flash>
     ),
     negative: (
-    <Flash variant={'danger'} display={'flex'}>
-                    <Box mr={3}>
-                      <Icon name="Warning" />
-                    </Box>
-                    <Box mr={3}>
-                      <Heading color={'inherit'} fontSize={2} my={0}>
-                        <strong>Wrong network and insufficient funds!</strong>
-                      </Heading>
-                      <Text color={'inherit'}>
-                        You need to be on the Main Ethereum network to use this dApp. <Link>Learn how to switch networks</  Link></Text><br /><Text color={'inherit'}>You also won't be able to use our blockchain features without some Ether in your account. <Link>Learn how to add funds</Link>
-                      </Text>
-                    </Box>
-                  </Flash>
-                  ),
+      <Flash variant={"danger"} display={"flex"}>
+        <Box mr={3}>
+          <Icon name="Warning" />
+        </Box>
+        <Box mr={3}>
+          <Heading color={"inherit"} fontSize={2} my={0}>
+            <strong>Wrong network and insufficient funds!</strong>
+          </Heading>
+          <Text color={"inherit"}>
+            You need to be on the Main Ethereum network to use this dApp.{" "}
+            <Link>Learn how to switch networks</Link>
+          </Text>
+          <br />
+          <Text color={"inherit"}>
+            You also won't be able to use our blockchain features without some
+            Ether in your account. <Link>Learn how to add funds</Link>
+          </Text>
+        </Box>
+      </Flash>
+    )
   }}
 </DoDont>

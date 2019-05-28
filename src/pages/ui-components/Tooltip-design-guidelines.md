@@ -72,12 +72,12 @@ Don't include too much text in a tooltip. They're for short clarification or ela
 ### Some suggested uses
 
 <Tooltip
-  placement="bottom"
-  variant="light"
-  message="0x99cb784f0429efd72wu39fn4256n8wud4e01c7d2"
->
-  <Pill>{'0x99...7d2'}</Pill>
-</Tooltip>
+placement="bottom"
+variant="light"
+message="0x99cb784f0429efd72wu39fn4256n8wud4e01c7d2"
+
+> <Pill>{'0x99...7d2'}</Pill>
+> </Tooltip>
 
 <Text mt={3}>
   This will include a small{' '}
