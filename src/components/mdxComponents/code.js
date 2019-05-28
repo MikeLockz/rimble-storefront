@@ -17,7 +17,15 @@ import ConnectionBanner from "@rimble/connection-banner";
 // import codeTheme from "../../../static/static/prism-ghcolors.css";
 import defaultTheme from "../../theme";
 
-const localScope = { Avatar, Flex, Loader, Button, Flash, ConnectionBanner };
+const localScope = {
+  Avatar,
+  Box,
+  Flex,
+  Loader,
+  Button,
+  Flash,
+  ConnectionBanner
+};
 
 const prismMap = {
   sh: "bash",
