@@ -78,12 +78,11 @@ class DocLayout extends React.Component {
 
       return (
         <Layout {...props} itemList={itemList}>
+          {console.log("Data: ", data)}
           <Helmet />
           <div className="content">
             {children}
-            {console.log("Data: ", data)}
-            <h1>{data.componentMetadata.displayName}</h1>
-            <p>{data.componentMetadata.docblock}</p>
+
             <MDXRenderer tableOfContents={tableOfContents}>
               {data.mdx.code.body}
             </MDXRenderer>
