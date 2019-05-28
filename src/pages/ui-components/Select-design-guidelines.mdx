@@ -1,0 +1,51 @@
+---
+title: Select
+---
+
+import {Select, Radio, Field, Box, Icon, Text, Link, Heading} from "rimble-ui"
+import DoDont from "../../components/documentation/DoDont";
+
+# Select design guidelines
+
+Use the `Select` component when you want your users to select a single option from a list. This component is specifically useful for long lists you wouldn't want to display using `Radio` buttons like currencies or states.
+
+*Want to build this component?* [Read `Select` documentation](/Develop/Select)
+
+## Design
+
+Some best practices for using `Select` in your product.
+
+### It's better to show your options
+
+Only use the `Select` component when you have a lot of options that would clutter your interface. If you've only got a few options to choose from it might be better to show them to the user with a [`Radio`](/Develop/Radio) component.
+
+<DoDont>
+  {{
+    positive: (
+      <Box>
+        <Select
+          items={[
+            'ETH - Ether',
+            'BTC - Bitcoin',
+            'GNO - Gnosis',
+            'GNT - Golem',
+            'REP - Augur',
+          ]}
+        />
+        <Text my={4}>OR</Text>
+        <Radio label="ETH - Ether" my={2} required="false" />
+        <Radio label="FIAT e.g. USD" my={2} required="false" />
+      </Box>
+    ),
+    negative: (
+      <Box>
+        <Select items={['ETH - Ether', 'FIAT e.g. USD']} />
+      </Box>
+    ),
+  }}
+</DoDont>
+
+## Related components
+
+- [`Radio`](/Develop/Radio) - When users can only choose one option or the choices are binary like yes/no
+- [`Checkbox`](/Develop/Checkbox) – When users can choose 0 or multiple options from a list

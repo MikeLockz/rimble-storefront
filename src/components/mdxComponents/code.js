@@ -4,6 +4,7 @@ import codeTheme from "prism-react-renderer/themes/duotoneLight";
 import codeDarkTheme from "prism-react-renderer/themes/duotoneDark";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import {
+  Avatar,
   Flex,
   Loader,
   Button,
@@ -16,7 +17,15 @@ import ConnectionBanner from "@rimble/connection-banner";
 // import codeTheme from "../../../static/static/prism-ghcolors.css";
 import defaultTheme from "../../theme";
 
-const localScope = { Flex, Loader, Button, Flash, ConnectionBanner };
+const localScope = {
+  Avatar,
+  Box,
+  Flex,
+  Loader,
+  Button,
+  Flash,
+  ConnectionBanner
+};
 
 const prismMap = {
   sh: "bash",
@@ -90,6 +99,7 @@ class Code extends React.Component {
                 mt={3}
               >
                 <LivePreview />
+                <LiveError />
               </Box>
               {this.state.showCode ? (
                 <LiveEditor theme={codeDarkTheme} />
@@ -104,8 +114,6 @@ class Code extends React.Component {
               {this.state.showCode ? `Hide Code` : `Edit Code`}
             </RimbleLink>
           </ThemeProvider>
-
-          <LiveError />
         </LiveProvider>
       );
     }

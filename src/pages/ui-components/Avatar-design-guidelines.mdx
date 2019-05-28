@@ -1,0 +1,44 @@
+---
+title: Avatar
+---
+
+import {Flash, Box, Icon, Text, Link, Heading, Avatar,} from "rimble-ui"
+import DoDont from "../../components/documentation/DoDont";
+
+
+# Avatar design guidelines
+
+Use avatars to visually represent entities in your product, for example people, tokens, currency and companies.
+
+*Want to build this component?* Read [`Avatar` documentation](/develop/Avatar)
+
+## Design
+
+Some best practice for using `Avatar` in your product.
+
+### Use with labels
+
+Labels will help solidify the relationship between the entity and the avatar. This will also make your product more accessible to those using assistive technologies.
+<DoDont>
+  {{
+    positive: (
+      <Flex>
+        <Box width={1/2}>
+          <Avatar
+            size="medium"
+            src="https://airswap-token-images.s3.amazonaws.com/DAI.png"
+          />
+        </Box>
+        <Box>
+          <Text>DAI</Text>
+        </Box>
+      </Flex>
+    ),
+    negative: (
+      <Avatar
+        size="medium"
+        src="https://airswap-token-images.s3.amazonaws.com/DAI.png"
+      />
+    ),
+  }}
+</DoDont>
