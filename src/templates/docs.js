@@ -74,6 +74,10 @@ class DocLayout extends React.Component {
     if (props.location.pathname === "/") {
       return <RawLayout {...props}>{children}</RawLayout>;
     } else {
+      if (typeof data === "undefined") {
+        return <div>Could not build page </div>;
+      }
+
       const itemList = reduceNavTwo(data.allMdx);
 
       return (
@@ -87,7 +91,9 @@ class DocLayout extends React.Component {
               {data.mdx.code.body}
             </MDXRenderer>
 
-            {data.mdx.frontmatter.type === "documentation" ? (
+            {data.mdx.frontmatter.type === "documentation" &&
+            typeof data.componentMetadata !== "undefined" &&
+            data.componentMetadata !== null ? (
               <div>
                 <h2 style={{ marginTop: "2rem" }}>Props:</h2>
                 <PropsTable
