@@ -2,7 +2,7 @@
 title: Transaction states
 ---
 
-import {Tooltip, Flash, Pill, Field, Table, Pill, Box, Icon, Text, Link, Heading, ToastMessage, Button} from "rimble-ui"
+import {Tooltip, Flash, Field, Table, Pill, Box, Icon, Text, Link, Heading, ToastMessage, Button} from "rimble-ui"
 import DoDont from "../../components/documentation/DoDont";
 
 # Transaction states
@@ -216,7 +216,8 @@ Your dApp can detect a network as long as there's a web 3 provider. And once the
       />
     ),
     negative: (
-    ToastMessage.Failure
+    <Box>
+    <ToastMessage.Failure
         width={[1, 1, 1 / 2]}
         message={'Payment failed'}
         secondaryMessage={'You were on the wrong network'}
@@ -226,6 +227,7 @@ Your dApp can detect a network as long as there's a web 3 provider. And once the
         message={'Payment failed'}
         secondaryMessage={'Your balance is 0 Ether'}
       />
+    </Box>
     ),
   }}
 </DoDont>
