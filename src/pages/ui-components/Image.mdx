@@ -1,0 +1,31 @@
+---
+title: Image
+type: documentation
+componentName: Image
+navigation: Components
+---
+import { Image } from "rimble-ui"
+
+# Image
+
+Use the `Image` component to display an image in your product. This renders the `<img>` HTML element and extends the [`Box`](/ui-components/Box) component.
+
+**Import component**
+```lang=jsx
+import { Image } from 'rimble-ui';
+```
+
+## Example
+
+```js is=react-live
+<Image
+alt="random unsplash image"
+borderRadius={8}
+height="auto"
+src="https://source.unsplash.com/random/1280x720"
+/>
+```
+
+## Accessibility
+
+- Always include an alt prop so that screen readers can describe the image to those with visual impairments

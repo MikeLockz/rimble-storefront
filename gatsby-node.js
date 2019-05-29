@@ -54,6 +54,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
   return new Promise((resolve, reject) => {
+    const docTemplate = path.resolve(`./src/templates/docs.js`);
     resolve(
       graphql(
         `
@@ -100,14 +101,11 @@ exports.createPages = ({ graphql, actions }) => {
             typeof node.internal !== "undefined" &&
             node.internal.type === `Mdx` &&
             typeof node.frontmatter !== "undefined" &&
-            typeof node.frontmatter.type !== "undefined"
+            typeof node.frontmatter.componentName !== "undefined"
           ) {
             createPage({
               path: `${node.fields.slug}`,
-              component: componentWithMDXScope(
-                path.resolve("./src/templates/docs.js"),
-                node.code.scope
-              ),
+              component: docTemplate,
               context: {
                 id: node.id,
                 componentName: node.frontmatter.componentName

@@ -1,21 +1,41 @@
 ---
 title: Select
+type: documentation
+componentName: Select
+navigation: Components
 ---
-
 import {Select, Radio, Field, Box, Icon, Text, Link, Heading} from "rimble-ui"
 import DoDont from "../../components/documentation/DoDont";
 
-# Select design guidelines
+# Select
+Use the Select component when you want your users to select an option from a list. Select provides a styled version of the HTML `<select>`. This component is specifically useful for long lists you wouldn't want to display using [`Radio`](/ui-components/Radio) buttons like currencies or states.
 
-Use the `Select` component when you want your users to select a single option from a list. This component is specifically useful for long lists you wouldn't want to display using `Radio` buttons like currencies or states.
+**Import component**
+```lang=jsx
+import { Select } from 'rimble-ui';
+```
 
-*Want to build this component?* [Read `Select` documentation](/Develop/Select)
+## Example
+```js is=react-live
+<Field label="Choose your currency">
+<Select
+items={[
+'ETH - Ether',
+'BTC - Bitcoin',
+'GNO - Gnosis',
+'GNT - Golem',
+'REP - Augur'
+]}
+required="false"
+/>
+</Field>
+```
 
-## Design
+## Design guidelines
 
 Some best practices for using `Select` in your product.
 
-### It's better to show your options
+**It's better to show your options**
 
 Only use the `Select` component when you have a lot of options that would clutter your interface. If you've only got a few options to choose from it might be better to show them to the user with a [`Radio`](/Develop/Radio) component.
 
@@ -47,5 +67,5 @@ Only use the `Select` component when you have a lot of options that would clutte
 
 ## Related components
 
-- [`Radio`](/Develop/Radio) - When users can only choose one option or the choices are binary like yes/no
-- [`Checkbox`](/Develop/Checkbox) – When users can choose 0 or multiple options from a list
+- [`Radio`](/ui-components/Radio) - When users can only choose one option or the choices are binary like yes/no
+- [`Checkbox`](/ui-components/Checkbox) – When users can choose 0 or multiple options from a list

@@ -1,0 +1,71 @@
+---
+title: Loader
+type: documentation
+componentName: Loader
+navigation: Components
+---
+import { Loader } from "rimble-ui"
+
+# Loader
+
+Use the `Loader` component to let the user know that a process is happening or something is loading. `Loader` renders a responsive box-model layout component.
+
+**Import component**
+```lang=jsx
+import { Loader } from 'rimble-ui';
+```
+
+## Examples
+
+**Default**
+
+```js is=react-live
+<Loader />
+```
+
+**Loader with background**
+
+```js is=react-live
+<Loader
+bg="primary"
+color="white"
+/>
+```
+
+**Custom size**
+```js is=react-live
+<Loader size="40px" />
+```
+
+
+**Custom colour**
+
+```js is=react-live
+<Loader
+color="red"
+size="80px"
+/>
+```
+
+**Custom size with color and background**
+
+```js is=react-live
+<Loader
+bg="primary"
+color="white"
+size="80px"
+/>
+```
+
+**Custom background**
+```js is=react-live
+<Loader
+bg="grey"
+color="white"
+/>
+```
+
+**Black loader**
+```js is=react-live
+<Loader color="black" />
+```
