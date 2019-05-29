@@ -14,14 +14,14 @@ const Header = ({ props }) => (
       Adaptable components and design standards for decentralized applications.
     </Text.p>
 
-    <RimbleGatsbyLink to={"design"}>
+    <RimbleGatsbyLink to={"/components"}>
       <Button width={["100%", "auto"]} mr={[0, 3]} mb={[3, 0]}>
-        Design
+        Components
       </Button>
     </RimbleGatsbyLink>
 
-    <RimbleGatsbyLink to={"develop"}>
-      <Button.outline width={["100%", "auto"]}>Develop</Button.outline>
+    <RimbleGatsbyLink to={"/guides"}>
+      <Button.outline width={["100%", "auto"]}>Guides</Button.outline>
     </RimbleGatsbyLink>
   </header>
 );
