@@ -5,9 +5,10 @@ Landing page, marketing site, design guidelines, and documentation for rimble-ui
 ## 🚀 Quick start
 
 1.  **Clone this repository**
+_Note: the source for the two libraries `rimble-ui` and `rimble-web3-components` are needed as git submodules to generate the props tables. The `--recurse-submodules` flag will download the source for the two libraries as git submodules._
 
     ```sh
-    git clone https://github.com/consensys/rimble-storefront.git
+    git clone --recurse-submodules -j8 https://github.com/consensys/rimble-storefront.git
     ```
 
 1.  **Start developing.**

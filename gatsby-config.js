@@ -73,6 +73,29 @@ module.exports = {
         path: `${__dirname}/src/pages/`
       }
     },
-    "gatsby-plugin-offline"
+    "gatsby-plugin-offline",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `rimble-ui`,
+        path: `src/library/rimble-ui/src`,
+        ignore: [
+          `**/__snapshots__/**`,
+          `**/*.test.js`,
+          `**/*.snap`,
+          `.eslint`,
+          `*.js`
+        ]
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `rimble-web3-components`,
+        path: `src/library/rimble-web3-components/packages`,
+        ignore: [`**/__snapshots__/**`, `**/*.test.js`, `**/*.snap`]
+      }
+    },
+    `gatsby-transformer-react-docgen`
   ]
 };

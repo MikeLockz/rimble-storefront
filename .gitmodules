@@ -1,0 +1,6 @@
+[submodule "src/library/rimble-ui"]
+	path = src/library/rimble-ui
+	url = https://github.com/ConsenSys/rimble-ui
+[submodule "src/library/rimble-web3-components"]
+	path = src/library/rimble-web3-components
+	url = https://github.com/ConsenSys/rimble-web3-components
