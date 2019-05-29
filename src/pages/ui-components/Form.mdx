@@ -5,7 +5,7 @@ componentName: Form
 navigation: Components
 ---
 
-
+import { Form, Button } from "rimble-ui"
 
 # Form
 The Form component provides a wrapped version of the HTML `<form>` element.
@@ -29,18 +29,20 @@ import { Button, Form } from 'rimble-ui';
 ```
 
 ```js is=react-live
-class MyCustomForm extends Component {
+class MyCustomForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { validated: false };
-  }
-
-  handleSubmit = e => {
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleValidation = this.handleValidation.bind(this);
+  };
+  
+  handleSubmit(e) {
     e.preventDefault();
     this.setState({ validated: true });
   };
 
-  handleValidation = e => {
+  handleValidation(e) {
     e.target.parentNode.classList.add('was-validated');
   };
 

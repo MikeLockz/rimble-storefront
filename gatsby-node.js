@@ -94,7 +94,6 @@ exports.createPages = ({ graphql, actions }) => {
           console.log(result.errors);
           reject(result.errors);
         }
-        console.log("Result: ", result);
         // Create blog posts pages.
         result.data.allMdx.edges.forEach(async ({ node }) => {
           if (

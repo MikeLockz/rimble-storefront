@@ -28,7 +28,9 @@ import {
   Link,
   Progress,
   ThemeProvider,
-  Link as RimbleLink
+  MetaMaskButton,
+  Link as RimbleLink,
+  Text,
 } from "rimble-ui";
 import ConnectionBanner from "@rimble/connection-banner";
 // import codeTheme from "../../../static/static/prism-ghcolors.css";
@@ -59,8 +61,10 @@ const localScope = {
   Link,
   Progress,
   ThemeProvider,
+  MetaMaskButton,
   ConnectionBanner,
   defaultTheme,
+  Text,
 };
 
 const prismMap = {
@@ -80,7 +84,7 @@ class Code extends React.Component {
   };
 
   render() {
-    const { is, children, lang } = this.props;
+    const { is, children, lang, noInline } = this.props;
 
     // if no `is` default to inline code
     if (!is) {
@@ -125,6 +129,7 @@ class Code extends React.Component {
           language={prismMap[lang] || lang}
           code={children.trim()}
           scope={localScope}
+          noInline={noInline}
         >
           <ThemeProvider theme={defaultTheme}>
             <Box mb={3}>
