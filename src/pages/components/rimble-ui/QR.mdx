@@ -1,0 +1,99 @@
+---
+title: QR
+componentName: QR
+---
+
+import {
+  Input,
+  PublicAddress,
+  Field,
+  Box,
+  Icon,
+  Card,
+  QR,
+  Text,
+  Link,
+  Heading
+} from "rimble-ui";
+import DoDont from "../../../components/documentation/DoDont";
+
+# QR documentation
+
+Use the `QR` component to renders a QR code for a provided string. Can be used as a shortcut to input a public Ethereum address or link to a specific website.
+
+**Import component**
+
+```
+import { QR } from 'rimble-ui';
+```
+
+## Example
+
+```js is=react-live
+<QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
+```
+
+**Component props**
+
+`QR` Code will pass any props that are defined on its component and uses the following:
+
+**Styled-system props**
+
+`QR` Code does not use any styled-system props.
+
+## Design guidelines
+
+Turn public addresses or links into QR codes that your users can scan instead of copy/pasting.
+
+**Design**
+
+Some best practice for using `QR` in your product.
+
+**Explain what it is**
+
+Let your user know what the QR code represents and what will happen once they scan the QR code. Don't just assume your user is familiar with the pattern of QR codes being used for public addresses.
+
+<DoDont>
+  {{
+    positive: (
+      <Box>
+        <Heading.h5>Your connected account:</Heading.h5>
+        <QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
+      </Box>
+    ),
+    negative: (
+      <Box textAlign={"center"}>
+        <QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
+      </Box>
+    )
+  }}
+</DoDont>
+
+**Provide an alternative**
+
+If you're using a QR code to represent a public address, always give the user the ability to copy/paste the address manually too. They may not want to grant your dApp access to their camera or they may be at a desktop set-up where scanning QR codes is inconvenient.
+
+<DoDont>
+  {{
+    positive: (
+      <Box>
+        <Heading.h5>Your connected account:</Heading.h5>
+        <QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
+        <PublicAddress
+          required="false"
+          address="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A"
+        />
+      </Box>
+    ),
+    negative: (
+      <Box textAlign={"center"}>
+        <Heading.h5>Your connected account</Heading.h5>
+        <QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
+      </Box>
+    )
+  }}
+</DoDont>
+
+### Related components
+
+- [`PublicAddress`](/Develop/PublicAddress) – Use to show a public address and provide copy-to-clipboard functionality
