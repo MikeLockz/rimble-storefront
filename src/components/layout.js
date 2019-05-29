@@ -7,6 +7,7 @@ import GatsbySidebar from "./gatsby-sidebar";
 import { Box, Flex, ThemeProvider } from "rimble-ui";
 import TableOfContents from "../components/documentation/TableOfContents";
 import { StaticQuery, graphql } from "gatsby";
+import ContributeBanner from "../components/documentation/ContributeBanner"
 
 const Layout = ({ children, location, itemList }) => (
   <StaticQuery
@@ -34,6 +35,8 @@ const Layout = ({ children, location, itemList }) => (
               padding={3}
             >
               {children}
+
+              <ContributeBanner />
             </Box>
 
             <TableOfContents />

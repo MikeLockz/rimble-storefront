@@ -1,10 +1,8 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { graphql, StaticQuery } from "gatsby";
-import ContributeBanner from "../components/documentation/ContributeBanner";
+import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import MDXRenderer from "gatsby-mdx/mdx-renderer";
-import { MDXProvider } from "@mdx-js/tag";
 import PropsTable from "../components/propstable";
 
 // force top-level navigation to be a certain order
