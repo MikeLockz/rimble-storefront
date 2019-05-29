@@ -36,12 +36,31 @@ import defaultTheme from "../../theme";
 
 const localScope = {
   Avatar,
-  Box,
   Flex,
   Loader,
   Button,
   Flash,
-  ConnectionBanner
+  Box,
+  Image,
+  Blockie,
+  Card,
+  Pill,
+  Modal,
+  Checkbox,
+  Radio,
+  Select,
+  Form,
+  Field,
+  Heading,
+  TextArea,
+  Slider,
+  Icon,
+  Input,
+  Link,
+  Progress,
+  ThemeProvider,
+  ConnectionBanner,
+  defaultTheme,
 };
 
 const prismMap = {
