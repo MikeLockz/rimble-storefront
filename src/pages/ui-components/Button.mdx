@@ -1,26 +1,33 @@
 ---
-title: Button documentation
+title: Button
+type: documentation
+componentName: Button
+navigation: Components
 ---
 
-# Button documentation
 
-Use the Button component when you want users to perform an action like connecting their Ethereum account or starting a transaction. It contains a label with an optional icon before or after the label. It maps to a `<button type='button'>` element and extends [Box](/develop/Box).
+import DoDont from "../../components/documentation/DoDont";
+import { Button, Box, Flex } from "rimble-ui";
+import TransactionFeeCard from "../../components/documentation/snippets/TransactionFeeCard.js";
 
-*Want to understand best practices for using this component?* Read [Button design guidelines](/design/Button)
 
-Import component
+# Button
 
-```jsx
+Use the Button component when you want users to perform an action like connecting their Ethereum account or starting a transaction. It contains a label with an optional icon before or after the label. It maps to a `<button type='button'>` element and extends [`Box`](/ui-components/Box).
+
+**Import component**
+
+```lang=jsx
 import { Button } from "rimble-ui";
 ```
 
-## Button examples
+## Examples
 
 Different ways to use the `Button` component.
 
 In special cases where you'd like to use a `<a>` styled like a `Button`, use `<Button as='a'></Button>` and provide an href.
 
-### Default button
+**Default button**
 
 Use to show users the primary action(s) they can take from the screen they're on.
 
@@ -28,27 +35,25 @@ Use to show users the primary action(s) they can take from the screen they're on
 <Button>Connect wallet</Button>
 ```
 
-### Different styles
-
-#### Solid
+**Solid**
 
 ```js is=react-live
 <Button>Connect wallet</Button>
 ```
 
-#### Outline
+**Outline**
 
 ```js is=react-live
 <Button.Outline>Connect wallet</Button.Outline>
 ```
 
-#### Text
+**Text**
 
 ```js is=react-live
 <Button.Text>Connect wallet</Button.Text>
 ```
 
-### Base
+**Base**
 
 Minimal styling. Used for composing buttons with more complex styles.
 
@@ -56,7 +61,7 @@ Minimal styling. Used for composing buttons with more complex styles.
 <Button.Base>Connect wallet</Button.Base>
 ```
 
-### Different sizes
+**Different sizes**
 
 ```js is=react-live
 <div>
@@ -68,39 +73,7 @@ Minimal styling. Used for composing buttons with more complex styles.
 </div>
 ```
 
-### Color variants
-
-Use 'success' and 'danger' color styles.
-
-#### Success
-
-```js is=react-live
-<Button variant="success">Success button</Button>
-```
-
-#### Danger
-
-```js is=react-live
-<Button variant="danger">Danger button</Button>
-```
-
-#### Custom color
-
-```js is=react-live
-<div>
-  <Button mainColor="DarkCyan" marginRight={3}>
-    Custom color button
-  </Button>
-
-  <Button.Outline mainColor="DarkCyan" marginRight={3}>
-    Custom color button
-  </Button.Outline>
-
-  <Button.Text mainColor="DarkCyan">Custom color button</Button.Text>
-</div>
-```
-
-### Disabled button
+**Disabled button**
 
 Use to indicate to the user that they need to do something before they can perform the action.
 
@@ -108,7 +81,7 @@ Use to indicate to the user that they need to do something before they can perfo
 <Button disabled>Connect wallet</Button>
 ```
 
-### Icon
+**Icon**
 
 Use to add visual reinforcement to an action. In most cases an icon should support button copy and not replace. Copy is less ambiguous than an icon.
 
@@ -126,7 +99,7 @@ Use to add visual reinforcement to an action. In most cases an icon should suppo
 </Flex>
 ```
 
-### Loading button
+**Loading button**
 
 Use to give users reassurance that the action they want is happening. If possible, include copy that further explains what's happening like "Loading" or "Sending"
 
@@ -136,7 +109,7 @@ Use to give users reassurance that the action they want is happening. If possibl
 </Button>
 ```
 
-### Link button
+**Link button**
 
 Use when you want a primary action to navigate the user to a new page or area. Use action words as the button label.
 
@@ -150,7 +123,7 @@ _This also requires you to import the Link component from the rimble-ui library.
 </Button>
 ```
 
-Link Button Outline
+**Link Button Outline**
 
 ```js is=react-live
 <Button.Outline as="a" href="#!" target="\_blank" title="Learn more">
@@ -158,7 +131,39 @@ Link Button Outline
 </Button.Outline>
 ```
 
-### **Component props**
+### Color variants
+
+Use 'success' and 'danger' color styles.
+
+**Success**
+
+```js is=react-live
+<Button variant="success">Success button</Button>
+```
+
+**Danger**
+
+```js is=react-live
+<Button variant="danger">Danger button</Button>
+```
+
+**Custom color**
+
+```js is=react-live
+<div>
+  <Button mainColor="DarkCyan" marginRight={3}>
+    Custom color button
+  </Button>
+
+  <Button.Outline mainColor="DarkCyan" marginRight={3}>
+    Custom color button
+  </Button.Outline>
+
+  <Button.Text mainColor="DarkCyan">Custom color button</Button.Text>
+</div>
+```
+
+### Component props
 
 Button's icon inherits all the props from [Icon](/develop/Icon), but also includes these:
 
@@ -171,7 +176,7 @@ Button's icon inherits all the props from [Icon](/develop/Icon), but also inclu
 | iconPos   | string  | left, right                                                      | left    | Sets Icon position inside button             |
 | iconOnly  | boolean | true, false                                                      | true    | Sets Button dimensions for icon-only buttons |
 
-### **Styled-system props**
+### Styled-system props
 
 `Button` uses all the style props from [Box](/develop/Box), but also includes these:
 
@@ -191,3 +196,117 @@ Button's icon inherits all the props from [Icon](/develop/Icon), but also inclu
 | fontSize     | font-size                      | fontSize     | fontSizes    |
 | fontFamily   | font-family                    | fontFamily   | fonts        |
 | fontWeight   | font-weight                    | fontWeight   | fontWeights  |
+
+## Design guidelines
+
+Some best practices for using `Button` in your product.
+
+**Don't just use icons**
+
+<DoDont>
+  {{
+    positive: (
+      <Button icon="Send" mb="3">
+        Send Ether
+      </Button>
+    ),
+    negative: <Button icon="Send" mb="3" />
+  }}
+</DoDont>
+
+**Don’t use buttons for navigational links**
+
+Buttons are for action-based tasks. Use Button.Text instead.
+
+<DoDont>
+  {{
+    positive: <Button.Text mb="3">Transaction history</Button.Text>,
+    negative: <Button mb="3">Transaction history</Button>
+  }}
+</DoDont>
+
+**Keep button position consistent**
+
+This will let users know where to look when they want to perform actions
+
+**Consider visual hierarchy of buttons**
+
+Don’t use too many buttons together on one piece of interface: prioritise the most important action. Use Button.Text and Button.Outline to give your actions visual hierarchy
+
+<TransactionFeeCard />
+
+## Content
+
+Some best practices for writing Button microcopy.
+
+**Keep copy concise**
+
+Don’t use articles (a, the, an) in button microcopy. This will make your button quicker to scan and shorter.
+
+<DoDont>
+  {{
+    positive: (
+      <Button my={3} size="medium">
+        Add wallet
+      </Button>
+    ),
+    negative: (
+      <Button my={3} size="medium">
+        Add a wallet
+      </Button>
+    )
+  }}
+</DoDont>
+
+**Explain the next step, not the end goal**
+
+The user should understand exactly what will happen once they press the button.
+
+For example, if you have a button that launches a QR code for you to scan with your mobile...
+
+<DoDont>
+  {{
+    positive: (
+      <Button my={3} size="medium">
+        Show QR code
+      </Button>
+    ),
+    negative: (
+      <Button my={3} size="medium">
+        Scan QR code
+      </Button>
+    )
+  }}
+</DoDont>
+
+**Lead with a verb and follow with a noun**
+
+Don’t rely on the rest of the interface to inform the user about what their action relates to.
+
+<DoDont>
+  {{
+    positive: (
+      <Box>
+        <Box mb={3}>
+          <Button size="medium">Add wallet</Button>
+        </Box>
+        <Button size="medium">Send Ether</Button>
+      </Box>
+    ),
+    negative: (
+      <Box>
+        <Box mb={3}>
+          <Button icon="AddCircle">Add</Button>
+        </Box>
+        <Button icon="Send">Send</Button>
+      </Box>
+    )
+  }}
+</DoDont>
+
+Universally understood actions like "Save", "Next" and "Previous" etc may not need the noun.
+
+## Related components
+
+- [MetaMaskButton](/ui-components/MetaMaskButton) – a ready-styled button to tell your users that they can connect with MetaMask
+- [UPortButton](/ui-components/UPortButton) – a ready-styled button ready to tell your users that they can connect with uPort

@@ -1,0 +1,107 @@
+---
+title: Avatar
+type: documentation
+componentName: Avatar
+navigation: Components
+---
+
+import {Flash, Box, Icon, Text, Link, Heading, Avatar,} from "rimble-ui"
+import DoDont from "../../components/documentation/DoDont";
+
+
+
+# Avatar
+
+A basic avatar component. Use avatars to visually represent entities in your product, for example people, tokens, currency and companies.
+
+**Import component**
+
+```jsx
+import { Avatar } from 'rimble-ui';
+```
+
+## Examples
+
+Different ways to use the `Avatar` component
+
+**Standard avatar**
+
+```js is=react-live
+<Avatar />
+```
+
+**Standard with image**
+
+```js is=react-live
+<Avatar src="https://airswap-token-images.s3.amazonaws.com/DAI.png" />
+```
+
+**Custom size**
+
+
+```js is=react-live
+<Avatar
+size="100px"
+src="https://airswap-token-images.s3.amazonaws.com/DAI.png"
+/>
+```
+
+**Large**
+
+
+```js is=react-live
+<Avatar
+size="large"
+src="https://airswap-token-images.s3.amazonaws.com/DAI.png"
+/>
+```
+
+**Medium**
+
+```js is=react-live
+    <Avatar
+      size="large"
+      src="https://airswap-token-images.s3.amazonaws.com/DAI.png"
+    />
+```
+
+**Small**
+
+
+```js is=react-live
+    <Avatar
+      size="small"
+      src="https://airswap-token-images.s3.amazonaws.com/DAI.png"
+    />
+```
+
+## Design guidelines
+
+Some best practice for using `Avatar` in your product.
+
+**Use with labels**
+
+Labels will help solidify the relationship between the entity and the avatar. This will also make your product more accessible to those using assistive technologies.
+<DoDont>
+  {{
+    positive: (
+      <Flex>
+        <Box width={1/2}>
+          <Avatar
+            size="medium"
+            src="https://airswap-token-images.s3.amazonaws.com/DAI.png"
+          />
+        </Box>
+        <Box>
+          <Text>DAI</Text>
+        </Box>
+      </Flex>
+    ),
+    negative: (
+      <Avatar
+        size="medium"
+        src="https://airswap-token-images.s3.amazonaws.com/DAI.png"
+      />
+    ),
+  }}
+</DoDont>

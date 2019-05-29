@@ -1,22 +1,59 @@
 ---
-title: Radio buttons
+title: Radio
+type: documentation
+componentName: Radio
+navigation: Components
 ---
 
 import {Radio, Field, Box, Select, Icon, Text, Link, Heading} from "rimble-ui"
 import DoDont from "../../components/documentation/DoDont";
 
 
-# Radio design guidelines
+# Radio
 
-Use the `Radio` component when users can select **only** one option from a short list.
+Use the `Radio` component when users can select only one option from a short list and you want all the options to be visible. `Radio` maps to a radio input and a label.
 
-*Want to build this component?* Read [`Radio` documentation](/Develop/Radio)
+**Import component**
+```lang=jsx
+import { Radio } from 'rimble-ui';
+```
 
-## Design
+## Example
+```js is=react-live
+<Field label="Choose transaction speed">
+<Radio
+label="Quick"
+my={2}
+required="false"
+/>
+<Radio
+checked
+label="Standard"
+my={2}
+required="false"
+/>
+<Radio
+disabled
+label="Slower"
+my={2}
+required="false"
+/>
+<Radio
+checked
+disabled
+label="Custom"
+my={2}
+required="false"
+/>
+</Field>
+```
+
+
+## Design guidelines
 
 Some best practices for using `Radio` in your product.
 
-### Always use with a label or heading
+**Always use with a label or heading**
 
 Your users will need instruction on what to choose. Don't just provide them with their choices.
 
@@ -39,7 +76,7 @@ Your users will need instruction on what to choose. Don't just provide them with
   }}
 </DoDont>
 
-### Only use for binary decisions
+**Only use for binary decisions**
 
 Radio buttons are for times when you users can choose only one option.
 
@@ -66,7 +103,7 @@ Radio buttons are for times when you users can choose only one option.
   }}
 </DoDont>
 
-### Only use for small groups of options
+**Only use for small groups of options**
 
 If the user can choose from lots of options, like currencies or states, use a [`Select`](/Develop/Select) component instead.
 
@@ -113,5 +150,5 @@ If the user can choose from lots of options, like currencies or states, use a [`
 
 ## Related components
 
-- [`Select`](/Develop/Select) - When users can only choose one option from a long list
-- [`Checkbox`](/Develop/Checkbox) – When users can choose 0 or multiple options from a list
+- [`Select`](/ui-components/Select) - When users can only choose one option from a long list
+- [`Checkbox`](/ui-components/Checkbox) – When users can choose 0 or multiple options from a list
