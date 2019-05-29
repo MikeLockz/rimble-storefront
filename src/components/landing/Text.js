@@ -7,6 +7,7 @@ const Text = styled.div`
   ${fontWeight}
   ${space}
   ${color}
+  list-style: none
 `;
 
 Text.span = Text.withComponent("span");

@@ -3,11 +3,11 @@ import React from "react";
 import defaultTheme from "../theme";
 import Nav from "../components/landing/nav";
 import Typography from "../components/landing/typography";
-import GatsbySidebar from "./gatsby-sidebar";
 import { Box, Flex, ThemeProvider } from "rimble-ui";
 import TableOfContents from "../components/documentation/TableOfContents";
 import { StaticQuery, graphql } from "gatsby";
-import ContributeBanner from "../components/documentation/ContributeBanner"
+import ContributeBanner from "../components/documentation/ContributeBanner";
+import StaticSideNav from "./staticSideNav";
 
 const Layout = ({ children, location, itemList }) => (
   <StaticQuery
@@ -26,7 +26,7 @@ const Layout = ({ children, location, itemList }) => (
           <Typography />
           <Nav />
           <Flex>
-            <GatsbySidebar location={location} itemList={itemList} />
+            <StaticSideNav />
 
             <Box
               width={"100%"}
