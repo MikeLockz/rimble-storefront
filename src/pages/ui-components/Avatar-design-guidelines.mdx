@@ -1,18 +1,103 @@
 ---
 title: Avatar
+type: documentation
+componentName: Avatar
+navigation: Components
 ---
 
 import {Flash, Box, Icon, Text, Link, Heading, Avatar,} from "rimble-ui"
 import DoDont from "../../components/documentation/DoDont";
 
 
-# Avatar design guidelines
 
-Use avatars to visually represent entities in your product, for example people, tokens, currency and companies.
+# Avatar
 
-*Want to build this component?* Read [`Avatar` documentation](/develop/Avatar)
+A basic avatar component. Use avatars to visually represent entities in your product, for example people, tokens, currency and companies.
 
-## Design
+**Import component**
+
+```jsx
+import { Avatar } from 'rimble-ui';
+```
+
+## Examples
+
+Different ways to use the `Avatar` component
+
+### Standard avatar
+
+<Avatar />
+
+```js is=react-live
+<Avatar />
+```
+
+### Standard with image
+
+<Avatar src="[https://airswap-token-images.s3.amazonaws.com/DAI.png](https://airswap-token-images.s3.amazonaws.com/DAI.png)" />
+
+```js is=react-live
+<Avatar src="[https://airswap-token-images.s3.amazonaws.com/DAI.png](https://airswap-token-images.s3.amazonaws.com/DAI.png)" />
+```
+
+### Custom size
+
+<Avatar
+size="100px"
+src="[https://airswap-token-images.s3.amazonaws.com/DAI.png](https://airswap-token-images.s3.amazonaws.com/DAI.png)"
+/>
+
+```js is=react-live
+<Avatar
+size="100px"
+src="[https://airswap-token-images.s3.amazonaws.com/DAI.png](https://airswap-token-images.s3.amazonaws.com/DAI.png)"
+/>
+```
+
+### Large
+
+<Avatar
+size="large"
+src="[https://airswap-token-images.s3.amazonaws.com/DAI.png](https://airswap-token-images.s3.amazonaws.com/DAI.png)"
+/>
+
+```js is=react-live
+### Large
+<Avatar
+size="large"
+src="[https://airswap-token-images.s3.amazonaws.com/DAI.png](https://airswap-token-images.s3.amazonaws.com/DAI.png)"
+/>
+```
+
+### Medium
+
+<Avatar
+size="large"
+src="[https://airswap-token-images.s3.amazonaws.com/DAI.png](https://airswap-token-images.s3.amazonaws.com/DAI.png)"
+/>
+
+```js is=react-live
+    <Avatar
+      size="large"
+      src="https://airswap-token-images.s3.amazonaws.com/DAI.png"
+    />
+```
+
+### Small
+
+<Avatar
+size="small"
+src="[https://airswap-token-images.s3.amazonaws.com/DAI.png](https://airswap-token-images.s3.amazonaws.com/DAI.png)"
+/>
+
+```js is=react-live
+    <Avatar
+      size="small"
+      src="https://airswap-token-images.s3.amazonaws.com/DAI.png"
+    />
+```
+
+# Design guidelines
 
 Some best practice for using `Avatar` in your product.
 
