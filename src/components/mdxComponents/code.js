@@ -31,8 +31,14 @@ import {
   MetaMaskButton,
   Link as RimbleLink,
   Text,
+  PublicAddress,
+  QR,
+  Table,
+  ToastMessage,
+  UPortButton,
 } from "rimble-ui";
 import ConnectionBanner from "@rimble/connection-banner";
+import NetworkIndicator from "@rimble/network-indicator";
 // import codeTheme from "../../../static/static/prism-ghcolors.css";
 import defaultTheme from "../../theme";
 
@@ -63,8 +69,14 @@ const localScope = {
   ThemeProvider,
   MetaMaskButton,
   ConnectionBanner,
+  NetworkIndicator,
   defaultTheme,
   Text,
+  PublicAddress,
+  QR,
+  Table,
+  ToastMessage,
+  UPortButton,
 };
 
 const prismMap = {
@@ -129,7 +141,6 @@ class Code extends React.Component {
           language={prismMap[lang] || lang}
           code={children.trim()}
           scope={localScope}
-          noInline={noInline}
         >
           <ThemeProvider theme={defaultTheme}>
             <Box mb={3}>
