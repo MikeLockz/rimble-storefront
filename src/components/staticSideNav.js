@@ -6,7 +6,11 @@ import Li from "./landing/Li";
 const StaticSideNav = () => (
   <nav>
     <Ul>
-      <Li>Components</Li>
+      <Li>
+        <RimbleGatsbyLink to={"/components"} activeClassName={"active"}>
+          Components
+        </RimbleGatsbyLink>
+      </Li>
       <Ul>
         <Li>
           <RimbleGatsbyLink
@@ -373,15 +377,20 @@ const StaticSideNav = () => (
         </Ul>
       </Ul>
       <Li>
-        <RimbleGatsbyLink to={"#"} activeClassName={"active"} />
+        <RimbleGatsbyLink to={"/guides"} activeClassName={"active"}>
+          Guides
+        </RimbleGatsbyLink>
       </Li>
-      <Li>Guides</Li>
       <Ul>
-        <Li>dApp UX</Li>
+        <Li>
+          <RimbleGatsbyLink to={"/guides/ux"} activeClassName={"active"}>
+            dApp UX
+          </RimbleGatsbyLink>
+        </Li>
         <Ul>
           <Li>
             <RimbleGatsbyLink
-              to={"guides/ux/transaction-states"}
+              to={"/guides/ux/transaction-states"}
               activeClassName={"active"}
             >
               Transaction States
@@ -389,18 +398,22 @@ const StaticSideNav = () => (
           </Li>
           <Li>
             <RimbleGatsbyLink
-              to={"guides/ux/connect-a-wallet"}
+              to={"/guides/ux/connect-a-wallet"}
               activeClassName={"active"}
             >
               Connect a wallet
             </RimbleGatsbyLink>
           </Li>
         </Ul>
-        <Li>dApp Content</Li>
+        <Li>
+          <RimbleGatsbyLink to={"guides/content"} activeClassName={"active"}>
+            dApp Content
+          </RimbleGatsbyLink>
+        </Li>
         <Ul>
           <Li>
             <RimbleGatsbyLink
-              to={"guides/content/crafting-tone"}
+              to={"/guides/content/crafting-tone"}
               activeClassName={"active"}
             >
               Crafting a tone of voice
@@ -408,7 +421,7 @@ const StaticSideNav = () => (
           </Li>
           <Li>
             <RimbleGatsbyLink
-              to={"guides/content/blockchain-vocab"}
+              to={"/guides/content/blockchain-vocab"}
               activeClassName={"active"}
             >
               Blockchain vocab
@@ -416,7 +429,7 @@ const StaticSideNav = () => (
           </Li>
           <Li>
             <RimbleGatsbyLink
-              to={"guides/content/writing-for-products"}
+              to={"/guides/content/writing-for-products"}
               activeClassName={"active"}
             >
               Writing for products
