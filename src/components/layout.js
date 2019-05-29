@@ -1,5 +1,4 @@
 import React from "react";
-// import ThemeProvider from "../components/landing/ThemeProvider";
 import defaultTheme from "../theme";
 import Nav from "../components/landing/nav";
 import Typography from "../components/landing/typography";
@@ -25,13 +24,16 @@ const Layout = ({ children, location, itemList }) => (
         <React.Fragment>
           <Typography />
           <Nav />
-          <Flex>
-            <StaticSideNav />
+          <Flex alignItems={"flex-start"}>
+            <Box py={3} mr={3} minWidth={"150px"}>
+              <StaticSideNav />
+            </Box>
 
             <Box
               width={"100%"}
               maxWidth={"960px"}
-              margin={["auto"]}
+              minHeight={"100%"}
+              mx={["auto"]}
               padding={3}
             >
               {children}

@@ -9,7 +9,10 @@ const StaticSideNav = () => (
       <Li>Components</Li>
       <Ul>
         <Li>
-          <RimbleGatsbyLink to={"/rimble-ui"} activeClassName={"active"}>
+          <RimbleGatsbyLink
+            to={"/components/rimble-ui"}
+            activeClassName={"active"}
+          >
             Rimble UI
           </RimbleGatsbyLink>
         </Li>
@@ -18,7 +21,7 @@ const StaticSideNav = () => (
           <Ul>
             <Li>
               <RimbleGatsbyLink
-                to={"/rimble-ui/installation"}
+                to={"/components/rimble-ui/installation"}
                 activeClassName={"active"}
               >
                 Installation
@@ -103,9 +106,247 @@ const StaticSideNav = () => (
               </RimbleGatsbyLink>
             </Li>
           </Ul>
+          <Li>Containers</Li>
+          <Ul>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Box"}
+                activeClassName={"active"}
+              >
+                Box
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Flex"}
+                activeClassName={"active"}
+              >
+                Flex
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Card"}
+                activeClassName={"active"}
+              >
+                Card
+              </RimbleGatsbyLink>
+            </Li>
+          </Ul>
+          <Li>Forms</Li>
+          <Ul>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Checkbox"}
+                activeClassName={"active"}
+              >
+                Checkbox
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Field"}
+                activeClassName={"active"}
+              >
+                Field
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Form"}
+                activeClassName={"active"}
+              >
+                Form
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Input"}
+                activeClassName={"active"}
+              >
+                Input
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Radio"}
+                activeClassName={"active"}
+              >
+                Radio
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Select"}
+                activeClassName={"active"}
+              >
+                Select
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Slider"}
+                activeClassName={"active"}
+              >
+                Slider
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Textarea"}
+                activeClassName={"active"}
+              >
+                Textarea
+              </RimbleGatsbyLink>
+            </Li>
+          </Ul>
+          <Li>Feedback</Li>
+          <Ul>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Loader"}
+                activeClassName={"active"}
+              >
+                Loader
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Pill"}
+                activeClassName={"active"}
+              >
+                Pill
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Progress"}
+                activeClassName={"active"}
+              >
+                Progress
+              </RimbleGatsbyLink>
+            </Li>
+          </Ul>
+          <Li>Actions</Li>
+          <Ul>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Button"}
+                activeClassName={"active"}
+              >
+                Button
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Link"}
+                activeClassName={"active"}
+              >
+                Link
+              </RimbleGatsbyLink>
+            </Li>
+          </Ul>
+          <Li>Alerts</Li>
+          <Ul>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Flash"}
+                activeClassName={"active"}
+              >
+                Flash
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Modal"}
+                activeClassName={"active"}
+              >
+                Modal
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/ToastMessage"}
+                activeClassName={"active"}
+              >
+                ToastMessage
+              </RimbleGatsbyLink>
+            </Li>
+          </Ul>
+          <Li>Information</Li>
+          <Ul>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Tooltip"}
+                activeClassName={"active"}
+              >
+                Tooltip
+              </RimbleGatsbyLink>
+            </Li>
+          </Ul>
+          <Li>Data</Li>
+          <Ul>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Table"}
+                activeClassName={"active"}
+              >
+                Table
+              </RimbleGatsbyLink>
+            </Li>
+          </Ul>
+          <Li>Copy</Li>
+          <Ul>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Heading"}
+                activeClassName={"active"}
+              >
+                Heading
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Text"}
+                activeClassName={"active"}
+              >
+                Text
+              </RimbleGatsbyLink>
+            </Li>
+          </Ul>
+          <Li>Image</Li>
+          <Ul>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Avatar"}
+                activeClassName={"active"}
+              >
+                Avatar
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Icon"}
+                activeClassName={"active"}
+              >
+                Icon
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Image"}
+                activeClassName={"active"}
+              >
+                Image
+              </RimbleGatsbyLink>
+            </Li>
+          </Ul>
         </Ul>
         <Li>
-          <RimbleGatsbyLink to={"/rimble-ui"} activeClassName={"active"}>
+          <RimbleGatsbyLink
+            to={"/components/web3-components"}
+            activeClassName={"active"}
+          >
             Web3 Components
           </RimbleGatsbyLink>
         </Li>
@@ -114,7 +355,7 @@ const StaticSideNav = () => (
           <Ul>
             <Li>
               <RimbleGatsbyLink
-                to={"/rimble-ui/installation"}
+                to={"/components/web3-components/ConnectionBanner"}
                 activeClassName={"active"}
               >
                 Network Indicator
@@ -122,23 +363,10 @@ const StaticSideNav = () => (
             </Li>
             <Li>
               <RimbleGatsbyLink
-                to={"/rimble-ui/theming"}
+                to={"/components/web3-components/NetworkIndicator"}
                 activeClassName={"active"}
               >
                 Connection Banner
-              </RimbleGatsbyLink>
-            </Li>
-          </Ul>
-        </Ul>
-        <Ul>
-          <Li>Getting Started</Li>
-          <Ul>
-            <Li>
-              <RimbleGatsbyLink
-                to={"/rimble-ui/theming"}
-                activeClassName={"active"}
-              >
-                Theming
               </RimbleGatsbyLink>
             </Li>
           </Ul>
@@ -151,14 +379,9 @@ const StaticSideNav = () => (
       <Ul>
         <Li>dApp UX</Li>
         <Ul>
-          <Li>Transaction States</Li>
-          <Li>Connect a wallet</Li>
-        </Ul>
-        <Li>dApp UX</Li>
-        <Ul>
           <Li>
             <RimbleGatsbyLink
-              to={"transaction-states"}
+              to={"guides/ux/transaction-states"}
               activeClassName={"active"}
             >
               Transaction States
@@ -166,10 +389,37 @@ const StaticSideNav = () => (
           </Li>
           <Li>
             <RimbleGatsbyLink
-              to={"connect-a-wallet"}
+              to={"guides/ux/connect-a-wallet"}
               activeClassName={"active"}
             >
               Connect a wallet
+            </RimbleGatsbyLink>
+          </Li>
+        </Ul>
+        <Li>dApp Content</Li>
+        <Ul>
+          <Li>
+            <RimbleGatsbyLink
+              to={"guides/content/crafting-tone"}
+              activeClassName={"active"}
+            >
+              Crafting a tone of voice
+            </RimbleGatsbyLink>
+          </Li>
+          <Li>
+            <RimbleGatsbyLink
+              to={"guides/content/blockchain-vocab"}
+              activeClassName={"active"}
+            >
+              Blockchain vocab
+            </RimbleGatsbyLink>
+          </Li>
+          <Li>
+            <RimbleGatsbyLink
+              to={"guides/content/writing-for-products"}
+              activeClassName={"active"}
+            >
+              Writing for products
             </RimbleGatsbyLink>
           </Li>
         </Ul>

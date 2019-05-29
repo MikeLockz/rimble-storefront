@@ -14,6 +14,7 @@ const RimbleLink = styled.a`
   &:hover {
     text-decoration: underline;
   }
+  text-decoration: ${props => (props.activeStyle ? `underline` : "none")};
 `;
 
 RimbleLink.propTypes = {

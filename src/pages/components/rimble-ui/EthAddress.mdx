@@ -21,15 +21,19 @@ import {
 } from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
 
-# EthAddress design guidelines
+# EthAddress
+
+## Examples
+
+## Design guidelines
 
 Use the `EthAddress` when you need to show an Ethereum address to the user for display purposes only. If you're looking for something with copy-to-clipboard functionality, use [`PublicAddress`](/Develop/PublicAddress) instead.
 
 *Want to build this component?* Read [`EthAddress` documentation](/Develop/EthAddress)
 
-## When to use each variation
+**When to use each variation**
 
-### Full address
+**Full address**
 
 When you need the user to confirm an address. This will allow them to double check it more accurately and increase confidence in their transaction.
 
@@ -56,7 +60,7 @@ When you need the user to confirm an address. This will allow them to double che
   <Button.Text>Cancel</Button.Text>
 </Card>
 
-### Truncated address
+**Truncated address**
 
 When the address acts more like meta data in your product. Like when you want to show a connected state or provide supporting information about a past transaction.
 
@@ -79,26 +83,26 @@ When the address acts more like meta data in your product. Like when you want to
   </tbody>
 </Table>
 
-## Design
+**Design**
 
 Some best practice for using `EthAddress` in your product.
 
-### Only show an address when necessary
+**Only show an address when necessary**
 
 You can search any public address in Etherscan and get a complete list of all past transactions for that address as well as the value of that account. If your dApp doesn't need you to publicly display your user's public addresses for all to see, it's probably safer for them if you don't.
 
-### Display with a label
+**Display with a label**
 
 Label an Ethereum address appropriately. Is it the address of your account or somebody else's? Or is just a transaction hash?
 
-## Research
+### Research
 
-### Users may not trust truncation
+**Users may not trust truncation**
 
 Public addresses can make new users nervous when transacting, so consider carefully when to use truncation. Research has shown that some inexperienced dApp users will copy and paste a truncated address into a new tab's URL bar to double check the address matches their wallet address.
 
 Full disclosure: this research was for blockchain news platform, Civil.
 
-### Those same users were less careful about other's addresses
+**Those same users were less careful about other's addresses**
 
 This behaviour wasn't repeated when the users were asked to send ETH to another wallet. They were keen to check the entire string of their own address, but would happily interact with a recipient's truncated address. Bear this in mind when deciding which addresses to truncate and which ones to display in full.

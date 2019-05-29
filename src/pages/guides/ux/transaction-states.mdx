@@ -2,7 +2,20 @@
 title: Transaction states
 ---
 
-import {Tooltip, Flash, Field, Table, Pill, Box, Icon, Text, Link, Heading, ToastMessage, Button} from "rimble-ui"
+import {
+  Tooltip,
+  Flash,
+  Field,
+  Table,
+  Pill,
+  Box,
+  Icon,
+  Text,
+  Link,
+  Heading,
+  ToastMessage,
+  Button
+} from "rimble-ui";
 import DoDont from "../../components/documentation/DoDont";
 
 # Transaction states
@@ -41,23 +54,31 @@ All blockchain actions require "Gas" or a "transaction fee". Users are not used 
 <DoDont>
   {{
     positive: (
-    <Text>
-    Explain gas:
-    <ul>
-      <li>In product onboarding</li>
-      <li>In a transaction summary (before submission)</li>
-      <li>If the user's wallet/account balance is empty. For example, "your account doesn't have enough funds to use any of our blockchain features"</li>
-    </ul>
-    </Text>
+      <Text>
+        Explain gas:
+        <ul>
+          <li>In product onboarding</li>
+          <li>In a transaction summary (before submission)</li>
+          <li>
+            If the user's wallet/account balance is empty. For example, "your
+            account doesn't have enough funds to use any of our blockchain
+            features"
+          </li>
+        </ul>
+      </Text>
     ),
     negative: (
-    <Text>
-    <ul>
-<li> Rely on your wallet provider (for example, MetaMask) to explain transaction fees</li>
-<li> Hope the user understands Gas</li>
-</ul>
-</Text>
-    ),
+      <Text>
+        <ul>
+          <li>
+            {" "}
+            Rely on your wallet provider (for example, MetaMask) to explain
+            transaction fees
+          </li>
+          <li> Hope the user understands Gas</li>
+        </ul>
+      </Text>
+    )
   }}
 </DoDont>
 
@@ -67,112 +88,118 @@ Ethereum transactions are complicated. Explaining everything under the hood isn'
 
 1. Confirm that the button they pressed to initiate the transaction worked. Be sure to point them to their wallet if they need to confirm the transaction there.
 
-*Example*
+_Example_
+
 <ToastMessage
   width={[1, 1, 1 / 2]}
-  message={'Change submitted'}
-  secondaryMessage={'Confirm in MetaMask'}
+  message={"Change submitted"}
+  secondaryMessage={"Confirm in MetaMask"}
 />
 
 2. Indicate that the transaction process is happening.
 
-*Example*
+_Example_
+
 <ToastMessage.Processing
   width={[1, 1, 1 / 2]}
-  message={'Processing change...'}
-  secondaryMessage={'This might take a few minutes'}
+  message={"Processing change..."}
+  secondaryMessage={"This might take a few minutes"}
 />
 
 3. If your users are more experienced in blockchain, you may want to signal when you can confirm the transaction has been taken on by a miner. Note: this could cause confusion for new and inexperienced users, so consider skipping until the transaction has been a success or failure.
 
-*Example*
+_Example_
+
 <ToastMessage.Processing
   width={[1, 1, 1 / 2]}
-  message={'First block confirmed'}
-  secondaryMessage={'Your change is in progress'}
+  message={"First block confirmed"}
+  secondaryMessage={"Your change is in progress"}
 />
 
 4.  Let users know once the thing they set out to do by pressing the button has happened. In the case of our demo, it was that the value of the smart contract had changed.
 
-*Example*
+_Example_
+
 <ToastMessage.Success
   width={[1, 1, 1 / 2]}
-  message={'Smart contract value changed'}
+  message={"Smart contract value changed"}
 />
 
 5. Let the user know if something has gone wrong and the transaction can't be completed. Include why the transaction failed and how to remedy the situation (if possible). Consider other UI for this state as it may require action from the user.
 
-*Example*
+_Example_
+
 <ToastMessage.Failure
   width={[1, 1, 1 / 2]}
-  message={'Value change failed'}
-  secondaryMessage={'Insert reason why or how to fix'}
+  message={"Value change failed"}
+  secondaryMessage={"Insert reason why or how to fix"}
 />
 
 ### Show states persistently too
+
 Our demo uses toast messages as the transaction speed is pretty quick, but they disappear automatically. So use other parts of the interface to provide updates on the process. Your users may not just watch their screen after submitting a transaction.
 
 Our pills can be a handy way of giving users this info at a glance.
 
 <Table>
-        <thead>
-          <tr>
-            <th>Transaction hash</th>
-            <th>Time</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              0xeb2317a1ae818be05c1bfdc818d5e2a5aa7ec61b389a7df6268bfd0d5d8e8cc0
-            </td>
-            <td />
-            <td>
-              <Pill mx={3} color={'blue'}>
-                {'Started'}
-              </Pill>
-              <br />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              0xeb2317a1ae818be05c1bfdc818d5e2a5aa7ec61b389a7df6268bfd0d5d8e8cc0
-            </td>
-            <td />
-            <td>
-              <Pill mx={3} color={'orange'}>
-                {' '}
-                {'Processing'}
-              </Pill>
-              <br />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              0xeb2317a1ae818be05c1bfdc818d5e2a5aa7ec61b389a7df6268bfd0d5d8e8cc0
-            </td>
-            <td />
-            <td>
-              <Pill mx={3} color={'green'}>
-                {'Confirmed'}
-              </Pill>
-              <br />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              0xeb2317a1ae818be05c1bfdc818d5e2a5aa7ec61b389a7df6268bfd0d5d8e8cc0
-            </td>
-            <td />
-            <td>
-              <Pill mx={3} color={'red'}>
-                {'Failed'}
-              </Pill>
-              <br />
-            </td>
-          </tr>
-        </tbody>
+  <thead>
+    <tr>
+      <th>Transaction hash</th>
+      <th>Time</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        0xeb2317a1ae818be05c1bfdc818d5e2a5aa7ec61b389a7df6268bfd0d5d8e8cc0
+      </td>
+      <td />
+      <td>
+        <Pill mx={3} color={"blue"}>
+          {"Started"}
+        </Pill>
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        0xeb2317a1ae818be05c1bfdc818d5e2a5aa7ec61b389a7df6268bfd0d5d8e8cc0
+      </td>
+      <td />
+      <td>
+        <Pill mx={3} color={"orange"}>
+          {" "}
+          {"Processing"}
+        </Pill>
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        0xeb2317a1ae818be05c1bfdc818d5e2a5aa7ec61b389a7df6268bfd0d5d8e8cc0
+      </td>
+      <td />
+      <td>
+        <Pill mx={3} color={"green"}>
+          {"Confirmed"}
+        </Pill>
+        <br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        0xeb2317a1ae818be05c1bfdc818d5e2a5aa7ec61b389a7df6268bfd0d5d8e8cc0
+      </td>
+      <td />
+      <td>
+        <Pill mx={3} color={"red"}>
+          {"Failed"}
+        </Pill>
+        <br />
+      </td>
+    </tr>
+  </tbody>
 </Table>
 
 ### Reference the action, not transaction
@@ -182,23 +209,23 @@ Use specific language throughout. If the transaction is actually transferring a 
 <DoDont>
   {{
     positive: (
-    <Text>
-    <ul>
-      <li>Sending Ether...</li>
-      <li>Vote cast</li>
-      <li>Cryptokitty failed to send</li>
-    </ul>
-    </Text>
+      <Text>
+        <ul>
+          <li>Sending Ether...</li>
+          <li>Vote cast</li>
+          <li>Cryptokitty failed to send</li>
+        </ul>
+      </Text>
     ),
     negative: (
-    <Text>
-    <ul>
-<li> Processing transaction...</li>
-<li> Transaction confirmed</li>
-<li> Transaction failed</li>
-</ul>
-</Text>
-    ),
+      <Text>
+        <ul>
+          <li> Processing transaction...</li>
+          <li> Transaction confirmed</li>
+          <li> Transaction failed</li>
+        </ul>
+      </Text>
+    )
   }}
 </DoDont>
 
@@ -209,25 +236,25 @@ Your dApp can detect a network as long as there's a web 3 provider. And once the
 <DoDont>
   {{
     positive: (
-    <ToastMessage.Failure
+      <ToastMessage.Failure
         width={[1, 1, 1 / 2]}
-        message={'Payment failed'}
+        message={"Payment failed"}
         secondaryMessage={"You didn't sign the contract in MetaMask"}
       />
     ),
     negative: (
-    <Box>
-    <ToastMessage.Failure
-        width={[1, 1, 1 / 2]}
-        message={'Payment failed'}
-        secondaryMessage={'You were on the wrong network'}
-      />
-      <ToastMessage.Failure
-        width={[1, 1, 1 / 2]}
-        message={'Payment failed'}
-        secondaryMessage={'Your balance is 0 Ether'}
-      />
-    </Box>
-    ),
+      <Box>
+        <ToastMessage.Failure
+          width={[1, 1, 1 / 2]}
+          message={"Payment failed"}
+          secondaryMessage={"You were on the wrong network"}
+        />
+        <ToastMessage.Failure
+          width={[1, 1, 1 / 2]}
+          message={"Payment failed"}
+          secondaryMessage={"Your balance is 0 Ether"}
+        />
+      </Box>
+    )
   }}
 </DoDont>
