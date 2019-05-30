@@ -76,7 +76,7 @@ class DocLayout extends React.Component {
         return <div>Could not build page </div>;
       }
 
-      const itemList = reduceNavTwo(data.allMdx);
+      // const itemList = reduceNavTwo(data.allMdx);
 
       return (
         <Layout {...props} itemList={itemList}>
@@ -113,21 +113,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         docsLocation
-      }
-    }
-    allMdx {
-      edges {
-        node {
-          frontmatter {
-            title
-            componentName
-            navigation
-            type
-          }
-          fields {
-            slug
-          }
-        }
       }
     }
     mdx(id: { eq: $id }) {
