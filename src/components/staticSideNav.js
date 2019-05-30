@@ -32,7 +32,7 @@ const StaticSideNav = () => (
               </RimbleGatsbyLink>
             </Li>
           </Ul>
-          <Li>Design</Li>
+          {/* <Li>Design</Li>
           <Ul>
             <Li>
               <RimbleGatsbyLink
@@ -51,13 +51,13 @@ const StaticSideNav = () => (
               </RimbleGatsbyLink>
             </Li>
             <Li>
-              <RimbleGatsbyLink
-                to={"/components/rimble-ui/typography"}
-                activeClassName={"active"}
-              >
-                Typograhy
-              </RimbleGatsbyLink>
-            </Li>
+            //   <RimbleGatsbyLink
+            //     to={"/components/rimble-ui/typography"}
+            //     activeClassName={"active"}
+            //   >
+            //     Typography
+            //   </RimbleGatsbyLink>
+            // </Li>
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/spacing"}
@@ -66,7 +66,7 @@ const StaticSideNav = () => (
                 Spacing
               </RimbleGatsbyLink>
             </Li>
-          </Ul>
+          </Ul> */}
           <Li>Ethereum UI</Li>
           <Ul>
             <Li>
