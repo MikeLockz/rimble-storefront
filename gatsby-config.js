@@ -44,6 +44,29 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-mdx`,
+      options: {
+        defaultLayouts: { default: require.resolve("./src/templates/docs.js") },
+        remarkPlugins: [require("gatsby-transformer-remark")],
+        gatsbyRemarkPlugins: [
+          `gatsby-remark-katex`,
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 1035,
+              sizeByPixelDensity: true
+            }
+          },
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: "post-toc-anchor"
+            }
+          }
+        ]
+      }
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "docs",
