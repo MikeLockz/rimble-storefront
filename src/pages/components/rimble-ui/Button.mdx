@@ -9,7 +9,7 @@ import DoDont from "../../../components/documentation/DoDont";
 
 # Button
 
-Use the Button component when you want users to perform an action like connecting their Ethereum account or starting a transaction. It contains a label with an optional icon before or after the label. It maps to a `<button type='button'>` element and extends [`Box`](/ui-components/Box).
+Use the Button component when you want users to perform an action like connecting their Ethereum account or starting a transaction. It contains a label with an optional icon before or after the label. It maps to a `<button type='button'>` element and extends [`Box`](/components/rimble-ui/Box).
 
 **Import component**
 
@@ -109,9 +109,7 @@ Use to give users reassurance that the action they want is happening. If possibl
 
 Use when you want a primary action to navigate the user to a new page or area. Use action words as the button label.
 
-_This also requires you to import the Link component from the rimble-ui library._
-
-**[Learn More](/design-guidelines/Button)**
+_This also requires you to import the [`Link`](/components/rimble-ui/Link) component from the rimble-ui library._
 
 ```js is=react-live
 <Button as="a" href="#!" target="\_blank" title="Learn more">
@@ -127,17 +125,13 @@ _This also requires you to import the Link component from the rimble-ui library.
 </Button.Outline>
 ```
 
-### Color variants
-
-Use 'success' and 'danger' color styles.
-
-**Success**
+**Success color style**
 
 ```js is=react-live
 <Button variant="success">Success button</Button>
 ```
 
-**Danger**
+**Danger color style**
 
 ```js is=react-live
 <Button variant="danger">Danger button</Button>
@@ -159,9 +153,9 @@ Use 'success' and 'danger' color styles.
 </div>
 ```
 
-### Component props
+## Component props
 
-Button's icon inherits all the props from [Icon](/develop/Icon), but also includes these:
+Button's icon inherits all the props from [Icon](/components/rimble-ui/Icon), but also includes these:
 
 | Prop      | Type    | Values                                                           | Default | Description                                  |
 | --------- | ------- | ---------------------------------------------------------------- | ------- | -------------------------------------------- |
@@ -172,9 +166,9 @@ Button's icon inherits all the props from [Icon](/develop/Icon), but also inclu
 | iconPos   | string  | left, right                                                      | left    | Sets Icon position inside button             |
 | iconOnly  | boolean | true, false                                                      | true    | Sets Button dimensions for icon-only buttons |
 
-### Styled-system props
+## Styled-system props
 
-`Button` uses all the style props from [Box](/develop/Box), but also includes these:
+`Button` uses all the style props from [Box](/components/rimble-ui/Box), but also includes these:
 
 | Prop         | CSS property                   | Function     | Theme field  |
 | ------------ | ------------------------------ | ------------ | ------------ |
@@ -210,9 +204,9 @@ Some best practices for using `Button` in your product.
   }}
 </DoDont>
 
-**Don’t use buttons for navigational links**
+**Don’t use `button` for navigational links**
 
-Buttons are for action-based tasks. Use Button.Text instead.
+`Button` is for action-based tasks. Use `Button.Text` instead.
 
 <DoDont>
   {{
@@ -221,23 +215,23 @@ Buttons are for action-based tasks. Use Button.Text instead.
   }}
 </DoDont>
 
-**Keep button position consistent**
+**Keep position consistent**
 
 This will let users know where to look when they want to perform actions
 
 **Consider visual hierarchy of buttons**
 
-Don’t use too many buttons together on one piece of interface: prioritise the most important action. Use Button.Text and Button.Outline to give your actions visual hierarchy
+Don’t use too many buttons together on one piece of interface: prioritise the most important action. Use `Button.Text` and `Button.Outline` to give your actions visual hierarchy
 
 <TransactionFeeCard />
 
 ## Content
 
-Some best practices for writing Button microcopy.
+Some best practices for writing `Button` microcopy.
 
 **Keep copy concise**
 
-Don’t use articles (a, the, an) in button microcopy. This will make your button quicker to scan and shorter.
+Don’t use articles (a, the, an) in microcopy. This will make your button quicker to scan and shorter.
 
 <DoDont>
   {{
@@ -304,5 +298,5 @@ Universally understood actions like "Save", "Next" and "Previous" etc may not ne
 
 ## Related components
 
-- [MetaMaskButton](/ui-components/MetaMaskButton) – a ready-styled button to tell your users that they can connect with MetaMask
-- [UPortButton](/ui-components/UPortButton) – a ready-styled button ready to tell your users that they can connect with uPort
+- [MetaMaskButton](/components/rimble-ui/MetaMaskButton) – a ready-styled button to tell your users that they can connect with MetaMask
+- [UPortButton](components/rimble-ui/UPortButton) – a ready-styled button ready to tell your users that they can connect with uPort

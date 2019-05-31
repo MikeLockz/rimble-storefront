@@ -1,0 +1,76 @@
+---
+Title: If they have no ETH
+---
+
+import DoDont from "../../../components/documentation/DoDont";
+import { Text } from "rimble-ui"
+
+# If they have no ETH
+
+If your user has been funnelled into the connection flow because they were attempting an on-chain action, it's important to check their balance once they've accepted the connection request. It's at this point that you can tell whether or not they'll be able to complete the action they've set out to do. If their balance is too low, you should let them know and offer some help on how to remedy the situation.
+
+You have a few options:
+
+**Integrate an on-ramp**
+
+This is probably what we'd recommend most as it keeps the user in your dApp and means the user won't have to send crypto from an exchange. A service like [Moonpay](https://moonpay.io) or [Wyre](https://sendwyre.com) will allow you to integrate a crypto purchasing flow directly into your dApp. However this will cost you some integration fees.
+
+**Send your users to an exchange**
+
+Tell users that they can head to Coinbase or another exchange to purchase Ether and then send it to their account from there.
+
+**Explain how to send from another account**
+
+Remind users that if they have other accounts with Ether in them, they can send it to their connected account without having to go through an exchange. Show the user their Ethereum address and QR code to make it easier to copy/paste or scan using their wallet application.
+
+Progressive disclosure can be used to add more detail...
+
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+      <ul>
+      <li>Give users a sense of how much they'll need to cover transaction fees and provide a fiat currency to provide context if possible</li>
+      <li>Set user expectations: it can take a while to get set up on an exchange</li>
+      <li>Indicate that you're waiting for some user action – they may not be expecting to have to do anything if they haven't read all the content</li>
+      </ul>
+      </Text>
+    ),
+    negative: (
+    <Text>
+    <ul>
+    <li>Baffle your users with talk of gas limits etc – save any mention of transaction fee configuration to the transaction itself if necessary</li>
+    <li>Expect users to know how to get ETH</li>
+    </ul>
+    </Text>
+    ),
+  }}
+</DoDont>
+
+
+## What are transaction fees?
+
+New users may be wondering what the heck transaction fees are. So you may want to explain what the fees are paying for.
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+      <ul>
+      <li>Explain that your fees pay to use the blockchain, much like you pay a fee for using a credit card</li>
+      <li>If you want to go into more detail, talk in benefits: remind the user of the value the blockchain brings them – these should sound very similar to the reasons you built your application using blockchain technology</li>
+      </ul>
+      </Text>
+    ),
+    negative: (
+    <Text>Get bogged down in talk of incentivisation and miners unless your dApp is aimed at a technical audience. Most Web 2 applications don't go into detail about what's going on under the hood unless they have an explicit engineering focus. This rule should apply in Web3 too.</Text>
+    ),
+  }}
+</DoDont>
+
+Now your users are connected and hopefully have some Ether (or know how to get some). They're now set to use your blockchain features.
+
+---
+
+As they use your dApp more often they'll realise that having ETH is part and parcel of using it, they'll understand that they need to be on a certain network and they'll breeze through the requests.

@@ -70,19 +70,15 @@ Choose the colour of your `Tooltip`.
 </Tooltip>
 ```
 
-**Component props**
+## Component props
 
 `Tooltip` will pass any props that are defined on its component and uses the following:
 
-**Styled-system props**
+## Styled-system props
 
-`Tooltip` uses all the style props from [Text](/text).
+`Tooltip` uses all the style props from [Text](/components/rimble-ui/Text).
 
 ## Design guidelines
-
-Use the `Tooltip` component to provide supporting explanation about a piece of the UI or a term used in the copy.
-
-**Design and content**
 
 Some best practices for using `Tooltip` in your product.
 
@@ -138,7 +134,7 @@ Tooltips are for elaboration. Labels next to UI elements are always better than 
 
 **Keep tooltips short**
 
-Don't include too much text in a tooltip. They're for short clarification or elaboration. If you need more than a couple of sentences, consider using a [modal](/Develop/Modal).
+Don't include too much text in a tooltip. They're for short clarification or elaboration. If you need more than a couple of sentences, consider using a [modal](/components/rimble-ui/Modal).
 
 **Some suggested uses**
 
