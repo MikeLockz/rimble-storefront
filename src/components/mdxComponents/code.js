@@ -35,7 +35,7 @@ import {
   QR,
   Table,
   ToastMessage,
-  UPortButton,
+  UPortButton
 } from "rimble-ui";
 import ConnectionBanner from "@rimble/connection-banner";
 import NetworkIndicator from "@rimble/network-indicator";
@@ -76,7 +76,7 @@ const localScope = {
   QR,
   Table,
   ToastMessage,
-  UPortButton,
+  UPortButton
 };
 
 const prismMap = {
@@ -96,7 +96,7 @@ class Code extends React.Component {
   };
 
   render() {
-    const { is, children, lang, noInline } = this.props;
+    const { is, children, lang } = this.props;
 
     // if no `is` default to inline code
     if (!is) {

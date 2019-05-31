@@ -1,0 +1,55 @@
+---
+Title: Before they connect
+---
+
+import DoDont from "../../../components/documentation/DoDont";
+import { Text } from "rimble-ui";
+
+# Before they connect
+
+To most, the blockchain is an alien but exciting world. Interacting with it is fundamentally different to a lot of what we're used to so it's a good idea to give your users a friendly heads up. This is a bit like a checklist to make sure they do connect successfully and fully prepared to use your dApp.
+
+This is something that will lose its importance over time so you should consider the returning users' experience. You could configure it to only display for new sessions or make it very easy to skip through using a big, obvious button that also sticks to the bottom of the screen on mobile.
+
+Here's some good generic things you should let your users know about. Although you may want to tailor this to your dApp if something else more pressing springs to mind.
+
+## The blockchain is public
+
+With decentralisation comes greater transparency and less safeguards. New users are always surprised that you can't recover a wallet or its funds if they lose their seed phrase. They'd be just as shocked to find out that you can paste their Ethereum address into a site like Etherscan and see everything they've ever done on the blockchain.
+
+"But it's an anonymous jumble of numbers and letters!" we hear you say... However if your dApp collects personal info like a twitter account or just a name, it's possible to map that address to a person. Not all users will be comfortable with this.
+
+Even if your dApp doesn't collect personal info, some users may not be comfortable using your dApp with an account that they also use for large value transactions because it can be tracked, posing a security risk.
+
+So it's important you remind your users that this is the case and that they should only connect an account they're comfortable with being linked to their activity on your dApp.
+
+Depending on how savvy you think your main users are, you may want to suggest they create an Ethereum account just for using your dApp and fund that account when they need to.
+
+## Have some Ether for fees
+
+Unless you're fortunate enough to be able to pay transaction fees on behalf of your users, it's a good idea to warn them here that using the blockchain requires fees.
+
+There's nothing more annoying than hidden fees, so this is a good opportunity to be open about them, help users decide which account to connect with (i.e. one with funds in) and tell them where they can go to get funds.
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+        Use progressive disclosure if you want to offer more detail – you don't
+        need to go into great detail here, this is just about a heads up, not
+        explaining transaction fees conceptually
+      </Text>
+    ),
+    negative: <Text>Assume users know where to get crypto</Text>
+  }}
+</DoDont>
+
+## Connect the right account
+
+Most wallet providers e.g. MetaMask and mobile wallet browsers allow you to hold multiple Ethereum accounts. Newer users may not have played around with this feature yet, but more seasoned users will probably have experimented with using multiple accounts for different things. As this side of things is handled by the provider, all you can do is remind the user to make sure the account that's active in their provider is the one they definitely want to connect with.
+
+You may want to phrase it like "**If you have multiple accounts,** make sure the one you want to connect with is active in MetaMask" so that you don't confuse users who aren't aware of this possibility. This gives them the signal that they can ignore it.
+
+So now your user's ready to connect, it's time to help them navigate the various requests and help them use MetaMask.
+
+[Next up: help users with MetaMask](/guides/ux/connect-a-wallet-metamask)

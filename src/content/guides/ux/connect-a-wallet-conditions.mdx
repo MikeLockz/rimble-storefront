@@ -1,0 +1,195 @@
+---
+Title: Make sure the conditions are right to connect
+---
+
+import DoDont from "../../../components/documentation/DoDont";
+import { Text } from "rimble-ui";
+
+# Make sure the conditions are right to connect
+
+Connection requires some technical preparation that you need to guide new users through. This involves helping them use the right browser, access the right network and in the case of desktop, install MetaMask. But at the same time it doesn't create a great experience to ram this information down a user's throat as soon as they land on your dApp.
+
+## Don't limit exploration
+
+dApps are still a new phenomenon so it's important to let your users explore in their own time. Connecting is a commitment and users need to understand the value of it so let them use all your features that don't require a connection even if they're using an unsupported browser or are on the wrong network.
+
+Asking them to connect before they've even taken a look around is like those irritating sites that ask you to subscribe to their newsletter as soon as you land.
+
+That doesn't mean you can't let your users know that they won't be able to connect should they choose to. Use passive UI that educates but doesn't prevent the user from taking a look around.
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+        <ul>
+          <li>Let the user explore before connecting</li>
+          <li>Only ask them to connect when they need to</li>
+          <li>
+            Educate them passively – don't force them to learn if they don't
+            need to know right now
+          </li>
+        </ul>
+      </Text>
+    ),
+    negative: (
+      <Text>
+        <ul>
+          <li>
+            Ask the user to accept a connection or signature request as soon as
+            they land on your dApp
+          </li>
+          <li>
+            Block the user from exploring your dApp until they've connected, if
+            you don't need to be connected to browse
+          </li>
+        </ul>
+      </Text>
+    )
+  }}
+</DoDont>
+
+**Connection banner**
+
+[Download component](https://www.npmjs.com/package/@rimble/connection-banner)
+
+Our connection banner persists on a user's screen until they meet the right conditions. However it doesn't prevent the user from doing anything. It will warn a user that:
+
+- They're on the wrong network
+- They don't have MetaMask installed
+- They're not in the right browser to use the dApp
+
+**Network indicator**
+
+[Download component](https://www.npmjs.com/package/@rimble/network-indicator)
+
+The network indicator lets a user know which network they're on (or if one is even detected) and whether that's the correct network to be on. A tooltip is available to offer further explanation. You set a required network and it will let the user know when they're not on that network and let them know to switch.
+
+## Blocking the user
+
+This depends on what kind of experience the user gets while being on the wrong network.
+
+- If you display the same content regardless of what network the user is on, you don't need to block them until they go to transact
+- If your users are going to get different content if they're connected on Rinkeby compared to Main net (for example), you should block them when they go to connect
+
+This messaging should persist and never be used in UI that disappears automatically like a Toast message.
+
+For new users they might not even be ready to switch to a correct network. You might need to get them "Web3-ready" first. This isn't a straightforward process so your message needs to map to the user's situation. Bear in mind that users that see messages related to being on the wrong browser or not having MetaMask installed are likely to be new to the space, so will need more instruction.
+
+### Not a Web3 browser
+
+**If they're on a browser that doesn't support Web3 at all, e.g. any traditional mobile browser or a desktop browser like Safari that doesn't support extensions.**
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+        <ul>
+          <li>Tell them to switch to a browser that will support Web3</li>
+          <li>Chrome, Firefox, Opera or Brave for desktop users</li>
+          <li>A mobile wallet browser for mobile users</li>
+        </ul>
+      </Text>
+    ),
+    negative: (
+      <Text>
+        <ul>
+          <li>
+            Just provide a boilerplate "install MetaMask" message as this won't
+            work
+          </li>
+          <li>Just tell them their browser doesn't support Web3</li>
+          <li>Use "Web3" as a term</li>
+        </ul>
+      </Text>
+    )
+  }}
+</DoDont>
+
+### Web3 not detected
+
+**If they're on a desktop browser that doesn't have MetaMask installed but supports the extension**
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+        <ul>
+          <li>
+            Explain that MetaMask is a browser extension that will allow you to
+            use the dApp
+          </li>
+          <li>Provide them a link to download MetaMask</li>
+          <li>
+            Give them some context as to what features this will unlock in your
+            dApp e.g. MetaMask will let you use our blockchain features, like
+            buying crypto collectibles
+          </li>
+          <li>
+            Set their expectations that MetaMask may take some time to set up
+          </li>
+        </ul>
+      </Text>
+    ),
+    negative: (
+      <Text>
+        <ul>
+          <li>Expect users to go and find MetaMask themselves</li>
+          <li>Assume users know what MetaMask is</li>
+          <li>
+            Start explaining MetaMask things like seed phrases here to avoid
+            overwhelming the user – that's MetaMask's job
+          </li>
+        </ul>
+      </Text>
+    )
+  }}
+</DoDont>
+
+If your dApp experience is good on mobile, you may want to direct users to download and use a mobile wallet instead of going through the MetaMask set-up process
+
+### Wrong network
+
+**If you can detect Web3 but not the required network**
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+        <ul>
+          <li>Tell the user what network they need to be on</li>
+          <li>
+            Tell them where to change it (Desktop: in MetaMask, Mobile: in
+            Settings)
+          </li>
+          <li>
+            Be explicit about the above in the title – this is the main
+            information they need and users, especially experienced users, are
+            likely to just skim the heading
+          </li>
+          <li>
+            Tell them their current network – this acts as a good keyword for
+            them to hunt down the right place to change networks
+          </li>
+          <li>
+            Avoid words like "connecting" as this can cause confusion with
+            connecting to the dApp – "Set your network to X" or "Switch to X
+            network" work better and differentiate this process from connecting
+          </li>
+        </ul>
+      </Text>
+    ),
+    negative: (
+      <Text>
+        <ul>
+          <li>Assume users know which network they're on</li>
+          <li>Assume users understand what a network is</li>
+          <li>Assume they know where to change networks</li>
+        </ul>
+      </Text>
+    )
+  }}
+</DoDont>
+
+These modals should help get the user ready to connect on the right network. Next up there's some stuff new users should know and experienced users should be reminded of...
+
+[Next up: give your users a heads up](/guides/ux/connect-a-wallet-before)
