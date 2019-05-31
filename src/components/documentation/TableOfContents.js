@@ -1,8 +1,8 @@
 import React from "react";
 import Anchor from "antd/lib/anchor";
-import "antd/lib/anchor/style/css";
-
-const { Link } = Anchor;
+import { Link as RimbleLink, Box } from "rimble-ui";
+import { navigate } from "@reach/router";
+import "./TableOfContents.css";
 
 const filterAnchorDetails = anchors => {
   let last_depth = 0;
@@ -46,14 +46,37 @@ export default function TableOfContents() {
     data.map(item => {
       if (item.children.length > 0) {
         return (
-          <Link href={item.href} title={item.title} key={item.href}>
-            {loop(item.children)}
-          </Link>
+          <Box key={item.href} className={`ant-anchor-link`}>
+            <RimbleLink
+              href={"javascript:;"}
+              title={item.title}
+              className={"ant-anchor-link-title"}
+              onClick={() => {
+                navigate(item.href);
+              }}
+            >
+              {loop(item.children)}
+            </RimbleLink>
+          </Box>
         );
       }
-      return <Link href={item.href} title={item.title} key={item.href} />;
+      return (
+        <Box key={item.href}>
+          <RimbleLink
+            href={"javascript:;"}
+            title={item.title}
+            onClick={() => {
+              navigate(item.href);
+            }}
+          >
+            {item.title}
+          </RimbleLink>
+        </Box>
+      );
     });
   return (
-    <Anchor style={{ margin: "50px 50px 0px 0px" }}>{loop(anchors)}</Anchor>
+    <Anchor style={{ margin: "50px 50px 0px 0px" }} showInkInFixed>
+      {loop(anchors)}
+    </Anchor>
   );
 }

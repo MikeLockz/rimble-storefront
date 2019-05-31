@@ -37,7 +37,7 @@ export default {
   },
   colors: {
     primary: blurple.base,
-    // "primary-light": blurple.light[1],
+    "primary-light": blurple.light[1],
     "primary-dark": blurple.dark[1],
     blue: baseColors.consensysblue,
     copyColor: "#3F3D4B",
@@ -55,7 +55,7 @@ export default {
     "near-white": "#f4f4f4",
     white: "#fff",
     transparent: "transparent",
-    "primary-light": "#F2F4F7",
+    // "primary-light": "#F2F4F7",
     blacks: [
       "rgba(0,0,0,.0125)",
       "rgba(0,0,0,.025)",
