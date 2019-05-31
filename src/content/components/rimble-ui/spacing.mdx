@@ -1,5 +1,21 @@
 ---
 title: Spacing
+componentName: Button
 ---
 
+import PropsTable from "../../../components/propstable";
+
 # Spacing
+
+## Props
+
+export default ({ children, tableOfContents, propMetaData, ...props }) => (
+  <div className="my custom layout">
+    <h1>{tableOfContents}</h1>
+    <div>{children}</div>
+    <div>{JSON.stringify(props, null, 2)}</div>
+    <PropsTable propMetaData={propMetaData} />
+  </div>
+);
+
+;

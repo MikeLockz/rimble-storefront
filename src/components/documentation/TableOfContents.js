@@ -2,7 +2,7 @@ import React from "react";
 import Anchor from "antd/lib/anchor";
 import { Link as RimbleLink, Box } from "rimble-ui";
 import { navigate } from "@reach/router";
-import "./TableOfContents.css";
+// import "./TableOfContents.css";
 
 const filterAnchorDetails = anchors => {
   let last_depth = 0;
@@ -61,10 +61,11 @@ export default function TableOfContents() {
         );
       }
       return (
-        <Box key={item.href}>
+        <Box key={item.href} className={`ant-anchor-link`}>
           <RimbleLink
             href={"javascript:;"}
             title={item.title}
+            className={"ant-anchor-link-title"}
             onClick={() => {
               navigate(item.href);
             }}
@@ -75,8 +76,8 @@ export default function TableOfContents() {
       );
     });
   return (
-    <Anchor style={{ margin: "50px 50px 0px 0px" }} showInkInFixed>
-      {loop(anchors)}
-    </Anchor>
+    <Box width={"150px"} mt={4} mb={4} mr={4}>
+      <Anchor showInkInFixed>{loop(anchors)}</Anchor>
+    </Box>
   );
 }

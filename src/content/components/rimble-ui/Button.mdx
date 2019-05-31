@@ -6,11 +6,11 @@ componentName: Button
 import { Button, Box, Flex } from "rimble-ui";
 import TransactionFeeCard from "../../../components/documentation/snippets/TransactionFeeCard.js";
 import DoDont from "../../../components/documentation/DoDont";
+import PropsTable from "../../../components/propstable.js";
 
 # Button
 
 Use the Button component when you want users to perform an action like connecting their Ethereum account or starting a transaction. It contains a label with an optional icon before or after the label. It maps to a `<button type='button'>` element and extends [`Box`](/components/rimble-ui/Box).
-
 **Import component**
 
 ```lang=jsx
@@ -170,22 +170,7 @@ Button's icon inherits all the props from [Icon](/components/rimble-ui/Icon), b
 
 `Button` uses all the style props from [Box](/components/rimble-ui/Box), but also includes these:
 
-| Prop         | CSS property                   | Function     | Theme field  |
-| ------------ | ------------------------------ | ------------ | ------------ |
-| position     | position                       | position     | none         |
-| color        | color                          | color        | colors       |
-| bg           | background-color               | bg           | none         |
-| height       | height                         | height       | heights      |
-| m            | margin                         | space        | space        |
-| px           | padding-right and padding-left | px           | space        |
-| py           | padding-top and padding-bottom | py           | space        |
-| border       | border-width                   | border       | borderWidths |
-| borderColor  | border-color                   | borderColor  | colors       |
-| borderRadius | border-radius                  | borderRadius | radii        |
-| boxShadow    | box-shadow                     | boxShadow    | shadows      |
-| fontSize     | font-size                      | fontSize     | fontSizes    |
-| fontFamily   | font-family                    | fontFamily   | fonts        |
-| fontWeight   | font-weight                    | fontWeight   | fontWeights  |
+<PropsTable propMetaData={props.propMetaData} />
 
 ## Design guidelines
 

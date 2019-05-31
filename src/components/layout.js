@@ -24,7 +24,7 @@ const Layout = ({ children, location, itemList }) => (
         <React.Fragment>
           <Typography />
           <Nav />
-          <Flex alignItems={"flex-start"}>
+          <Flex alignItems={"space-between"}>
             <Box py={3} mr={3} minWidth={"150px"}>
               <StaticSideNav />
             </Box>

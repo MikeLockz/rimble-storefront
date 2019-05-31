@@ -96,6 +96,11 @@ exports.createPages = ({ graphql, actions }) => {
         }
         // Create blog posts pages.
         result.data.allMdx.edges.forEach(async ({ node }) => {
+          // console.log(
+          //   "componentName/title: ",
+          //   node.frontmatter.componentName,
+          //   node.frontmatter.title
+          // );
           if (
             typeof node.internal !== "undefined" &&
             node.internal.type === `Mdx` &&
