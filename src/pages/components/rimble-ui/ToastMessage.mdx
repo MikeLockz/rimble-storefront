@@ -17,9 +17,9 @@ import DoDont from "../../../components/documentation/DoDont";
 
 # ToastMessage
 
-Use toast messages to provide updates about a process. The `ToastMessage` component extends [Box](/box).
+Use toast messages to provide updates about a process. The `ToastMessage` component extends [Box](/components/rimble-ui/Box).
 
-- *Want to find out about the provider?* Read [ToastMessage.provider documentation](/toast-message-provider)
+- *Want to find out about the provider?* Read [ToastMessage.provider documentation](/components/rimble-ui/ToastMessage-provider)
 
 **Import component**
 
@@ -141,13 +141,13 @@ Ready-made messages to help users understand what's happening with a process the
 />
 ```
 
-**Component props**
+## Component props
 
 `ToastMessage` will pass any props that are defined on its component and uses the following:
 
-**Styled-system props**
+## Styled-system props
 
-`ToastMessage` uses all the style props from [Box](/box).
+`ToastMessage` uses all the style props from [`Box`](/components/rimble-ui/Box).
 
 ## Design guidelines
 
@@ -246,7 +246,7 @@ This link should support your update and must be optional. This might be to prov
   }}
 </DoDont>
 
-**Content**
+## Content
 
 Some best practices for writing `ToastMessages`.
 
@@ -351,7 +351,7 @@ If you explain what's happened you don't need to use terms like "successfully" w
 
 **Failure messages**
 
-_Note: it may be preferable to use alternative components like [`Modal`](/Develop/Modal) to bring a transaction failure to a user's attention, as they can't be missed and provide more space for explanation._
+_Note: it may be preferable to use alternative components like [`Modal`](/components/rimble-ui/Modal) to bring a transaction failure to a user's attention, as they can't be missed and provide more space for explanation._
 
 Where possible, explain the reason for failure and offer a suggestion of what to do next. And use the action to help the user remedy the situation.
 
@@ -404,4 +404,4 @@ Echo the language the user interacted with to initiate the action in the failure
 
 ### Related components
 
-- [`Modal`](/Develop/Modal) – you may want to use this component for transaction failures as it could be considered a critical information
+- [`Modal`](/components/rimble-ui/Modal) – you may want to use this component for transaction failures as it could be considered a critical information

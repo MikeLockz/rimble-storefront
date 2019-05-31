@@ -1,0 +1,139 @@
+---
+Title: Before they connect
+---
+
+import DoDont from "../../../components/documentation/DoDont";
+import { Text, Link } from "rimble-ui"
+
+# Help users with MetaMask
+
+Having to interact with a third party extension in order to use a web application is already a bizarre experience for most users so you shouldn't assume your user knows what to do. There's a good chance your user is a little confused so clear, instructional language can help them progress.
+
+The connection request and signature request modals will only appear on desktop because in mobile wallet browsers, the wallet interface will handle these requests and obscure your dApp's interface.
+
+In testing we found these modals performed best when they were simple and instructional, focussed just on the task at hand.
+
+## The connection request
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+      <ul>
+      <li>Warn them that a request should appear</li>
+        <li>Tell them where to find the request if it doesn't appear</li>
+        <li>Indicate that you're waiting for some user action – they may not be expecting to have to do anything if they haven't read all the content
+</li>
+        <li>Tell them their current network – this acts as a good keyword for them to hunt down the right place to change networks</li>
+      <li>Let them know it won't cost any Ether – to them it's a blockchain action so it's important to mention this won't include transaction fee</li>
+      </ul>
+      </Text>
+    ),
+    negative: (
+    <Text>
+    <ul>
+    <li>Mention subsequent steps – keep it focussed on the accepting the request</li>
+    <li>Expect your users to hunt down the request if it doesn't appear</li>
+    </ul>
+    </Text>
+    ),
+  }}
+</DoDont>
+
+## Help them sign the message
+
+After signing a connection request, the user will be asked to deal with yet another request. If you're not paying attention this can feel like something you've literally just done. So it's important to flag this as something different and demonstrate that this extra step has value: protecting your account. We recommend calling it out as "Verifying" the account you've just connected – in a similar way to how we're used to verifying email addresses in the traditional web.
+
+*"To connect securely, sign the message in your MetaMask extension"* is the Web 3 equivalent of *"To log in securely, click the link we've just emailed you".*
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+      <ul>
+      <li>In addition to all the advice for the connection request, frame this as a security procedure – a way to help you connect securely</li>
+        <li>Explain that this is to prove ownership of the account</li>
+        <li>Use the word "connect" – this will help users understand that this is something they need to do to connect. This is especially important when a connection request isn't triggered in this flow.
+</li>
+        <li>This might be because the user has recently accepted the connection request or because your dApp hasn't implemented <Link href="https://medium.com/metamask/eip-1102-preparing-your-dapp-5027b2c9ed76"
+  target="_blank"
+  title="Read about EIP1102 on Medium">EIP1102</Link> – which we suggest you do</li>
+      <li>Use the same verb as MetaMask in your messaging e.g. Sign</li>
+      <li>Write a meaningful message in MetaMask for your users to sign that reflects the above</li>
+      </ul>
+      </Text>
+    ),
+    negative: (
+    <Text>
+    <ul>
+    <li><em>See "Don't" for connection request</em></li>
+    <li>Use the phrase "nonce" – this is jargon</li>
+    <li>Expect your users to sign a random hash without any context</li>
+    </ul>
+    </Text>
+    ),
+  }}
+</DoDont>
+
+## Write a meaningful message
+
+There's a good chance that some users won't read your dApp messaging around signature requests. With the MetaMask window appearing automatically, their attention will be automatically diverted there. That means you need to include your information there so they're not left confused about another MetaMask window. Be clear about what you're asking them to do now.
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+      <ul>
+      <li>Add some personality: say Hi or reference your dApp's name so they know it's coming from you</li>
+        <li>Explain what this action will do: connect you securely</li>
+        <li>Explain what this action is for: prove you own the account</li>
+        <li>This might be because the user has recently accepted the connection request or because your dApp hasn't implemented <Link href="https://medium.com/metamask/eip-1102-preparing-your-dapp-5027b2c9ed76"
+  target="_blank"
+  title="Read about EIP1102 on Medium">EIP1102</Link> – which we suggest you do</li>
+      <li>Include the nonce (e.g. d458fa15-dcab-4d85-a477–004d6febca12) as a security procedure but add some context as to why they're seeing it! Also make sure they're aware they don't need to remember this or write it down</li>
+      <li>Explain that it won't cost Ether</li>
+      </ul>
+      </Text>
+    ),
+    negative: (
+    <Text>
+    <ul>
+    <li>Use jargon like "nonce"</li>
+    <li>Expect your users to sign a random hash without any context</li>
+    </ul>
+    </Text>
+    ),
+  }}
+</DoDont>
+
+## Let them change their mind
+
+Connection is a fairly new concept. There's a chance they could reject either request because of the way something's been worded in MetaMask or they're confused or just because they've made an error. Because connection is so fundamental to using a dApp it's a good idea to include an "Are you sure?" modal. This should reinforce to the user that they need to go through this process to use the blockchain features in your dApp.
+
+Of course you should respect their decision and offer them a way to actually reject the request and go back to browsing as a guest. However to account for confusion or error, you should allow them the ability to trigger the request again if they change their mind. And not have them start from the beginning of the flow.
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+      <ul>
+      <li>Reiterate that they can't proceed with connection or use blockchain features without accepting or signing the request</li>
+        <li>If possible include an example blockchain feature to provide extra context</li>
+        <li>Show you respect their decision and reiterate that they can browse your dApp as a guest if they wish</li>
+        <li>Re-trigger your dApps modals that explain the relevant request so the user gets the instructions back</li>
+      </ul>
+      </Text>
+    ),
+    negative: (
+    <Text>
+    <ul>
+    <li>Use CTA copy like "Connect" or "Sign" – this button will only trigger the MetaMask windows to appear again – it won't actually accept the connection request or sign the message. Don't make users feel like they have to do stuff twice.</li>
+    </ul>
+    </Text>
+    ),
+  }}
+</DoDont>
+
+Ok, so they've connected, accepted and signed. Time to let them know that's all for now.
+
+[Next up: the confirmation](/guides/ux/connect-a-wallet-success)
