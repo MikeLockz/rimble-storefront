@@ -3,7 +3,7 @@ Title: Let them know they're in
 ---
 
 import DoDont from "../../../components/documentation/DoDont";
-import { Text, Link, ToastMessage, Button } from "rimble-ui"
+import { Text, Link, ToastMessage, Button } from "rimble-ui";
 
 # Let them know they're in
 
@@ -16,18 +16,16 @@ Nothing beats a friendly hello. This might be a cause for something like a toast
 <Button
   mb={3}
   onClick={e =>
-    window.toastProvider.addMessage('Welcome to Rimble 🎉', {
-      secondaryMessage: '',
-      actionHref:
-        '',
-      actionText: '',
-      variant: '',
+    window.toastProvider.addMessage("Welcome to Rimble 🎉", {
+      secondaryMessage: "",
+      actionHref: "",
+      actionText: "",
+      variant: ""
     })
   }
 >
   Preview
 </Button>
-
 
 ## Summarise their connected account
 
@@ -37,14 +35,12 @@ This is more of a permanent indication that they're connected. Now that they're 
   {{
     positive: (
       <Text>
-      Display their account balance in fiat currency as well as crypto – a familiar currency makes it easier for users to understand how much they have in their account
+        Display their account balance in fiat currency as well as crypto – a
+        familiar currency makes it easier for users to understand how much they
+        have in their account
       </Text>
     ),
-    negative: (
-    <Text>
-    Use the ETH logo on its own as this isn't well known
-    </Text>
-    ),
+    negative: <Text>Use the ETH logo on its own as this isn't well known</Text>
   }}
 </DoDont>
 

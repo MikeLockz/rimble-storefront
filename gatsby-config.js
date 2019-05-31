@@ -70,7 +70,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "docs",
-        path: `${__dirname}/src/pages/`
+        path: `${__dirname}/src/content/`
       }
     },
     "gatsby-plugin-offline",
