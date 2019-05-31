@@ -25,10 +25,10 @@ const StaticSideNav = () => (
           <Ul>
             <Li>
               <RimbleGatsbyLink
-                to={"/components/rimble-ui/installation"}
+                to={"/components/rimble-ui/theme"}
                 activeClassName={"active"}
               >
-                Installation
+                Theming
               </RimbleGatsbyLink>
             </Li>
           </Ul>
