@@ -4,6 +4,7 @@ componentName: Modal
 ---
 
 import { Modal } from "rimble-ui";
+import PropsTable from "../../../components/propstable";
 
 # Modal
 
@@ -84,10 +85,6 @@ class YourModal extends React.Component {
 }
 ```
 
-## Component props**
+## Props
 
-`Modal` will pass any props that are defined on its component and uses the following:
-
-## Styled-system props**
-
-`Modal` uses all the style props from [Box](/components/rimble-ui/Box).
+<PropsTable propMetaData={props.propMetaData} />

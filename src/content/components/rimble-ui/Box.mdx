@@ -3,6 +3,8 @@ title: Box
 componentName: Box
 ---
 
+import PropsTable from "../../../components/propstable.js";
+
 # Box
 
 `Box` renders a responsive box-model layout component.
@@ -21,11 +23,11 @@ import { Box } from 'rimble-ui';
 </Box>
 ```
 
-## Margin and padding
+**Margin and padding**
 
 The `space` function adds margin and padding props. The margin and padding props use a shorthand syntax, similar to [Basscss](http://basscss.com/#basscss-margin), [Tachyons](http://tachyons.io/docs/layout/spacing/), and [Bootstrap](https://getbootstrap.com/docs/4.1/utilities/spacing/).
 
-### Margin props
+**Margin props**
 
 - `m` margin
 - `mt` margin-top
@@ -35,7 +37,7 @@ The `space` function adds margin and padding props. The margin and padding pro
 - `mx` margin-left and margin-right
 - `my` margin-top and margin-bottom
 
-### Padding props
+**Padding props**
 
 - `p` padding
 - `pt` padding-top
@@ -45,7 +47,7 @@ The `space` function adds margin and padding props. The margin and padding pro
 - `px` padding-left and padding-right
 - `py` padding-top and padding-bottom
 
-### Space Theming
+**Space Theming**
 
 To set a consistent white-space scale, add a `space` array to your theme. Use numbers to set pixel values, or use strings for other CSS units such as `rem`.
 
@@ -64,7 +66,7 @@ All spacing props accept numbers, strings, or arrays as values, where:
 - Margin props accept negative values to set negative margin
 - Arrays can be used for [responsive styles](https://consensys.github.io/rimble-ui/iframe.html?id=components-layout-box--documentation#responsive-styles)
 
-## Width
+**Width**
 
 The `width` function adds a single `width` prop for setting responsive width styles.
 
@@ -75,7 +77,7 @@ The `width` prop accepts number, string, or array values, where:
 - Strings can be used for other CSS values (e.g. `'50vw'` or `'30em'`)
 - Arrays can be used for [responsive styles](https://consensys.github.io/rimble-ui/iframe.html?id=components-layout-box--documentation#responsive-styles)
 
-## Responsive Styles
+**Responsive Styles**
 
 All styled-system functions accept arrays as values to set styles responsively using a mobile-first approach.
 
@@ -89,8 +91,6 @@ All styled-system functions accept arrays as values to set styles responsively u
 />
 ```
 
-## Component props
+## Props
 
-`Box` does not have any props but will pass on props that are defined on its component.
-
-## Styled-system props
+<PropsTable propMetaData={props.propMetaData} />
