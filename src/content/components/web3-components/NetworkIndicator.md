@@ -5,19 +5,20 @@ componentName: NetworkIndicator
 
 import NetworkIndicator from "@rimble/network-indicator";
 import {
-  Tooltip,
-  Flash,
-  Pill,
-  Field,
-  Box,
-  Icon,
-  Text,
-  Link,
-  Heading,
-  ToastMessage,
-  Button
+Tooltip,
+Flash,
+Pill,
+Field,
+Box,
+Icon,
+Text,
+Link,
+Heading,
+ToastMessage,
+Button
 } from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
+import PropsTable from "../../../components/propstable";
 
 # Network Indicator
 
@@ -72,15 +73,9 @@ yarn add @rimble/network-indicator
 </NetworkIndicator>
 ```
 
-**Props**
+## Props
 
-| Name                    | Type    | Default              | Description                                                                                                                          |
-| ----------------------- | ------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `currentNetwork`        | integer | none                 | The network ID that the user is connected to, if available                                                                           |
-| `requiredNetwork`       | integer | none                 | The network ID that the dApp requires to function                                                                                    |
-| `onNetworkMessage`      | string  | none                 | Content of a hover tooltip when there is a `currentNetwork` prop and when `requiredNetwork` exists and matches `currentNetwork` prop |
-| `noNetworkMessage`      | string  | see default messages | Content of a hover tooltip when there is a null value for `currentNetwork` prop even when there is a `requiredNetwork` prop          |
-| `onWrongNetworkMessage` | string  | see default messages | Content of a hover tooltip when values do not match for `currentNetwork` and `requiredNetwork` props                                 |
+<PropsTable propMetaData={props.propMetaData} />
 
 **Default Messages**
 

@@ -16,6 +16,7 @@ import {
   Heading
 } from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
+import PropsTable from "../../../components/propstable";
 
 # QR documentation
 
@@ -33,13 +34,9 @@ import { QR } from 'rimble-ui';
 <QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
 ```
 
-## Component props
+## Props
 
-`QR` Code will pass any props that are defined on its component and uses the following:
-
-## Styled-system props
-
-`QR` Code does not use any styled-system props.
+<PropsTable propMetaData={props.propMetaData} />
 
 ## Design guidelines
 

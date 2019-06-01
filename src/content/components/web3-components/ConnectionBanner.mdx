@@ -18,6 +18,7 @@ import {
   Button
 } from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
+import PropsTable from "../../../components/propstable";
 
 # Connection Banner
 
@@ -75,16 +76,9 @@ yarn add @rimble/connection-banner
 </ConnectionBanner>
 ```
 
-**Props**
+## Props
 
-| Name                           | Type    | Default              | Description                                                                    |
-| ------------------------------ | ------- | -------------------- | ------------------------------------------------------------------------------ |
-| `currentNetwork`               | integer | none                 | The network ID that the user is connected to, if available                     |
-| `requiredNetwork`              | integer | none                 | The network ID that the dApp requires to function                              |
-| `onWeb3Fallback`               | boolean | false                | Set to `true` when you connect to a smart contract via a provider like infura  |
-| `notWeb3CapableBrowserMessage` | node    | see default messages | Markup that will be rendered when the `notWeb3CapableBrowser` condition is met |
-| `noNetworkAvailableMessage`    | node    | see default messages | Markup that will be rendered when the `noNetworkAvailable` condition is met    |
-| `onWrongNetworkMessage`        | node    | see default messages | Markup that will be rendered when the `onWrongNetwork` condition is met        |
+<PropsTable propMetaData={props.propMetaData} />
 
 **Default Messages**
 

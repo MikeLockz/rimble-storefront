@@ -5,6 +5,7 @@ componentName: Tooltip
 
 import {Tooltip, Pill, Field, Box, Icon, Text, Link, Heading, ToastMessage, Button} from "rimble-ui"
 import DoDont from "../../../components/documentation/DoDont";
+import PropsTable from "../../../components/propstable";
 
 # Tooltip
 
@@ -70,13 +71,9 @@ Choose the colour of your `Tooltip`.
 </Tooltip>
 ```
 
-## Component props
+## Props
 
-`Tooltip` will pass any props that are defined on its component and uses the following:
-
-## Styled-system props
-
-`Tooltip` uses all the style props from [Text](/components/rimble-ui/Text).
+<PropsTable propMetaData={props.propMetaData} />
 
 ## Design guidelines
 

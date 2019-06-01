@@ -14,8 +14,7 @@ import {
   ToastMessage
 } from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
-
-
+import PropsTable from "../../../components/propstable";
 
 # ToastMessage.provider
 
@@ -35,23 +34,20 @@ Calls a processing `ToastMessage`.
 
 ```js is=react-live
 <Button
-mb={3}
-onClick={e =>
-window.toastProvider.addMessage('Processing payment...', {
-secondaryMessage: 'Check progress on Etherscan',
-actionHref:
-'[https://etherscan.io/tx/0xcbc921418c360b03b96585ae16f906cbd48c8d6c2cc7b82c6db430390a9fcfed](https://etherscan.io/tx/0xcbc921418c360b03b96585ae16f906cbd48c8d6c2cc7b82c6db430390a9fcfed)',
-actionText: 'Check',
-variant: 'processing',
-})
-}
-
+  mb={3}
+  onClick={e =>
+    window.toastProvider.addMessage("Processing payment...", {
+      secondaryMessage: "Check progress on Etherscan",
+      actionHref:
+        "[https://etherscan.io/tx/0xcbc921418c360b03b96585ae16f906cbd48c8d6c2cc7b82c6db430390a9fcfed](https://etherscan.io/tx/0xcbc921418c360b03b96585ae16f906cbd48c8d6c2cc7b82c6db430390a9fcfed)",
+      actionText: "Check",
+      variant: "processing"
+    })
+  }
 >
-
-Preview
+  Preview
 </Button>
 ```
-
 
 **addMessage.success**
 
@@ -59,17 +55,15 @@ Calls a success `ToastMessage`.
 
 ```js is=react-live
 <Button
-mb={3}
-onClick={e =>
-window.toastProvider.addMessage('ETH sent', {
-secondaryMessage: 'You have 1.03 Ether remaining',
-variant: 'success',
-})
-}
-
+  mb={3}
+  onClick={e =>
+    window.toastProvider.addMessage("ETH sent", {
+      secondaryMessage: "You have 1.03 Ether remaining",
+      variant: "success"
+    })
+  }
 >
-
-Preview
+  Preview
 </Button>
 ```
 
@@ -79,22 +73,19 @@ Calls a failure `ToastMessage`.
 
 ```js is=react-live
 <Button
-mb={3}
-onClick={e =>
-window.toastProvider.addMessage('Payment failed', {
-secondaryMessage: "You don't have enough Ether (ETH)",
-actionHref: '[https://www.coinbase.com/](https://www.coinbase.com/)',
-actionText: 'Buy',
-variant: 'failure',
-})
-}
-
+  mb={3}
+  onClick={e =>
+    window.toastProvider.addMessage("Payment failed", {
+      secondaryMessage: "You don't have enough Ether (ETH)",
+      actionHref: "[https://www.coinbase.com/](https://www.coinbase.com/)",
+      actionText: "Buy",
+      variant: "failure"
+    })
+  }
 >
-
-Preview
+  Preview
 </Button>
 ```
-
 
 **addMessage.default**
 
@@ -102,14 +93,10 @@ Calls a default `ToastMessage`.
 
 ```js is=react-live
 <Button
-mb={3}
-onClick={e =>
-window.toastProvider.addMessage('Transaction started')
-}
-
+  mb={3}
+  onClick={e => window.toastProvider.addMessage("Transaction started")}
 >
-
-Preview
+  Preview
 </Button>
 ```
 
@@ -119,19 +106,16 @@ Calls a default `ToastMessage` with an icon.
 
 ```js is=react-live
 <Button
-mb={3}
-onClick={e =>
-window.toastProvider.addMessage('Welcome to my dApp', {
-icon: 'Mood',
-})
-}
-
+  mb={3}
+  onClick={e =>
+    window.toastProvider.addMessage("Welcome to my dApp", {
+      icon: "Mood"
+    })
+  }
 >
-
-Preview
+  Preview
 </Button>
 ```
-
 
 **addMessage.default dark colour with icon**
 
@@ -139,17 +123,15 @@ Calls a default dark `ToastMessage` with an icon.
 
 ```js is=react-live
 <Button
-mb={3}
-onClick={e =>
-window.toastProvider.addMessage('Welcome to my dApp', {
-icon: 'Mood',
-colorTheme: 'dark',
-})
-}
-
+  mb={3}
+  onClick={e =>
+    window.toastProvider.addMessage("Welcome to my dApp", {
+      icon: "Mood",
+      colorTheme: "dark"
+    })
+  }
 >
-
-Preview
+  Preview
 </Button>
 ```
 
@@ -175,15 +157,14 @@ Call toast
 <Button onClick={() => window.toastProvider.removeMessage()}>
 ```
 
+## Props
+
+<PropsTable propMetaData={props.propMetaData} />
+
 ## Provider API
 
 `ToastMessage.Provider` will pass any props that are defined on its component and uses the following:
 
-
-
-
 ## Message object
-
-
 
 Note: The first parameter of the addMessage method is the same as the primaryMessage in the message object. If both are provided, the primaryMessage property of the message object will take priority.

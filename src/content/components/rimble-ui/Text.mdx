@@ -5,6 +5,7 @@ componentName: Text
 
 import { Input, Field, Box, Icon, Text, Link, Heading } from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
+import PropsTable from "../../../components/propstable";
 
 # Text
 
@@ -68,13 +69,9 @@ Renders text inside a `<p>` element.
 <Text caps>The intent of Ethereum is to...</Text>
 ```
 
-## Component props
+## Props
 
-`Text` will pass any props that are defined on its component and uses the following:
-
-##Styled-system props
-
-`Text` uses all the style props from [Box](/components/rimble-ui/Box), but also includes these:
+<PropsTable propMetaData={props.propMetaData} />
 
 ## Design guidelines
 

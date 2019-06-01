@@ -15,6 +15,7 @@ import {
   Table
 } from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
+import PropsTable from "../../../components/propstable";
 
 # Table documentation
 
@@ -65,13 +66,9 @@ import { Table } from 'rimble-ui';
 
 - All tables should use `<th>` and `<td>` – this helps those using assistive technologies understand which data relates to each table header
 
-## Component props
+## Props
 
-`Table` does not have any props but will pass on props that are defined on its component.
-
-## Styled-system props
-
-`Table` uses all the style props from [Box](/components/rimble-ui/Box), but also includes these:
+<PropsTable propMetaData={props.propMetaData} />
 
 ## Design guidelines
 
