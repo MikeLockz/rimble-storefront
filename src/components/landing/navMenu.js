@@ -98,7 +98,7 @@ class Menu extends Component {
           <ReactSVG src="static/svg/baseline-menu-24px.svg" />
         </StyledToggle>
         <StyledList hidden={!this.state.isOpen}>
-          <ul>
+          {/* <ul>
             <li>
               <Text fontSize={2} fontWeight={2} color={"mid-grey"}>
                 v0.8.1
@@ -123,7 +123,7 @@ class Menu extends Component {
                 Develop
               </RimbleGatsbyLink>
             </li>
-          </ul>
+          </ul> */}
         </StyledList>
       </StyledWrap>
     );

@@ -20,13 +20,17 @@ import {
 import DoDont from "../../../components/documentation/DoDont";
 import PropsTable from "../../../components/propstable";
 
-# Connection Banner
+# ConnectionBanner
 
-React component built with [Rimble UI](https://github.com/ConsenSys/rimble-ui) that displays a banner providing information about a user's Ethereum network connection. The banner will give informative and helpful information to resolve the issue with device-specific language. The banner informs the user of the following scenarios:
+Persistently displays a banner if:
 
-- not using a Web3-capable browser
-- a wallet is not available
-- current Ethereum network does not match the specified required network
+- the user is not using a Web3-capable browser
+- a Web3 provider can't be detected
+- the current Ethereum network does not match the specified required network
+
+The banner will help the user resolve the issue with device-specific language so they can use your dApp successfully.
+
+Built with [Rimble-UI](/components/rimble-ui)
 
 ## Installation
 
@@ -51,6 +55,7 @@ yarn add @rimble/connection-banner
   onWeb3Fallback={true}
 />
 ```
+
 
 **Custom messages**
 
@@ -80,76 +85,69 @@ yarn add @rimble/connection-banner
 
 <PropsTable propMetaData={props.propMetaData} />
 
-**Default Messages**
+## Default Messages
 
 **notWeb3CapableBrowserMessage - Desktop**
 
-> Your browser doesn't support our blockchain features
->
+> Your browser doesn't support our blockchain features.
 > Switch to either Brave, FireFox, Opera, or Chrome to continue
+
+---
 
 **notWeb3CapableBrowserMessage - Mobile**
 
-> Your browser doesn't support our blockchain features
->
+> Your browser doesn't support our blockchain features.
 > Try a mobile wallet browser like Status, Coinbase wallet or Cipher
+
+---
 
 **noNetworkAvailableMessage - Desktop only**
 
-> Install the MetaMask browser extension to use our blockchain features in your current browser
->
+> Install the MetaMask browser extension to use our blockchain features in your current browser.
 > `installMetaMaskButton`
+
+---
 
 **onWrongNetworkMessage - Desktop**
 
-> Switch to the `requiredNetworkName` Ethereum network in MetaMask
->
-> Change your network in your MetaMask extension. You're currently on `currentNetworkName`
+> Switch to the `requiredNetworkName` Ethereum network in MetaMask.
+> You're currently on `currentNetworkName`
+
+---
 
 **onWrongNetworkMessage - Mobile**
 
-> Switch to the `requiredNetworkName` Ethereum network in Settings
->
-> Change your network in your MetaMask extension. You're currently on `currentNetworkName`
+> Switch to the `requiredNetworkName` Ethereum network in Settings.
+> You're currently on `currentNetworkName`
+
+---
 
 ## Design guidelines
 
-**The connection banner helps users get on the right Ethereum network to use your dApp. It doesn't prevent them from interacting with your dApp's non-blockchain features.**
+The connection banner helps users get on the right Ethereum network to use your dApp. It doesn't prevent them from interacting with your dApp's non-blockchain features. This is because we believe you should only ask the user to connect when they absolutely have to. That's why this component doesn't block the user, it just passively provides information they need should they want to do something on your dApp that will require a correct network.
 
-Your content needs to instruct the user how to get to the right network, but a user can be at different levels of readiness.
+Your content needs to instruct the user **how** to get to the right network, but a user can be at different levels of readiness.
 
 1. On a network, but on the wrong one
-2. Without a Web 3 provider
-3. On a browser that won't support a Web 3 provider
+2. Without a Web3 provider
+3. On a browser that won't support a Web3 provider
 
-Your content should explain how to overcome each step.
+That means you need different content that responds to the different situations described above. For example:
 
 1. How to switch to the right network
-2. How to get on a Web 3 provider
+2. How to get on a Web3 provider
 3. Which browser to use instead
 
-At the stage a user will see this component, they are just browsing and not attempting any blockchain functionality. So you should allow them to browse freely but explain that if they want to use some blockchain features they should follow the instructions in the banner based on their current situation.
+We've provided some messages in this component that should work for most dApps. However you may want to tweak them slightly to add a bit of your brand's personality. So here's some principles and tops you should keep in mind when editing the content.
 
-**Principles**
+### Principles
 
 - **One thing at a time:** if the user is using Safari, they're going to have to go through multiple steps to start using your dApp (changing browser and downloading MetaMask) however once they've done the first step (changed browser) there's another banner helping them to install MetaMask. This means you don't need to mention this in the wrong browser banner. Just keep your instruction clear and simple to follow and let the next banner explain the next step.
-- **Avoid connection:** it can be detecting to describe this process as connecting to a different network. However we've found that this can cause confusion with connecting to the dApp. Plus, if you're using a Web3 provider, you'll automatically be on a network without having gone through the act of deliberately connecting. We like "Switch to" a different network as it reflects the simple process that it is.
+- **Avoid connection:** we've found that framing this action as "connecting" can cause confusion with connecting to the dApp. Plus, if you're using a Web3 provider, you'll automatically be on a network without having gone through the act of deliberately connecting. We like "Switch to" a different network as it reflects the simple process that it is.
 - **Keep it passive:** it's not urgent that the user should follow your instructions just yet. So make it clear when they should bother changing network, e.g. to use your blockchain features
 - **Tell them where:** because you aren't able to change network from a dApp, you should be as descriptive as you can in terms of where to change the network. This has its challenges as it can differ between products. "Settings" seems to be a safe term for Mobile, whereas you should use "MetaMask" on desktop.
 
-**Core information**
-
-_Our components can be customised so you can add your own dApps voice and tone, but what should you make sure you retain?_
-
-**The current network:** users can use this as a way to navigate the wallet or MetaMask UI and find where to change their network
-
-**Alternatives:** when it comes to browsers, let them know the ones they can use
-
-**The reason:** this is a passive banner, let them know in what contexts they should follow the instruction
-
-**Tips**
-
-_Our advice if you want to re-write_
+### Tips
 
 **Keep it active**
 
@@ -164,7 +162,7 @@ Make sure your banner copy is clear and inspires action
 
 **Avoid Web3 jargon**
 
-Technically, the functionality in this component tries to detect a Web 3 provider. However, users don't need to know this.
+Technically, the functionality in this component tries to detect a Web3 provider. However, users don't need to know this.
 
 <DoDont>
   {{

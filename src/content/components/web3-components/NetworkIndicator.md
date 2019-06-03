@@ -18,11 +18,12 @@ ToastMessage,
 Button
 } from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
-import PropsTable from "../../../components/propstable";
 
-# Network Indicator
+# NetworkIndicator
 
-React component built with [Rimble UI](https://github.com/ConsenSys/rimble-ui) that will display the current Ethereum network name based on a given network ID and optionally display and icon and tooltip indicating whether the user is on the correct network for the application.
+Persistently displays a user's current network name based on a given network ID. You can optionally display an icon and tooltip to tell the user if they're on the correct network for the dApp.
+
+Built with [Rimble-UI](/components/rimble-ui)
 
 ## Installation
 
@@ -75,19 +76,28 @@ yarn add @rimble/network-indicator
 
 ## Props
 
-<PropsTable propMetaData={props.propMetaData} />
+| Name                    | Type    | Default              | Description                                                                                                                          |
+| ----------------------- | ------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `currentNetwork`        | integer | none                 | The network ID that the user is connected to, if available                                                                           |
+| `requiredNetwork`       | integer | none                 | The network ID that the dApp requires to function                                                                                    |
+| `onNetworkMessage`      | string  | none                 | Content of a hover tooltip when there is a `currentNetwork` prop and when `requiredNetwork` exists and matches `currentNetwork` prop |
+| `noNetworkMessage`      | string  | see default messages | Content of a hover tooltip when there is a null value for `currentNetwork` prop even when there is a `requiredNetwork` prop          |
+| `onWrongNetworkMessage` | string  | see default messages | Content of a hover tooltip when values do not match for `currentNetwork` and `requiredNetwork` props                                 |
 
-**Default Messages**
+## Default Messages
 
 **onNetworkMessage**
-
-Only when `requiredNetwork` exists and matches `currentNetwork` prop
+_Only when `requiredNetwork` exists and matches `currentNetwork` prop_
 
 > You're on the right network
+
+---
 
 **noNetworkMessage**
 
 > You're not on an Ethereum network
+
+---
 
 **onWrongNetworkMessage**
 
