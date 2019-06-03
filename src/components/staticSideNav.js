@@ -367,7 +367,7 @@ const StaticSideNav = () => (
           <Ul>
             <Li>
               <RimbleGatsbyLink
-                to={"/components/web3-components/ConnectionBanner"}
+                to={"/components/web3-components/NetworkIndicator"}
                 activeClassName={"active"}
               >
                 Network Indicator
@@ -375,7 +375,7 @@ const StaticSideNav = () => (
             </Li>
             <Li>
               <RimbleGatsbyLink
-                to={"/components/web3-components/NetworkIndicator"}
+                to={"/components/web3-components/ConnectionBanner"}
                 activeClassName={"active"}
               >
                 Connection Banner
@@ -405,20 +405,20 @@ const StaticSideNav = () => (
               Transaction States
             </RimbleGatsbyLink>
           </Li>*/}
-          <Li>
+          {/*<Li>
             <RimbleGatsbyLink
               to={"/guides/ux/connect-a-wallet-intro"}
               activeClassName={"active"}
             >
               1. Introduction
             </RimbleGatsbyLink>
-          </Li>
+          </Li>*/}
           <Li>
           <RimbleGatsbyLink
             to={"/guides/ux/connect-a-wallet-conditions"}
             activeClassName={"active"}
           >
-            2. Make sure conditions are right
+            1. Can they connect?
           </RimbleGatsbyLink>
         </Li>
         <Li>
@@ -426,7 +426,7 @@ const StaticSideNav = () => (
           to={"/guides/ux/connect-a-wallet-before"}
           activeClassName={"active"}
         >
-          3. Before they connect
+          2. Before they connect
         </RimbleGatsbyLink>
       </Li>
       <Li>
@@ -434,7 +434,7 @@ const StaticSideNav = () => (
         to={"/guides/ux/connect-a-wallet-metamask"}
         activeClassName={"active"}
       >
-        4. Help with MetaMask
+        3. Help with MetaMask
       </RimbleGatsbyLink>
     </Li>
     <Li>
@@ -442,7 +442,7 @@ const StaticSideNav = () => (
       to={"/guides/ux/connect-a-wallet-success"}
       activeClassName={"active"}
     >
-      5. Let them know they're in
+      4. Confim success
     </RimbleGatsbyLink>
   </Li>
   <Li>
@@ -450,7 +450,7 @@ const StaticSideNav = () => (
     to={"/guides/ux/connect-a-wallet-low-funds"}
     activeClassName={"active"}
   >
-    6. If they don't have any ETH
+    5. No ETH, no problem
   </RimbleGatsbyLink>
 </Li>
         </Ul>
@@ -459,9 +459,9 @@ const StaticSideNav = () => (
             dApp Content
           </RimbleGatsbyLink>
         </Li>
+</Ul>
+          {/*<Ul>
 
-        <Ul>
-        {/*
           <Li>
             <RimbleGatsbyLink
               to={"/guides/content/crafting-tone"}
@@ -478,7 +478,7 @@ const StaticSideNav = () => (
               Blockchain vocab
             </RimbleGatsbyLink>
           </Li>
-          */}
+
           <Li>
             <RimbleGatsbyLink
               to={"/guides/content/writing-for-products"}
@@ -488,9 +488,8 @@ const StaticSideNav = () => (
             </RimbleGatsbyLink>
           </Li>
 
-        </Ul>
+        </Ul>*/}
 
-      </Ul>
     </Ul>
   </nav>
 );

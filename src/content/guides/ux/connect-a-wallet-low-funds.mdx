@@ -1,17 +1,17 @@
 ---
-Title: If they have no ETH
+Title: No ETH, no problem
 ---
 
 import DoDont from "../../../components/documentation/DoDont";
-import { Text } from "rimble-ui";
+import { Text, Button } from "rimble-ui";
 
-# If they have no ETH
+# No ETH, no problem
 
 If your user has been funnelled into the connection flow because they were attempting an on-chain action, it's important to check their balance once they've accepted the connection request. It's at this point that you can tell whether or not they'll be able to complete the action they've set out to do. If their balance is too low, you should let them know and offer some help on how to remedy the situation.
 
 You have a few options:
 
-**Integrate an on-ramp**
+**Allow crypto purchasing in-dApp**
 
 This is probably what we'd recommend most as it keeps the user in your dApp and means the user won't have to send crypto from an exchange. A service like [Moonpay](https://moonpay.io) or [Wyre](https://sendwyre.com) will allow you to integrate a crypto purchasing flow directly into your dApp. However this will cost you some integration fees.
 
@@ -98,3 +98,14 @@ Now your users are connected and hopefully have some Ether (or know how to get s
 ---
 
 As they use your dApp more often they'll realise that having ETH is part and parcel of using it, they'll understand that they need to be on a certain network and they'll breeze through the requests.
+
+**Navigate the guide**
+
+<Button.Outline
+  mr={3}
+  title="Read the previous part of the guide"
+  as="a"
+  href="/guides/ux/connect-a-wallet-success"
+>
+  Previous part
+</Button.Outline>

@@ -214,6 +214,25 @@ Don’t use too many buttons together on one piece of interface: prioritise the 
 
 Some best practices for writing `Button` microcopy.
 
+**Explain what pressing the button will do**
+
+The user should understand exactly what will happen once they press the button.
+
+<DoDont>
+  {{
+    positive: (
+      <Button my={3} size="medium">
+        Send Ether
+      </Button>
+    ),
+    negative: (
+      <Button my={3} size="medium">
+        Submit
+      </Button>
+    )
+  }}
+</DoDont>
+
 **Keep copy concise**
 
 Don’t use articles (a, the, an) in microcopy. This will make your button quicker to scan and shorter.
@@ -235,7 +254,7 @@ Don’t use articles (a, the, an) in microcopy. This will make your button quick
 
 **Explain the next step, not the end goal**
 
-The user should understand exactly what will happen once they press the button.
+Explain what the button will do at this stage in the flow. 
 
 For example, if you have a button that launches a QR code for you to scan with your mobile...
 

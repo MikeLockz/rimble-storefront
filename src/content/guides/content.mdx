@@ -2,4 +2,163 @@
 title: dApp content
 ---
 
-# dApp content
+import DoDont from "../../components/documentation/DoDont";
+import { Text, Box } from "rimble-ui";
+
+# dApp content ✍️
+
+Tips on designing dApps that talk sense – how to design the words in your dApp.
+
+---
+
+## Writing for products
+
+Writing for products isn't difficult when you remember that your interface is a conversation with your users. Try and replicate human conversation as much as possible and respect people's time to explain things simply and clearly.
+
+### Low reading age
+
+Writing for a low reading age isn't about dumbing stuff down it's about respecting your user's time. Content with a lower reading age is easier and quicker to understand.
+
+**Re-read your work and replace any words that have a simpler alternative**
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+        <ul>
+          <li>Buy</li>
+          <li>Get</li>
+        </ul>
+      </Text>
+    ),
+    negative: (
+      <Text>
+        <ul>
+          <li>Purchase</li>
+          <li>Receive</li>
+        </ul>
+      </Text>
+    )
+  }}
+</DoDont>
+
+**Keep sentences short and avoid complex punctuation**
+
+<DoDont>
+  {{
+    positive: (
+      <Box>
+        <Text>
+          dApp only works on the Main Ethereum network. Switch networks in your
+          MetaMask extension to continue. You’re currently using Ropsten, a test
+          network that doesn’t use real funds.
+        </Text>
+        <Text>Grade: 6</Text>
+      </Box>
+    ),
+    negative: (
+      <Box>
+        <Text>
+          dApp only works on the Main Ethereum network but you're using Ropsten,
+          a test network that doesn’t use real funds. Switch networks in your
+          MetaMask extension to continue.
+        </Text>
+        <Text>Grade: 8</Text>
+      </Box>
+    )
+  }}
+</DoDont>
+
+A quick way to check your content's reading age is [hemingwayapp.com](http://hemingwayapp.com)
+
+### Jargon excludes
+
+The more jargon you use in your product the more users you're likely to exclude from the conversation. Your interface is a conversation with your users, it should teach them how to use and derive the most benefit from your product. By using jargon, you're forcing them to learn another language just to understand the main conversation!
+
+Avoid words like:
+
+- Protocol
+- Web3 provider
+
+Look for overly technical words or system language and replace with more human words you'd use in conversation
+
+<DoDont>
+  {{
+    positive: <Text>Choose</Text>,
+    negative: <Text>Select</Text>
+  }}
+</DoDont>
+
+### Use an active voice
+
+An active voice prevents your dApp from sounding like a textbook and more like you're talking to a human being. It will also help keep your content more direct, succinct and shorter. Plus it tends to inject some pace and even inspire action – CTAs are always written in an active voice.
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+        <ul>
+          <li>You need Ether for this transaction</li>
+          <li>You got a Cryptokitty from 0x1234...5678</li>
+          <li>Enter a description</li>
+        </ul>
+      </Text>
+    ),
+    negative: (
+      <Text>
+        <ul>
+          <li>Ether is required to complete this transaction</li>
+          <li>Cryptokitty was received from 0x1234...5678</li>
+          <li>A description is needed</li>
+        </ul>
+      </Text>
+    )
+  }}
+</DoDont>
+
+**is** and **was** are usually good signs you're writing passively.
+
+### Avoid system terms
+
+There's a habit in the community of just referring to everything as a transaction. But the beauty of Ethereum is the breadth of things it allows us to do in a decentralized way. Generalising everything as a transaction undermines that. Refer to things using the language you'd use in conversation or in real life. Ask yourself, have you ever submitted a transaction in real life?
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+        <ul>
+          <li>Sending your ETH</li>
+          <li>Casting your vote</li>
+          <li>You bought a Cryptokitty</li>
+        </ul>
+      </Text>
+    ),
+    negative: (
+      <Text>
+        <ul>
+          <li>Processing your transaction</li>
+          <li>Your transaction was successful</li>
+        </ul>
+      </Text>
+    )
+  }}
+</DoDont>
+
+### Sell benefits, not tech
+
+If Facebook was sold like a blockchain company right now:
+
+_Facebook is a social network that uses PHP, compiled with HipHop for PHP and a "source code transformer" that turns PHP into C++_
+
+Adoption won't come from explaining the technology behind your dApp. Most people don't understand how cloud technology works, they just know they can access their files anywhere, from any device. That's because we've been delivered the benefits time and time again. Talk about what your product does for people, not how it was architected. Technology backs up benefits and provides proof points, not selling points.
+
+<DoDont>
+  {{
+    positive: (
+      <Text>With dApp you can manage all your data from one safe place</Text>
+    ),
+    negative: (
+      <Text>dApp is an all-in-one data management platform using IPFS</Text>
+    )
+  }}
+</DoDont>
