@@ -51,6 +51,7 @@ yarn add @rimble/connection-banner
 />
 ```
 
+
 **Custom messages**
 
 ```js is=react-live
@@ -75,7 +76,7 @@ yarn add @rimble/connection-banner
 </ConnectionBanner>
 ```
 
-**Props**
+## Props
 
 | Name                           | Type    | Default              | Description                                                                    |
 | ------------------------------ | ------- | -------------------- | ------------------------------------------------------------------------------ |
@@ -86,7 +87,7 @@ yarn add @rimble/connection-banner
 | `noNetworkAvailableMessage`    | node    | see default messages | Markup that will be rendered when the `noNetworkAvailable` condition is met    |
 | `onWrongNetworkMessage`        | node    | see default messages | Markup that will be rendered when the `onWrongNetwork` condition is met        |
 
-**Default Messages**
+## Default Messages
 
 **notWeb3CapableBrowserMessage - Desktop**
 
@@ -120,40 +121,30 @@ yarn add @rimble/connection-banner
 
 ## Design guidelines
 
-**The connection banner helps users get on the right Ethereum network to use your dApp. It doesn't prevent them from interacting with your dApp's non-blockchain features.**
+The connection banner helps users get on the right Ethereum network to use your dApp. It doesn't prevent them from interacting with your dApp's non-blockchain features.
 
 Your content needs to instruct the user how to get to the right network, but a user can be at different levels of readiness.
 
 1. On a network, but on the wrong one
-2. Without a Web 3 provider
-3. On a browser that won't support a Web 3 provider
+2. Without a Web3 provider
+3. On a browser that won't support a Web3 provider
 
 Your content should explain how to overcome each step.
 
 1. How to switch to the right network
-2. How to get on a Web 3 provider
+2. How to get on a Web3 provider
 3. Which browser to use instead
 
 At the stage a user will see this component, they are just browsing and not attempting any blockchain functionality. So you should allow them to browse freely but explain that if they want to use some blockchain features they should follow the instructions in the banner based on their current situation.
 
-**Principles**
+### Principles
 
 - **One thing at a time:** if the user is using Safari, they're going to have to go through multiple steps to start using your dApp (changing browser and downloading MetaMask) however once they've done the first step (changed browser) there's another banner helping them to install MetaMask. This means you don't need to mention this in the wrong browser banner. Just keep your instruction clear and simple to follow and let the next banner explain the next step.
 - **Avoid connection:** it can be detecting to describe this process as connecting to a different network. However we've found that this can cause confusion with connecting to the dApp. Plus, if you're using a Web3 provider, you'll automatically be on a network without having gone through the act of deliberately connecting. We like "Switch to" a different network as it reflects the simple process that it is.
 - **Keep it passive:** it's not urgent that the user should follow your instructions just yet. So make it clear when they should bother changing network, e.g. to use your blockchain features
 - **Tell them where:** because you aren't able to change network from a dApp, you should be as descriptive as you can in terms of where to change the network. This has its challenges as it can differ between products. "Settings" seems to be a safe term for Mobile, whereas you should use "MetaMask" on desktop.
 
-**Core information**
-
-_Our components can be customised so you can add your own dApps voice and tone, but what should you make sure you retain?_
-
-**The current network:** users can use this as a way to navigate the wallet or MetaMask UI and find where to change their network
-
-**Alternatives:** when it comes to browsers, let them know the ones they can use
-
-**The reason:** this is a passive banner, let them know in what contexts they should follow the instruction
-
-**Tips**
+### Tips
 
 _Our advice if you want to re-write_
 
@@ -170,7 +161,7 @@ Make sure your banner copy is clear and inspires action
 
 **Avoid Web3 jargon**
 
-Technically, the functionality in this component tries to detect a Web 3 provider. However, users don't need to know this.
+Technically, the functionality in this component tries to detect a Web3 provider. However, users don't need to know this.
 
 <DoDont>
   {{

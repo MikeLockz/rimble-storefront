@@ -367,7 +367,7 @@ const StaticSideNav = () => (
           <Ul>
             <Li>
               <RimbleGatsbyLink
-                to={"/components/web3-components/ConnectionBanner"}
+                to={"/components/web3-components/NetworkIndicator"}
                 activeClassName={"active"}
               >
                 Network Indicator
@@ -375,7 +375,7 @@ const StaticSideNav = () => (
             </Li>
             <Li>
               <RimbleGatsbyLink
-                to={"/components/web3-components/NetworkIndicator"}
+                to={"/components/web3-components/ConnectionBanner"}
                 activeClassName={"active"}
               >
                 Connection Banner
