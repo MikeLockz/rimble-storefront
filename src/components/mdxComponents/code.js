@@ -35,7 +35,8 @@ import {
   QR,
   Table,
   ToastMessage,
-  UPortButton
+  UPortButton,
+  Tooltip
 } from "rimble-ui";
 import ConnectionBanner from "@rimble/connection-banner";
 import NetworkIndicator from "@rimble/network-indicator";
@@ -76,7 +77,8 @@ const localScope = {
   QR,
   Table,
   ToastMessage,
-  UPortButton
+  UPortButton,
+  Tooltip
 };
 
 const prismMap = {
