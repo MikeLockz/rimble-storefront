@@ -91,16 +91,16 @@ exports.createPages = ({ graphql, actions }) => {
         `
       ).then(result => {
         if (result.errors) {
-          console.log(result.errors);
+          console.log("Errors: ", result.errors);
           reject(result.errors);
         }
         // Create blog posts pages.
         result.data.allMdx.edges.forEach(async ({ node }) => {
-          // console.log(
-          //   "componentName/title: ",
-          //   node.frontmatter.componentName,
-          //   node.frontmatter.title
-          // );
+          console.log(
+            "title/path: ",
+            node.frontmatter.title,
+            node.fileAbsolutePath
+          );
           if (
             typeof node.internal !== "undefined" &&
             node.internal.type === `Mdx` &&

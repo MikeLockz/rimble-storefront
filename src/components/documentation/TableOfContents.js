@@ -1,83 +1,60 @@
 import React from "react";
-import Anchor from "antd/lib/anchor";
 import { Link as RimbleLink, Box } from "rimble-ui";
 import { navigate } from "@reach/router";
-// import "./TableOfContents.css";
+import Ul from "../../components/landing/Ul";
+import Li from "../../components/landing/Li";
 
-const filterAnchorDetails = anchors => {
-  let last_depth = 0;
-  anchors = [].slice.call(anchors).map(anchor => {
-    let depth = parseInt(anchor.parentElement.nodeName[1]);
-    if (last_depth !== 0 && depth > last_depth) depth = last_depth + 1;
-    last_depth = depth;
-    return {
-      href: "#" + anchor.parentElement.id,
-      title: anchor.parentElement.innerText,
-      depth: depth,
-      children: []
-    };
-  });
-  constructTree(anchors);
-  return anchors;
-};
-
-const constructTree = list => {
-  let deleteNode = [];
-  for (let i = 0; i < list.length; i++) {
-    for (let j = i + 1; j < list.length; j++) {
-      if (list[i].depth + 1 === list[j].depth) {
-        list[i].children.push(list[j]);
-        deleteNode.push(j);
-      } else if (list[i].depth >= list[j].depth) break;
-    }
-  }
-  deleteNode.sort((a, b) => b - a).forEach(index => list.splice(index, 1));
-};
-
-export default function TableOfContents() {
-  const [anchors, setAnchors] = React.useState([]);
-
-  React.useLayoutEffect(() => {
-    const anchors = document.getElementsByClassName("post-toc-anchor");
-    setAnchors(filterAnchorDetails(anchors));
-  }, []);
-
+const TableOfContents = props => {
+  const { tableOfContents } = props;
   const loop = data =>
-    data.map(item => {
-      if (item.children.length > 0) {
+    data.items.map(item => {
+      if (typeof item.items !== "undefined" && item.items.length > 0) {
         return (
-          <Box key={item.href} className={`ant-anchor-link`}>
+          <Li key={item.url}>
             <RimbleLink
               href={"javascript:;"}
               title={item.title}
-              className={"ant-anchor-link-title"}
               onClick={() => {
-                navigate(item.href);
+                navigate(item.url);
               }}
             >
-              {loop(item.children)}
+              {item.title}
             </RimbleLink>
-          </Box>
+            <Ul>{loop(item)}</Ul>
+          </Li>
         );
       }
       return (
-        <Box key={item.href} className={`ant-anchor-link`}>
+        <Li key={item.url}>
           <RimbleLink
             href={"javascript:;"}
             title={item.title}
-            className={"ant-anchor-link-title"}
             onClick={() => {
-              navigate(item.href);
+              navigate(item.url);
             }}
           >
             {item.title}
           </RimbleLink>
-        </Box>
+        </Li>
       );
     });
+
   return (
-    <Box width={"150px"} mt={4} mb={4} mr={4}>
-      <Anchor showInkInFixed>{loop(anchors)}</Anchor>
+    <Box width={"220px"}>
+      {tableOfContents ? (
+        <Box
+          position={"fixed"}
+          top={"100px"}
+          right={0}
+          width={"140px"}
+          mr={2}
+          ml={2}
+        >
+          <Ul>{loop(tableOfContents)}</Ul>
+        </Box>
+      ) : null}
     </Box>
   );
-}
+};
+
+export default TableOfContents;
