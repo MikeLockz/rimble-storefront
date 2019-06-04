@@ -8,7 +8,7 @@ import { StaticQuery, graphql } from "gatsby";
 import ContributeBanner from "../components/documentation/ContributeBanner";
 import StaticSideNav from "./staticSideNav";
 
-const Layout = ({ children, location, itemList }) => (
+const Layout = ({ children, tableOfContents }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -30,7 +30,6 @@ const Layout = ({ children, location, itemList }) => (
             </Box>
 
             <Box
-              width={"100%"}
               maxWidth={"960px"}
               minHeight={"100%"}
               mx={["auto"]}
@@ -40,8 +39,8 @@ const Layout = ({ children, location, itemList }) => (
 
               <ContributeBanner />
             </Box>
-
-            <TableOfContents />
+            {console.log("TOC: ", tableOfContents)}
+            <TableOfContents tableOfContents={tableOfContents} />
           </Flex>
         </React.Fragment>
       </ThemeProvider>
