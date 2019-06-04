@@ -145,28 +145,30 @@ class Code extends React.Component {
           scope={localScope}
         >
           <ThemeProvider theme={defaultTheme}>
-            <Box mb={3}>
-              <Box
-                border={1}
-                borderColor={defaultTheme.colors.grey}
-                p={3}
-                mt={3}
-              >
-                <LivePreview />
-                <LiveError />
+            <Box my={3}>
+              <Box mb={1}>
+                <Box
+                  border={1}
+                  borderColor={defaultTheme.colors.grey}
+                  p={3}
+                  mt={3}
+                >
+                  <LivePreview />
+                  <LiveError />
+                </Box>
+                {this.state.showCode ? (
+                  <LiveEditor theme={codeDarkTheme} />
+                ) : null}
               </Box>
-              {this.state.showCode ? (
-                <LiveEditor theme={codeDarkTheme} />
-              ) : null}
+              <RimbleLink
+                href="#"
+                title="Show code"
+                onClick={this.toggleShowCode}
+                style={{ color: defaultTheme.colors.blacks[7] }}
+              >
+                {this.state.showCode ? `Hide Code` : `Edit Code`}
+              </RimbleLink>
             </Box>
-            <RimbleLink
-              href="#"
-              title="Show code"
-              onClick={this.toggleShowCode}
-              style={{ color: defaultTheme.colors.blacks[7] }}
-            >
-              {this.state.showCode ? `Hide Code` : `Edit Code`}
-            </RimbleLink>
           </ThemeProvider>
         </LiveProvider>
       );
