@@ -280,6 +280,7 @@ const StaticSideNav = () => (
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/ToastMessage-provider"}
                 activeClassName={"active"}
+                style={{ wordBreak: "break-word" }}
               >
                 ToastMessage.provider
               </RimbleGatsbyLink>
@@ -414,53 +415,53 @@ const StaticSideNav = () => (
             </RimbleGatsbyLink>
           </Li>*/}
           <Li>
-          <RimbleGatsbyLink
-            to={"/guides/ux/connect-a-wallet-conditions"}
-            activeClassName={"active"}
-          >
-            1. Can they connect?
-          </RimbleGatsbyLink>
-        </Li>
-        <Li>
-        <RimbleGatsbyLink
-          to={"/guides/ux/connect-a-wallet-before"}
-          activeClassName={"active"}
-        >
-          2. Before they connect
-        </RimbleGatsbyLink>
-      </Li>
-      <Li>
-      <RimbleGatsbyLink
-        to={"/guides/ux/connect-a-wallet-metamask"}
-        activeClassName={"active"}
-      >
-        3. Help with MetaMask
-      </RimbleGatsbyLink>
-    </Li>
-    <Li>
-    <RimbleGatsbyLink
-      to={"/guides/ux/connect-a-wallet-success"}
-      activeClassName={"active"}
-    >
-      4. Confim success
-    </RimbleGatsbyLink>
-  </Li>
-  <Li>
-  <RimbleGatsbyLink
-    to={"/guides/ux/connect-a-wallet-low-funds"}
-    activeClassName={"active"}
-  >
-    5. No ETH, no problem
-  </RimbleGatsbyLink>
-</Li>
+            <RimbleGatsbyLink
+              to={"/guides/ux/connect-a-wallet-conditions"}
+              activeClassName={"active"}
+            >
+              1. Can they connect?
+            </RimbleGatsbyLink>
+          </Li>
+          <Li>
+            <RimbleGatsbyLink
+              to={"/guides/ux/connect-a-wallet-before"}
+              activeClassName={"active"}
+            >
+              2. Before they connect
+            </RimbleGatsbyLink>
+          </Li>
+          <Li>
+            <RimbleGatsbyLink
+              to={"/guides/ux/connect-a-wallet-metamask"}
+              activeClassName={"active"}
+            >
+              3. Help with MetaMask
+            </RimbleGatsbyLink>
+          </Li>
+          <Li>
+            <RimbleGatsbyLink
+              to={"/guides/ux/connect-a-wallet-success"}
+              activeClassName={"active"}
+            >
+              4. Confim success
+            </RimbleGatsbyLink>
+          </Li>
+          <Li>
+            <RimbleGatsbyLink
+              to={"/guides/ux/connect-a-wallet-low-funds"}
+              activeClassName={"active"}
+            >
+              5. No ETH, no problem
+            </RimbleGatsbyLink>
+          </Li>
         </Ul>
-<Li>
+        <Li>
           <RimbleGatsbyLink to={"guides/content"} activeClassName={"active"}>
             dApp Content
           </RimbleGatsbyLink>
         </Li>
-</Ul>
-          {/*<Ul>
+      </Ul>
+      {/*<Ul>
 
           <Li>
             <RimbleGatsbyLink
@@ -489,7 +490,6 @@ const StaticSideNav = () => (
           </Li>
 
         </Ul>*/}
-
     </Ul>
   </nav>
 );
