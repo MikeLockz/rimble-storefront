@@ -27,25 +27,25 @@ Adjust where your tooltip appears on hover
 
 ```js is=react-live
 <Tooltip message="Top tooltip" placement="top">
-  <OutlineButton>Show top</OutlineButton>
+  <Button.Outline>Show top</Button.Outline>
 </Tooltip>
 ```
 
 ```js is=react-live
 <Tooltip message="Left tooltip" placement="left">
-  <OutlineButton>Show left</OutlineButton>
+  <Button.Outline>Show left</Button.Outline>
 </Tooltip>
 ```
 
 ```js is=react-live
 <Tooltip message="Bottom tooltip" placement="bottom">
-  <OutlineButton>Show bottom</OutlineButton>
+  <Button.Outline>Show bottom</Button.Outline>
 </Tooltip>
 ```
 
 ```js is=react-live
 <Tooltip message="Right tooltip" placement="right">
-  <OutlineButton>Show right</OutlineButton>
+  <Button.Outline>Show right</Button.Outline>
 </Tooltip>
 ```
 
@@ -61,7 +61,7 @@ Choose the colour of your `Tooltip`.
 
 ```js is=react-live
 <Tooltip message="Light tooltip" placement="right" variant="light">
-  <OutlineButton>Show light</OutlineButton>
+  <Button.Outline>Show light</Button.Outline>
 </Tooltip>
 ```
 
@@ -96,12 +96,12 @@ They're for extra information that some might find useful but don't necessarily 
     ),
     negative: (
     <Tooltip
-              placement="right"
-              variant="dark"
-              message="To use this dApp you must be on the Rinkeby network"
-            >
-              <Button.Text icon="Warning">Wrong network</Button.Text>
-            </Tooltip>
+      placement="right"
+      variant="dark"
+      message="To use this dApp you must be on the Rinkeby network"
+    >
+      <Button.Text icon="Warning">Wrong network</Button.Text>
+    </Tooltip>
     ),
   }}
 </DoDont>
@@ -136,11 +136,12 @@ Don't include too much text in a tooltip. They're for short clarification or ela
 **Some suggested uses**
 
 <Tooltip
-placement="bottom"
-variant="light"
-message="0x99cb784f0429efd72wu39fn4256n8wud4e01c7d2"
-
-> <Pill>{'0x99...7d2'}</Pill> > </Tooltip>
+  placement="bottom"
+  variant="light"
+  message="0x99cb784f0429efd72wu39fn4256n8wud4e01c7d2"
+> 
+  <Pill>{'0x99...7d2'}</Pill> 
+</Tooltip>
 
 <Text mt={3}>
   This will include a small{' '}

@@ -4,6 +4,7 @@ componentName: Button
 ---
 
 import PropsTable from "../../../components/propstable";
+import TableOfContents from "../../../components/documentation/TableOfContents";
 
 # Spacing
 
@@ -11,11 +12,14 @@ import PropsTable from "../../../components/propstable";
 
 export default ({ children, tableOfContents, propMetaData, ...props }) => (
   <div className="my custom layout">
-    <h1>{tableOfContents}</h1>
-    <div>{children}</div>
-    <div>{JSON.stringify(props, null, 2)}</div>
-    <PropsTable propMetaData={propMetaData} />
+    <TableOfContents tableOfContents={tableOfContents} />
   </div>
 );
 
 ;
+
+### 3rd level
+
+#### 4th level
+
+# Bottom

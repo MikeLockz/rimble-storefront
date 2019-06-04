@@ -3,14 +3,13 @@ import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import MDXRenderer from "gatsby-mdx/mdx-renderer";
-import PropsTable from "../components/propstable";
-import { Box, Heading, Text } from "rimble-ui";
+import { Box, Text } from "rimble-ui";
 
 const RawLayout = props => <div>{props.children}</div>;
 
 class DocLayout extends React.Component {
   render() {
-    const { children, data, tableOfContents, ...props } = this.props;
+    const { children, data, ...props } = this.props;
 
     if (props.location.pathname === "/") {
       return <RawLayout {...props}>{children}</RawLayout>;
@@ -20,23 +19,20 @@ class DocLayout extends React.Component {
       }
 
       return (
-        <Layout {...props}>
-          {console.log("Data: ", data)}
+        <Layout {...props} tableOfContents={data.mdx.tableOfContents}>
+          {/* {console.log("Data: ", data)} */}
           <Helmet />
           <Box>
             {typeof data.componentMetadata !== "undefined" &&
             data.componentMetadata !== null ? (
               <MDXRenderer
-                tableOfContents={data.componentMetadata.tableOfContents}
                 propMetaData={data.componentMetadata.childrenComponentProp}
                 {...props}
               >
                 {data.mdx.code.body}
               </MDXRenderer>
             ) : (
-              <MDXRenderer tableOfContents={tableOfContents} {...props}>
-                {data.mdx.code.body}
-              </MDXRenderer>
+              <MDXRenderer {...props}>{data.mdx.code.body}</MDXRenderer>
             )}
           </Box>
         </Layout>
@@ -49,11 +45,6 @@ export default DocLayout;
 
 export const pageQuery = graphql`
   query($id: String, $componentName: String) {
-    site {
-      siteMetadata {
-        docsLocation
-      }
-    }
     mdx(id: { eq: $id }) {
       id
       code {
