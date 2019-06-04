@@ -934,29 +934,29 @@
     react-lifecycles-compat "^3.0.4"
     warning "^3.0.0"
 
-"@rimble/connection-banner@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@rimble/connection-banner/-/connection-banner-1.2.0.tgz#dae918e9a6958a32497031c9d15c38cfe3d1ecae"
-  integrity sha512-AC7imWChZ524aU34aJa0AxCaBOFCDW1ki8LwTOiKtGtNdAOkh+sVNwJFaqY6iVC7ZfshLPNn0601iqyH1biBnw==
+"@rimble/connection-banner@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@rimble/connection-banner/-/connection-banner-1.2.1.tgz#db9a6f23d593b21a5a22dfc92b87ae906ff0f605"
+  integrity sha512-/uvXQKcaAD17etvH+Ss2xOqCMROUulpdiPeizpRLd5FazMEFD7Hm4hsgZ2HOVG6Eh20D1uSnnq1r9lOGFH06wA==
   dependencies:
-    "@rimble/utils" "^1.2.0"
-    rimble-ui "^0.9.0"
+    "@rimble/utils" "^1.2.1"
+    rimble-ui "^0.9.1"
 
-"@rimble/network-indicator@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@rimble/network-indicator/-/network-indicator-1.2.0.tgz#82ae1fd3a372fda864b2db7f2617d532f1b9a116"
-  integrity sha512-5DjnJiGPJ3ivytE5lntEok/6OardxrgHXHPGUUZuRdh7RJ+jzw2mlBavnpvHC0EqFKv5XbR5tdBs2h65/dyhOA==
+"@rimble/network-indicator@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@rimble/network-indicator/-/network-indicator-1.2.1.tgz#d5b710bb057e05b71614e2b46a912814a22c9127"
+  integrity sha512-990UADOglYBFyb4W2aV1755un3yBDu9FB+rq2KzG5EtrfY5fsJfJDhxoebkHHOVSWzpTf02Gz0yV7OTGtoUY6w==
   dependencies:
-    "@rimble/utils" "^1.2.0"
-    rimble-ui "^0.9.0"
+    "@rimble/utils" "^1.2.1"
+    rimble-ui "^0.9.1"
 
-"@rimble/utils@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@rimble/utils/-/utils-1.2.0.tgz#b2cc203179d2e5a915b15e126d3a9a1778e6ab8d"
-  integrity sha512-SKGQwEY0iRDDhUhPv4lREDQvftj1ikBva1UdOhDs0QXDCKCXGMOmoDzAHLfzIqXnPP5BtuVwARDYdUAI4/nBqQ==
+"@rimble/utils@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@rimble/utils/-/utils-1.2.1.tgz#b078f7e697c248531f6031960ae4540bf0699415"
+  integrity sha512-Hfe1ZOD9Qj+Ac3IeSHZNrzYOMgJM6tvVgZ9eg0qKr11FfRdmbNZ0H7botum5wTMdbSCKpmge7mXHhQbBP8vcJg==
   dependencies:
     bowser "^2.2.0"
-    rimble-ui "^0.9.0"
+    rimble-ui "^0.9.1"
 
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
@@ -11524,19 +11524,6 @@ rgba-regex@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/rgba-regex/-/rgba-regex-1.0.0.tgz#43374e2e2ca0968b0ef1523460b7d730ff22eeb3"
   integrity sha1-QzdOLiyglosO8VI0YLfXMP8i7rM=
-
-rimble-ui@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/rimble-ui/-/rimble-ui-0.9.0.tgz#defba4aa2fb473440dbf85113ccec98fc8e14e97"
-  integrity sha512-Jx0esXH1fFpmQgeHov2wTp4vg3gCzBx6aQKd+Kr+f9Y0VTm9YflqIn2HOhBLMmEkdHFceM8JsnRr+4LFIVZKNg==
-  dependencies:
-    "@d8660091/react-popper" "^1.0.4"
-    "@svgr/rollup" "^4.2.0"
-    ethereum-blockies "^0.1.1"
-    polished "^3.2.0"
-    qrcode.react "^0.9.3"
-    rmdi "^1.0.1"
-    styled-system "^4.1.0"
 
 rimble-ui@^0.9.1:
   version "0.9.1"
