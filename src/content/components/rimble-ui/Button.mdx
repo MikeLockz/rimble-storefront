@@ -11,6 +11,7 @@ import PropsTable from "../../../components/propstable.js";
 # Button
 
 Use the Button component when you want users to perform an action like connecting their Ethereum account or starting a transaction. It contains a label with an optional icon before or after the label. It maps to a `<button type='button'>` element and extends [`Box`](/components/rimble-ui/Box).
+
 **Import component**
 
 ```lang=jsx
@@ -155,7 +156,7 @@ _This also requires you to import the [`Link`](/components/rimble-ui/Link) compo
 
 ## Component props
 
-Button's icon inherits all the props from [Icon](/components/rimble-ui/Icon), but also includes these:
+Button's icon inherits all the props from [`Icon`](/components/rimble-ui/Icon), but also includes these:
 
 | Prop      | Type    | Values                                                           | Default | Description                                  |
 | --------- | ------- | ---------------------------------------------------------------- | ------- | -------------------------------------------- |
@@ -168,7 +169,7 @@ Button's icon inherits all the props from [Icon](/components/rimble-ui/Icon), b
 
 ## Styled-system props
 
-`Button` uses all the style props from [Box](/components/rimble-ui/Box), but also includes these:
+`Button` uses all the style props from [`Box`](/components/rimble-ui/Box), but also includes these:
 
 <PropsTable propMetaData={props.propMetaData} />
 
@@ -214,6 +215,8 @@ Don’t use too many buttons together on one piece of interface: prioritise the 
 
 Some best practices for writing `Button` microcopy.
 
+[Content guidelines evidence](https://readabilityguidelines.myxwiki.org/xwiki/bin/view/User%20centred%20design/Links/)
+
 **Explain what pressing the button will do**
 
 The user should understand exactly what will happen once they press the button.
@@ -254,7 +257,7 @@ Don’t use articles (a, the, an) in microcopy. This will make your button quick
 
 **Explain the next step, not the end goal**
 
-Explain what the button will do at this stage in the flow. 
+Explain what the button will do at this stage in the flow.
 
 For example, if you have a button that launches a QR code for you to scan with your mobile...
 
