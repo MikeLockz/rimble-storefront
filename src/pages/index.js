@@ -1,5 +1,6 @@
 import React from "react";
 
+
 // Import from old landing page
 import styled from "styled-components";
 import RimbleLink from "../components/landing/RimbleLink";
@@ -16,6 +17,8 @@ import Header from "../components/landing/header";
 import Footer from "../components/landing/footer";
 import ReactSVG from "react-svg";
 import { backgroundImage } from "styled-system";
+import Button from "../components/landing/Button";
+
 
 import defaultTheme from "../theme";
 
@@ -83,43 +86,56 @@ const IndexPage = () => (
                 built for developers.
               </Text.p>
 
-              <Flex mt={4} width={1} flexDirection={["column", "row"]}>
+              <Flex mt={5} mb={5} width={1} flexDirection={["column", "row"]}>
                 <Box flex={"1 1 auto"} width={[1, 1 / 3]} mr={5}>
                   <Flex my={3}>
                     <ReactSVG src="/static/svg/fig-1.svg" />
                   </Flex>
                   <Heading.h2 fontSize={[3, 4]} fontWeight={2}>
-                    Flexible
+                    UI
                   </Heading.h2>
                   <Text.p>
-                    Your tech stack and workflow are yours to decide. We impose
-                    as few constraints as possible.{" "}
+                    Clean, customisable building blocks for putting your interface together, including UI for Ethereum concepts.
+                    {" "}
                   </Text.p>
+                    <Button
+                      href="https://consensys.github.io/rimble-ui/?path=/story/getting-started--welcome" target='_blank' rel='noopener'
+                      width={["100%", "auto"]} mr={[0, 3]} mb={[3, 0]}>
+                      Learn More
+                    </Button>
                 </Box>
                 <Box flex={"1 1 auto"} width={[1, 1 / 3]} mr={5}>
                   <Flex my={3}>
                     <ReactSVG src="/static/svg/fig-2.svg" />
                   </Flex>
                   <Heading.h2 fontSize={[3, 4]} fontWeight={2}>
-                    Research-driven
+                    Web 3 Components
                   </Heading.h2>
                   <Text.p>
-                    We are constantly talking to dApp designers, developers, and
-                    users to understand common challenges and effective UI
-                    patterns.{" "}
+                    Drop-in components that solve an Ethereum UX problem out of the box. Configure some inputs and you're ready.
+                    {" "}
                   </Text.p>
+                  <Button
+                    href="https://consensys.github.io/rimble-ui/?path=/story/getting-started--welcome" target='_blank' rel='noopener'
+                    width={["100%", "auto"]} mr={[0, 3]} mb={[3, 0]}>
+                    Learn More
+                  </Button>
                 </Box>
                 <Box flex={"1 1 auto"} width={[1, 1 / 3]}>
                   <Flex my={3}>
                     <ReactSVG src="/static/svg/fig-3.svg" />
                   </Flex>
                   <Heading.h2 fontSize={[3, 4]} fontWeight={2}>
-                    Human
+                    Design Patterns
                   </Heading.h2>
                   <Text.p>
-                    Blockchain is confusing. We are a dedicated team, invested
-                    in being understandable and approachable.
+                    In-depth pieces on designing patterns and workflows that help your users navigate Ethereum.
                   </Text.p>
+                  <Button
+                    href="https://consensys.github.io/rimble-ui/?path=/story/getting-started--welcome" target='_blank' rel='noopener'
+                    width={["100%", "auto"]} mr={[0, 3]} mb={[3, 0]}>
+                    Learn More
+                  </Button>
                 </Box>
               </Flex>
             </Box>
