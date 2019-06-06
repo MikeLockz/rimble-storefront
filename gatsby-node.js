@@ -23,7 +23,7 @@ exports.onCreateBabelConfig = ({ actions }) => {
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === `Mdx` && node.parent.internal.type !== 'ComponentDescription') {
+  if (node.internal.type === `Mdx` && node.frontmatter.title !== '') {
     // console.log("onCreateNode:", node);
 
     const parent = getNode(node.parent);
@@ -99,9 +99,8 @@ exports.createPages = ({ graphql, actions }) => {
         // Create blog posts pages.
         result.data.allMdx.edges.forEach(async ({ node }) => {
           console.log(
-            "title/parent type: ",
-            node.frontmatter.title,
-            node.parent.internal.type
+            "title: ",
+            node.frontmatter.title
           );
           if (
             typeof node.fields !== "undefined" &&
@@ -109,8 +108,7 @@ exports.createPages = ({ graphql, actions }) => {
             typeof node.internal !== "undefined" &&
             node.internal.type === `Mdx` &&
             typeof node.frontmatter !== "undefined" &&
-            typeof node.frontmatter.componentName !== "undefined" && 
-            node.parent.internal.type !== "ComponentDescription"
+            typeof node.frontmatter.componentName !== "undefined"
           ) {
             createPage({
               path: `${node.fields.slug}`,
