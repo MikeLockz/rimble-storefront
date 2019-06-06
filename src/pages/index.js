@@ -4,6 +4,7 @@ import React from "react";
 // Import from old landing page
 import styled from "styled-components";
 import RimbleLink from "../components/landing/RimbleLink";
+import RimbleGatsbyLink from "../components/landing/RimbleGatsbyLink";
 import ThemeProvider from "../components/landing/ThemeProvider";
 import Typography from "../components/landing/typography";
 import Container from "../components/landing/Container";
@@ -98,11 +99,12 @@ const IndexPage = () => (
                     Clean, customisable building blocks for putting your interface together, including UI for Ethereum concepts.
                     {" "}
                   </Text.p>
+                  <RimbleGatsbyLink to="/rimble-ui">
                     <Button
-                      href="https://consensys.github.io/rimble-ui/?path=/story/getting-started--welcome" target='_blank' rel='noopener'
                       width={["100%", "auto"]} mr={[0, 3]} mb={[3, 0]}>
                       Learn More
                     </Button>
+                  </RimbleGatsbyLink>
                 </Box>
                 <Box flex={"1 1 auto"} width={[1, 1 / 3]} mr={5}>
                   <Flex my={3}>
@@ -115,11 +117,12 @@ const IndexPage = () => (
                     Drop-in components that solve an Ethereum UX problem out of the box. Configure some inputs and you're ready.
                     {" "}
                   </Text.p>
-                  <Button
-                    href="https://consensys.github.io/rimble-ui/?path=/story/getting-started--welcome" target='_blank' rel='noopener'
-                    width={["100%", "auto"]} mr={[0, 3]} mb={[3, 0]}>
-                    Learn More
-                  </Button>
+                  <RimbleGatsbyLink to="/components">
+                    <Button
+                      width={["100%", "auto"]} mr={[0, 3]} mb={[3, 0]}>
+                      Learn More
+                    </Button>
+                  </RimbleGatsbyLink>
                 </Box>
                 <Box flex={"1 1 auto"} width={[1, 1 / 3]}>
                   <Flex my={3}>
@@ -131,11 +134,15 @@ const IndexPage = () => (
                   <Text.p>
                     In-depth pieces on designing patterns and workflows that help your users navigate Ethereum.
                   </Text.p>
+                  <Flex>
+                  <RimbleGatsbyLink to="/guides">
                   <Button
-                    href="https://consensys.github.io/rimble-ui/?path=/story/getting-started--welcome" target='_blank' rel='noopener'
-                    width={["100%", "auto"]} mr={[0, 3]} mb={[3, 0]}>
+                    target='_blank' rel='noopener'
+                    width={["100%", "auto"]} mr={[0, 3]} mb={[3, 0]} display={"Flex"}>
                     Learn More
                   </Button>
+                  </RimbleGatsbyLink>
+                  </Flex>
                 </Box>
               </Flex>
             </Box>
