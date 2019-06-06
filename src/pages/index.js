@@ -74,7 +74,7 @@ const IndexPage = () => (
         </Masthead>
         <section>
           <Container>
-            <Box my={5}>
+            <Box mt={6}>
               <Heading.h1 fontSize={[4, 5]}>Why Rimble?</Heading.h1>
               <Hr />
               <Text.p fontSize={[2, 3]}>
@@ -86,7 +86,7 @@ const IndexPage = () => (
                 built for developers.
               </Text.p>
 
-              <Flex mt={5} mb={5} width={1} flexDirection={["column", "row"]}>
+              <Flex mt={6} width={1} flexDirection={["column", "row"]}>
                 <Box flex={"1 1 auto"} width={[1, 1 / 3]} mr={5}>
                   <Flex my={3}>
                     <ReactSVG src="/static/svg/fig-1.svg" />
@@ -143,7 +143,7 @@ const IndexPage = () => (
         </section>
         <section>
           <Container>
-            <Box my={5}>
+            <Box mt={6}>
               {/* body section */}
               <Heading.h1 id="getting-started" fontSize={[4, 5]}>
                 Getting Started
@@ -164,7 +164,7 @@ const IndexPage = () => (
         </section>
         <section>
           <Container>
-            <Box my={5}>
+            <Box mt={6} mb={5}>
               <Heading.h1 fontSize={[4, 5]}>
                 Made by ConsenSys Design
               </Heading.h1>
