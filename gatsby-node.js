@@ -99,9 +99,10 @@ exports.createPages = ({ graphql, actions }) => {
           console.log(
             "title/path: ",
             node.frontmatter.title,
-            node.fileAbsolutePath
+            node
           );
           if (
+            typeof node.fields !== "undefined" &&
             typeof node.internal !== "undefined" &&
             node.internal.type === `Mdx` &&
             typeof node.frontmatter !== "undefined" &&
