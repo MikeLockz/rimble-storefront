@@ -95,6 +95,11 @@ module.exports = {
         ignore: [`**/__snapshots__/**`, `**/*.test.js`, `**/*.snap`]
       }
     },
-    `gatsby-transformer-react-docgen`
+    {
+      resolve: `gatsby-transformer-react-docgen`,
+      options: {
+        resolver: require(`./annotations-resolver`),
+      },
+    },
   ]
 };
