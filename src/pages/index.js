@@ -178,16 +178,6 @@ const IndexPage = () => (
                 >
                   ConsenSys Design.
                 </RimbleLink>{" "}
-                Want to help us define the roadmap? Submit feedback or feature
-                requests on the{" "}
-                <RimbleLink
-                  href="//github.com/ConsenSys/rimble-ui"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Rimble
-                </RimbleLink>{" "}
-                GitHub page.
               </Text.p>
             </Box>
           </Container>
