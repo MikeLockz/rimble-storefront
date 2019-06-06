@@ -25,15 +25,16 @@ const Footer = ({ props }) => (
   <FooterStyled>
     <MyContainer flexDirection={["column", "row"]} py={4}>
       <RimbleLink
+        color="#f5f5f5"
         fontWeight={3}
-        fontSize={1}
+        fontSize={2}
         href="//consensys.design/"
         target="_blank"
         rel="noopener"
       >
         Made by ConsenSys Design
       </RimbleLink>
-      <Text fontWeight={0} fontSize={1} color="#888D95">
+      <Text fontWeight={0} fontSize={2} color="#f5f5f5">
         © 2018 ConsenSys Inc.
       </Text>
     </MyContainer>
