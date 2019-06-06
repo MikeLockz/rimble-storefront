@@ -36,7 +36,8 @@ import {
   Table,
   ToastMessage,
   UPortButton,
-  Tooltip
+  Tooltip,
+  EthAddress,
 } from "rimble-ui";
 import ConnectionBanner from "@rimble/connection-banner";
 import NetworkIndicator from "@rimble/network-indicator";
@@ -78,7 +79,8 @@ const localScope = {
   Table,
   ToastMessage,
   UPortButton,
-  Tooltip
+  Tooltip,
+  EthAddress,
 };
 
 const prismMap = {

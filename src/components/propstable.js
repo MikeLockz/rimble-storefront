@@ -29,14 +29,29 @@ const PropsTable = props => {
               return (
                 <tr key={key}>
                   <td>{prop.name}</td>
-                  <td>{prop.parentType ? prop.parentType.name : ""}</td>
+                  <td>
+                    {prop.parentType ? prop.parentType.name : ""}
+                  </td>
                   {prop.required ? <td>required</td> : <td>optional</td>}
                   {prop.defaultValue ? (
                     <td>{prop.defaultValue.value}</td>
                   ) : (
                     <td>none</td>
                   )}
-                  {prop.docblock ? <td>{prop.docblock}</td> : <td />}
+                  <td>
+                    {prop.docblock ? prop.docblock : ""}
+                    {prop.parentType && prop.parentType.name === 'enum' && (
+                      <Box>
+                        <Text.span>Allowed values: </Text.span>
+                        {
+                          Object.keys(prop.type.value).map(key => {
+                            const value = prop.type.value[key];
+                            return (<Text.span key={key}>{value.value}, </Text.span>)
+                          })
+                        }
+                      </Box>
+                    )}
+                  </td>
                 </tr>
               );
             })}

@@ -24,6 +24,13 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === `Mdx`) {
+    console.log("onCreateNode:", node);
+
+    // if (node.frontmatter.title !== '') {
+    //   console.log("Unknown mdx node type.")
+    //   return;
+    // }
+
     const parent = getNode(node.parent);
     let value = parent.relativePath.replace(parent.ext, "");
 
@@ -103,6 +110,7 @@ exports.createPages = ({ graphql, actions }) => {
           );
           if (
             typeof node.fields !== "undefined" &&
+            node.fields !== null &&
             typeof node.internal !== "undefined" &&
             node.internal.type === `Mdx` &&
             typeof node.frontmatter !== "undefined" &&

@@ -1,5 +1,6 @@
 ---
 title: EthAddress
+componentName: EthAddress
 ---
 
 import {
@@ -24,7 +25,29 @@ import PropsTable from "../../../components/propstable";
 
 # EthAddress
 
+Allows for different displays of an Ethereum address to a wallet, smart contract, transaction or any other hash. Use `EthAddress` when you want to truncate, link, show QR on hover, or other different visual representations of an Ethereum address.
+
+**Import component**
+
+```jsx
+import { EthAddress } from "rimble-ui";
+```
+
 ## Examples
+
+Different ways to use the `EthAddress` component
+
+**Standard EthAddress**
+
+```js is=react-live
+<EthAddress address="0x9505C8Fc1aD98b0aC651b91245d02D055fEc8E49" />
+```
+
+**Truncated EthAddress**
+
+```js is=react-live
+<EthAddress address="0x9505C8Fc1aD98b0aC651b91245d02D055fEc8E49" truncate={true} />
+```
 
 ## Props
 

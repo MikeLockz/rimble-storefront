@@ -79,26 +79,26 @@ const StaticSideNav = () => (
             </Li>
             <Li>
               <RimbleGatsbyLink
-                to={"/components/rimble-ui/QR"}
-                activeClassName={"active"}
-              >
-                QR Code
-              </RimbleGatsbyLink>
-            </Li>
-            {/*<Li>
-              <RimbleGatsbyLink
                 to={"/components/rimble-ui/EthAddress"}
                 activeClassName={"active"}
               >
                 Eth Address
               </RimbleGatsbyLink>
-            </Li>*/}
+            </Li>
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/MetaMaskButton"}
                 activeClassName={"active"}
               >
                 MetaMask Button
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/QR"}
+                activeClassName={"active"}
+              >
+                QR Code
               </RimbleGatsbyLink>
             </Li>
             <Li>
@@ -122,18 +122,18 @@ const StaticSideNav = () => (
             </Li>
             <Li>
               <RimbleGatsbyLink
-                to={"/components/rimble-ui/Flex"}
-                activeClassName={"active"}
-              >
-                Flex
-              </RimbleGatsbyLink>
-            </Li>
-            <Li>
-              <RimbleGatsbyLink
                 to={"/components/rimble-ui/Card"}
                 activeClassName={"active"}
               >
                 Card
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/Flex"}
+                activeClassName={"active"}
+              >
+                Flex
               </RimbleGatsbyLink>
             </Li>
           </Ul>
