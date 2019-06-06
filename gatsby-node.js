@@ -23,7 +23,7 @@ exports.onCreateBabelConfig = ({ actions }) => {
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === `Mdx`) {
+  if (node.internal.type === `Mdx` && node.frontmatter.title !== '') {
     console.log("onCreateNode:", node);
 
     // if (node.frontmatter.title !== '') {
