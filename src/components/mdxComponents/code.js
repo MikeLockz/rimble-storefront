@@ -2,7 +2,12 @@ import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import codeTheme from "prism-react-renderer/themes/duotoneLight";
 import codeDarkTheme from "prism-react-renderer/themes/duotoneDark";
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
+import {
+  LiveProvider,
+  LiveEditor,
+  LiveError,
+  LivePreview
+} from "react-live";
 import {
   Avatar,
   Flex,
@@ -40,8 +45,6 @@ import {
 } from "rimble-ui";
 import ConnectionBanner from "@rimble/connection-banner";
 import NetworkIndicator from "@rimble/network-indicator";
-// import codeTheme from "../../../static/static/prism-ghcolors.css";
-import defaultTheme from "../../theme";
 
 const localScope = {
   Avatar,
@@ -71,7 +74,6 @@ const localScope = {
   MetaMaskButton,
   ConnectionBanner,
   NetworkIndicator,
-  defaultTheme,
   Text,
   PublicAddress,
   QR,
@@ -88,7 +90,7 @@ const prismMap = {
 
 class Code extends React.Component {
   state = {
-    showCode: false
+    showCode: true
   };
 
   toggleShowCode = e => {
@@ -104,34 +106,22 @@ class Code extends React.Component {
     if (!is) {
       // console.log("!is", is);
       return (
-        <Box display={"inline-block"}>
-          <ThemeProvider theme={defaultTheme}>
-            <Highlight
-              {...defaultProps}
-              theme={codeTheme}
-              code={children.trim()}
-              language={lang}
-            >
-              {({
-                className,
-                style,
-                tokens,
-                /*getLineProps,*/ getTokenProps
-              }) => (
-                <code
-                  className={className}
-                  style={{ ...style, display: "inline" }}
-                >
-                  {tokens.map(line =>
-                    line.map((token, key) => (
-                      <span key="fake-key" {...getTokenProps({ token, key })} />
-                    ))
-                  )}
-                </code>
+        <Highlight
+          {...defaultProps}
+          code={children.trim()}
+          language={'jsx'}
+          theme={codeTheme}
+        >
+          {({ className, style, tokens, getTokenProps }) => (
+            <code className={className} style={style}>
+              {tokens.map(line =>
+                line.map((token, key) => (
+                  <span key="fake-key" {...getTokenProps({ token, key })} />
+                ))
               )}
-            </Highlight>
-          </ThemeProvider>
-        </Box>
+            </code>
+          )}
+        </Highlight>
       );
     }
 
@@ -144,30 +134,22 @@ class Code extends React.Component {
           code={children.trim()}
           scope={localScope}
         >
-          <ThemeProvider theme={defaultTheme}>
+          <ThemeProvider>
             <Box my={3}>
               <Box mb={1}>
                 <Box
                   border={1}
-                  borderColor={defaultTheme.colors.grey}
+                  borderColor={'grey'}
                   p={3}
-                  mt={3}
                 >
                   <LivePreview />
                   <LiveError />
                 </Box>
-                {this.state.showCode ? (
-                  <LiveEditor theme={codeDarkTheme} />
-                ) : null}
+                { this.state.showCode && <LiveEditor theme={codeDarkTheme} /> }
               </Box>
-              <RimbleLink
-                href="#"
-                title="Show code"
-                onClick={this.toggleShowCode}
-                style={{ color: defaultTheme.colors.blacks[7] }}
-              >
+              <Button.Text onClick={this.toggleShowCode}>
                 {this.state.showCode ? `Hide Code` : `Edit Code`}
-              </RimbleLink>
+              </Button.Text>
             </Box>
           </ThemeProvider>
         </LiveProvider>
@@ -177,30 +159,23 @@ class Code extends React.Component {
     // console.log("default render", is === "react-live");
     // otherwise, use prism to render a code block
     return (
-      <ThemeProvider theme={defaultTheme}>
-        <Highlight
-          {...defaultProps}
-          theme={codeTheme}
-          code={children.trim()}
-          language={prismMap[lang] || lang}
-        >
-          {({ className, style, tokens, getLineProps, getTokenProps }) => (
-            <pre
-              className={className}
-              style={style}
-              css={{ overflow: "auto", padding: "1rem", marginTop: "1.5rem" }}
-            >
-              {tokens.map((line, i) => (
-                <div key="fake-key" {...getLineProps({ line, key: i })}>
-                  {line.map((token, key) => (
-                    <span key="fake-key" {...getTokenProps({ token, key })} />
-                  ))}
-                </div>
-              ))}
-            </pre>
-          )}
-        </Highlight>
-      </ThemeProvider>
+      <Highlight
+        {...defaultProps}
+        code={children.trim()}
+        language={'jsx'}
+      >
+        {({ className, style, tokens, getLineProps, getTokenProps }) => (
+          <pre className={className} style={style}>
+            {tokens.map((line, i) => (
+              <div key="fake-key" {...getLineProps({ line, key: i })}>
+                {line.map((token, key) => (
+                  <span key="fake-key" {...getTokenProps({ token, key })} />
+                ))}
+              </div>
+            ))}
+          </pre>
+        )}
+      </Highlight>
     );
   }
 }
