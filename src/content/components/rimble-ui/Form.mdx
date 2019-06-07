@@ -65,11 +65,13 @@ class MyCustomForm extends React.Component {
             onChange={this.handleValidation}
           />
         </Form.Field>
-        <Form.Check
-          label="Remember me?"
-          mb={3}
-          onChange={this.handleValidation}
-        />
+        <Box>
+          <Form.Check
+            label="Remember me?"
+            mb={3}
+            onChange={this.handleValidation}
+          />
+        </Box>
         <Button type="submit" width={1}>
           Sign Up
         </Button>
