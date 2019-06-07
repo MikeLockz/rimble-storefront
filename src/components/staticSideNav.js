@@ -137,7 +137,7 @@ const StaticSideNav = () => (
               </RimbleGatsbyLink>
             </Li>
           </Ul>
-          <Li>Containers</Li>
+          <Li>Layout</Li>
           <Ul>
             <Li>
               <RimbleGatsbyLink
@@ -335,7 +335,7 @@ const StaticSideNav = () => (
               </RimbleGatsbyLink>
             </Li>
           </Ul>
-          <Li>Copy</Li>
+          <Li>Typography</Li>
           <Ul>
             <Li>
               <RimbleGatsbyLink
