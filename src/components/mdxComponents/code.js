@@ -37,12 +37,13 @@ import {
   ToastMessage,
   UPortButton,
   Tooltip,
-  EthAddress,
+  EthAddress
 } from "rimble-ui";
 import ConnectionBanner from "@rimble/connection-banner";
 import NetworkIndicator from "@rimble/network-indicator";
 // import codeTheme from "../../../static/static/prism-ghcolors.css";
 import defaultTheme from "../../theme";
+import myTheme from "../../customTheme";
 
 const localScope = {
   Avatar,
@@ -81,6 +82,7 @@ const localScope = {
   UPortButton,
   Tooltip,
   EthAddress,
+  myTheme
 };
 
 const prismMap = {

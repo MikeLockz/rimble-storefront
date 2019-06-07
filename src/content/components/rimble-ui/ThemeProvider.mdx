@@ -1,0 +1,41 @@
+---
+title: Theme Provider
+componentName: ThemeProvider
+---
+
+import PropsTable from "../../../components/propstable";
+import { ThemeProvider } from "rimble-ui";
+
+ThemeProvider allows for overriding the default component styles holistically from a single theme definition.
+
+# Theme Provider
+
+Rimble components use [styled-system](https://github.com/jxnblk/styled-system) to support theme-based variables.
+
+**Import component**
+
+```lang=jsx
+import { ThemeProvider } from 'styled-components'
+```
+
+## Example
+
+**Default theme**
+
+```js is=react-live
+<ThemeProvider>
+  <Button>Button</Button>
+</ThemeProvider>
+```
+
+**Custom theme**
+
+```js is=react-live
+<ThemeProvider theme={myTheme}>
+  <Button>Button</Button>
+</ThemeProvider>
+```
+
+## Props
+
+<PropsTable propMetaData={props.propMetaData} />
