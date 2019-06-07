@@ -25,10 +25,18 @@ const StaticSideNav = () => (
           <Ul>
             <Li>
               <RimbleGatsbyLink
-                to={"/components/rimble-ui/theme"}
+                to={"/components/rimble-ui/theming"}
                 activeClassName={"active"}
               >
                 Theming
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/system-props"}
+                activeClassName={"active"}
+              >
+                Styled-System Props
               </RimbleGatsbyLink>
             </Li>
           </Ul>
@@ -79,20 +87,12 @@ const StaticSideNav = () => (
             </Li>
             <Li>
               <RimbleGatsbyLink
-                to={"/components/rimble-ui/QR"}
-                activeClassName={"active"}
-              >
-                QR Code
-              </RimbleGatsbyLink>
-            </Li>
-            {/*<Li>
-              <RimbleGatsbyLink
                 to={"/components/rimble-ui/EthAddress"}
                 activeClassName={"active"}
               >
                 Eth Address
               </RimbleGatsbyLink>
-            </Li>*/}
+            </Li>
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/MetaMaskButton"}
@@ -103,10 +103,26 @@ const StaticSideNav = () => (
             </Li>
             <Li>
               <RimbleGatsbyLink
+                to={"/components/rimble-ui/PublicAddress"}
+                activeClassName={"active"}
+              >
+                Public Address
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/QR"}
+                activeClassName={"active"}
+              >
+                QR Code
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
                 to={"/components/rimble-ui/UPortButton"}
                 activeClassName={"active"}
               >
-                UPortButton
+                UPort Button
               </RimbleGatsbyLink>
             </Li>
           </Ul>
@@ -122,6 +138,14 @@ const StaticSideNav = () => (
             </Li>
             <Li>
               <RimbleGatsbyLink
+                to={"/components/rimble-ui/Card"}
+                activeClassName={"active"}
+              >
+                Card
+              </RimbleGatsbyLink>
+            </Li>
+            <Li>
+              <RimbleGatsbyLink
                 to={"/components/rimble-ui/Flex"}
                 activeClassName={"active"}
               >
@@ -130,10 +154,10 @@ const StaticSideNav = () => (
             </Li>
             <Li>
               <RimbleGatsbyLink
-                to={"/components/rimble-ui/Card"}
+                to={"/components/rimble-ui/ThemeProvider"}
                 activeClassName={"active"}
               >
-                Card
+                Theme Provider
               </RimbleGatsbyLink>
             </Li>
           </Ul>
@@ -200,7 +224,7 @@ const StaticSideNav = () => (
                 to={"/components/rimble-ui/Textarea"}
                 activeClassName={"active"}
               >
-                Textarea
+                Text Area
               </RimbleGatsbyLink>
             </Li>
           </Ul>
@@ -278,11 +302,10 @@ const StaticSideNav = () => (
             </Li>
             <Li>
               <RimbleGatsbyLink
-                to={"/components/rimble-ui/ToastMessage-provider"}
+                to={"/components/rimble-ui/ToastMessageProvider"}
                 activeClassName={"active"}
-                style={{ wordBreak: "break-word" }}
               >
-                ToastMessage.provider
+                ToastMessage Provider
               </RimbleGatsbyLink>
             </Li>
           </Ul>

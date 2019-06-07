@@ -1,0 +1,27 @@
+---
+title: Styled System Props
+---
+
+import {
+  COMMON_LIST,
+  LAYOUT_LIST,
+  BORDER_LIST,
+  TYPOGRAPHY_LIST,
+  FLEX_BOX_LIST,
+  POSITION_LIST
+} from "../../../constants";
+import PropsList from "../../../components/documentation/PropsList";
+import DoDont from "../../../components/documentation/DoDont";
+
+# Styled System Props
+
+System props are reused across many different components. To keep the documentation easy to read, we are showing the shared props in a single place.
+
+| Category     | Included Props                             | styled-system docs                                                                                                                                                                                            |
+| ------------ | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `COMMON`     | <PropsList systemProps={COMMON_LIST}/>     | [styled-system core docs](https://github.com/jxnblk/styled-system/blob/master/docs/table.md#core)                                                                                                             |
+| `TYPOGRAPHY` | <PropsList systemProps={TYPOGRAPHY_LIST}/> | [styled-system typography docs](https://github.com/jxnblk/styled-system/blob/master/docs/table.md#typography)                                                                                                 |
+| `BORDER`     | <PropsList systemProps={BORDER_LIST}/>     | [styled-system border docs](https://github.com/jxnblk/styled-system/blob/master/docs/table.md#misc)                                                                                                           |
+| `LAYOUT`     | <PropsList systemProps={LAYOUT_LIST}/>     | [styled-system layout docs](https://github.com/jxnblk/styled-system/blob/master/docs/table.md#layout) <br/> [styled-system misc docs](https://github.com/jxnblk/styled-system/blob/master/docs/table.md#misc) |
+| `POSITION`   | <PropsList systemProps={POSITION_LIST}/>   | [styled-system position docs](https://github.com/jxnblk/styled-system/blob/master/docs/table.md#position)                                                                                                     |
+| `FLEXBOX`    | <PropsList systemProps={FLEX_BOX_LIST}/>   | [styled-system flexbox docs](https://github.com/jxnblk/styled-system/blob/master/docs/table.md#flexbox)                                                                                                       |
