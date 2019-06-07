@@ -1,6 +1,5 @@
 import React from "react";
 
-
 // Import from old landing page
 import styled from "styled-components";
 import RimbleLink from "../components/landing/RimbleLink";
@@ -13,13 +12,11 @@ import Heading from "../components/landing/Heading";
 import Text from "../components/landing/Text";
 import Hr from "../components/landing/Hr";
 import { Flex, Box } from "../components/landing/Box";
-import Nav from "../components/landing/nav";
 import Header from "../components/landing/header";
 import Footer from "../components/landing/footer";
 import ReactSVG from "react-svg";
 import { backgroundImage } from "styled-system";
 import Button from "../components/landing/Button";
-
 
 import defaultTheme from "../theme";
 
@@ -63,8 +60,6 @@ const IndexPage = () => (
   <ThemeProvider theme={defaultTheme}>
     <React.Fragment>
       <Typography />
-
-      <Nav />
       <main role="main">
         <Masthead
           backgroundImage={["none", "none", 'url("/static/svg/fig-bg.svg")']}
@@ -128,7 +123,7 @@ const IndexPage = () => (
                   </RimbleGatsbyLink>
                 </Flex>
                 </Box>
-                <Box flex={"1 1 auto"} width={[1, 1 / 3]} mr={5}>
+                <Box flex={"1 1 auto"} width={[1, 1 / 3]}>
                   <Flex flexDirection={"column"} justifyContent={"space-between"}>
                   <Flex my={3}>
                     <ReactSVG src="/static/svg/fig-3.svg" />
@@ -152,27 +147,7 @@ const IndexPage = () => (
             </Box>
           </Container>
         </section>
-        <section>
-          <Container>
-            <Box mt={6}>
-              {/* body section */}
-              <Heading.h1 id="getting-started" fontSize={[4, 5]}>
-                Getting Started
-              </Heading.h1>
-              <Hr />
-              <Heading.h2 fontSize={3} fontWeight={2}>
-                Installation
-              </Heading.h2>
-              <CodeBlock
-                code={"$ npm install --save rimble-ui styled-components"}
-              />
-              <Heading.h2 fontSize={3} fontWeight={2}>
-                Usage
-              </Heading.h2>
-              <CodeBlock code={exampleCode} />
-            </Box>
-          </Container>
-        </section>
+
         <section>
           <Container>
             <Box mt={6} mb={5}>
