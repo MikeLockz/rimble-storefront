@@ -1,13 +1,40 @@
-import React from "react";
-import RimbleGatsbyLink from "./landing/RimbleGatsbyLink";
-import Ul from "./landing/Ul";
-import Li from "./landing/Li";
+import React from 'react';
+import styled from 'styled-components'
+import { Link as GatsbyLink } from 'gatsby';
+import { Text, Link } from 'rimble-ui'
+
+const RimbleGatsbyLink = (props) => (
+  <Link
+    as={GatsbyLink}
+    display={'block'}
+    p={1}
+    activeClassName={'-is-active'}
+    {...props}
+  />
+);
+
+const Ul = (props) => (
+  <Text as={'ul'} pl={3} {...props} />
+);
+
+const Li = (props) => (
+  <Text as={'li'} {...props} />
+);
+
+const StyledNav = styled.nav`
+  ul {
+    list-style: none;
+  }
+  a:not(:hover):not(.-is-active) {
+    color: inherit;
+  }
+`;
 
 const StaticSideNav = () => (
-  <nav>
+  <StyledNav>
     <Ul>
       <Li>
-        <RimbleGatsbyLink to={"/components"} activeClassName={"active"}>
+        <RimbleGatsbyLink to={"/components"} >
           Components
         </RimbleGatsbyLink>
       </Li>
@@ -15,7 +42,7 @@ const StaticSideNav = () => (
         <Li>
           <RimbleGatsbyLink
             to={"/components/rimble-ui"}
-            activeClassName={"active"}
+
           >
             Rimble UI
           </RimbleGatsbyLink>
@@ -26,7 +53,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/theme"}
-                activeClassName={"active"}
+
               >
                 Theming
               </RimbleGatsbyLink>
@@ -37,7 +64,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/theme"}
-                activeClassName={"active"}
+
               >
                 Theme
               </RimbleGatsbyLink>
@@ -45,7 +72,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/colors"}
-                activeClassName={"active"}
+
               >
                 Colors
               </RimbleGatsbyLink>
@@ -53,7 +80,7 @@ const StaticSideNav = () => (
             <Li>
             //   <RimbleGatsbyLink
             //     to={"/components/rimble-ui/typography"}
-            //     activeClassName={"active"}
+            //
             //   >
             //     Typography
             //   </RimbleGatsbyLink>
@@ -61,7 +88,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/spacing"}
-                activeClassName={"active"}
+
               >
                 Spacing
               </RimbleGatsbyLink>
@@ -72,7 +99,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Blockie"}
-                activeClassName={"active"}
+
               >
                 Blockie
               </RimbleGatsbyLink>
@@ -80,7 +107,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/QR"}
-                activeClassName={"active"}
+
               >
                 QR Code
               </RimbleGatsbyLink>
@@ -88,7 +115,7 @@ const StaticSideNav = () => (
             {/*<Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/EthAddress"}
-                activeClassName={"active"}
+
               >
                 Eth Address
               </RimbleGatsbyLink>
@@ -96,7 +123,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/MetaMaskButton"}
-                activeClassName={"active"}
+
               >
                 MetaMask Button
               </RimbleGatsbyLink>
@@ -104,7 +131,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/UPortButton"}
-                activeClassName={"active"}
+
               >
                 UPortButton
               </RimbleGatsbyLink>
@@ -115,7 +142,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Box"}
-                activeClassName={"active"}
+
               >
                 Box
               </RimbleGatsbyLink>
@@ -123,7 +150,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Flex"}
-                activeClassName={"active"}
+
               >
                 Flex
               </RimbleGatsbyLink>
@@ -131,7 +158,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Card"}
-                activeClassName={"active"}
+
               >
                 Card
               </RimbleGatsbyLink>
@@ -142,7 +169,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Checkbox"}
-                activeClassName={"active"}
+
               >
                 Checkbox
               </RimbleGatsbyLink>
@@ -150,7 +177,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Field"}
-                activeClassName={"active"}
+
               >
                 Field
               </RimbleGatsbyLink>
@@ -158,7 +185,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Form"}
-                activeClassName={"active"}
+
               >
                 Form
               </RimbleGatsbyLink>
@@ -166,7 +193,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Input"}
-                activeClassName={"active"}
+
               >
                 Input
               </RimbleGatsbyLink>
@@ -174,7 +201,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Radio"}
-                activeClassName={"active"}
+
               >
                 Radio
               </RimbleGatsbyLink>
@@ -182,7 +209,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Select"}
-                activeClassName={"active"}
+
               >
                 Select
               </RimbleGatsbyLink>
@@ -190,7 +217,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Slider"}
-                activeClassName={"active"}
+
               >
                 Slider
               </RimbleGatsbyLink>
@@ -198,7 +225,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Textarea"}
-                activeClassName={"active"}
+
               >
                 Textarea
               </RimbleGatsbyLink>
@@ -209,7 +236,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Loader"}
-                activeClassName={"active"}
+
               >
                 Loader
               </RimbleGatsbyLink>
@@ -217,7 +244,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Pill"}
-                activeClassName={"active"}
+
               >
                 Pill
               </RimbleGatsbyLink>
@@ -225,7 +252,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Progress"}
-                activeClassName={"active"}
+
               >
                 Progress
               </RimbleGatsbyLink>
@@ -236,7 +263,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Button"}
-                activeClassName={"active"}
+
               >
                 Button
               </RimbleGatsbyLink>
@@ -244,7 +271,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Link"}
-                activeClassName={"active"}
+
               >
                 Link
               </RimbleGatsbyLink>
@@ -255,7 +282,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Flash"}
-                activeClassName={"active"}
+
               >
                 Flash
               </RimbleGatsbyLink>
@@ -263,7 +290,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Modal"}
-                activeClassName={"active"}
+
               >
                 Modal
               </RimbleGatsbyLink>
@@ -271,7 +298,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/ToastMessage"}
-                activeClassName={"active"}
+
               >
                 ToastMessage
               </RimbleGatsbyLink>
@@ -279,7 +306,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/ToastMessage-provider"}
-                activeClassName={"active"}
+
                 style={{ wordBreak: "break-word" }}
               >
                 ToastMessage.provider
@@ -291,7 +318,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Tooltip"}
-                activeClassName={"active"}
+
               >
                 Tooltip
               </RimbleGatsbyLink>
@@ -302,7 +329,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Table"}
-                activeClassName={"active"}
+
               >
                 Table
               </RimbleGatsbyLink>
@@ -313,7 +340,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Heading"}
-                activeClassName={"active"}
+
               >
                 Heading
               </RimbleGatsbyLink>
@@ -321,7 +348,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Text"}
-                activeClassName={"active"}
+
               >
                 Text
               </RimbleGatsbyLink>
@@ -332,7 +359,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Avatar"}
-                activeClassName={"active"}
+
               >
                 Avatar
               </RimbleGatsbyLink>
@@ -340,7 +367,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Icon"}
-                activeClassName={"active"}
+
               >
                 Icon
               </RimbleGatsbyLink>
@@ -348,7 +375,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/rimble-ui/Image"}
-                activeClassName={"active"}
+
               >
                 Image
               </RimbleGatsbyLink>
@@ -358,7 +385,7 @@ const StaticSideNav = () => (
         <Li>
           <RimbleGatsbyLink
             to={"/components/web3-components"}
-            activeClassName={"active"}
+
           >
             Web3 Components
           </RimbleGatsbyLink>
@@ -369,7 +396,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/web3-components/NetworkIndicator"}
-                activeClassName={"active"}
+
               >
                 Network Indicator
               </RimbleGatsbyLink>
@@ -377,7 +404,7 @@ const StaticSideNav = () => (
             <Li>
               <RimbleGatsbyLink
                 to={"/components/web3-components/ConnectionBanner"}
-                activeClassName={"active"}
+
               >
                 Connection Banner
               </RimbleGatsbyLink>
@@ -386,13 +413,13 @@ const StaticSideNav = () => (
         </Ul>
       </Ul>
       <Li>
-        <RimbleGatsbyLink to={"/guides"} activeClassName={"active"}>
+        <RimbleGatsbyLink to={"/guides"} >
           Guides
         </RimbleGatsbyLink>
       </Li>
       <Ul>
         <Li>
-          <RimbleGatsbyLink to={"/guides/ux"} activeClassName={"active"}>
+          <RimbleGatsbyLink to={"/guides/ux"} >
             dApp patterns
           </RimbleGatsbyLink>
         </Li>
@@ -401,7 +428,7 @@ const StaticSideNav = () => (
           {/*<Li>
             <RimbleGatsbyLink
               to={"/guides/ux/transaction-states"}
-              activeClassName={"active"}
+
             >
               Transaction States
             </RimbleGatsbyLink>
@@ -409,7 +436,7 @@ const StaticSideNav = () => (
           {/*<Li>
             <RimbleGatsbyLink
               to={"/guides/ux/connect-a-wallet-intro"}
-              activeClassName={"active"}
+
             >
               1. Introduction
             </RimbleGatsbyLink>
@@ -417,7 +444,7 @@ const StaticSideNav = () => (
           <Li>
             <RimbleGatsbyLink
               to={"/guides/ux/connect-a-wallet-conditions"}
-              activeClassName={"active"}
+
             >
               1. Can they connect?
             </RimbleGatsbyLink>
@@ -425,7 +452,7 @@ const StaticSideNav = () => (
           <Li>
             <RimbleGatsbyLink
               to={"/guides/ux/connect-a-wallet-before"}
-              activeClassName={"active"}
+
             >
               2. Before they connect
             </RimbleGatsbyLink>
@@ -433,7 +460,7 @@ const StaticSideNav = () => (
           <Li>
             <RimbleGatsbyLink
               to={"/guides/ux/connect-a-wallet-metamask"}
-              activeClassName={"active"}
+
             >
               3. Help with MetaMask
             </RimbleGatsbyLink>
@@ -441,7 +468,7 @@ const StaticSideNav = () => (
           <Li>
             <RimbleGatsbyLink
               to={"/guides/ux/connect-a-wallet-success"}
-              activeClassName={"active"}
+
             >
               4. Confim success
             </RimbleGatsbyLink>
@@ -449,14 +476,14 @@ const StaticSideNav = () => (
           <Li>
             <RimbleGatsbyLink
               to={"/guides/ux/connect-a-wallet-low-funds"}
-              activeClassName={"active"}
+
             >
               5. No ETH, no problem
             </RimbleGatsbyLink>
           </Li>
         </Ul>
         <Li>
-          <RimbleGatsbyLink to={"guides/content"} activeClassName={"active"}>
+          <RimbleGatsbyLink to={"guides/content"} >
             dApp Content
           </RimbleGatsbyLink>
         </Li>
@@ -466,7 +493,7 @@ const StaticSideNav = () => (
           <Li>
             <RimbleGatsbyLink
               to={"/guides/content/crafting-tone"}
-              activeClassName={"active"}
+
             >
               Crafting a tone of voice
             </RimbleGatsbyLink>
@@ -474,7 +501,7 @@ const StaticSideNav = () => (
           <Li>
             <RimbleGatsbyLink
               to={"/guides/content/blockchain-vocab"}
-              activeClassName={"active"}
+
             >
               Blockchain vocab
             </RimbleGatsbyLink>
@@ -483,7 +510,7 @@ const StaticSideNav = () => (
           <Li>
             <RimbleGatsbyLink
               to={"/guides/content/writing-for-products"}
-              activeClassName={"active"}
+
             >
               Writing for products
             </RimbleGatsbyLink>
@@ -491,7 +518,7 @@ const StaticSideNav = () => (
 
         </Ul>*/}
     </Ul>
-  </nav>
+  </StyledNav>
 );
 
 export default StaticSideNav;
