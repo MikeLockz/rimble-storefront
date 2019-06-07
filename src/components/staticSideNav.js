@@ -197,10 +197,10 @@ const StaticSideNav = () => (
             </Li>
             <Li>
               <RimbleGatsbyLink
-                to={"/components/rimble-ui/Textarea"}
+                to={"/components/rimble-ui/TextArea"}
                 activeClassName={"active"}
               >
-                Textarea
+                TextArea
               </RimbleGatsbyLink>
             </Li>
           </Ul>
