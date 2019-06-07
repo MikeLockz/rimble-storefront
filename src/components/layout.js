@@ -35,9 +35,12 @@ const Layout = ({ children, tableOfContents }) => (
             <ContributeBanner />
           </Box>
 
-          {/* {console.log("TOC: ", tableOfContents)} */}
-          <TableOfContents tableOfContents={tableOfContents} />
-        </Flex>
+              <ContributeBanner />
+            </Box>
+            {/* {console.log("TOC: ", tableOfContents)} */}
+            <TableOfContents tableOfContents={tableOfContents} />
+          </Flex>
+        </React.Fragment>
       </ThemeProvider>
     )}
   />
