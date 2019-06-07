@@ -27,7 +27,7 @@ const Masthead = styled(Flex)`
   position: relative;
   min-height: calc(100vmax / 7 * 2.5);
   width: 100%;
-  margin-top: 64px;
+
   padding: 2rem 0;
 
   display: flex;
