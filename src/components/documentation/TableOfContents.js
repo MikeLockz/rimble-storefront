@@ -1,5 +1,5 @@
 import React from "react";
-import { Link as RimbleLink, Box } from "rimble-ui";
+import { Link as RimbleLink, Text, Box } from "rimble-ui";
 import { navigate } from "@reach/router";
 import Ul from "../../components/landing/Ul";
 import Li from "../../components/landing/Li";
@@ -43,13 +43,14 @@ const TableOfContents = props => {
     <Box width={"220px"}>
       {tableOfContents ? (
         <Box
-          position={"fixed"}
-          top={"100px"}
-          right={0}
-          width={"140px"}
-          mr={2}
-          ml={2}
+          position={'fixed'}
+          top={'2rem'}
+          right={'2rem'}
+          width={'140px'}
         >
+          <Text caps color={'mid-gray'} fontSize={0} fontWeight={4} mb={3}>
+            On this Page
+          </Text>
           <Ul>{loop(tableOfContents)}</Ul>
         </Box>
       ) : null}
