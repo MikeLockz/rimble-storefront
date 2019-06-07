@@ -53,9 +53,7 @@ export const pageQuery = graphql`
       tableOfContents
       frontmatter {
         title
-        navigation
         componentName
-        type
       }
     }
     componentMetadata(displayName: { eq: $componentName }) {

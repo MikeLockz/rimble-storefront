@@ -3,7 +3,18 @@ title: Tooltip
 componentName: Tooltip
 ---
 
-import {Tooltip, Pill, Field, Box, Icon, Text, Link, Heading, ToastMessage, Button} from "rimble-ui"
+import {
+  Tooltip,
+  Pill,
+  Field,
+  Box,
+  Icon,
+  Text,
+  Link,
+  Heading,
+  ToastMessage,
+  Button
+} from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
 import PropsTable from "../../../components/propstable";
 
@@ -75,6 +86,10 @@ Choose the colour of your `Tooltip`.
 
 <PropsTable propMetaData={props.propMetaData} />
 
+** Styled System Props **
+
+`Tooltip` uses `COMMON`, `TYPOGRAHY` groups of [Styed System props](/components/rimble-ui/system-props).
+
 ## Design guidelines
 
 Some best practices for using `Tooltip` in your product.
@@ -86,23 +101,23 @@ They're for extra information that some might find useful but don't necessarily 
 <DoDont>
   {{
     positive: (
-    <Tooltip
-              placement="right"
-              variant="dark"
-              message="You're on the Rinkeby network"
-            >
-              <Button.Text icon="Check">Right network</Button.Text>
-            </Tooltip>
+      <Tooltip
+        placement="right"
+        variant="dark"
+        message="You're on the Rinkeby network"
+      >
+        <Button.Text icon="Check">Right network</Button.Text>
+      </Tooltip>
     ),
     negative: (
-    <Tooltip
-      placement="right"
-      variant="dark"
-      message="To use this dApp you must be on the Rinkeby network"
-    >
-      <Button.Text icon="Warning">Wrong network</Button.Text>
-    </Tooltip>
-    ),
+      <Tooltip
+        placement="right"
+        variant="dark"
+        message="To use this dApp you must be on the Rinkeby network"
+      >
+        <Button.Text icon="Warning">Wrong network</Button.Text>
+      </Tooltip>
+    )
   }}
 </DoDont>
 
@@ -125,7 +140,7 @@ Tooltips are for elaboration. Labels next to UI elements are always better than 
       <Tooltip placement="bottom" variant="light" message="Send Ether">
         <Button.Outline icon="Send" />
       </Tooltip>
-    ),
+    )
   }}
 </DoDont>
 
@@ -139,14 +154,14 @@ Don't include too much text in a tooltip. They're for short clarification or ela
   placement="bottom"
   variant="light"
   message="0x99cb784f0429efd72wu39fn4256n8wud4e01c7d2"
-> 
-  <Pill>{'0x99...7d2'}</Pill> 
+>
+  <Pill>{"0x99...7d2"}</Pill>
 </Tooltip>
 
 <Text mt={3}>
-  This will include a small{' '}
+  This will include a small{" "}
   <Tooltip message="This pays for your transaction to be added to the blockchain">
     <strong>transaction fee </strong>
-  </Tooltip>{' '}
-   which we'll include in your transaction summary
+  </Tooltip>{" "}
+  which we'll include in your transaction summary
 </Text>

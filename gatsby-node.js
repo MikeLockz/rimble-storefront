@@ -23,7 +23,9 @@ exports.onCreateBabelConfig = ({ actions }) => {
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === `Mdx`) {
+  if (node.internal.type === `Mdx` && node.frontmatter.title !== "") {
+    // console.log("onCreateNode:", node);
+
     const parent = getNode(node.parent);
     let value = parent.relativePath.replace(parent.ext, "");
 
@@ -66,8 +68,6 @@ exports.createPages = ({ graphql, actions }) => {
                   frontmatter {
                     title
                     componentName
-                    type
-                    navigation
                   }
                   parent {
                     ... on File {
@@ -96,12 +96,10 @@ exports.createPages = ({ graphql, actions }) => {
         }
         // Create blog posts pages.
         result.data.allMdx.edges.forEach(async ({ node }) => {
-          console.log(
-            "title/path: ",
-            node.frontmatter.title,
-            node.fileAbsolutePath
-          );
+          console.log("title: ", node.frontmatter.title);
           if (
+            typeof node.fields !== "undefined" &&
+            node.fields !== null &&
             typeof node.internal !== "undefined" &&
             node.internal.type === `Mdx` &&
             typeof node.frontmatter !== "undefined" &&

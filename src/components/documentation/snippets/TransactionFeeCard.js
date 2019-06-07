@@ -3,7 +3,7 @@ import { Flex, Box, Card, Heading, Text, Button } from "rimble-ui";
 
 const TransactionFeeCard = ({ ...props }) => {
   return (
-    <Card width={"600px"} mx={"auto"} px={4}>
+    <Card width={"600px"} mx={"auto"} px={4} my={4}>
       <Heading>What's a transaction fee?</Heading>
       <Text mb={4}>
         Every blockchain action requires a fee. This pays for someone in the
