@@ -31,6 +31,14 @@ const StaticSideNav = () => (
                 Theming
               </RimbleGatsbyLink>
             </Li>
+            <Li>
+              <RimbleGatsbyLink
+                to={"/components/rimble-ui/system-props"}
+                activeClassName={"active"}
+              >
+                Styled-System Props
+              </RimbleGatsbyLink>
+            </Li>
           </Ul>
           {/* <Li>Design</Li>
           <Ul>
