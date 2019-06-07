@@ -40,12 +40,12 @@ const TableOfContents = props => {
     });
 
   return (
-    <Box flex={'0 0 auto'} width={'160px'} position={'relative'}>
+    <Box width={"220px"}>
       {tableOfContents ? (
         <Box
           position={"fixed"}
           top={"100px"}
-          right={'2rem'}
+          right={0}
           width={"140px"}
           mr={2}
           ml={2}

@@ -1,8 +1,10 @@
 import React from "react";
-import { StaticQuery, graphql } from "gatsby";
-import { ThemeProvider, Box, Flex } from "rimble-ui";
+import defaultTheme from "../theme";
 import Nav from "../components/landing/nav";
+import Typography from "../components/landing/typography";
+import { Box, Flex, ThemeProvider } from "rimble-ui";
 import TableOfContents from "../components/documentation/TableOfContents";
+import { StaticQuery, graphql } from "gatsby";
 import ContributeBanner from "../components/documentation/ContributeBanner";
 import StaticSideNav from "./staticSideNav";
 
@@ -18,27 +20,29 @@ const Layout = ({ children, tableOfContents }) => (
       }
     `}
     render={data => (
-      <ThemeProvider>
-        <Nav />
-        <Flex width={1} overflow={'hidden'}>
-          <Box py={3} mr={3} minWidth={"150px"}>
-            <StaticSideNav />
-          </Box>
+      <ThemeProvider theme={defaultTheme}>
+        <React.Fragment>
+          <Typography />
+          <Nav />
+          <Flex alignItems={"space-between"}>
+            <Box py={3} mr={3} minWidth={"150px"}>
+              <StaticSideNav />
+            </Box>
 
-          <Box
-            width={1}
-            maxWidth={'960px'}
-            overflow={'hidden'}
-            mx={'auto'}
-            px={4}
-          >
-            {children}
-            <ContributeBanner />
-          </Box>
+            <Box
+              maxWidth={"960px"}
+              minHeight={"100%"}
+              mx={["auto"]}
+              padding={3}
+            >
+              {children}
 
-          {/* {console.log("TOC: ", tableOfContents)} */}
-          <TableOfContents tableOfContents={tableOfContents} />
-        </Flex>
+              <ContributeBanner />
+            </Box>
+            {/* {console.log("TOC: ", tableOfContents)} */}
+            <TableOfContents tableOfContents={tableOfContents} />
+          </Flex>
+        </React.Fragment>
       </ThemeProvider>
     )}
   />
