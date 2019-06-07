@@ -5,16 +5,7 @@ const { compose, get: getKey, themeGet } = styledSystem;
 
 export const get = key => themeGet(key, getKey(theme, key));
 
-export const COMMON_LIST = [
-  "compose",
-  "color",
-  "space",
-  "fontFamily",
-  "fontWeight",
-  "lineHeight",
-  "textAlign",
-  "letterSpacing"
-];
+export const COMMON_LIST = ["color", "space"];
 
 export const BORDER_LIST = [
   "borders",
