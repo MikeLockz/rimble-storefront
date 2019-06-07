@@ -26,21 +26,18 @@ const Layout = ({ children, tableOfContents }) => (
 
           <Box
             width={1}
-            maxWidth={'960px'}
-            overflow={'hidden'}
-            mx={'auto'}
+            maxWidth={"960px"}
+            overflow={"hidden"}
+            mx={"auto"}
             p={4}
           >
             {children}
+
             <ContributeBanner />
           </Box>
 
-              <ContributeBanner />
-            </Box>
-            {/* {console.log("TOC: ", tableOfContents)} */}
-            <TableOfContents tableOfContents={tableOfContents} />
-          </Flex>
-        </React.Fragment>
+          <TableOfContents tableOfContents={tableOfContents} />
+        </Flex>
       </ThemeProvider>
     )}
   />
