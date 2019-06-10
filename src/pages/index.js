@@ -95,10 +95,10 @@ const IndexPage = () => (
                     Clean, customisable building blocks for putting your interface together, including UI for Ethereum concepts.
                     {" "}
                   </Text.p>
-                  <RimbleGatsbyLink to="/rimble-ui">
+                  <RimbleGatsbyLink to="/components/rimble-ui">
                     <Button
                       width={["100%", "auto"]} my={"3"}>
-                      Learn More
+                      See installation instructions
                     </Button>
                   </RimbleGatsbyLink>
                 </Flex>
@@ -109,16 +109,16 @@ const IndexPage = () => (
                     <ReactSVG src="/static/svg/fig-2.svg" />
                   </Flex>
                   <Heading.h2 fontSize={[3, 4]} fontWeight={2}>
-                    Web 3 Components
+                    Web3 components
                   </Heading.h2>
                   <Text.p mt={"1"}>
                     Drop-in components that solve an Ethereum UX problem out of the box. Configure some inputs and you're ready.
                     {" "}
                   </Text.p>
-                  <RimbleGatsbyLink to="/components">
+                  <RimbleGatsbyLink to="/components/web3-components">
                     <Button
                       width={["100%", "auto"]} my={"3"}>
-                      Learn More
+                      Read documentation
                     </Button>
                   </RimbleGatsbyLink>
                 </Flex>
@@ -129,7 +129,7 @@ const IndexPage = () => (
                     <ReactSVG src="/static/svg/fig-3.svg" />
                   </Flex>
                   <Heading.h2 fontSize={[3, 4]} fontWeight={2}>
-                    Design Patterns
+                    Design patterns
                   </Heading.h2>
                   <Text.p mt={"1"}>
                     In-depth pieces on designing patterns and workflows that help your users navigate Ethereum.
@@ -138,7 +138,7 @@ const IndexPage = () => (
                   <Button
                     target='_blank' rel='noopener'
                     width={["100%", "auto"]} my={"3"}>
-                    Learn More
+                    Read guides
                   </Button>
                   </RimbleGatsbyLink>
                   </Flex>
