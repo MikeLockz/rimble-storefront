@@ -13,6 +13,7 @@ Assuming they're a new user, they may have had to switch browsers, install MetaM
 
 Nothing beats a friendly hello. This might be a cause for something like a toast message which pops up on connection and then gets out the way soon after, so they can start using your dApp.
 
+<ToastMessage.Provider ref={node => (window.toastProvider = node)} />
 <Button
   mb={3}
   onClick={e =>

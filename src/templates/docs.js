@@ -1,5 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
+import SEO from "../components/seo";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import MDXRenderer from "gatsby-mdx/mdx-renderer";
@@ -20,7 +21,10 @@ class DocLayout extends React.Component {
 
       return (
         <Layout {...props} tableOfContents={data.mdx.tableOfContents}>
-          {/* {console.log("Data: ", data)} */}
+          <SEO
+            title={data.mdx.frontmatter.title}
+            keywords={[`rimble`, `web3`, `blockchain`]}
+          />
           <Helmet />
           <Box>
             {typeof data.componentMetadata !== "undefined" &&

@@ -96,7 +96,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
         // Create blog posts pages.
         result.data.allMdx.edges.forEach(async ({ node }) => {
-          console.log("title: ", node.frontmatter.title);
+          // console.log("title: ", node.frontmatter.title);
           if (
             typeof node.fields !== "undefined" &&
             node.fields !== null &&

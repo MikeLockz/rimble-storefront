@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import codeTheme from "prism-react-renderer/themes/duotoneLight";
 import codeDarkTheme from "prism-react-renderer/themes/duotoneDark";
@@ -29,7 +30,6 @@ import {
   Progress,
   ThemeProvider,
   MetaMaskButton,
-  Link as RimbleLink,
   Text,
   PublicAddress,
   QR,
@@ -41,8 +41,16 @@ import {
 } from "rimble-ui";
 import ConnectionBanner from "@rimble/connection-banner";
 import NetworkIndicator from "@rimble/network-indicator";
-import defaultTheme from "../../theme";
 import myTheme from "../../customTheme";
+
+const CodeBox = styled(Box)`
+  white-space: normal;
+`;
+
+const prismMap = {
+  sh: "bash",
+  shell: "bash"
+};
 
 const localScope = {
   Avatar,
@@ -80,12 +88,8 @@ const localScope = {
   UPortButton,
   Tooltip,
   EthAddress,
-  myTheme
-};
-
-const prismMap = {
-  sh: "bash",
-  shell: "bash"
+  myTheme,
+  CodeBox
 };
 
 class Code extends React.Component {
@@ -135,7 +139,7 @@ class Code extends React.Component {
           scope={localScope}
         >
           <ThemeProvider>
-            <Box my={3}>
+            <CodeBox my={3} css={{}}>
               <Box mb={1}>
                 <Box border={1} borderColor={"grey"} p={3}>
                   <LivePreview />
@@ -146,7 +150,7 @@ class Code extends React.Component {
               <Button.Text onClick={this.toggleShowCode}>
                 {this.state.showCode ? `Hide Code` : `Edit Code`}
               </Button.Text>
-            </Box>
+            </CodeBox>
           </ThemeProvider>
         </LiveProvider>
       );
@@ -160,9 +164,11 @@ class Code extends React.Component {
           <pre className={className} style={style}>
             {tokens.map((line, i) => (
               <div key="fake-key" {...getLineProps({ line, key: i })}>
-                {line.map((token, key) => (
-                  <span key="fake-key" {...getTokenProps({ token, key })} />
-                ))}
+                <Box fontSize={1} p={2}>
+                  {line.map((token, key) => (
+                    <span key="fake-key" {...getTokenProps({ token, key })} />
+                  ))}
+                </Box>
               </div>
             ))}
           </pre>

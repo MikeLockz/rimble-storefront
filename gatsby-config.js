@@ -2,10 +2,13 @@ module.exports = {
   siteMetadata: {
     title: `Rimble - Better dApp UX`,
     description: `Rimble provides resources and tools for faster dApp development with better UX`,
-    author: `@consensysdesign`
+    author: `@consensysdesign`,
+    image: `/rimble-logotype.svg`,
+    siteUrl: `https://rimble.consensys.design/`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-remark-autolink-headers`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -21,45 +24,26 @@ module.exports = {
         name: `rimble-storefront`,
         short_name: `rimble`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#4E3FCE`,
+        theme_color: `#4E3FCE`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
+        icon: `src/images/rimble-logo.svg` // This path is relative to the root of the site.
       }
     },
     `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          `gatsby-remark-katex`,
-          {
-            resolve: `gatsby-remark-autolink-headers`,
-            options: {
-              className: "post-toc-anchor"
-            }
-          }
-        ]
-      }
-    },
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-mdx`,
       options: {
         defaultLayouts: { default: require.resolve("./src/templates/docs.js") },
         remarkPlugins: [require("gatsby-transformer-remark")],
         gatsbyRemarkPlugins: [
-          `gatsby-remark-katex`,
+          `gatsby-remark-autolink-headers`,
           {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 1035,
               sizeByPixelDensity: true
-            }
-          },
-          {
-            resolve: `gatsby-remark-autolink-headers`,
-            options: {
-              className: "post-toc-anchor"
             }
           }
         ]

@@ -12,7 +12,7 @@ const TableOfContents = props => {
         return (
           <Li key={item.url}>
             <RimbleLink
-              href={"javascript:;"}
+              href={"javascript:;"} /* eslint-disable-line */
               title={item.title}
               onClick={() => {
                 navigate(item.url);
@@ -27,7 +27,7 @@ const TableOfContents = props => {
       return (
         <Li key={item.url}>
           <RimbleLink
-            href={"javascript:;"}
+            href={"javascript:;"} /* eslint-disable-line */
             title={item.title}
             onClick={() => {
               navigate(item.url);
@@ -42,13 +42,8 @@ const TableOfContents = props => {
   return (
     <Box width={"220px"}>
       {tableOfContents ? (
-        <Box
-          position={'fixed'}
-          top={'2rem'}
-          right={'2rem'}
-          width={'140px'}
-        >
-          <Text caps color={'mid-gray'} fontSize={0} fontWeight={4} mb={3}>
+        <Box position={"fixed"} top={"2rem"} right={"2rem"} width={"140px"}>
+          <Text caps color={"mid-gray"} fontSize={0} fontWeight={4} mb={3}>
             On this Page
           </Text>
           <Ul>{loop(tableOfContents)}</Ul>
