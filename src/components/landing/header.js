@@ -8,15 +8,14 @@ import Button from "./Button";
 const Header = ({ props }) => (
   <header>
     <Heading.h1 fontSize={[5, 7]} pr={[3, 6]}>
-      Rimble Design System
+      Hi, we're Rimble
     </Heading.h1>
     <Text.p fontSize={4} mt={3} mb={5} pr={[3, 6]}>
-      A growing open-source library of React components and guides for helping you design, build and ship dApps everyone can use.
-    </Text.p>
+An open-source library of React components and guides to help you make dApps everyone can use.    </Text.p>
 
     <RimbleGatsbyLink to={"/components"}>
       <Button width={["100%", "auto"]} mr={[0, 3]} mb={[3, 0]}>
-        View Documentaton
+        View library
       </Button>
     </RimbleGatsbyLink>
 
