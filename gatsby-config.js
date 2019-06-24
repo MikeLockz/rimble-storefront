@@ -9,13 +9,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-remark-autolink-headers`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`
-      }
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -27,7 +20,7 @@ module.exports = {
         background_color: `#4E3FCE`,
         theme_color: `#4E3FCE`,
         display: `minimal-ui`,
-        icon: `src/images/rimble-logo.svg` // This path is relative to the root of the site.
+        icon: `static/rimble-logo.svg` // This path is relative to the root of the site.
       }
     },
     `gatsby-plugin-styled-components`,

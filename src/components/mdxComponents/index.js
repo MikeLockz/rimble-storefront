@@ -4,6 +4,7 @@ import Code from "./code";
 import { P } from "./p";
 import { Table } from "./table";
 import Link from "./link";
+import { Image } from "./image";
 
 /* eslint-disable react/display-name */
 const mdxComponents = {
@@ -40,8 +41,8 @@ const mdxComponents = {
   p: P,
   inlineCode: Code,
   table: props => <Table {...props} />,
-  a: props => <Link {...props} />
-  // TODO add `img`
+  a: props => <Link {...props} />,
+  image: props => <Image {...props} />
   // TODO add `blockquote`
   // TODO add `ul`
   // TODO add `li`
