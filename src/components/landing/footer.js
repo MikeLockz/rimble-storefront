@@ -34,6 +34,16 @@ const Footer = ({ props }) => (
       >
         Made by ConsenSys Design
       </RimbleLink>
+      <RimbleLink
+        color="#f5f5f5"
+        fontWeight={3}
+        fontSize={2}
+        href="//twitter.com/MakingRimble"
+        target="_blank"
+        rel="noopener"
+      >
+      Follow us on Twitter
+      </RimbleLink>
       <Text fontWeight={0} fontSize={2} color="#f5f5f5">
         © 2018 ConsenSys Inc.
       </Text>
