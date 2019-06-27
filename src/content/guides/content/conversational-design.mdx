@@ -1,0 +1,225 @@
+---
+title: Conversational design
+---
+
+import DoDont from "../../../components/documentation/DoDont";
+import { Text, Box, Flash, Icon, Flex, Image, Card, Table } from "rimble-ui";
+
+# Conversational design
+
+<Text fontSize={4}>The low-cost way to design your dApp</Text>
+
+<Flash my={3} variant="info">
+  <Flex>
+    <Box mx={3}>
+      <Icon name="Info" />
+    </Box>
+    <Box>
+      This is an ongoing piece of work. We'll be adding more in the future to
+      better demonstrate this process.
+    </Box>
+  </Flex>
+</Flash>
+
+## Your interface is a conversation not a container
+
+Conversation design is a cheap way for designing content-first and therefore people-first. It involves using a conversation as an early, low-fidelity prototype of the interaction or feature you want to ship. It helps you:
+
+- appeal to more users by removing the jargon and technical language from your front end
+- build interfaces in a more logical order with clearer content hierarchy
+- identify edge cases before development even starts
+- reduce iteration in-browser
+- get better feedback from usability testing
+
+Whether you're at the idea stage or you've already got a working product, you can use this technique when working on new features or iterating on existing ones.
+
+It has 4 main steps:
+
+1. Do your research – identify your problem
+2. Script our the interaction
+3. Annotate, sketch and iterate as a team
+4. Return to your script as a reference for all design decisions
+
+Below we'll go into more detail about each phase using an example dApp. This dApp allows you to borrow DAI by putting up some ETH as insurance, just like [MakerDAO collateralized debt positions](https://cdp.makerdao.com/).
+
+_Note: we chose this example because of its complexity_
+
+## Do your research
+
+The eventual scripting will involve 1 team member playing the part of your product/service and another the user. This means you need to understand your user well enough to anticipate the kinds of questions and responses one of you will provide. You should have a sense of their goals, motivations and pain points before you move into the second phase.
+
+This phase will ultimately help you:
+
+- Set the direction for the conversation
+- Prompt follow up questions in your dialogue
+- Define likely responses
+
+<Image
+  alt="Example persona"
+  borderRadius={8}
+  height="auto"
+  src="/images/MakerdAo-persona.png"
+/>
+
+When you know this about your users, you can write some user stories or job stories to frame the conversation even further.
+
+For example:
+
+<Card>
+<Text><b>When I</b> borrow DAI</Text>
+
+<Text>
+  <b>I want to</b> know the risks involved
+</Text>
+
+<Text><b>So I</b> don't do something wrong and lose serious money</Text>
+</Card>
+
+From there you're well placed to start scripting the conversation based on your understanding of your users, the jobs they want to get done and any motivations and pain points they might have already.
+
+## Script out the interaction
+
+The beauty of scripting is that it's low cost and relatively quick to do. You should do different scripts for:
+
+- different user groups
+- different parts of the flow
+
+This will help you identify the similarities and differences between the content needed for different audiences. It will also force you to figure out how the different parts of the flow join up conversationally. Chances are if it feels natural in conversation, it will feel natural in the interface.
+
+Think of them as really low fidelity prototypes – a really early chance to figure out information hierarchy plus identify any edge cases and error states. Take a look at the example below:
+
+| MakerDao                                                                                              | New to DeFi user                     |
+| ----------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| Well, how much ETH would you like to put up as insurance? The more ETH, the safer your loan???        |                                      |
+|                                                                                                       | I want to put up 1 ETH               |
+| If you want 1000 DAI, you'd need to put up US\$1500 worth of ETH - minimum.                           |                                      |
+| And, you should actually increase it, to protect your collateral from being liquidated by the system. |                                      |
+| 200-250% is a good number.                                                                            |                                      |
+|                                                                                                       | Ok let's go with \$2000 worth of ETH |
+| Bada bing bada boom                                                                                   |                                      |
+
+<Flash variant="info" my={3}>
+  {" "}
+  As you can see the script can be quite rough. This is something you'll come back
+  to and refine every time you visit.
+</Flash>
+
+### Next up, annotation
+
+Go through with the entire team, highlight what's remarkable or notable about the dialogue.
+
+This will help you answer the following questions:
+
+- Are there any particular words that stand out? Perhaps terms used in place of jargon...
+- Are there any metaphors the user has said to help them understand key concepts?
+- Are there any edge cases you hadn't thought of before? These often crop up when you take the time to play the role of the user
+- Do you need to script out any more conversations that branch off from this?
+- What UI will work best?
+
+Here's an example of some annotated script.
+
+<Card mx={3}>
+  <Text>
+    If you want to loan DAI you need to put some ETH as{" "}
+    <b>
+      <font color="green">collateral or insurance</font>
+    </b>
+    . If you default on this loan, or <b>
+      <font color="green">don't pay it back</font>
+    </b>, we'll take your ETH. <b>
+      <font color="green">
+        It's like if you take a loan from a bank, you may put up your house or
+        something similar as insurance for the loan.
+      </font>
+    </b>
+  </Text>
+</Card>
+
+**What we highlighted:**
+
+- Insurance was used as a more familiar term to explain collateralization
+- Don't pay it back was a simpler way of saying "default on this loan"
+- The bank analogy helped hit home the concept of insuring your loan
+
+You can see how the language we might end up using on the interface is already becoming simpler. And we're coming up with ways to help explain key concepts.
+
+Best of all, even if this doesn't make it into the final interface, it's helped the team cement their understanding of the service.
+
+After scripting out this interaction, the order of information naturally flowed like:
+
+- A quick overview of the process e.g. Put in ETH and you can borrow DAI
+- Explanation of where to purchase DAI from an exchange if you just want to trade for DAI
+- Why you might want to borrow DAI in the form of a collateralized debt position (CDP), plus explanation of what a CDP is
+- If the user is happy, they choose an amount to borrow
+- Let the user know a sensible amount of insurance for the amount they want to borrow and why
+- Explain the risk of liquidation to back up advice of insurance amount (with real life examples as this is a tricky concept)
+- User chooses a suitable insurance amount, knowing which is deemed safe vs risky
+- Let the user know about interest rate
+  - Explain that the interest rate moves around a lot
+  - Offer a route out if interest rate is too high – to just purchase DAI from an exchange
+    - This came right at the end and was quite frustrating, so this is good evidence for having current interest rates explained up front!
+
+Next up, we turn this into UI.
+
+## Start sketching the flow
+
+Use your script and what you've learned to inform flow and microcopy. You've probably already made some UI choices based on the script that you should put to paper. Makes sure you include language and phrases identified through scripting here.
+
+Even if it feels quite verbose at first, you can always edit it down later.
+
+<Image
+  alt="Example sketch for MakerDao product"
+  borderRadius={8}
+  height="auto"
+  src="/images/MakerDao-sketch.jpg"
+/>
+
+Steadily increase fidelity. Move from script to sketches to prototypes or shippable product. The script should act as a point of reference every time you increase the fidelity to make sure you're still meeting the users needs and communicating in a way that they understand.
+
+<Image
+  alt="Example wireframes for MakerDao product"
+  borderRadius={8}
+  height="auto"
+  src="/images/MakerDao-wires1.png"
+/>
+<Image
+  alt="Example wireframes for MakerDao product"
+  borderRadius={8}
+  height="auto"
+  src="/images/MakerDao-wires2.png"
+/>
+<Image
+  alt="Example wireframes for MakerDao product"
+  borderRadius={8}
+  height="auto"
+  src="/images/MakerDao-wires3.png"
+/>
+
+## When something new crops up
+
+Because it always does...
+
+Even if you've got to the sketching phase or beyond, as soon as something new comes up you should repeat the process you've just gone through.
+
+So imagine that this new dApp now accepts bitcoin as insurance, just re-script the parts of the flow that this affects. Then see how you can naturally fit it in. If it feels natural in the dialogue, it'll feel natural in the experience.
+
+| MakerDao                                                                                                                   | New to DeFi user                   |
+| -------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+|                                                                                                                            | I'd like to borrow 1000 DAI please |
+| Sure, first you need to offer up some cryptocurrency to insure your loan. We'll take this if you don't pay back your loan. |                                    |
+| You can use Ether or Bitcoin.                                                                                              |                                    |
+|                                                                                                                            | Great, I'll choose bitcoin         |
+
+<Image
+  alt="An example wireframe for MakerDao product"
+  borderRadius={8}
+  height="auto"
+  src="/images/MakerDao-wires-somethingnew.png"
+/>
+
+## Try it for yourself
+
+See how more natural your dApp feels to use when:
+
+- content is presented in a natural, conversational order
+- your dApp speaks in a language you and your users understand far more easily

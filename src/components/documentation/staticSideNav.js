@@ -368,13 +368,26 @@ const StaticLinkList = () => (
           </RimbleGatsbyLink>
         </Li>
       </Ul>
-      <Li>
-        <RimbleGatsbyLink to={"guides/content"}>dApp Content</RimbleGatsbyLink>
-      </Li>
-    </Ul>
-    {/*<Ul>
-
+      <Ul>
         <Li>
+          <RimbleGatsbyLink to={"guides/content"}>
+            dApp Content
+          </RimbleGatsbyLink>
+        </Li>
+        <Ul>
+          <Li>
+            <RimbleGatsbyLink to={"/guides/content/writing-for-products"}>
+              Writing for products
+            </RimbleGatsbyLink>
+          </Li>
+          <Li>
+            <RimbleGatsbyLink to={"/guides/content/conversational-design"}>
+              Conversational design
+            </RimbleGatsbyLink>
+          </Li>
+        </Ul>
+      </Ul>
+      {/*<Li>
           <RimbleGatsbyLink
             to={"/guides/content/crafting-tone"}
 
@@ -389,18 +402,8 @@ const StaticLinkList = () => (
           >
             Blockchain vocab
           </RimbleGatsbyLink>
-        </Li>
-
-        <Li>
-          <RimbleGatsbyLink
-            to={"/guides/content/writing-for-products"}
-
-          >
-            Writing for products
-          </RimbleGatsbyLink>
-        </Li>
-
-      </Ul>*/}
+        </Li>*/}
+    </Ul>
   </Ul>
 );
 
