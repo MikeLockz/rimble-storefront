@@ -1,14 +1,13 @@
 ---
 title: MetaMaskButton
 componentName: MetaMaskButtonSolid
+description: Use the MetaMaskButton component to let users know they can connect to your dapp using MetaMask.
 ---
 
 import { MetaMaskButton } from "rimble-ui";
-import PropsTable from "../../../components/propstable";
+import PropsTable from "../../../components/documentation/PropsTable.js";
 
-# MetaMaskButton
-
-Use the  `MetaMaskButton` component to let users know they can connect to your dApp using MetaMask. `MetaMaskButton` maps to a `<button type='button'>` element and inherits props from [`Button`](/components/rimble-ui/Button).
+Use the `MetaMaskButton` component to let users know they can connect to your dapp using MetaMask. `MetaMaskButton` maps to a `<button type='button'>` element and inherits props from [`Button`](/components/rimble-ui/Button).
 
 *Want to understand best practices for using a button component?* Read [Button design guidelines](/components/rimble-ui/Button#design-guidelines)
 
@@ -65,11 +64,11 @@ Different ways to use the `MetaMaskButton` component in your product.
 **Full-width button**
 
 ```js is=react-live
-<MetaMaskButton fullWidth>Connect with MetaMask</MetaMaskButton>
+<MetaMaskButton width={1}>Connect with MetaMask</MetaMaskButton>
 ```
 
 ```js is=react-live
-<MetaMaskButton.Outline fullWidth>Connect with MetaMask</MetaMaskButton.Outline>
+<MetaMaskButton.Outline width={1}>Connect with MetaMask</MetaMaskButton.Outline>
 ```
 
 **Disabled**
@@ -85,6 +84,8 @@ Different ways to use the `MetaMaskButton` component in your product.
 ## Props
 
 <PropsTable propMetaData={props.propMetaData} />
+
+`MetaMaskButton` inherits all props from the [`Button`](/components/rimble-ui/Button#props) component.
 
 ** Styled System Props **
 

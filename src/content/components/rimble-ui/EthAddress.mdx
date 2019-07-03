@@ -1,6 +1,7 @@
 ---
 title: EthAddress
 componentName: EthAddress
+description: Allows for different displays of an Ethereum address to a wallet, smart contract, transaction or any other hash. Use EthAddress when you want to truncate, link, show QR on hover, or other different visual representations of an Ethereum address.
 ---
 
 import {
@@ -21,9 +22,7 @@ import {
   Blockie
 } from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
-import PropsTable from "../../../components/propstable";
-
-# EthAddress
+import PropsTable from "../../../components/documentation/PropsTable.js";
 
 Allows for different displays of an Ethereum address to a wallet, smart contract, transaction or any other hash. Use `EthAddress` when you want to truncate, link, show QR on hover, or other different visual representations of an Ethereum address.
 
@@ -77,22 +76,29 @@ When you need the user to confirm an address. This will allow them to double che
 <Card>
   <Heading.h3>Confirm payment</Heading.h3>
   <Text>Are you sure you want to send 1 ETH to</Text>
-  <Flex>
-    <Box mr={4}>
+  <Flex
+    mt={3}
+    justifyContent="center"
+    alignItems="center"
+    justifyContent={"flex-start"}
+  >
+    <Box mr={3}>
       <Blockie
         opts={{
           seed: "0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A"
         }}
       />
     </Box>
-    <Box justifyContent="center" alignItems="center">
-      <Text ml={4}>0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A </Text>
+    <Box>
+      <Text wordBreak={"break-all"}>
+        0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A
+      </Text>
     </Box>
   </Flex>
-  <Button mt={4} mr={3}>
-    Send ETH
-  </Button>
-  <Button.Text>Cancel</Button.Text>
+  <Flex justifyContent={"space-between"} alignItems={"center"} mt={3}>
+    <Button>Send ETH</Button>
+    <Button.Text>Cancel</Button.Text>
+  </Flex>
 </Card>
 
 **Truncated address**
@@ -124,7 +130,7 @@ Some best practice for using `EthAddress` in your product.
 
 **Only show an address when necessary**
 
-You can search any public address in Etherscan and get a complete list of all past transactions for that address as well as the value of that account. If your dApp doesn't need you to publicly display your user's public addresses for all to see, it's probably safer for them if you don't.
+You can search any public address in Etherscan and get a complete list of all past transactions for that address as well as the value of that account. If your dapp doesn't need you to publicly display your user's public addresses for all to see, it's probably safer for them if you don't.
 
 **Display with a label**
 
@@ -134,7 +140,7 @@ Label an Ethereum address appropriately. Is it the address of your account or so
 
 **Users may not trust truncation**
 
-Public addresses can make new users nervous when transacting, so consider carefully when to use truncation. Research has shown that some inexperienced dApp users will copy and paste a truncated address into a new tab's URL bar to double check the address matches their wallet address.
+Public addresses can make new users nervous when transacting, so consider carefully when to use truncation. Research has shown that some inexperienced dapp users will copy and paste a truncated address into a new tab's URL bar to double check the address matches their wallet address.
 
 Full disclosure: this research was for blockchain news platform, Civil.
 

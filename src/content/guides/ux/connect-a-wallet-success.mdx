@@ -1,17 +1,16 @@
 ---
 title: Confirm success
+description: Assuming they're a new user, they may have had to switch browsers, install MetaMask, fund a wallet, switch networks, accept a connection request and sign a message. Phew. With all that considered it's probably best to let them know it's over and they're connected.
 ---
 
 import DoDont from "../../../components/documentation/DoDont";
 import { Text, Link, ToastMessage, Button } from "rimble-ui";
 
-# Confirm success
-
 Assuming they're a new user, they may have had to switch browsers, install MetaMask, fund a wallet, switch networks, accept a connection request and sign a message. Phew. With all that considered it's probably best to let them know it's over and they're connected.
 
 ## Say hello!
 
-Nothing beats a friendly hello. This might be a cause for something like a toast message which pops up on connection and then gets out the way soon after, so they can start using your dApp.
+Nothing beats a friendly hello. This might be a cause for something like a toast message which pops up on connection and then gets out the way soon after, so they can start using your dapp.
 
 <ToastMessage.Provider ref={node => (window.toastProvider = node)} />
 <Button
@@ -30,7 +29,7 @@ Nothing beats a friendly hello. This might be a cause for something like a toast
 
 ## Summarise their connected account
 
-This is more of a permanent indication that they're connected. Now that they're connected your dApp can read their Ethereum address and balance. This is good information to provide your user so they can get this info at a glance without having to go into their wallet's UI. This information can also help them validate that it's the account they want connected.
+This is more of a permanent indication that they're connected. Now that they're connected your dapp can read their Ethereum address and balance. This is good information to provide your user so they can get this info at a glance without having to go into their wallet's UI. This information can also help them validate that it's the account they want connected.
 
 <DoDont>
   {{

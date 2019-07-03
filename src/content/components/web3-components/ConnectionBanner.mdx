@@ -1,6 +1,7 @@
 ---
 title: Connection banner
 componentName: ConnectionBanner
+description: Connection Banner will help your user resolve the issue with device-specific language so they can use your dapp successfully.
 ---
 
 import ConnectionBanner from "@rimble/connection-banner";
@@ -18,9 +19,7 @@ import {
   Button
 } from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
-import PropsTable from "../../../components/propstable";
-
-# ConnectionBanner
+import PropsTable from "../../../components/documentation/PropsTable.js";
 
 Persistently displays a banner if:
 
@@ -28,7 +27,7 @@ Persistently displays a banner if:
 - a Web3 provider can't be detected
 - the current Ethereum network does not match the specified required network
 
-The banner will help the user resolve the issue with device-specific language so they can use your dApp successfully.
+The banner will help the user resolve the issue with device-specific language so they can use your dapp successfully.
 
 Built with [Rimble-UI](/components/rimble-ui)
 
@@ -55,7 +54,6 @@ yarn add @rimble/connection-banner
   onWeb3Fallback={true}
 />
 ```
-
 
 **Custom messages**
 
@@ -124,7 +122,7 @@ yarn add @rimble/connection-banner
 
 ## Design guidelines
 
-The connection banner helps users get on the right Ethereum network to use your dApp. It doesn't prevent them from interacting with your dApp's non-blockchain features. This is because we believe you should only ask the user to connect when they absolutely have to. That's why this component doesn't block the user, it just passively provides information they need should they want to do something on your dApp that will require a correct network.
+The connection banner helps users get on the right Ethereum network to use your dapp. It doesn't prevent them from interacting with your dapp's non-blockchain features. This is because we believe you should only ask the user to connect when they absolutely have to. That's why this component doesn't block the user, it just passively provides information they need should they want to do something on your dapp that will require a correct network.
 
 Your content needs to instruct the user **how** to get to the right network, but a user can be at different levels of readiness.
 
@@ -142,10 +140,10 @@ We've provided some messages in this component that should work for most dApps. 
 
 ### Principles
 
-- **One thing at a time:** if the user is using Safari, they're going to have to go through multiple steps to start using your dApp (changing browser and downloading MetaMask) however once they've done the first step (changed browser) there's another banner helping them to install MetaMask. This means you don't need to mention this in the wrong browser banner. Just keep your instruction clear and simple to follow and let the next banner explain the next step.
-- **Avoid connection:** we've found that framing this action as "connecting" can cause confusion with connecting to the dApp. Plus, if you're using a Web3 provider, you'll automatically be on a network without having gone through the act of deliberately connecting. We like "Switch to" a different network as it reflects the simple process that it is.
+- **One thing at a time:** if the user is using Safari, they're going to have to go through multiple steps to start using your dapp (changing browser and downloading MetaMask) however once they've done the first step (changed browser) there's another banner helping them to install MetaMask. This means you don't need to mention this in the wrong browser banner. Just keep your instruction clear and simple to follow and let the next banner explain the next step.
+- **Avoid connection:** we've found that framing this action as "connecting" can cause confusion with connecting to the dapp. Plus, if you're using a Web3 provider, you'll automatically be on a network without having gone through the act of deliberately connecting. We like "Switch to" a different network as it reflects the simple process that it is.
 - **Keep it passive:** it's not urgent that the user should follow your instructions just yet. So make it clear when they should bother changing network, e.g. to use your blockchain features
-- **Tell them where:** because you aren't able to change network from a dApp, you should be as descriptive as you can in terms of where to change the network. This has its challenges as it can differ between products. "Settings" seems to be a safe term for Mobile, whereas you should use "MetaMask" on desktop.
+- **Tell them where:** because you aren't able to change network from a dapp, you should be as descriptive as you can in terms of where to change the network. This has its challenges as it can differ between products. "Settings" seems to be a safe term for Mobile, whereas you should use "MetaMask" on desktop.
 
 ### Tips
 

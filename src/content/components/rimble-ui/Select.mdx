@@ -1,6 +1,7 @@
 ---
 title: Select
 componentName: Select
+description: Use the Select component when you want your users to select an option from a list. Select provides a styled version of the HTML <select>. This component is specifically useful for long lists you wouldn't want to display using Radio buttons like currencies or states.
 ---
 
 import {
@@ -14,11 +15,9 @@ import {
   Heading
 } from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
-import PropsTable from "../../../components/propstable";
+import PropsTable from "../../../components/documentation/PropsTable.js";
 
-# Select
-
-Use the Select component when you want your users to select an option from a list. Select provides a styled version of the HTML `<select>`. This component is specifically useful for long lists you wouldn't want to display using [`Radio`](/components/rimble-ui/Radio) buttons like currencies or states.
+Use the `Select` component when you want your users to select an option from a list. Select provides a styled version of the HTML `<select>`. This component is specifically useful for long lists you wouldn't want to display using [`Radio`](/components/rimble-ui/Radio) buttons like currencies or states.
 
 **Import component**
 
@@ -38,7 +37,6 @@ import { Select } from 'rimble-ui';
       "GNT - Golem",
       "REP - Augur"
     ]}
-    required="false"
   />
 </Field>
 ```
@@ -73,8 +71,8 @@ Only use the `Select` component when you have a lot of options that would clutte
           ]}
         />
         <Text my={4}>OR</Text>
-        <Radio label="ETH - Ether" my={2} required="false" />
-        <Radio label="FIAT e.g. USD" my={2} required="false" />
+        <Radio label="ETH - Ether" my={2} />
+        <Radio label="FIAT e.g. USD" my={2} />
       </Box>
     ),
     negative: (

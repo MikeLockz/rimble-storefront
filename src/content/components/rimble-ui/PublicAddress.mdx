@@ -1,6 +1,7 @@
 ---
 title: PublicAddress
 componentName: PublicAddress
+description: Use the PublicAddress component to display an Ethereum public address, specific blockchain entry or a contract address, and offer copy-to-clipboard functionality.
 ---
 
 import {
@@ -16,9 +17,7 @@ import {
   Heading
 } from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
-import PropsTable from "../../../components/propstable";
-
-# PublicAddress
+import PropsTable from "../../../components/documentation/PropsTable.js";
 
 Use the `PublicAddress` component to display an Ethereum public address, specific blockchain entry or a contract address, and offer copy-to-clipboard functionality.
 
@@ -48,15 +47,12 @@ Some best practice for using `PublicAddress`
 
 **Consider showing a QR code too**
 
-Although the copy-to-clipboard functionality makes it relatively easy to do stuff with a public address, you may want to consider showing a QR code of the address so that users can interact with the address using a mobile wallet or dApp.
+Although the copy-to-clipboard functionality makes it relatively easy to do stuff with a public address, you may want to consider showing a QR code of the address so that users can interact with the address using a mobile wallet or dapp.
 
 <Card mx={"auto"} my={3} px={4}>
   <Heading.h5>Your connected account:</Heading.h5>
   <QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
   <br />
   <br />
-  <PublicAddress
-    required="false"
-    address="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A"
-  />
+  <PublicAddress address="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
 </Card>

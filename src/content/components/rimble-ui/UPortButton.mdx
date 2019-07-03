@@ -1,15 +1,14 @@
 ---
 title: UPortButton
 componentName: UPortButtonSolid
+description: Use the UPortButton component to let users know they can connect to your dapp using their uPort account.
 ---
 
 import { UPortButton } from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
-import PropsTable from "../../../components/propstable";
+import PropsTable from "../../../components/documentation/PropsTable.js";
 
-# UPortButton
-
-Use the `UPortButton` component to let users know they can connect to your dApp using their uPort account. UPortButton maps to a `<button type='button'>` element and inherits props from [Button](/components/rimble-ui/Button).
+Use the `UPortButton` component to let users know they can connect to your dapp using their uPort account. UPortButton maps to a `<button type='button'>` element and inherits props from [Button](/components/rimble-ui/Button).
 
 Read [`Button` design guidelines](/components/rimble-ui/Button#design-guidelines)
 
@@ -52,7 +51,7 @@ Different ways to use the `UPortButton` component.
 **Full-width button**
 
 ```js is=react-live
-<UPortButton fullWidth>Connect with uPort</UPortButton>
+<UPortButton width={1}>Connect with uPort</UPortButton>
 ```
 
 **Disabled**
@@ -64,6 +63,8 @@ Different ways to use the `UPortButton` component.
 ## Props
 
 <PropsTable propMetaData={props.propMetaData} />
+
+`UPortButton` inherits all props from the [`Button`](/components/rimble-ui/Button#props) component.
 
 ** Styled System Props **
 

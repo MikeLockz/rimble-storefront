@@ -1,6 +1,7 @@
 ---
 title: Radio
 componentName: Radio
+description: Use the Radio component when users can select only one option from a short list and you want all the options to be visible.
 ---
 
 import {
@@ -14,9 +15,7 @@ import {
   Heading
 } from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
-import PropsTable from "../../../components/propstable";
-
-# Radio
+import PropsTable from "../../../components/documentation/PropsTable.js";
 
 Use the `Radio` component when users can select only one option from a short list and you want all the options to be visible. `Radio` maps to a radio input and a label.
 
@@ -30,10 +29,10 @@ import { Radio } from 'rimble-ui';
 
 ```js is=react-live
 <Field label="Choose transaction speed">
-  <Radio label="Quick" my={2} required="false" />
-  <Radio checked label="Standard" my={2} required="false" />
-  <Radio disabled label="Slower" my={2} required="false" />
-  <Radio checked disabled label="Custom" my={2} required="false" />
+  <Radio label="Quick" my={2} />
+  <Radio defaultChecked label="Standard" my={2} />
+  <Radio disabled label="Slower" my={2} />
+  <Radio checked disabled label="Custom" my={2} />
 </Field>
 ```
 
@@ -58,15 +57,15 @@ Your users will need instruction on what to choose. Don't just provide them with
     positive: (
       <Box>
         <Field label="Would you like alerts when the price changes?">
-          <Radio label="Yes" required="true" my={2} />
-          <Radio label="No" required="true" my={2} />
+          <Radio label="Yes" my={2} />
+          <Radio label="No" my={2} />
         </Field>
       </Box>
     ),
     negative: (
       <Box>
-        <Radio label="Give me price changes" required="true" my={2} />
-        <Radio label="Don't give me price changes" required="true" my={2} />
+        <Radio label="Give me price changes" my={2} />
+        <Radio label="Don't give me price changes" my={2} />
       </Box>
     )
   }}
@@ -81,18 +80,18 @@ Radio buttons are for times when you users can choose only one option.
     positive: (
       <Box>
         <Field label="Would you like alerts when the price changes?">
-          <Radio label="Yes" required="true" my={2} />
-          <Radio label="No" required="true" my={2} />
+          <Radio label="Yes" my={2} />
+          <Radio label="No" my={2} />
         </Field>
       </Box>
     ),
     negative: (
       <Box>
         <Field label="Choose any currencies you'd like to track">
-          <Radio label="Ether (ETH)" required="true" my={2} />
-          <Radio label="Bitcoin (BTC)" required="true" my={2} />
-          <Radio label="Ethereum Classic (ETC)" required="true" my={2} />
-          <Radio label="Litecoin (LTC)" required="true" my={2} />
+          <Radio label="Ether (ETH)" my={2} />
+          <Radio label="Bitcoin (BTC)" my={2} />
+          <Radio label="Ethereum Classic (ETC)" my={2} />
+          <Radio label="Litecoin (LTC)" my={2} />
         </Field>
       </Box>
     )
@@ -127,17 +126,17 @@ If the user can choose from lots of options, like currencies or states, use a [`
     ),
     negative: (
       <Box>
-        <Field required="true" label="Choose your default currency">
-          <Radio label="ETH - Ether" required="true" my={2} />
-          <Radio label="BTC - Bitcoin" required="true" my={2} />
-          <Radio label="USD - Dollars" required="true" my={2} />
-          <Radio label="GBP - Pounds" required="true" my={2} />
-          <Radio label="XRP - Ripple" required="true" my={2} />
-          <Radio label="GNO - Gnosis" required="true" my={2} />
-          <Radio label="GNT - Golem" required="true" my={2} />
-          <Radio label="REP - Augur" required="true" my={2} />
-          <Radio label="YEN" required="true" my={2} />
-          <Radio label="INR - Rupee" required="true" my={2} />
+        <Field required={true} label="Choose your default currency">
+          <Radio label="ETH - Ether" my={2} />
+          <Radio label="BTC - Bitcoin" my={2} />
+          <Radio label="USD - Dollars" my={2} />
+          <Radio label="GBP - Pounds" my={2} />
+          <Radio label="XRP - Ripple" my={2} />
+          <Radio label="GNO - Gnosis" my={2} />
+          <Radio label="GNT - Golem" my={2} />
+          <Radio label="REP - Augur" my={2} />
+          <Radio label="YEN" my={2} />
+          <Radio label="INR - Rupee" my={2} />
         </Field>
       </Box>
     )

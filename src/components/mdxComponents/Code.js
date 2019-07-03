@@ -33,7 +33,7 @@ import {
   Text,
   PublicAddress,
   QR,
-  Table,
+  Table as RimbleTable,
   ToastMessage,
   UPortButton,
   Tooltip,
@@ -42,9 +42,34 @@ import {
 import ConnectionBanner from "@rimble/connection-banner";
 import NetworkIndicator from "@rimble/network-indicator";
 import myTheme from "../../customTheme";
+import theme from "../../theme";
+
+const Table = styled(RimbleTable)`
+  & {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    border-width: 0;
+  }
+
+  th,
+  td {
+    border: solid;
+    border-width: 1px;
+    border-color: inherit;
+    padding: 0 1.5rem;
+  }
+`;
 
 const CodeBox = styled(Box)`
   white-space: normal;
+`;
+
+const StyledPre = styled(Box)`
+  &&& {
+    padding: ${theme.space[0]}px;
+    font-size: 13px;
+  }
 `;
 
 const prismMap = {
@@ -161,7 +186,7 @@ class Code extends React.Component {
     return (
       <Highlight {...defaultProps} code={children.trim()} language={"jsx"}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={className} style={style}>
+          <StyledPre as="pre" className={className} style={style} p={2}>
             {tokens.map((line, i) => (
               <div key="fake-key" {...getLineProps({ line, key: i })}>
                 <Box fontSize={1} p={2}>
@@ -171,7 +196,7 @@ class Code extends React.Component {
                 </Box>
               </div>
             ))}
-          </pre>
+          </StyledPre>
         )}
       </Highlight>
     );

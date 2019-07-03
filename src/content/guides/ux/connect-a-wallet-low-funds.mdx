@@ -1,19 +1,18 @@
 ---
 title: No ETH, no problem
+description: If your user has been funnelled into the connection flow because they were attempting an on-chain action, it's important to check their balance once they've accepted the connection request. It's at this point that you can tell whether or not they'll be able to complete the action they've set out to do. If their balance is too low, you should let them know and offer some help on how to remedy the situation.
 ---
 
 import DoDont from "../../../components/documentation/DoDont";
 import { Text, Button } from "rimble-ui";
 
-# No ETH, no problem
-
 If your user has been funnelled into the connection flow because they were attempting an on-chain action, it's important to check their balance once they've accepted the connection request. It's at this point that you can tell whether or not they'll be able to complete the action they've set out to do. If their balance is too low, you should let them know and offer some help on how to remedy the situation.
 
 You have a few options:
 
-**Allow crypto purchasing in-dApp**
+**Allow crypto purchasing in-dapp**
 
-This is probably what we'd recommend most as it keeps the user in your dApp and means the user won't have to send crypto from an exchange. A service like [Moonpay](https://moonpay.io) or [Wyre](https://sendwyre.com) will allow you to integrate a crypto purchasing flow directly into your dApp. However this will cost you some integration fees.
+This is probably what we'd recommend most as it keeps the user in your dapp and means the user won't have to send crypto from an exchange. A service like [Moonpay](https://moonpay.io) or [Wyre](https://sendwyre.com) will allow you to integrate a crypto purchasing flow directly into your dapp. However this will cost you some integration fees.
 
 **Send your users to an exchange**
 
@@ -84,7 +83,7 @@ New users may be wondering what the heck transaction fees are. So you may want t
     ),
     negative: (
       <Text>
-        Get bogged down in talk of incentivisation and miners unless your dApp
+        Get bogged down in talk of incentivisation and miners unless your dapp
         is aimed at a technical audience. Most Web 2 applications don't go into
         detail about what's going on under the hood unless they have an explicit
         engineering focus. This rule should apply in Web3 too.
@@ -97,7 +96,7 @@ Now your users are connected and hopefully have some Ether (or know how to get s
 
 ---
 
-As they use your dApp more often they'll realise that having ETH is part and parcel of using it, they'll understand that they need to be on a certain network and they'll breeze through the requests.
+As they use your dapp more often they'll realise that having ETH is part and parcel of using it, they'll understand that they need to be on a certain network and they'll breeze through the requests.
 
 **Navigate the guide**
 

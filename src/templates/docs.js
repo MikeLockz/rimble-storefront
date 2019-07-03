@@ -20,9 +20,14 @@ class DocLayout extends React.Component {
       }
 
       return (
-        <Layout {...props} tableOfContents={data.mdx.tableOfContents}>
+        <Layout
+          {...props}
+          tableOfContents={data.mdx.tableOfContents}
+          title={data.mdx.frontmatter.title}
+        >
           <SEO
             title={data.mdx.frontmatter.title}
+            description={data.mdx.frontmatter.description}
             keywords={[`rimble`, `web3`, `blockchain`]}
           />
           <Helmet />
@@ -58,6 +63,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         componentName
+        description
       }
     }
     componentMetadata(displayName: { eq: $componentName }) {

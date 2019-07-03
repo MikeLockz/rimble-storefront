@@ -1,6 +1,7 @@
 ---
 title: Tooltip
 componentName: Tooltip
+description: Use a Tooltip to give your user extra information about something on the interface. This component is a simple styled tooltip that uses react-popper.
 ---
 
 import {
@@ -16,9 +17,7 @@ import {
   Button
 } from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
-import PropsTable from "../../../components/propstable";
-
-# Tooltip
+import PropsTable from "../../../components/documentation/PropsTable.js";
 
 Use a `Tooltip` to give your user extra information about something on the interface. This component is a simple styled tooltip that uses [react-popper](https://github.com/d8660091/react-popper).
 
@@ -113,7 +112,7 @@ They're for extra information that some might find useful but don't necessarily 
       <Tooltip
         placement="right"
         variant="dark"
-        message="To use this dApp you must be on the Rinkeby network"
+        message="To use this dapp you must be on the Rinkeby network"
       >
         <Button.Text icon="Warning">Wrong network</Button.Text>
       </Tooltip>

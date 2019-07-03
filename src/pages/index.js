@@ -78,7 +78,7 @@ const IndexPage = () => (
                 patterns and they present new hurdles for designers and
                 front-end developers. Rimble is here to make life easier for
                 everyone. As an open source project, Rimble aims to create
-                common dApp UX patterns, validated through user research, and
+                common dapp UX patterns, validated through user research, and
                 built for developers.
               </Text.p>
 
@@ -156,7 +156,7 @@ const IndexPage = () => (
               </Heading.h1>
               <Hr />
               <Text.p>
-                Take a look at our demo dApp. We prototype nearly everything we ship there first. Just remember it's our building site, so things might not always look finished. Hard hats are advised 👷‍♀️
+                Take a look at our demo dapp. We prototype nearly everything we ship there first. Just remember it's our building site, so things might not always look finished. Hard hats are advised 👷‍♀️
               </Text.p>
                 <Button
                   as="a"

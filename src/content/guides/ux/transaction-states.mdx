@@ -1,5 +1,6 @@
 ---
 title: Transaction states
+description: Well-designed transaction states will build trust and confidence in your dapp by helping users understand what's going on and setting their expectations.
 ---
 
 import {
@@ -18,11 +19,9 @@ import {
 } from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
 
-# Transaction states
+**Well-designed transaction states will build trust and confidence in your dapp by helping users understand what's going on and setting their expectations.**
 
-**Well-designed transaction states will build trust and confidence in your dApp by helping users understand what's going on and setting their expectations.**
-
-Transaction states are such a crucial part of dApp UX because they're so different to what we're used to when transacting with centralized products. While ridding the process of a "middleperson" might have given us more personal autonomy, it has left us with less immediacy and more complexity to design for. This means providing feedback to reassure or guide users is more important than ever.
+Transaction states are such a crucial part of dapp UX because they're so different to what we're used to when transacting with centralized products. While ridding the process of a "middleperson" might have given us more personal autonomy, it has left us with less immediacy and more complexity to design for. This means providing feedback to reassure or guide users is more important than ever.
 
 We built a demo to show rather than tell. Check it out, then read our guidelines below for some advice on giving your users the most helpful transaction experience.
 
@@ -32,7 +31,7 @@ We built a demo to show rather than tell. Check it out, then read our guidelines
 
 **Time**
 
-Ethereum transactions aren't quick by centralized standards. So for inexperienced dApp users, transaction speeds may produce anxiety around whether something has worked or not. Use messaging in your states to explain that parts of the process may take a while.
+Ethereum transactions aren't quick by centralized standards. So for inexperienced dapp users, transaction speeds may produce anxiety around whether something has worked or not. Use messaging in your states to explain that parts of the process may take a while.
 
 <Button
 my={3}
@@ -231,7 +230,7 @@ Use specific language throughout. If the transaction is actually transferring a 
 
 ### Ensure the conditions are right pre-transaction
 
-Your dApp can detect a network as long as there's a web3 provider. And once the user has connected their Ethereum address with your dApp you can read the account balance. Don't wait until a transaction to tell your user about an incorrect network or a 0 ETH balance. This is not what the failed state is for.
+Your dapp can detect a network as long as there's a web3 provider. And once the user has connected their Ethereum address with your dapp you can read the account balance. Don't wait until a transaction to tell your user about an incorrect network or a 0 ETH balance. This is not what the failed state is for.
 
 <DoDont>
   {{

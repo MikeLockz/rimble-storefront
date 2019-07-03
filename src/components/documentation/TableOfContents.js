@@ -1,8 +1,26 @@
 import React from "react";
+import styled from "styled-components";
 import { Link as RimbleLink, Text, Box } from "rimble-ui";
 import { navigate } from "@reach/router";
-import Ul from "../../components/landing/Ul";
-import Li from "../../components/landing/Li";
+import theme from "./../../theme";
+
+const Ul = props => <Text as={"ul"} pl={3} m={0} {...props} />;
+
+const Li = props => <Text as={"li"} {...props} lineHeight={1} p={0} />;
+
+const StyledLinkListBox = styled(Box)`
+  & {
+    position: initial;
+  }
+
+  @media screen and (min-width: ${theme.breakpoints[1]}) {
+    position: fixed;
+    width: calc(220px - (${theme.space[3]}px * 2));
+    margin-top: calc(${theme.space[5]}px + ${theme.space[3]}px);
+    top: 0;
+    right: 0;
+  }
+`;
 
 const TableOfContents = props => {
   const { tableOfContents } = props;
@@ -40,15 +58,21 @@ const TableOfContents = props => {
     });
 
   return (
-    <Box width={"220px"}>
-      {tableOfContents ? (
-        <Box position={"fixed"} top={"2rem"} right={"2rem"} width={"140px"}>
+    <Box
+      maxWidth={["100%", "100%", "220px"]}
+      minWidth={["100%", "100%", "140px"]}
+      my={3}
+      mx={[0, 0, 3]}
+      position={"relative"}
+    >
+      {tableOfContents && (
+        <StyledLinkListBox>
           <Text caps color={"mid-gray"} fontSize={0} fontWeight={4} mb={3}>
             On this Page
           </Text>
           <Ul>{loop(tableOfContents)}</Ul>
-        </Box>
-      ) : null}
+        </StyledLinkListBox>
+      )}
     </Box>
   );
 };

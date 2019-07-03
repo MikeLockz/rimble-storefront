@@ -1,15 +1,14 @@
 ---
 title: Flash
 componentName: Flash
+description: Use the Flash component for delivering important messages to your users while allowing them to continue interacting with the rest of the page.
 ---
 
 import { Flash, Box, Icon, Text, Link, Heading } from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
-import PropsTable from "../../../components/propstable";
+import PropsTable from "../../../components/documentation/PropsTable.js";
 
-# Flash
-
-Use the `Flash` component for delivering important messages to your users while allowing them to continue interacting with the rest of the page.. For example, you may want to let users know they're on the wrong network but allow them to continue browsing until they try to connect. The Flash renders a responsive box-model layout component. Inherits props from [`Box`](/components/rimble-ui/Box) component.
+Use the `Flash` component for delivering important messages to your users while allowing them to continue interacting with the rest of the page. For example, you may want to let users know they're on the wrong network but allow them to continue browsing until they try to connect. The Flash renders a responsive box-model layout component. Inherits props from [`Box`](/components/rimble-ui/Box) component.
 
 **Import component**
 
@@ -117,7 +116,7 @@ Use the `Flash` banner if the information you want to get across remains relevan
             <strong>Connected!</strong>
           </Heading>
           <Text color={"inherit"}>
-            Your Ethereum account is now connected to my dApp.
+            Your Ethereum account is now connected to my dapp.
           </Text>
         </Box>
       </Flash>
@@ -157,7 +156,7 @@ Flash banners should have a single purpose or message so should only contain a m
             <strong>Wrong network and insufficient funds!</strong>
           </Heading>
           <Text color={"inherit"}>
-            You need to be on the Main Ethereum network to use this dApp.{" "}
+            You need to be on the Main Ethereum network to use this dapp.{" "}
             <Link>Learn how to switch networks</Link>
           </Text>
           <br />
@@ -200,7 +199,7 @@ When you want to let the user know that something has been successful. You may w
 
 ---
 
-When there's some important info in relation to the section (whole dApp, page, card etc.) in which you put the Flash banner. Or if you want to provide advice.
+When there's some important info in relation to the section (whole dapp, page, card etc.) in which you put the Flash banner. Or if you want to provide advice.
 
 **Example scenarios**
 

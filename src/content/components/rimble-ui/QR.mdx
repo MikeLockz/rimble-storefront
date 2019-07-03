@@ -1,6 +1,7 @@
 ---
 title: QR
 componentName: QR
+description: Use the QR component to renders a QR code for a provided string. Can be used as a shortcut to input a public Ethereum address or link to a specific website.
 ---
 
 import {
@@ -16,9 +17,7 @@ import {
   Heading
 } from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
-import PropsTable from "../../../components/propstable";
-
-# QR documentation
+import PropsTable from "../../../components/documentation/PropsTable.js";
 
 Use the `QR` component to renders a QR code for a provided string. Can be used as a shortcut to input a public Ethereum address or link to a specific website.
 
@@ -64,7 +63,7 @@ Let your user know what the QR code represents and what will happen once they sc
 
 **Provide an alternative**
 
-If you're using a QR code to represent a public address, always give the user the ability to copy/paste the address manually too. They may not want to grant your dApp access to their camera or they may be at a desktop set-up where scanning QR codes is inconvenient.
+If you're using a QR code to represent a public address, always give the user the ability to copy/paste the address manually too. They may not want to grant your dapp access to their camera or they may be at a desktop set-up where scanning QR codes is inconvenient.
 
 <DoDont>
   {{
@@ -72,10 +71,7 @@ If you're using a QR code to represent a public address, always give the user th
       <Box>
         <Heading.h5>Your connected account:</Heading.h5>
         <QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
-        <PublicAddress
-          required="false"
-          address="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A"
-        />
+        <PublicAddress address="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
       </Box>
     ),
     negative: (

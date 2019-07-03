@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Link as GatsbyLink } from "gatsby";
-import { Text, Link, Image, Box, Flex } from "rimble-ui";
-
-import logotype from "./rimble-logotype.svg";
+import { Text, Link, Box, Flex } from "rimble-ui";
+import theme from "./../../theme";
 
 const RimbleGatsbyLink = props => (
   <Link
@@ -22,8 +21,15 @@ const Li = props => <Text as={"li"} {...props} />;
 const StyledNav = styled.nav`
   & {
     height: 100%;
-    overflow: hidden;
-    padding-right: 2rem;
+    transition: 0.2s transform ease;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    position: fixed;
+
+    & > a {
+      transition: 0.2s right ease;
+      right: calc(-100vw + 12em);
+    }
   }
   ul {
     list-style: none;
@@ -31,10 +37,32 @@ const StyledNav = styled.nav`
   a:not(:hover):not(.-is-active) {
     color: inherit;
   }
+  &.open {
+    background: ${theme.colors.white};
+    z-index: 99;
+    transform: translateX(0);
+    width: 100vw;
+
+    & > a {
+      right: ${theme.space[3]}px;
+    }
+  }
+  &.closed {
+    transform: translateX(-100vw);
+  }
+
+  @media screen and (min-width: ${theme.breakpoints[2]}) {
+    position: initial;
+
+    &.open,
+    &.closed {
+      transform: translateX(0);
+    }
+  }
 `;
 
 const StaticLinkList = () => (
-  <Ul>
+  <Ul mb={4}>
     <Li>
       <RimbleGatsbyLink to={"/components"}>Components</RimbleGatsbyLink>
     </Li>
@@ -322,10 +350,10 @@ const StaticLinkList = () => (
     </Li>
     <Ul>
       <Li>
-        <RimbleGatsbyLink to={"/guides/ux"}>dApp patterns</RimbleGatsbyLink>
+        <RimbleGatsbyLink to={"/guides/ux"}>dapp patterns</RimbleGatsbyLink>
       </Li>
       <Ul>
-        <Li>Connecting to a dApp</Li>
+        <Li>Connecting to a dapp</Li>
         {/*<Li>
           <RimbleGatsbyLink
             to={"/guides/ux/transaction-states"}
@@ -368,24 +396,20 @@ const StaticLinkList = () => (
           </RimbleGatsbyLink>
         </Li>
       </Ul>
+      <Li>
+        <RimbleGatsbyLink to={"guides/content"}>dapp Content</RimbleGatsbyLink>
+      </Li>
       <Ul>
         <Li>
-          <RimbleGatsbyLink to={"guides/content"}>
-            dApp Content
+          <RimbleGatsbyLink to={"/guides/content/writing-for-products"}>
+            Writing for products
           </RimbleGatsbyLink>
         </Li>
-        <Ul>
-          <Li>
-            <RimbleGatsbyLink to={"/guides/content/writing-for-products"}>
-              Writing for products
-            </RimbleGatsbyLink>
-          </Li>
-          <Li>
-            <RimbleGatsbyLink to={"/guides/content/conversational-design"}>
-              Conversational design
-            </RimbleGatsbyLink>
-          </Li>
-        </Ul>
+        <Li>
+          <RimbleGatsbyLink to={"/guides/content/conversational-design"}>
+            Conversational design
+          </RimbleGatsbyLink>
+        </Li>
       </Ul>
       {/*<Li>
           <RimbleGatsbyLink
@@ -407,24 +431,26 @@ const StaticLinkList = () => (
   </Ul>
 );
 
-const StaticSideNav = () => (
-  <StyledNav>
-    <Flex
-      flexDirection={"column"}
-      height={"100%"}
+const StaticSideNav = ({ isNavOpen }) => {
+  return (
+    <StyledNav
       borderRight={1}
       borderColor={"light-gray"}
+      className={isNavOpen ? "open" : "closed"}
     >
-      <Box borderBottom={1} borderColor={"light-gray"}>
-        <Link as={GatsbyLink} to={"/"}>
-          <Image src={logotype} alt="rimble home" p={3} />
-        </Link>
-      </Box>
-      <Box overflow={"scroll"} py={3} pr={5}>
-        <StaticLinkList />
-      </Box>
-    </Flex>
-  </StyledNav>
-);
+      <Flex flexDirection={"column"} height={"calc(100% - 57px)"}>
+        <Box
+          overflow={"scroll"}
+          pt={2}
+          pr={5}
+          borderRight={1}
+          borderColor={"light-gray"}
+        >
+          <StaticLinkList />
+        </Box>
+      </Flex>
+    </StyledNav>
+  );
+};
 
 export default StaticSideNav;

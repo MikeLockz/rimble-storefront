@@ -1,6 +1,7 @@
 ---
 title: ToastMessage
 componentName: ToastMessage
+description: Use toast messages to provide updates about a process.
 ---
 
 import {
@@ -14,9 +15,7 @@ import {
   ToastMessage
 } from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
-import PropsTable from "../../../components/propstable";
-
-# ToastMessage
+import PropsTable from "../../../components/documentation/PropsTable.js";
 
 Use toast messages to provide updates about a process. The `ToastMessage` component extends [Box](/components/rimble-ui/Box).
 
@@ -70,12 +69,12 @@ For when you want to provide more value through extra helpful information. Ask y
 When you want to reinforce your message with a visual.
 
 ```js is=react-live
-<ToastMessage message={"Welcome to my dApp"} icon={"Mood"} my={3} />
+<ToastMessage message={"Welcome to my dapp"} icon={"Mood"} my={3} />
 ```
 
 ```js is=react-live
 <ToastMessage
-  message={"Welcome to my dApp"}
+  message={"Welcome to my dapp"}
   icon={"Mood"}
   my={3}
   colorTheme={"dark"}
@@ -160,7 +159,7 @@ For when you want to just provide a quick process update like a confirmation
 
 <ToastMessage message={"Transaction started"} />
 
-<ToastMessage message={"Connected to dApp"} />
+<ToastMessage message={"Connected to dapp"} />
 
 **Toast with a subtitle**
 
