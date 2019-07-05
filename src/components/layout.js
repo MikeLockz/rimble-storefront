@@ -67,7 +67,7 @@ const Layout = ({ children, tableOfContents, title }) => {
               p={[3, 3, 4]}
               flexDirection={["column", "column", "row"]}
             >
-              <Box order={[1, 1, 0]}>
+              <Box order={[1, 1, 0]} width={[1, 1, "calc(100% - 188px)"]}>
                 <Box display={["none", "none", "block"]}>
                   <Heading.h1>{title}</Heading.h1>
                 </Box>
