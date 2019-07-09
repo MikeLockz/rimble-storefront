@@ -3,7 +3,7 @@ title: Rimble UI
 description: Clean, customisable building blocks for putting your interface together, including UI for Ethereum concepts.
 ---
 
-import { Text, Button } from "rimble-ui";
+import { Text, Button, Link } from "rimble-ui";
 
 Clean, customisable building blocks for putting your interface together, including UI for Ethereum concepts.
 
@@ -18,25 +18,37 @@ Clean, customisable building blocks for putting your interface together, includi
 </Button>
 
 ## Installation
+Install `rimble-ui` and `styled-components` in your project with npm:
 
 ```
 npm install --save rimble-ui styled-components
 ```
 
-## Usage
+or with yarn:
 
 ```
-import React, { Component } from 'react'
+yarn add rimble-ui styled-components
+```
 
-import { Button } from 'rimble-ui'
+## Usage
 
-class Example extends Component {
-  render () {
-    return (
-      <Button size={'medium'}>
-        Click me!
-      </Button>
-    )
-  }
+Play with an example on <Link href="https://codesandbox.io/embed/little-meadow-m3sv3" target="_blank">CodeSandbox</Link>
+
+The code below will render a button with default Rimble styles.
+
+```jsx
+import React from "react";
+import ReactDOM from "react-dom";
+import { Button } from 'rimble-ui';
+
+function App() {
+  return (
+    <div>
+      <Button> click me! </Button>
+    </div>
+  );
 }
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
