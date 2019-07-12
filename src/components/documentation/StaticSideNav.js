@@ -18,6 +18,8 @@ const Ul = props => <Text as={"ul"} pl={3} m={0} {...props} />;
 
 const Li = props => <Text as={"li"} {...props} />;
 
+const NavGroupHeading = props => <Li fontSize={1} mt={2} fontWeight={0} color={'mid-gray'} caps {...props} />
+
 const StyledNav = styled.nav`
   & {
     height: 100%;
@@ -73,50 +75,32 @@ const StaticLinkList = () => (
         </RimbleGatsbyLink>
       </Li>
       <Ul>
-        <Li>Getting Started</Li>
+        <NavGroupHeading>
+          Guides
+        </NavGroupHeading>
         <Ul>
-          <Li>
+          {/* <Li>
             <RimbleGatsbyLink to={"/components/rimble-ui/theming"}>
               Theming
             </RimbleGatsbyLink>
+          </Li> */}
+          <Li>
+            <RimbleGatsbyLink to={"/components/rimble-ui/get-started"}>
+              Get Started
+            </RimbleGatsbyLink>
+          </Li>
+          <Li>
+            <RimbleGatsbyLink to={"/components/rimble-ui/system-props"}>
+              System Props
+            </RimbleGatsbyLink>
+          </Li>
+          <Li>
+            <RimbleGatsbyLink  to={"/components/rimble-ui/rimble-theme"}>
+              Rimble Theme
+            </RimbleGatsbyLink>
           </Li>
         </Ul>
-        {/* <Li>Design</Li>
-        <Ul>
-          <Li>
-            <RimbleGatsbyLink
-              to={"/components/rimble-ui/theme"}
-
-            >
-              Theme
-            </RimbleGatsbyLink>
-          </Li>
-          <Li>
-            <RimbleGatsbyLink
-              to={"/components/rimble-ui/colors"}
-
-            >
-              Colors
-            </RimbleGatsbyLink>
-          </Li>
-          <Li>
-          //   <RimbleGatsbyLink
-          //     to={"/components/rimble-ui/typography"}
-          //
-          //   >
-          //     Typography
-          //   </RimbleGatsbyLink>
-          // </Li>
-          <Li>
-            <RimbleGatsbyLink
-              to={"/components/rimble-ui/spacing"}
-
-            >
-              Spacing
-            </RimbleGatsbyLink>
-          </Li>
-        </Ul> */}
-        <Li>Ethereum UI</Li>
+        <NavGroupHeading>Ethereum UI</NavGroupHeading>
         <Ul>
           <Li>
             <RimbleGatsbyLink to={"/components/rimble-ui/Blockie"}>
@@ -149,16 +133,11 @@ const StaticLinkList = () => (
             </RimbleGatsbyLink>
           </Li>
         </Ul>
-        <Li>Layout</Li>
+        <NavGroupHeading>Layout</NavGroupHeading>
         <Ul>
           <Li>
             <RimbleGatsbyLink to={"/components/rimble-ui/Box"}>
               Box
-            </RimbleGatsbyLink>
-          </Li>
-          <Li>
-            <RimbleGatsbyLink to={"/components/rimble-ui/Card"}>
-              Card
             </RimbleGatsbyLink>
           </Li>
           <Li>
@@ -167,12 +146,12 @@ const StaticLinkList = () => (
             </RimbleGatsbyLink>
           </Li>
           <Li>
-            <RimbleGatsbyLink to={"/components/rimble-ui/ThemeProvider"}>
-              Theme Provider
+            <RimbleGatsbyLink to={"/components/rimble-ui/Card"}>
+              Card
             </RimbleGatsbyLink>
           </Li>
         </Ul>
-        <Li>Forms</Li>
+        <NavGroupHeading>Forms</NavGroupHeading>
         <Ul>
           <Li>
             <RimbleGatsbyLink to={"/components/rimble-ui/Checkbox"}>
@@ -215,7 +194,7 @@ const StaticLinkList = () => (
             </RimbleGatsbyLink>
           </Li>
         </Ul>
-        <Li>Feedback</Li>
+        <NavGroupHeading>Feedback</NavGroupHeading>
         <Ul>
           <Li>
             <RimbleGatsbyLink to={"/components/rimble-ui/Loader"}>
@@ -233,7 +212,7 @@ const StaticLinkList = () => (
             </RimbleGatsbyLink>
           </Li>
         </Ul>
-        <Li>Actions</Li>
+        <NavGroupHeading>Actions</NavGroupHeading>
         <Ul>
           <Li>
             <RimbleGatsbyLink to={"/components/rimble-ui/Button"}>
@@ -246,7 +225,7 @@ const StaticLinkList = () => (
             </RimbleGatsbyLink>
           </Li>
         </Ul>
-        <Li>Alerts</Li>
+        <NavGroupHeading>Alerts</NavGroupHeading>
         <Ul>
           <Li>
             <RimbleGatsbyLink to={"/components/rimble-ui/Flash"}>
@@ -272,7 +251,7 @@ const StaticLinkList = () => (
             </RimbleGatsbyLink>
           </Li>
         </Ul>
-        <Li>Information</Li>
+        <NavGroupHeading>Information</NavGroupHeading>
         <Ul>
           <Li>
             <RimbleGatsbyLink to={"/components/rimble-ui/Tooltip"}>
@@ -280,7 +259,7 @@ const StaticLinkList = () => (
             </RimbleGatsbyLink>
           </Li>
         </Ul>
-        <Li>Data</Li>
+        <NavGroupHeading>Data</NavGroupHeading>
         <Ul>
           <Li>
             <RimbleGatsbyLink to={"/components/rimble-ui/Table"}>
@@ -288,7 +267,7 @@ const StaticLinkList = () => (
             </RimbleGatsbyLink>
           </Li>
         </Ul>
-        <Li>Typography</Li>
+        <NavGroupHeading>Typography</NavGroupHeading>
         <Ul>
           <Li>
             <RimbleGatsbyLink to={"/components/rimble-ui/Heading"}>
@@ -301,7 +280,7 @@ const StaticLinkList = () => (
             </RimbleGatsbyLink>
           </Li>
         </Ul>
-        <Li>Image</Li>
+        <NavGroupHeading>Image</NavGroupHeading>
         <Ul>
           <Li>
             <RimbleGatsbyLink to={"/components/rimble-ui/Avatar"}>
@@ -326,7 +305,7 @@ const StaticLinkList = () => (
         </RimbleGatsbyLink>
       </Li>
       <Ul>
-        <Li>Onboarding</Li>
+        <NavGroupHeading>Onboarding</NavGroupHeading>
         <Ul>
           <Li>
             <RimbleGatsbyLink
@@ -353,23 +332,7 @@ const StaticLinkList = () => (
         <RimbleGatsbyLink to={"/guides/ux"}>dapp patterns</RimbleGatsbyLink>
       </Li>
       <Ul>
-        <Li>Connecting to a dapp</Li>
-        {/*<Li>
-          <RimbleGatsbyLink
-            to={"/guides/ux/transaction-states"}
-
-          >
-            Transaction States
-          </RimbleGatsbyLink>
-        </Li>*/}
-        {/*<Li>
-          <RimbleGatsbyLink
-            to={"/guides/ux/connect-a-wallet-intro"}
-
-          >
-            1. Introduction
-          </RimbleGatsbyLink>
-        </Li>*/}
+        <NavGroupHeading>Connecting to a dapp</NavGroupHeading>
         <Li>
           <RimbleGatsbyLink to={"/guides/ux/connect-a-wallet-conditions"}>
             1. Can they connect?
@@ -411,22 +374,6 @@ const StaticLinkList = () => (
           </RimbleGatsbyLink>
         </Li>
       </Ul>
-      {/*<Li>
-          <RimbleGatsbyLink
-            to={"/guides/content/crafting-tone"}
-
-          >
-            Crafting a tone of voice
-          </RimbleGatsbyLink>
-        </Li>
-        <Li>
-          <RimbleGatsbyLink
-            to={"/guides/content/blockchain-vocab"}
-
-          >
-            Blockchain vocab
-          </RimbleGatsbyLink>
-        </Li>*/}
     </Ul>
   </Ul>
 );
