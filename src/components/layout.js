@@ -69,7 +69,7 @@ const Layout = ({ children, tableOfContents, title }) => {
             >
               <Box order={[1, 1, 0]} width={[1, 1, "calc(100% - 188px)"]}>
                 <Box display={["none", "none", "block"]}>
-                  <Heading.h1>{title}</Heading.h1>
+                  <Heading.h1 mb={4}>{title}</Heading.h1>
                 </Box>
 
                 {children}
