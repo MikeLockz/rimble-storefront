@@ -1,24 +1,29 @@
 import React from "react";
 import styled from "styled-components";
 import { Link as GatsbyLink } from "gatsby";
-import { Text, Link, Box, Flex } from "rimble-ui";
+import { Text, Box, Flex, Link } from "rimble-ui";
 import theme from "./../../theme";
 
 const RimbleGatsbyLink = props => (
-  <Link
-    as={GatsbyLink}
+  <Text
     display={"block"}
+    fontSize={1}
+    fontWeight={'bold'}
     p={1}
-    activeClassName={"-is-active"}
-    {...props}
-  />
+  >
+    <Link
+      as={GatsbyLink}
+      activeClassName={"-is-active"}
+      {...props}
+    />
+  </Text>
 );
 
 const Ul = props => <Text as={"ul"} pl={3} m={0} {...props} />;
 
 const Li = props => <Text as={"li"} {...props} />;
 
-const NavGroupHeading = props => <Li fontSize={1} mt={2} fontWeight={0} color={'mid-gray'} caps {...props} />
+const NavGroupHeading = props => <Li fontSize={1} mt={2} color={'mid-gray'} caps {...props} />
 
 const StyledNav = styled.nav`
   & {
@@ -39,14 +44,17 @@ const StyledNav = styled.nav`
   a:not(:hover):not(.-is-active) {
     color: inherit;
   }
+  a:visited {
+    color: ${props => props.theme.colors.primary};
+  }
   &.open {
-    background: ${theme.colors.white};
+    background: ${props => props.theme.colors.white};
     z-index: 99;
     transform: translateX(0);
     width: 100vw;
 
     & > a {
-      right: ${theme.space[3]}px;
+      right: ${props => props.theme.space[3]}px;
     }
   }
   &.closed {
