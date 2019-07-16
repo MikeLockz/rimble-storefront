@@ -53,7 +53,7 @@ const Layout = ({ children, tableOfContents, title }) => {
         }
       `}
       render={data => (
-        <ThemeProvider>
+        <ThemeProvider theme={theme}>
           <Navbar isNavOpen={isNavOpen} toggleNavOpen={toggleNavOpen} />
 
           <Flex position={"absolute"} top={"57px"} left={"0"} right={"0"}>

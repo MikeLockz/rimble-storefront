@@ -37,12 +37,13 @@ import {
   ToastMessage,
   UPortButton,
   Tooltip,
-  EthAddress
+  EthAddress,
+  theme
 } from "rimble-ui";
 import ConnectionBanner from "@rimble/connection-banner";
 import NetworkIndicator from "@rimble/network-indicator";
 import myTheme from "../../customTheme";
-import theme from "../../theme";
+import docsTheme from "../../theme";
 
 const Table = styled(RimbleTable)`
   & {
@@ -114,6 +115,7 @@ const localScope = {
   Tooltip,
   EthAddress,
   myTheme,
+  theme,
   CodeBox
 };
 
@@ -163,7 +165,7 @@ class Code extends React.Component {
           code={children.trim()}
           scope={localScope}
         >
-          <ThemeProvider>
+          <ThemeProvider theme={docsTheme}>
             <CodeBox my={3} css={{}}>
               <Box mb={1}>
                 <Box border={1} borderColor={"grey"} p={3}>
