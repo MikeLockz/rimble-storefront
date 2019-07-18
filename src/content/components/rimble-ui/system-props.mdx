@@ -1,7 +1,11 @@
 ---
-title: Styled System Props
+title: System Props
 description: System props are reused across many different components.
 ---
+
+Rimble Components utilizes [styled-system](https://github.com/styled-system/styled-system) to apply a standard set of props to each component. Using `styled-system`, groups of props are automatically applied to each component. Most components get the COMMON set of props which give the component access to color and space props (margin, padding, color and background color). These groups correspond to the color and space functions from `styled-system` which can be referenced in the `styled system` [table of style functions](https://github.com/styled-system/styled-system/blob/master/docs/table.md#core).
+
+To check which system props each component includes, check the documentation for that component.
 
 import {
   COMMON_LIST,
@@ -16,7 +20,7 @@ import DoDont from "../../../components/documentation/DoDont";
 
 System props are reused across many different components. To keep the documentation easy to read, we are showing the shared props in a single place.
 
-## Shared props
+## System Props Table
 
 | Category     | Included Props                             | styled-system docs                                                                                                                                                                                            |
 | ------------ | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
