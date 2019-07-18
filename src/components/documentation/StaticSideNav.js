@@ -6,10 +6,9 @@ import theme from "./../../theme";
 
 const RimbleGatsbyLink = props => (
   <Text
-    display={"block"}
     fontSize={1}
     fontWeight={'bold'}
-    p={1}
+    pb={2}
   >
     <Link
       as={GatsbyLink}
@@ -23,7 +22,7 @@ const Ul = props => <Text as={"ul"} pl={3} m={0} {...props} />;
 
 const Li = props => <Text as={"li"} {...props} />;
 
-const NavGroupHeading = props => <Li fontSize={1} mt={2} color={'mid-gray'} caps {...props} />
+const NavGroupHeading = props => <Li fontSize={1} my={2} color={'mid-gray'} caps {...props} />
 
 const StyledNav = styled.nav`
   & {
