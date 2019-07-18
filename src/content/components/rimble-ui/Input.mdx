@@ -42,12 +42,14 @@ Renders "(Optional)" next to the label.
 <Input type="text" placeholder="e.g. My hodl wallet" />
 ```
 
+### Text input types
+
 **Text input**
 
 Brings up a standard keyboard.
 
 ```js is=react-live
-<Form.Input
+<Input
   type="text"
   required={true}
   placeholder="e.g. 0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A"
@@ -59,7 +61,7 @@ Brings up a standard keyboard.
 Give you an @ on your keyboard.
 
 ```js is=react-live
-<Form.Input type="email" required={true} placeholder="you@example.com" />
+<Input type="email" required={true} placeholder="you@example.com" />
 ```
 
 **Password input**
@@ -67,15 +69,7 @@ Give you an @ on your keyboard.
 Masks any input.
 
 ```js is=react-live
-<Form.Input type="password" required={true} />
-```
-
-**Number input**
-
-Opens the number page of your keyboard.
-
-```js is=react-live
-<Form.Input type="number" required={true} placeholder="e.g. 123" />
+<Input type="password" required={true} />
 ```
 
 **Search input**
@@ -83,26 +77,94 @@ Opens the number page of your keyboard.
 Allows users to quickly remove a search term.
 
 ```js is=react-live
-<Form.Input type="search" required={true} placeholder="e.g. Ethereum" />
+<Input type="search" required={true} placeholder="e.g. Ethereum" />
 ```
+
+**URL input**
+
+Brings up a url keyboard.
+
+```js is=react-live
+<Input
+  type="url"
+  required={true}
+  placeholder="e.g. rimble.consensys.design"
+/>
+```
+
+### Numerical input types
+
+**Number input**
+
+Opens the number page of your keyboard.
+
+```js is=react-live
+<Input type="number" required={true} placeholder="e.g. 123" />
+```
+
+**Range input**
+
+See the [Slider](/components/rimble-ui/Slider) component to implement a range input type.
 
 **Telephone input**
 
 Brings up the telephone keyboard.
 
 ```js is=react-live
-<Form.Input type="tel" required={true} placeholder="e.g. +445575242519" />
+<Input type="tel" required={true} placeholder="e.g. +445575242519" />
 ```
 
-**URL input**
+### Time input types
 
-Bring up a url keyboard.
+**Date input**
+
+Displays HTML5 date picker.
 
 ```js is=react-live
-<Form.Input
-  type="url"
-  required={true}
-  placeholder="e.g. rimble.consensys.design"
+<Input
+  type="date"
+/>
+```
+
+**Time input**
+
+Displays HTML5 time picker.
+
+```js is=react-live
+<Input
+  type="time"
+/>
+```
+
+**Month input**
+
+Displays HTML5 month picker.
+
+```js is=react-live
+<Input
+  type="month"
+/>
+```
+
+**Week input**
+
+Displays HTML5 week picker.
+
+```js is=react-live
+<Input
+  type="week"
+/>
+```
+
+### Other input types
+
+**File input**
+
+Displays HTML5 file picker.
+
+```js is=react-live
+<Input
+  type="file"
 />
 ```
 
