@@ -1,7 +1,6 @@
 import React from "react";
 import Heading from "./Heading";
 import Code from "./Code";
-import { P } from "./P";
 import { Table } from "./Table";
 import Link from "./Link";
 import { Image } from "./Image";
