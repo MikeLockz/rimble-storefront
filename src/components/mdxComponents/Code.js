@@ -37,7 +37,8 @@ import {
   ToastMessage,
   UPortButton,
   Tooltip,
-  EthAddress
+  EthAddress,
+  theme
 } from "rimble-ui";
 import ConnectionBanner from "@rimble/connection-banner";
 import NetworkIndicator from "@rimble/network-indicator";
