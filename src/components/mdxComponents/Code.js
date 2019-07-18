@@ -189,15 +189,17 @@ class Code extends React.Component {
       <Highlight {...defaultProps} code={children.trim()} language={"jsx"}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <StyledPre as="pre" className={className} style={style} p={2}>
-            {tokens.map((line, i) => (
-              <div key="fake-key" {...getLineProps({ line, key: i })}>
-                <Box fontSize={1} p={2}>
-                  {line.map((token, key) => (
-                    <span key="fake-key" {...getTokenProps({ token, key })} />
-                  ))}
-                </Box>
-              </div>
-            ))}
+            <Box p={2}>
+              {tokens.map((line, i) => (
+                <div key="fake-key" {...getLineProps({ line, key: i })}>
+                  <div>
+                    {line.map((token, key) => (
+                      <span key="fake-key" {...getTokenProps({ token, key })} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </Box>
           </StyledPre>
         )}
       </Highlight>
