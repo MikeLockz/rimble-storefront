@@ -4,6 +4,8 @@ import { Link as GatsbyLink } from "gatsby";
 import { Link as RimbleLink, Box, Image, Flex, Icon } from "rimble-ui";
 import theme from "./../../theme";
 
+import RimbleLogotype from '../../../static/rimble-logotype.svg'
+
 const StyledNavbar = styled(Box)`
   & {
   }
@@ -28,9 +30,9 @@ const Navbar = ({ isNavOpen, setIsNavOpen, toggleNavOpen }) => {
       left={0}
       zIndex={9}
     >
-      <RimbleLink as={GatsbyLink} to={"/"}>
-        <Image src="/rimble-logotype.svg" alt="rimble home" />
-      </RimbleLink>
+      <GatsbyLink to={"/"}>
+        <Image src={RimbleLogotype} alt="rimble home" display={'block'} />
+      </GatsbyLink>
 
       <RimbleLink
         href="javascript:;" /* eslint-disable-line */
