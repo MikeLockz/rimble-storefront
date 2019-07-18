@@ -1,10 +1,9 @@
 import React from "react";
+import { Text, Image } from "rimble-ui";
 import Heading from "./Heading";
 import Code from "./Code";
-import { Table } from "./Table";
 import Link from "./Link";
-import { Image } from "./Image";
-import { Text } from "rimble-ui";
+import { Table } from "./Table";
 
 /* eslint-disable react/display-name */
 const mdxComponents = {
@@ -42,7 +41,7 @@ const mdxComponents = {
   inlineCode: Code,
   table: props => <Table {...props} />,
   a: props => <Link {...props} />,
-  image: props => <Image {...props} />,
+  image: props => <Image my={3} {...props} />,
   ul: props => <Text as={"ul"} pl={3} m={0} {...props} />,
   li: props => <Text as={"li"} {...props} />
   // TODO add `blockquote`
