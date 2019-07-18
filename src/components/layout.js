@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
-import { theme, ThemeProvider, Box, Flex, Heading } from "rimble-ui";
+import { ThemeProvider, Box, Flex, Heading } from "rimble-ui";
 
 import TableOfContents from "./documentation/TableOfContents";
 import ContributeBanner from "./documentation/ContributeBanner";
@@ -42,7 +42,7 @@ const Layout = ({ children, tableOfContents, title }) => {
         }
       `}
       render={data => (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider>
           <Navbar isNavOpen={isNavOpen} toggleNavOpen={toggleNavOpen} />
 
           <Flex position={"absolute"} top={"57px"} left={"0"} right={"0"}>
