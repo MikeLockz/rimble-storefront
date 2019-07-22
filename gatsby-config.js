@@ -72,6 +72,12 @@ module.exports = {
         ignore: [`**/__snapshots__/**`, `**/*.test.js`, `**/*.snap`]
       }
     },
-    `gatsby-transformer-react-docgen`
+    `gatsby-transformer-react-docgen`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-125405131-2`,
+      },
+    }
   ]
 };
