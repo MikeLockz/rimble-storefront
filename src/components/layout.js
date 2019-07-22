@@ -2,22 +2,11 @@ import React, { useState, useEffect } from "react";
 import { StaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import { ThemeProvider, Box, Flex, Heading } from "rimble-ui";
-import theme from "./../theme";
 
 import TableOfContents from "./documentation/TableOfContents";
 import ContributeBanner from "./documentation/ContributeBanner";
 import StaticSideNav from "./documentation/StaticSideNav";
 import Navbar from "./documentation/Navbar";
-
-const StyledPrimaryContent = styled(Flex)`
-  & {
-    flex-direction: column;
-  }
-
-  @media screen and (min-width: ${theme.breakpoints[1]}) {
-    flex-direction: row;
-  }
-`;
 
 const Layout = ({ children, tableOfContents, title }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -53,13 +42,13 @@ const Layout = ({ children, tableOfContents, title }) => {
         }
       `}
       render={data => (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider>
           <Navbar isNavOpen={isNavOpen} toggleNavOpen={toggleNavOpen} />
 
           <Flex position={"absolute"} top={"57px"} left={"0"} right={"0"}>
             <StaticSideNav isNavOpen={isNavOpen} />
 
-            <StyledPrimaryContent
+            <Flex
               width={1}
               maxWidth={"960px"}
               overflow={"hidden"}
@@ -69,7 +58,7 @@ const Layout = ({ children, tableOfContents, title }) => {
             >
               <Box order={[1, 1, 0]} width={[1, 1, "calc(100% - 188px)"]}>
                 <Box display={["none", "none", "block"]}>
-                  <Heading.h1>{title}</Heading.h1>
+                  <Heading.h1 mb={4}>{title}</Heading.h1>
                 </Box>
 
                 {children}
@@ -84,7 +73,7 @@ const Layout = ({ children, tableOfContents, title }) => {
 
                 <TableOfContents tableOfContents={tableOfContents} />
               </Box>
-            </StyledPrimaryContent>
+            </Flex>
           </Flex>
         </ThemeProvider>
       )}

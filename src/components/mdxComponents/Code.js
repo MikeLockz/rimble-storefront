@@ -42,8 +42,6 @@ import {
 } from "rimble-ui";
 import ConnectionBanner from "@rimble/connection-banner";
 import NetworkIndicator from "@rimble/network-indicator";
-import myTheme from "../../customTheme";
-import docsTheme from "../../theme";
 
 const Table = styled(RimbleTable)`
   & {
@@ -64,13 +62,6 @@ const Table = styled(RimbleTable)`
 
 const CodeBox = styled(Box)`
   white-space: normal;
-`;
-
-const StyledPre = styled(Box)`
-  &&& {
-    padding: ${theme.space[0]}px;
-    font-size: 13px;
-  }
 `;
 
 const prismMap = {
@@ -114,9 +105,8 @@ const localScope = {
   UPortButton,
   Tooltip,
   EthAddress,
-  myTheme,
-  theme,
-  CodeBox
+  CodeBox,
+  styled
 };
 
 class Code extends React.Component {
@@ -131,7 +121,7 @@ class Code extends React.Component {
   };
 
   render() {
-    const { is, children, lang } = this.props;
+    const { is, children, lang, noInline } = this.props;
 
     // if no `is` default to inline code
     if (!is) {
@@ -164,21 +154,25 @@ class Code extends React.Component {
           language={prismMap[lang] || lang}
           code={children.trim()}
           scope={localScope}
+          noInline={noInline}
         >
-          <ThemeProvider theme={docsTheme}>
-            <CodeBox my={3} css={{}}>
-              <Box mb={1}>
-                <Box border={1} borderColor={"grey"} p={3}>
-                  <LivePreview />
-                  <LiveError />
-                </Box>
-                {this.state.showCode && <LiveEditor theme={codeDarkTheme} />}
+          <CodeBox my={3}>
+            <Box>
+              <Box bg={'blacks.0'} border={1} borderColor={'grey'} p={3}>
+                <LivePreview />
+                <LiveError />
               </Box>
-              <Button.Text onClick={this.toggleShowCode}>
-                {this.state.showCode ? `Hide Code` : `Edit Code`}
-              </Button.Text>
-            </CodeBox>
-          </ThemeProvider>
+              {this.state.showCode && <LiveEditor style={{fontSize: '16px'}} theme={codeDarkTheme} />}
+            </Box>
+            <Flex justifyContent={'flex-end'} mt={1}>
+              <Button.Text
+                size={'small'}
+                icon={'Code'}
+                onClick={this.toggleShowCode}
+                children={this.state.showCode ? `Hide Code` : `Edit Code`}
+              />
+            </Flex>
+          </CodeBox>
         </LiveProvider>
       );
     }
@@ -188,19 +182,15 @@ class Code extends React.Component {
     return (
       <Highlight {...defaultProps} code={children.trim()} language={"jsx"}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <StyledPre as="pre" className={className} style={style} p={2}>
-            <Box p={2}>
-              {tokens.map((line, i) => (
-                <div key="fake-key" {...getLineProps({ line, key: i })}>
-                  <div>
-                    {line.map((token, key) => (
-                      <span key="fake-key" {...getTokenProps({ token, key })} />
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </Box>
-          </StyledPre>
+          <pre className={className} style={style}>
+            {tokens.map((line, i) => (
+              <div key="fake-key" {...getLineProps({ line, key: i })}>
+                {line.map((token, key) => (
+                  <span key="fake-key" {...getTokenProps({ token, key })} />
+                ))}
+              </div>
+            ))}
+          </pre>
         )}
       </Highlight>
     );

@@ -9,11 +9,14 @@ const Link = ({ to, href, ...props }) => {
   }
 
   return isAbsoluteUrl(to) ? (
-    <RimbleLink href={to} {...props}>
-      <Box display={"inline-flex"} alignItems={"center"}>
-        {props.children}
-        <Icon name={"Link"} ml={2} />
-      </Box>
+    <RimbleLink
+      href={to}
+      display={"inline-flex"}
+      alignItems={"center"}
+      {...props}
+    >
+      {props.children}
+      <Icon name={"OpenInNew"} size={'18px'} ml={1} mb={'1px'} />
     </RimbleLink>
   ) : (
     <RimbleGatsbyLink to={to} {...props}>
