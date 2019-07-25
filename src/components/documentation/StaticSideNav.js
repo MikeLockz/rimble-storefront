@@ -73,7 +73,7 @@ const StyledNav = styled.nav`
 const StaticLinkList = () => (
   <Ul mb={4}>
     <Li>
-        <RimbleGatsbyLink to={"/components"}>Components</RimbleGatsbyLink>
+      <RimbleGatsbyLink to={"/components"}>Components</RimbleGatsbyLink>
     </Li>
     <Ul>
       <Li>
@@ -104,11 +104,6 @@ const StaticLinkList = () => (
           <Li>
             <RimbleGatsbyLink  to={"/components/rimble-ui/rimble-theme"}>
               Rimble Theme
-            </RimbleGatsbyLink>
-          </Li>
-          <Li>
-            <RimbleGatsbyLink  to={"/components/rimble-ui/Styleguide"}>
-              Style guide
             </RimbleGatsbyLink>
           </Li>
         </Ul>
