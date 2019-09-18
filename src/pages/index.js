@@ -1,24 +1,38 @@
 import React from "react";
+import ReactSVG from "react-svg";
+import { Link as GatsbyLink } from "gatsby";
+import { Box, Flex, Card, Text, Heading, Button } from 'rimble-ui';
+import { backgroundImage } from "styled-system";
+import styled, { ThemeProvider } from "styled-components";
 
 // Import from old landing page
-import styled from "styled-components";
-import RimbleLink from "../components/landing/RimbleLink";
-import RimbleGatsbyLink from "../components/landing/RimbleGatsbyLink";
-import ThemeProvider from "../components/landing/ThemeProvider";
 import Typography from "../components/landing/typography";
 import Container from "../components/landing/Container";
-import CodeBlock from "../components/landing/CodeBlock";
-import Heading from "../components/landing/Heading";
-import Text from "../components/landing/Text";
 import Hr from "../components/landing/Hr";
-import { Flex, Box } from "../components/landing/Box";
-import Header from "../components/landing/header";
 import Footer from "../components/landing/footer";
-import ReactSVG from "react-svg";
-import { backgroundImage } from "styled-system";
-import Button from "../components/landing/Button";
-
 import defaultTheme from "../theme";
+
+const Header = () => (
+  <header>
+    <Heading as={'h1'} fontSize={[5, 7]} pr={[3, 6]}>
+      Hi, we're Rimble
+    </Heading>
+    <Text as={'p'} fontSize={4} mt={3} mb={5} pr={[3, 6]}>
+      An open-source library of React components and guides to help you make dApps everyone can use.
+    </Text>
+    <AnimationButtonHover>
+      <Button
+        as={GatsbyLink}
+        to={"/components"}
+        width={["100%", "auto"]}
+        mr={[0, 3]}
+        mb={[3, 0]}
+      >
+        View library
+      </Button>
+    </AnimationButtonHover>
+  </header>
+);
 
 const Masthead = styled(Flex)`
   position: relative;
@@ -40,132 +54,178 @@ const Masthead = styled(Flex)`
   ${backgroundImage};
 `;
 
-const exampleCode = `
-import React, { Component } from 'react'
-
-import { Button } from 'rimble-ui'
-
-class Example extends Component {
-  render () {
-    return (
-      <Button size={'medium'}>
-        Click me!
-      </Button>
-    )
+const AnimationButtonHover = styled.div`
+  & {
+    transition: transform 0.15s ease;
   }
-}
+  &:hover {
+    transform: translateY(-1px);
+  }
 `;
+
+const StyledCard = styled(Card)`
+  & {
+    text-decoration: none;
+    color: ${props => props.theme.colors['dark-gray']};
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.15s ease;
+  }
+  &:hover {
+    color: ${props => props.theme.colors['primary']};
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+`;
+
+const RimbleGuidesCard = ({title, url}) => (
+  <StyledCard
+    forwardedAs={GatsbyLink}
+    to={url}
+    display={'flex'}
+    alignItems={'center'}
+    justifyContent={'space-between'}
+    mt={3}
+    p={[3, 4]}
+  >
+    <Heading as={'h3'} fontSize={[1, 3]}>
+      {title}
+    </Heading>
+    <Button size={'small'}>
+      Read
+    </Button>
+  </StyledCard>
+);
+
+const RimbleGuidesSection = () => (
+  <Container as={'section'}>
+    <Box mt={'5'}>
+      <Heading as={'h2'} fontSize={[3, 4]} fontWeight={2} my={3}>
+        Rimble Guides
+      </Heading>
+      <Text as={'p'} mb={4}>
+        Step by step guides for building friendly, accessible dapps.
+      </Text>
+      <RimbleGuidesCard
+        title={'Best practices for connecting to a dApp'}
+        url={'/guides/ux/connect-a-wallet-conditions'}
+      />
+      <RimbleGuidesCard
+        title={'Writing for Products'}
+        url={'/guides/content/writing-for-products'}
+      />
+      <RimbleGuidesCard
+        title={'Conversational Design'}
+        url={'/guides/content/conversational-design'}
+      />
+    </Box>
+  </Container>
+);
 
 const IndexPage = () => (
   <ThemeProvider theme={defaultTheme}>
     <React.Fragment>
       <Typography />
       <main role="main">
-        <Masthead
-          backgroundImage={["none", "none", 'url("/static/svg/fig-bg.svg")']}
-        >
+        <Masthead backgroundImage={["none", "none", 'url("/static/svg/fig-bg.svg")']}>
           <Container>
             <Header />
           </Container>
         </Masthead>
         <section>
           <Container>
-            <Box mt={6}>
-              <Heading.h1 fontSize={[4, 5]}>Why Rimble?</Heading.h1>
+            <Box mt={5}>
+              <Heading as={'h1'} fontSize={[4, 5]}>Why Rimble?</Heading>
               <Hr />
-              <Text.p fontSize={[2, 3]}>
+              <Text as={'p'} fontSize={[2, 3]}>
                 Decentralized applications (dApps) require users to learn new
                 patterns and they present new hurdles for designers and
                 front-end developers. Rimble is here to make life easier for
                 everyone. As an open source project, Rimble aims to create
                 common dapp UX patterns, validated through user research, and
                 built for developers.
-              </Text.p>
+              </Text>
 
-              <Flex mt={6} width={1} flexDirection={["column", "row"]}>
-                <Box flex={"1 1 auto"} width={[1, 1 / 3]} mr={5}>
-                  <Flex flexDirection={"column"} justifyContent={"space-between"}>
-                  <Flex my={3}>
-                    <ReactSVG src="/static/svg/fig-1.svg" />
-                  </Flex>
-                  <Heading.h2 fontSize={[3, 4]} fontWeight={2}>
+              <Flex flexDirection={["column", "row"]} width={1} mt={5}>
+                <Box flex={"1 1 auto"} width={[1, 1 / 3]} mr={5} my={4}>
+                  <Box as={ReactSVG} src={'/static/svg/fig-1.svg'} mb={4} />
+                  <Heading as={'h2'} fontSize={[3, 4]} fontWeight={2} my={3}>
                     UI
-                  </Heading.h2>
-                  <Text.p mt={"1"}>
+                  </Heading>
+                  <Text as={'p'}>
                     Clean, customisable building blocks for putting your interface together, including UI for Ethereum concepts.
-                    {" "}
-                  </Text.p>
-                  <RimbleGatsbyLink to="/components/rimble-ui">
+                  </Text>
+                  <AnimationButtonHover>
                     <Button
-                      width={["100%", "auto"]} my={"3"}>
+                      as={GatsbyLink}
+                      to={'/components/rimble-ui'}
+                      my={'3'}
+                    >
                       Read documentation
                     </Button>
-                  </RimbleGatsbyLink>
-                </Flex>
+                  </AnimationButtonHover>
                 </Box>
-                <Box flex={"1 1 auto"} width={[1, 1 / 3]} mr={5}>
-                  <Flex flexDirection={"column"} justifyContent={"space-between"}>
-                  <Flex my={3}>
-                    <ReactSVG src="/static/svg/fig-2.svg" />
-                  </Flex>
-                  <Heading.h2 fontSize={[3, 4]} fontWeight={2}>
+                <Box flex={"1 1 auto"} width={[1, 1 / 3]} mr={5} my={4}>
+                  <Box as={ReactSVG} src={'/static/svg/fig-2.svg'} mb={4} />
+                  <Heading as={'h2'} fontSize={[3, 4]} fontWeight={2} my={3}>
                     Web3 components
-                  </Heading.h2>
-                  <Text.p mt={"1"}>
+                  </Heading>
+                  <Text as={'p'}>
                     Drop-in components that solve an Ethereum UX problem out of the box. Configure some inputs and you're ready.
-                    {" "}
-                  </Text.p>
-                  <RimbleGatsbyLink to="/components/web3-components">
+                  </Text>
+                  <AnimationButtonHover>
                     <Button
-                      width={["100%", "auto"]} my={"3"}>
+                      as={GatsbyLink}
+                      to={'/components/web3-components'}
+                      my={'3'}
+                    >
                       Read documentation
                     </Button>
-                  </RimbleGatsbyLink>
-                </Flex>
+                  </AnimationButtonHover>
                 </Box>
-                <Box flex={"1 1 auto"} width={[1, 1 / 3]}>
-                  <Flex flexDirection={"column"} justifyContent={"space-between"}>
-                  <Flex my={3}>
-                    <ReactSVG src="/static/svg/fig-3.svg" />
-                  </Flex>
-                  <Heading.h2 fontSize={[3, 4]} fontWeight={2}>
+                <Box flex={"1 1 auto"} width={[1, 1 / 3]} my={4}>
+                  <Box as={ReactSVG} src={'/static/svg/fig-3.svg'} mb={4} />
+                  <Heading as={'h2'} fontSize={[3, 4]} fontWeight={2} my={3}>
                     Design patterns
-                  </Heading.h2>
-                  <Text.p mt={"1"}>
+                  </Heading>
+                  <Text as={'p'}>
                     In-depth pieces on designing patterns and workflows that help your users navigate the UX challenges of Ethereum.
-                  </Text.p>
-                  <RimbleGatsbyLink to="/guides">
-                  <Button
-                    target='_blank' rel='noopener'
-                    width={["100%", "auto"]} my={"3"}>
-                    Read guides
-                  </Button>
-                  </RimbleGatsbyLink>
-                  </Flex>
+                  </Text>
+                  <AnimationButtonHover>
+                    <Button
+                      as={GatsbyLink}
+                      to={'/guides'}
+                      my={'3'}
+                    >
+                      Read documentation
+                    </Button>
+                  </AnimationButtonHover>
                 </Box>
               </Flex>
             </Box>
           </Container>
         </section>
-
+        <RimbleGuidesSection />
         <section>
           <Container>
             <Box mt={6} mb={5}>
-              <Heading.h1 fontSize={[4, 5]}>
+              <Heading as={'h1'} fontSize={[4, 5]}>
                 See Rimble in action
-              </Heading.h1>
+              </Heading>
               <Hr />
-              <Text.p>
-                Take a look at our demo dapp. We prototype nearly everything we ship there first. Just remember it's our building site, so things might not always look finished. Hard hats are advised 👷‍♀️
-              </Text.p>
+              <Text as={'p'} mb={4}>
+                Take a look at our demo dapp. We prototype nearly everything we ship there first. Just remember it's our building site, so things might not always look finished. Hard hats are advised.
+                <span role="img" aria-label="hard hat emoji"> 👷‍♀️</span>
+              </Text>
+              <AnimationButtonHover>
                 <Button
                   as="a"
                   href="https://rimble-app-demo.netlify.com/"
                   target="_blank"
                   rel="noopener"
-                >
+                  >
                   Try the demo
                 </Button>
+              </AnimationButtonHover>
             </Box>
           </Container>
         </section>

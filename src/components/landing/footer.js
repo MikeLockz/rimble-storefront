@@ -1,11 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-
 import { flexDirection, space } from "styled-system";
-
 import Container from "./Container";
-import Text from "./Text";
-import RimbleLink from "./RimbleLink";
+import { Text, Link } from 'rimble-ui';
 
 const FooterStyled = styled.footer`
   background: ${props => props.theme.colors["primary-light"]};
@@ -24,8 +21,9 @@ const MyContainer = styled(Container)`
 const Footer = ({ props }) => (
   <FooterStyled>
     <MyContainer flexDirection={["column", "row"]} py={4}>
-      <RimbleLink
+      <Link
         color="#f5f5f5"
+        hoverColor="#f5f5f5"
         fontWeight={3}
         fontSize={2}
         href="//consensys.design/"
@@ -33,9 +31,10 @@ const Footer = ({ props }) => (
         rel="noopener"
       >
         Made by ConsenSys Design
-      </RimbleLink>
-      <RimbleLink
+      </Link>
+      <Link
         color="#f5f5f5"
+        hoverColor="#f5f5f5"
         fontWeight={3}
         fontSize={2}
         href="//twitter.com/MakingRimble"
@@ -43,7 +42,7 @@ const Footer = ({ props }) => (
         rel="noopener"
       >
       Follow us on Twitter
-      </RimbleLink>
+    </Link>
       <Text fontWeight={0} fontSize={2} color="#f5f5f5">
         © 2018 ConsenSys Inc.
       </Text>
