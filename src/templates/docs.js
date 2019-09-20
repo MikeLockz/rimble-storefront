@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import SEO from "../components/seo";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
-import MDXRenderer from "gatsby-mdx/mdx-renderer";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Box, Text } from "rimble-ui";
 
 const RawLayout = props => <div>{props.children}</div>;
@@ -38,10 +38,10 @@ class DocLayout extends React.Component {
                 propMetaData={data.componentMetadata.childrenComponentProp}
                 {...props}
               >
-                {data.mdx.code.body}
+                {data.mdx.body}
               </MDXRenderer>
             ) : (
-              <MDXRenderer {...props}>{data.mdx.code.body}</MDXRenderer>
+              <MDXRenderer {...props}>{data.mdx.body}</MDXRenderer>
             )}
           </Box>
         </Layout>
@@ -56,15 +56,13 @@ export const pageQuery = graphql`
   query($id: String, $componentName: String) {
     mdx(id: { eq: $id }) {
       id
-      code {
-        body
-      }
       tableOfContents
       frontmatter {
         title
         componentName
         description
       }
+      body
     }
     componentMetadata(displayName: { eq: $componentName }) {
       id

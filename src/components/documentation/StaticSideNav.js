@@ -125,11 +125,6 @@ const StaticLinkList = () => (
             </RimbleGatsbyLink>
           </Li>
           <Li>
-            <RimbleGatsbyLink to={"/components/rimble-ui/PublicAddress"}>
-              Public Address
-            </RimbleGatsbyLink>
-          </Li>
-          <Li>
             <RimbleGatsbyLink to={"/components/rimble-ui/QR"}>
               QR Code
             </RimbleGatsbyLink>

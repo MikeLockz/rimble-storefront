@@ -1,6 +1,6 @@
 const path = require("path");
 const startCase = require("lodash.startcase");
-const componentWithMDXScope = require("gatsby-mdx/component-with-mdx-scope");
+const componentWithMDXScope = require("gatsby-plugin-mdx/component-with-mdx-scope");
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -75,9 +75,7 @@ exports.createPages = ({ graphql, actions }) => {
                       sourceInstanceName
                     }
                   }
-                  code {
-                    scope
-                  }
+                  body
                   internal {
                     type
                   }

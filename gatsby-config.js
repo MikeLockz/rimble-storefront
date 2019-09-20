@@ -26,7 +26,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-remark`,
     {
-      resolve: `gatsby-mdx`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: { default: require.resolve("./src/templates/docs.js") },
         remarkPlugins: [require("gatsby-transformer-remark")],
@@ -76,8 +76,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-125405131-2`,
-      },
+        trackingId: `UA-125405131-2`
+      }
     }
   ]
 };

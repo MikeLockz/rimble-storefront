@@ -1,12 +1,11 @@
 ---
 title: EthAddress
 componentName: EthAddress
-description: Allows for different displays of an Ethereum address to a wallet, smart contract, transaction or any other hash. Use EthAddress when you want to truncate, link, show QR on hover, or other different visual representations of an Ethereum address.
+description: Allows for different displays of an Ethereum address to a wallet, smart contract, transaction or any other hash. Use EthAddress when you want to to make it easy for a user to copy an address or show a QR of an address.
 ---
 
 import {
   Input,
-  PublicAddress,
   EthAddress,
   Field,
   Table,
@@ -24,11 +23,11 @@ import {
 import DoDont from "../../../components/documentation/DoDont";
 import PropsTable from "../../../components/documentation/PropsTable.js";
 
-Allows for different displays of an Ethereum address to a wallet, smart contract, transaction or any other hash. Use `EthAddress` when you want to truncate, link, show QR on hover, or other different visual representations of an Ethereum address.
+Allows for different displays of an Ethereum address to a wallet, smart contract, transaction or any other hash. Use EthAddress when you want to to make it easy for a user to copy an address or show a QR of an address.
 
 **Import component**
 
-```jsx
+```lang=jsx
 import { EthAddress } from "rimble-ui";
 ```
 
@@ -42,14 +41,15 @@ Different ways to use the `EthAddress` component
 <EthAddress address="0x9505C8Fc1aD98b0aC651b91245d02D055fEc8E49" />
 ```
 
-**Truncated EthAddress**
+**EthAddress with text buttons**
 
 ```js is=react-live
 <EthAddress
   address="0x9505C8Fc1aD98b0aC651b91245d02D055fEc8E49"
-  truncate={true}
+  textLabels
 />
 ```
+
 
 ## Props
 
@@ -61,68 +61,7 @@ Different ways to use the `EthAddress` component
 
 ## Design guidelines
 
-Use the `EthAddress` when you need to show an Ethereum address to the user for display purposes only. If you're looking for something with copy-to-clipboard functionality, use [`PublicAddress`](/components/rimble-ui/PublicAddress) instead.
-
-*Want to build this component?* Read [`EthAddress` documentation](/components/rimble-ui/EthAddress)
-
-**When to use each variation**
-
-**Full address**
-
-When you need the user to confirm an address. This will allow them to double check it more accurately and increase confidence in their transaction.
-
-**Example scenarios**
-
-<Card>
-  <Heading.h3>Confirm payment</Heading.h3>
-  <Text>Are you sure you want to send 1 ETH to</Text>
-  <Flex
-    mt={3}
-    justifyContent="center"
-    alignItems="center"
-    justifyContent={"flex-start"}
-  >
-    <Box mr={3}>
-      <Blockie
-        opts={{
-          seed: "0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A"
-        }}
-      />
-    </Box>
-    <Box>
-      <Text wordBreak={"break-all"}>
-        0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A
-      </Text>
-    </Box>
-  </Flex>
-  <Flex justifyContent={"space-between"} alignItems={"center"} mt={3}>
-    <Button>Send ETH</Button>
-    <Button.Text>Cancel</Button.Text>
-  </Flex>
-</Card>
-
-**Truncated address**
-
-When the address acts more like meta data in your product. Like when you want to show a connected state or provide supporting information about a past transaction.
-
-**Example scenarios**
-
-<Table>
-  <thead>
-    <tr>
-      <th>Transaction hash</th>
-      <th>From</th>
-      <th>To</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0x34ab...ddb8</td>
-      <td>0xAc03...1e5A</td>
-      <td>0xa7ae...6f03</td>
-    </tr>
-  </tbody>
-</Table>
+Use the `EthAddress` when you need to show an Ethereum address to the user for display purposes or when you want copy-to-clipboard functionality.
 
 **Design**
 

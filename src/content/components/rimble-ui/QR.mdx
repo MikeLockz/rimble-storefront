@@ -6,7 +6,6 @@ description: Use the QR component to renders a QR code for a provided string. 
 
 import {
   Input,
-  PublicAddress,
   Field,
   Box,
   Icon,
@@ -14,7 +13,8 @@ import {
   QR,
   Text,
   Link,
-  Heading
+  Heading,
+  EthAddress,
 } from "rimble-ui";
 import DoDont from "../../../components/documentation/DoDont";
 import PropsTable from "../../../components/documentation/PropsTable.js";
@@ -71,7 +71,7 @@ If you're using a QR code to represent a public address, always give the user th
       <Box>
         <Heading.h5>Your connected account:</Heading.h5>
         <QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
-        <PublicAddress address="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
+        <EthAddress address="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
       </Box>
     ),
     negative: (
@@ -85,4 +85,4 @@ If you're using a QR code to represent a public address, always give the user th
 
 ### Related components
 
-- [`PublicAddress`](/components/rimble-ui/PublicAddress) – Use to show a public address and provide copy-to-clipboard functionality
+- [`EthAddress`](/components/rimble-ui/EthAddress) – Use to show a public address and provide copy-to-clipboard functionality

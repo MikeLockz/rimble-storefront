@@ -31,7 +31,6 @@ import {
   ThemeProvider,
   MetaMaskButton,
   Text,
-  PublicAddress,
   QR,
   Table as RimbleTable,
   ToastMessage,
@@ -98,7 +97,6 @@ const localScope = {
   ConnectionBanner,
   NetworkIndicator,
   Text,
-  PublicAddress,
   QR,
   Table,
   ToastMessage,
@@ -179,17 +177,23 @@ class Code extends React.Component {
 
     // console.log("default render", is === "react-live");
     // otherwise, use prism to render a code block
+    const highlightStyles = {
+      padding: '10px'
+    }
     return (
       <Highlight {...defaultProps} code={children.trim()} language={"jsx"}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={className} style={style}>
-            {tokens.map((line, i) => (
-              <div key="fake-key" {...getLineProps({ line, key: i })}>
-                {line.map((token, key) => (
-                  <span key="fake-key" {...getTokenProps({ token, key })} />
-                ))}
-              </div>
-            ))}
+            {/* DO NOT DELETE THIS BOX! When ran in production the theme isn't applied and the padding is lost. TODO: Figure out why theme gets removed from prod build */}
+            <Box p={"10px"}>
+              {tokens.map((line, i) => (
+                <div key="fake-key" {...getLineProps({ line, key: i })}>
+                  {line.map((token, key) => (
+                    <span key="fake-key" {...getTokenProps({ token, key })} />
+                  ))}
+                </div>
+              ))}
+            </Box>
           </pre>
         )}
       </Highlight>
