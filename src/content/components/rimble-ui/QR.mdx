@@ -33,9 +33,22 @@ import { QR } from 'rimble-ui';
 <QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
 ```
 
+**Setting custom size by pixels**
+```js is=react-live
+<QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" size={40} />
+```
+
+**Setting custom size by percent**
+```js is=react-live
+<QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" size={"100%"} />
+```
+
+
 ## Props
 
 <PropsTable propMetaData={props.propMetaData} />
+
+The `QR` component is utilizing [react.qrcode](https://www.npmjs.com/package/qrcode.react) to generate the QR code from the *value* prop.
 
 ## Design guidelines
 
