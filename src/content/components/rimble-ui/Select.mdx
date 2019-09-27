@@ -30,14 +30,30 @@ import { Select } from 'rimble-ui';
 ```js is=react-live
 <Field label="Choose your currency">
   <Select
-    items={[
-      "ETH - Ether",
-      "BTC - Bitcoin",
-      "GNO - Gnosis",
-      "GNT - Golem",
-      "REP - Augur"
-    ]}
+    options={[{ value: 'eth', label: 'Ethereum' },
+    { value: 'btc', label: 'Bitcoin' },
+    { value: 'gno', label: 'Gnosis' },
+    { value: 'gnt', label: 'Golem' },
+    { value: 'rep', label: 'Augur' }]}
   />
+</Field>
+```
+
+**Options as children**
+``` js is=react-live
+<Field label={"Choose your currency"}>
+  <Select>
+    <optgroup label="Fiat">
+      <option value="usd">US dollar</option>
+      <option value="gbp">Great Britain pound</option>
+      <option value="brl" disabled>Brazilian real</option>
+    </optgroup>
+    <optgroup label="Crypto">
+      <option value="btc">Bitcoin</option>
+      <option value="eth">Ethereum</option>
+      <option value="ltc">Litecoin</option>
+    </optgroup>
+  </Select>
 </Field>
 ```
 
@@ -62,13 +78,11 @@ Only use the `Select` component when you have a lot of options that would clutte
     positive: (
       <Box>
         <Select
-          items={[
-            "ETH - Ether",
-            "BTC - Bitcoin",
-            "GNO - Gnosis",
-            "GNT - Golem",
-            "REP - Augur"
-          ]}
+          options={[{ value: 'eth', label: 'Ethereum' },
+          { value: 'btc', label: 'Bitcoin' },
+          { value: 'gno', label: 'Gnosis' },
+          { value: 'gnt', label: 'Golem' },
+          { value: 'rep', label: 'Augur' }]}
         />
         <Text my={4}>OR</Text>
         <Radio label="ETH - Ether" my={2} />
@@ -77,7 +91,10 @@ Only use the `Select` component when you have a lot of options that would clutte
     ),
     negative: (
       <Box>
-        <Select items={["ETH - Ether", "FIAT e.g. USD"]} />
+        <Select
+          options={[{ value: 'eth', label: 'Ethereum' },
+          { value: 'fiat', label: 'USD' }]}
+        />
       </Box>
     )
   }}
