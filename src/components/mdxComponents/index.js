@@ -23,7 +23,6 @@ import {
   Input,
   Link,
   Progress,
-  ThemeProvider,
   MetaMaskButton,
   Text,
   QR,

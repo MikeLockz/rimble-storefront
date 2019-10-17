@@ -4,8 +4,7 @@ import Highlight, { defaultProps } from "prism-react-renderer";
 import codeTheme from "prism-react-renderer/themes/duotoneLight";
 import codeDarkTheme from "prism-react-renderer/themes/duotoneDark";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
-import { useMDXComponents } from "@mdx-js/react";
-// import { Flex, Button, Box } from "rimble-ui";
+
 import {
   Avatar,
   Flex,
@@ -30,7 +29,6 @@ import {
   Input,
   Link,
   Progress,
-  ThemeProvider,
   MetaMaskButton,
   Text,
   QR,
@@ -67,7 +65,6 @@ const localScope = {
   Input,
   Link,
   Progress,
-  ThemeProvider,
   MetaMaskButton,
   ConnectionBanner,
   NetworkIndicator,
