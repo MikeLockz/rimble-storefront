@@ -1,7 +1,18 @@
 import React from "react";
 import { Button, Box, Card, Text, Heading } from "rimble-ui";
 
-const ContributeBanner = () => (
+const getContributeUrl = componentType => {
+  switch (componentType) {
+    case "rimble-ui":
+      return "https://github.com/ConsenSys/rimble-ui/issues";
+    case "web3-components":
+      return "https://github.com/ConsenSys/rimble-web3-components/issues";
+    default:
+      return "https://rimble.consensys.design/";
+  }
+};
+
+const ContributeBanner = ({ componentType }) => (
   <Box my={4}>
     <Text textAlign={"center"} mb={4}>
       {"(ﾉ◕ヮ◕)ﾉ*:・ﾟ✧"}
@@ -16,8 +27,8 @@ const ContributeBanner = () => (
         mainColor={"white"}
         contrastColor={"primary"}
         as={"a"}
-        href="https://github.com/ConsenSys/rimble-ui/issues"
-        title="GitHub Issues for Rimble UI"
+        href={getContributeUrl(componentType)}
+        title="Contribute to Rimble"
         target="_blank"
       >
         Contribute

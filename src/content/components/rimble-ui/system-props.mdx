@@ -15,15 +15,14 @@ import {
   FLEX_BOX_LIST,
   POSITION_LIST
 } from "../../../constants";
-import PropsList from "../../../components/documentation/PropsList";
-import DoDont from "../../../components/documentation/DoDont";
+import PropsList from "./../../../components/documentation/PropsList.js";
 
 System props are reused across many different components. To keep the documentation easy to read, we are showing the shared props in a single place.
 
 ## System Props Table
 
-| Category     | Included Props                             | styled-system docs                                                                                                                                                                                            |
-| ------------ | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Category     | Included Props                             | styled-system docs                                                                                                                                                                                                   |
+| ------------ | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `COMMON`     | <PropsList systemProps={COMMON_LIST}/>     | [styled-system core docs](https://github.com/styled-system/styled-system/blob/v4.2.3/docs/table.md#core)                                                                                                             |
 | `TYPOGRAPHY` | <PropsList systemProps={TYPOGRAPHY_LIST}/> | [styled-system typography docs](https://github.com/styled-system/styled-system/blob/v4.2.3/docs/table.md#typography)                                                                                                 |
 | `BORDER`     | <PropsList systemProps={BORDER_LIST}/>     | [styled-system border docs](https://github.com/styled-system/styled-system/blob/v4.2.3/docs/table.md#misc)                                                                                                           |

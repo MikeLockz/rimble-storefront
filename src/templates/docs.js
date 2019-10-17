@@ -12,6 +12,12 @@ class DocLayout extends React.Component {
   render() {
     const { children, data, ...props } = this.props;
 
+    const getComponentType = string => {
+      const splitString = string.split("/");
+      const componentType = splitString[2];
+      return componentType;
+    };
+
     if (props.location.pathname === "/") {
       return <RawLayout {...props}>{children}</RawLayout>;
     } else {
@@ -24,6 +30,7 @@ class DocLayout extends React.Component {
           {...props}
           tableOfContents={data.mdx.tableOfContents}
           title={data.mdx.frontmatter.title}
+          componentType={getComponentType(data.mdx.fields.slug)}
         >
           <SEO
             title={data.mdx.frontmatter.title}
@@ -61,6 +68,9 @@ export const pageQuery = graphql`
         title
         componentName
         description
+      }
+      fields {
+        slug
       }
       body
     }

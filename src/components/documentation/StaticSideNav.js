@@ -5,16 +5,8 @@ import { Text, Box, Flex, Link } from "rimble-ui";
 import theme from "./../../theme";
 
 const RimbleGatsbyLink = props => (
-  <Text
-    fontSize={1}
-    fontWeight={'bold'}
-    pb={2}
-  >
-    <Link
-      as={GatsbyLink}
-      activeClassName={"-is-active"}
-      {...props}
-    />
+  <Text fontSize={1} fontWeight={"bold"} pb={2}>
+    <Link as={GatsbyLink} activeClassName={"-is-active"} {...props} />
   </Text>
 );
 
@@ -22,7 +14,9 @@ const Ul = props => <Text as={"ul"} pl={3} m={0} {...props} />;
 
 const Li = props => <Text as={"li"} {...props} />;
 
-const NavGroupHeading = props => <Li fontSize={1} my={2} color={'mid-gray'} caps {...props} />
+const NavGroupHeading = props => (
+  <Li fontSize={1} my={2} color={"mid-gray"} caps {...props} />
+);
 
 const StyledNav = styled.nav`
   & {
@@ -82,9 +76,7 @@ const StaticLinkList = () => (
         </RimbleGatsbyLink>
       </Li>
       <Ul>
-        <NavGroupHeading>
-          Guides
-        </NavGroupHeading>
+        <NavGroupHeading>Guides</NavGroupHeading>
         <Ul>
           {/* <Li>
             <RimbleGatsbyLink to={"/components/rimble-ui/theming"}>
@@ -102,7 +94,7 @@ const StaticLinkList = () => (
             </RimbleGatsbyLink>
           </Li>
           <Li>
-            <RimbleGatsbyLink  to={"/components/rimble-ui/rimble-theme"}>
+            <RimbleGatsbyLink to={"/components/rimble-ui/rimble-theme"}>
               Rimble Theme
             </RimbleGatsbyLink>
           </Li>
@@ -191,7 +183,7 @@ const StaticLinkList = () => (
             </RimbleGatsbyLink>
           </Li>
           <Li>
-            <RimbleGatsbyLink to={"/components/rimble-ui/TextArea"}>
+            <RimbleGatsbyLink to={"/components/rimble-ui/Textarea"}>
               Textarea
             </RimbleGatsbyLink>
           </Li>

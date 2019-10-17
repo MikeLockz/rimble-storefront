@@ -4,25 +4,6 @@ componentName: EthAddress
 description: Allows for different displays of an Ethereum address to a wallet, smart contract, transaction or any other hash. Use EthAddress when you want to to make it easy for a user to copy an address or show a QR of an address.
 ---
 
-import {
-  Input,
-  EthAddress,
-  Field,
-  Table,
-  Flex,
-  Box,
-  Icon,
-  Card,
-  QR,
-  Text,
-  Link,
-  Heading,
-  Button,
-  Blockie
-} from "rimble-ui";
-import DoDont from "../../../components/documentation/DoDont";
-import PropsTable from "../../../components/documentation/PropsTable.js";
-
 Allows for different displays of an Ethereum address to a wallet, smart contract, transaction or any other hash. Use EthAddress when you want to to make it easy for a user to copy an address or show a QR of an address.
 
 **Import component**
@@ -44,12 +25,8 @@ Different ways to use the `EthAddress` component
 **EthAddress with text buttons**
 
 ```js is=react-live
-<EthAddress
-  address="0x9505C8Fc1aD98b0aC651b91245d02D055fEc8E49"
-  textLabels
-/>
+<EthAddress address="0x9505C8Fc1aD98b0aC651b91245d02D055fEc8E49" textLabels />
 ```
-
 
 ## Props
 

@@ -4,10 +4,6 @@ componentName: Input
 description: Use Input to build forms for your interface. This component provides a styled version of HTML <input>.
 ---
 
-import { Input, Field, Box, Icon, Text, Link, Heading } from "rimble-ui";
-import DoDont from "../../../components/documentation/DoDont";
-import PropsTable from "../../../components/documentation/PropsTable.js";
-
 Use `Input` to build forms for your interface. This component provides a styled version of HTML `<input>`.
 
 **Import component**
@@ -85,11 +81,7 @@ Allows users to quickly remove a search term.
 Brings up a url keyboard.
 
 ```js is=react-live
-<Input
-  type="url"
-  required={true}
-  placeholder="e.g. rimble.consensys.design"
-/>
+<Input type="url" required={true} placeholder="e.g. rimble.consensys.design" />
 ```
 
 ### Numerical input types
@@ -121,9 +113,7 @@ Brings up the telephone keyboard.
 Displays HTML5 date picker.
 
 ```js is=react-live
-<Input
-  type="date"
-/>
+<Input type="date" />
 ```
 
 **Time input**
@@ -131,9 +121,7 @@ Displays HTML5 date picker.
 Displays HTML5 time picker.
 
 ```js is=react-live
-<Input
-  type="time"
-/>
+<Input type="time" />
 ```
 
 **Month input**
@@ -141,9 +129,7 @@ Displays HTML5 time picker.
 Displays HTML5 month picker.
 
 ```js is=react-live
-<Input
-  type="month"
-/>
+<Input type="month" />
 ```
 
 **Week input**
@@ -151,9 +137,7 @@ Displays HTML5 month picker.
 Displays HTML5 week picker.
 
 ```js is=react-live
-<Input
-  type="week"
-/>
+<Input type="week" />
 ```
 
 ### Other input types
@@ -163,9 +147,7 @@ Displays HTML5 week picker.
 Displays HTML5 file picker.
 
 ```js is=react-live
-<Input
-  type="file"
-/>
+<Input type="file" />
 ```
 
 ## Props

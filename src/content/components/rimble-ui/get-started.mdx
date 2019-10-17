@@ -1,10 +1,10 @@
 ---
 title: Get Started
-description:
+description: Get started with rimble-ui. Instructions for installing and quick start for rimble-ui.
 ---
-import { Text, Button, Link } from "rimble-ui";
 
 ## Installation
+
 Install `rimble-ui` and `styled-components` in your project with npm:
 
 ```
@@ -26,12 +26,7 @@ The code below will render a button with default Rimble styles.
 ```jsx
 import React from "react";
 import ReactDOM from "react-dom";
-import {
-  Box,
-  Button,
-  Heading,
-  Text
-} from 'rimble-ui';
+import { Box, Button, Heading, Text } from "rimble-ui";
 
 function App() {
   return (
@@ -48,7 +43,6 @@ function App() {
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
 ```
-
 
 ## Theming
 
@@ -89,4 +83,4 @@ const App = (props) => {
 }
 ```
 
-*Note that using `Object.assign` will only create a shallow merge. This means that if both themes have a `color` object, the entire `color` object will be replaced with the new `color` object, instead of only replacing duplicate values from the original theme's color object.
+\*Note that using `Object.assign` will only create a shallow merge. This means that if both themes have a `color` object, the entire `color` object will be replaced with the new `color` object, instead of only replacing duplicate values from the original theme's color object.

@@ -1,9 +1,9 @@
 import React from "react";
-import { Link as RimbleLink, Icon, Box } from "rimble-ui";
+import { Link as RimbleLink, Icon } from "rimble-ui";
 import RimbleGatsbyLink from "../landing/RimbleGatsbyLink";
 import isAbsoluteUrl from "is-absolute-url";
 
-const Link = ({ to, href, ...props }) => {
+const SmartLink = ({ to, href, ...props }) => {
   if (typeof href !== "undefined") {
     to = href;
   }
@@ -16,7 +16,7 @@ const Link = ({ to, href, ...props }) => {
       {...props}
     >
       {props.children}
-      <Icon name={"OpenInNew"} size={'18px'} ml={1} mb={'1px'} />
+      <Icon name={"OpenInNew"} size={"18px"} ml={1} mb={"1px"} />
     </RimbleLink>
   ) : (
     <RimbleGatsbyLink to={to} {...props}>
@@ -25,4 +25,4 @@ const Link = ({ to, href, ...props }) => {
   );
 };
 
-export default Link;
+export default SmartLink;

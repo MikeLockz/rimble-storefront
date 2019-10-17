@@ -4,19 +4,6 @@ componentName: Select
 description: Use the Select component when you want your users to select an option from a list. Select provides a styled version of the HTML <select>. This component is specifically useful for long lists you wouldn't want to display using Radio buttons like currencies or states.
 ---
 
-import {
-  Select,
-  Radio,
-  Field,
-  Box,
-  Icon,
-  Text,
-  Link,
-  Heading
-} from "rimble-ui";
-import DoDont from "../../../components/documentation/DoDont";
-import PropsTable from "../../../components/documentation/PropsTable.js";
-
 Use the `Select` component when you want your users to select an option from a list. Select provides a styled version of the HTML `<select>`. This component is specifically useful for long lists you wouldn't want to display using [`Radio`](/components/rimble-ui/Radio) buttons like currencies or states.
 
 **Import component**
@@ -30,23 +17,28 @@ import { Select } from 'rimble-ui';
 ```js is=react-live
 <Field label="Choose your currency">
   <Select
-    options={[{ value: 'eth', label: 'Ethereum' },
-    { value: 'btc', label: 'Bitcoin' },
-    { value: 'gno', label: 'Gnosis' },
-    { value: 'gnt', label: 'Golem' },
-    { value: 'rep', label: 'Augur' }]}
+    options={[
+      { value: "eth", label: "Ethereum" },
+      { value: "btc", label: "Bitcoin" },
+      { value: "gno", label: "Gnosis" },
+      { value: "gnt", label: "Golem" },
+      { value: "rep", label: "Augur" }
+    ]}
   />
 </Field>
 ```
 
 **Options as children**
-``` js is=react-live
+
+```js is=react-live
 <Field label={"Choose your currency"}>
   <Select>
     <optgroup label="Fiat">
       <option value="usd">US dollar</option>
       <option value="gbp">Great Britain pound</option>
-      <option value="brl" disabled>Brazilian real</option>
+      <option value="brl" disabled>
+        Brazilian real
+      </option>
     </optgroup>
     <optgroup label="Crypto">
       <option value="btc">Bitcoin</option>
@@ -78,11 +70,13 @@ Only use the `Select` component when you have a lot of options that would clutte
     positive: (
       <Box>
         <Select
-          options={[{ value: 'eth', label: 'Ethereum' },
-          { value: 'btc', label: 'Bitcoin' },
-          { value: 'gno', label: 'Gnosis' },
-          { value: 'gnt', label: 'Golem' },
-          { value: 'rep', label: 'Augur' }]}
+          options={[
+            { value: "eth", label: "Ethereum" },
+            { value: "btc", label: "Bitcoin" },
+            { value: "gno", label: "Gnosis" },
+            { value: "gnt", label: "Golem" },
+            { value: "rep", label: "Augur" }
+          ]}
         />
         <Text my={4}>OR</Text>
         <Radio label="ETH - Ether" my={2} />
@@ -92,8 +86,10 @@ Only use the `Select` component when you have a lot of options that would clutte
     negative: (
       <Box>
         <Select
-          options={[{ value: 'eth', label: 'Ethereum' },
-          { value: 'fiat', label: 'USD' }]}
+          options={[
+            { value: "eth", label: "Ethereum" },
+            { value: "fiat", label: "USD" }
+          ]}
         />
       </Box>
     )

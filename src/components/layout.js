@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { StaticQuery, graphql } from "gatsby";
-import styled from "styled-components";
 import { ThemeProvider, Box, Flex, Heading } from "rimble-ui";
 
 import TableOfContents from "./documentation/TableOfContents";
@@ -8,7 +7,7 @@ import ContributeBanner from "./documentation/ContributeBanner";
 import StaticSideNav from "./documentation/StaticSideNav";
 import Navbar from "./documentation/Navbar";
 
-const Layout = ({ children, tableOfContents, title }) => {
+const Layout = ({ children, tableOfContents, title, componentType }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const toggleNavOpen = () => {
@@ -63,7 +62,7 @@ const Layout = ({ children, tableOfContents, title }) => {
 
                 {children}
 
-                <ContributeBanner />
+                <ContributeBanner componentType={componentType} />
               </Box>
 
               <Box order={[0, 0, 1]}>

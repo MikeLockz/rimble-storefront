@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Box, Flex } from "rimble-ui";
+import { Button, Box, Flex } from "rimble-ui";
 import ExampleCard from "./ExampleCard";
 
 class DoDont extends Component {
