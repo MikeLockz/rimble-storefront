@@ -106,6 +106,11 @@ const StaticLinkList = () => (
               Rimble Theme
             </RimbleGatsbyLink>
           </Li>
+          <Li>
+            <RimbleGatsbyLink to={"/components/rimble-ui/style-guide"}>
+              Style guide
+            </RimbleGatsbyLink>
+          </Li>
         </Ul>
         <NavGroupHeading>Ethereum UI</NavGroupHeading>
         <Ul>

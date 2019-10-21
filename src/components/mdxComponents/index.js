@@ -76,7 +76,7 @@ const mdxComponents = {
   Avatar: props => <Avatar {...props} />,
   Blockie: props => <Blockie {...props} />,
   Box: props => <Box {...props} />,
-  Button: props => <Button {...props} />,
+  Button,
   Card: props => <Card {...props} />,
   Checkbox: props => <Checkbox {...props} />,
   EthAddress: props => <EthAddress {...props} />,
