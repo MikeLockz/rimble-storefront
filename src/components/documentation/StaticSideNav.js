@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { Link as GatsbyLink } from "gatsby";
 import { Text, Box, Flex, Link } from "rimble-ui";
 import theme from "./../../theme";
+import Search from "../Search";
+
+const searchIndices = [{ name: `Pages`, title: `Pages`, hitComp: `PageHit` }];
 
 const RimbleGatsbyLink = props => (
   <Text fontSize={1} fontWeight={"bold"} pb={2}>
@@ -22,9 +25,10 @@ const StyledNav = styled.nav`
   & {
     height: 100%;
     transition: 0.2s transform ease;
-    overflow-y: scroll;
+    overflow: visible;
     -webkit-overflow-scrolling: touch;
     position: fixed;
+    z-index: 9;
 
     & > a {
       transition: 0.2s right ease;
@@ -64,8 +68,12 @@ const StyledNav = styled.nav`
   }
 `;
 
+const OverflowBox = styled(Box)`
+  overflow-x: visible;
+`;
+
 const StaticLinkList = () => (
-  <Ul mb={4}>
+  <Ul mb={4} mr={5}>
     <Li>
       <RimbleGatsbyLink to={"/components"}>Components</RimbleGatsbyLink>
     </Li>
@@ -380,15 +388,11 @@ const StaticSideNav = ({ isNavOpen }) => {
       className={isNavOpen ? "open" : "closed"}
     >
       <Flex flexDirection={"column"} height={"calc(100% - 57px)"}>
-        <Box
-          overflow={"scroll"}
-          pt={2}
-          pr={5}
-          borderRight={1}
-          borderColor={"light-gray"}
-        >
+        <OverflowBox p={2} borderRight={1} borderColor={"light-gray"}>
+          <Search collapse indices={searchIndices} />
+
           <StaticLinkList />
-        </Box>
+        </OverflowBox>
       </Flex>
     </StyledNav>
   );

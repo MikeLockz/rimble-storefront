@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { StaticQuery, graphql } from "gatsby";
-import { ThemeProvider, Box, Flex, Heading } from "rimble-ui";
+import { ThemeProvider, Box, Flex, Heading, theme } from "rimble-ui";
 
 import TableOfContents from "./documentation/TableOfContents";
 import ContributeBanner from "./documentation/ContributeBanner";
 import StaticSideNav from "./documentation/StaticSideNav";
 import Navbar from "./documentation/Navbar";
+
+const customTheme = {
+  ...theme,
+  breakpoints: ["40em", "52em", "64em"]
+};
 
 const Layout = ({ children, tableOfContents, title, componentType }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -41,7 +46,7 @@ const Layout = ({ children, tableOfContents, title, componentType }) => {
         }
       `}
       render={data => (
-        <ThemeProvider>
+        <ThemeProvider theme={customTheme}>
           <Navbar isNavOpen={isNavOpen} toggleNavOpen={toggleNavOpen} />
 
           <Flex position={"absolute"} top={"57px"} left={"0"} right={"0"}>
