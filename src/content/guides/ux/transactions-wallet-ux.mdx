@@ -1,0 +1,54 @@
+---
+title: Don't rely on wallet UX
+description:
+---
+
+import { Button, Heading } from "rimble-ui"
+
+## Don't rely on Wallet UX
+
+<Flash>This guide is written based on a Devcon 5 talk. Check out the demo to see our advice in action. <Link href="http://rimble-devcon-demo.netlify.com">Devcon demo</Link></Flash>
+
+At Rimble we've debated about whether transactions are the remit of the dApp or the wallet. The clue is in the title of this page in terms of where we've landed.
+
+When we say not to rely on wallet UX, that doesn't mean we think wallet UX is bad. But at the moment wallets have to build their interfaces for lots of different potential use-cases. So they refer to things quite generally. This works for them, but for a user this simply places more cognitive load on them while they're trying to achieve their task.
+
+We may be moving towards a world where wallets will accept and display more information from dApps or wallet interactions might be possible from the dApp itself and the distinction between the two will blur. But for now, you need to make the most of your opportunity to explain what's going in the context of what your user is doing. And that's why you can't rely on the wallet to give your user the full picture.
+
+A wallet will speak in terms of a transaction, using very generic terms. Where as you can refer to the task at hand, making it feel more natural and understandable.
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+        Sending your ticket
+      </Text>
+    ),
+    negative: (
+      <Text>
+        Transaction in progress
+      </Text>
+    )
+  }}
+</DoDont>
+
+Not to mention if an error were to occur like not having enough ETH for transaction fees you can provide more relevant and helpful explanations than the wallet can. The need for fees, how to top-up ETH and the opportunity to try again will all make more sense in the context of the task they're trying to achieve on your dApp.
+
+When you buy something from a Web2 product it's the product that guides you throughout, alerts you to errors and keeps you updated on progress – not your bank.
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+        Hi
+      </Text>
+    ),
+    negative: (
+      <Text>
+        Insufficient funds
+      </Text>
+    )
+  }}
+</DoDont>
+
+Language is one of the easiest ways to put your users at ease throughout this process. Think about what the user thinks they’re doing and phrase any communication around that rather than what is technically happening.
