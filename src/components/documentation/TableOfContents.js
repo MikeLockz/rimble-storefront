@@ -18,6 +18,7 @@ const StyledLinkListBox = styled(Box)`
 
 const TableOfContents = props => {
   const { tableOfContents } = props;
+
   const loop = data =>
     data.items.map(item => {
       if (typeof item.items !== "undefined" && item.items.length > 0) {
@@ -53,14 +54,14 @@ const TableOfContents = props => {
 
   return (
     <Box my={3} mx={[0, 0, 3]}>
-      {tableOfContents && (
+      {Object.keys(tableOfContents).length > 0 ? (
         <StyledLinkListBox>
           <Text caps color={"mid-gray"} fontSize={0} fontWeight={4} mb={3}>
             On this Page
           </Text>
           <Ul>{loop(tableOfContents)}</Ul>
         </StyledLinkListBox>
-      )}
+      ) : null}
     </Box>
   );
 };
