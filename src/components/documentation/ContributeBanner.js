@@ -8,33 +8,39 @@ const getContributeUrl = componentType => {
     case "web3-components":
       return "https://github.com/ConsenSys/rimble-web3-components/issues";
     default:
-      return "https://rimble.consensys.design/";
+      return false;
   }
 };
 
 const ContributeBanner = ({ componentType }) => (
-  <Box my={4}>
-    <Text textAlign={"center"} mb={4}>
-      {"(ﾉ◕ヮ◕)ﾉ*:・ﾟ✧"}
-    </Text>
-    <Card color="white" bg="primary" border="none">
-      <Heading.h2 color="white">Are we missing anything?</Heading.h2>
-      <Text color="white" mb={4}>
-        If you have any extra insight you'd like to add, please raise an issue
-        in Github.
-      </Text>
-      <Button
-        mainColor={"white"}
-        contrastColor={"primary"}
-        as={"a"}
-        href={getContributeUrl(componentType)}
-        title="Contribute to Rimble"
-        target="_blank"
-      >
-        Contribute
-      </Button>
-    </Card>
-  </Box>
+  <>
+    {getContributeUrl(componentType) ? (
+      <Box my={4}>
+        <Text textAlign={"center"} mb={4}>
+          {"(ﾉ◕ヮ◕)ﾉ*:・ﾟ✧"}
+        </Text>
+        <Card color="white" bg="primary" border="none">
+          <Heading.h2 color="white">Are we missing anything?</Heading.h2>
+          <Text color="white" mb={4}>
+            If you have any extra insight you'd like to add, please raise an
+            issue in Github.
+          </Text>
+          <Button
+            mainColor={"white"}
+            contrastColor={"primary"}
+            as={"a"}
+            href={getContributeUrl(componentType)}
+            title="Contribute to Rimble"
+            target="_blank"
+          >
+            Contribute
+          </Button>
+        </Card>
+      </Box>
+    ) : (
+      <></>
+    )}
+  </>
 );
 
 export default ContributeBanner;
