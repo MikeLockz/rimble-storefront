@@ -20,7 +20,7 @@ const StyledTable = styled(Table)`
   }
 `;
 
-const Code = props => <Text as="pre" {...props} />;
+const Code = props => <Text as="pre" fontSize={1} {...props} />;
 
 const PrettyPrintJson = React.memo(({ data }) => {
   return (
@@ -64,11 +64,13 @@ const PropsTable = props => {
                     {prop.docblock ? prop.docblock : ""}
                     {prop.parentType && prop.parentType.name === "enum" && (
                       <Box>
-                        <Text.span>Allowed values: </Text.span>
+                        <Text.span fontSize={1}>Allowed values: </Text.span>
                         {Object.keys(prop.type.value).map(key => {
                           const value = prop.type.value[key];
                           return (
-                            <Text.span key={key}>{value.value}, </Text.span>
+                            <Text.span key={key} fontSize={1}>
+                              {value.value},{" "}
+                            </Text.span>
                           );
                         })}
                       </Box>
