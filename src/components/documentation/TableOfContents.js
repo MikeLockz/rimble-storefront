@@ -10,15 +10,9 @@ const Li = props => <Text as={"li"} {...props} lineHeight={1} p={0} />;
 
 const StyledLinkListBox = styled(Box)`
   & {
-    position: initial;
   }
 
   @media screen and (min-width: ${theme.breakpoints[1]}) {
-    position: fixed;
-    width: calc(220px - (${theme.space[3]}px * 2));
-    margin-top: calc(${theme.space[5]}px + ${theme.space[3]}px);
-    top: 0;
-    right: 0;
   }
 `;
 
@@ -58,13 +52,7 @@ const TableOfContents = props => {
     });
 
   return (
-    <Box
-      maxWidth={["100%", "100%", "220px"]}
-      minWidth={["100%", "100%", "140px"]}
-      my={3}
-      mx={[0, 0, 3]}
-      position={"relative"}
-    >
+    <Box my={3} mx={[0, 0, 3]}>
       {tableOfContents && (
         <StyledLinkListBox>
           <Text caps color={"mid-gray"} fontSize={0} fontWeight={4} mb={3}>

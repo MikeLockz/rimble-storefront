@@ -23,12 +23,12 @@ const NavGroupHeading = props => (
 
 const StyledNav = styled.nav`
   & {
-    height: 100%;
     transition: 0.2s transform ease;
     overflow: visible;
     -webkit-overflow-scrolling: touch;
     position: fixed;
     z-index: 9;
+    top: 57px;
 
     & > a {
       transition: 0.2s right ease;
@@ -59,17 +59,14 @@ const StyledNav = styled.nav`
   }
 
   @media screen and (min-width: ${theme.breakpoints[2]}) {
-    position: initial;
+    position: relative;
+    height: calc(100vh - 97px);
 
     &.open,
     &.closed {
       transform: translateX(0);
     }
   }
-`;
-
-const OverflowBox = styled(Box)`
-  overflow-x: visible;
 `;
 
 const StaticLinkList = () => (
@@ -387,17 +384,20 @@ const StaticLinkList = () => (
 
 const StaticSideNav = ({ isNavOpen }) => {
   return (
-    <StyledNav
-      borderRight={1}
-      borderColor={"light-gray"}
-      className={isNavOpen ? "open" : "closed"}
-    >
-      <Flex flexDirection={"column"} height={"calc(100% - 57px)"}>
-        <OverflowBox p={2} borderRight={1} borderColor={"light-gray"}>
+    <StyledNav className={isNavOpen ? "open" : "closed"}>
+      <Flex
+        height={"100%"}
+        borderRight={1}
+        borderColor={"light-gray"}
+        flexDirection={"column"}
+      >
+        <Box p={2}>
           <Search collapse indices={searchIndices} />
+        </Box>
 
+        <Box overflow={"scroll"} p={2}>
           <StaticLinkList />
-        </OverflowBox>
+        </Box>
       </Flex>
     </StyledNav>
   );

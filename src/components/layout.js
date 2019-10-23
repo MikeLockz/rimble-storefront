@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StaticQuery, graphql } from "gatsby";
-import { ThemeProvider, Box, Flex, Heading, theme } from "rimble-ui";
+import { ThemeProvider, Box, Link, Heading, Text, theme } from "rimble-ui";
+import styled from "styled-components";
 
 import TableOfContents from "./documentation/TableOfContents";
 import ContributeBanner from "./documentation/ContributeBanner";
@@ -11,6 +12,77 @@ const customTheme = {
   ...theme,
   breakpoints: ["40em", "52em", "64em"]
 };
+
+const Grid = styled(Box)`
+  height: 100vh;
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: 0 100%;
+  grid-template-rows: 57px 1fr 40px;
+  grid-template-areas:
+    "header  header"
+    "sidebar contentWrapper"
+    "footer  footer ";
+
+  // Larger than mobile
+  @media screen and (min-width: ${props => props.theme.breakpoints[0]}) {
+  }
+
+  // Extra Large
+  @media screen and (min-width: ${props => props.theme.breakpoints[2]}) {
+    grid-template-columns: 17em auto;
+    grid-template-rows: 57px 1fr 40px;
+  }
+`;
+
+const StyledHeader = styled(Navbar)`
+  grid-area: header;
+`;
+
+const Sidebar = styled(StaticSideNav)`
+  grid-area: sidebar;
+  height: calc(100vh - 97px);
+`;
+
+const ContentWrapper = styled(Box)`
+  grid-area: contentWrapper;
+
+  // Larger than mobile
+  @media screen and (min-width: ${props => props.theme.breakpoints[0]}) {
+    height: calc(100vh - 97px);
+    overflow: scroll;
+    position: relative;
+  }
+
+  // Extra Large
+  @media screen and (min-width: ${props => props.theme.breakpoints[2]}) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+`;
+
+const Content = styled(Box)`
+  // Extra Large
+  @media screen and (min-width: ${props => props.theme.breakpoints[2]}) {
+    max-width: ${props => props.theme.breakpoints[1]};
+    width: 67%;
+  }
+`;
+
+const Aside = styled(Box)`
+  // Extra Large
+  @media screen and (min-width: ${props => props.theme.breakpoints[2]}) {
+    position: sticky;
+    top: 0;
+    width: auto;
+    order: 2;
+  }
+`;
+
+const Footer = styled(Box)`
+  grid-area: footer;
+`;
 
 const Layout = ({ children, tableOfContents, title, componentType }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -47,38 +119,49 @@ const Layout = ({ children, tableOfContents, title, componentType }) => {
       `}
       render={data => (
         <ThemeProvider theme={customTheme}>
-          <Navbar isNavOpen={isNavOpen} toggleNavOpen={toggleNavOpen} />
+          <Grid>
+            <StyledHeader isNavOpen={isNavOpen} toggleNavOpen={toggleNavOpen} />
 
-          <Flex position={"absolute"} top={"57px"} left={"0"} right={"0"}>
-            <StaticSideNav isNavOpen={isNavOpen} />
+            <Sidebar isNavOpen={isNavOpen} />
 
-            <Flex
-              width={1}
-              maxWidth={"960px"}
-              overflow={"hidden"}
-              mx={"auto"}
-              p={[3, 3, 4]}
-              flexDirection={["column", "column", "row"]}
-            >
-              <Box order={[1, 1, 0]} width={[1, 1, "calc(100% - 188px)"]}>
-                <Box display={["none", "none", "block"]}>
-                  <Heading.h1 mb={4}>{title}</Heading.h1>
-                </Box>
-
-                {children}
-
-                <ContributeBanner componentType={componentType} />
+            <ContentWrapper p={4}>
+              <Box display={["block", "block", "block", "none"]}>
+                <Heading as={"h1"} fontSize={7} mb={4} px={3}>
+                  {title}
+                </Heading>
               </Box>
 
-              <Box order={[0, 0, 1]}>
-                <Box display={["block", "block", "none"]}>
-                  <Heading.h1>{title}</Heading.h1>
-                </Box>
-
+              <Aside px={3}>
                 <TableOfContents tableOfContents={tableOfContents} />
-              </Box>
-            </Flex>
-          </Flex>
+              </Aside>
+
+              <Content>
+                <Box display={["none", "none", "none", "block"]} px={3}>
+                  <Heading as={"h1"} fontSize={6} mb={4}>
+                    {title}
+                  </Heading>
+                </Box>
+
+                <Box px={3}>
+                  {children}
+                  <ContributeBanner componentType={componentType} px={3} />
+                </Box>
+              </Content>
+            </ContentWrapper>
+
+            <Footer borderTop={1} borderColor={"light-gray"}>
+              <Text textAlign={"center"} fontSize={1} p={2}>
+                Made by{" "}
+                <Link
+                  href="https://consensys.design/"
+                  title={"Learn about ConsenSys Design"}
+                  target={"_blank"}
+                >
+                  ConsenSys Design
+                </Link>
+              </Text>
+            </Footer>
+          </Grid>
         </ThemeProvider>
       )}
     />
