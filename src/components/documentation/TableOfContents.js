@@ -27,6 +27,7 @@ const TableOfContents = props => {
             <RimbleLink
               href={"javascript:;"} /* eslint-disable-line */
               title={item.title}
+              fontSize={2}
               onClick={() => {
                 navigate(item.url);
               }}
@@ -42,6 +43,7 @@ const TableOfContents = props => {
           <RimbleLink
             href={"javascript:;"} /* eslint-disable-line */
             title={item.title}
+            fontSize={2}
             onClick={() => {
               navigate(item.url);
             }}
@@ -53,11 +55,11 @@ const TableOfContents = props => {
     });
 
   return (
-    <Box my={3} mx={[0, 0, 3]}>
+    <Box borderWidth="1"   borderLeft="1" borderColor={"light-gray"} mt={3} mb={4} mx={[0, 0, 3]}>
       {Object.keys(tableOfContents).length > 0 ? (
-        <StyledLinkListBox>
-          <Text caps color={"mid-gray"} fontSize={0} fontWeight={4} mb={3}>
-            On this Page
+        <StyledLinkListBox p={3} ml={3}>
+          <Text fontSize={2} fontWeight={4} mb={2}>
+            On this page
           </Text>
           <Ul>{loop(tableOfContents)}</Ul>
         </StyledLinkListBox>

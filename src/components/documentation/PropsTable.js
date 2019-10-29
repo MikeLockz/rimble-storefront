@@ -33,7 +33,7 @@ const PrettyPrintJson = React.memo(({ data }) => {
 const PropsTable = props => {
   let { propMetaData = [], ..._props } = props;
   return (
-    <Box>
+    <Box my={4}>
       {propMetaData.length > 0 ? (
         <StyledTable {..._props}>
           <thead>

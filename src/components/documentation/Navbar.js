@@ -41,11 +41,11 @@ const Navbar = ({ isNavOpen, setIsNavOpen, toggleNavOpen }) => {
       >
         {isNavOpen ? (
           <Flex alignItems="center">
-            <Icon name="Close" /> Hide Menu
+            <Icon name="Close" /> Hide menu
           </Flex>
         ) : (
           <Flex alignItems="center">
-            <Icon name="Menu" /> Show Menu
+            <Icon name="Menu" /> Show menu
           </Flex>
         )}
       </RimbleLink>
