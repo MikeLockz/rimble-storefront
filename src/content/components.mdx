@@ -7,16 +7,35 @@ import { Button } from "rimble-ui";
 
 ## Rimble UI
 
-<Button
-  mt={2}
-  title="Get the code at GitHub"
-  size="small"
-  target="_blank"
-  as="a"
-  href="https://github.com/ConsenSys/rimble-ui"
->
-  View on GitHub
-</Button>
+<Box borderRadius="2" bg={'near-white'}>
+<Box mx={3} mt={4}>
+👉
+  <Button.Text
+    title="Get the code at GitHub"
+    target="_blank"
+    as="a"
+    href="https://github.com/ConsenSys/rimble-ui"
+  >
+    <Flex alignItems="center">
+      Rimble-UI GitHub repo
+      <Icon name="Launch" ml={2} size="14px" />
+    </Flex>
+  </Button.Text>
+</Box>
+<Box mx={3}>
+👉
+  <Button.Text
+    title="View the rimble-ui components in Storybook"
+    target="_blank"
+    as="a"
+    href="https://rimble-ui-storybook.netlify.com/"
+  >
+    <Flex alignItems="center">
+      Rimble-UI on Storybook  <Icon name="Launch" ml={2} size="14px" />
+    </Flex>
+  </Button.Text>
+</Box>
+</Box>
 
 ### Components A-Z
 
@@ -1049,16 +1068,22 @@ import { Button } from "rimble-ui";
 
 ## Web3 Components
 
-<Button
-  mt={2}
+<Box borderRadius="2" bg={'near-white'}>
+<Box mx={3} mt={4}>
+👉
+<Button.Text
   title="Get the code at GitHub"
-  size="small"
   target="_blank"
   as="a"
   href="https://github.com/ConsenSys/rimble-web3-components"
 >
-  View on GitHub
-</Button>
+  <Flex alignItems="center">
+    Web3 Components GitHub repo
+    <Icon name="Launch" ml={2} size="14px" />
+  </Flex>
+</Button.Text>
+</Box>
+</Box>
 
 ### Components A-Z
 
