@@ -6,6 +6,7 @@ import {
   connectStateResults
 } from "react-instantsearch-dom";
 import algoliasearch from "algoliasearch/lite";
+import { Text, Icon, Link, Box, Flex, Heading } from "rimble-ui";
 import styled from "styled-components";
 
 import { Root, HitsWrapper, PoweredBy } from "./styles";
@@ -14,7 +15,26 @@ import * as hitComps from "./hitComps";
 
 const Results = connectStateResults(
   ({ searchState: state, searchResults: res, children }) =>
-    res && res.nbHits > 0 ? children : `No results for '${state.query}'`
+    res && res.nbHits > 0 ? children :
+    <Box ml={2}>
+      <Text textAlign="center" fontSize={6} mb={4}>🥺</Text>
+      <Heading.h4 mb={4}>
+        We couldn't find "{state.query}"
+      </Heading.h4>
+      <Text mb={3}>
+        If we don't have what you're looking for, raise an issue in GitHub and we'll see what we can do.
+      </Text>
+      <Flex mb={4}>
+      <Link
+        color="primary"
+        as="a"
+        href="https://github.com/ConsenSys/rimble-ui/issues"
+        target="_blank"
+        title="Go to GitHub to raise an issue"
+        >GitHub</Link>
+      <Icon color="primary" name="Launch" size="16px" />
+      </Flex>
+    </Box>
 );
 
 const Stats = connectStateResults(
