@@ -55,7 +55,7 @@ const TableOfContents = props => {
     });
 
   return (
-    <Box borderWidth="1"   borderLeft="1" borderColor={"light-gray"} mt={3} mb={4} mx={[0, 0, 3]}>
+    <Box borderWidth="2"   borderLeft="1" borderColor={"primary-light"} mt={3} mb={4} mx={[0, 0, 3]}>
       {Object.keys(tableOfContents).length > 0 ? (
         <StyledLinkListBox p={3} ml={3}>
           <Text fontSize={2} fontWeight={4} mb={2}>
