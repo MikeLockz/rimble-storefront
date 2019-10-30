@@ -18,7 +18,7 @@ const Ul = props => <Text as={"ul"} pl={3} m={0} {...props} />;
 const Li = props => <Text as={"li"} {...props} />;
 
 const NavGroupHeading = props => (
-  <Li fontSize={1} my={2} color={"white"} caps {...props} />
+  <Li fontSize={1} my={2} color={"mid-gray"} caps {...props} />
 );
 
 const StyledNav = styled.nav`
@@ -388,10 +388,10 @@ const StaticSideNav = ({ isNavOpen }) => {
       <Flex
         height={"100%"}
         borderRight={1}
-        borderWidth={4}
+        borderWidth={1}
         borderColor={"light-gray"}
         flexDirection={"column"}
-        bg={"near-white"}
+        bg={"white"}
       >
         <Box p={2}>
           <Search collapse indices={searchIndices} />
