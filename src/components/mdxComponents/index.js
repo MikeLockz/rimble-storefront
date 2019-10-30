@@ -48,7 +48,7 @@ import { Table as StyledTable } from "./Table";
 /* eslint-disable react/display-name */
 const mdxComponents = {
   h1: props => <Heading {...props} as="h1" fontSize={[5, 6]} my={3} pt={3} />,
-  h2: props => <Heading {...props} as="h2" fontSize={[4, 5]} />,
+  h2: props => <Heading {...props} as="h2" fontSize={[4, 5]} my={3} pt={3} />,
   h3: props => <Heading {...props} as="h3" fontSize={3} my={3} pt={3} />,
   h4: props => <Heading {...props} as="h4" fontSize={2} my={3} pt={3} />,
   h5: props => <Heading {...props} as="h5" fontSize={1} my={3} pt={3} />,

@@ -388,8 +388,10 @@ const StaticSideNav = ({ isNavOpen }) => {
       <Flex
         height={"100%"}
         borderRight={1}
+        borderWidth={4}
         borderColor={"light-gray"}
         flexDirection={"column"}
+        bg={"near-white"}
       >
         <Box p={2}>
           <Search collapse indices={searchIndices} />
