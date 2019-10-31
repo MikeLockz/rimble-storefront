@@ -26,8 +26,6 @@ const Results = connectStateResults(
       </Text>
       <Flex mb={4}>
       <Link
-        color="primary"
-        as="a"
         href="https://github.com/ConsenSys/rimble-ui/issues"
         target="_blank"
         title="Go to GitHub to raise an issue"
