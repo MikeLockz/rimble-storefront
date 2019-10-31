@@ -205,20 +205,40 @@ Ok, so they've connected, accepted and signed. Time to let them know that's all 
 
 **Navigate the guide**
 
+<Flex justifyContent="space-between" mt={4} alignItems="center" flexWrap={'wrap'} alignItems={"stretch"}>
+<Box p={3} borderLeft={1} borderWidth={3} borderColor="primary" mb={3} width={[1, 1/2]}>
+<Flex alignItems="center">
+<Box>
+<Icon color="primary" mr={3} size="24px" name="ArrowBack" />
+</Box>
+<Box>
 <Link
-  mr={3}
+  fontSize={3}
   title="Read the previous part of the guide"
-  as="a"
   href="/guides/ux/connect-a-wallet-before"
 >
-  Previous part
+  Previous
 </Link>
+<Text>Before they connect</Text>
+</Box>
+</Flex>
+</Box>
 
+<Box p={3} borderRight={1} borderWidth={3} borderColor="primary" mb={3} width={[1, 1/2]}>
+<Flex alignItems="center" justifyContent="flex-end">
+<Flex flexDirection={"column"} flexWrap={"wrap"} alignItems={"flex-end"}>
 <Link
-  mx={3}
+  fontSize={3}
   title="Read the next part of the guide"
-  as="a"
   href="/guides/ux/connect-a-wallet-success"
 >
-  Next part
+  Next
 </Link>
+<Text>Confirm success</Text>
+</Flex>
+<Box>
+<Icon color="primary" ml={3} size="24px" name="ArrowForward" />
+</Box>
+</Flex>
+</Box>
+</Flex>
