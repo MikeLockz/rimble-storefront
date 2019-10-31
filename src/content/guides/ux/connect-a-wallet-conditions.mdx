@@ -190,10 +190,60 @@ These modals should help get the user ready to connect on the right network. Nex
 
 **Navigate the guide**
 
-<Button
+<Flex alignItems="center">
+<Card mr={2} width={[1/2]}>
+<Flex alignItems="center">
+<Icon color="primary" mr={3} size="24px" name="ArrowBack" />
+<Link
+  title="Back to Guides"
+  as="a"
+  href="/guides/ux"
+>
+  Back to Guides
+</Link>
+</Flex>
+</Card>
+
+<Card ml={2} width={[1/2]}>
+<Flex alignItems="center" justifyContent="flex-end">
+<Link
   title="Read the next part of the guide"
   as="a"
   href="/guides/ux/connect-a-wallet-before"
 >
   Next part
-</Button>
+</Link>
+<Icon color="primary" ml={3} size="24px" name="ArrowForward" />
+</Flex>
+</Card>
+</Flex>
+
+
+
+<Flex mt={3} alignItems="center">
+<Box p={4} border={1} borderwidth={3} borderColor="primary" mr={2} width={[1/2]}>
+<Flex alignItems="center">
+<Icon color="primary" mr={3} size="24px" name="ArrowBack" />
+<Link
+  title="Back to Guides"
+  as="a"
+  href="/guides/ux"
+>
+  Back to Guides
+</Link>
+</Flex>
+</Box>
+
+<Box p={4} border={1} borderwidth={3} borderColor="primary" ml={2} width={[1/2]}>
+<Flex alignItems="center" justifyContent="flex-end">
+<Link
+  title="Read the next part of the guide"
+  as="a"
+  href="/guides/ux/connect-a-wallet-before"
+>
+  Next part
+</Link>
+<Icon color="primary" ml={3} size="24px" name="ArrowForward" />
+</Flex>
+</Box>
+</Flex>
