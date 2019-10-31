@@ -6,7 +6,7 @@ export default connectSearchBox(({ refine, ...rest }) => (
   <Form role="search" m={2} mb={3} onSubmit={e => e.preventDefault()}>
     <Input
       type="search"
-      placeholder="Search library"
+      placeholder="Search"
       aria-label="Search"
       role="searchbox"
       onChange={e => refine(e.target.value)}

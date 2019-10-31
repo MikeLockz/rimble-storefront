@@ -23,7 +23,6 @@ const Navbar = ({ isNavOpen, setIsNavOpen, toggleNavOpen }) => {
       alignItems={"center"}
       position={"fixed"}
       p={3}
-      bg={"whitte"}
       top={0}
       right={0}
       left={0}

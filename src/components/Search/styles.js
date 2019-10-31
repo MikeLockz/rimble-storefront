@@ -128,6 +128,9 @@ export const HitsWrapper = styled(Card)`
   .ais-Highlight-highlighted {
     background-color: ${props => lighten(0.375, props.theme.colors.primary)};
   }
+  * a:not(:hover):not(.-is-active) {
+    color: ${props => props.theme.colors.primary} !important
+  }
 `;
 
 export const PoweredBy = () => (

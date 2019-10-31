@@ -24,13 +24,17 @@ const Results = connectStateResults(
       <Text mb={3}>
         If we don't have what you're looking for, raise an issue in GitHub and we'll see what we can do.
       </Text>
+      
       <Flex mb={4}>
-      <Link
-        href="https://github.com/ConsenSys/rimble-ui/issues"
-        target="_blank"
-        title="Go to GitHub to raise an issue"
-        >GitHub</Link>
-      <Icon color="primary" name="Launch" size="16px" />
+        <Link
+          href="https://github.com/ConsenSys/rimble-ui/issues"
+          target="_blank"
+          title="Go to GitHub to raise an issue"
+          >
+            <Flex alignItems={"center"}>
+              GitHub <Icon color="primary" name="Launch" size="16px" ml={2} />
+            </Flex>
+        </Link>
       </Flex>
     </Box>
 );
