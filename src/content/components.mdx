@@ -3,7 +3,7 @@ title: Rimble Components 🏗
 description: Rimble components will help speed up your dapp development and provide research-based UX to improve engagement.
 ---
 
-import { Button } from "rimble-ui";
+import { Button, Form } from "rimble-ui";
 
 ## Rimble UI
 
@@ -43,9 +43,18 @@ These components are the building blocks for making your dApp's user interface.
 ### Components A-Z
 
 <Flex mb={5} flexWrap={'wrap'} alignItems={"stretch"}>
-  <ComponentCard componentName={"Avatar"} description={"Images that represent things – like currencies – in your product."}>
-    <Avatar size="large" src="https://airswap-token-images.s3.amazonaws.com/DAI.png" />
-  </ComponentCard>
+
+<ComponentCard
+  componentName={"Avatar"}
+  description={
+    "Images that represent things – like currencies – in your product."
+  }
+>
+  <Avatar
+    size="large"
+    src="https://airswap-token-images.s3.amazonaws.com/DAI.png"
+  />
+</ComponentCard>
 
 <ComponentCard
   componentName={"Blockie"}
@@ -86,870 +95,292 @@ These components are the building blocks for making your dApp's user interface.
   <Button>Connect</Button>
 </ComponentCard>
 
-<ComponentCard componentName={""} description={""}></ComponentCard>
-
-<ComponentCard componentName={""} description={""}></ComponentCard>
-
-<ComponentCard componentName={""} description={""}></ComponentCard>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Card mx={3}>
-        <Flex>
-          <Box>
-            <Blockie seed="asdsad" />
-          </Box>
-          <Box>
-            <Text caps fontSize={0} fontWeight={4} ml={3}>
-              Your address:
-            </Text>
-            <Text ml={3}>0x1234...5678</Text>
-          </Box>
-        </Flex>
-      </Card>
-    </Flex>
-    <Heading.h4 mb={2}>Card</Heading.h4>
-    <Text>
-      Creates a Box layout for content and actions about a specific subject.
-    </Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Card"
-        target="\_blank"
-        title="Code and usage examples for the Card component"
-      >
-        Card code
-      </Button.Text>
+<ComponentCard
+  componentName={"Card"}
+  description={
+    "Creates a Box layout for content and actions about a specific subject."
+  }
+>
+  <Card mx={3}>
+    <Flex>
+      <Box>
+        <Blockie seed="asdsad" />
+      </Box>
+      <Box>
+        <Text caps fontSize={0} fontWeight={4} ml={3}>
+          Your address:
+        </Text>
+        <Text ml={3}>0x1234...5678</Text>
+      </Box>
     </Flex>
   </Card>
-</Box>
+</ComponentCard>
 
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Checkbox defaultChecked label="Ether" required={true} mr={4} />
-      <Checkbox label="EOS" required={true} />
-    </Flex>
-    <Heading.h4 mb={2}>Checkbox</Heading.h4>
-    <Text>Allows a user to choose one or more items from a list.</Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Checkbox"
-        target="\_blank"
-        title="Code and usage examples for the Checkbox component"
-      >
-        Checkbox code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
+<ComponentCard
+  componentName={"Checkbox"}
+  description={"Allows a user to choose one or more items from a list."}
+>
+  <Checkbox defaultChecked label="Ether" required={true} mr={4} />
+  <Checkbox label="EOS" required={true} />
+</ComponentCard>
 
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <EthAddress mx={3} address="0x9505C8Fc1aD98b0aC651b91245d02D055fEc8E49" />
-    </Flex>
-    <Heading.h4 mb={2}>ETHAddress</Heading.h4>
-    <Text>
-      Allows a user to quickly view, copy and scan an Ethereum address.
-    </Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Checkbox"
-        target="\_blank"
-        title="Code and usage examples for the ETHAddress component"
-      >
-        ETHAddress code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
+<ComponentCard
+  componentName={"EthAddress"}
+  description={
+    "Allows a user to quickly view, copy and scan an Ethereum address."
+  }
+>
+  <EthAddress mx={3} address="0x9505C8Fc1aD98b0aC651b91245d02D055fEc8E49" />
+</ComponentCard>
 
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Field label="Public address">
-        <Input type="text" required={true} placeholder="e.g. 0x1234...5678" />
-      </Field>
-    </Flex>
-    <Heading.h4 mb={2}>Field</Heading.h4>
-    <Text>A quick way to add a label to your form inputs.</Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Field"
-        target="\_blank"
-        title="Code and usage examples for the Field component"
-      >
-        Field code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
+<ComponentCard
+  componentName={"Field"}
+  description={"A quick way to add a label to your form inputs."}
+>
+  <Field label="Public address">
+    <Input type="text" required={true} placeholder="e.g. 0x1234...5678" />
+  </Field>
+</ComponentCard>
 
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Flash mx={3} variant={"warning"} display={"flex"}>
-        <Box mr={3}>
-          <Icon name="Warning" />
-        </Box>
-        <Box mr={3}>
-          <Text color={"inherit"}>Only send ETH to addresses you trust.</Text>
-        </Box>
-      </Flash>
-    </Flex>
-    <Heading.h4 mb={2}>Flash</Heading.h4>
-    <Text>A way to deliver messages to your user without blocking them.</Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Flash"
-        target="\_blank"
-        title="Code and usage examples for the Flash component"
-      >
-        Flash code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
+<ComponentCard
+  componentName={"Flash"}
+  description={"A way to deliver messages to your user without blocking them."}
+>
+  <Flash mx={3} variant={"warning"} display={"flex"}>
+    <Box mr={3}>
+      <Icon name="Warning" />
+    </Box>
+    <Box mr={3}>
+      <Text color={"inherit"}>Only send ETH to addresses you trust.</Text>
+    </Box>
+  </Flash>
+</ComponentCard>
 
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Flex>
-        <Box p={3} mr={3} width={1 / 2} color="white" bg="primary">
-          Flex
-        </Box>
-        <Box p={3} width={1 / 2} color="white" bg="success">
-          Box
-        </Box>
-      </Flex>
-    </Flex>
-    <Heading.h4 mb={2}>Flex</Heading.h4>
-    <Text>
-      For arranging content in columns or rows and making responsive layouts.
-    </Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Flex"
-        target="\_blank"
-        title="Code and usage examples for the Flex component"
-      >
-        Flex code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Text>Add form example here</Text>
-    </Flex>
-    <Heading.h4 mb={2}>Form</Heading.h4>
-    <Text>Gives your inputs validation styles and feedback messages.</Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Form"
-        target="\_blank"
-        title="Code and usage examples for the Form component"
-      >
-        Form code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Heading.h2>Rimble</Heading.h2>
-    </Flex>
-    <Heading.h4 mb={2}>Heading</Heading.h4>
-    <Text>
-      Give pages or page areas titles that introduce the content below.
-    </Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Heading"
-        target="\_blank"
-        title="Code and usage examples for the Heading component"
-      >
-        Heading code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Icon color="primary" size="60px" name={"AccountBalanceWallet"} />
-    </Flex>
-    <Heading.h4 mb={2}>Icon</Heading.h4>
-    <Text>Add Material Design icons to your interface using Rimble.</Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Icon"
-        target="\_blank"
-        title="Code and usage examples for the Icon component"
-      >
-        Icon code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Image
-        alt="Rimble's unofficial bird logo from Telegram"
-        borderRadius={8}
-        height="100px"
-        src="/images/rimble-unofficial-logo.png"
-      />
-    </Flex>
-    <Heading.h4 mb={2}>Image</Heading.h4>
-    <Text>Add an image and its alt description to your product.</Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Image"
-        target="\_blank"
-        title="Code and usage examples for the Image component"
-      >
-        Image code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Input type="search" required={true} placeholder="e.g. Ethereum" />
-    </Flex>
-    <Heading.h4 mb={2}>Input</Heading.h4>
-    <Text>
-      Input allows you add different types of inputs when building forms.
-    </Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Input"
-        target="\_blank"
-        title="Code and usage examples for the Input component"
-      >
-        Input code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Link href="#!" target="_blank" title="This link goes somewhere">
-        Visit this link!
-      </Link>
-    </Flex>
-    <Heading.h4 mb={2}>Link</Heading.h4>
-    <Text>Link provides a basic styled link – ideal for use in copy.</Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Link"
-        target="\_blank"
-        title="Code and usage examples for the Link component"
-      >
-        Link code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Loader size="100px" />
-    </Flex>
-    <Heading.h4 mb={2}>Loader</Heading.h4>
-    <Text>
-      Loader lets you know that a process is happening or content is loading.
-    </Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Loader"
-        target="\_blank"
-        title="Code and usage examples for the Loader component"
-      >
-        Loader code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <MetaMaskButton mx={2}>Connect</MetaMaskButton>
-    </Flex>
-    <Heading.h4 mb={2}>MetaMask button</Heading.h4>
-    <Text>Show your users when an action will involve MetaMask.</Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/MetaMaskButton"
-        target="\_blank"
-        title="Code and usage examples for the MetaMaskButton component"
-      >
-        MetaMaskButton code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Text>Add Modal example here</Text>
-    </Flex>
-    <Heading.h4 mb={2}>Modal</Heading.h4>
-    <Text>
-      Display information that requires a choice or an acknowledgement.
-    </Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Modal"
-        target="\_blank"
-        title="Code and usage examples for the Modal component"
-      >
-        Modal code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Pill color="green" mr={2}>
-        Done
-      </Pill>
-      <Pill color="blue" mr={2}>
-        Pending
-      </Pill>
-      <Pill color="danger">Failed</Pill>
-    </Flex>
-    <Heading.h4 mb={2}>Pill</Heading.h4>
-    <Text>Pill allows you to show a status or grouping at a glance.</Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Pill"
-        target="\_blank"
-        title="Code and usage examples for the Pill component"
-      >
-        Pill code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Progress value={0.5} />
-    </Flex>
-    <Heading.h4 mb={2}>Progress</Heading.h4>
-    <Text>Progress shows users progress through a process or loading.</Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Progress"
-        target="\_blank"
-        title="Code and usage examples for the Progress component"
-      >
-        Progress code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <QR size="80px" value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
-    </Flex>
-    <Heading.h4 mb={2}>QR</Heading.h4>
-    <Text>
-      QR allows you provide a QR code for a string – like an Ethereum address.
-    </Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/QR"
-        target="\_blank"
-        title="Code and usage examples for the QR component"
-      >
-        QR code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Radio label="Radio button" my={2} />
-    </Flex>
-    <Heading.h4 mb={2}>Radio button</Heading.h4>
-    <Text>Allows a user to choose only one item from a list.</Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Radio"
-        target="\_blank"
-        title="Code and usage examples for the Radio component"
-      >
-        Radio code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Field label="Choose your currency">
-        <Select
-          required={true}
-          options={[
-            { value: "eth", label: "Ether" },
-            { value: "btc", label: "Bitcoin" },
-            { value: "gno", label: "Gnosis" },
-            { value: "gnt", label: "Golem" },
-            { value: "rep", label: "Augur" }
-          ]}
-        />
-      </Field>
-    </Flex>
-    <Heading.h4 mb={2}>Select</Heading.h4>
-    <Text>Allows a user to choose from a drop-down list.</Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Select"
-        target="\_blank"
-        title="Code and usage examples for the Select component"
-      >
-        Select code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Slider bg={"near-white"} min={"0"} max={"100"} step={"10"} />
-    </Flex>
-    <Heading.h4 mb={2}>Slider</Heading.h4>
-    <Text>Allows a user to control a value using a slider.</Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Slider"
-        target="\_blank"
-        title="Code and usage examples for the Slider component"
-      >
-        Slider code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Table mx={3}>
-        <thead>
-          <tr>
-            <th>Tx hash</th>
-            <th>Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>0xeb...cc0</td>
-            <td>0.10 ETH</td>
-          </tr>
-        </tbody>
-      </Table>
-    </Flex>
-    <Heading.h4 mb={2}>Table</Heading.h4>
-    <Text>Allows a user to compare data in your product.</Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Table"
-        target="\_blank"
-        title="Code and usage examples for the Table component"
-      >
-        Table code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Text fontSize="1">Tell your friends about Rimble.</Text>
-    </Flex>
-    <Heading.h4 mb={2}>Text</Heading.h4>
-    <Text>
-      Text allows you to control the presentation of your copy content.
-    </Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Text"
-        target="\_blank"
-        title="Code and usage examples for the Text component"
-      >
-        Text code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Textarea placeholder="Start typing..." rows={4} />
-    </Flex>
-    <Heading.h4 mb={2}>Text area</Heading.h4>
-    <Text>Textarea gives you a long-form free-text input for your forms.</Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Textarea"
-        target="\_blank"
-        title="Code and usage examples for the Textarea component"
-      >
-        Textarea code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <ToastMessage message={"Welcome to my dapp"} icon={"Mood"} my={3} />
-    </Flex>
-    <Heading.h4 mb={2}>ToastMessage</Heading.h4>
-    <Text>Provide your users with an unimportant temporary message.</Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/ToastMessage"
-        target="\_blank"
-        mr={3}
-        title="Code and usage examples for the ToastMessage component"
-      >
-        Toast code
-      </Button.Text>
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/ToastMessageProvider"
-        target="\_blank"
-        title="Code and usage examples for the ToastMessageProvider component"
-      >
-        Provider code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Tooltip
-        message="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A"
-        placement="top"
-      >
-        <Link>0xAc03...1e5A</Link>
-      </Tooltip>
-    </Flex>
-    <Heading.h4 mb={2}>Tooltip</Heading.h4>
-    <Text>
-      Give your user extra information about something on the interface.
-    </Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Tooltip"
-        target="\_blank"
-        title="Code and usage examples for the Tooltip component"
-      >
-        Tooltip code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <UPortButton mx={2}>Connect</UPortButton>
-    </Flex>
-    <Heading.h4 mb={2}>UPortButton</Heading.h4>
-    <Text>Show your users when an action will involve uPort.</Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/UPortButton"
-        target="\_blank"
-        title="Code and usage examples for the UPortButton component"
-      >
-        UPortButton code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
-
+<ComponentCard
+  componentName={"Flex"}
+  description={
+    "For arranging content in columns or rows and making responsive layouts."
+  }
+>
+  <Flex>
+    <Box p={3} mr={3} width={1 / 2} color="white" bg="primary">
+      Flex
+    </Box>
+    <Box p={3} width={1 / 2} color="white" bg="success">
+      Box
+    </Box>
   </Flex>
+</ComponentCard>
+
+<ComponentCard
+  componentName={"Form"}
+  description={"Gives your inputs validation styles and feedback messages."}
+>
+  <Form onSubmit={e => e.preventDefault()}>
+    <Form.Field label="Email" width={1}>
+      <Form.Input type="email" required width={1} />
+    </Form.Field>
+    <Form.Field label="Password" width={1}>
+      <Form.Input type="password" required width={1} />
+    </Form.Field>
+    <Box>
+      <Form.Check label="Remember me?" mb={3} />
+    </Box>
+    <Button type="submit" width={1}>
+      Sign Up
+    </Button>
+  </Form>
+</ComponentCard>
+
+<ComponentCard
+  componentName={"Heading"}
+  description={
+    "Give pages or page areas titles that introduce the content below."
+  }
+>
+  <Heading as={"h4"} mb={2}>
+    Heading
+  </Heading>
+</ComponentCard>
+
+<ComponentCard
+  componentName={"Icon"}
+  description={"Add Material Design icons to your interface using Rimble."}
+>
+  <Icon name="Code" color="primary" ml={0} size="24px" />
+</ComponentCard>
+
+<ComponentCard
+  componentName={"Image"}
+  description={"Add an image and its alt description to your product."}
+>
+  <Image
+    alt="Rimble's unofficial bird logo from Telegram"
+    borderRadius={8}
+    height="100px"
+    src="/images/rimble-unofficial-logo.png"
+  />
+</ComponentCard>
+
+<ComponentCard
+  componentName={"Input"}
+  description={
+    "Input allows you add different types of inputs when building forms."
+  }
+>
+  <Input type="search" required={true} placeholder="e.g. Ethereum" />
+</ComponentCard>
+
+<ComponentCard
+  componentName={"Link"}
+  description={"Link provides a basic styled link – ideal for use in copy."}
+>
+  <Link href="#!" target="_blank" title="This link goes somewhere">
+    Visit this link!
+  </Link>
+</ComponentCard>
+
+<ComponentCard
+  componentName={"Loader"}
+  description={
+    "Loader lets you know that a process is happening or content is loading."
+  }
+>
+  <Loader size="100px" />
+</ComponentCard>
+
+<ComponentCard
+  componentName={"MetaMaskButton"}
+  description={"Show your users when an action will involve MetaMask."}
+>
+  <MetaMaskButton mx={2}>Connect</MetaMaskButton>
+</ComponentCard>
+
+<ComponentCard
+  componentName={"Modal"}
+  description={
+    "Display information that requires a choice or an acknowledgement."
+  }
+></ComponentCard>
+
+<ComponentCard
+  componentName={"Pill"}
+  description={"Pill allows you to show a status or grouping at a glance."}
+>
+  <Pill color="green" mr={2}>
+    Done
+  </Pill>
+  <Pill color="blue" mr={2}>
+    Pending
+  </Pill>
+  <Pill color="danger">Failed</Pill>
+</ComponentCard>
+
+<ComponentCard
+  componentName={"Progress"}
+  description={"Progress shows users progress through a process or loading."}
+>
+  <Progress value={0.5} />
+</ComponentCard>
+
+<ComponentCard
+  componentName={"QR"}
+  description={
+    "QR allows you provide a QR code for a string – like an Ethereum address."
+  }
+>
+  <QR size="80px" value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
+</ComponentCard>
+
+<ComponentCard
+  componentName={"Radio button"}
+  description={"Allows a user to choose only one item from a list."}
+>
+  <Radio label="Radio button" my={2} />
+</ComponentCard>
+
+  <ComponentCard componentName={"Select"} description={"Allows a user to choose from a drop-down list."}>
+
+        <Field label="Choose your currency">
+          <Select
+            required={true}
+            options={[
+              { value: "eth", label: "Ether" },
+              { value: "btc", label: "Bitcoin" },
+              { value: "gno", label: "Gnosis" },
+              { value: "gnt", label: "Golem" },
+              { value: "rep", label: "Augur" }
+            ]}
+          />
+        </Field>
+
+  </ComponentCard>
+
+<ComponentCard
+  componentName={"Slider"}
+  description={"Allows a user to control a value using a slider."}
+>
+  <Slider bg={"near-white"} min={"0"} max={"100"} step={"10"} />
+</ComponentCard>
+
+<ComponentCard
+  componentName={"Table"}
+  description={"Allows a user to compare data in your product."}
+>
+  <Table mx={3}>
+    <thead>
+      <tr>
+        <th>Tx hash</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>0xeb...cc0</td>
+        <td>0.10 ETH</td>
+      </tr>
+    </tbody>
+  </Table>
+</ComponentCard>
+
+<ComponentCard
+  componentName={"Text"}
+  description={
+    "Text allows you to control the presentation of your copy content."
+  }
+>
+  <Text fontSize="1">Tell your friends about Rimble.</Text>
+</ComponentCard>
+
+<ComponentCard
+  componentName={"Textarea"}
+  description={"Textarea gives you a long-form free-text input for your forms."}
+>
+  <Textarea placeholder="Start typing..." rows={4} />
+</ComponentCard>
+
+<ComponentCard
+  componentName={"ToastMessage"}
+  description={"Provide your users with an unimportant temporary message."}
+>
+  <ToastMessage message={"Welcome to my dapp"} icon={"Mood"} my={3} />
+</ComponentCard>
+
+<ComponentCard
+  componentName={"Tooltip"}
+  description={
+    "Give your user extra information about something on the interface."
+  }
+>
+  <Tooltip message="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" placement="top">
+    <Link>0xAc03...1e5A</Link>
+  </Tooltip>
+</ComponentCard>
+
+  <ComponentCard componentName={"UPortButton"} description={"Show your users when an action will involve uPort."}>
+    <UPortButton mx={2}>Connect</UPortButton>
+  </ComponentCard>
+</Flex>
 
 ## Web3 Components
 

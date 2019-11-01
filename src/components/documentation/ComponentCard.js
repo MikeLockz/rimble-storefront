@@ -17,6 +17,7 @@ const ComponentCard = ({ componentName, children, description }) => {
             justifyContent={"center"}
             alignItems={"center"}
             bg={"near-white"}
+            overflow={"scroll"}
           >
             {children}
           </Flex>
