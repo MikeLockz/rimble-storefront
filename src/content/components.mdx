@@ -5,172 +5,140 @@ description: Rimble components will help speed up your dapp development and prov
 
 import { Button } from "rimble-ui";
 
-
 ## Rimble UI
 
 Rimble UI is our open-source React component library.
 
 These components are the building blocks for making your dApp's user interface.
 
-
-<Box borderRadius="2" bg={'near-white'} mt={4}>
-<Box mx={3}>
-👉
-  <Button.Text
+<Box mx={3} my={2}>
+  <Link
     title="Get the code at GitHub"
     target="_blank"
-    as="a"
     href="https://github.com/ConsenSys/rimble-ui"
   >
-    <Flex alignItems="center">
+    <Flex alignItems="center" p={3}
+    borderRadius="2"
+    bg={"near-white"}>
       Rimble-UI GitHub repo
       <Icon name="Launch" ml={2} size="14px" />
     </Flex>
-  </Button.Text>
+  </Link>
 </Box>
 <Box mx={3}>
-👉
-  <Button.Text
+  <Link
     title="View the rimble-ui components in Storybook"
     target="_blank"
-    as="a"
     href="https://rimble-ui-storybook.netlify.com/"
   >
-    <Flex alignItems="center">
-      Rimble-UI on Storybook  <Icon name="Launch" ml={2} size="14px" />
+    <Flex alignItems="center" p={3}
+    borderRadius="2"
+    bg={"near-white"}>
+      Rimble-UI on Storybook
+      <Icon name="Launch" ml={2} size="14px" />
     </Flex>
-  </Button.Text>
-</Box>
+  </Link>
 </Box>
 
 ### Components A-Z
 
 <Flex mb={5} flexWrap={'wrap'} alignItems={"stretch"}>
   <Box width={[1, 1 / 2]} p={2}>
-    <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
-      <Flex
-        mt={2}
-        mb={3}
-        height={'150px'}
-        justifyContent={"center"}
-        alignItems={"center"}
-        bg={'near-white'}>
-      <Avatar size="large" src="https://airswap-token-images.s3.amazonaws.com/DAI.png" />
-      </Flex>
-      <Heading.h4 mb={2}>
-        Avatar
-      </Heading.h4>
-      <Text>
-        Images that represent things – like currencies – in your product.
-      </Text>
-      <Flex alignItems="center">
-        <Icon name="Code" color="primary" ml={0} size="24px" />
-        <Button.Text
-          as="a"
-          href="/components/rimble-ui/Avatar"
-          target="\_blank"
-          title="Code and usage examples for the Avatar component">
-          Avatar code
-        </Button.Text>
-      </Flex>
-    </Card>
-  </Box>
-
-  <Box width={[1, 1 / 2]} p={2}>
-    <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
-      <Flex
-        mt={2}
-        mb={3}
-        height={'150px'}
-        justifyContent={"center"}
-        alignItems={"center"}
-        bg={'near-white'}>
-      <Blockie opts={{
-        seed: "foo",
-        color: "#dfe",
-        bgcolor: "#a71",
-        size: 19,
-        scale: 3,
-        spotcolor: "#000"
-      }}/>
-      </Flex>
-      <Heading.h4 mb={2}>
-        Blockie
-      </Heading.h4>
-      <Text>
-        Identicons for representing Ethereum addresses.
-      </Text>
-      <Flex alignItems="center">
-        <Icon name="Code" color="primary" ml={0} size="24px" />
-        <Button.Text
-          as="a"
-          href="/components/rimble-ui/Blockie"
-          target="\_blank"
-          title="Code and usage examples for the Blockie component">
-          Blockie code
-        </Button.Text>
-      </Flex>
-    </Card>
-  </Box>
-
-  <Box width={[1, 1 / 2]} p={2}>
-    <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
-      <Flex
-        mt={2}
-        mb={3}
-        height={'150px'}
-        justifyContent={"center"}
-        alignItems={"center"}
-        bg={'near-white'}>
-      <Box textAlign="center" bg="success" color="white" fontSize={4} p={3} width={[1, 1, 0.5]}>
-        Box
-      </Box>
-      </Flex>
-      <Heading.h4 mb={2}>
-        Box
-      </Heading.h4>
-      <Text>
-        A responsive component for box-model layouts.
-      </Text>
-      <Flex alignItems="center">
-        <Icon name="Code" color="primary" ml={0} size="24px" />
-        <Button.Text
-          as="a"
-          href="/components/rimble-ui/Box"
-          target="\_blank"
-          title="Code and usage examples for the Box component">
-          Box code
-        </Button.Text>
-      </Flex>
-    </Card>
+    <RimbleGatsbyLink
+      to="/components/rimble-ui/Avatar"
+      title="Code and usage examples for the Avatar component">
+      <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+        <Flex
+          mt={2}
+          mb={3}
+          height={'150px'}
+          justifyContent={"center"}
+          alignItems={"center"}
+          bg={'near-white'}>
+        <Avatar size="large" src="https://airswap-token-images.s3.amazonaws.com/DAI.png" />
+        </Flex>
+        <Heading.h4 mb={2}>
+          Avatar
+        </Heading.h4>
+        <Text>
+          Images that represent things – like currencies – in your product.
+        </Text>
+        <Flex alignItems="center">
+          <Icon name="Code" color="primary" ml={0} size="24px" />
+            Avatar code
+        </Flex>
+      </Card>
+    </RimbleGatsbyLink>
   </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
-    <Button>
-      Connect
-    </Button>
+      bg={"near-white"}
+    >
+      <Blockie
+        opts={{
+          seed: "foo",
+          color: "#dfe",
+          bgcolor: "#a71",
+          size: 19,
+          scale: 3,
+          spotcolor: "#000"
+        }}
+      />
     </Flex>
-    <Heading.h4 mb={2}>
-      Button
-    </Heading.h4>
-    <Text>
-      Allows a user to take an action or make a choice.
-    </Text>
+    <Heading.h4 mb={2}>Blockie</Heading.h4>
+    <Text>Identicons for representing Ethereum addresses.</Text>
     <Flex alignItems="center">
       <Icon name="Code" color="primary" ml={0} size="24px" />
       <Button.Text
         as="a"
-        href="/components/rimble-ui/Button"
+        href="/components/rimble-ui/Blockie"
         target="\_blank"
-        title="Code and usage examples for the Button component">
+        title="Code and usage examples for the Blockie component"
+      >
+        Blockie code
+      </Button.Text>
+    </Flex>
+  </Card>
+</Box>
+
+<Box width={[1, 1 / 2]} p={2}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
+    <Flex
+      mt={2}
+      mb={3}
+      height={"150px"}
+      justifyContent={"center"}
+      alignItems={"center"}
+      bg={"near-white"}
+    >
+      <Box
+        textAlign="center"
+        bg="success"
+        color="white"
+        fontSize={4}
+        p={3}
+        width={[1, 1, 0.5]}
+      >
+        Box
+      </Box>
+    </Flex>
+    <Heading.h4 mb={2}>Box</Heading.h4>
+    <Text>A responsive component for box-model layouts.</Text>
+    <Flex alignItems="center">
+      <Icon name="Code" color="primary" ml={0} size="24px" />
+      <Button.Text
+        as="a"
+        href="/components/rimble-ui/Box"
+        target="\_blank"
+        title="Code and usage examples for the Box component"
+      >
         Box code
       </Button.Text>
     </Flex>
@@ -178,37 +146,58 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
-    <Card mx={3}>
-      <Flex>
-        <Box>
-          <Blockie seed="asdsad" />
-        </Box>
-        <Box>
-          <Text
-            caps
-            fontSize={0}
-            fontWeight={4}
-            ml={3}>
-          Your address:
-          </Text>
-          <Text ml={3}>
-          0x1234...5678
-          </Text>
-        </Box>
-      </Flex>
-    </Card>
+      bg={"near-white"}
+    >
+      <Button>Connect</Button>
     </Flex>
-    <Heading.h4 mb={2}>
-      Card
-    </Heading.h4>
+    <Heading.h4 mb={2}>Button</Heading.h4>
+    <Text>Allows a user to take an action or make a choice.</Text>
+    <Flex alignItems="center">
+      <Icon name="Code" color="primary" ml={0} size="24px" />
+      <Button.Text
+        as="a"
+        href="/components/rimble-ui/Button"
+        target="\_blank"
+        title="Code and usage examples for the Button component"
+      >
+        Box code
+      </Button.Text>
+    </Flex>
+  </Card>
+</Box>
+
+<Box width={[1, 1 / 2]} p={2}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
+    <Flex
+      mt={2}
+      mb={3}
+      height={"150px"}
+      justifyContent={"center"}
+      alignItems={"center"}
+      bg={"near-white"}
+    >
+      <Card mx={3}>
+        <Flex>
+          <Box>
+            <Blockie seed="asdsad" />
+          </Box>
+          <Box>
+            <Text caps fontSize={0} fontWeight={4} ml={3}>
+              Your address:
+            </Text>
+            <Text ml={3}>0x1234...5678</Text>
+          </Box>
+        </Flex>
+      </Card>
+    </Flex>
+    <Heading.h4 mb={2}>Card</Heading.h4>
     <Text>
       Creates a Box layout for content and actions about a specific subject.
     </Text>
@@ -218,7 +207,8 @@ These components are the building blocks for making your dApp's user interface.
         as="a"
         href="/components/rimble-ui/Card"
         target="\_blank"
-        title="Code and usage examples for the Card component">
+        title="Code and usage examples for the Card component"
+      >
         Card code
       </Button.Text>
     </Flex>
@@ -226,30 +216,28 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
-    <Checkbox defaultChecked label="Ether" required={true} mr={4}/>
-    <Checkbox label="EOS" required={true} />
+      bg={"near-white"}
+    >
+      <Checkbox defaultChecked label="Ether" required={true} mr={4} />
+      <Checkbox label="EOS" required={true} />
     </Flex>
-    <Heading.h4 mb={2}>
-      Checkbox
-    </Heading.h4>
-    <Text>
-      Allows a user to choose one or more items from a list.
-    </Text>
+    <Heading.h4 mb={2}>Checkbox</Heading.h4>
+    <Text>Allows a user to choose one or more items from a list.</Text>
     <Flex alignItems="center">
       <Icon name="Code" color="primary" ml={0} size="24px" />
       <Button.Text
         as="a"
         href="/components/rimble-ui/Checkbox"
         target="\_blank"
-        title="Code and usage examples for the Checkbox component">
+        title="Code and usage examples for the Checkbox component"
+      >
         Checkbox code
       </Button.Text>
     </Flex>
@@ -257,19 +245,18 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
+      bg={"near-white"}
+    >
       <EthAddress mx={3} address="0x9505C8Fc1aD98b0aC651b91245d02D055fEc8E49" />
     </Flex>
-    <Heading.h4 mb={2}>
-      ETHAddress
-    </Heading.h4>
+    <Heading.h4 mb={2}>ETHAddress</Heading.h4>
     <Text>
       Allows a user to quickly view, copy and scan an Ethereum address.
     </Text>
@@ -279,7 +266,8 @@ These components are the building blocks for making your dApp's user interface.
         as="a"
         href="/components/rimble-ui/Checkbox"
         target="\_blank"
-        title="Code and usage examples for the ETHAddress component">
+        title="Code and usage examples for the ETHAddress component"
+      >
         ETHAddress code
       </Button.Text>
     </Flex>
@@ -287,32 +275,29 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
+      bg={"near-white"}
+    >
       <Field label="Public address">
-        <Input type="text" required={true}
-        placeholder="e.g. 0x1234...5678"  />
+        <Input type="text" required={true} placeholder="e.g. 0x1234...5678" />
       </Field>
     </Flex>
-    <Heading.h4 mb={2}>
-      Field
-    </Heading.h4>
-    <Text>
-      A quick way to add a label to your form inputs.
-    </Text>
+    <Heading.h4 mb={2}>Field</Heading.h4>
+    <Text>A quick way to add a label to your form inputs.</Text>
     <Flex alignItems="center">
       <Icon name="Code" color="primary" ml={0} size="24px" />
       <Button.Text
         as="a"
         href="/components/rimble-ui/Field"
         target="\_blank"
-        title="Code and usage examples for the Field component">
+        title="Code and usage examples for the Field component"
+      >
         Field code
       </Button.Text>
     </Flex>
@@ -320,38 +305,34 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
+      bg={"near-white"}
+    >
       <Flash mx={3} variant={"warning"} display={"flex"}>
         <Box mr={3}>
           <Icon name="Warning" />
         </Box>
         <Box mr={3}>
-          <Text color={"inherit"}>
-            Only send ETH to addresses you trust.
-          </Text>
+          <Text color={"inherit"}>Only send ETH to addresses you trust.</Text>
         </Box>
       </Flash>
     </Flex>
-    <Heading.h4 mb={2}>
-      Flash
-    </Heading.h4>
-    <Text>
-      A way to deliver messages to your user without blocking them.
-    </Text>
+    <Heading.h4 mb={2}>Flash</Heading.h4>
+    <Text>A way to deliver messages to your user without blocking them.</Text>
     <Flex alignItems="center">
       <Icon name="Code" color="primary" ml={0} size="24px" />
       <Button.Text
         as="a"
         href="/components/rimble-ui/Flash"
         target="\_blank"
-        title="Code and usage examples for the Flash component">
+        title="Code and usage examples for the Flash component"
+      >
         Flash code
       </Button.Text>
     </Flex>
@@ -359,14 +340,15 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
+      bg={"near-white"}
+    >
       <Flex>
         <Box p={3} mr={3} width={1 / 2} color="white" bg="primary">
           Flex
@@ -376,9 +358,7 @@ These components are the building blocks for making your dApp's user interface.
         </Box>
       </Flex>
     </Flex>
-    <Heading.h4 mb={2}>
-      Flex
-    </Heading.h4>
+    <Heading.h4 mb={2}>Flex</Heading.h4>
     <Text>
       For arranging content in columns or rows and making responsive layouts.
     </Text>
@@ -388,7 +368,8 @@ These components are the building blocks for making your dApp's user interface.
         as="a"
         href="/components/rimble-ui/Flex"
         target="\_blank"
-        title="Code and usage examples for the Flex component">
+        title="Code and usage examples for the Flex component"
+      >
         Flex code
       </Button.Text>
     </Flex>
@@ -396,29 +377,27 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
+      bg={"near-white"}
+    >
       <Text>Add form example here</Text>
     </Flex>
-    <Heading.h4 mb={2}>
-      Form
-    </Heading.h4>
-    <Text>
-      Gives your inputs validation styles and feedback messages.
-    </Text>
+    <Heading.h4 mb={2}>Form</Heading.h4>
+    <Text>Gives your inputs validation styles and feedback messages.</Text>
     <Flex alignItems="center">
       <Icon name="Code" color="primary" ml={0} size="24px" />
       <Button.Text
         as="a"
         href="/components/rimble-ui/Form"
         target="\_blank"
-        title="Code and usage examples for the Form component">
+        title="Code and usage examples for the Form component"
+      >
         Form code
       </Button.Text>
     </Flex>
@@ -426,19 +405,18 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
+      bg={"near-white"}
+    >
       <Heading.h2>Rimble</Heading.h2>
     </Flex>
-    <Heading.h4 mb={2}>
-      Heading
-    </Heading.h4>
+    <Heading.h4 mb={2}>Heading</Heading.h4>
     <Text>
       Give pages or page areas titles that introduce the content below.
     </Text>
@@ -448,7 +426,8 @@ These components are the building blocks for making your dApp's user interface.
         as="a"
         href="/components/rimble-ui/Heading"
         target="\_blank"
-        title="Code and usage examples for the Heading component">
+        title="Code and usage examples for the Heading component"
+      >
         Heading code
       </Button.Text>
     </Flex>
@@ -456,29 +435,27 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
-      <Icon color="primary" size="60px" name={"AccountBalanceWallet"}/>
+      bg={"near-white"}
+    >
+      <Icon color="primary" size="60px" name={"AccountBalanceWallet"} />
     </Flex>
-    <Heading.h4 mb={2}>
-      Icon
-    </Heading.h4>
-    <Text>
-      Add Material Design icons to your interface using Rimble.
-    </Text>
+    <Heading.h4 mb={2}>Icon</Heading.h4>
+    <Text>Add Material Design icons to your interface using Rimble.</Text>
     <Flex alignItems="center">
       <Icon name="Code" color="primary" ml={0} size="24px" />
       <Button.Text
         as="a"
         href="/components/rimble-ui/Icon"
         target="\_blank"
-        title="Code and usage examples for the Icon component">
+        title="Code and usage examples for the Icon component"
+      >
         Icon code
       </Button.Text>
     </Flex>
@@ -486,14 +463,15 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
+      bg={"near-white"}
+    >
       <Image
         alt="Rimble's unofficial bird logo from Telegram"
         borderRadius={8}
@@ -501,19 +479,16 @@ These components are the building blocks for making your dApp's user interface.
         src="/images/rimble-unofficial-logo.png"
       />
     </Flex>
-    <Heading.h4 mb={2}>
-      Image
-    </Heading.h4>
-    <Text>
-      Add an image and its alt description to your product.
-    </Text>
+    <Heading.h4 mb={2}>Image</Heading.h4>
+    <Text>Add an image and its alt description to your product.</Text>
     <Flex alignItems="center">
       <Icon name="Code" color="primary" ml={0} size="24px" />
       <Button.Text
         as="a"
         href="/components/rimble-ui/Image"
         target="\_blank"
-        title="Code and usage examples for the Image component">
+        title="Code and usage examples for the Image component"
+      >
         Image code
       </Button.Text>
     </Flex>
@@ -521,19 +496,18 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
+      bg={"near-white"}
+    >
       <Input type="search" required={true} placeholder="e.g. Ethereum" />
     </Flex>
-    <Heading.h4 mb={2}>
-      Input
-    </Heading.h4>
+    <Heading.h4 mb={2}>Input</Heading.h4>
     <Text>
       Input allows you add different types of inputs when building forms.
     </Text>
@@ -543,7 +517,8 @@ These components are the building blocks for making your dApp's user interface.
         as="a"
         href="/components/rimble-ui/Input"
         target="\_blank"
-        title="Code and usage examples for the Input component">
+        title="Code and usage examples for the Input component"
+      >
         Input code
       </Button.Text>
     </Flex>
@@ -551,31 +526,29 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
-        <Link href="#!" target="_blank" title="This link goes somewhere">
-          Visit this link!
-        </Link>
+      bg={"near-white"}
+    >
+      <Link href="#!" target="_blank" title="This link goes somewhere">
+        Visit this link!
+      </Link>
     </Flex>
-    <Heading.h4 mb={2}>
-      Link
-    </Heading.h4>
-    <Text>
-      Link provides a basic styled link – ideal for use in copy.
-    </Text>
+    <Heading.h4 mb={2}>Link</Heading.h4>
+    <Text>Link provides a basic styled link – ideal for use in copy.</Text>
     <Flex alignItems="center">
       <Icon name="Code" color="primary" ml={0} size="24px" />
       <Button.Text
         as="a"
         href="/components/rimble-ui/Link"
         target="\_blank"
-        title="Code and usage examples for the Link component">
+        title="Code and usage examples for the Link component"
+      >
         Link code
       </Button.Text>
     </Flex>
@@ -583,19 +556,18 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
-        <Loader size="100px" />
+      bg={"near-white"}
+    >
+      <Loader size="100px" />
     </Flex>
-    <Heading.h4 mb={2}>
-      Loader
-    </Heading.h4>
+    <Heading.h4 mb={2}>Loader</Heading.h4>
     <Text>
       Loader lets you know that a process is happening or content is loading.
     </Text>
@@ -605,7 +577,8 @@ These components are the building blocks for making your dApp's user interface.
         as="a"
         href="/components/rimble-ui/Loader"
         target="\_blank"
-        title="Code and usage examples for the Loader component">
+        title="Code and usage examples for the Loader component"
+      >
         Loader code
       </Button.Text>
     </Flex>
@@ -613,29 +586,27 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
-        <MetaMaskButton mx={2}>Connect</MetaMaskButton>
+      bg={"near-white"}
+    >
+      <MetaMaskButton mx={2}>Connect</MetaMaskButton>
     </Flex>
-    <Heading.h4 mb={2}>
-      MetaMask button
-    </Heading.h4>
-    <Text>
-      Show your users when an action will involve MetaMask.
-    </Text>
+    <Heading.h4 mb={2}>MetaMask button</Heading.h4>
+    <Text>Show your users when an action will involve MetaMask.</Text>
     <Flex alignItems="center">
       <Icon name="Code" color="primary" ml={0} size="24px" />
       <Button.Text
         as="a"
         href="/components/rimble-ui/MetaMaskButton"
         target="\_blank"
-        title="Code and usage examples for the MetaMaskButton component">
+        title="Code and usage examples for the MetaMaskButton component"
+      >
         MetaMaskButton code
       </Button.Text>
     </Flex>
@@ -643,19 +614,18 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
-        <Text>Add Modal example here</Text>
+      bg={"near-white"}
+    >
+      <Text>Add Modal example here</Text>
     </Flex>
-    <Heading.h4 mb={2}>
-      Modal
-    </Heading.h4>
+    <Heading.h4 mb={2}>Modal</Heading.h4>
     <Text>
       Display information that requires a choice or an acknowledgement.
     </Text>
@@ -665,7 +635,8 @@ These components are the building blocks for making your dApp's user interface.
         as="a"
         href="/components/rimble-ui/Modal"
         target="\_blank"
-        title="Code and usage examples for the Modal component">
+        title="Code and usage examples for the Modal component"
+      >
         Modal code
       </Button.Text>
     </Flex>
@@ -673,31 +644,33 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
-        <Pill color="green" mr={2}>Done</Pill>
-        <Pill color="blue" mr={2}>Pending</Pill>
-        <Pill color="danger">Failed</Pill>
+      bg={"near-white"}
+    >
+      <Pill color="green" mr={2}>
+        Done
+      </Pill>
+      <Pill color="blue" mr={2}>
+        Pending
+      </Pill>
+      <Pill color="danger">Failed</Pill>
     </Flex>
-    <Heading.h4 mb={2}>
-      Pill
-    </Heading.h4>
-    <Text>
-      Pill allows you to show a status or grouping at a glance.
-    </Text>
+    <Heading.h4 mb={2}>Pill</Heading.h4>
+    <Text>Pill allows you to show a status or grouping at a glance.</Text>
     <Flex alignItems="center">
       <Icon name="Code" color="primary" ml={0} size="24px" />
       <Button.Text
         as="a"
         href="/components/rimble-ui/Pill"
         target="\_blank"
-        title="Code and usage examples for the Pill component">
+        title="Code and usage examples for the Pill component"
+      >
         Pill code
       </Button.Text>
     </Flex>
@@ -705,29 +678,27 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
+      bg={"near-white"}
+    >
       <Progress value={0.5} />
     </Flex>
-    <Heading.h4 mb={2}>
-      Progress
-    </Heading.h4>
-    <Text>
-      Progress shows users progress through a process or loading.
-    </Text>
+    <Heading.h4 mb={2}>Progress</Heading.h4>
+    <Text>Progress shows users progress through a process or loading.</Text>
     <Flex alignItems="center">
       <Icon name="Code" color="primary" ml={0} size="24px" />
       <Button.Text
         as="a"
         href="/components/rimble-ui/Progress"
         target="\_blank"
-        title="Code and usage examples for the Progress component">
+        title="Code and usage examples for the Progress component"
+      >
         Progress code
       </Button.Text>
     </Flex>
@@ -735,19 +706,18 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
+      bg={"near-white"}
+    >
       <QR size="80px" value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
     </Flex>
-    <Heading.h4 mb={2}>
-      QR
-    </Heading.h4>
+    <Heading.h4 mb={2}>QR</Heading.h4>
     <Text>
       QR allows you provide a QR code for a string – like an Ethereum address.
     </Text>
@@ -757,7 +727,8 @@ These components are the building blocks for making your dApp's user interface.
         as="a"
         href="/components/rimble-ui/QR"
         target="\_blank"
-        title="Code and usage examples for the QR component">
+        title="Code and usage examples for the QR component"
+      >
         QR code
       </Button.Text>
     </Flex>
@@ -765,29 +736,27 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
-        <Radio label="Radio button" my={2} />
+      bg={"near-white"}
+    >
+      <Radio label="Radio button" my={2} />
     </Flex>
-    <Heading.h4 mb={2}>
-      Radio button
-    </Heading.h4>
-    <Text>
-      Allows a user to choose only one item from a list.
-    </Text>
+    <Heading.h4 mb={2}>Radio button</Heading.h4>
+    <Text>Allows a user to choose only one item from a list.</Text>
     <Flex alignItems="center">
       <Icon name="Code" color="primary" ml={0} size="24px" />
       <Button.Text
         as="a"
         href="/components/rimble-ui/Radio"
         target="\_blank"
-        title="Code and usage examples for the Radio component">
+        title="Code and usage examples for the Radio component"
+      >
         Radio code
       </Button.Text>
     </Flex>
@@ -795,39 +764,38 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
-        <Field label="Choose your currency">
-          <Select required={true}
-            options={[
-              { value: "eth", label: "Ether" },
-              { value: "btc", label: "Bitcoin" },
-              { value: "gno", label: "Gnosis" },
-              { value: "gnt", label: "Golem" },
-              { value: "rep", label: "Augur" }
-            ]}
-          />
-        </Field>
+      bg={"near-white"}
+    >
+      <Field label="Choose your currency">
+        <Select
+          required={true}
+          options={[
+            { value: "eth", label: "Ether" },
+            { value: "btc", label: "Bitcoin" },
+            { value: "gno", label: "Gnosis" },
+            { value: "gnt", label: "Golem" },
+            { value: "rep", label: "Augur" }
+          ]}
+        />
+      </Field>
     </Flex>
-    <Heading.h4 mb={2}>
-      Select
-    </Heading.h4>
-    <Text>
-      Allows a user to choose from a drop-down list.
-    </Text>
+    <Heading.h4 mb={2}>Select</Heading.h4>
+    <Text>Allows a user to choose from a drop-down list.</Text>
     <Flex alignItems="center">
       <Icon name="Code" color="primary" ml={0} size="24px" />
       <Button.Text
         as="a"
         href="/components/rimble-ui/Select"
         target="\_blank"
-        title="Code and usage examples for the Select component">
+        title="Code and usage examples for the Select component"
+      >
         Select code
       </Button.Text>
     </Flex>
@@ -835,29 +803,27 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
-  <Slider bg={"near-white"} min={"0"} max={"100"} step={"10"} />
+      bg={"near-white"}
+    >
+      <Slider bg={"near-white"} min={"0"} max={"100"} step={"10"} />
     </Flex>
-    <Heading.h4 mb={2}>
-      Slider
-    </Heading.h4>
-    <Text>
-      Allows a user to control a value using a slider.
-    </Text>
+    <Heading.h4 mb={2}>Slider</Heading.h4>
+    <Text>Allows a user to control a value using a slider.</Text>
     <Flex alignItems="center">
       <Icon name="Code" color="primary" ml={0} size="24px" />
       <Button.Text
         as="a"
         href="/components/rimble-ui/Slider"
         target="\_blank"
-        title="Code and usage examples for the Slider component">
+        title="Code and usage examples for the Slider component"
+      >
         Slider code
       </Button.Text>
     </Flex>
@@ -865,15 +831,16 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
-        <Table mx={3}>
+      bg={"near-white"}
+    >
+      <Table mx={3}>
         <thead>
           <tr>
             <th>Tx hash</th>
@@ -888,19 +855,16 @@ These components are the building blocks for making your dApp's user interface.
         </tbody>
       </Table>
     </Flex>
-    <Heading.h4 mb={2}>
-      Table
-    </Heading.h4>
-    <Text>
-      Allows a user to compare data in your product.
-    </Text>
+    <Heading.h4 mb={2}>Table</Heading.h4>
+    <Text>Allows a user to compare data in your product.</Text>
     <Flex alignItems="center">
       <Icon name="Code" color="primary" ml={0} size="24px" />
       <Button.Text
         as="a"
         href="/components/rimble-ui/Table"
         target="\_blank"
-        title="Code and usage examples for the Table component">
+        title="Code and usage examples for the Table component"
+      >
         Table code
       </Button.Text>
     </Flex>
@@ -908,21 +872,18 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
-        <Text fontSize="1">
-          Tell your friends about Rimble.
-        </Text>
+      bg={"near-white"}
+    >
+      <Text fontSize="1">Tell your friends about Rimble.</Text>
     </Flex>
-    <Heading.h4 mb={2}>
-      Text
-    </Heading.h4>
+    <Heading.h4 mb={2}>Text</Heading.h4>
     <Text>
       Text allows you to control the presentation of your copy content.
     </Text>
@@ -932,7 +893,8 @@ These components are the building blocks for making your dApp's user interface.
         as="a"
         href="/components/rimble-ui/Text"
         target="\_blank"
-        title="Code and usage examples for the Text component">
+        title="Code and usage examples for the Text component"
+      >
         Text code
       </Button.Text>
     </Flex>
@@ -940,29 +902,27 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
-        <Textarea placeholder="Start typing..." rows={4} />
+      bg={"near-white"}
+    >
+      <Textarea placeholder="Start typing..." rows={4} />
     </Flex>
-    <Heading.h4 mb={2}>
-      Text area
-    </Heading.h4>
-    <Text>
-      Textarea gives you a long-form free-text input for your forms.
-    </Text>
+    <Heading.h4 mb={2}>Text area</Heading.h4>
+    <Text>Textarea gives you a long-form free-text input for your forms.</Text>
     <Flex alignItems="center">
       <Icon name="Code" color="primary" ml={0} size="24px" />
       <Button.Text
         as="a"
         href="/components/rimble-ui/Textarea"
         target="\_blank"
-        title="Code and usage examples for the Textarea component">
+        title="Code and usage examples for the Textarea component"
+      >
         Textarea code
       </Button.Text>
     </Flex>
@@ -970,22 +930,19 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
-        <ToastMessage message={"Welcome to my dapp"} icon={"Mood"} my={3} />
+      bg={"near-white"}
+    >
+      <ToastMessage message={"Welcome to my dapp"} icon={"Mood"} my={3} />
     </Flex>
-    <Heading.h4 mb={2}>
-      ToastMessage
-    </Heading.h4>
-    <Text>
-      Provide your users with an unimportant temporary message.
-    </Text>
+    <Heading.h4 mb={2}>ToastMessage</Heading.h4>
+    <Text>Provide your users with an unimportant temporary message.</Text>
     <Flex alignItems="center">
       <Icon name="Code" color="primary" ml={0} size="24px" />
       <Button.Text
@@ -993,7 +950,8 @@ These components are the building blocks for making your dApp's user interface.
         href="/components/rimble-ui/ToastMessage"
         target="\_blank"
         mr={3}
-        title="Code and usage examples for the ToastMessage component">
+        title="Code and usage examples for the ToastMessage component"
+      >
         Toast code
       </Button.Text>
       <Icon name="Code" color="primary" ml={0} size="24px" />
@@ -1001,7 +959,8 @@ These components are the building blocks for making your dApp's user interface.
         as="a"
         href="/components/rimble-ui/ToastMessageProvider"
         target="\_blank"
-        title="Code and usage examples for the ToastMessageProvider component">
+        title="Code and usage examples for the ToastMessageProvider component"
+      >
         Provider code
       </Button.Text>
     </Flex>
@@ -1009,21 +968,23 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
-        <Tooltip message="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" placement="top">
-          <Link>0xAc03...1e5A</Link>
-        </Tooltip>
+      bg={"near-white"}
+    >
+      <Tooltip
+        message="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A"
+        placement="top"
+      >
+        <Link>0xAc03...1e5A</Link>
+      </Tooltip>
     </Flex>
-    <Heading.h4 mb={2}>
-      Tooltip
-    </Heading.h4>
+    <Heading.h4 mb={2}>Tooltip</Heading.h4>
     <Text>
       Give your user extra information about something on the interface.
     </Text>
@@ -1033,7 +994,8 @@ These components are the building blocks for making your dApp's user interface.
         as="a"
         href="/components/rimble-ui/Tooltip"
         target="\_blank"
-        title="Code and usage examples for the Tooltip component">
+        title="Code and usage examples for the Tooltip component"
+      >
         Tooltip code
       </Button.Text>
     </Flex>
@@ -1041,29 +1003,27 @@ These components are the building blocks for making your dApp's user interface.
 </Box>
 
 <Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
+  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
     <Flex
       mt={2}
       mb={3}
-      height={'150px'}
+      height={"150px"}
       justifyContent={"center"}
       alignItems={"center"}
-      bg={'near-white'}>
-        <UPortButton mx={2}>Connect</UPortButton>
+      bg={"near-white"}
+    >
+      <UPortButton mx={2}>Connect</UPortButton>
     </Flex>
-    <Heading.h4 mb={2}>
-      UPortButton
-    </Heading.h4>
-    <Text>
-      Show your users when an action will involve uPort.
-    </Text>
+    <Heading.h4 mb={2}>UPortButton</Heading.h4>
+    <Text>Show your users when an action will involve uPort.</Text>
     <Flex alignItems="center">
       <Icon name="Code" color="primary" ml={0} size="24px" />
       <Button.Text
         as="a"
         href="/components/rimble-ui/UPortButton"
         target="\_blank"
-        title="Code and usage examples for the UPortButton component">
+        title="Code and usage examples for the UPortButton component"
+      >
         UPortButton code
       </Button.Text>
     </Flex>
@@ -1074,21 +1034,21 @@ These components are the building blocks for making your dApp's user interface.
 
 ## Web3 Components
 
-<Box borderRadius="2" bg={'near-white'}>
-<Box mx={3} mt={4}>
-👉
-<Button.Text
-  title="Get the code at GitHub"
-  target="_blank"
-  as="a"
-  href="https://github.com/ConsenSys/rimble-web3-components"
->
-  <Flex alignItems="center">
-    Web3 Components GitHub repo
-    <Icon name="Launch" ml={2} size="14px" />
-  </Flex>
-</Button.Text>
-</Box>
+<Box borderRadius="2" bg={"near-white"}>
+  <Box mx={3} mt={4}>
+    👉
+    <Button.Text
+      title="Get the code at GitHub"
+      target="_blank"
+      as="a"
+      href="https://github.com/ConsenSys/rimble-web3-components"
+    >
+      <Flex alignItems="center">
+        Web3 Components GitHub repo
+        <Icon name="Launch" ml={2} size="14px" />
+      </Flex>
+    </Button.Text>
+  </Box>
 </Box>
 
 ### Components A-Z
