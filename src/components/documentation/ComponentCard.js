@@ -9,7 +9,7 @@ const ComponentCard = ({ componentName, children, description }) => {
         to={`/components/rimble-ui/${componentName}`}
         title={`Code and usage examples for the ${componentName} component`}
       >
-        <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
+        <Card Width={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
           <Flex
             mt={2}
             mb={3}
@@ -21,12 +21,8 @@ const ComponentCard = ({ componentName, children, description }) => {
           >
             {children}
           </Flex>
-          <Heading.h4 mb={2}>{componentName}</Heading.h4>
-          <Text>{description}</Text>
-          <Flex alignItems="center">
-            <Icon name="Code" color="primary" ml={0} mr={2} size="24px" />
-            {componentName} code
-          </Flex>
+          <Heading.h4 my={2}>{componentName}</Heading.h4>
+          <Text mb={2}>{description}</Text>
         </Card>
       </RimbleGatsbyLink>
     </Box>

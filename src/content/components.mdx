@@ -11,29 +11,28 @@ Rimble UI is our open-source React component library.
 
 These components are the building blocks for making your dApp's user interface.
 
-<Box mx={3} my={2}>
+<Box bg={"near-white"} borderTop={1} borderWidth={4} borderColor={"primary-light"} my={4}>
+  <Flex alignItems="center" mb={3} pt={3}>
+  <Icon color={"mid-gray"} name="Info" mr={2} ml={3} size="20px" /><Text caps color="mid-gray" fontSize={1} fontWeight="bold" mr={3}>Useful links</Text>
+  </Flex>
   <Link
     title="Get the code at GitHub"
     target="_blank"
     href="https://github.com/ConsenSys/rimble-ui"
   >
-    <Flex alignItems="center" p={3}
-    borderRadius="2"
-    bg={"near-white"}>
+    <Flex borderLeft={1} borderRight={1} borderColor={"light-gray"} alignItems="center" p={3}
+    bg={"white"}>
       Rimble-UI GitHub repo
       <Icon name="Launch" ml={2} size="14px" />
     </Flex>
   </Link>
-</Box>
-<Box mx={3}>
   <Link
     title="View the rimble-ui components in Storybook"
     target="_blank"
     href="https://rimble-ui-storybook.netlify.com/"
   >
-    <Flex alignItems="center" p={3}
-    borderRadius="2"
-    bg={"near-white"}>
+    <Flex border={1} borderColor={"light-gray"} alignItems="center" p={3}
+    bg={"white"}>
       Rimble-UI on Storybook
       <Icon name="Launch" ml={2} size="14px" />
     </Flex>
@@ -101,19 +100,7 @@ These components are the building blocks for making your dApp's user interface.
     "Creates a Box layout for content and actions about a specific subject."
   }
 >
-  <Card mx={3}>
-    <Flex>
-      <Box>
-        <Blockie seed="asdsad" />
-      </Box>
-      <Box>
-        <Text caps fontSize={0} fontWeight={4} ml={3}>
-          Your address:
-        </Text>
-        <Text ml={3}>0x1234...5678</Text>
-      </Box>
-    </Flex>
-  </Card>
+  <Image p={2} height="auto" maxWidth="100%" src="/images/card.png" />
 </ComponentCard>
 
 <ComponentCard
@@ -130,30 +117,21 @@ These components are the building blocks for making your dApp's user interface.
     "Allows a user to quickly view, copy and scan an Ethereum address."
   }
 >
-  <EthAddress mx={3} address="0x9505C8Fc1aD98b0aC651b91245d02D055fEc8E49" />
+<Image p={2} height="auto" maxWidth="100%" src="/images/Ethaddress.png" />
 </ComponentCard>
 
 <ComponentCard
   componentName={"Field"}
   description={"A quick way to add a label to your form inputs."}
 >
-  <Field label="Public address">
-    <Input type="text" required={true} placeholder="e.g. 0x1234...5678" />
-  </Field>
+  <Image p={2} height="auto" maxWidth="100%" src="/images/public-address.png" />
 </ComponentCard>
 
 <ComponentCard
   componentName={"Flash"}
   description={"A way to deliver messages to your user without blocking them."}
 >
-  <Flash mx={3} variant={"warning"} display={"flex"}>
-    <Box mr={3}>
-      <Icon name="Warning" />
-    </Box>
-    <Box mr={3}>
-      <Text color={"inherit"}>Only send ETH to addresses you trust.</Text>
-    </Box>
-  </Flash>
+  <Image p={2} height="auto" maxWidth="100%" src="/images/flash.png" />
 </ComponentCard>
 
 <ComponentCard
@@ -176,20 +154,7 @@ These components are the building blocks for making your dApp's user interface.
   componentName={"Form"}
   description={"Gives your inputs validation styles and feedback messages."}
 >
-  <Form onSubmit={e => e.preventDefault()}>
-    <Form.Field label="Email" width={1}>
-      <Form.Input type="email" required width={1} />
-    </Form.Field>
-    <Form.Field label="Password" width={1}>
-      <Form.Input type="password" required width={1} />
-    </Form.Field>
-    <Box>
-      <Form.Check label="Remember me?" mb={3} />
-    </Box>
-    <Button type="submit" width={1}>
-      Sign Up
-    </Button>
-  </Form>
+  <Image p={2} height="auto" maxWidth="100%" src="/images/form.png" />
 </ComponentCard>
 
 <ComponentCard
@@ -228,7 +193,7 @@ These components are the building blocks for making your dApp's user interface.
     "Input allows you add different types of inputs when building forms."
   }
 >
-  <Input type="search" required={true} placeholder="e.g. Ethereum" />
+  <Image p={2} height="auto" maxWidth="100%" src="/images/input.png" />
 </ComponentCard>
 
 <ComponentCard
@@ -261,19 +226,15 @@ These components are the building blocks for making your dApp's user interface.
   description={
     "Display information that requires a choice or an acknowledgement."
   }
-></ComponentCard>
+>
+<Image p={2} height="auto" maxWidth="100%" src="/images/modal.png" />
+</ComponentCard>
 
 <ComponentCard
   componentName={"Pill"}
   description={"Pill allows you to show a status or grouping at a glance."}
 >
-  <Pill color="green" mr={2}>
-    Done
-  </Pill>
-  <Pill color="blue" mr={2}>
-    Pending
-  </Pill>
-  <Pill color="danger">Failed</Pill>
+  <Image p={2} height="auto" maxWidth="100%" src="/images/pill.png" />
 </ComponentCard>
 
 <ComponentCard
@@ -293,14 +254,13 @@ These components are the building blocks for making your dApp's user interface.
 </ComponentCard>
 
 <ComponentCard
-  componentName={"Radio button"}
+  componentName={"Radio"}
   description={"Allows a user to choose only one item from a list."}
 >
   <Radio label="Radio button" my={2} />
 </ComponentCard>
 
   <ComponentCard componentName={"Select"} description={"Allows a user to choose from a drop-down list."}>
-
         <Field label="Choose your currency">
           <Select
             required={true}
@@ -313,7 +273,6 @@ These components are the building blocks for making your dApp's user interface.
             ]}
           />
         </Field>
-
   </ComponentCard>
 
 <ComponentCard
@@ -327,20 +286,7 @@ These components are the building blocks for making your dApp's user interface.
   componentName={"Table"}
   description={"Allows a user to compare data in your product."}
 >
-  <Table mx={3}>
-    <thead>
-      <tr>
-        <th>Tx hash</th>
-        <th>Value</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>0xeb...cc0</td>
-        <td>0.10 ETH</td>
-      </tr>
-    </tbody>
-  </Table>
+  <Image p={2} height="auto" maxWidth="100%" src="/images/table.png" />
 </ComponentCard>
 
 <ComponentCard
@@ -363,7 +309,7 @@ These components are the building blocks for making your dApp's user interface.
   componentName={"ToastMessage"}
   description={"Provide your users with an unimportant temporary message."}
 >
-  <ToastMessage message={"Welcome to my dapp"} icon={"Mood"} my={3} />
+  <Image p={2} height="auto" maxWidth="100%" src="/images/Toast.gif" />
 </ComponentCard>
 
 <ComponentCard
@@ -384,21 +330,21 @@ These components are the building blocks for making your dApp's user interface.
 
 ## Web3 Components
 
-<Box borderRadius="2" bg={"near-white"}>
-  <Box mx={3} mt={4}>
-    👉
-    <Button.Text
-      title="Get the code at GitHub"
-      target="_blank"
-      as="a"
-      href="https://github.com/ConsenSys/rimble-web3-components"
-    >
-      <Flex alignItems="center">
-        Web3 Components GitHub repo
-        <Icon name="Launch" ml={2} size="14px" />
-      </Flex>
-    </Button.Text>
-  </Box>
+<Box bg={"near-white"} borderTop={1} borderWidth={4} borderColor={"primary-light"} my={4}>
+  <Flex alignItems="center" mb={3} pt={3}>
+  <Icon color={"mid-gray"} name="Info" mr={2} ml={3} size="20px" /><Text caps color="mid-gray" fontSize={1} fontWeight="bold" mr={3}>Useful links</Text>
+  </Flex>
+  <Link
+    title="Get the code at GitHub"
+    target="_blank"
+    href="https://github.com/ConsenSys/rimble-web3-components"
+  >
+    <Flex borderLeft={1} borderRight={1} borderBottom={1} borderColor={"light-gray"} alignItems="center" p={3}
+    bg={"white"}>
+      Web3 Components GitHub repo
+      <Icon name="Launch" ml={2} size="14px" />
+    </Flex>
+  </Link>
 </Box>
 
 ### Components A-Z
