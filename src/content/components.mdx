@@ -43,135 +43,54 @@ These components are the building blocks for making your dApp's user interface.
 ### Components A-Z
 
 <Flex mb={5} flexWrap={'wrap'} alignItems={"stretch"}>
-  <Box width={[1, 1 / 2]} p={2}>
-    <RimbleGatsbyLink
-      to="/components/rimble-ui/Avatar"
-      title="Code and usage examples for the Avatar component">
-      <Card maxWidth={'640px'} mx={'auto'} p={3} px={4} height={"100%"}>
-        <Flex
-          mt={2}
-          mb={3}
-          height={'150px'}
-          justifyContent={"center"}
-          alignItems={"center"}
-          bg={'near-white'}>
-        <Avatar size="large" src="https://airswap-token-images.s3.amazonaws.com/DAI.png" />
-        </Flex>
-        <Heading.h4 mb={2}>
-          Avatar
-        </Heading.h4>
-        <Text>
-          Images that represent things – like currencies – in your product.
-        </Text>
-        <Flex alignItems="center">
-          <Icon name="Code" color="primary" ml={0} size="24px" />
-            Avatar code
-        </Flex>
-      </Card>
-    </RimbleGatsbyLink>
+  <ComponentCard componentName={"Avatar"} description={"Images that represent things – like currencies – in your product."}>
+    <Avatar size="large" src="https://airswap-token-images.s3.amazonaws.com/DAI.png" />
+  </ComponentCard>
+
+<ComponentCard
+  componentName={"Blockie"}
+  description={"Identicons for representing Ethereum addresses."}
+>
+  <Blockie
+    opts={{
+      seed: "foo",
+      color: "#dfe",
+      bgcolor: "#a71",
+      size: 19,
+      scale: 3,
+      spotcolor: "#000"
+    }}
+  />
+</ComponentCard>
+
+<ComponentCard
+  componentName={"Box"}
+  description={"A responsive component for box-model layouts."}
+>
+  <Box
+    textAlign="center"
+    bg="success"
+    color="white"
+    fontSize={4}
+    p={3}
+    width={[1, 1, 0.5]}
+  >
+    Box
   </Box>
+</ComponentCard>
 
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Blockie
-        opts={{
-          seed: "foo",
-          color: "#dfe",
-          bgcolor: "#a71",
-          size: 19,
-          scale: 3,
-          spotcolor: "#000"
-        }}
-      />
-    </Flex>
-    <Heading.h4 mb={2}>Blockie</Heading.h4>
-    <Text>Identicons for representing Ethereum addresses.</Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Blockie"
-        target="\_blank"
-        title="Code and usage examples for the Blockie component"
-      >
-        Blockie code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
+<ComponentCard
+  componentName={"Button"}
+  description={"Allows a user to take an action or make a choice."}
+>
+  <Button>Connect</Button>
+</ComponentCard>
 
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Box
-        textAlign="center"
-        bg="success"
-        color="white"
-        fontSize={4}
-        p={3}
-        width={[1, 1, 0.5]}
-      >
-        Box
-      </Box>
-    </Flex>
-    <Heading.h4 mb={2}>Box</Heading.h4>
-    <Text>A responsive component for box-model layouts.</Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Box"
-        target="\_blank"
-        title="Code and usage examples for the Box component"
-      >
-        Box code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
+<ComponentCard componentName={""} description={""}></ComponentCard>
 
-<Box width={[1, 1 / 2]} p={2}>
-  <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-    <Flex
-      mt={2}
-      mb={3}
-      height={"150px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-    >
-      <Button>Connect</Button>
-    </Flex>
-    <Heading.h4 mb={2}>Button</Heading.h4>
-    <Text>Allows a user to take an action or make a choice.</Text>
-    <Flex alignItems="center">
-      <Icon name="Code" color="primary" ml={0} size="24px" />
-      <Button.Text
-        as="a"
-        href="/components/rimble-ui/Button"
-        target="\_blank"
-        title="Code and usage examples for the Button component"
-      >
-        Box code
-      </Button.Text>
-    </Flex>
-  </Card>
-</Box>
+<ComponentCard componentName={""} description={""}></ComponentCard>
+
+<ComponentCard componentName={""} description={""}></ComponentCard>
 
 <Box width={[1, 1 / 2]} p={2}>
   <Card maxWidth={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
