@@ -191,39 +191,39 @@ These modals should help get the user ready to connect on the right network. Nex
 **Navigate the guide**
 
 <Flex justifyContent="space-between" mt={4} alignItems="center" flexWrap={'wrap'} alignItems={"stretch"}>
-<Box p={3} borderLeft={1} borderWidth={3} borderColor="primary" mb={3} width={[1, 1/2]}>
-<Flex alignItems="center">
-<Box>
-<Icon color="primary" mr={3} size="24px" name="ArrowBack" />
-</Box>
-<Box>
-<Link
-  fontSize={3}
-  title="Back to Guides"
-  href="/guides/ux"
->
-  Previous
-</Link>
-<Text>Back to Guides</Text>
-</Box>
-</Flex>
-</Box>
+  <Box p={3} borderLeft={1} borderWidth={3} borderColor="primary" mb={3} width={[1, 1 / 2]}>
+    <Flex alignItems="center">
+      <Box>
+        <Icon color="primary" mr={3} size="24px" name="ArrowBack" />
+      </Box>
+      <Box>
+        <RimbleGatsbyLink
+          fontSize={3}
+          title="Back to Guides"
+          to="/guides/ux"
+        >
+          Previous
+        </RimbleGatsbyLink>
+        <Text>Back to Guides</Text>
+      </Box>
+    </Flex>
+  </Box>
 
-<Box p={3} borderRight={1} borderWidth={3} borderColor="primary" mb={3} width={[1, 1/2]}>
-<Flex alignItems="center" justifyContent="flex-end">
-<Flex flexDirection={"column"} flexWrap={"wrap"} alignItems={"flex-end"}>
-<Link
-  fontSize={3}
-  title="Read the next part of the guide"
-  href="/guides/ux/connect-a-wallet-before"
->
-  Next
-</Link>
-<Text>Before they connect</Text>
-</Flex>
-<Box>
-<Icon color="primary" ml={3} size="24px" name="ArrowForward" />
-</Box>
-</Flex>
-</Box>
+  <Box p={3} borderRight={1} borderWidth={3} borderColor="primary" mb={3} width={[1, 1 / 2]}>
+    <Flex alignItems="center" justifyContent="flex-end">
+      <Flex flexDirection={"column"} flexWrap={"wrap"} alignItems={"flex-end"}>
+        <RimbleGatsbyLink
+          fontSize={3}
+          title="Read the next part of the guide"
+          to="/guides/ux/connect-a-wallet-before"
+        >
+          Next
+        </RimbleGatsbyLink>
+        <Text>Before they connect</Text>
+      </Flex>
+      <Box>
+        <Icon color="primary" ml={3} size="24px" name="ArrowForward" />
+      </Box>
+    </Flex>
+  </Box>
 </Flex>
