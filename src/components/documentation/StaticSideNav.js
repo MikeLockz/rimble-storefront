@@ -366,6 +366,34 @@ const StaticLinkList = () => (
           </RimbleGatsbyLink>
         </Li>
       </Ul>
+      <Ul>
+        <NavGroupHeading>Transaction states</NavGroupHeading>
+        <Li>
+          <RimbleGatsbyLink to={"/guides/ux/transactions-wallet-ux"}>
+            1. Don't rely on wallet UX
+          </RimbleGatsbyLink>
+        </Li>
+        <Li>
+          <RimbleGatsbyLink to={"/guides/ux/transactions-prevent-errors"}>
+            2. Prevention is priority
+          </RimbleGatsbyLink>
+        </Li>
+        <Li>
+          <RimbleGatsbyLink to={"/guides/ux/transactions-set-user-expectations"}>
+            3. Set user expectation
+          </RimbleGatsbyLink>
+        </Li>
+        <Li>
+          <RimbleGatsbyLink to={"/guides/ux/transactions-just-enough-feedback"}>
+            4. Just enough feedback
+          </RimbleGatsbyLink>
+        </Li>
+        <Li>
+          <RimbleGatsbyLink to={"/guides/ux/transactions-design-next-steps"}>
+            5. Design for next steps
+          </RimbleGatsbyLink>
+        </Li>
+      </Ul>
       <Li>
         <RimbleGatsbyLink to={"guides/content"}>dapp Content</RimbleGatsbyLink>
       </Li>
