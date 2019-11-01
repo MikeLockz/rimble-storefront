@@ -126,7 +126,7 @@ const Layout = ({ children, tableOfContents, title, componentType }) => {
 
             <ContentWrapper p={4}>
               <Box display={["block", "block", "block", "none"]}>
-                <Heading as={"h1"} fontSize={7} mb={4} px={3}>
+                <Heading as={"h1"} fontSize={[5, 6, 7]} mb={4} px={3}>
                   {title}
                 </Heading>
               </Box>
