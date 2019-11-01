@@ -47,31 +47,63 @@ And especially on desktop, users of WalletConnect or MetaMask can use this scree
 
 If the conditions weren't right, like if a user didn't have enough balance to pay the transaction fee, we would intercept this screen with an error modal. This allows the user to focus on one thing at a time.
 
-<Image
-  alt="UI showing a connected Ethereum account and its balance"
-  borderRadius={8}
-  height="auto"
-  src="/images/not-enough-eth.png"/>
+  <Image
+    src="/images/Not-enough-eth-modal.png"
+    alt="A modal showing an error message for when the user doesn't have enough ETH for a transaction"
+    height="auto"
+    my={3}/>
 
 
 All of this is about making sure the user meets all the right conditions to transact successfully. And they only press that Confirm button when they're 100% sure everything is as it should be.
 
 **Navigate the guide**
 
-<Button.Outline
-  mr={3}
-  title="Read the previous part of the guide"
-  as="a"
-  href="/guides/ux/transactions-wallet-ux"
->
-  Previous part
-</Button.Outline>
+<Flex justifyContent="space-between" mt={4} flexWrap={'wrap'}>
+  <Box width={[1, 1 / 2]} p={2}>
+  <RimbleGatsbyLink
+    title="Read the previous part of the guide"
+    to="/guides/ux/transactions-wallet-ux">
+  <Card border={0} p={3} borderLeft={1} borderWidth={3} borderColor="primary" mb={3} maxWidth={"640px"} mx={"auto"} p={3} px={4}>
+    <Flex alignItems="center">
+      <Box>
+        <Icon color="primary" mr={3} size="24px" name="ArrowBack" />
+      </Box>
+      <Box>
+        <Text
+          fontWeight="bold"
+          fontSize={3}
+          color="primary"
+        >
+          Previous
+        </Text>
+        <Text>Don't rely on wallet UX</Text>
+      </Box>
+    </Flex>
+    </Card>
+  </RimbleGatsbyLink>
+  </Box>
 
-<Button
-  mx={3}
+<Box width={[1, 1 / 2]} p={2}>
+<RimbleGatsbyLink
   title="Read the next part of the guide"
-  as="a"
-  href="/guides/ux/transactions-set-user-expectations"
->
-  Next part
-</Button>
+  to="/guides/ux/transactions-set-user-expectations">
+  <Card alignContent="center" p={3} border={0} borderRight={1} borderWidth={3} borderColor="primary" mb={3} maxWidth={"640px"} mx={"auto"} p={3} px={4}>
+    <Flex alignItems="center" justifyContent="flex-end">
+      <Flex flexDirection={"column"} flexWrap={"wrap"} alignItems={"flex-end"}>
+        <Text
+          fontSize={3}
+          fontWeight="bold"
+          color="primary"
+        >
+          Next
+        </Text>
+        <Text>Set user expectations</Text>
+      </Flex>
+      <Box>
+        <Icon color="primary" ml={3} size="24px" name="ArrowForward" />
+      </Box>
+    </Flex>
+  </Card>
+</RimbleGatsbyLink>
+</Box>
+</Flex>

@@ -7,26 +7,122 @@ import { Button, Heading } from "rimble-ui"
 
 <Flash>This guide is written based on a Devcon 5 talk. Check out the demo to see our advice in action. <Link href="http://rimble-devcon-demo.netlify.com">Devcon demo</Link></Flash>
 
-Include [Show too many transaction messages] button
+Once a transaction has started, beware of providing your user with too much information or too much feedback. Users questioned the value of being told everything that was going on, especially when they weren't familiar with the technology.
 
-## Just because you can, doesn't mean you should show the content
+When you download content from a service like Netflix, you don't get a play-by-play explanation of how that content makes its way from the cloud to your device. Or when you send money via your bank, you aren't able to trace it as it makes its way through the various systems to your desired recipient.
+
+## Less is more
+
+With Ethereum we're able to get a lot of information about where the transaction is in the lifecycle e.g. sent to the mempool, picked up by a miner and being mined. But just because we can, doesn't mean we should. Most users we spoke to were only interested in three things{":"}
+- Has it started?
+- What progress is it making?
+- Is it done?
+
+Use the demo to see how we designed for these three needs. [Devcon demo](http://rimble-devcon-demo.netlify.com)
+
+And here's what it looks like when you bombard your users with transaction feedback:
+
+<Button mb={3}>Show too much feedback</Button>
+
+In our testing, most users didn't stick around to watch their transaction finish either. They quickly switched tabs to complete other tasks, only to come back every now and then to check on progress. So any extra messaging has a strong chance of being missed.
+
+**Prioritise just enough feedback and keep it relevant to the task at hand:**
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+      <ul>
+        <li>Your ticket is on its way</li>
+        <li>Transferring your ticket</li>
+        <li>You're going to Devcon</li>
+      </ul>
+      </Text>
+    ),
+    negative: (
+      <Text>
+      <ul>
+        <li>Transaction started</li>
+        <li>Transaction pending</li>
+        <li>Transferring being mined</li>
+        <li>First block mined</li>
+        <li>Transaction done</li>
+        </ul>
+      </Text>
+    )
+  }}
+</DoDont>
+
+## Make it optional
+It's also important to question whether you need to lock users into watching their transaction go through. As part of our demo we designed a minimised state, so that users could continue to interact with the product while keeping an eye on their transaction. They weren't forced into watching their transaction complete via a modal.
+
+<Image
+  my={3}
+  src="/images/transaction-banner.png"
+  alt="A page with a banner depicting transaction progress"
+  height="auto" />
+
+
+And if you can't read the banner in the above screenshot:
+
+<Flex mt={3} justifyContent="center">
+<Image
+  my={3}
+  src="/images/transaction-banner-focus.png"
+  alt="A banner depicting transaction progress"
+  height="auto"
+  />
+</Flex>
+
 
 **Navigate the guide**
 
-<Button.Outline
-  mr={3}
-  title="Read the previous part of the guide"
-  as="a"
-  href="/guides/ux/transactions-set-user-expectations"
->
-  Previous part
-</Button.Outline>
+<Flex justifyContent="space-between" mt={4} flexWrap={'wrap'}>
+  <Box width={[1, 1 / 2]} p={2}>
+  <RimbleGatsbyLink
+    title="Read the previous part of the guide"
+    to="/guides/ux/transactions-set-user-expectations">
+  <Card border={0} p={3} borderLeft={1} borderWidth={3} borderColor="primary" mb={3} maxWidth={"640px"} mx={"auto"} p={3} px={4}>
+    <Flex alignItems="center">
+      <Box>
+        <Icon color="primary" mr={3} size="24px" name="ArrowBack" />
+      </Box>
+      <Box>
+        <Text
+          fontWeight="bold"
+          fontSize={3}
+          color="primary"
+        >
+          Previous
+        </Text>
+        <Text>Set user expectations</Text>
+      </Box>
+    </Flex>
+    </Card>
+  </RimbleGatsbyLink>
+  </Box>
 
-<Button
-  mx={3}
+<Box width={[1, 1 / 2]} p={2}>
+<RimbleGatsbyLink
   title="Read the next part of the guide"
-  as="a"
-  href="/guides/ux/transactions-design-next-steps"
->
-  Next part
-</Button>
+  to="/guides/ux/transactions-design-next-steps">
+  <Card alignContent="center" p={3} border={0} borderRight={1} borderWidth={3} borderColor="primary" mb={3} maxWidth={"640px"} mx={"auto"} p={3} px={4}>
+    <Flex alignItems="center" justifyContent="flex-end">
+      <Flex flexDirection={"column"} flexWrap={"wrap"} alignItems={"flex-end"}>
+        <Text
+          fontSize={3}
+          fontWeight="bold"
+          color="primary"
+        >
+          Next
+        </Text>
+        <Text>Design next steps</Text>
+      </Flex>
+      <Box>
+        <Icon color="primary" ml={3} size="24px" name="ArrowForward" />
+      </Box>
+    </Flex>
+  </Card>
+</RimbleGatsbyLink>
+</Box>
+</Flex>

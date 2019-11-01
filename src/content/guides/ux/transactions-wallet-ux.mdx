@@ -5,15 +5,17 @@ description:
 
 import { Button, Heading } from "rimble-ui"
 
-## Don't rely on Wallet UX
-
 <Flash>This guide is written based on a Devcon 5 talk. Check out the demo to see our advice in action. <Link href="http://rimble-devcon-demo.netlify.com">Devcon demo</Link></Flash>
 
 At Rimble we've debated about whether transactions are the remit of the dApp or the wallet. The clue is in the title of this page in terms of where we've landed.
 
 When we say not to rely on wallet UX, that doesn't mean we think wallet UX is bad. But at the moment wallets have to build their interfaces for lots of different potential use-cases. So they refer to things quite generally. This works for them, but for a user this simply places more cognitive load on them while they're trying to achieve their task.
 
+
+
 We may be moving towards a world where wallets will accept and display more information from dApps or wallet interactions might be possible from the dApp itself and the distinction between the two will blur. But for now, you need to make the most of your opportunity to explain what's going in the context of what your user is doing. And that's why you can't rely on the wallet to give your user the full picture.
+
+## Use specific language
 
 A wallet will speak in terms of a transaction, using very generic terms. Where as you can refer to the task at hand, making it feel more natural and understandable.
 
@@ -21,12 +23,20 @@ A wallet will speak in terms of a transaction, using very generic terms. Where a
   {{
     positive: (
       <Text>
-        Sending your ticket
+        <ul>
+          <li>Sending your ticket...</li>
+          <li>Vote cast</li>
+          <li>Cryptokitty failed to send</li>
+        </ul>
       </Text>
     ),
     negative: (
       <Text>
-        Transaction in progress
+        <ul>
+          <li> Processing transaction...</li>
+          <li> Transaction confirmed</li>
+          <li> Transaction failed</li>
+        </ul>
       </Text>
     )
   }}
@@ -34,31 +44,92 @@ A wallet will speak in terms of a transaction, using very generic terms. Where a
 
 Not to mention if an error were to occur like not having enough ETH for transaction fees you can provide more relevant and helpful explanations than the wallet can. The need for fees, how to top-up ETH and the opportunity to try again will all make more sense in the context of the task they're trying to achieve on your dApp.
 
-When you buy something from a Web2 product it's the product that guides you throughout, alerts you to errors and keeps you updated on progress – not your bank.
+<Image
+  my={3}
+  src="/images/Not-enough-eth-modal.png"
+  alt="A modal showing an error message for when the user doesn't have enough ETH for a transaction"
+  height="auto" />
 
-<DoDont>
-  {{
-    positive: (
-      <Text>
-        Hi
-      </Text>
-    ),
-    negative: (
-      <Text>
-        Insufficient funds
-      </Text>
-    )
-  }}
-</DoDont>
+<Flex justifyContent="center">
+<Image
+  my={3}
+  src="/images/metamask_error.png"
+  alt="A MetaMask not enough funds error message  "
+  height="auto"
+  width={[1/2]} />
+</Flex>
+
+<Flash mb={4}>Compare the wallet and the dApp example. See how more helpful it is to the user when you can offer more of an explanation</Flash>
+
+When you buy something from a Web2 product it's the product that guides you throughout, alerts you to errors and keeps you updated on progress – not your bank.
 
 Language is one of the easiest ways to put your users at ease throughout this process. Think about what the user thinks they’re doing and phrase any communication around that rather than what is technically happening.
 
+<Image
+  my={3}
+  src="/images/sending-your-ticket.png"
+  alt="A modal showing that a ticket is being sent to a user"
+  height="auto" />
+
+<Image
+  my={3}
+  src="/images/ticket-sent.png"
+  alt="A modal showing a success state"
+  height="auto"
+  />
+
+<Flash mb={4}>Our demo refers what's happening in the user's mind{":"} a ticket being sent, rather than a transaction.</Flash>
+
+
+
 **Navigate the guide**
 
-<Button
+<Flex justifyContent="space-between" mt={4} flexWrap={'wrap'}>
+  <Box width={[1, 1 / 2]} p={2}>
+  <RimbleGatsbyLink
+    title="Read the previous part of the guide"
+    to="/guides/ux/">
+  <Card border={0} p={3} borderLeft={1} borderWidth={3} borderColor="primary" mb={3} maxWidth={"640px"} mx={"auto"} p={3} px={4}>
+    <Flex alignItems="center">
+      <Box>
+        <Icon color="primary" mr={3} size="24px" name="ArrowBack" />
+      </Box>
+      <Box>
+        <Text
+          fontWeight="bold"
+          fontSize={3}
+          color="primary"
+        >
+          Previous
+        </Text>
+        <Text>Back to Guides</Text>
+      </Box>
+    </Flex>
+    </Card>
+  </RimbleGatsbyLink>
+  </Box>
+
+<Box width={[1, 1 / 2]} p={2}>
+<RimbleGatsbyLink
   title="Read the next part of the guide"
-  as="a"
-  href="/guides/ux/transactions-prevent-errors"
->
-  Next part
-</Button>
+  to="/guides/ux/transactions-prevent-errors">
+  <Card alignContent="center" p={3} border={0} borderRight={1} borderWidth={3} borderColor="primary" mb={3} maxWidth={"640px"} mx={"auto"} p={3} px={4}>
+    <Flex alignItems="center" justifyContent="flex-end">
+      <Flex flexDirection={"column"} flexWrap={"wrap"} alignItems={"flex-end"}>
+        <Text
+          fontSize={3}
+          fontWeight="bold"
+          color="primary"
+        >
+          Next
+        </Text>
+        <Text>Prevention is priority</Text>
+      </Flex>
+      <Box>
+        <Icon color="primary" ml={3} size="24px" name="ArrowForward" />
+      </Box>
+    </Flex>
+  </Card>
+</RimbleGatsbyLink>
+</Box>
+</Flex>
