@@ -9,116 +9,39 @@ import { Button, Heading } from "rimble-ui"
 
 ## List of guides
 
-<Box>
-  <Card width={"auto"} mx={"auto"} mt={4} mb={5} p={0}>
-    <Flex
-      height={"200px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"near-white"}
-      overflow={"scroll"}
-      borderBottom={1}
-      borderWidth={3}
-      borderColor="primary-light"
-    >
-      <Image
-        p={8}
-        alt="Example persona"
-        width={1}
-        src="/images/Wrong-network-modal.png"
-      />
-    </Flex>
-    <Box px={4} py={3}>
-      <Heading.h2 my={3}>Connecting to a dApp</Heading.h2>
-      <Heading.h5 my={3} color="#666">Help your users connect their Ethereum account to your dApp </Heading.h5>
-      <Text my={3}>
-        A well-designed connection flow will guide users through the process, prepare them for being connected and let them know about some fundamental blockchain concepts.
-      </Text>
-      <Flex alignContent="center" alignItems="center">
-        <Icon name="Info" color="gray" size="16px" mr={2}/>
-        <Text fontSize="1" color="gray">This guide has 5 parts</Text>
-      </Flex>
-    </Box>
-    <Box borderTop={1} borderWidth={1} borderColor="light-gray">
-      <Flex my={3} px={3} alignItems="center" justifyContent="flex-end" flexWrap={'wrap'} alignItems={"stretch"}>
-        <Flex alignItems="center" mx={3}>
-          <Link
-            fontSize={2}
-            href="https://rimble-app-demo.netlify.com"
-            title="Try our demo to see our connection flow"
-            target="_blank">
-            <Flex alignItems="center">
-            Try demo
-            <Icon ml={2} color="primary" size="16px" name="Launch" />
-            </Flex>
-          </Link>
-        </Flex>
-        <RimbleGatsbyLink
-          to="/guides/ux/connect-a-wallet-conditions"
-          title="To the Connecting a dApp guide"
-        >
-          <Button mx={3}>
-          Read guide
-          </Button>
-        </RimbleGatsbyLink>
-      </Flex>
-    </Box>
-  </Card>
-</Box>
+<GuideCard
+ GuideTitle="Connecting to a dApp"
+ GuideImage="/images/Wrong-network-modal.png"
+ ImageAlt="A modal telling the user they're on the wrong network"
+ GuideSubTitle="Help your users connect their Ethereum account to your dApp"
+ GuideDescription="A well-designed connection flow will guide users through the process, prepare them for being connected and let them know about some fundamental blockchain concepts."
+ DemoLink="https://rimble-app-demo.netlify.com"
+ DemoTitle="Try our demo to see our connection flow"
+ DemoCTA="Try demo"
+ GuideLink="/guides/ux/connect-a-wallet-conditions"
+ GuideLinkTitle="To the Connecting a dApp guide"
+ GuideCTA="Read guide">
+  <Flex alignContent="center" alignItems="center">
+     <Icon name="Info" color="gray" size="16px" mr={2}/>
+     <Text fontSize="1" color="gray">This guide has 5 parts</Text>
+     </Flex>
+</GuideCard>
 
-<Box>
-  <Card width={"auto"} mx={"auto"} mt={4} mb={5} p={0}>
-    <Flex
-      height={"200px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      bg={"#D4A8B7"}
-      overflow={"scroll"}
-      borderBottom={1}
-      borderWidth={3}
-      borderColor="primary-light"
-    >
-    <Image
-      px={2}
-      alt="Example persona"
-      width={1}
-      src="/images/transaction-banner-focus.png"
-    />
-    </Flex>
-    <Box px={4} py={3}>
-      <Heading.h2 my={3}>Transaction states</Heading.h2>
-      <Heading.h5 my={3} color="#666">The dos and don'ts of designing transaction states </Heading.h5>
-      <Text my={3}>
-        Transactions are complicated, slow, irreversible and need ETH. Here's how to make them clearer and simpler for your users.
-      </Text>
-      <Flex alignContent="center" alignItems="center">
-        <Icon name="Info" color="gray" size="16px" mr={2}/>
-        <Text fontSize="1" color="gray">This guide has 5 parts</Text>
-      </Flex>
-    </Box>
-    <Box borderTop={1} borderWidth={1} borderColor="light-gray">
-      <Flex my={3} px={3} alignItems="center" justifyContent="flex-end" flexWrap={'wrap'} alignItems={"stretch"}>
-        <Flex alignItems="center" mx={3}>
-          <Link
-          fontSize={2}
-          href="https://rimble-devcon-demo.netlify.com"
-          title="Try the Devcon demo to see our transaction design"
-          target="_blank">
-            <Flex alignItems="center">
-            Try demo
-            <Icon ml={2} color="primary" size="16px" name="Launch" />
-            </Flex>
-          </Link>
-        </Flex>
-        <RimbleGatsbyLink
-          to="/guides/ux/transactions-wallet-ux"
-          title="To the transaction states guide"
-        >
-          <Button mx={3}>
-            Read guide
-          </Button>
-        </RimbleGatsbyLink>
-      </Flex>
-    </Box>
-  </Card>
-</Box>
+
+<GuideCard
+ GuideTitle="Transaction states"
+ GuideImage="/images/transaction-banner-focus.png"
+ ImageAlt="A transaction progress indicator"
+ GuideSubTitle="The dos and don'ts of designing transaction states"
+ GuideDescription="Transactions are complicated, slow, irreversible and need ETH. Here's how to make them clearer and simpler for your users."
+ DemoLink="https://rimble-devcon-demo.netlify.com"
+ DemoTitle="Try the Devcon demo to see our transaction design"
+ DemoCTA="Try demo"
+ GuideLink="/guides/ux/transactions-wallet-ux"
+ GuideLinkTitle="To the transaction states guide"
+ GuideCTA="Read guide">
+  <Flex alignContent="center" alignItems="center">
+     <Icon name="Info" color="gray" size="16px" mr={2}/>
+     <Text fontSize="1" color="gray">This guide has 5 parts</Text>
+     </Flex>
+</GuideCard>
