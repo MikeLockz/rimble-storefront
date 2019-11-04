@@ -6,30 +6,18 @@ const GuideCard = ({ GuideTitle, GuideImage, GuideSubTitle, GuideDescription, ch
 return (
   <Box>
     <Card width={"auto"} mx={"auto"} mt={4} mb={5} p={0}>
-      <Flex
-        height={"200px"}
-        justifyContent={"center"}
-        alignItems={"center"}
-        bg={"near-white"}
-        overflow={"scroll"}
-        borderBottom={1}
-        borderWidth={3}
-        borderColor="primary-light"
-      >
       <Image
-        p={8}
         alt={ImageAlt}
         width={1}
         src={GuideImage}
       />
-      </Flex>
-      <Box px={4} py={3}>
-        <Heading.h2 my={3}>{GuideTitle}</Heading.h2>
-        <Heading.h5 my={3} color="#666">{GuideSubTitle}</Heading.h5>
-        <Text my={3}>
-          {GuideDescription}
-        </Text>
-          {children}
+      <Box borderTop={1} borderWidth={3} borderColor="primary-light" px={4} py={3}>
+      <Heading.h2 py={3}>{GuideTitle}</Heading.h2>
+      <Heading.h5 py={3} color="#666">{GuideSubTitle}</Heading.h5>
+      <Text my={3}>
+        {GuideDescription}
+      </Text>
+        {children}
       </Box>
       <Box borderTop={1} borderWidth={1} borderColor="light-gray">
         <Flex my={3} px={3} alignItems="center" justifyContent="flex-end" flexWrap={'wrap'} alignItems={"stretch"}>
