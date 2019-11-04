@@ -201,56 +201,13 @@ Of course you should respect their decision and offer them a way to actually rej
   }}
 </DoDont>
 
-Ok, so they've connected, accepted and signed. Time to let them know that's all for now.
+Ok, so they've connected, accepted and signed. Time to let them know that's all for now
 
-**Navigate the guide**
-
-<Flex justifyContent="space-between" mt={4} flexWrap={'wrap'}>
-  <Box width={[1, 1 / 2]} p={2}>
-  <RimbleGatsbyLink
-    title="Read the previous part of the guide"
-    to="/guides/ux/connect-a-wallet-before">
-  <Card border={0} p={3} borderLeft={1} borderWidth={3} borderColor="primary" mb={3} maxWidth={"640px"} mx={"auto"} p={3} px={4}>
-    <Flex alignItems="center">
-      <Box>
-        <Icon color="primary" mr={3} size="24px" name="ArrowBack" />
-      </Box>
-      <Box>
-        <Text
-          fontWeight="bold"
-          fontSize={3}
-          color="primary"
-        >
-          Previous
-        </Text>
-        <Text>Before they connect</Text>
-      </Box>
-    </Flex>
-    </Card>
-  </RimbleGatsbyLink>
-  </Box>
-
-<Box width={[1, 1 / 2]} p={2}>
-<RimbleGatsbyLink
-  title="Read the next part of the guide"
-  to="/guides/ux/connect-a-wallet-success">
-  <Card alignContent="center" p={3} border={0} borderRight={1} borderWidth={3} borderColor="primary" mb={3} maxWidth={"640px"} mx={"auto"} p={3} px={4}>
-    <Flex alignItems="center" justifyContent="flex-end">
-      <Flex flexDirection={"column"} flexWrap={"wrap"} alignItems={"flex-end"}>
-        <Text
-          fontSize={3}
-          fontWeight="bold"
-          color="primary"
-        >
-          Next
-        </Text>
-        <Text>Confirm success</Text>
-      </Flex>
-      <Box>
-        <Icon color="primary" ml={3} size="24px" name="ArrowForward" />
-      </Box>
-    </Flex>
-  </Card>
-</RimbleGatsbyLink>
-</Box>
-</Flex>
+<GuideNextPrevious
+  PreviousTitle={"To the previous Guide"}
+  PreviousUrl={"/guides/ux/connect-a-wallet-before"}
+  PreviousGuideName={"Before they connect"}
+  NextTitle={"To the next part of the Guide"}
+  NextUrl={"/guides/ux/connect-a-wallet-success"}
+  NextGuideName={"Confirm success"}>
+</GuideNextPrevious>
