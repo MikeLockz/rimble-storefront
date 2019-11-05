@@ -3,9 +3,7 @@ import styled from "styled-components";
 import { Link as GatsbyLink } from "gatsby";
 import { Text, Box, Flex, Link } from "rimble-ui";
 import theme from "./../../theme";
-import Search from "../Search";
-
-const searchIndices = [{ name: `Pages`, title: `Pages`, hitComp: `PageHit` }];
+import SearchInput from "./SearchInput";
 
 const RimbleGatsbyLink = props => (
   <Text fontSize={1} fontWeight={"bold"} pb={2}>
@@ -393,11 +391,11 @@ const StaticSideNav = ({ isNavOpen }) => {
         flexDirection={"column"}
         bg={"white"}
       >
-        <Box p={2}>
-          <Search collapse indices={searchIndices} />
+        <Box p={3} borderBottom={1} borderColor={'blacks.3'}>
+          <SearchInput />
         </Box>
 
-        <Box overflow={"scroll"} p={2}>
+        <Box px={2} py={3} overflow={"scroll"}>
           <StaticLinkList />
         </Box>
       </Flex>
