@@ -64,329 +64,164 @@ These components are the building blocks for making your dApp's user interface.
 <Flex mb={5} flexWrap={'wrap'} alignItems={"stretch"}>
 
 <ComponentCard
-  componentName={"Avatar"}
-  description={
-    "Images that represent things – like currencies – in your product."
-  }
->
-  <Avatar
-    size="large"
-    src="https://airswap-token-images.s3.amazonaws.com/DAI.png"
-  />
-</ComponentCard>
+  componentName="Avatar"
+  description="Images that represent things – like currencies – in your product."
+/>
 
 <ComponentCard
-  componentName={"Blockie"}
-  description={"Identicons for representing Ethereum addresses."}
->
-  <Blockie
-    opts={{
-      seed: "foo",
-      color: "#dfe",
-      bgcolor: "#a71",
-      size: 19,
-      scale: 3,
-      spotcolor: "#000"
-    }}
-  />
-</ComponentCard>
+  componentName="Blockie"
+  description="Identicons for representing Ethereum addresses."
+/>
 
 <ComponentCard
-  componentName={"Box"}
-  description={"A responsive component for box-model layouts."}
->
-  <Box
-    textAlign="center"
-    bg="success"
-    color="white"
-    fontSize={4}
-    p={3}
-    width={[1, 1, 0.5]}
-  >
-    Box
-  </Box>
-</ComponentCard>
+  componentName="Box"
+  description="A responsive component for box-model layouts."
+/>
 
 <ComponentCard
-  componentName={"Button"}
-  description={"Allows a user to take an action or make a choice."}
->
-  <Button>Connect</Button>
-</ComponentCard>
+  componentName="Button"
+  description="Allows a user to take an action or make a choice."
+/>
 
 <ComponentCard
-  componentName={"Card"}
-  description={
-    "Creates a Box layout for content and actions about a specific subject."
-  }
->
-  <Image p={2} height="auto" maxWidth="100%" src="/images/card.png" />
-</ComponentCard>
+  componentName="Card"
+  description="Creates a Box layout for content and actions about a specific subject."
+/>
 
 <ComponentCard
-  componentName={"Checkbox"}
-  description={"Allows a user to choose one or more items from a list."}
->
-  <Checkbox defaultChecked label="Ether" required={true} mr={4} />
-  <Checkbox label="EOS" required={true} />
-</ComponentCard>
+  componentName="Checkbox"
+  description="Allows a user to choose one or more items from a list."
+/>
 
 <ComponentCard
-  componentName={"EthAddress"}
-  description={
-    "Allows a user to quickly view, copy and scan an Ethereum address."
-  }
->
-  <Image p={2} height="auto" maxWidth="100%" src="/images/Ethaddress.png" />
-</ComponentCard>
+  componentName="EthAddress"
+  description="Allows a user to quickly view, copy and scan an Ethereum address."
+/>
 
 <ComponentCard
-  componentName={"Field"}
-  description={"A quick way to add a label to your form inputs."}
->
-  <Image p={2} height="auto" maxWidth="100%" src="/images/public-address.png" />
-</ComponentCard>
+  componentName="Field"
+  description="A quick way to add a label to your form inputs."
+/>
 
 <ComponentCard
-  componentName={"Flash"}
-  description={"A way to deliver messages to your user without blocking them."}
->
-  <Image p={2} height="auto" maxWidth="100%" src="/images/flash.png" />
-</ComponentCard>
+  componentName="Flash"
+  description="A way to deliver messages to your user without blocking them."
+/>
 
 <ComponentCard
-  componentName={"Flex"}
-  description={
-    "For arranging content in columns or rows and making responsive layouts."
-  }
->
-  <Flex>
-    <Box p={3} mr={3} width={1 / 2} color="white" bg="primary">
-      Flex
-    </Box>
-    <Box p={3} width={1 / 2} color="white" bg="success">
-      Box
-    </Box>
-  </Flex>
-</ComponentCard>
+  componentName="Flex"
+  description="For arranging content in columns or rows and making responsive layouts."
+/>
 
 <ComponentCard
-  componentName={"Form"}
-  description={"Gives your inputs validation styles and feedback messages."}
->
-  <Image p={2} height="auto" maxWidth="100%" src="/images/form.png" />
-</ComponentCard>
+  componentName="Form"
+  description="Gives your inputs validation styles and feedback messages."
+/>
 
 <ComponentCard
-  componentName={"Heading"}
-  description={
-    "Give pages or page areas titles that introduce the content below."
-  }
->
-  <Heading as={"h4"} mb={2}>
-    Heading
-  </Heading>
-</ComponentCard>
+  componentName="Heading"
+  description="Give pages or page areas titles that introduce the content below."
+/>
 
 <ComponentCard
-  componentName={"Icon"}
-  description={"Add Material Design icons to your interface using Rimble."}
->
-  <Icon name="Code" color="primary" ml={0} size="24px" />
-</ComponentCard>
+  componentName="Icon"
+  description="Add Material Design icons to your interface using Rimble."
+/>
 
 <ComponentCard
   componentName={"Image"}
   description={"Add an image and its alt description to your product."}
->
-  <Image
-    alt="Rimble's unofficial bird logo from Telegram"
-    borderRadius={8}
-    height="100px"
-    src="/images/rimble-unofficial-logo.png"
-  />
-</ComponentCard>
+/>
 
 <ComponentCard
   componentName={"Input"}
-  description={
-    "Input allows you add different types of inputs when building forms."
-  }
->
-  <Image p={2} height="auto" maxWidth="100%" src="/images/input.png" />
-</ComponentCard>
+  description={"Input allows you add different types of inputs when building forms. "}
+/>
 
 <ComponentCard
   componentName={"Link"}
   description={"Link provides a basic styled link – ideal for use in copy."}
->
-  <Link href="#!" target="_blank" title="This link goes somewhere">
-    Visit this link!
-  </Link>
-</ComponentCard>
+/>
 
 <ComponentCard
   componentName={"Loader"}
-  description={
-    "Loader lets you know that a process is happening or content is loading."
-  }
->
-  <Loader size="100px" />
-</ComponentCard>
+  description={"Loader lets you know that a process is happening or content is loading."}
+/>
 
 <ComponentCard
   componentName={"MetaMaskButton"}
   description={"Show your users when an action will involve MetaMask."}
->
-  <MetaMaskButton mx={2}>Connect</MetaMaskButton>
-</ComponentCard>
+/>
 
 <ComponentCard
   componentName={"Modal"}
-  description={
-    "Display information that requires a choice or an acknowledgement."
-  }
->
-  <Image p={2} height="auto" maxWidth="100%" src="/images/modal.png" />
-</ComponentCard>
+  description={"Display information that requires a choice or an acknowledgement."}
+/>
 
 <ComponentCard
   componentName={"Pill"}
   description={"Pill allows you to show a status or grouping at a glance."}
->
-  <Image p={2} height="auto" maxWidth="100%" src="/images/pill.png" />
-</ComponentCard>
+/>
 
 <ComponentCard
   componentName={"Progress"}
-  description={"Progress shows users progress through a process or loading."}
->
-  <Progress value={0.5} />
-</ComponentCard>
+  description={"Shows a user their progress through a process or loading."}
+/>
 
 <ComponentCard
   componentName={"QR"}
-  description={
-    "QR allows you provide a QR code for a string – like an Ethereum address."
-  }
->
-  <QR size="80px" value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
-</ComponentCard>
+  description={"QR allows you provide a QR code for a string – like an Ethereum address."}
+/>
 
 <ComponentCard
   componentName={"Radio"}
   description={"Allows a user to choose only one item from a list."}
->
-  <Radio label="Radio button" my={2} />
-</ComponentCard>
+/>
 
 <ComponentCard
   componentName={"Select"}
   description={"Allows a user to choose from a drop-down list."}
->
-  <Field label="Choose your currency">
-    <Select
-      required={true}
-      options={[
-        { value: "eth", label: "Ether" },
-        { value: "btc", label: "Bitcoin" },
-        { value: "gno", label: "Gnosis" },
-        { value: "gnt", label: "Golem" },
-        { value: "rep", label: "Augur" }
-      ]}
-    />
-  </Field>
-</ComponentCard>
+/>
 
 <ComponentCard
   componentName={"Slider"}
   description={"Allows a user to control a value using a slider."}
->
-  <Slider bg={"near-white"} min={"0"} max={"100"} step={"10"} />
-</ComponentCard>
+/>
 
 <ComponentCard
   componentName={"Table"}
   description={"Allows a user to compare data in your product."}
->
-  <Image p={2} height="auto" maxWidth="100%" src="/images/table.png" />
-</ComponentCard>
+/>
 
 <ComponentCard
   componentName={"Text"}
-  description={
-    "Text allows you to control the presentation of your copy content."
-  }
->
-  <Text fontSize="1">Tell your friends about Rimble.</Text>
-</ComponentCard>
+  description={"Text allows you to control the presentation of your copy content."}
+/>
 
 <ComponentCard
   componentName={"Textarea"}
   description={"Textarea gives you a long-form free-text input for your forms."}
->
-  <Textarea placeholder="Start typing..." rows={4} />
-</ComponentCard>
+/>
 
 <ComponentCard
   componentName={"ToastMessage"}
   description={"Provide your users with an unimportant temporary message."}
->
-  <Image p={2} src="/images/card.png" />
-</ComponentCard>
+/>
 
 <ComponentCard
   componentName={"Tooltip"}
-  description={
-    "Give your user extra information about something on the interface."
-  }
->
-  <Tooltip message="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" placement="top">
-    <Text fontWeight={"bold"} color={"primary"}>
-      0xAc03...1e5A
-    </Text>
-  </Tooltip>
-</ComponentCard>
+  description={"Give your user extra information about something on the interface."}
+/>
 
-  <ComponentCard componentName={"UPortButton"} description={"Show your users when an action will involve uPort."}>
-    <UPortButton mx={2}>Connect</UPortButton>
-  </ComponentCard>
+<ComponentCard
+  componentName={"UPortButton"}
+  description={"Show your users when an action will involve uPort."}
+/>
+
+
 </Flex>
 
-## Web3 Components
-
-<Box
-  bg={"near-white"}
-  borderTop={1}
-  borderWidth={4}
-  borderColor={"primary-light"}
-  my={4}
->
-  <Flex alignItems="center" mb={3} pt={3}>
-    <Icon color={"mid-gray"} name="Info" mr={2} ml={3} size="20px" />
-    <Text caps color="mid-gray" fontSize={1} fontWeight="bold" mr={3}>
-      Useful links
-    </Text>
-  </Flex>
-  <Link
-    title="Get the code at GitHub"
-    target="_blank"
-    href="https://github.com/ConsenSys/rimble-web3-components"
-  >
-    <Flex
-      borderLeft={1}
-      borderRight={1}
-      borderBottom={1}
-      borderColor={"light-gray"}
-      alignItems="center"
-      p={3}
-      bg={"white"}
-    >
-      Web3 Components GitHub repo
-      <Icon name="Launch" ml={2} size="14px" />
-    </Flex>
-  </Link>
-</Box>
+## Web3 components
 
 ### Components A-Z
 
