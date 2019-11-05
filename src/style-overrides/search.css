@@ -1,0 +1,26 @@
+.algolia-autocomplete .algolia-docsearch-suggestion--highlight {
+  color: #4e3fce;
+}
+
+.algolia-autocomplete
+  .algolia-docsearch-suggestion--category-header
+  .algolia-docsearch-suggestion--category-header-lvl0
+  .algolia-docsearch-suggestion--highlight,
+.algolia-autocomplete
+  .algolia-docsearch-suggestion--category-header
+  .algolia-docsearch-suggestion--category-header-lvl1
+  .algolia-docsearch-suggestion--highlight,
+.algolia-autocomplete
+  .algolia-docsearch-suggestion--text
+  .algolia-docsearch-suggestion--highlight {
+  box-shadow: inset 0 -2px 0 0 #4e3fce;
+}
+
+@media screen and (max-width: 40em) {
+  .algolia-autocomplete.algolia-autocomplete-left .ds-dropdown-menu {
+    right: 2px !important;
+    max-width: 100vw !important;
+    min-width: calc(100vw - 4px) !important;
+    left: -14px !important;
+  }
+}
