@@ -27,7 +27,6 @@ const GuideNextPrevious = ({
               mb={3}
               maxWidth={"640px"}
               mx={"auto"}
-              p={3}
               px={4}
             >
               <Flex alignItems="center">
@@ -57,7 +56,6 @@ const GuideNextPrevious = ({
               mb={3}
               maxWidth={"640px"}
               mx={"auto"}
-              p={3}
               px={4}
             >
               <Flex alignItems="center" justifyContent="flex-end">
