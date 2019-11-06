@@ -6,6 +6,7 @@ const GuideCard = ({ GuideTitle, GuideImage, GuideSubTitle, GuideDescription, ch
 return (
   <Box>
     <Card width={"auto"} mx={"auto"} mt={4} mb={5} p={0}>
+    <Flex flexDirection="column">
       <Image
         alt={ImageAlt}
         width={1}
@@ -19,9 +20,10 @@ return (
       </Text>
         {children}
       </Box>
+    </Flex>
       <Box borderTop={1} borderWidth={1} borderColor="light-gray">
-        <Flex my={3} px={3} alignItems="center" justifyContent="flex-end" flexWrap={'wrap'} alignItems={"stretch"}>
-          <Flex alignItems="center" mb={2} mx={3}>
+        <Flex my={3} mx={3} flexDirection={["column", "row"]} alignItems={["center", "stretch"]} justifyContent={["center", "flex-end"]} flexWrap={'wrap'}>
+          <Flex alignItems="center" mb={[3, 2]} mt={[2, 0]} mx={3}>
             <Link
               fontSize={2}
               href={DemoLink}
@@ -37,7 +39,7 @@ return (
             to={GuideLink}
             title={GuideLinkTitle}
           >
-            <Button mx={3} mb={2}>
+            <Button mx={[0, 3]} mb={2}>
             {GuideCTA}
             </Button>
           </RimbleGatsbyLink>
