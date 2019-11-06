@@ -6,48 +6,61 @@ description: Research-led guides for creating user-friendly blockchain experienc
 Research-led guides for creating user-friendly blockchain experiences.
 
 <Flex justifyContent="space-between" mt={4} flexWrap={'wrap'}>
-<Box width={[1, 1 / 2]} p={2}>
-      <RimbleGatsbyLink
-        to={`/guides/ux`}
-        title={`dApp patterns`}
-      >
-        <Card Width={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-          <Flex
-            mt={2}
-            mb={3}
-            height={"150px"}
-            justifyContent={"center"}
-            alignItems={"center"}
-            bg={"near-white"}
-            overflow={"scroll"}
-          >
+  <Box width={[1, 1 / 2]} p={2} mt={3}>
+    <RimbleGatsbyLink
+      to={`/guides/ux`}
+      title={`dApp patterns`}
+    >
+      <Card p={0} mx={"auto"} height={"100%"}>
+        <Flex flexDirection={"column"}
+          height={"150px"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          bg={"near-white"}
+          overflow={"scroll"}
+        >
           <Text fontSize={6}>🎨</Text>
-          </Flex>
-          <Heading.h4 my={2}>dApp patterns</Heading.h4>
-          <Text mb={2}>Research-led guides on how to design key dApp patterns.</Text>
-        </Card>
-      </RimbleGatsbyLink>
-    </Box>
-    <Box width={[1, 1 / 2]} p={2}>
-          <RimbleGatsbyLink
-            to={`/guides/content`}
-            title={`dApp content`}
-          >
-            <Card Width={"640px"} mx={"auto"} p={3} px={4} height={"100%"}>
-              <Flex
-                mt={2}
-                mb={3}
-                height={"150px"}
-                justifyContent={"center"}
-                alignItems={"center"}
-                bg={"near-white"}
-                overflow={"scroll"}
-              >
-                <Text fontSize={6}>✍️</Text>
-              </Flex>
-              <Heading.h4 my={2}>dApp content</Heading.h4>
-              <Text mb={2}>Tips for making your dapp and its content more user-friendly.</Text>
-            </Card>
-          </RimbleGatsbyLink>
+        </Flex>
+        <Box
+          px={4}
+          py={3}
+          borderTop={1}
+          borderWidth={3}
+          borderColor="primary-light"
+        >
+          <Heading.h4 my={3}>dApp patterns</Heading.h4>
+          <Text mb={3}>Research-led guides on how to design key dApp patterns.</Text>
         </Box>
+      </Card>
+    </RimbleGatsbyLink>
+  </Box>
+
+  <Box width={[1, 1 / 2]} p={2} mt={3}>
+    <RimbleGatsbyLink
+      to={`/guides/content`}
+      title={`dApp content`}
+    >
+      <Card p={0} mx={"auto"} height={"100%"}>
+        <Flex flexDirection={"column"}
+          height={"150px"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          bg={"near-white"}
+          overflow={"scroll"}
+        >
+          <Text fontSize={6}>✍️</Text>
+        </Flex>
+        <Box
+          px={4}
+          py={3}
+          borderTop={1}
+          borderWidth={3}
+          borderColor="primary-light"
+        >
+          <Heading.h4 my={3}>dApp content</Heading.h4>
+          <Text mb={3}>Tips for making your dapp and its content more user-friendly.</Text>
+        </Box>
+      </Card>
+    </RimbleGatsbyLink>
+  </Box>
 </Flex>
