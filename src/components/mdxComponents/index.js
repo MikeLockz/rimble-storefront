@@ -39,11 +39,13 @@ import NetworkIndicator from "@rimble/network-indicator";
 // Import commonly used components here as shortcodes so they don't need to be imported into each mdx file
 import PropsTable from "../documentation/PropsTable";
 import DoDont from "../documentation/DoDont";
+import GuideCard from "../documentation/GuideCard";
 
 // Local versions of components used to render mdx
 import Code from "./Code";
 import SmartLink from "./SmartLink";
 import { Table as StyledTable } from "./Table";
+import RimbleGatsbyLink from "./../landing/RimbleGatsbyLink";
 
 /* eslint-disable react/display-name */
 const mdxComponents = {
@@ -108,7 +110,10 @@ const mdxComponents = {
   NetworkIndicator,
 
   PropsTable,
-  DoDont
+  DoDont,
+  RimbleGatsbyLink,
+  GuideCard,
+
 };
 
 export default mdxComponents;
