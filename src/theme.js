@@ -29,7 +29,7 @@ export default {
   borders: [0, "1px solid transparent"],
   borderWidths: ["0", "1px", "2px", "4px"],
   shadows: [
-    "0",
+    "none",
     "0px 2px 4px rgba(0, 0, 0, 0.1)",
     "0 7px 14px rgba(50,50,93,.1)"
   ],

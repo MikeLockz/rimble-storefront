@@ -3,70 +3,225 @@ title: Rimble Components 🏗
 description: Rimble components will help speed up your dapp development and provide research-based UX to improve engagement.
 ---
 
-import { Button } from "rimble-ui";
+import { Button, Form } from "rimble-ui";
 
 ## Rimble UI
 
-<Button
-  mt={2}
-  title="Get the code at GitHub"
-  size="small"
-  target="_blank"
-  as="a"
-  href="https://github.com/ConsenSys/rimble-ui"
+Rimble UI is our open-source React component library.
+
+These components are the building blocks for making your dApp's user interface.
+
+<Box
+  bg={"near-white"}
+  borderTop={1}
+  borderWidth={4}
+  borderColor={"primary-light"}
+  my={4}
 >
-  View on GitHub
-</Button>
+  <Flex alignItems="center" mb={3} pt={3}>
+    <Icon color={"mid-gray"} name="Info" mr={2} ml={3} size="20px" />
+    <Text caps color="mid-gray" fontSize={1} fontWeight="bold" mr={3}>
+      Useful links
+    </Text>
+  </Flex>
+  <Link
+    title="Get the code at GitHub"
+    target="_blank"
+    href="https://github.com/ConsenSys/rimble-ui"
+  >
+    <Flex
+      borderLeft={1}
+      borderRight={1}
+      borderColor={"light-gray"}
+      alignItems="center"
+      p={3}
+      bg={"white"}
+    >
+      Rimble-UI GitHub repo
+      <Icon name="Launch" ml={2} size="14px" />
+    </Flex>
+  </Link>
+  <Link
+    title="View the rimble-ui components in Storybook"
+    target="_blank"
+    href="https://rimble-ui-storybook.netlify.com/"
+  >
+    <Flex
+      border={1}
+      borderColor={"light-gray"}
+      alignItems="center"
+      p={3}
+      bg={"white"}
+    >
+      Rimble-UI on Storybook
+      <Icon name="Launch" ml={2} size="14px" />
+    </Flex>
+  </Link>
+</Box>
 
 ### Components A-Z
 
-- [`Avatar`](/components/rimble-ui/Avatar)
-- [`Blockie`](/components/rimble-ui/Blockie)
-- [`Box`](/components/rimble-ui/Box)
-- [`Button`](/components/rimble-ui/Button)
-- [`Card`](/components/rimble-ui/Card)
-- [`Checkbox`](/components/rimble-ui/Checkbox)
-- [`EthAddress`](/components/rimble-ui/EthAddress)
-- [`Field`](/components/rimble-ui/Field)
-- [`Flash`](/components/rimble-ui/Flash)
-- [`Flex`](/components/rimble-ui/Flex)
-- [`Form`](/components/rimble-ui/Form)
-- [`Heading`](/components/rimble-ui/Heading)
-- [`Icon`](/components/rimble-ui/Icon)
-- [`Image`](/components/rimble-ui/Image)
-- [`Input`](/components/rimble-ui/Input)
-- [`Link`](/components/rimble-ui/Link)
-- [`Loader`](/components/rimble-ui/Loader)
-- [`MettaMaskButton`](/components/rimble-ui/MetaMaskButton)
-- [`Modal`](/components/rimble-ui/Modal)
-- [`Pill`](/components/rimble-ui/Pill)
-- [`Progress`](/components/rimble-ui/Progress)
-- [`QR`](/components/rimble-ui/QR)
-- [`Radio`](/components/rimble-ui/Radio)
-- [`Select`](/components/rimble-ui/Select)
-- [`Slider`](/components/rimble-ui/Slider)
-- [`Table`](/components/rimble-ui/Table)
-- [`Text`](/components/rimble-ui/Text)
-- [`TextArea`](/components/rimble-ui/TextArea)
-- [`ToastMessage Provider`](/components/rimble-ui/ToastMessageProvider)
-- [`ToastMessage`](/components/rimble-ui/ToastMessage)
-- [`Tooltip`](/components/rimble-ui/Tooltip)
-- [`UPortButton`](/components/rimble-ui/UPortButton)
+<Flex mb={5} flexWrap={'wrap'} alignItems={"stretch"}>
 
-<br />
+<ComponentCard
+  componentName="Avatar"
+  description="Images that represent things – like currencies – in your product."
+/>
 
-## Web3 Components
+<ComponentCard
+  componentName="Blockie"
+  description="Identicons for representing Ethereum addresses."
+/>
 
-<Button
-  mt={2}
-  title="Get the code at GitHub"
-  size="small"
-  target="_blank"
-  as="a"
-  href="https://github.com/ConsenSys/rimble-web3-components"
->
-  View on GitHub
-</Button>
+<ComponentCard
+  componentName="Box"
+  description="A responsive component for box-model layouts."
+/>
+
+<ComponentCard
+  componentName="Button"
+  description="Allows a user to take an action or make a choice."
+/>
+
+<ComponentCard
+  componentName="Card"
+  description="Creates a Box layout for content and actions about a specific subject."
+/>
+
+<ComponentCard
+  componentName="Checkbox"
+  description="Allows a user to choose one or more items from a list."
+/>
+
+<ComponentCard
+  componentName="EthAddress"
+  description="Allows a user to quickly view, copy and scan an Ethereum address."
+/>
+
+<ComponentCard
+  componentName="Field"
+  description="A quick way to add a label to your form inputs."
+/>
+
+<ComponentCard
+  componentName="Flash"
+  description="A way to deliver messages to your user without blocking them."
+/>
+
+<ComponentCard
+  componentName="Flex"
+  description="For arranging content in columns or rows and making responsive layouts."
+/>
+
+<ComponentCard
+  componentName="Form"
+  description="Gives your inputs validation styles and feedback messages."
+/>
+
+<ComponentCard
+  componentName="Heading"
+  description="Give pages or page areas titles that introduce the content below."
+/>
+
+<ComponentCard
+  componentName="Icon"
+  description="Add Material Design icons to your interface using Rimble."
+/>
+
+<ComponentCard
+  componentName={"Image"}
+  description={"Add an image and its alt description to your product."}
+/>
+
+<ComponentCard
+  componentName={"Input"}
+  description={"Input allows you add different types of inputs when building forms. "}
+/>
+
+<ComponentCard
+  componentName={"Link"}
+  description={"Link provides a basic styled link – ideal for use in copy."}
+/>
+
+<ComponentCard
+  componentName={"Loader"}
+  description={"Loader lets you know that a process is happening or content is loading."}
+/>
+
+<ComponentCard
+  componentName={"MetaMaskButton"}
+  description={"Show your users when an action will involve MetaMask."}
+/>
+
+<ComponentCard
+  componentName={"Modal"}
+  description={"Display information that requires a choice or an acknowledgement."}
+/>
+
+<ComponentCard
+  componentName={"Pill"}
+  description={"Pill allows you to show a status or grouping at a glance."}
+/>
+
+<ComponentCard
+  componentName={"Progress"}
+  description={"Shows a user their progress through a process or loading."}
+/>
+
+<ComponentCard
+  componentName={"QR"}
+  description={"QR creates a QR code from a string – like an Ethereum address."}
+/>
+
+<ComponentCard
+  componentName={"Radio"}
+  description={"Allows a user to choose only one item from a list."}
+/>
+
+<ComponentCard
+  componentName={"Select"}
+  description={"Allows a user to choose from a drop-down list."}
+/>
+
+<ComponentCard
+  componentName={"Slider"}
+  description={"Allows a user to control a value using a slider."}
+/>
+
+<ComponentCard
+  componentName={"Table"}
+  description={"Allows a user to compare data in your product."}
+/>
+
+<ComponentCard
+  componentName={"Text"}
+  description={"Text allows you to control the presentation of your copy content."}
+/>
+
+<ComponentCard
+  componentName={"Textarea"}
+  description={"Textarea gives you a long-form free-text input for your forms."}
+/>
+
+<ComponentCard
+  componentName={"ToastMessage"}
+  description={"Provide your users with an unimportant temporary message."}
+/>
+
+<ComponentCard
+  componentName={"Tooltip"}
+  description={"Give your user extra information about something on the interface."}
+/>
+
+<ComponentCard
+  componentName={"UPortButton"}
+  description={"Show your users when an action will involve uPort."}
+/>
+
+
+</Flex>
+
+## Web3 components
 
 ### Components A-Z
 
