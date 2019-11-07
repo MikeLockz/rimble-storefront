@@ -48,6 +48,7 @@ import Code from "./Code";
 import SmartLink from "./SmartLink";
 import { Table as StyledTable } from "./Table";
 import RimbleGatsbyLink from "./../landing/RimbleGatsbyLink";
+import ComponentCard from "./../documentation/ComponentCard";
 
 /* eslint-disable react/display-name */
 const mdxComponents = {
@@ -113,8 +114,9 @@ const mdxComponents = {
 
   PropsTable,
   DoDont,
-  GuideNextPrevious,
   RimbleGatsbyLink,
+  ComponentCard,
+  GuideNextPrevious,
   GuideCard,
 };
 
