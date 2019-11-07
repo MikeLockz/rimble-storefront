@@ -40,7 +40,7 @@ const Navbar = ({ isNavOpen, setIsNavOpen, toggleNavOpen }) => {
       >
         {isNavOpen ? (
           <Flex alignItems="center">
-            <Icon mr={1} sname="Close" /> Hide menu
+            <Icon mr={1} name="Close" /> Hide menu
           </Flex>
         ) : (
           <Flex alignItems="center">
