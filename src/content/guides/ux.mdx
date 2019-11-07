@@ -3,36 +3,43 @@ title: dapp UX 🕹
 description: In-depth pieces on designing patterns and workflows that help your users navigate Ethereum
 ---
 
-In-depth pieces on designing patterns and workflows that help your users navigate Ethereum
+In-depth pieces on designing patterns and workflows that help your users navigate Ethereum.
 
----
+import { Button, Heading } from "rimble-ui"
 
-## Connecting to a dapp
+<GuideCard
+ GuideTitle="Connecting to a dApp"
+ GuideImage="/images/Connecting-to-a-dApp.png"
+ ImageAlt="Wireframe illustrations of a connection flow"
+ GuideSubTitle="Help your users connect their Ethereum account to your dApp"
+ GuideDescription="A well-designed connection flow will guide users through the process, prepare them for being connected and let them know about some fundamental blockchain concepts."
+ DemoLink="https://rimble-app-demo.netlify.com"
+ DemoTitle="Try our demo to see our connection flow"
+ DemoCTA="Try demo"
+ GuideLink="/guides/ux/connect-a-wallet-conditions"
+ GuideLinkTitle="To the Connecting a dApp guide"
+ GuideCTA="Read guide">
+  <Flex alignContent="center" mb={2} alignItems="center">
+     <Icon name="Info" color="gray" size="16px" mr={2}/>
+     <Text fontSize="1" color="gray">This guide has 5 parts</Text>
+     </Flex>
+</GuideCard>
 
-**A well-designed connection flow will guide users through the process, prepare them for being connected and let them know about some fundamental blockchain concepts. It needs to be swift and simple for those who know what they're doing but informative and instructional for those new to blockchain.**
 
-We've written a guide that covers the process of connecting on a desktop via the MetaMask extension or on a mobile via a mobile wallet browser.
-
-<Link
-  href="/guides/ux/connect-a-wallet-conditions">
-  Read the guide
-</Link>
-
-<Box my={4} />
-
-## DevCon V Demo
-
-**We gave a talk about the State of Transaction States at DevCon V in Osaka.**
-
-We did a deep-dive on best practices for informing users on how they should move a user through performing a transaction. This includes checking for balance, handling multiple transactions, giving gas estimates, and providing total transaction time estimate. The [source code for the dapp](https://github.com/ConsenSys/rimble-devcon-2019) is also open source so you can see how it was all done.
-
-<Link
-  href="https://rimble-devcon-demo.netlify.com"
-  target="_blank"
-  title="Rimble's DevCon V demo"
-  rel="noopener"
->
-  <Flex alignItems="center">
-    DevCon V demo <Icon name="Launch" size="16px" ml={2} />
-  </Flex>
-</Link>
+<GuideCard
+ GuideTitle="Transaction states"
+ GuideImage="/images/Transaction-states.png"
+ ImageAlt="Wireframe illustrations of a transaction flow"
+ GuideSubTitle="The dos and don'ts of designing transaction states"
+ GuideDescription="Transactions are complicated, slow, irreversible and need ETH. Here's how to make them clearer and simpler for your users."
+ DemoLink="https://rimble-devcon-demo.netlify.com"
+ DemoTitle="Try the Devcon demo to see our transaction design"
+ DemoCTA="Try demo"
+ GuideLink="/guides/ux/transactions-wallet-ux"
+ GuideLinkTitle="To the transaction states guide"
+ GuideCTA="Read guide">
+  <Flex alignContent="center" mb={2} alignItems="center">
+     <Icon name="Info" color="gray" size="16px" mr={2}/>
+     <Text fontSize="1" color="gray">This guide has 5 parts</Text>
+     </Flex>
+</GuideCard>

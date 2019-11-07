@@ -40,6 +40,8 @@ import NetworkIndicator from "@rimble/network-indicator";
 import PropsTable from "../documentation/PropsTable";
 import DoDont from "../documentation/DoDont";
 import GuideNextPrevious from "./../documentation/GuideNextPrevious";
+import GuideCard from "../documentation/GuideCard";
+
 
 // Local versions of components used to render mdx
 import Code from "./Code";
@@ -113,6 +115,7 @@ const mdxComponents = {
   DoDont,
   GuideNextPrevious,
   RimbleGatsbyLink
+  GuideCard,
 };
 
 export default mdxComponents;

@@ -14,17 +14,17 @@ const RimbleGatsbyLink = styled(props => <Link {...props} />)`
   ${fontWeight}
 
   &:hover.active {
-    text-decoration: underline
-  }
-  &:hover{
-    & > div {
-      box-shadow: ${props => props.theme.shadows[1]};
+      text-decoration: underline
     }
-  }
-  &:active {
-    & > div {
-      box-shadow: ${props => props.theme.shadows[0]};
+    &:hover{
+      & > div {
+        box-shadow: ${props => props.theme.shadows[1]};
+      }
     }
+    &:active {
+      & > div {
+        box-shadow: ${props => props.theme.shadows[0]};
+      }
   }
 `;
 
