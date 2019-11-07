@@ -114,7 +114,7 @@ const mdxComponents = {
   PropsTable,
   DoDont,
   GuideNextPrevious,
-  RimbleGatsbyLink
+  RimbleGatsbyLink,
   GuideCard,
 };
 
