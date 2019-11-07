@@ -6,6 +6,7 @@ description:
 Rimble Components come with built-in access to the Rimble theme. The theme file contains an object which holds values for common variables such as color, fonts, box shadows, and more.
 
 Rimble's full `theme.js` is as follows:
+
 ```
 // rimble theme.js
 
@@ -13,6 +14,7 @@ Rimble's full `theme.js` is as follows:
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   fontWeights: [0, 300, 400, 600, 700],
   letterSpacings: [0, 1, 2, 4, 8],
+  breakpoints: ["40em", "52em", "64em"],
   lineHeights: {
     solid: 1,
     title: 1.25,
@@ -164,6 +166,7 @@ Rimble's full `theme.js` is as follows:
 Custom theming is an optional way to override the Rimble values that control color, spacing, typography, and other aspects of our components.
 
 **1. You can override the entire theme for an entire tree of components using the `<ThemeProvider>` from styled-components:**
+
 ```
 import {Box, Button, Text, theme as rimbleTheme} from 'rimble-ui'
 import {ThemeProvider} from 'styled-components'
@@ -188,6 +191,7 @@ export default () => (
 ```
 
 **2. You can merge the Rimble theme with your custom theme using Object.assign:**
+
 ```
 import {ThemeProvider} from `styled-components`
 import {theme} from 'rimble-ui'
@@ -206,6 +210,7 @@ const App = (props) => {
 ```
 
 **3. You can theme individual components by passing the theme prop directly: **
+
 ```
 import {Text} from 'rimble-ui'
 
