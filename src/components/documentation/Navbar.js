@@ -36,15 +36,15 @@ const Navbar = ({ isNavOpen, setIsNavOpen, toggleNavOpen }) => {
         href="javascript:;" /* eslint-disable-line */
         display={["block", "block", "block", "none"]}
         onClick={e => toggleNavOpen()}
-        color={"near-white"}
+        color={"primary"}
       >
         {isNavOpen ? (
           <Flex alignItems="center">
-            <Icon name="Close" /> Hide menu
+            <Icon mr={1} sname="Close" /> Hide menu
           </Flex>
         ) : (
           <Flex alignItems="center">
-            <Icon name="Menu" /> Show menu
+            <Icon mr={1} name="Menu" /> Menu
           </Flex>
         )}
       </RimbleLink>
