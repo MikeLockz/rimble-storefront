@@ -386,8 +386,10 @@ const StaticSideNav = ({ isNavOpen }) => {
       <Flex
         height={"100%"}
         borderRight={1}
+        borderWidth={1}
         borderColor={"light-gray"}
         flexDirection={"column"}
+        bg={"white"}
       >
         <Box p={3} borderBottom={1} borderColor={'blacks.3'}>
           <SearchInput />
