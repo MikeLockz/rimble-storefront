@@ -16,8 +16,9 @@ const StyledNavbar = styled(Box)`
 const Navbar = ({ isNavOpen, setIsNavOpen, toggleNavOpen }) => {
   return (
     <StyledNavbar
+      bg={"white"}
       borderBottom={1}
-      borderColor={"light-gray"}
+      borderColor={"blacks.3"}
       display={"flex"}
       justifyContent={"space-between"}
       alignItems={"center"}
@@ -26,10 +27,15 @@ const Navbar = ({ isNavOpen, setIsNavOpen, toggleNavOpen }) => {
       top={0}
       right={0}
       left={0}
-      zIndex={99}
+      zIndex={999}
     >
-      <GatsbyLink to={"/"}>
-        <Image src={RimbleLogotype} alt="rimble home" display={"block"} />
+      <GatsbyLink to={"/"} aria-label={"Rimble, back to homepage"}>
+        <Image
+          src={RimbleLogotype}
+          alt="rimble home"
+          display={"block"}
+          aria-hidden={"true"}
+        />
       </GatsbyLink>
 
       <RimbleLink

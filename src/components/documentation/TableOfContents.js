@@ -25,7 +25,7 @@ const TableOfContents = props => {
         return (
           <Li key={item.url}>
             <RimbleLink
-              href={"javascript:;"} /* eslint-disable-line */
+              href={`${item.url}`} /* eslint-disable-line */
               title={item.title}
               fontSize={2}
               onClick={() => {
@@ -41,7 +41,8 @@ const TableOfContents = props => {
       return (
         <Li key={item.url}>
           <RimbleLink
-            href={"javascript:;"} /* eslint-disable-line */
+            /* eslint-disable-line */
+            href={`${item.url}`}
             title={item.title}
             fontSize={2}
             onClick={() => {
@@ -55,7 +56,14 @@ const TableOfContents = props => {
     });
 
   return (
-    <Box borderWidth="2"   borderLeft="1" borderColor={"primary-light"} mt={3} mb={4} mx={[0, 0, 3]}>
+    <Box
+      borderWidth="2"
+      borderLeft="1"
+      borderColor={"primary-light"}
+      mt={3}
+      mb={4}
+      mx={[0, 0, 3]}
+    >
       {Object.keys(tableOfContents).length > 0 ? (
         <StyledLinkListBox p={3} ml={3}>
           <Text fontSize={2} fontWeight={4} mb={2}>

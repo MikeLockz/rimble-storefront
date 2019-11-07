@@ -1,5 +1,5 @@
 import React from "react";
-import SEO from "../components/seo";
+import SEO from "../components/global/SEO";
 import { Box, Heading, Text } from "rimble-ui";
 
 const NotFoundPage = () => (

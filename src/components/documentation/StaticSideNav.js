@@ -26,7 +26,6 @@ const StyledNav = styled.nav`
     -webkit-overflow-scrolling: touch;
     position: fixed;
     z-index: 9;
-    top: 57px;
 
     & > a {
       transition: 0.2s right ease;
@@ -47,6 +46,7 @@ const StyledNav = styled.nav`
     z-index: 99;
     transform: translateX(0);
     width: 100vw;
+    position: absolute;
 
     & > a {
       right: ${props => props.theme.space[3]}px;
@@ -57,8 +57,9 @@ const StyledNav = styled.nav`
   }
 
   @media screen and (min-width: ${theme.breakpoints[2]}) {
-    position: relative;
-    height: calc(100vh - 97px);
+    position: fixed;
+    height: calc(100vh - 56px);
+    overflow: scroll;
 
     &.open,
     &.closed {
@@ -380,22 +381,21 @@ const StaticLinkList = () => (
   </Ul>
 );
 
-const StaticSideNav = ({ isNavOpen }) => {
+const StaticSideNav = ({ isNavOpen, navbarHeight }) => {
   return (
     <StyledNav className={isNavOpen ? "open" : "closed"}>
-      <Flex
-        height={"100%"}
-        borderRight={1}
-        borderWidth={1}
-        borderColor={"light-gray"}
-        flexDirection={"column"}
-        bg={"white"}
-      >
-        <Box p={3} borderBottom={1} borderColor={'blacks.3'}>
+      <Flex height={"100%"} flexDirection={"column"} bg={"white"}>
+        <Box p={3} borderBottom={1} borderRight={1} borderColor={"blacks.3"}>
           <SearchInput />
         </Box>
 
-        <Box px={2} py={3} overflow={"scroll"}>
+        <Box
+          px={2}
+          py={3}
+          borderRight={1}
+          borderWidth={1}
+          borderColor={"blacks.3"}
+        >
           <StaticLinkList />
         </Box>
       </Flex>

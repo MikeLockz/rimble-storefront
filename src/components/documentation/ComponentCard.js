@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Card, Flex, Icon, Heading, Text, Image } from "rimble-ui";
+import { Box, Card, Flex, Heading, Text, Image } from "rimble-ui";
 import RimbleGatsbyLink from "./../landing/RimbleGatsbyLink";
 
 const ComponentCard = ({ componentName, image, imageAlt, description }) => {

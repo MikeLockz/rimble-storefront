@@ -8,7 +8,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-remark-autolink-headers`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -31,7 +30,12 @@ module.exports = {
         defaultLayouts: { default: require.resolve("./src/templates/docs.js") },
         remarkPlugins: [require("gatsby-transformer-remark")],
         gatsbyRemarkPlugins: [
-          `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              icon: false
+            }
+          },
           {
             resolve: "gatsby-remark-images",
             options: {
