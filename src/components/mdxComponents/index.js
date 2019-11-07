@@ -39,6 +39,9 @@ import NetworkIndicator from "@rimble/network-indicator";
 // Import commonly used components here as shortcodes so they don't need to be imported into each mdx file
 import PropsTable from "../documentation/PropsTable";
 import DoDont from "../documentation/DoDont";
+import GuideNextPrevious from "./../documentation/GuideNextPrevious";
+import GuideCard from "../documentation/GuideCard";
+
 
 // Local versions of components used to render mdx
 import Code from "./Code";
@@ -49,8 +52,8 @@ import ComponentCard from "./../documentation/ComponentCard";
 
 /* eslint-disable react/display-name */
 const mdxComponents = {
-  h1: props => <Heading {...props} as="h1" fontSize={[4, 5, 6]} my={3} pt={3} />,
-  h2: props => <Heading {...props} as="h2" fontSize={[4, 5]} />,
+  h1: props => <Heading {...props} as="h1" fontSize={[5, 6]} my={3} pt={3} />,
+  h2: props => <Heading {...props} as="h2" fontSize={[4, 5]} my={3} pt={3} />,
   h3: props => <Heading {...props} as="h3" fontSize={3} my={3} pt={3} />,
   h4: props => <Heading {...props} as="h4" fontSize={2} my={3} pt={3} />,
   h5: props => <Heading {...props} as="h5" fontSize={1} my={3} pt={3} />,
@@ -112,7 +115,9 @@ const mdxComponents = {
   PropsTable,
   DoDont,
   RimbleGatsbyLink,
-  ComponentCard
+  ComponentCard,
+  GuideNextPrevious,
+  GuideCard,
 };
 
 export default mdxComponents;

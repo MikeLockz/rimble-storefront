@@ -3,21 +3,64 @@ title: Rimble guides 📚
 description: Research-led guides for creating user-friendly blockchain experiences
 ---
 
-Research-led guides for creating user-friendly blockchain experiences
+Research-led guides for creating user-friendly blockchain experiences.
 
-### dapp patterns
+<Flex justifyContent="space-between" mt={4} flexWrap={'wrap'}>
+  <Box width={[1, 1 / 2]} p={2} mt={3}>
+    <RimbleGatsbyLink
+      to={`/guides/ux`}
+      title={`dApp patterns`}
+    >
+      <Card p={0} mx={"auto"} height={"100%"}>
+        <Flex flexDirection={"column"}
+          height={"150px"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          bg={"near-white"}
+          overflow={"scroll"}
+        >
+          <Text fontSize={6}>🎨</Text>
+        </Flex>
+        <Box
+          px={4}
+          py={3}
+          borderTop={1}
+          borderWidth={3}
+          borderColor="primary-light"
+        >
+          <Heading.h4 my={3}>dApp patterns</Heading.h4>
+          <Text mb={3}>Research-led guides on how to design key dApp patterns.</Text>
+        </Box>
+      </Card>
+    </RimbleGatsbyLink>
+  </Box>
 
-[Read dapp pattern guides](/guides/ux/)
-
-**Connecting to a dapp**
-
-1. [Can they connect?](/guides/ux/connect-a-wallet-conditions)
-2. [Before they connect](/guides/ux/connect-a-wallet-before)
-3. [Help with MetaMask](/guides/ux/connect-a-wallet-metamask)
-4. [Confirm success](/guides/ux/connect-a-wallet-success)
-5. [No ETH, no problem](/guides/ux/connect-a-wallet-low-funds)
-
-### Content design for dApps
-
-Tips for making your dapp and its content more user-friendly.
-[Read content design guides](/guides/content/)
+  <Box width={[1, 1 / 2]} p={2} mt={3}>
+    <RimbleGatsbyLink
+      to={`/guides/content`}
+      title={`dApp content`}
+    >
+      <Card p={0} mx={"auto"} height={"100%"}>
+        <Flex flexDirection={"column"}
+          height={"150px"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          bg={"near-white"}
+          overflow={"scroll"}
+        >
+          <Text fontSize={6}>✍️</Text>
+        </Flex>
+        <Box
+          px={4}
+          py={3}
+          borderTop={1}
+          borderWidth={3}
+          borderColor="primary-light"
+        >
+          <Heading.h4 my={3}>dApp content</Heading.h4>
+          <Text mb={3}>Tips for making your dapp and its content more user-friendly.</Text>
+        </Box>
+      </Card>
+    </RimbleGatsbyLink>
+  </Box>
+</Flex>

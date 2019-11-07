@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link as GatsbyLink } from "gatsby";
 import { Link as RimbleLink, Box, Image, Flex, Icon } from "rimble-ui";
 import theme from "./../../theme";
-import RimbleLogotype from "../../../static/rimble-logotype.svg";
+import RimbleLogotype from "../../../static/rimble-blurple.svg";
 
 const StyledNavbar = styled(Box)`
   & {
@@ -23,7 +23,6 @@ const Navbar = ({ isNavOpen, setIsNavOpen, toggleNavOpen }) => {
       alignItems={"center"}
       position={"fixed"}
       p={3}
-      bg={theme.colors.white}
       top={0}
       right={0}
       left={0}
@@ -37,15 +36,15 @@ const Navbar = ({ isNavOpen, setIsNavOpen, toggleNavOpen }) => {
         href="javascript:;" /* eslint-disable-line */
         display={["block", "block", "block", "none"]}
         onClick={e => toggleNavOpen()}
-        color={theme.colors.primary}
+        color={"near-white"}
       >
         {isNavOpen ? (
           <Flex alignItems="center">
-            <Icon name="Close" /> Hide Menu
+            <Icon name="Close" /> Hide menu
           </Flex>
         ) : (
           <Flex alignItems="center">
-            <Icon name="Menu" /> Show Menu
+            <Icon name="Menu" /> Show menu
           </Flex>
         )}
       </RimbleLink>

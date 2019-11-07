@@ -124,7 +124,7 @@ const LiveEditorCodebox = ({
       scope={scope}
       noInline={noInline}
     >
-      <CodeBox my={3}>
+      <CodeBox my={4}>
         <Box>
           <Box bg={"blacks.0"} border={1} borderColor={"grey"} p={3}>
             <LivePreview />
@@ -139,7 +139,7 @@ const LiveEditorCodebox = ({
             size={"small"}
             icon={"Code"}
             onClick={toggleShowCode}
-            children={showCode ? `Hide Code` : `Edit Code`}
+            children={showCode ? `Hide code` : `Show code`}
           />
         </Flex>
       </CodeBox>
