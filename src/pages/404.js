@@ -8,9 +8,11 @@ const NotFoundPage = () => (
   <Box width="auto" p={4} justifyContent="center">
     <SEO title="404: Not found" />
       <Flex justifyContent={["center", "flex-start"]}>
-      <Image src="/rimble-grey.svg"
-      alt="Rimble logo"
-      mb={5}/>
+      <Link href="/" title="To Rimble components">
+        <Image src="/rimble-grey.svg"
+        alt="Rimble logo"
+        mb={5}/>
+      </Link>
       </Flex>
     <Flex justifyContent="center">
       <Heading.h1 color="primary">0x404...</Heading.h1>
@@ -30,7 +32,7 @@ const NotFoundPage = () => (
       <Flex alignItems="center" my={3}>
         <Link
           href="/"
-          title="To Rimble homepage"> Home</Link>
+          title="To Rimble components"> Home</Link>
       </Flex>
       <Flex my={3}>
         <Link
