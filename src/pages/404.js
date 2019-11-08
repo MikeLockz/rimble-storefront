@@ -18,7 +18,7 @@ const NotFoundPage = () => (
       <Heading.h1 color="primary">0x404...</Heading.h1>
     </Flex>
     <Flex justifyContent="center" my={3}>
-      <Heading.h1 textAlign="center">PAGE NOT FOUND</Heading.h1>
+      <Heading.h2 textAlign="center">PAGE NOT FOUND</Heading.h2>
     </Flex>
     <Flex justifyContent="center" my={3}>
       <Text textAlign="center">We must have hard-forked since this page existed.</Text>
