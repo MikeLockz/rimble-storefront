@@ -16,10 +16,12 @@ class DoDont extends Component {
 
     return (
       <Flex mb={4} alignItems={"stretch"} flexWrap={["wrap", "nowrap"]}>
-        <Box width={[1, 1 / 2]} my={3} mr={3}>
+        <Box width={[1, 1 / 2]} my={3} mr={3}
+          role="region" aria-label="Do">
           <ExampleCard variant={"positive"}>{positive}</ExampleCard>
         </Box>
-        <Box width={[1, 1 / 2]} my={3}>
+        <Box width={[1, 1 / 2]} my={3}
+          role="region" aria-label="Don't">
           <ExampleCard variant={"negative"}>{negative}</ExampleCard>
         </Box>
       </Flex>

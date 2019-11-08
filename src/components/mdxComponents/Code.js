@@ -124,18 +124,27 @@ const LiveEditorCodebox = ({
       scope={scope}
       noInline={noInline}
     >
-      <CodeBox my={4}>
+      <CodeBox my={4}
+        role="figure"
+        aria-label="An example component.">
         <Box>
-          <Box bg={"blacks.0"} border={1} borderColor={"grey"} p={3}>
+          <Box
+            bg={"blacks.0"} border={1} borderColor={"grey"} p={3}>
             <LivePreview />
             <LiveError />
           </Box>
           {showCode && (
-            <LiveEditor style={{ fontSize: "16px" }} theme={theme} />
+            <LiveEditor
+              id="codeBlock"
+              role="figure"
+              aria-label="Edit the code example."
+              style={{ fontSize: "16px" }} theme={theme} />
           )}
         </Box>
         <Flex justifyContent={"flex-end"} mt={1}>
           <Button.Text
+            aria-label={showCode ? `Hide code` : `Show code`}
+            aria-controls="codeBlock"
             size={"small"}
             icon={"Code"}
             onClick={toggleShowCode}
