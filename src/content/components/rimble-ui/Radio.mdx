@@ -95,17 +95,12 @@ If the user can choose from lots of options, like currencies or states, use a [`
       <Box>
         <Field label="Choose your default currency">
           <Select
-            items={[
-              "ETH - Ether",
-              "BTC - Bitcoin",
-              "GNO - Gnosis",
-              "GNT - Golem",
-              "REP - Augur",
-              "XRP - Ripple",
-              "USD - Dollars",
-              "GBP - Pounds",
-              "YEN",
-              "INR - Rupees"
+            options={[
+              { value: "eth", label: "Ethereum" },
+              { value: "btc", label: "Bitcoin" },
+              { value: "gno", label: "Gnosis" },
+              { value: "gnt", label: "Golem" },
+              { value: "rep", label: "Augur" }
             ]}
           />
         </Field>
