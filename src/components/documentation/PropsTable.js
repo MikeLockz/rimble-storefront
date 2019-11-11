@@ -34,7 +34,7 @@ const PrettyPrintJson = React.memo(({ data }) => {
 const PropsTable = props => {
   let { propMetaData = [], ..._props } = props;
   return (
-    <Box bg="#FCFCFC" borderRadius={4} my={4}>
+    <Box bg="#f5f5f5" border={1} borderWidth={2} borderColor="near-white" borderRadius={2} my={4}>
       {propMetaData.length > 0 ? (
         <Box p={3} {..._props}>
           <Box>
@@ -55,11 +55,11 @@ const PropsTable = props => {
                       {Object.keys(prop.type.value).map(key => {
                         const value = prop.type.value[key];
                         return (
-                          <Text.span key={key} fontSize={1}>
-                            {value.value},{" "}
+                          <Text.span key={key} fontSize={2}>
+                            {value.value}{" "}
                           </Text.span>
                         );
-                      })}
+                      })}.
                     </Box>
                   )}
                 </Text>
