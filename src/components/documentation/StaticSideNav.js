@@ -365,6 +365,11 @@ const StaticLinkList = () => (
       <Ul>
         <NavGroupHeading>Transaction states</NavGroupHeading>
         <Li>
+          <RimbleGatsbyLink to={"/guides/ux/transaction-states"}>
+            Overview
+          </RimbleGatsbyLink>
+        </Li>
+        <Li>
           <RimbleGatsbyLink to={"/guides/ux/transactions-wallet-ux"}>
             1. Don't rely on wallet UX
           </RimbleGatsbyLink>

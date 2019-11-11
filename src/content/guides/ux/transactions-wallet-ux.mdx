@@ -1,23 +1,25 @@
 ---
 title: Don't rely on wallet UX
-description:
+description: Why you shouldn't rely on an Ethereum wallet to give your dApp users the information they need about Ethereum transactions.
 ---
 
-import { Button, Heading } from "rimble-ui"
+import { Button, Heading } from "rimble-ui";
 
-<Flash>This guide is written based on a Devcon 5 talk. Check out the demo to see our advice in action. <Link href="http://rimble-devcon-demo.netlify.com">Devcon demo</Link></Flash>
-
-We've spent some time debating whether transactions and communicating their state is the remit of the dApp or the wallet. The clue is in the title of this page in terms of where we landed.
+<Flash>
+  This guide is written based on a Devcon 5 talk. Check out the demo to see our
+  advice in action.{" "}
+  <SmartLink href="http://rimble-devcon-demo.netlify.com">
+    Devcon demo
+  </SmartLink>
+</Flash>
 
 When we say not to rely on wallet UX, that doesn't mean we think wallet UX is bad. But at the moment wallets have to build their interfaces for lots of different potential use-cases. So they refer to things quite generally. This works for them, but for a user this simply places more cognitive load on them while they're trying to achieve their task.
 
-
-
-We may be moving towards a world where wallets will accept and display more information from dApps or wallet interactions might be possible from the dApp itself and the distinction between the two will blur. But for now, you need to make the most of your opportunity to explain what's going in the context of what your user is doing. And that's why you can't rely on the wallet to give your user the full picture.
+You need to make the most of your opportunity to explain what's going in the context of what your user is doing. And that's why you can't rely on the wallet to give your user the full picture.
 
 ## Use specific language
 
-A wallet will speak in terms of a transaction, using very generic terms. Where as you can refer to the task at hand, making it feel more natural and understandable.
+A wallet will speak in terms of a transaction, using very generic terms. When you can refer to the task at hand, it feel more natural and understandable.
 
 <DoDont>
   {{
@@ -42,45 +44,52 @@ A wallet will speak in terms of a transaction, using very generic terms. Where a
   }}
 </DoDont>
 
-Not to mention if an error were to occur like not having enough ETH for transaction fees you can provide more relevant and helpful explanations than the wallet can. The need for fees, how to top-up ETH and the opportunity to try again will all make more sense in the context of the task they're trying to achieve on your dApp.
+If an error were to occur like not having enough ETH for transaction fees you can provide a more relevant and helpful explanation than the wallet can. You can explain the need for fees, how to top-up ETH and give the user an opportunity to try again with the context of the task they're trying to achieve.
 
 <Image
   my={3}
   src="/images/Not-enough-eth-modal.png"
   alt="A modal showing an error message for when the user doesn't have enough ETH for a transaction"
-  height="auto" />
+  height="auto"
+/>
 
 <Flex justifyContent="center">
-<Image
-  my={3}
-  src="/images/metamask_error.png"
-  alt="A MetaMask not enough funds error message  "
-  height="auto"
-  width={[1/2]} />
+  <Image
+    my={3}
+    src="/images/metamask_error.png"
+    alt="A MetaMask not enough funds error message  "
+    height="auto"
+    width={[1 / 2]}
+  />
 </Flex>
 
-<Flash mb={4}>Compare the wallet and the dApp example. See how more helpful it is to the user when you can offer more of an explanation</Flash>
+<Flash mb={4}>
+  Compare the wallet and the dApp example. See how more helpful it is to the
+  user when you can offer more of an explanation.
+</Flash>
 
 When you buy something from a Web2 product it's the product that guides you throughout, alerts you to errors and keeps you updated on progress – not your bank.
 
-Language is one of the easiest ways to put your users at ease throughout this process. Think about what the user thinks they’re doing and phrase any communication around that rather than what is technically happening.
+Task-oriented language is one of the easiest ways to put your users at ease throughout this process. Think about what the user thinks they’re doing and phrase communication around that rather than what is technically happening.
 
 <Image
   my={3}
   src="/images/sending-your-ticket.png"
   alt="A modal showing that a ticket is being sent to a user"
-  height="auto" />
+  height="auto"
+/>
 
 <Image
   my={3}
   src="/images/ticket-sent.png"
   alt="A modal showing a success state"
   height="auto"
-  />
+/>
 
-<Flash mb={4}>Our demo refers what's happening in the user's mind{":"} a ticket being sent, rather than a transaction.</Flash>
-
-
+<Flash mb={4}>
+  Our demo refers what's happening in the user's mind{":"} a ticket being sent,
+  rather than a transaction.
+</Flash>
 
 **Navigate the guide**
 

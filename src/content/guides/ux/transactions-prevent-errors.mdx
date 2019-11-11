@@ -1,44 +1,61 @@
 ---
 title: Prevent errors
-description:
+description: Why you should pay very close attention to potential errors in an Ethereum transaction and how you can prevent them from happening.
+
 ---
 
-import { Button, Heading } from "rimble-ui"
+import { Button, Heading } from "rimble-ui";
 
-<Flash>This guide is written based on a Devcon 5 talk. Check out the demo to see our advice in action. <Link href="http://rimble-devcon-demo.netlify.com">Devcon demo</Link></Flash>
+<Flash>
+  This guide is written based on a Devcon 5 talk. Check out the demo to see our
+  advice in action.{" "}
+  <SmartLink href="http://rimble-devcon-demo.netlify.com">
+    Devcon demo
+  </SmartLink>
+</Flash>
 
-Blockchain transactions are irreversible. So you should be really focussed on trying to anticipate and prevent them.
+Blockchain transactions are irreversible and errors are easy to make.
 
-Some common errors are transacting on the wrong network, using the wrong account or not having enough ETH in your wallet for a transaction. All of which are frustrating and time-consuming for users.
+Common errors include:
+
+- transacting on the wrong network
+- using the wrong account
+- not having enough ETH in your wallet for a transaction.
+
+Because these can be frustrating and time-consuming, you should be really focussed on trying to anticipate and prevent them from happening.
 
 ## Nudges
-One way to ensure your users don't slip up is through passive nudges via your UI. This might be:
-- showing a user what network they're on
-- showing a user what account they're connected with
-- showing a user their current balance
+
+One way to ensure your users don't slip up is through passive, yet persistent, nudges in your UI. You could:
+
+- show a user what network they're on
+- show a user what account they're connected with
+- show a user their current balance
 
 <Card my={5}>
-<Image
-  alt="UI showing a connected Ethereum account and its balance"
-  borderRadius={8}
-  height="auto"
-  src="/images/passive-error-prevention-ui-examples.png"/>
+  <Image
+    alt="UI showing a connected Ethereum account and its balance"
+    borderRadius={8}
+    height="auto"
+    src="/images/passive-error-prevention-ui-examples.png"
+  />
 </Card>
 
 ## Intentional friction
 
-We recommend some intentional friction that forces the user to double check the details of their transaction. With Ethereum so early on and so experimental, it's vital to protect your users as much as possible. So even though most design advocates for less clicks, if you need more clicks to create more confidence in a transaction, then so be it.
-
+We recommend some intentional friction that forces the user to double check the details of their transaction. With Ethereum so early on and so experimental, it's vital to protect your users as much as possible. So even though most design advocates for fewer clicks, more clicks to create more confidence and reduce errors in a transaction seems like a good trade off.
 
 <Image
   alt="UI showing a connected Ethereum account and its balance"
   borderRadius={8}
   height="auto"
-  src="/images/intentional-friction-error-prevention.png"/>
+  src="/images/intentional-friction-error-prevention.png"
+/>
 
 When we tested our demo with users we introduced a "checkout" screen that gave users a chance to confirm everything was as expected.
 
-By showing this screen users are able to:
+On this screen users can:
+
 - double check their account details
 - see that it can't be refunded
 - cancel if they change their mind
@@ -47,12 +64,12 @@ And especially on desktop, users of WalletConnect or MetaMask can use this scree
 
 If the conditions weren't right, like if a user didn't have enough balance to pay the transaction fee, we would intercept this screen with an error modal. This allows the user to focus on one thing at a time.
 
-  <Image
-    src="/images/Not-enough-eth-modal.png"
-    alt="A modal showing an error message for when the user doesn't have enough ETH for a transaction"
-    height="auto"
-    my={3}/>
-
+<Image
+  src="/images/Not-enough-eth-modal.png"
+  alt="A modal showing an error message for when the user doesn't have enough ETH for a transaction"
+  height="auto"
+  my={3}
+/>
 
 All of this is about making sure the user meets all the right conditions to transact successfully. And they only press that Confirm button when they're 100% sure everything is as it should be.
 

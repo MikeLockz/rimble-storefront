@@ -42,7 +42,6 @@ import DoDont from "../documentation/DoDont";
 import GuideNextPrevious from "./../documentation/GuideNextPrevious";
 import GuideCard from "../documentation/GuideCard";
 
-
 // Local versions of components used to render mdx
 import Code from "./Code";
 import SmartLink from "./SmartLink";
@@ -114,10 +113,11 @@ const mdxComponents = {
 
   PropsTable,
   DoDont,
+  SmartLink,
   RimbleGatsbyLink,
   ComponentCard,
   GuideNextPrevious,
-  GuideCard,
+  GuideCard
 };
 
 export default mdxComponents;

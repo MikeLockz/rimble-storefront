@@ -1,11 +1,17 @@
 ---
 title: Just enough feedback
-description:
+description: Why you don't need to bombard your users with feedback about their Ethereum transaction. Keep it basic - has it started, is it happening and is it done?
 ---
 
-import { Button, Heading } from "rimble-ui"
+import { Button, Heading } from "rimble-ui";
 
-<Flash>This guide is written based on a Devcon 5 talk. Check out the demo to see our advice in action. <Link href="http://rimble-devcon-demo.netlify.com">Devcon demo</Link></Flash>
+<Flash>
+  This guide is written based on a Devcon 5 talk. Check out the demo to see our
+  advice in action.{" "}
+  <SmartLink href="http://rimble-devcon-demo.netlify.com">
+    Devcon demo
+  </SmartLink>
+</Flash>
 
 Once a transaction has started, beware of providing your user with too much information or too much feedback. Users questioned the value of being told everything that was going on, especially when they weren't familiar with the technology.
 
@@ -13,7 +19,8 @@ When you download content from a service like Netflix, you don't get a play-by-p
 
 ## Less is more
 
-With Ethereum we're able to get a lot of information about where the transaction is in the lifecycle e.g. sent to the mempool, picked up by a miner and being mined. But just because we can, doesn't mean we should. Most users we spoke to were only interested in three things{":"}
+With Ethereum, you're able to get a lot of information about where the transaction is in the lifecycle e.g. sent to the mempool, picked up by a miner and being mined. But just because you can, doesn't mean you should. Most users we spoke to were only interested in three things:
+
 - Has it started?
 - What progress is it making?
 - Is it done?
@@ -27,7 +34,8 @@ And here's what it looks like when you bombard your users with transaction feedb
   borderRadius={8}
   height="auto"
   my={3}
-  src="/images/too-much-feedback.png"/>
+  src="/images/too-much-feedback.png"
+/>
 
 In our testing, most users didn't stick around to watch their transaction finish either. They quickly switched tabs to complete other tasks, only to come back every now and then to check on progress. So any extra messaging has a strong chance of being missed.
 
@@ -37,21 +45,21 @@ In our testing, most users didn't stick around to watch their transaction finish
   {{
     positive: (
       <Text>
-      <ul>
-        <li>Your ticket is on its way</li>
-        <li>Transferring your ticket</li>
-        <li>You're going to Devcon</li>
-      </ul>
+        <ul>
+          <li>Your ticket is on its way</li>
+          <li>Transferring your ticket</li>
+          <li>You're going to Devcon</li>
+        </ul>
       </Text>
     ),
     negative: (
       <Text>
-      <ul>
-        <li>Transaction started</li>
-        <li>Transaction pending</li>
-        <li>Transferring being mined</li>
-        <li>First block mined</li>
-        <li>Transaction done</li>
+        <ul>
+          <li>Transaction started</li>
+          <li>Transaction pending</li>
+          <li>Transferring being mined</li>
+          <li>First block mined</li>
+          <li>Transaction done</li>
         </ul>
       </Text>
     )
@@ -59,26 +67,26 @@ In our testing, most users didn't stick around to watch their transaction finish
 </DoDont>
 
 ## Make it optional
+
 It's also important to question whether you need to lock users into watching their transaction go through. As part of our demo we designed a minimised state, so that users could continue to interact with the product while keeping an eye on their transaction. They weren't forced into watching their transaction complete via a modal.
 
 <Image
   my={3}
   src="/images/transaction-banner.png"
   alt="A page with a banner depicting transaction progress"
-  height="auto" />
-
+  height="auto"
+/>
 
 And if you can't read the banner in the above screenshot:
 
 <Flex mt={3} justifyContent="center">
-<Image
-  my={3}
-  src="/images/transaction-banner-focus.png"
-  alt="A banner depicting transaction progress"
-  height="auto"
+  <Image
+    my={3}
+    src="/images/transaction-banner-focus.png"
+    alt="A banner depicting transaction progress"
+    height="auto"
   />
 </Flex>
-
 
 **Navigate the guide**
 
