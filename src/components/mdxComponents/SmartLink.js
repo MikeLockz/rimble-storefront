@@ -11,6 +11,7 @@ const SmartLink = ({ to, href, ...props }) => {
   return isAbsoluteUrl(to) ? (
     <RimbleLink
       href={to}
+      target={"_blank"}
       display={"inline-flex"}
       alignItems={"center"}
       {...props}

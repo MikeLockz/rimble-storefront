@@ -124,27 +124,18 @@ const LiveEditorCodebox = ({
       scope={scope}
       noInline={noInline}
     >
-      <CodeBox my={4}
-        role="figure"
-        aria-label="An example component.">
+      <CodeBox my={4}>
         <Box>
-          <Box
-            bg={"blacks.0"} border={1} borderColor={"grey"} p={3}>
+          <Box bg={"blacks.0"} border={1} borderColor={"grey"} p={3} style={{ wordBreak: "break-all"}}>
             <LivePreview />
             <LiveError />
           </Box>
           {showCode && (
-            <LiveEditor
-              id="codeBlock"
-              role="figure"
-              aria-label="Edit the code example."
-              style={{ fontSize: "16px" }} theme={theme} />
+            <LiveEditor style={{ fontSize: "16px" }} theme={theme} />
           )}
         </Box>
         <Flex justifyContent={"flex-end"} mt={1}>
           <Button.Text
-            aria-label={showCode ? `Hide code` : `Show code`}
-            aria-controls="codeBlock"
             size={"small"}
             icon={"Code"}
             onClick={toggleShowCode}
@@ -161,7 +152,7 @@ const SyntaxHighlightCodebox = ({ defaultProps, children }) => {
     <Highlight {...defaultProps} code={children.trim()} language={"jsx"}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={className} style={style}>
-          {/* DO NOT DELETE THIS BOX! When ran in production the theme isn't applied and the padding is lost. TODO: Figure out why theme gets removed from prod build */}
+          {/* DO NOT DELETE THIS BOX! When ran in production the theme isn't applied and the padding is lost. TODO: Figure out why theme gets removed from prod build!!!!!!!!!!! */}
           <Box p={"10px"} overflow={"scroll"}>
             {tokens.map((line, i) => (
               <div key="fake-key" {...getLineProps({ line, key: i })}>

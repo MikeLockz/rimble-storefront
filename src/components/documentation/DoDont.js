@@ -15,14 +15,21 @@ class DoDont extends Component {
     const { positive, negative } = this.props.children;
 
     return (
-      <Flex mb={4} alignItems={"stretch"} flexWrap={["wrap", "nowrap"]}>
-        <Box width={[1, 1 / 2]} my={3} mr={3}
-          role="region" aria-label="Do">
-          <ExampleCard variant={"positive"}>{positive}</ExampleCard>
+      <Flex
+        mb={4}
+        alignItems={"stretch"}
+        flexWrap={["wrap", "nowrap"]}
+        margin={[0, -2]}
+      >
+        <Box width={[1, 1 / 2]} my={3}>
+          <ExampleCard variant={"positive"} mx={[0, 2]}>
+            {positive}
+          </ExampleCard>
         </Box>
-        <Box width={[1, 1 / 2]} my={3}
-          role="region" aria-label="Don't">
-          <ExampleCard variant={"negative"}>{negative}</ExampleCard>
+        <Box width={[1, 1 / 2]} my={3}>
+          <ExampleCard variant={"negative"} mx={[0, 2]}>
+            {negative}
+          </ExampleCard>
         </Box>
       </Flex>
     );

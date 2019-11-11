@@ -1,0 +1,115 @@
+---
+title: Design for next steps
+description: How to make your Ethereum transaction success messages more useful by giving your users clear next steps.
+---
+
+import { Button, Heading } from "rimble-ui";
+
+<Flash>
+  This guide is written based on a Devcon 5 talk. Check out the demo to see our
+  advice in action.{" "}
+  <SmartLink href="http://rimble-devcon-demo.netlify.com">
+    Devcon demo
+  </SmartLink>
+</Flash>
+
+"OK great what next?" is something we hear quite often upon the completion of a transaction. And that's because we're not doing a very good job of transaction success messages right now.
+
+## No dead ends
+
+Transactions don't need to be a dead end. In Web2 we designers speak a lot about the post-purchase experience. And by that, we mean the user's experience doesn't end with a purchase. We need to borrow some of those ideas in Web3 – a complete transaction is rarely the completion of a user's goal.
+
+It's also worth remembering that at this stage in Ethereum's life, it's not always clear what your next steps might be.
+
+## Understand the end goal
+
+In the case of the success state in our demo, you’ve just picked up a ticket for the best Ethereum conference out there.
+
+The transaction isn't the end goal, attending the conference is. To help our user achieve that we need to tell them how to turn that ticket into entry to the venue, so we've said: "Just show this ticket token in your wallet when you arrive at the conference venue."
+
+<Image
+  my={3}
+  src="/images/ticket-sent.png"
+  alt="A modal showing a successful Ethereum transaction"
+  height="auto"
+/>
+
+We've also anticipated some other needs. You may want to want to tell someone. Or if you’ve picked it up for someone else, you’re going to want to transfer it to them. At the very least, you’re going to want to see the ticket details. So your message should cover that too.
+
+When you understand the ultimate user goal e.g. Gain entry to Devcon and how this transaction interaction fits into the journey, you can start to make your transaction success message more useful. This is also a great opportunity to support the ecosystem and fellow dapps.
+
+## Support the ecosystem
+
+The beauty of a lot of Ethereum applications is they're designed to integrate and work with one another. This makes it really simple to be more helpful in your transaction success messages. So instead of just letting your users know they've successfully bought a Cryptokitty or generated some Dai, why not tell them what they do next by using a different dApp?
+
+<Flex justifyContent="center">
+  <Image
+    my={3}
+    src="/images/cryptokitty-success.png"
+    alt="A modal showing a successful cryptokitty transaction"
+    height="auto"
+    width={[1 / 2]}
+  />
+</Flex>
+
+<Flex justifyContent="center">
+  <Image
+    my={3}
+    src="/images/dai-success.png"
+    alt="A modal showing a successful DAI transaction"
+    height="auto"
+    width={[1 / 2]}
+  />
+</Flex>
+
+**Navigate the guide**
+
+<Flex justifyContent="space-between" mt={4} flexWrap={'wrap'}>
+  <Box width={[1, 1 / 2]} p={2}>
+  <RimbleGatsbyLink
+    title="Read the previous part of the guide"
+    to="/guides/ux/transactiions-just-enough-feedback">
+  <Card border={0} p={3} borderLeft={1} borderWidth={3} borderColor="primary" mb={3} maxWidth={"640px"} mx={"auto"} p={3} px={4}>
+    <Flex alignItems="center">
+      <Box>
+        <Icon color="primary" mr={3} size="24px" name="ArrowBack" />
+      </Box>
+      <Box>
+        <Text
+          fontWeight="bold"
+          fontSize={3}
+          color="primary"
+        >
+          Previous
+        </Text>
+        <Text>Just enough feedback</Text>
+      </Box>
+    </Flex>
+    </Card>
+  </RimbleGatsbyLink>
+  </Box>
+
+<Box width={[1, 1 / 2]} p={2}>
+<RimbleGatsbyLink
+  title="Read the next part of the guide"
+  to="/guides/ux">
+  <Card alignContent="center" p={3} border={0} borderRight={1} borderWidth={3} borderColor="primary" mb={3} maxWidth={"640px"} mx={"auto"} p={3} px={4}>
+    <Flex alignItems="center" justifyContent="flex-end">
+      <Flex flexDirection={"column"} flexWrap={"wrap"} alignItems={"flex-end"}>
+        <Text
+          fontSize={3}
+          fontWeight="bold"
+          color="primary"
+        >
+          Next
+        </Text>
+        <Text>Read more guides</Text>
+      </Flex>
+      <Box>
+        <Icon color="primary" ml={3} size="24px" name="ArrowForward" />
+      </Box>
+    </Flex>
+  </Card>
+</RimbleGatsbyLink>
+</Box>
+</Flex>
