@@ -26,6 +26,7 @@ const ExampleCard = ({ variant, ...props }) => {
       bg={"blacks.0"}
       borderTop={`4px solid HSLA(${colorPrimary}, 1.00)`}
       height={"100%"}
+      {...props}
     >
       <Box
         border={1}

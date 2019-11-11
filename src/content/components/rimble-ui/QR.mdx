@@ -44,17 +44,34 @@ Some best practice for using `QR` in your product.
 
 Let your user know what the QR code represents and what will happen once they scan the QR code. Don't just assume your user is familiar with the pattern of QR codes being used for public addresses.
 
+<Box></Box>
+
 <DoDont>
   {{
     positive: (
       <Box>
-        <Heading.h5>Your connected account:</Heading.h5>
-        <QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
+        <Card borderRadius={16}>
+          <Flex justifyContent="center">
+            <Heading.h5 mb={3}>Your account</Heading.h5>
+          </Flex>
+          <Flex justifyContent="center">
+            <Text textAlign="center" mb={4}>
+              Scan with a mobile wallet to send funds to this address
+            </Text>
+          </Flex>
+          <Flex justifyContent="center">
+            <QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
+          </Flex>
+        </Card>
       </Box>
     ),
     negative: (
-      <Box textAlign={"center"}>
-        <QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
+      <Box>
+        <Card borderRadius={16}>
+          <Flex justifyContent="center">
+            <QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
+          </Flex>
+        </Card>
       </Box>
     )
   }}
@@ -62,22 +79,42 @@ Let your user know what the QR code represents and what will happen once they sc
 
 **Provide an alternative**
 
-If you're using a QR code to represent a public address, always give the user the ability to copy/paste the address manually too. They may not want to grant your dapp access to their camera or they may be at a desktop set-up where scanning QR codes is inconvenient.
+If you're using a QR code to represent a public address, consider giving the user the ability to copy/paste the address manually too. They may not want to give their wallet access to their camera or may be at a desktop set-up where scanning QR codes is inconvenient.
 
 <DoDont>
   {{
     positive: (
-      <Box>
-        <Heading.h5>Your connected account:</Heading.h5>
-        <QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
-        <EthAddress address="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
-      </Box>
+      <Card borderRadius={16}>
+        <Flex justifyContent="center">
+          <Heading.h5 mb={3}>Your account</Heading.h5>
+        </Flex>
+        <Flex justifyContent="center">
+          <Text textAlign="center" mb={4}>
+            Scan with a mobile wallet to send funds to this address
+          </Text>
+        </Flex>
+        <Flex mb={4} justifyContent="center">
+          <QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
+        </Flex>
+        <Flex justifyContent="center">
+          <EthAddress address="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
+        </Flex>
+      </Card>
     ),
     negative: (
-      <Box textAlign={"center"}>
-        <Heading.h5>Your connected account</Heading.h5>
-        <QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
-      </Box>
+      <Card borderRadius={16}>
+        <Flex justifyContent="center">
+          <Heading.h5 mb={3}>Your account</Heading.h5>
+        </Flex>
+        <Flex justifyContent="center">
+          <Text textAlign="center" mb={4}>
+            Scan with a mobile wallet to send funds to this address
+          </Text>
+        </Flex>
+        <Flex mb={4} justifyContent="center">
+          <QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
+        </Flex>
+      </Card>
     )
   }}
 </DoDont>
