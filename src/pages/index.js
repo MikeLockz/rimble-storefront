@@ -1,7 +1,7 @@
 import React from "react";
 import ReactSVG from "react-svg";
 import { Link as GatsbyLink } from "gatsby";
-import { Box, Flex, Card, Text, Heading, Button, Icon } from "rimble-ui";
+import { Box, Flex, Card, Text, Heading, Button, Icon, Link } from "rimble-ui";
 import { backgroundImage } from "styled-system";
 import styled, { ThemeProvider } from "styled-components";
 
@@ -226,37 +226,41 @@ const IndexPage = () => (
               <Heading as="h3" fontSize={3} mb={3}>
                 Try our demos
               </Heading>
-              <Flex alignItems="center">
-                <AnimationButtonHover>
-                  <Button
-                    as="a"
-                    href="https://rimble-app-demo.netlify.com/"
-                    target="_blank"
-                    rel="noopener"
-                    title="Rimble's transaction demo dapp"
-                  >
-                    <Flex alignItems="center">
-                      Transaction demo
-                      <Icon name="Launch" ml={2} />
-                    </Flex>
-                  </Button>
-                </AnimationButtonHover>
-                <Text mx={3}>and</Text>
-                <AnimationButtonHover>
-                  <Button
-                    as="a"
-                    href="https://rimble-devcon-demo.netlify.com/"
-                    target="_blank"
-                    rel="noopener"
-                    title="Rimble's DevCon V demo"
-                  >
-                    <Flex alignItems="center">
-                      DevCon V demo
-                      <Icon name="Launch" ml={2} />
-                    </Flex>
-                  </Button>
-                </AnimationButtonHover>
-              </Flex>
+
+              <Box mb={4}>
+                <Text mb={3}>
+                  Our connection demo shows methods for helping a user
+                  connect to your dApp and start transacting.
+                </Text>
+                <Link
+                  href="https://rimble-app-demo.netlify.com/"
+                  target="_blank"
+                  rel="noopener"
+                  title="Rimble's connection demo dapp"
+                >
+                  <Flex alignItems="center">
+                    dApp connection demo
+                    <Icon name="Launch" size={"1em"} ml={2} />
+                  </Flex>
+                </Link>
+              </Box>
+
+              <Box>
+                <Text mb={3}>
+                  Our transaction states demo, presented at Devcon V, shows methods for updating a user on the status of their transaction.
+                </Text>
+                <Link
+                  href="https://rimble-devcon-demo.netlify.com/"
+                  target="_blank"
+                  rel="noopener"
+                  title="Rimble's transaction states Devcon V demo"
+                >
+                  <Flex alignItems="center">
+                    Transaction states demo
+                    <Icon name="Launch" size={"1em"} ml={2} />
+                  </Flex>
+                </Link>
+              </Box>
             </Box>
           </Container>
         </section>
