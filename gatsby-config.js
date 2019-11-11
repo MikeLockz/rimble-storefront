@@ -1,6 +1,3 @@
-const queries = require("./src/utils/algolia");
-require("dotenv").config();
-
 module.exports = {
   siteMetadata: {
     title: `Rimble - Better dapp UX`,
@@ -11,7 +8,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-remark-autolink-headers`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -34,7 +30,12 @@ module.exports = {
         defaultLayouts: { default: require.resolve("./src/templates/docs.js") },
         remarkPlugins: [require("gatsby-transformer-remark")],
         gatsbyRemarkPlugins: [
-          `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              icon: false
+            }
+          },
           {
             resolve: "gatsby-remark-images",
             options: {
@@ -80,15 +81,6 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-125405131-2`
-      }
-    },
-    {
-      resolve: `gatsby-plugin-algolia`,
-      options: {
-        appId: process.env.GATSBY_ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_ADMIN_KEY,
-        queries,
-        chunkSize: 10000 // default: 1000
       }
     }
   ]

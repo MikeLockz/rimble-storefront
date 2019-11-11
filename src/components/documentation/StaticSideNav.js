@@ -3,9 +3,7 @@ import styled from "styled-components";
 import { Link as GatsbyLink } from "gatsby";
 import { Text, Box, Flex, Link } from "rimble-ui";
 import theme from "./../../theme";
-import Search from "../Search";
-
-const searchIndices = [{ name: `Pages`, title: `Pages`, hitComp: `PageHit` }];
+import SearchInput from "./SearchInput";
 
 const RimbleGatsbyLink = props => (
   <Text fontSize={1} fontWeight={"bold"} pb={2}>
@@ -23,7 +21,6 @@ const NavGroupHeading = props => (
 
 const StyledNav = styled.nav`
   & {
-    height: 100%;
     transition: 0.2s transform ease;
     overflow: visible;
     -webkit-overflow-scrolling: touch;
@@ -49,6 +46,7 @@ const StyledNav = styled.nav`
     z-index: 99;
     transform: translateX(0);
     width: 100vw;
+    position: absolute;
 
     & > a {
       right: ${props => props.theme.space[3]}px;
@@ -59,17 +57,15 @@ const StyledNav = styled.nav`
   }
 
   @media screen and (min-width: ${theme.breakpoints[2]}) {
-    position: initial;
+    position: fixed;
+    height: calc(100vh - 56px);
+    overflow: scroll;
 
     &.open,
     &.closed {
       transform: translateX(0);
     }
   }
-`;
-
-const OverflowBox = styled(Box)`
-  overflow-x: visible;
 `;
 
 const StaticLinkList = () => (
@@ -413,19 +409,23 @@ const StaticLinkList = () => (
   </Ul>
 );
 
-const StaticSideNav = ({ isNavOpen }) => {
+const StaticSideNav = ({ isNavOpen, navbarHeight }) => {
   return (
-    <StyledNav
-      borderRight={1}
-      borderColor={"light-gray"}
-      className={isNavOpen ? "open" : "closed"}
-    >
-      <Flex flexDirection={"column"} height={"calc(100% - 57px)"}>
-        <OverflowBox p={2} borderRight={1} borderColor={"light-gray"}>
-          <Search collapse indices={searchIndices} />
+    <StyledNav className={isNavOpen ? "open" : "closed"}>
+      <Flex height={"100%"} flexDirection={"column"} bg={"white"}>
+        <Box p={3} borderBottom={1} borderRight={1} borderColor={"blacks.3"}>
+          <SearchInput />
+        </Box>
 
+        <Box
+          px={2}
+          py={3}
+          borderRight={1}
+          borderWidth={1}
+          borderColor={"blacks.3"}
+        >
           <StaticLinkList />
-        </OverflowBox>
+        </Box>
       </Flex>
     </StyledNav>
   );

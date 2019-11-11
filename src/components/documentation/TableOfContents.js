@@ -10,28 +10,24 @@ const Li = props => <Text as={"li"} {...props} lineHeight={1} p={0} />;
 
 const StyledLinkListBox = styled(Box)`
   & {
-    position: initial;
   }
 
   @media screen and (min-width: ${theme.breakpoints[1]}) {
-    position: fixed;
-    width: calc(220px - (${theme.space[3]}px * 2));
-    margin-top: calc(${theme.space[5]}px + ${theme.space[3]}px);
-    top: 0;
-    right: 0;
   }
 `;
 
 const TableOfContents = props => {
   const { tableOfContents } = props;
+
   const loop = data =>
     data.items.map(item => {
       if (typeof item.items !== "undefined" && item.items.length > 0) {
         return (
           <Li key={item.url}>
             <RimbleLink
-              href={"javascript:;"} /* eslint-disable-line */
+              href={`${item.url}`} /* eslint-disable-line */
               title={item.title}
+              fontSize={2}
               onClick={() => {
                 navigate(item.url);
               }}
@@ -45,8 +41,10 @@ const TableOfContents = props => {
       return (
         <Li key={item.url}>
           <RimbleLink
-            href={"javascript:;"} /* eslint-disable-line */
+            /* eslint-disable-line */
+            href={`${item.url}`}
             title={item.title}
+            fontSize={2}
             onClick={() => {
               navigate(item.url);
             }}
@@ -59,20 +57,21 @@ const TableOfContents = props => {
 
   return (
     <Box
-      maxWidth={["100%", "100%", "220px"]}
-      minWidth={["100%", "100%", "140px"]}
-      my={3}
+      borderWidth="2"
+      borderLeft="1"
+      borderColor={"primary-light"}
+      mt={3}
+      mb={4}
       mx={[0, 0, 3]}
-      position={"relative"}
     >
-      {tableOfContents && (
-        <StyledLinkListBox>
-          <Text caps color={"mid-gray"} fontSize={0} fontWeight={4} mb={3}>
-            On this Page
+      {Object.keys(tableOfContents).length > 0 ? (
+        <StyledLinkListBox p={3} ml={3}>
+          <Text fontSize={2} fontWeight={4} mb={2}>
+            On this page
           </Text>
           <Ul>{loop(tableOfContents)}</Ul>
         </StyledLinkListBox>
-      )}
+      ) : null}
     </Box>
   );
 };

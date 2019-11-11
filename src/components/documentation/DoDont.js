@@ -15,8 +15,8 @@ class DoDont extends Component {
     const { positive, negative } = this.props.children;
 
     return (
-      <Flex alignItems={"stretch"} flexWrap={["wrap", "nowrap"]}>
-        <Box width={[1, 1 / 2]} my={3} mr={3}>
+      <Flex mb={4} alignItems={"stretch"} flexWrap={["wrap", "nowrap"]}>
+        <Box width={[1, 1 / 2]} my={3} mr={[0, 3]}>
           <ExampleCard variant={"positive"}>{positive}</ExampleCard>
         </Box>
         <Box width={[1, 1 / 2]} my={3}>

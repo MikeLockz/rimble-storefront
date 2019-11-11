@@ -7,15 +7,33 @@ React components for the Rimble Design System.
 
 Clean, customisable building blocks for putting your interface together, including UI for Ethereum concepts.
 
-<Button
-  my={3}
-  title="Get the code at GitHub"
-  target="_blank"
-  as="a"
-  href="https://github.com/ConsenSys/rimble-ui"
->
-  View on GitHub
-</Button>
+<Box bg={"near-white"} borderTop={1} borderWidth={4} borderColor={"primary-light"} my={4}>
+  <Flex alignItems="center" mb={3} pt={3}>
+  <Icon color={"mid-gray"} name="Info" mr={2} ml={3} size="20px" /><Text caps color="mid-gray" fontSize={1} fontWeight="bold" mr={3}>Useful links</Text>
+  </Flex>
+  <Link
+    title="Get the code at GitHub"
+    target="_blank"
+    href="https://github.com/ConsenSys/rimble-ui"
+  >
+    <Flex borderLeft={1} borderRight={1} borderColor={"light-gray"} alignItems="center" p={3}
+    bg={"white"}>
+      Rimble-UI GitHub repo
+      <Icon name="Launch" ml={2} size="14px" />
+    </Flex>
+  </Link>
+  <Link
+    title="View the rimble-ui components in Storybook"
+    target="_blank"
+    href="https://rimble-ui-storybook.netlify.com/"
+  >
+    <Flex border={1} borderColor={"light-gray"} alignItems="center" p={3}
+    bg={"white"}>
+      Rimble-UI on Storybook
+      <Icon name="Launch" ml={2} size="14px" />
+    </Flex>
+  </Link>
+</Box>
 
 ## Installation
 
