@@ -126,7 +126,7 @@ const LiveEditorCodebox = ({
     >
       <CodeBox my={4}>
         <Box>
-          <Box bg={"blacks.0"} border={1} borderColor={"grey"} p={3}>
+          <Box bg={"blacks.0"} border={1} borderColor={"grey"} p={3} style={{ wordBreak: "break-all"}}>
             <LivePreview />
             <LiveError />
           </Box>
@@ -152,7 +152,7 @@ const SyntaxHighlightCodebox = ({ defaultProps, children }) => {
     <Highlight {...defaultProps} code={children.trim()} language={"jsx"}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={className} style={style}>
-          {/* DO NOT DELETE THIS BOX! When ran in production the theme isn't applied and the padding is lost. TODO: Figure out why theme gets removed from prod build */}
+          {/* DO NOT DELETE THIS BOX! When ran in production the theme isn't applied and the padding is lost. TODO: Figure out why theme gets removed from prod build!!!!!!!!!!! */}
           <Box p={"10px"} overflow={"scroll"}>
             {tokens.map((line, i) => (
               <div key="fake-key" {...getLineProps({ line, key: i })}>
