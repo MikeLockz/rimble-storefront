@@ -6,7 +6,6 @@ import styled from "styled-components";
 import StaticSideNav from "./StaticSideNav";
 import Navbar from "./Navbar";
 import Content from "./Content";
-import Footer from "./Footer";
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
@@ -98,7 +97,6 @@ const Layout = ({ children, tableOfContents, title, componentType }) => {
                 componentType={componentType}
                 tableOfContents={tableOfContents}
               />
-              <Footer />
             </ContentWrapper>
           </MainContent>
         </ThemeProvider>
