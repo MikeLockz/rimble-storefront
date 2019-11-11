@@ -83,23 +83,23 @@ Labels will help solidify the relationship between the entity and the avatar. Th
 <DoDont>
   {{
     positive: (
-      <Flex>
-        <Box width={1 / 2}>
+      <Card>
+      <Flex alignItems="center">
           <Avatar
             size="medium"
             src="https://airswap-token-images.s3.amazonaws.com/DAI.png"
           />
-        </Box>
-        <Box>
-          <Text>DAI</Text>
-        </Box>
+          <Text fontSize={3} fontWeight="bold" ml={3}>DAI</Text>
       </Flex>
+      </Card>
     ),
     negative: (
+      <Card>
       <Avatar
         size="medium"
         src="https://airswap-token-images.s3.amazonaws.com/DAI.png"
       />
+      </Card>
     )
   }}
 </DoDont>
