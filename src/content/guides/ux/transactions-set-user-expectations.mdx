@@ -1,0 +1,113 @@
+---
+title: Set user expectations
+description: How to set user expectations around the time and fees involved in an Ethereum blockchain transaction.
+---
+
+import { Button, Heading } from "rimble-ui";
+
+<Flash>
+  This guide is written based on a Devcon 5 talk. Check out the demo to see our
+  advice in action.{" "}
+  <SmartLink href="http://rimble-devcon-demo.netlify.com">
+    Devcon demo
+  </SmartLink>
+</Flash>
+
+The main expectations you need to set for your user are around times and fees. These are the two most potentially-surprising aspects of a blockchain transaction.
+
+## Time
+
+Users want to know how long they'll be waiting so they can plan their next move. We are able to provide estimates in-dApp using the [GasStation API](https://docs.ethgasstation.info/). And we used this same API to make an accurate progress bar and percentage ticker.
+
+<Image
+  alt="UI showing transaction progress"
+  borderRadius={8}
+  height="auto"
+  my={3}
+  src="/images/transaction-banner-focus.png"
+/>
+
+It can be tricky to get exact times. Yet users we spoke to would be happy with a best-guess, providing it wasn't wildly inaccurate. So it's best to speak in terms of time ranges e.g. less than 3 minutes and to make it clear that any time is an estimate.
+
+This was far more successful than vague statements like "This might take a few minutes" which sent experienced users to Etherscan. Novice users on the other hand could do nothing but sit and wait – not very respectful of their time. And not very respectful of the potential risk/anxiety they might be experiencing trying out a new technology.
+
+<DoDont>
+  {{
+    positive: <Text>Estimated time{":"} less than 3 minutes</Text>,
+    negative: <Text>This might take a few minutes</Text>
+  }}
+</DoDont>
+
+### Not elapsed times or spinners
+
+Users we tested with suggested that features like elapsed times and spinners weren't helpful. It's easy after a few minutes to think that your transaction might have timed out, especially if you weren't given an estimated time beforehand. We believe this kind of UI will lead to mistake repeat transactions unless you prevent the user from initiating concurrent transactions.
+
+<DoDont>
+  {{
+    positive: <Text>Estimated time{":"} less than 3 minutes</Text>,
+    negative: <Loader />
+  }}
+</DoDont>
+
+## Fees
+
+The earlier a user knows about transaction fees, the better. If a user only gets this information in their wallet UI, they may feel tricked, eroding trust in your product or service. You especially don't want Gas to feel like a hidden fee, as we've found a lot of users think that the fee goes to the dApp and not the network.
+
+<Image
+  my={3}
+  src="/images/transaction-fee-explainer.png"
+  alt="A modal showing a tooltip explaining transaction fees"
+  height="auto"
+/>
+
+**Navigate the guide**
+
+<Flex justifyContent="space-between" mt={4} flexWrap={'wrap'}>
+  <Box width={[1, 1 / 2]} p={2}>
+  <RimbleGatsbyLink
+    title="Read the previous part of the guide"
+    to="/guides/ux/transactions-prevent-errors">
+  <Card border={0} p={3} borderLeft={1} borderWidth={3} borderColor="primary" mb={3} maxWidth={"640px"} mx={"auto"} p={3} px={4}>
+    <Flex alignItems="center">
+      <Box>
+        <Icon color="primary" mr={3} size="24px" name="ArrowBack" />
+      </Box>
+      <Box>
+        <Text
+          fontWeight="bold"
+          fontSize={3}
+          color="primary"
+        >
+          Previous
+        </Text>
+        <Text>Prevent errors</Text>
+      </Box>
+    </Flex>
+    </Card>
+  </RimbleGatsbyLink>
+  </Box>
+
+<Box width={[1, 1 / 2]} p={2}>
+<RimbleGatsbyLink
+  title="Read the next part of the guide"
+  to="/guides/ux/transactions-just-enough-feedback">
+  <Card alignContent="center" p={3} border={0} borderRight={1} borderWidth={3} borderColor="primary" mb={3} maxWidth={"640px"} mx={"auto"} p={3} px={4}>
+    <Flex alignItems="center" justifyContent="flex-end">
+      <Flex flexDirection={"column"} flexWrap={"wrap"} alignItems={"flex-end"}>
+        <Text
+          fontSize={3}
+          fontWeight="bold"
+          color="primary"
+        >
+          Next
+        </Text>
+        <Text>Just enough feedback</Text>
+      </Flex>
+      <Box>
+        <Icon color="primary" ml={3} size="24px" name="ArrowForward" />
+      </Box>
+    </Flex>
+  </Card>
+</RimbleGatsbyLink>
+</Box>
+</Flex>
