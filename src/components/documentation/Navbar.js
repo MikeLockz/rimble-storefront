@@ -45,12 +45,16 @@ const Navbar = ({ isNavOpen, setIsNavOpen, toggleNavOpen }) => {
         color={"primary"}
       >
         {isNavOpen ? (
-          <Flex alignItems="center">
-            <Icon mr={1} name="Close" /> Hide menu
+          <Flex alignItems="center"
+          aria-label="Close navigation"
+          aria-controls="mainNavigation">
+            <Icon mr={1} name="Close" aria-hidden="true"/> Hide menu
           </Flex>
         ) : (
-          <Flex alignItems="center">
-            <Icon mr={1} name="Menu" /> Menu
+          <Flex alignItems="center"
+          aria-label="Show navigation"
+          aria-controls="mainNavigation">
+            <Icon mr={1} name="Menu" aria-hidden="true"/> Menu
           </Flex>
         )}
       </RimbleLink>
