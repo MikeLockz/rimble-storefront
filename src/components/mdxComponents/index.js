@@ -49,6 +49,7 @@ import SmartLink from "./SmartLink";
 import { Table as StyledTable } from "./Table";
 import RimbleGatsbyLink from "./../landing/RimbleGatsbyLink";
 import ComponentCard from "./../documentation/ComponentCard";
+import SystemPropsTable from "./../documentation/SystemPropsTable";
 
 /* eslint-disable react/display-name */
 const mdxComponents = {
@@ -118,6 +119,7 @@ const mdxComponents = {
   ComponentCard,
   GuideNextPrevious,
   GuideCard,
+  SystemPropsTable,
 };
 
 export default mdxComponents;
