@@ -416,7 +416,10 @@ const StaticLinkList = () => (
 
 const StaticSideNav = ({ isNavOpen, navbarHeight }) => {
   return (
-    <StyledNav className={isNavOpen ? "open" : "closed"}>
+    <StyledNav className={isNavOpen ? "open" : "closed"}
+      role="navigation"
+      aria-label="Main"
+      id="mainNavigation">
       <Flex height={"100%"} flexDirection={"column"} bg={"white"}>
         <Box p={3} borderBottom={1} borderRight={1} borderColor={"blacks.3"}>
           <SearchInput />
