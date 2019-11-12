@@ -37,6 +37,8 @@ class DocLayout extends React.Component {
             title={data.mdx.frontmatter.title}
             description={data.mdx.frontmatter.description}
             keywords={[`rimble`, `web3`, `blockchain`]}
+            componentType={getComponentType(data.mdx.fields.slug)}
+            image={`/images/${data.mdx.frontmatter.title}.png`}
           />
           <Helmet />
           <Box>

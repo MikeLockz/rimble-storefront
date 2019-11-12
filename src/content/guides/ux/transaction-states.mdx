@@ -1,245 +1,276 @@
 ---
 title: Transaction states
-description: Well-designed transaction states will build trust and confidence in your dapp by helping users understand what's going on and setting their expectations.
+description: What we learned about designing transaction states that work for dApp users based on design research, exploration and prototyping.
 ---
 
-import { ToastMessage, Button } from "rimble-ui";
+import { Button, Heading } from "rimble-ui";
 
-**Well-designed transaction states will build trust and confidence in your dapp by helping users understand what's going on and setting their expectations.**
+This guide outlines some principles for designing user-friendly transactions. Our users told us that building effective transaction states was a pain point for them so we've done some design research to try to figure out some do's and don'ts.
 
-Transaction states are such a crucial part of dapp UX because they're so different to what we're used to when transacting with centralized products. While ridding the process of a "middleperson" might have given us more personal autonomy, it has left us with less immediacy and more complexity to design for. This means providing feedback to reassure or guide users is more important than ever.
+<Flash my={4} bg="near-white">
+  <Flex alignItems="center" justifyContent="space-between">
+    <Icon color="inherit" ml={2} mr={4} name="Info" />
+    <Text color="inherit">
+      This is a condensed summary of our research findings. There are links to
+      more information and supporting screenshots under each section.
+    </Text>
+  </Flex>
+</Flash>
 
-We built a demo to show rather than tell. Check it out, then read our guidelines below for some advice on giving your users the most helpful transaction experience.
+## Complexity of transactions
 
-[Try the demo](https://rimble-app-demo.netlify.com/)
+There are a number of reasons they're such a pain point for builders:
 
-### Set user expectations
+- **Irreversibility**: how can you reduce the chance of mistakes?
+- **Fees (or "Gas")**: how and when do you explain fees?
+- **Technology**: how much of the blockchain should you explain?
+- **Time**: how can you communicate progress and explain waits?
+- **Education**: will users without knowledge of transaction want to educate themselves?
 
-**Time**
+If you've struggled with any of these questions, this guide is for you.
 
-Ethereum transactions aren't quick by centralized standards. So for inexperienced dapp users, transaction speeds may produce anxiety around whether something has worked or not. Use messaging in your states to explain that parts of the process may take a while.
+## Importance of transactions
+
+Transactions are important because they're integral to every dApp. But there are a number of other reasons, rooted in behavioural science, that you may not have thought of.
+
+### The halo effect
+
+> _The "halo effect" is when one trait of a person or thing is used to make an overall judgment of that person or thing. It supports rapid decisions, even if biased ones._<sup>1</sup>
+
+This means a particularly negative experience will bias your user's perception of any future experience. "Wow, that transaction made no sense, I had no idea what was going on. This site must be really poorly done. Is my money ok? I shouldn't do that again."
+
+[More on the Halo effect](https://www.nngroup.com/articles/halo-effect/)
+
+### The peak-end rule
+
+> _Cognitive biases change the way that we recall past events. The peak–end rule focuses our memories around the most intense moments of an experience and the way an experience ends._<sup>2</sup>
+
+This means that an emotionally intense – positive or negative – point of an experience and the end of that experience are most heavily weighted in our memory. A transaction is usually an intense moment at the end of an experience with your dApp. So this might mean a confusing transaction in an otherwise good dApp could lead to users remembering your dApp as bad.
+
+[More on the peak-end rule](https://www.nngroup.com/articles/peak-end-rule/)
+
+## Method
+
+After a series of design explorations we designed a prototype that we iterated on between usability tests. We spoke to blockchain experts as well as those who've rarely or never used dApps before. This gave us the data we needed to make the following recommendations.
+
+<Flash mb={4} bg="near-white">
+  <Flex alignItems="center" justifyContent="space-between">
+    <Icon color="inherit" ml={2} mr={4} name="Info" />
+    <Text color="inherit">
+      This advice is focused on dApps targeting mainstream adoption not
+      infrastructural blockchain products aimed at developers and domain
+      experts.
+    </Text>
+  </Flex>
+</Flash>
+
+## Don't rely on wallet UX
+
+For the smoothest and simplest experience, any content related to the transaction should be framed around what the user is trying to achieve. Wallet content isn't specific enough to truly help your users through a transaction because they need to cover so many dApp use cases.
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+        Design content that talks your user through the transaction in the
+        context of what they're doing, for example sending money, casting a vote
+        etc.
+      </Text>
+    ),
+    negative: (
+      <Text>
+        Expect wallets to give users all the information they need for a
+        transaction. Any information provided by a wallet will require more
+        thinking from the user due to how generalised it will be.
+      </Text>
+    )
+  }}
+</DoDont>
+
+[Read more](/guides/ux/transactions-wallet-ux)
+
+## Prevent errors
+
+Users lack confidence transacting. It's a combination of new technology, the risk of losing money and transaction irreversibility. Web2 experiences can be faster and more streamlined because errors often have recovery methods. In Web3 a little friction – like a transaction summary – could go a long way in preventing irreversible errors in the first place. Consider what information a user need to avoid common errors, for example:
+
+- their network
+- their address
+- their balance
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+        <ul>
+          <li>
+            Think about persistent nudges that might set your users up for
+            success – like reiterating to users which network they're on or
+            their current balance.
+          </li>
+          <li>
+            Consider introducing some tactical friction to the experience to
+            off-set the chance of frustrating and costly mistakes.
+          </li>
+          <li>
+            Help users out. If they're on the wrong network, tell them how to
+            get on the right one. If they don't have enough ETH, help them get
+            more.
+          </li>
+        </ul>
+      </Text>
+    ),
+    negative: (
+      <Text>
+        <ul>
+          <li>
+            Expect your users to understand the conditions they need to transact
+            successfully.
+          </li>
+          <li>
+            Design an experience that doesn't sufficiently protect the user.
+          </li>
+        </ul>
+      </Text>
+    )
+  }}
+</DoDont>
+
+[Read more](/guides/ux/transactions-prevent-errors)
+
+## Set user expectations
+
+Be sure to communicate an estimated time and transaction fee when summarising the transaction. Your user should be aware of how long it will take and how much it will cost before they confirm the transaction in their wallet. This will prevent transaction fees feeling like hidden fees and allow your user to better plan their next steps.
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+        <ul>
+          <li>
+            Give a time estimate (as specific as you can) – we use:{" "}
+            <SmartLink
+              href="https://docs.ethgasstation.info/"
+              title="View current ETH gas price information"
+            >
+              GasStation API
+            </SmartLink>
+          </li>
+          <li>
+            Be upfront about transaction fees and explain what they're for
+          </li>
+        </ul>
+      </Text>
+    ),
+    negative: (
+      <Text>
+        <ul>
+          <li>Use vague statements like "This might take a few minutes"</li>
+          <li>
+            Expect your user to understand the concept of transaction fees
+          </li>
+        </ul>
+      </Text>
+    )
+  }}
+</DoDont>
+
+[Read more](/guides/ux/transactions-set-user-expectations)
+
+## Just enough feedback
+
+Users only really value certain information when transacting:
+
+1. Has it started?
+2. What's its progress?
+3. Is it done?
+
+Although it's possible to provide your user with more feedback, this only dilutes the answer to these fundamental questions.
+
+Users also value an indication of progress like a "percentage complete" over UI like a processing spinner. This UI can actually leave some users to question whether their transaction has timed out, increasing the risk of a repeat transaction.
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+        <ul>
+          <li>
+            Only provide the information your user cares about – most users
+            don't stick around to watch their transaction process.
+          </li>
+          <li>
+            Use indications of progress like percentages and progress bars
+          </li>
+        </ul>
+      </Text>
+    ),
+    negative: (
+      <Text>
+        <ul>
+          <li>
+            Provide information just because you can. The more information you
+            provide the more technical the feedback will become.
+          </li>
+          <li>
+            Uses content and UI that indicates processing like spinners and
+            "time elapsed"
+          </li>
+        </ul>
+      </Text>
+    )
+  }}
+</DoDont>
+
+[Read more](/guides/ux/transactions-just-enough-feedback)
+
+## Design for next steps
+
+Often, a transaction isn't your user's end goal, so your transaction success state shouldn't be a dead end. Think about what your user is trying to ultimately achieve and help them get closer to that goal. Additionally you can use it to encourage the use of other dApps in the ecosystem. As an example, if a transaction generates DAI, you could suggest the user puts that Dai into a DeFi dApp so the user can start to earn interest.
+
+<DoDont>
+  {{
+    positive: (
+      <Text>
+        <ul>
+          <li>Design with the user's end goal in mind</li>
+          <li>
+            Promote other complementary products that will provide extra value
+            to your user. They might not be aware of it!
+          </li>
+        </ul>
+      </Text>
+    ),
+    negative: (
+      <Text>
+        <ul>
+          <li>Make your transaction success message a dead end.</li>
+          <li>Assume your user knows what to do next.</li>
+        </ul>
+      </Text>
+    )
+  }}
+</DoDont>
+
+[Read more](/guides/ux/transactions-design-next-steps)
+
+<br />
+
+## Try the demo
+
+We made a demo so you can see what this guide looks like in practice.
 
 <Button
-my={3}
-onClick={e =>
-window.toastProvider.addMessage('Processing transaction...', {
-secondaryMessage: 'This might take a few minutes',
-variant: 'processing',
-})
-}
+  mb={4}
+  width={[1, "auto"]}
+  as="a"
+  href="https://rimble-devcon-demo.netlify.com"
+  target="_blank"
+  title="To the Rimble transaction states demo"
 >
-Show example
+  Try demo
 </Button>
-<ToastMessage.Provider ref={node => (window.toastProvider = node)} />
 
-**Gas**
+---
 
-All blockchain actions require "Gas" or a "transaction fee". Users are not used to paying for actions in digital products. Make sure you introduce this concept in a timely manner. If you leave it until the user is in the process of confirming the transaction in their Ethereum account, this makes it feel like a hidden fee and is likely to cause uneasiness.
+1. Jakob Nielsen and Jen Cardello, “The Halo Effect,” _Nielsen Norman Group_, November 9, 2013, https://www.nngroup.com/articles/halo-effect/.
 
-<DoDont>
-  {{
-    positive: (
-      <Text>
-        Explain gas:
-        <ul>
-          <li>In product onboarding</li>
-          <li>In a transaction summary (before submission)</li>
-          <li>
-            If the user's wallet/account balance is empty. For example, "your
-            account doesn't have enough funds to use any of our blockchain
-            features"
-          </li>
-        </ul>
-      </Text>
-    ),
-    negative: (
-      <Text>
-        <ul>
-          <li>
-            {" "}
-            Rely on your wallet provider (for example, MetaMask) to explain
-            transaction fees
-          </li>
-          <li> Hope the user understands Gas</li>
-        </ul>
-      </Text>
-    )
-  }}
-</DoDont>
-
-### Keep the user in the loop
-
-Ethereum transactions are complicated. Explaining everything under the hood isn't necessary, but you should still make sure your user is aware of big changes in the transaction cycle.
-
-1. Confirm that the button they pressed to initiate the transaction worked. Be sure to point them to their wallet if they need to confirm the transaction there.
-
-_Example_
-
-<ToastMessage
-  width={[1, 1, 1 / 2]}
-  message={"Change submitted"}
-  secondaryMessage={"Confirm in MetaMask"}
-/>
-
-2. Indicate that the transaction process is happening.
-
-_Example_
-
-<ToastMessage.Processing
-  width={[1, 1, 1 / 2]}
-  message={"Processing change..."}
-  secondaryMessage={"This might take a few minutes"}
-/>
-
-3. If your users are more experienced in blockchain, you may want to signal when you can confirm the transaction has been taken on by a miner. Note: this could cause confusion for new and inexperienced users, so consider skipping until the transaction has been a success or failure.
-
-_Example_
-
-<ToastMessage.Processing
-  width={[1, 1, 1 / 2]}
-  message={"First block confirmed"}
-  secondaryMessage={"Your change is in progress"}
-/>
-
-4.  Let users know once the thing they set out to do by pressing the button has happened. In the case of our demo, it was that the value of the smart contract had changed.
-
-_Example_
-
-<ToastMessage.Success
-  width={[1, 1, 1 / 2]}
-  message={"Smart contract value changed"}
-/>
-
-5. Let the user know if something has gone wrong and the transaction can't be completed. Include why the transaction failed and how to remedy the situation (if possible). Consider other UI for this state as it may require action from the user.
-
-_Example_
-
-<ToastMessage.Failure
-  width={[1, 1, 1 / 2]}
-  message={"Value change failed"}
-  secondaryMessage={"Insert reason why or how to fix"}
-/>
-
-### Show states persistently too
-
-Our demo uses toast messages as the transaction speed is pretty quick, but they disappear automatically. So use other parts of the interface to provide updates on the process. Your users may not just watch their screen after submitting a transaction.
-
-Our pills can be a handy way of giving users this info at a glance.
-
-<Table>
-  <thead>
-    <tr>
-      <th>Transaction hash</th>
-      <th>Time</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        0xeb2317a1ae818be05c1bfdc818d5e2a5aa7ec61b389a7df6268bfd0d5d8e8cc0
-      </td>
-      <td />
-      <td>
-        <Pill mx={3} color={"blue"}>
-          {"Started"}
-        </Pill>
-        <br />
-      </td>
-    </tr>
-    <tr>
-      <td>
-        0xeb2317a1ae818be05c1bfdc818d5e2a5aa7ec61b389a7df6268bfd0d5d8e8cc0
-      </td>
-      <td />
-      <td>
-        <Pill mx={3} color={"orange"}>
-          {" "}
-          {"Processing"}
-        </Pill>
-        <br />
-      </td>
-    </tr>
-    <tr>
-      <td>
-        0xeb2317a1ae818be05c1bfdc818d5e2a5aa7ec61b389a7df6268bfd0d5d8e8cc0
-      </td>
-      <td />
-      <td>
-        <Pill mx={3} color={"green"}>
-          {"Confirmed"}
-        </Pill>
-        <br />
-      </td>
-    </tr>
-    <tr>
-      <td>
-        0xeb2317a1ae818be05c1bfdc818d5e2a5aa7ec61b389a7df6268bfd0d5d8e8cc0
-      </td>
-      <td />
-      <td>
-        <Pill mx={3} color={"red"}>
-          {"Failed"}
-        </Pill>
-        <br />
-      </td>
-    </tr>
-  </tbody>
-</Table>
-
-### Reference the action, not transaction
-
-Use specific language throughout. If the transaction is actually transferring a crypto asset, refer to that. Or if your users are casting a vote on the blockchain, reference the vote. This will spare users having to make connections in their head. Echo the language you'd use in the button to initiate the transaction e.g. Send CryptoKitty or Cast vote.
-
-<DoDont>
-  {{
-    positive: (
-      <Text>
-        <ul>
-          <li>Sending Ether...</li>
-          <li>Vote cast</li>
-          <li>Cryptokitty failed to send</li>
-        </ul>
-      </Text>
-    ),
-    negative: (
-      <Text>
-        <ul>
-          <li> Processing transaction...</li>
-          <li> Transaction confirmed</li>
-          <li> Transaction failed</li>
-        </ul>
-      </Text>
-    )
-  }}
-</DoDont>
-
-### Ensure the conditions are right pre-transaction
-
-Your dapp can detect a network as long as there's a web3 provider. And once the user has connected their Ethereum address with your dapp you can read the account balance. Don't wait until a transaction to tell your user about an incorrect network or a 0 ETH balance. This is not what the failed state is for.
-
-<DoDont>
-  {{
-    positive: (
-      <ToastMessage.Failure
-        width={[1, 1, 1 / 2]}
-        message={"Payment failed"}
-        secondaryMessage={"You didn't sign the contract in MetaMask"}
-      />
-    ),
-    negative: (
-      <Box>
-        <ToastMessage.Failure
-          width={[1, 1, 1 / 2]}
-          message={"Payment failed"}
-          secondaryMessage={"You were on the wrong network"}
-        />
-        <ToastMessage.Failure
-          width={[1, 1, 1 / 2]}
-          message={"Payment failed"}
-          secondaryMessage={"Your balance is 0 Ether"}
-        />
-      </Box>
-    )
-  }}
-</DoDont>
+2. Lexie Kane, “The Peak-End-Rule,” _Nielsen Norman Group_, December 30, 2018, https://www.nngroup.com/articles/peak-end-rule/.

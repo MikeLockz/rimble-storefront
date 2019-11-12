@@ -6,7 +6,6 @@ import styled from "styled-components";
 import StaticSideNav from "./StaticSideNav";
 import Navbar from "./Navbar";
 import Content from "./Content";
-import Footer from "./Footer";
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
@@ -47,6 +46,16 @@ const ContentWrapper = styled(Box)`
   }
 `;
 
+const SkipLink = styled.a`
+  clip: rect(0px, 0px, 0px, 0px);
+  height: 1px;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  margin: -1px;
+  text-decoration: none;
+`;
+
 const Layout = ({ children, tableOfContents, title, componentType }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -82,9 +91,9 @@ const Layout = ({ children, tableOfContents, title, componentType }) => {
       `}
       render={data => (
         <ThemeProvider theme={customTheme}>
-          <a href="#reach-skip-nav" data-reach-skip-link="true">
+          <SkipLink href="#reach-skip-nav" data-reach-skip-link="true">
             Skip to main content
-          </a>
+          </SkipLink>
 
           <StyledHeader isNavOpen={isNavOpen} toggleNavOpen={toggleNavOpen} />
 
@@ -98,7 +107,6 @@ const Layout = ({ children, tableOfContents, title, componentType }) => {
                 componentType={componentType}
                 tableOfContents={tableOfContents}
               />
-              <Footer />
             </ContentWrapper>
           </MainContent>
         </ThemeProvider>
