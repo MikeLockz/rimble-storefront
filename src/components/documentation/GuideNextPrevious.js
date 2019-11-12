@@ -11,7 +11,8 @@ const GuideNextPrevious = ({
   nextGuideName
 }) => {
   return (
-    <Box>
+    <Box
+      aria-label="pagination">
       <Heading.h4 mb={3} mt={4}>
         Navigate the guide
       </Heading.h4>

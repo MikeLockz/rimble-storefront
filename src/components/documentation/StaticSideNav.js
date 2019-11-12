@@ -59,7 +59,6 @@ const StyledNav = styled.nav`
   @media screen and (min-width: ${theme.breakpoints[2]}) {
     position: fixed;
     height: calc(100vh - 56px);
-    overflow: scroll;
 
     &.open,
     &.closed {
@@ -380,7 +379,9 @@ const StaticLinkList = () => (
           </RimbleGatsbyLink>
         </Li>
         <Li>
-          <RimbleGatsbyLink to={"/guides/ux/transactions-set-user-expectations"}>
+          <RimbleGatsbyLink
+            to={"/guides/ux/transactions-set-user-expectations"}
+          >
             3. Set user expectation
           </RimbleGatsbyLink>
         </Li>
@@ -416,9 +417,20 @@ const StaticLinkList = () => (
 
 const StaticSideNav = ({ isNavOpen, navbarHeight }) => {
   return (
-    <StyledNav className={isNavOpen ? "open" : "closed"}>
+    <StyledNav className={isNavOpen ? "open" : "closed"}
+      role="navigation"
+      aria-label="Main"
+      id="mainNavigation">
       <Flex height={"100%"} flexDirection={"column"} bg={"white"}>
-        <Box p={3} borderBottom={1} borderRight={1} borderColor={"blacks.3"}>
+        <Box
+          p={3}
+          borderBottom={1}
+          borderRight={1}
+          borderColor={"blacks.3"}
+          position="sticky"
+          top={[navbarHeight, 0]}
+          bg={"white"}
+        >
           <SearchInput />
         </Box>
 
@@ -428,6 +440,7 @@ const StaticSideNav = ({ isNavOpen, navbarHeight }) => {
           borderRight={1}
           borderWidth={1}
           borderColor={"blacks.3"}
+          overflow={"scroll"}
         >
           <StaticLinkList />
         </Box>
