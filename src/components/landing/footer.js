@@ -19,7 +19,8 @@ const MyContainer = styled(Container)`
 `;
 
 const Footer = ({ props }) => (
-  <FooterStyled>
+  <FooterStyled
+    aria-label="Footer">
     <MyContainer flexDirection={["column", "row"]} py={4}>
       <Link
         color="#f5f5f5"

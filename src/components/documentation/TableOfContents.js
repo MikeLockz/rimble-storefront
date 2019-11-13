@@ -65,7 +65,7 @@ const TableOfContents = props => {
       mx={[0, 0, 3]}
     >
       {Object.keys(tableOfContents).length > 0 ? (
-        <StyledLinkListBox p={3} ml={3}>
+        <StyledLinkListBox p={3} ml={3} aria-label="table of contents">
           <Text fontSize={2} fontWeight={4} mb={2}>
             On this page
           </Text>

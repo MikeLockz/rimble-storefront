@@ -15,20 +15,23 @@ const getContributeUrl = componentType => {
 const ContributeBanner = ({ componentType }) => (
   <>
     {getContributeUrl(componentType) ? (
-      <Box my={4}>
+      <Box
+        my={4}>
         <Text textAlign={"center"} mb={4}>
           {"(ﾉ◕ヮ◕)ﾉ*:・ﾟ✧"}
         </Text>
         <Card color="white" bg="primary-light" borderRadius="2" border="none">
           <Flex>
             <Box width={[3 / 4]}>
-              <Heading.h2 mb={3} color="white">
+              <Heading.h2 id="contribute" mb={3} color="white">
                 Contribute to Rimble
               </Heading.h2>
               <Text color="white" mb={4}>
                 We welcome pull requests and issues that help improve Rimble!
               </Text>
               <Button
+                role="button"
+                aria-labelledby="contribute "
                 mainColor={"white"}
                 contrastColor={"primary"}
                 as={"a"}

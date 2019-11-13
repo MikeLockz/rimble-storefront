@@ -25,13 +25,13 @@ Different ways to use the `Card` component
 **Different size**
 
 ```js is=react-live
-<Card bg="black" color="white" size="300px">
+<Card bg="black" color="white" maxWidth={"300px"}>
   This is a Card
 </Card>
 ```
 
 ```js is=react-live
-<Card width={"420px"} mx={"auto"} px={4}>
+<Card width={"auto"} maxWidth={"420px"} mx={"auto"} px={[3, 3, 4]}>
   <Text
     caps
     fontSize={0}
@@ -44,12 +44,14 @@ Different ways to use the `Card` component
     Connect your Wallet:
   </Text>
 
-  <MetaMaskButton.Outline fullWidth>Install MetaMask</MetaMaskButton.Outline>
+  <MetaMaskButton.Outline fullWidth width={[1, "auto", "auto"]} px={[3, 4, 4]}>
+    Install MetaMask
+  </MetaMaskButton.Outline>
 </Card>
 ```
 
 ```js is=react-live
-<Card width={"420px"} mx={"auto"} px={4}>
+<Card width={"auto"} maxWidth={"420px"} mx={"auto"} px={[3, 3, 4]}>
   <Heading>Heading</Heading>
 
   <Box>
@@ -61,27 +63,31 @@ Different ways to use the `Card` component
     </Text>
   </Box>
 
-  <Button mr={3}>Accept</Button>
+  <Button width={[1, "auto", "auto"]} mr={3}>
+    Accept
+  </Button>
 
-  <Button.Outline>Cancel</Button.Outline>
+  <Button.Outline width={[1, "auto", "auto"]} mt={[2, 0, 0]}>
+    Cancel
+  </Button.Outline>
 </Card>
 ```
 
 ```js is=react-live
-<Card width={"420px"} mx={"auto"} my={5} p={0}>
+<Card width={"auto"} maxWidth={"420px"} mx={"auto"} my={5} p={0}>
   <Image
     width={1}
     src="https://source.unsplash.com/random/1280x720"
     alt="random image from unsplash.com"
   />
 
-  <Box px={4} py={3}>
+  <Box px={[3, 3, 4]} py={3}>
     <Heading.h2>Card title</Heading.h2>
     <Heading.h5 color="#666">Card sub-title</Heading.h5>
   </Box>
 
-  <Flex px={4} height={3} borderTop={1} borderColor={"#E8E8E8"}>
-    <Button.Text p={"0"} mr={4} height={"auto"}>
+  <Flex px={[3, 3, 4]} height={3} borderTop={1} borderColor={"#E8E8E8"}>
+    <Button.Text p={"0"} mr={[2, 3, 4]} height={"auto"}>
       Text Button
     </Button.Text>
 
@@ -98,4 +104,4 @@ Different ways to use the `Card` component
 
 ** Styled System Props **
 
-Box uses `COMMON`, `LAYOUT`, `POSITION`, `FLEXBOX`, `BORDERS` groups of [Styed System props](/components/rimble-ui/system-props).
+Box uses `COMMON`, `LAYOUT`, `POSITION`, `FLEXBOX`, `BORDERS` groups of [Styled System props](/components/rimble-ui/system-props).

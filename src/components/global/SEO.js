@@ -3,7 +3,15 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
 
-function SEO({ description, lang, meta, keywords, title }) {
+function SEO({
+  description,
+  lang,
+  meta,
+  keywords,
+  title,
+  image,
+  componentType
+}) {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -11,7 +19,10 @@ function SEO({ description, lang, meta, keywords, title }) {
         const metaDescription =
           description || data.site.siteMetadata.description;
 
-        const image = `${data.site.siteMetadata.image}`;
+        const imagePath =
+          componentType === "rimble-ui"
+            ? image
+            : `${data.site.siteMetadata.image}`;
 
         return (
           <Helmet
@@ -65,7 +76,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               .concat([
                 {
                   property: "og:image",
-                  content: image
+                  content: imagePath
                 },
                 {
                   name: "twitter:card",
