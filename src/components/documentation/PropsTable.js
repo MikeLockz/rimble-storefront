@@ -23,6 +23,14 @@ const PrettyPrintJson = React.memo(({ data }) => {
 
 const PropsTable = props => {
   let { propMetaData = [], ..._props } = props;
+
+  // Alpha sort array of props on name property
+  propMetaData.sort((a, b) => {
+    const textA = a.name.toUpperCase();
+    const textB = b.name.toUpperCase();
+    return textA < textB ? -1 : textA > textB ? 1 : 0;
+  });
+
   return (
     <Box
       bg="#f5f5f5"
@@ -39,11 +47,7 @@ const PropsTable = props => {
               const prop = propMetaData[key];
               return (
                 <Box my={3} key={key}>
-                  <Flex
-                    alignItems="center"
-                    alignContent="center"
-                    flexWrap={"wrap"}
-                  >
+                  <Flex alignItems="baseline" flexWrap={"wrap"}>
                     <Heading.h4
                       mr={2}
                       fontFamily="monospace"
@@ -54,17 +58,24 @@ const PropsTable = props => {
                     <Text mr={2} fontFamily="monospace" color="mid-gray">
                       {prop.parentType ? prop.parentType.name : ""}
                     </Text>
-                    <Text>
-                      {prop.required ? (
-                        <Text fontFamily="monospace" color="mid-gray">
-                          (required)
-                        </Text>
-                      ) : (
-                        <Text fontFamily="monospace" color="mid-gray">
-                          (optional)
-                        </Text>
-                      )}
-                    </Text>
+
+                    {prop.required ? (
+                      <Text
+                        fontWeight={3}
+                        fontFamily="monospace"
+                        color="mid-gray"
+                      >
+                        (required)
+                      </Text>
+                    ) : (
+                      <Text
+                        fontWeight={1}
+                        fontFamily="monospace"
+                        color="mid-gray"
+                      >
+                        (optional)
+                      </Text>
+                    )}
                   </Flex>
                   <Text italic mb={2}>
                     {prop.docblock ? prop.docblock : ""}

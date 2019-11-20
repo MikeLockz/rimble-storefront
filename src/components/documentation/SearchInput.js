@@ -7,11 +7,12 @@ const SearchForm = styled(Form)`
   > span > input {
     width: 100%;
   }
-`
+`;
 
 function SearchInput({ ...rest }) {
   useEffect(() => {
     typeof window !== "undefined" &&
+      typeof window.docsearch !== "undefined" &&
       window.docsearch({
         apiKey: "c62d786a7050496460df7969528f68a4",
         indexName: "rimble-ui",
