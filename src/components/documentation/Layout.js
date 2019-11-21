@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { StaticQuery, graphql } from "gatsby";
-import { ThemeProvider, Box, theme } from "rimble-ui";
+import { ThemeProvider, BaseStyles, Box, theme } from "rimble-ui";
 import styled from "styled-components";
 
 import StaticSideNav from "./StaticSideNav";
@@ -15,11 +15,6 @@ if (typeof window !== "undefined") {
   });
 }
 const navbarHeight = "56px";
-
-const customTheme = {
-  ...theme,
-  breakpoints: ["40em", "52em", "64em"]
-};
 
 const StyledHeader = styled(Navbar)``;
 
@@ -90,25 +85,30 @@ const Layout = ({ children, tableOfContents, title, componentType }) => {
         }
       `}
       render={data => (
-        <ThemeProvider theme={customTheme}>
-          <SkipLink href="#reach-skip-nav" data-reach-skip-link="true">
-            Skip to main content
-          </SkipLink>
+        <ThemeProvider theme={theme}>
+          <BaseStyles>
+            <SkipLink href="#reach-skip-nav" data-reach-skip-link="true">
+              Skip to main content
+            </SkipLink>
 
-          <StyledHeader isNavOpen={isNavOpen} toggleNavOpen={toggleNavOpen} />
+            <StyledHeader isNavOpen={isNavOpen} toggleNavOpen={toggleNavOpen} />
 
-          <MainContent>
-            <StaticSideNav isNavOpen={isNavOpen} navbarHeight={navbarHeight} />
-
-            <ContentWrapper className={isNavOpen ? "nav-open" : "nav-closed"}>
-              <Content
-                title={title}
-                children={children}
-                componentType={componentType}
-                tableOfContents={tableOfContents}
+            <MainContent>
+              <StaticSideNav
+                isNavOpen={isNavOpen}
+                navbarHeight={navbarHeight}
               />
-            </ContentWrapper>
-          </MainContent>
+
+              <ContentWrapper className={isNavOpen ? "nav-open" : "nav-closed"}>
+                <Content
+                  title={title}
+                  children={children}
+                  componentType={componentType}
+                  tableOfContents={tableOfContents}
+                />
+              </ContentWrapper>
+            </MainContent>
+          </BaseStyles>
         </ThemeProvider>
       )}
     />

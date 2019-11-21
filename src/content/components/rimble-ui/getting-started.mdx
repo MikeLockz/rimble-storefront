@@ -1,6 +1,6 @@
 ---
-title: Get Started
-description: Get started with rimble-ui. Instructions for installing and quick start for rimble-ui.
+title: Getting Started
+description: Gettting started with rimble-ui. Instructions for installing and quick start for rimble-ui.
 ---
 
 ## Installation
@@ -42,6 +42,25 @@ function App() {
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
+```
+
+## BaseStyles
+
+In order to set basic color, font-sizes, font-family, line-heights, style resets via _normalize_ across your project, you will need to establish Rimble's base styles for your app by wrapping all of your components in `<BaseStyles>`:
+
+```
+import {BaseStyles, Box, Heading} from 'rimble-ui'
+
+const App = (props) => {
+  return (
+    <BaseStyles>
+      <Box m={4}>
+        <Heading mb={2}>Hello, world!</Heading>
+        <p>These elements will have Rimble's base styles applied to them.</p>
+      </Box>
+    </BaseStyles>
+  )
+}
 ```
 
 ## Theming

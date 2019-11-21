@@ -36,7 +36,10 @@ import {
   ToastMessage,
   UPortButton,
   Tooltip,
-  EthAddress
+  EthAddress,
+  ThemeProvider,
+  BaseStyles,
+  theme
 } from "rimble-ui";
 import ConnectionBanner from "@rimble/connection-banner";
 import NetworkIndicator from "@rimble/network-indicator";
@@ -74,7 +77,10 @@ const localScope = {
   ToastMessage,
   UPortButton,
   Tooltip,
-  EthAddress
+  EthAddress,
+  ThemeProvider,
+  BaseStyles,
+  theme
 };
 
 const CodeBox = styled(Box)`
@@ -126,7 +132,13 @@ const LiveEditorCodebox = ({
     >
       <CodeBox my={4}>
         <Box>
-          <Box bg={"blacks.0"} border={1} borderColor={"grey"} p={3} style={{ wordBreak: "break-all"}}>
+          <Box
+            bg={"blacks.0"}
+            border={1}
+            borderColor={"grey"}
+            p={3}
+            style={{ wordBreak: "break-all" }}
+          >
             <LivePreview />
             <LiveError />
           </Box>

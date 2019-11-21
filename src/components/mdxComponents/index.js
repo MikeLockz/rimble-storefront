@@ -30,7 +30,10 @@ import {
   ToastMessage,
   UPortButton,
   Tooltip,
-  EthAddress
+  EthAddress,
+  ThemeProvider,
+  BaseStyles,
+  theme
 } from "rimble-ui";
 
 import ConnectionBanner from "@rimble/connection-banner";
@@ -108,6 +111,9 @@ const mdxComponents = {
   ToastMessage: props => <ToastMessage {...props} />,
   Tooltip: props => <Tooltip {...props} />,
   UPortButton: props => <UPortButton {...props} />,
+  ThemeProvider,
+  BaseStyles,
+  theme,
   ConnectionBanner,
   NetworkIndicator,
 

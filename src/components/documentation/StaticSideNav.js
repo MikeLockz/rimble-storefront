@@ -81,24 +81,19 @@ const StaticLinkList = () => (
       <Ul>
         <NavGroupHeading>Guides</NavGroupHeading>
         <Ul>
-          {/* <Li>
+          <Li>
+            <RimbleGatsbyLink to={"/components/rimble-ui/getting-started"}>
+              Getting Started
+            </RimbleGatsbyLink>
+          </Li>
+          <Li>
             <RimbleGatsbyLink to={"/components/rimble-ui/theming"}>
               Theming
-            </RimbleGatsbyLink>
-          </Li> */}
-          <Li>
-            <RimbleGatsbyLink to={"/components/rimble-ui/get-started"}>
-              Get Started
             </RimbleGatsbyLink>
           </Li>
           <Li>
             <RimbleGatsbyLink to={"/components/rimble-ui/system-props"}>
               System Props
-            </RimbleGatsbyLink>
-          </Li>
-          <Li>
-            <RimbleGatsbyLink to={"/components/rimble-ui/rimble-theme"}>
-              Rimble Theme
             </RimbleGatsbyLink>
           </Li>
           <Li>
@@ -417,10 +412,12 @@ const StaticLinkList = () => (
 
 const StaticSideNav = ({ isNavOpen, navbarHeight }) => {
   return (
-    <StyledNav className={isNavOpen ? "open" : "closed"}
+    <StyledNav
+      className={isNavOpen ? "open" : "closed"}
       role="navigation"
       aria-label="Main"
-      id="mainNavigation">
+      id="mainNavigation"
+    >
       <Flex height={"100%"} flexDirection={"column"} bg={"white"}>
         <Box
           p={3}

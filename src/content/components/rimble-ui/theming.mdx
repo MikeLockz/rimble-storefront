@@ -1,15 +1,80 @@
 ---
-title: Rimble Theme
-description:
+title: Theming
+description: Rimble allows full control over all shared aspects of size, space, color, responsive breakpoints, and more.
 ---
 
-Rimble Components come with built-in access to the Rimble theme. The theme file contains an object which holds values for common variables such as color, fonts, box shadows, and more.
+Rimble Components come with built-in access to the default Rimble theme. The theme file contains an object which holds values for common variables such as color, fonts, box shadows, and more.
 
-Rimble's full `theme.js` is as follows:
+**Custom global theme**
+
+```js is=react-live
+<ThemeProvider
+  theme={Object.assign({}, theme, {
+    colors: {
+      ...theme.colors, // keeps existing colors
+      text: "#EEE", // sets color for text
+      background: "#222", // sets color for background
+      primary: "#3259D6" // sets primary color
+    },
+    fontSizes: [12, 14, 16, 20, 24, 32, 48, 64], // sets font scale
+    space: [0, 4, 8, 16, 32, 64, 128, 256], // sets spacing scale
+  })}
+>
+  <BaseStyles>
+    <Card bg={'background'}>
+      <Form display={'flex'} flexDirection={'column'}>
+        <Text fontSize={4} mb={4}>
+          Sign In
+        </Text>
+        <Form.Field label={'Username'}>
+          <Form.Input type={'text'}  width={1} />
+        </Form.Field>
+        <Form.Field label={'Password'}>
+          <Form.Input type={'password'}  width={1} />
+        </Form.Field>
+        <Form.Check label={'Remember Me'} mb={3} />
+        <Button>Sign In</Button>
+      </Form>
+    </Card>
+  </BaseStyles>
+</ThemeProvider>
+```
+
+## Quick start
+
+Start from the entry-point into your React app. If you are starting from Create React App, this would be done in the `index.js`.
+
+**1. Import required components**
+
+```js
+import { BaseStyles, theme } from "rimble-ui";
+import { ThemeProvider } from "styled-components";
+```
+
+**2. Create custom by extending the default Rimble theme**
+
+```js
+const customTheme = {
+  // Copy the entire rimble theme and customize to your desired values
+};
+```
+
+**3. Wrap your app by the `ThemeProvider` and pass your custom theme to the _theme_ prop**
+
+```js
+<ThemeProvider theme={customTheme}>
+  <BaseStyles>
+    <App />
+  </BaseStyles>
+</ThemeProvider>
+```
+
+## Default theme definition
+
+Rimble's full `theme` object that is exported is as follows:
 
 ```
-// rimble theme.js
-
+// Rimble's default theme object
 {
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   fontWeights: [0, 300, 400, 600, 700],
@@ -161,28 +226,28 @@ Rimble's full `theme.js` is as follows:
 
 ```
 
-## Custom theming
+## Theming strategies
 
-Custom theming is an optional way to override the Rimble values that control color, spacing, typography, and other aspects of our components.
+There are many different ways to implement different styles on components. Themes can applied globally to all components via the ThemeProvider. Individual components can have styles applied to them directly via the _theme_ prop.
 
-**1. You can override the entire theme for an entire tree of components using the `<ThemeProvider>` from styled-components:**
+**Option A: You can override the entire theme for an entire tree of components using the `ThemeProvider` from styled-components:**
 
 ```
-import {Box, Button, Text, theme as rimbleTheme} from 'rimble-ui'
+import {Box, Button, Text, theme} from 'rimble-ui'
 import {ThemeProvider} from 'styled-components'
 
 // a theme with custom spacing and font sizes
-const theme = {
-  ...rimbleTheme,
+const customTheme = {
+  ...theme,
   space: [0, 8, 16, 32, 64],
   fontSizes: [10, 12, 16, 24, 48]
 }
 
 // override
-theme.colors.black = '#111'
+customTheme.colors.black = '#111'
 
 export default () => (
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={customTheme}>
     <Box color='black' p={4}>
       <Text fontSize={4}>Hello, world!</Text>
     </Box>
@@ -190,38 +255,45 @@ export default () => (
 )
 ```
 
-**2. You can merge the Rimble theme with your custom theme using Object.assign:**
+**Option B: You can merge the Rimble theme with your custom theme using Object.assign:**
 
 ```
-import {ThemeProvider} from `styled-components`
-import {theme} from 'rimble-ui'
+import {theme} from 'rimble-ui';
+import { ThemeProvider } from 'styled-components';
 
-const customTheme = { ... }
+const customTheme = {
+  space: [0, 8, 16, 32, 64],
+  fontSizes: [10, 12, 16, 24, 48]
+  colors: {
+    ...theme.colors,
+    black: '#111'
+  }
+};
 
 const App = (props) => {
   return (
     <div>
       <ThemeProvider theme={Object.assign({}, theme, customTheme)}> // matching keys in customTheme will override keys in the Rimble theme
-        <div>your app here</div>
+        <App />
       </ThemeProvider>
     </div>
   )
 }
 ```
 
-**3. You can theme individual components by passing the theme prop directly: **
+**Option 3: You can theme individual components by passing the theme prop directly:**
 
 ```
 import {Text} from 'rimble-ui'
 
-const theme = {
+const customTheme = {
   colors: {
     magenta: '#f0f'
   }
 }
 
 export default () => (
-  <Text theme={theme} color='magenta'>Hi, I'm magenta!</Text>
+  <Text theme={customTheme} color='magenta'>Hi, I'm magenta!</Text>
 )
 ```
 
