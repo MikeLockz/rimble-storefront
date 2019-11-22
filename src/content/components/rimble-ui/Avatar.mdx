@@ -2,6 +2,7 @@
 title: Avatar
 componentName: Avatar
 description: A basic avatar component. Use avatars to visually represent entities in your product, for example people, tokens, currency and companies.
+image: "/images/Avatar.png"
 ---
 
 A basic avatar component. Use avatars to visually represent entities in your product, for example people, tokens, currency and companies.
@@ -84,21 +85,23 @@ Labels will help solidify the relationship between the entity and the avatar. Th
   {{
     positive: (
       <Card>
-      <Flex alignItems="center">
+        <Flex alignItems="center">
           <Avatar
             size="medium"
             src="https://airswap-token-images.s3.amazonaws.com/DAI.png"
           />
-          <Text fontSize={3} fontWeight="bold" ml={3}>DAI</Text>
-      </Flex>
+          <Text fontSize={3} fontWeight="bold" ml={3}>
+            DAI
+          </Text>
+        </Flex>
       </Card>
     ),
     negative: (
       <Card>
-      <Avatar
-        size="medium"
-        src="https://airswap-token-images.s3.amazonaws.com/DAI.png"
-      />
+        <Avatar
+          size="medium"
+          src="https://airswap-token-images.s3.amazonaws.com/DAI.png"
+        />
       </Card>
     )
   }}

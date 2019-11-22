@@ -19,10 +19,7 @@ function SEO({
         const metaDescription =
           description || data.site.siteMetadata.description;
 
-        const imagePath =
-          componentType === "rimble-ui"
-            ? image
-            : `${data.site.siteMetadata.image}`;
+        const imagePath = image ? image : `${data.site.siteMetadata.image}`;
 
         return (
           <Helmet

@@ -38,7 +38,7 @@ class DocLayout extends React.Component {
             description={data.mdx.frontmatter.description}
             keywords={[`rimble`, `web3`, `blockchain`]}
             componentType={getComponentType(data.mdx.fields.slug)}
-            image={`/images/${data.mdx.frontmatter.title}.png`}
+            image={data.mdx.frontmatter.image}
           />
           <Helmet />
           <Box>
@@ -71,6 +71,7 @@ export const pageQuery = graphql`
         title
         componentName
         description
+        image
       }
       fields {
         slug
