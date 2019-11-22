@@ -132,13 +132,7 @@ const LiveEditorCodebox = ({
     >
       <CodeBox my={4}>
         <Box>
-          <Box
-            bg={"blacks.0"}
-            border={1}
-            borderColor={"grey"}
-            p={3}
-            style={{ wordBreak: "break-all" }}
-          >
+          <Box bg={"blacks.0"} border={1} borderColor={"grey"} p={3}>
             <LivePreview />
             <LiveError />
           </Box>
