@@ -1,0 +1,94 @@
+---
+title: ThemeProvider
+componentName: ThemeProvider
+description: A wrapping component that applies global styles. Use the Base Styles component in conjunction with ThemeProvider to apply css resets, default typography, and other globally-defined styles.
+---
+
+A wrapping component that overrides default component styles. ThemeProvider allows all child components to have access to the theme object via the Context API. [Learn more about ThemeProvider from Styled-Components](https://www.styled-components.com/docs/advanced#theming).
+
+**Import component**
+
+```jsx
+import { BaseStyles, theme } from "rimble-ui";
+import { ThemeProvider } from "styled-components";
+```
+
+## Examples
+
+**Apply default global styles**
+
+```js is=react-live
+<ThemeProvider>
+  <BaseStyles>
+    <Button>Default Rimble theme</Button>
+  </BaseStyles>
+</ThemeProvider>
+```
+
+**Override global styles**
+
+```js is=react-live
+<ThemeProvider
+  theme={Object.assign({}, theme, {
+    colors: {
+      ...theme.colors,
+      white: "black",
+      background: "blue",
+      primary: "crimson"
+    }
+  })}
+>
+  <BaseStyles>
+    <Button>Override Rimble theme</Button>
+  </BaseStyles>
+</ThemeProvider>
+```
+
+```js
+// Default Basestyles css
+${normalize()}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.25;
+}
+h1 {
+  font-size: ${themeGet('fontSizes.6', '')}px;
+}
+h2 {
+  font-size: ${themeGet('fontSizes.5', '')}px;
+}
+h3 {
+  font-size: ${themeGet('fontSizes.4', '')}px;
+}
+h4 {
+  font-size: ${themeGet('fontSizes.3', '')}px;
+}
+h5 {
+  font-size: ${themeGet('fontSizes.2', '')}px;
+}
+h6 {
+  font-size: ${themeGet('fontSizes.1', '')}px;
+}
+```
+
+## Props
+
+<PropsTable propMetaData={props.propMetaData} />
+
+** Styled System Props **
+
+`ThemeProvider` does not use any [Styled System props](/components/rimble-ui/system-props).
+
+## Design guidelines
+
+Some best practice for using `BaseStyles` in your product.
+
+**Use with ThemeProvider**
+
+ThemeProvider passes in variables to set sizes for typography and spacing that gets applied globally via the BaseStyles.

@@ -24,7 +24,7 @@ Different ways to use the `Heading` component.
 Use for page or screen titles.
 
 ```js is=react-live
-<Heading.h1>Transactions</Heading.h1>
+<Heading as={"h1"}>Transactions</Heading>
 ```
 
 **h2**
@@ -32,7 +32,7 @@ Use for page or screen titles.
 Use for headings that are sub-sections of the h1 heading.
 
 ```js is=react-live
-<Heading.h2>Latest transaction</Heading.h2>
+<Heading as={"h2"}>Latest transaction</Heading>
 ```
 
 **h3**
@@ -40,7 +40,7 @@ Use for headings that are sub-sections of the h1 heading.
 Use for headings that are sub-sections of an h2 heading.
 
 ```js is=react-live
-<Heading.h3>Successful transactions</Heading.h3>
+<Heading as={"h3"}>Successful transactions</Heading>
 ```
 
 **h4**
@@ -48,7 +48,7 @@ Use for headings that are sub-sections of an h2 heading.
 Use for headings that are sub-sections of any h3 headings.
 
 ```js is=react-live
-<Heading.h4>Transaction fees</Heading.h4>
+<Heading as={"h4"}>Transaction fees</Heading>
 ```
 
 **h5**
@@ -56,7 +56,7 @@ Use for headings that are sub-sections of any h3 headings.
 Use for headings that are sub-sections of any h4 headings.
 
 ```js is=react-live
-<Heading.h5>Transaction fees explained</Heading.h5>
+<Heading as={"h5"}>Transaction fees explained</Heading>
 ```
 
 **h6**
@@ -64,14 +64,14 @@ Use for headings that are sub-sections of any h4 headings.
 Use for headings that are sub-sections of any h5 headings.
 
 ```js is=react-live
-<Heading.h6>How are transaction fees calculated?</Heading.h6>
+<Heading as={"h6"}>How are transaction fees calculated?</Heading>
 ```
 
 ## Props
 
 <PropsTable propMetaData={props.propMetaData} />
 
-** Styled System Props **
+**Styled System Props**
 
 `Heading` uses `COMMON`, `TYPOGRAPHY` groups of [Styled System props](/components/rimble-ui/system-props).
 
@@ -96,8 +96,8 @@ Don’t use articles (a, the, an) in headings. This will make them shorter and q
 
 <DoDont>
   {{
-    positive: <Heading.h2>Add wallet</Heading.h2>,
-    negative: <Heading.h2>Add a wallet</Heading.h2>
+    positive: <Heading as={"h2"}>Add wallet</Heading>,
+    negative: <Heading as={"h2"}>Add a wallet</Heading>
   }}
 </DoDont>
 
@@ -107,8 +107,8 @@ Make sure the subject of your heading is put first and foremost in your copy –
 
 <DoDont>
   {{
-    positive: <Heading.h2>Withdraw ETH?</Heading.h2>,
-    negative: <Heading.h2>Are you sure?</Heading.h2>
+    positive: <Heading as={"h2"}>Withdraw ETH?</Heading>,
+    negative: <Heading as={"h2"}>Are you sure?</Heading>
   }}
 </DoDont>
 
