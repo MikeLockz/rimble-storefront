@@ -16,7 +16,7 @@ const Ul = props => <Text as={"ul"} pl={3} mb={0} {...props} />;
 const Li = props => <Text as={"li"} color={"#666"} {...props} />;
 
 const NavGroupHeading = props => (
-  <Li fontSize={1} mb={2} mt={1} fontWeight={"600"} color={"#444"} caps {...props} />
+  <Li fontSize={1} my={1} fontWeight={"600"} color={"#444"} caps {...props} />
 );
 
 const StyledNav = styled.nav`
