@@ -6,17 +6,17 @@ import theme from "./../../theme";
 import SearchInput from "./SearchInput";
 
 const RimbleGatsbyLink = props => (
-  <Text fontSize={1} fontWeight={"bold"} pb={2}>
+  <Text fontSize={2} fontWeight={"400"} pb={2}>
     <Link as={GatsbyLink} activeClassName={"-is-active"} {...props} />
   </Text>
 );
 
-const Ul = props => <Text as={"ul"} pl={3} m={0} {...props} />;
+const Ul = props => <Text as={"ul"} pl={3} mb={0} {...props} />;
 
-const Li = props => <Text as={"li"} {...props} />;
+const Li = props => <Text as={"li"} color={"#666"} {...props} />;
 
 const NavGroupHeading = props => (
-  <Li fontSize={1} my={2} color={"mid-gray"} caps {...props} />
+  <Li fontSize={1} mb={2} mt={1} fontWeight={"600"} color={"#444"} caps {...props} />
 );
 
 const StyledNav = styled.nav`
