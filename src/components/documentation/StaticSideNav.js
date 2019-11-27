@@ -79,7 +79,7 @@ const StaticLinkList = () => (
         </RimbleGatsbyLink>
       </Li>
       <Ul>
-        <NavGroupHeading>Guides</NavGroupHeading>
+        <NavGroupHeading>Setup</NavGroupHeading>
         <Ul>
           <Li>
             <RimbleGatsbyLink to={"/components/rimble-ui/getting-started"}>
