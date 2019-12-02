@@ -11,7 +11,8 @@ const RimbleGatsbyLink = props => (
   </Text>
 );
 
-const Ul = props => <Text as={"ul"} pl={3} mb={0} {...props} />;
+const Ul = props => <Text as={"ul"} pl={0} mb={3} {...props} />;
+
 
 const Li = props => <Text as={"li"} color={"mid-gray"} {...props} />;
 
@@ -68,18 +69,18 @@ const StyledNav = styled.nav`
 `;
 
 const StaticLinkList = () => (
-  <Ul mb={4} mr={5}>
+  <Ul mb={4} mx={4}>
     <Li>
       <RimbleGatsbyLink to={"/components"}>Components</RimbleGatsbyLink>
     </Li>
     <Ul>
-      <Li>
+      <Li mb={3}>
         <RimbleGatsbyLink to={"/components/rimble-ui"}>
           Rimble UI
         </RimbleGatsbyLink>
       </Li>
       <Ul>
-        <NavGroupHeading>Guides</NavGroupHeading>
+        <NavGroupHeading>Setup</NavGroupHeading>
         <Ul>
           <Li>
             <RimbleGatsbyLink to={"/components/rimble-ui/getting-started"}>
@@ -321,7 +322,7 @@ const StaticLinkList = () => (
         </Ul>
       </Ul>
     </Ul>
-    <Li>
+    <Li fontWeight={4} color={"primary"}>
       <RimbleGatsbyLink to={"/guides"}>Guides</RimbleGatsbyLink>
     </Li>
     <Ul>
