@@ -34,3 +34,28 @@ Landing page, marketing site, design guidelines, and documentation for rimble-ui
 ## 💫 Deploy
 
 All commits to any branch will autodeploy via netlify. To deploy to production, merge branches onto the `main` branch.
+
+## Upgrading rimble-ui or other rimble source library
+
+We have to use 2 copies of any library on the storefront: one copy is used via npm and is used to generate all the components and styles. The second copy is used specifically by a Gatsby plugin to get the metadata from the original source code that generates the prop tables.
+
+**You will need to update the source for rimble-ui in 2 places:**
+
+1. Open termainl in the root of the repo and `git checkout -b "bump-rimble-ui-0-xx-x"`
+
+### 1. Upgrade npm package
+
+1. In your source editor open up `package.json` from the root of the repo
+2. Look for "rimble-ui" under **dependencies**
+3. Change the semver number to the desired package number like `"rimble-ui:" 0.xx.x`
+4. Save changes to `package.json`
+
+### 2. Upgrade library source
+
+1. Open a new terminal at the root of the repo and then navigate to /src/library/rimble-ui like `cd src/library/rimble-ui`
+2. Use git to pull latest from the `master` branch like `git checkout master && git pull`
+   **You should get a git change to the sub-module from the `rimble-storefront` repo**
+
+### 3. Commit and push changes
+
+1. Commit the sub-module change and the package.json change and push up like `git commit -am "Bumped rimble-ui to 0.xx.x" && git push`
