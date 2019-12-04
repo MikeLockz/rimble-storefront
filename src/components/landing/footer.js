@@ -1,30 +1,23 @@
 import React from "react";
-import styled from "styled-components";
-import { flexDirection, space } from "styled-system";
+import { Flex, Box, Text, Link } from 'rimble-ui';
 import Container from "./Container";
-import { Text, Link } from 'rimble-ui';
 
-const FooterStyled = styled.footer`
-  background: ${props => props.theme.colors["primary-light"]};
-`;
-
-const MyContainer = styled(Container)`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 4rem;
-
-  ${space}
-  ${flexDirection}
-`;
-
-const Footer = ({ props }) => (
-  <FooterStyled
-    aria-label="Footer">
-    <MyContainer flexDirection={["column", "row"]} py={4}>
+const Footer = () => (
+  <Box
+    as={'footer'}
+    bg={'#f2f4f7'}
+    py={4}
+    aria-label="Footer"
+  >
+    <Flex
+      as={Container}
+      flexDirection={["column", "row"]}
+      justifyContent={'space-between'}
+      alignItems={'center'}
+    >
       <Link
-        color="#f5f5f5"
-        hoverColor="#f5f5f5"
+        color="mid-gray"
+        hoverColor="dark-gray"
         fontWeight={3}
         fontSize={2}
         href="//consensys.design/"
@@ -34,21 +27,21 @@ const Footer = ({ props }) => (
         Made by ConsenSys Design
       </Link>
       <Link
-        color="#f5f5f5"
-        hoverColor="#f5f5f5"
+        color="mid-gray"
+        hoverColor="dark-gray"
         fontWeight={3}
         fontSize={2}
         href="//twitter.com/MakingRimble"
         target="_blank"
         rel="noopener"
       >
-      Follow us on Twitter
-    </Link>
-      <Text fontWeight={0} fontSize={2} color="#f5f5f5">
+        Follow us on Twitter
+      </Link>
+      <Text fontWeight={0} fontSize={2} color="mid-gray">
         © 2018 ConsenSys Inc.
       </Text>
-    </MyContainer>
-  </FooterStyled>
+    </Flex>
+  </Box>
 );
 
 export default Footer;

@@ -1,0 +1,69 @@
+<svg width="1440" height="960" viewBox="0 0 1440 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<g opacity="0.3">
+<path d="M0 240V0H240L0 240Z" fill="#6141ED"/>
+<path opacity="0.484375" d="M0 120V0H120L0 120Z" fill="#7E66EC"/>
+<path d="M120 0V120H0L120 0Z" fill="#7E66EC"/>
+</g>
+<g opacity="0.3">
+<path d="M240 480V240H480L240 480Z" fill="#6141ED"/>
+<path opacity="0.484375" d="M240 360V240H360L240 360Z" fill="#7E66EC"/>
+<path d="M360 240V360H240L360 240Z" fill="#7E66EC"/>
+</g>
+<g opacity="0.3">
+<path d="M480 720V480H720L480 720Z" fill="#6141ED"/>
+<path opacity="0.484375" d="M480 600V480H600L480 600Z" fill="#7E66EC"/>
+<path d="M600 480V600H480L600 480Z" fill="#7E66EC"/>
+</g>
+<g opacity="0.3">
+<path d="M720 960V720H960L720 960Z" fill="#6141ED"/>
+<path opacity="0.484375" d="M720 840V720H840L720 840Z" fill="#7E66EC"/>
+<path d="M840 720V840H720L840 720Z" fill="#7E66EC"/>
+</g>
+<g opacity="0.3">
+<path d="M480 240V0H720L480 240Z" fill="#6141ED"/>
+<path opacity="0.484375" d="M480 120V0H600L480 120Z" fill="#7E66EC"/>
+<path d="M600 0V120H480L600 0Z" fill="#7E66EC"/>
+</g>
+<g opacity="0.3">
+<path d="M720 480V240H960L720 480Z" fill="#6141ED"/>
+<path opacity="0.484375" d="M720 360V240H840L720 360Z" fill="#7E66EC"/>
+<path d="M840 240V360H720L840 240Z" fill="#7E66EC"/>
+</g>
+<g opacity="0.3">
+<path d="M960 720V480H1200L960 720Z" fill="#6141ED"/>
+<path opacity="0.484375" d="M960 600V480H1080L960 600Z" fill="#7E66EC"/>
+<path d="M1080 480V600H960L1080 480Z" fill="#7E66EC"/>
+</g>
+<g opacity="0.3">
+<path d="M1200 960V720H1440L1200 960Z" fill="#6141ED"/>
+<path opacity="0.484375" d="M1200 840V720H1320L1200 840Z" fill="#7E66EC"/>
+<path d="M1320 720V840H1200L1320 720Z" fill="#7E66EC"/>
+</g>
+<g opacity="0.3">
+<path d="M960 240V0H1200L960 240Z" fill="#6141ED"/>
+<path opacity="0.484375" d="M960 120V0H1080L960 120Z" fill="#7E66EC"/>
+<path d="M1080 0V120H960L1080 0Z" fill="#7E66EC"/>
+</g>
+<g opacity="0.3">
+<path d="M1200 480V240H1440L1200 480Z" fill="#6141ED"/>
+<path opacity="0.484375" d="M1200 360V240H1320L1200 360Z" fill="#7E66EC"/>
+<path d="M1320 240V360H1200L1320 240Z" fill="#7E66EC"/>
+</g>
+<g opacity="0.3">
+<path d="M0 720V480H240L0 720Z" fill="#6141ED"/>
+<path opacity="0.484375" d="M0 600V480H120L0 600Z" fill="#7E66EC"/>
+<path d="M120 480V600H0L120 480Z" fill="#7E66EC"/>
+</g>
+<g opacity="0.3">
+<path d="M240 960V720H480L240 960Z" fill="#6141ED"/>
+<path opacity="0.484375" d="M240 840V720H360L240 840Z" fill="#7E66EC"/>
+<path d="M360 720V840H240L360 720Z" fill="#7E66EC"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="1440" height="960" fill="white"/>
+</clipPath>
+</defs>
+</svg>
