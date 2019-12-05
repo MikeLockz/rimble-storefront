@@ -13,7 +13,6 @@ const RimbleGatsbyLink = props => (
 
 const Ul = props => <Text as={"ul"} pl={0} mb={3} {...props} />;
 
-
 const Li = props => <Text as={"li"} color={"mid-gray"} {...props} />;
 
 const NavGroupHeading = props => (
@@ -35,6 +34,9 @@ const StyledNav = styled.nav`
   }
   ul {
     list-style: none;
+  }
+  a {
+    display: block;
   }
   a:not(:hover):not(.-is-active) {
     color: inherit;
@@ -69,7 +71,7 @@ const StyledNav = styled.nav`
 `;
 
 const StaticLinkList = () => (
-  <Ul mb={4} mx={4}>
+  <Ul mt={0}>
     <Li>
       <RimbleGatsbyLink to={"/components"}>Components</RimbleGatsbyLink>
     </Li>
@@ -433,8 +435,8 @@ const StaticSideNav = ({ isNavOpen, navbarHeight }) => {
         </Box>
 
         <Box
-          px={2}
           py={3}
+          px={4}
           borderRight={1}
           borderWidth={1}
           borderColor={"blacks.3"}
