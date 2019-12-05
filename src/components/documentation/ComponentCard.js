@@ -24,7 +24,9 @@ const ComponentCard = ({ componentName, image, imageAlt, description }) => {
               borderColor="primary-light"
             >
               <Heading.h4 my={3}>{componentName}</Heading.h4>
-              <Text mb={3}>{description}</Text>
+              <Text mb={3} color={"text"}>
+                {description}
+              </Text>
             </Box>
           </Flex>
         </Card>

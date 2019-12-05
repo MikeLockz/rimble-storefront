@@ -2,86 +2,79 @@ import React from "react";
 import { Box, Card, Flex, Icon, Text, Heading } from "rimble-ui";
 import RimbleGatsbyLink from "./../landing/RimbleGatsbyLink";
 
+const NavCard = ({ title, url, prev, next }) => {
+  return (
+    <Box width={[1, 1 / 2]} p={2}>
+      <RimbleGatsbyLink title={title} to={url} height={"100%"}>
+        <Card
+          alignContent="center"
+          border={0}
+          borderRight={next ? 1 : 0}
+          borderLeft={prev ? 1 : 0}
+          borderWidth={3}
+          borderColor="primary"
+          mb={3}
+          maxWidth={"640px"}
+          mx={"auto"}
+          pt={3}
+          px={4}
+          pb={0}
+          height={"100%"}
+        >
+          <Flex
+            alignItems="center"
+            justifyContent={next ? "flex-end" : "flex-start"}
+          >
+            {prev && (
+              <Box>
+                <Icon color="primary" mr={3} size="24px" name="ArrowBack" />
+              </Box>
+            )}
+            <Box>
+              <Text fontSize={3} fontWeight="bold" color="primary">
+                {prev ? "Previous" : "Next"}
+              </Text>
+              <Text color="text">{title}</Text>
+            </Box>
+            {next && (
+              <Box>
+                <Icon color="primary" ml={3} size="24px" name="ArrowForward" />
+              </Box>
+            )}
+          </Flex>
+        </Card>
+      </RimbleGatsbyLink>
+    </Box>
+  );
+};
+
 const GuideNextPrevious = ({
   previousTitle,
   previousUrl,
   nextTitle,
   nextUrl,
-  previousGuideName,
-  nextGuideName
+  isFirstGuide,
+  isLastGuide
 }) => {
   return (
-    <Box
-      aria-label="pagination">
-      <Heading.h4 mb={3} mt={4}>
+    <Box aria-label="pagination">
+      <Heading as="h5" mb={3} mt={4}>
         Navigate the guide
-      </Heading.h4>
-      <Flex justifyContent="space-between" mt={4} flexWrap={"wrap"}>
-        <Box width={[1, 1 / 2]} p={2}>
-          <RimbleGatsbyLink title={previousTitle} to={previousUrl}>
-            <Card
-              border={0}
-              p={3}
-              borderLeft={1}
-              borderWidth={3}
-              borderColor="primary"
-              mb={3}
-              maxWidth={"640px"}
-              mx={"auto"}
-              px={4}
-            >
-              <Flex alignItems="center">
-                <Box>
-                  <Icon color="primary" mr={3} size="24px" name="ArrowBack" />
-                </Box>
-                <Box>
-                  <Text fontWeight="bold" fontSize={3} color="primary">
-                    Previous
-                  </Text>
-                  <Text>{previousGuideName}</Text>
-                </Box>
-              </Flex>
-            </Card>
-          </RimbleGatsbyLink>
-        </Box>
+      </Heading>
+      <Flex justifyContent="space-between" mt={4} flexWrap={"wrap"} mx={-2}>
+        <NavCard
+          title={previousTitle}
+          url={previousUrl}
+          prev={true}
+          isFirstGuide={isFirstGuide}
+        />
 
-        <Box width={[1, 1 / 2]} p={2}>
-          <RimbleGatsbyLink title={nextTitle} to={nextUrl}>
-            <Card
-              alignContent="center"
-              p={3}
-              border={0}
-              borderRight={1}
-              borderWidth={3}
-              borderColor="primary"
-              mb={3}
-              maxWidth={"640px"}
-              mx={"auto"}
-              px={4}
-            >
-              <Flex alignItems="center" justifyContent="flex-end">
-                <Flex
-                  flexDirection={"column"}
-                  flexWrap={"wrap"}
-                  alignItems={"flex-end"}
-                >
-                  <Text fontSize={3} fontWeight="bold" color="primary">
-                    Next
-                  </Text>
-                  <Text>{nextGuideName}</Text>
-                </Flex>
-                <Box>
-                  <Icon
-                    color="primary"
-                    ml={3}
-                    size="24px"
-                    name="ArrowForward"
-                  />
-                </Box>
-              </Flex>
-            </Card>
-          </RimbleGatsbyLink>
-        </Box>
+        <NavCard
+          title={nextTitle}
+          url={nextUrl}
+          next={true}
+          isLastGuide={isLastGuide}
+        />
       </Flex>
     </Box>
   );
