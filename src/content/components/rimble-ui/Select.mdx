@@ -18,6 +18,7 @@ import { Select } from 'rimble-ui';
 ```js is=react-live
 <Field label="Choose your currency">
   <Select
+    required={true}
     options={[
       { value: "eth", label: "Ethereum" },
       { value: "btc", label: "Bitcoin" },
@@ -70,7 +71,15 @@ Only use the `Select` component when you have a lot of options that would clutte
   {{
     positive: (
       <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+          Use a Select component if there are lots of choices that might clutter an interface. Or use a <Link href="/components/rimble-ui/Radio" title="To Radio component" target="_blank">Radio</Link> component instead.
+        </Text>
+        <hr color="#f4f4f4" />
         <Select
+          mt={3}
           options={[
             { value: "eth", label: "Ethereum" },
             { value: "btc", label: "Bitcoin" },
@@ -86,7 +95,15 @@ Only use the `Select` component when you have a lot of options that would clutte
     ),
     negative: (
       <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+          Don't use a Select component when there are only a few options as it'll be quicker and simpler to just display the available choices.
+        </Text>
+        <hr color="#f4f4f4" />
         <Select
+          mt={3}
           options={[
             { value: "eth", label: "Ethereum" },
             { value: "fiat", label: "USD" }
