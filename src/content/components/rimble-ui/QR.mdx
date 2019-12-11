@@ -43,8 +43,6 @@ Some best practice for using `QR` in your product.
 
 **Explain what it is**
 
-Let your user know what the QR code represents and what will happen once they scan the QR code. Don't just assume your user is familiar with the pattern of QR codes being used for public addresses.
-
 <Box></Box>
 
 <DoDont>
@@ -64,6 +62,12 @@ Let your user know what the QR code represents and what will happen once they sc
             <QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
           </Flex>
         </Card>
+        <Text
+          fontSize={1}
+          mt={4}
+        >
+          Let your user know what the QR code represents and what will happen once they scan the QR code.
+        </Text>
       </Box>
     ),
     negative: (
@@ -73,7 +77,13 @@ Let your user know what the QR code represents and what will happen once they sc
             <QR value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
           </Flex>
         </Card>
-      </Box>
+        <Text
+          fontSize={1}
+          mt={4}
+        >
+        Don't just assume your user is familiar with the pattern of QR codes being used for public addresses.
+      </Text>
+    </Box>
     )
   }}
 </DoDont>
