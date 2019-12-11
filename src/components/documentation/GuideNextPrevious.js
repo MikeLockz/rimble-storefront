@@ -1,21 +1,7 @@
 import React from "react";
-import { Box, Card, Flex, Icon, Text, Heading } from "rimble-ui";
+import { Box, Flex, Icon, Text, Heading } from "rimble-ui";
 import RimbleGatsbyLink from "./../landing/RimbleGatsbyLink";
-import styled, { ThemeProvider } from "styled-components";
-
-const HoverCard = styled(Card)`
-  & {
-    text-decoration: none;
-    color: ${props => props.theme.colors["dark-gray"]};
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
-    transition: all 0.15s ease;
-  }
-  &:hover {
-    color: ${props => props.theme.colors["primary"]};
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-  }
-`;
+import HoverCard from "../global/HoverCard";
 
 const NavCard = ({ title, url, prev, next }) => {
   return (

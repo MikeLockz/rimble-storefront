@@ -1,31 +1,7 @@
 import React from "react";
-import {
-  Box,
-  Card,
-  Flex,
-  Icon,
-  Heading,
-  Text,
-  Image,
-  Link,
-  Button
-} from "rimble-ui";
-import RimbleGatsbyLink from "./../landing/RimbleGatsbyLink";
-import styled, { ThemeProvider } from "styled-components";
-
-const HoverCard = styled(Card)`
-  & {
-    text-decoration: none;
-    color: ${props => props.theme.colors["dark-gray"]};
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
-    transition: all 0.15s ease;
-  }
-  &:hover {
-    color: ${props => props.theme.colors["primary"]};
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-  }
-`;
+import { Box, Flex, Icon, Heading, Text, Image, Link, Button } from "rimble-ui";
+import RimbleGatsbyLink from "../landing/RimbleGatsbyLink";
+import HoverCard from "../global/HoverCard";
 
 const GuideCard = ({
   GuideTitle,
@@ -53,7 +29,9 @@ const GuideCard = ({
             px={4}
             py={3}
           >
-            <Heading.h2 color="dark-gray" py={3}>{GuideTitle}</Heading.h2>
+            <Heading.h2 color="dark-gray" py={3}>
+              {GuideTitle}
+            </Heading.h2>
             <Heading.h5 py={2} color="#666">
               {GuideSubTitle}
             </Heading.h5>

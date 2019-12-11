@@ -1,21 +1,7 @@
 import React from "react";
-import { Box, Card, Flex, Heading, Text, Image } from "rimble-ui";
+import { Box, Flex, Heading, Text, Image } from "rimble-ui";
 import RimbleGatsbyLink from "./../landing/RimbleGatsbyLink";
-import styled, { ThemeProvider } from "styled-components";
-
-const HoverCard = styled(Card)`
-  & {
-    text-decoration: none;
-    color: ${props => props.theme.colors["dark-gray"]};
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
-    transition: all 0.15s ease;
-  }
-  &:hover {
-    color: ${props => props.theme.colors["primary"]};
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-  }
-`;
+import HoverCard from "./../global/HoverCard";
 
 const ComponentCard = ({ componentName, image, imageAlt, description }) => {
   return (
@@ -38,7 +24,9 @@ const ComponentCard = ({ componentName, image, imageAlt, description }) => {
               borderWidth={3}
               borderColor="primary-light"
             >
-              <Heading.h4 my={3}>{componentName}</Heading.h4>
+              <Heading as="h4" my={3}>
+                {componentName}
+              </Heading>
               <Text mb={3} color={"text"}>
                 {description}
               </Text>

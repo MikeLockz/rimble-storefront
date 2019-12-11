@@ -13,7 +13,6 @@ import {
   BaseStyles,
   Box,
   Flex,
-  Card,
   Text,
   Heading,
   Button,
@@ -23,7 +22,7 @@ import {
   Tooltip
 } from "rimble-ui";
 
-// import fonts 
+// import fonts
 import "typeface-source-sans-pro";
 
 // import from old landing page
@@ -45,6 +44,9 @@ import RimblePatternBackground from "../../static/images/rimble-pattern-backgrou
 import connectingToAdApp from "../../static/images/Connecting-to-a-dApp.png";
 import transactionStates from "../../static/images/Transaction-states.png";
 
+// import common components
+import HoverCard from "./../components/global/HoverCard";
+
 const BgImageBox = styled(Box)`
   ${background}
   ${backgroundImage}
@@ -53,22 +55,8 @@ const BgImageBox = styled(Box)`
   ${backgroundRepeat}
 `;
 
-const HoverCard = styled(Card)`
-  & {
-    text-decoration: none;
-    color: ${props => props.theme.colors["dark-gray"]};
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
-    transition: all 0.15s ease;
-  }
-  &:hover {
-    color: ${props => props.theme.colors["primary"]};
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-  }
-`;
-
 const Header = () => (
-  <Box as={'header'} mx={[3, 4]}>
+  <Box as={"header"} mx={[3, 4]}>
     <Image
       src={RimbleLogotype}
       alt="Rimble logotype"
@@ -89,17 +77,17 @@ const Header = () => (
 
 const Masthead = () => (
   <BgImageBox
-    display={'flex'}
-    alignItems={'center'}
-    justifyContent={'center'}
+    display={"flex"}
+    alignItems={"center"}
+    justifyContent={"center"}
     width={1}
     pt={[5, 6]}
-    pb={'8rem'}
-    bg={'#f2f4f7'}
-    backgroundImage={['none', 'none', `url(${FigureBg})`]}
-    backgroundPosition={'bottom right'}
-    backgroundRepeat={'no-repeat'}
-    backgroundSize={'contain'}
+    pb={"8rem"}
+    bg={"#f2f4f7"}
+    backgroundImage={["none", "none", `url(${FigureBg})`]}
+    backgroundPosition={"bottom right"}
+    backgroundRepeat={"no-repeat"}
+    backgroundSize={"contain"}
   >
     <Container>
       <Header />
@@ -108,17 +96,12 @@ const Masthead = () => (
 );
 
 const OfferingCard = ({ children, src, ...rest }) => (
-  <HoverCard
-    display={"flex"}
-    flexDirection={"column"}
-    height={"100%"}
-    p={0}
-  >
+  <HoverCard display={"flex"} flexDirection={"column"} height={"100%"} p={0}>
     <Image width={1} src={src} />
     <Flex
       flex="1 1 auto"
       flexDirection="column"
-      color={'dark-gray'}
+      color={"dark-gray"}
       px={4}
       py={3}
       borderTop={1}
@@ -153,10 +136,10 @@ const RimbleGuidesSection = () => (
     mt={"5"}
     pt={4}
     pb={5}
-    bg={'#f2f4f7'}
+    bg={"#f2f4f7"}
     backgroundImage={`url(${RimblePatternBackground})`}
-    backgroundPosition={'center top'}
-    backgroundRepeat={'no-repeat'}
+    backgroundPosition={"center top"}
+    backgroundRepeat={"no-repeat"}
   >
     <Container>
       <Heading as={"h2"} fontSize={[3, 5]} fontWeight={3} my={3}>
@@ -191,13 +174,10 @@ const IndexPage = () => (
 
         <section>
           <Container>
-            <Flex
-              flexDirection={['column', 'row']}
-              mt={"-7rem"}
-            >
-              <Box flex={'1'} width={[1, 0]} mb={3} mr={[0, 3]}>
+            <Flex flexDirection={["column", "row"]} mt={"-7rem"}>
+              <Box flex={"1"} width={[1, 0]} mb={3} mr={[0, 3]}>
                 <OfferingCard src={StorefrontCardComponents}>
-                  <Flex alignItems="center"  my={3}>
+                  <Flex alignItems="center" my={3}>
                     <Heading as="h2" fontSize={[3, 3, 4]}>
                       Components
                     </Heading>
@@ -220,15 +200,16 @@ const IndexPage = () => (
                   <Text mb={3}>
                     Building blocks for putting your dApp interface together.
                   </Text>
-                  <Link forwardedAs={GatsbyLink}
+                  <Link
+                    forwardedAs={GatsbyLink}
                     to="/components"
                     title="To Rimble components"
                     fontSize={2}
                     mt="auto"
                     mb={0}
                     py={3}
-                    display={'flex'}
-                    alignItems={'center'}
+                    display={"flex"}
+                    alignItems={"center"}
                   >
                     Documentation
                     <Icon name="ArrowForward" size="1rem" ml={2} />
@@ -236,7 +217,7 @@ const IndexPage = () => (
                 </OfferingCard>
               </Box>
 
-              <Box flex={'1'} width={[1, 0]} mb={3} mr={[0, 3]}>
+              <Box flex={"1"} width={[1, 0]} mb={3} mr={[0, 3]}>
                 <OfferingCard src={StorefrontCardGuides}>
                   <Heading as="h2" fontSize={4} my={3}>
                     Guides
@@ -244,15 +225,16 @@ const IndexPage = () => (
                   <Text mb={3}>
                     Research-led guides on overcoming dApp UX challenges.
                   </Text>
-                  <Link forwardedAs={GatsbyLink}
+                  <Link
+                    forwardedAs={GatsbyLink}
                     to="/guides"
                     title="To Rimble Guides"
                     fontSize={2}
                     mt="auto"
                     mb={0}
                     py={3}
-                    display={'flex'}
-                    alignItems={'center'}
+                    display={"flex"}
+                    alignItems={"center"}
                   >
                     Guides
                     <Icon name="ArrowForward" size="1rem" ml={2} />
@@ -260,7 +242,7 @@ const IndexPage = () => (
                 </OfferingCard>
               </Box>
 
-              <Box flex={'1'} width={[1, 0]} mb={3} >
+              <Box flex={"1"} width={[1, 0]} mb={3}>
                 <OfferingCard src={StorefrontCardFigma}>
                   <Heading as="h2" fontSize={4} my={3}>
                     Design kit
@@ -277,8 +259,8 @@ const IndexPage = () => (
                     mt="auto"
                     mb={0}
                     py={3}
-                    display={'flex'}
-                    alignItems={'center'}
+                    display={"flex"}
+                    alignItems={"center"}
                   >
                     Figma kit
                     <Icon name="Launch" size="1rem" ml={2} />
@@ -395,7 +377,6 @@ const IndexPage = () => (
             </Box>
           </Container>
         </section>
-
       </main>
       <Footer />
     </BaseStyles>
