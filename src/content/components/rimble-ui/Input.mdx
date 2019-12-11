@@ -165,13 +165,21 @@ Some best practices for using `Input` in your product.
 
 **Don't use placeholders instead of labels**
 
-Placeholders disappear as the user enters the field. This makes reviewing form entries difficult as you lose the explanation of the expected input.
-
 <DoDont>
   {{
     positive: (
       <Box>
-        <Field label="ENS address">
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+          Use a label to provide instructions for completing the input – not a placeholder.
+        </Text>
+        <hr color="#f4f4f4" />
+        <Field
+          mt={3}
+          label="ENS address"
+        >
           <Input
             type="text"
             width="100%"
@@ -183,7 +191,14 @@ Placeholders disappear as the user enters the field. This makes reviewing form e
     ),
     negative: (
       <Box>
-        <Field>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+          Don't use placeholders – they disappear as the user enters the field and makes reviewing form entries difficult as you lose the explanation of the expected input.
+        </Text>
+        <hr color="#f4f4f4" />
+        <Field mt={3}>
           <Input
             type="text"
             width="100%"
