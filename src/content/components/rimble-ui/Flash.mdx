@@ -83,94 +83,130 @@ Some best practices for using `Flash` in your product.
 
 **Use for persistent information**
 
-Use the `Flash` banner if the information you want to get across remains relevant until a certain action has taken place, like errors in a form. Or if it is relevant for a certain time period like planned maintenance. Users will still be able to interact with the surrounding page, so if it's critical information that needs to be addressed, use a [Modal](/components/rimble-ui/Modal).
+Use the `Flash` banner if the information you want to get across remains relevant until a certain action has taken place, like errors in a form. Or if it is relevant for a certain time period like planned maintenance.
 
 <DoDont>
   {{
     positive: (
-      <Flash variant={"danger"} display={"flex"}>
-        <Box mr={3}>
-          <Icon name="Warning" />
-        </Box>
-        <Box mr={3}>
-          <Heading color={"inherit"} fontSize={2} my={0}>
-            <strong>Switch to the Main Ethereum network</strong>
-          </Heading>
-          <Text color={"inherit"}>
-            Change your network in your browser settings. You’re currently on
-            Rinkeby.
-          </Text>
-        </Box>
-      </Flash>
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+          Use Flash if the information remains relevant until a certain action has taken place, like errors in a form. Or if it is relevant for a certain time period like planned maintenance.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <Flash mt={3} variant={"danger"} display={"flex"}>
+          <Box mr={3}>
+            <Icon name="Warning" />
+          </Box>
+          <Box mr={3}>
+            <Heading color={"inherit"} fontSize={2} my={0}>
+              Switch to the Main Ethereum network
+            </Heading>
+            <Text color={"inherit"}>
+              Change your network in your browser settings. You’re currently on
+              Rinkeby.
+            </Text>
+          </Box>
+        </Flash>
+      </Box>
     ),
     negative: (
-      <Flash variant={"success"} display={"flex"}>
-        <Box mr={3}>
-          <Icon name="Mood" />
-        </Box>
-        <Box mr={3}>
-          <Heading color={"inherit"} fontSize={2} my={0}>
-            <strong>Connected!</strong>
-          </Heading>
-          <Text color={"inherit"}>
-            Your Ethereum account is now connected to my dapp.
-          </Text>
-        </Box>
-      </Flash>
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+          Don't use a Flash banner if the message doesn't remain relevant for long. Consider using a <Link href="/components/rimble-ui/ToastMessage" title="To ToastMessage component" target="_blank">ToastMessage</Link> instead.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <Flash mt={3} variant={"success"} display={"flex"}>
+          <Box mr={3}>
+            <Icon name="Mood" />
+          </Box>
+          <Box mr={3}>
+            <Heading color={"inherit"} fontSize={2} my={0}>
+              Connected!
+            </Heading>
+            <Text color={"inherit"}>
+              Your Ethereum account is now connected to my dapp.
+            </Text>
+          </Box>
+        </Flash>
+      </Box>
     )
   }}
 </DoDont>
 
-**Stick to one call to action**
+Users will still be able to interact with the surrounding page, so if it's critical information that needs to be addressed, use a [Modal](/components/rimble-ui/Modal).
 
-Flash banners should have a single purpose or message so should only contain a maximum of one call to action. Multiple messages in a banner will both cause confusion and add unnecessary word count. It's better to separate them into two banners if you need to say two things and let the user address them separately.
+**Stick to one call to action**
 
 <DoDont>
   {{
     positive: (
-      <Flash variant={"danger"} display={"flex"}>
-        <Box mr={3}>
-          <Icon name="Warning" />
-        </Box>
-        <Box mr={3}>
-          <Heading color={"inherit"} fontSize={2} my={0}>
-            <strong>No funds for transactions fees</strong>
-          </Heading>
-          <Text color={"inherit"}>
-            You won't be able to use our blockchain features without some Ether
-            in your account.{" "}
-            <Link color={"inherit"} hoverColor={"inherit"}>
-              Learn how to add funds
-            </Link>
-          </Text>
-        </Box>
-      </Flash>
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+          Flash banners should have a single purpose or message so should only contain a maximum of one call to action.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <Flash mt={3} variant={"danger"} display={"flex"}>
+          <Box mr={3}>
+            <Icon name="Warning" />
+          </Box>
+          <Box mr={3}>
+            <Heading color={"inherit"} fontSize={2} my={0}>
+              No funds for transactions fees
+            </Heading>
+            <Text color={"inherit"}>
+              You won't be able to use our blockchain features without some Ether
+              in your account.{" "}
+              <Link color={"inherit"} hoverColor={"inherit"}>
+                Learn how to add funds
+              </Link>
+            </Text>
+          </Box>
+        </Flash>
+      </Box>
     ),
     negative: (
-      <Flash variant={"danger"} display={"flex"}>
-        <Box mr={3}>
-          <Icon name="Warning" />
-        </Box>
-        <Box mr={3}>
-          <Heading color={"inherit"} fontSize={2} my={0}>
-            <strong>Wrong network and insufficient funds!</strong>
-          </Heading>
-          <Text color={"inherit"}>
-            You need to be on the Main Ethereum network to use this dapp.{" "}
-            <Link color={"inherit"} hoverColor={"inherit"}>
-              Learn how to switch networks
-            </Link>
-          </Text>
-          <br />
-          <Text color={"inherit"}>
-            You also won't be able to use our blockchain features without some
-            Ether in your account.{" "}
-            <Link color={"inherit"} hoverColor={"inherit"}>
-              Learn how to add funds
-            </Link>
-          </Text>
-        </Box>
-      </Flash>
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+           Multiple messages in a banner will both cause confusion and add unnecessary word count. It's better to separate them into two banners if you need to say two things and let the user address them separately.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <Flash mt={3} variant={"danger"} display={"flex"}>
+          <Box mr={3}>
+            <Icon name="Warning" />
+          </Box>
+          <Box mr={3}>
+            <Heading color={"inherit"} fontSize={2} my={0}>
+              Wrong network and insufficient funds!
+            </Heading>
+            <Text color={"inherit"}>
+              You need to be on the Main Ethereum network to use this dapp.{" "}
+              <Link color={"inherit"} hoverColor={"inherit"}>
+                Learn how to switch networks
+              </Link>
+            </Text>
+            <br />
+            <Text color={"inherit"}>
+              You also won't be able to use our blockchain features without some
+              Ether in your account.{" "}
+              <Link color={"inherit"} hoverColor={"inherit"}>
+                Learn how to add funds
+              </Link>
+            </Text>
+          </Box>
+        </Flash>
+      </Box>
     )
   }}
 </DoDont>
@@ -191,7 +227,7 @@ When you want to let the user know that something has been successful. You may w
   </Box>
   <Box mr={3}>
     <Heading color={"inherit"} fontsize={2} my={0}>
-      <strong>Cryptokitty received</strong>
+      Cryptokitty received
     </Heading>
     <Text color={"inherit"}>
       Kitty #12345 is now yours! Want to take a look?
@@ -216,7 +252,7 @@ When there's some important info in relation to the section (whole dapp, page, c
   </Box>
   <Box mr={3}>
     <Heading color={"inherit"} fontsize={2} my={0}>
-      <strong>Now accepting DAI</strong>
+      Now accepting DAI
     </Heading>
     <Text color={"inherit"}>You can now use DAI in our online store</Text>
   </Box>
@@ -228,7 +264,7 @@ When there's some important info in relation to the section (whole dapp, page, c
   </Box>
   <Box mr={3}>
     <Heading color={"inherit"} fontsize={2} my={0}>
-      <strong>Ether is booming!</strong>
+      Ether is booming!
     </Heading>
     <Text color={"inherit"}>ETH price surges show no sign of letting up.</Text>
     <Link color={"inherit"} hoverColor={"inherit"}>
@@ -251,7 +287,7 @@ If there's something that might prevent a user from achieving their task.
   </Box>
   <Box mr={3}>
     <Heading color={"inherit"} fontsize={2} my={0}>
-      <strong>Slow transactions expected</strong>
+      Slow transactions expected
     </Heading>
     <Text color={"inherit"}>
       The network is slower than usual today, so some transactions might take
@@ -274,7 +310,7 @@ If there's something preventing a user from achieving key tasks, like a service 
   </Box>
   <Box mr={3}>
     <Heading color={"inherit"} fontSize={2} my={0}>
-      <strong>Switch to the Main Ethereum network</strong>
+      Switch to the Main Ethereum network
     </Heading>
     <Text color={"inherit"}>
       Change your network in your browser settings. You’re currently on Rinkeby.
@@ -288,7 +324,7 @@ If there's something preventing a user from achieving key tasks, like a service 
   </Box>
   <Box mr={3}>
     <Heading color={"inherit"} fontSize={2} my={0}>
-      <strong>Complete all required fields</strong>
+      Complete all required fields
     </Heading>
     <Text color={"inherit"}>
       Please fill in all fields marked with an asterisk below
