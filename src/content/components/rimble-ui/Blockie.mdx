@@ -42,36 +42,41 @@ Some best practice for using `Blockie` in your product.
   {{
     positive: (
       <Box>
-        <Blockie
-          opts={{
-            seed: "foo",
-            color: "#dfe",
-            bgcolor: "#a71",
-            size: 15,
-            scale: 3,
-            spotcolor: "#000"
-          }}
-        />
         <Text
           fontSize={1}
-          mt={4}
+          mb={3}
         >
           Keep Blockies square so users have the most detail possible to identify their Ethereum address.
         </Text>
+        <hr color="#f4f4f4"/>
+        <Box mt={3}>
+          <Blockie
+            opts={{
+              seed: "foo",
+              color: "#dfe",
+              bgcolor: "#a71",
+              size: 15,
+              scale: 3,
+              spotcolor: "#000"
+            }}
+          />
+        </Box>
       </Box>
     ),
     negative: (
       <Box>
-        <Avatar
-          size="medium"
-          src="https://cdn-images-1.medium.com/max/1600/1*6E2bK3gagTUHroxhDsDP1w.jpeg"
-        />
         <Text
           fontSize={1}
-          mt={4}
+          mb={3}
         >
           Adding borderRadius makes it more difficult for users to visually identify their Ethereum address.
         </Text>
+        <hr color="#f4f4f4"/>
+        <Avatar
+          mt={3}
+          size="medium"
+          src="https://cdn-images-1.medium.com/max/1600/1*6E2bK3gagTUHroxhDsDP1w.jpeg"
+        />
       </Box>
     )
   }}
