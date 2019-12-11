@@ -1,6 +1,21 @@
 import React from "react";
 import { Box, Card, Flex, Heading, Text, Image } from "rimble-ui";
 import RimbleGatsbyLink from "./../landing/RimbleGatsbyLink";
+import styled, { ThemeProvider } from "styled-components";
+
+const HoverCard = styled(Card)`
+  & {
+    text-decoration: none;
+    color: ${props => props.theme.colors["dark-gray"]};
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.15s ease;
+  }
+  &:hover {
+    color: ${props => props.theme.colors["primary"]};
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+`;
 
 const ComponentCard = ({ componentName, image, imageAlt, description }) => {
   return (
@@ -9,7 +24,7 @@ const ComponentCard = ({ componentName, image, imageAlt, description }) => {
         to={`/components/rimble-ui/${componentName}`}
         title={`Code and usage examples for the ${componentName} component`}
       >
-        <Card p={0} mx={"auto"} height={"100%"}>
+        <HoverCard p={0} mx={"auto"} height={"100%"}>
           <Flex flexDirection={"column"}>
             <Image
               alt={`Example of a Rimble ${componentName} component`}
@@ -29,7 +44,7 @@ const ComponentCard = ({ componentName, image, imageAlt, description }) => {
               </Text>
             </Box>
           </Flex>
-        </Card>
+        </HoverCard>
       </RimbleGatsbyLink>
     </Box>
   );
