@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Rimble - Better dapp UX`,
-    description: `Rimble provides resources and tools for faster dapp development with better UX`,
+    title: `Rimble - Better dApp UX`,
+    description: `Rimble provides resources and tools for faster dApp development with better UX`,
     author: `@consensysdesign`,
     image: `/rimble-logotype.svg`,
     siteUrl: `https://rimble.consensys.design/`
