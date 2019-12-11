@@ -14,11 +14,13 @@ const TransactionFeeCard = ({ ...props }) => {
         <Box mt={3} width={[1, 1 / 2]}>
           <Button.Text width={[1, "auto"]} variant="danger">Close</Button.Text>
         </Box>
-        <Box mt={3} justifyItems="flex-end" width={[1, 1 / 2]}>
-          <Button.Outline mb={[3, 0]} width={[1, "auto"]} mr={3} disabled>
-            Previous
-          </Button.Outline>
-          <Button mb={[3, 0]} width={[1, "auto"]}>Next</Button>
+        <Box mt={3} width={[1, 1 / 2]}>
+          <Flex justifyContent="flex-end">
+            <Button.Outline mb={[3, 0]} width={[1, "auto"]} mr={3} disabled>
+              Previous
+            </Button.Outline>
+            <Button mb={[3, 0]} width={[1, "auto"]}>Next</Button>
+          </Flex>
         </Box>
       </Flex>
     </Card>
