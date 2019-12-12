@@ -274,7 +274,7 @@ const IndexPage = () => (
         <section>
           <Container>
             <Box mt={5}>
-              <Heading as={"h1"} fontSize={[4, 5]}>
+              <Heading as={"h2"} fontSize={[4, 5]}>
                 Why Rimble?
               </Heading>
               <Hr />
