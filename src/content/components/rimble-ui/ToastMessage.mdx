@@ -103,6 +103,15 @@ When your Toast message has a link to support it. Note: this link should only ta
 
 Ready-made messages to help users understand what's happening with a process they initiate, like a transaction.
 
+<Flash my={3} variant="info">
+  <Flex alignItems="baseline">
+    <Icon name="Info" size="16px" mr={3}/>
+    <Text>
+      Because they disappear, process toasts should be supported by other persistent UI elements so that a user can see the status of their transaction. Alternatively a ToastMessage is a safe bet if your dApp uses a sidechain or some other method of completing transactions in less than a minute.
+    </Text>
+  </Flex>
+</Flash>
+
 **Processing**
 
 ```js is=react-live
@@ -139,7 +148,7 @@ Ready-made messages to help users understand what's happening with a process the
 
 Use the `ToastMessage` component for messages and actions that should be helpful but ultimately ignorable without any impact on what the user wants to get done.
 
-**When to use each variation**
+### When to use
 
 **Toast with a title**
 
@@ -147,87 +156,126 @@ For when you want to just provide a quick process update like a confirmation
 
 **Example scenarios**
 
-<ToastMessage message={"Transaction started"} />
+<ToastMessage mb={3} message={"Transaction started"} />
 
-<ToastMessage message={"Connected to dapp"} />
+<ToastMessage mb={3} message={"Connected to dapp"} />
 
 **Toast with a subtitle**
 
 For when you want to provide more value through extra helpful information. Ask yourself when implementing your toast: is there anything else I could tell the user that would be useful?
 
-**Example scenarios**
+### Example scenarios
 
 <ToastMessage
   variant="success"
   message={"Payment sent"}
   secondaryMessage={"You have 4.20 ETH remaining"}
+  mb={3}
 />
 
 <ToastMessage
   variant="processing"
   message={"Transaction pending..."}
   secondaryMessage={"This might take a few minutes"}
+  mb={3}
 />
 
 <ToastMessage
   variant="failure"
   message={"Transaction failed"}
   secondaryMessage={"You didn't have enough Ether"}
+  mb={3}
 />
 
-**How it works**
+### How it works
 
 - `ToastMessage` component disappears automatically
 - Users can dismiss them manually
 - They display one at a time, so if multiple messages are necessary, each one should appear after the previous message.
 
-**Best practices**
-
-**Use for non-critical information**
-
-Don't use toast messages for information that will directly impact the success of completing a task, for example a network failure. They dismiss automatically so things can be missed easily. Note: users are able to dismiss them immediately manually. For critical information, use [Modal](/components/rimble-ui/Modal) to bring that info to the user's attention.
-
-<DoDont>
-  {{
-    positive: <ToastMessage message={"Transaction started"} my={3} mr={3} />,
-    negative: (
-      <ToastMessage
-        message={"Switch to Rinkeby to start the transaction"}
-        my={3}
-        mr={3}
-      />
-    )
-  }}
-</DoDont>
+### Best practices
 
 **Think about placement**
 
 Toasts should steer clear of navigational elements and important areas of the screen. Consider that the MetaMask browser extension could potentially hide your toast messages.
 
-**Stick to one optional link**
-
-This link should support your update and must be optional. This might be to provide further information (like linking to Etherscan) or something that can affect the process (like cancelling while your payment is in a processing state). Link copy should ideally be verb-led like "Check", "View", "Buy" or "Change".
+**Use for non-critical information**
 
 <DoDont>
   {{
     positive: (
-      <ToastMessage
-        message={"Transaction started"}
-        secondaryMessage={"Check on its progress at Etherscan"}
-        actionText={"Check"}
-        actionHref={"#"}
-        my={3}
-        mr={3}
-      />
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+           Only use Toast messages for missable information that doesn't require a user's attention or acknowledgement.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <ToastMessage
+          message={"Transaction started"}
+          mt={3}  
+        />
+      </Box>
+      ),
+    negative: (
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+          Don't use Toast messages for critical information that directly impacts the success of completing a task. They dismiss automatically so information can be missed.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <ToastMessage
+          message={"Switch to Rinkeby to start the transaction"}
+          mt={3}
+        />
+      </Box>
+    )
+  }}
+</DoDont>
+
+For critical information, use [Modal](/components/rimble-ui/Modal) to bring that info to the user's attention.
+
+**Stick to one optional link**
+
+<DoDont>
+  {{
+    positive: (
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+           The link should support your update and must be optional. This might be to provide further information (like linking to Etherscan).
+        </Text>
+        <hr color="#f4f4f4"/>
+        <ToastMessage
+          message={"Transaction started"}
+          secondaryMessage={"Check on its progress at Etherscan"}
+          actionText={"Check"}
+          actionHref={"#"}
+          mt={3}
+        />
+      </Box>
     ),
     negative: (
-      <ToastMessage
-        message={"Connect to start this transaction"}
-        actionText={"Connect"}
-        actionHref={"#"}
-        my={3}
-        mr={3}
-      />
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+           Links must be optional and not critical to proceeding with/completing a user's task.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <ToastMessage
+          message={"Connect to start this transaction"}
+          actionText={"Connect"}
+          actionHref={"#"}
+          my={3}
+        />
+      </Box>
     )
   }}
 </DoDont>
@@ -238,152 +286,279 @@ Some best practices for writing `ToastMessages`.
 
 **Keep things short**
 
-Toast messages are only around a short while so keep the copy short to make them readable in the time they're on screen.
-
 <DoDont>
   {{
-    positive: <ToastMessage message={"Transaction started"} my={3} mr={3} />,
+    positive: (
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+           Keep the copy short, yet meaningful, to make it readable in the time the Toast is visible.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <ToastMessage
+          message={"Transaction started"}
+          mt={3}
+        />
+      </Box>
+      ),
     negative: (
-      <ToastMessage message={"We've started your transaction"} my={3} mr={3} />
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+          Longer copy is harder to read in the time before the ToastMessage disappears.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <ToastMessage
+          message={"We've started your transaction"}
+          mt={3}
+        />
+      </Box>
     )
   }}
 </DoDont>
 
 **Processing messages**
 
-Keep them in the present tense and reference what's being processed to give the user reassurance that what they've initiated is happening. An ellipsis can help indicate that something's happening.
-
 <DoDont>
   {{
     positive: (
-      <ToastMessage
-        message={"Processing payment..."}
-        my={3}
-        mr={3}
-        variant={"processing"}
-      />
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+           Keep them in the present tense and reference what's being processed to give the user reassurance that what they've initiated is happening. An ellipsis can help indicate that something's happening.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <ToastMessage
+          message={"Processing payment..."}
+          mt={3}
+          variant={"processing"}
+        />
+      </Box>
     ),
     negative: (
-      <ToastMessage
-        message={"Processing started"}
-        my={3}
-        mr={3}
-        variant={"processing"}
-      />
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+           Using the past tense to describe something that is happening can be less clear when read at a glance.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <ToastMessage
+          message={"Processing started"}
+          my={3}
+          variant={"processing"}
+        />
+      </Box>
     )
   }}
 </DoDont>
 
 **Success messages**
 
-Describe what's happened and avoid generic "Success!" messages. Ethereum actions can take a while to it makes sense to remind the user of the action that has succeeded.
-
 <DoDont>
   {{
     positive: (
-      <ToastMessage
-        message={"0.4 Ether sent!"}
-        my={3}
-        mr={3}
-        variant={"success"}
-      />
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+           Describe what's happened. Ethereum actions can take a while to it makes sense to remind the user of the action that has succeeded.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <ToastMessage
+          message={"0.4 Ether sent!"}
+          mt={3}
+          variant={"success"}
+        />
+      </Box>
     ),
     negative: (
-      <ToastMessage message={"Success!"} my={3} mr={3} variant={"success"} />
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+           Avoid generic "Success!" messages. Vague comments are less helpful than ones that reference the task at hand.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <ToastMessage
+          message={"Success!"}
+          mt={3}
+          variant={"success"}
+        />
+      </Box>
     )
   }}
 </DoDont>
 
-Echo the language the user interacted with to initiate the action in the success message. So if the button copy was "Send Ether":
-
 <DoDont>
   {{
     positive: (
-      <ToastMessage message={"Ether sent"} my={3} mr={3} variant={"success"} />
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+           Echo the language the user interacted with to initiate the action in the success message. So if the button copy was "Send Ether":
+        </Text>
+        <hr color="#f4f4f4"/>
+        <ToastMessage
+          message={"Ether sent"}
+          mt={3}
+          variant={"success"}
+        />
+      </Box>
     ),
     negative: (
-      <ToastMessage
-        message={"Ether transferred"}
-        my={3}
-        mr={3}
-        variant={"success"}
-      />
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+           If the action was labelled as "Sending Ether", don't switch up the vocabulary. Consistency creates less confusion.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <ToastMessage
+          message={"Ether transferred"}
+          my={3}
+          variant={"success"}
+        />
+      </Box>
     )
   }}
 </DoDont>
 
-If you explain what's happened you don't need to use terms like "successfully" which will help keep your content shorter
-
 <DoDont>
   {{
     positive: (
-      <ToastMessage
-        message={"Transaction confirmed"}
-        my={3}
-        mr={3}
-        variant={"success"}
-      />
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+          Remove terms like "successfully" – they don't add anything if your message explains what's happened.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <ToastMessage
+          message={"Transaction confirmed"}
+          mt={3}
+          variant={"success"}
+        />
+      </Box>
     ),
     negative: (
-      <ToastMessage
-        message={"Transaction confirmed successfully"}
-        my={3}
-        mr={3}
-        variant={"success"}
-      />
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+          "Successfully" makes your message longer unnecessarily.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <ToastMessage
+          message={"Transaction confirmed successfully"}
+          mt={3}
+          variant={"success"}
+        />
+      </Box>
     )
   }}
 </DoDont>
 
 **Failure messages**
 
-_Note: it may be preferable to use alternative components like [Modal](/components/rimble-ui/Modal) to bring a transaction failure to a user's attention, as they can't be missed and provide more space for explanation._
-
-Where possible, explain the reason for failure and offer a suggestion of what to do next. And use the action to help the user remedy the situation.
+<Flash my={3} variant="info">
+  <Flex alignItems="baseline">
+    <Icon name="Info" size="16px" mr={3}/>
+    <Text>
+      Note: it may be preferable to use alternative components like <Link color="inherit" href="/components/rimble-ui/Modal" title="To Modal component" target="_blank">Modal</Link> to bring a transaction failure to a user's attention, as they can't be missed and provide more space for explanation.
+    </Text>
+  </Flex>
+</Flash>
 
 <DoDont>
   {{
     positive: (
-      <ToastMessage
-        message={"Transaction failed"}
-        secondaryMessage={"You didn't have enough Ether"}
-        actionText={"Buy ETH"}
-        actionHref={"#"}
-        my={3}
-        mr={3}
-        variant={"failure"}
-      />
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+          Explain the reason for failure, offer a suggestion of what to do next and use the action to help the user remedy the situation.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <ToastMessage
+          message={"Transaction failed"}
+          secondaryMessage={"You didn't have enough Ether"}
+          actionText={"Buy ETH"}
+          actionHref={"#"}
+          mt={3}
+          variant={"failure"}
+        />
+      </Box>
     ),
     negative: (
-      <ToastMessage
-        message={"Transaction failed"}
-        my={3}
-        mr={3}
-        variant={"failure"}
-      />
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+          Don't just tell a user something has failed without providing a suggestion of what to do next.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <ToastMessage
+          message={"Transaction failed"}
+          mt={3}
+          variant={"failure"}
+        />
+      </Box>
     )
   }}
 </DoDont>
 
-Echo the language the user interacted with to initiate the action in the failure message. So if the button copy was "Pay 0.13 Ether":
+
 
 <DoDont>
   {{
     positive: (
-      <ToastMessage
-        message={"Payment failed"}
-        my={3}
-        mr={3}
-        variant={"failure"}
-      />
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+          Echo the language the user interacted with to initiate the action in the failure message. So if the button copy was "Pay 0.13 Ether":
+        </Text>
+        <hr color="#f4f4f4"/>
+        <ToastMessage
+          message={"Payment failed"}
+          mt={3}
+          variant={"failure"}
+        />
+      </Box>
     ),
     negative: (
-      <ToastMessage
-        message={"Transaction failed"}
-        my={3}
-        mr={3}
-        variant={"failure"}
-      />
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+          If the action was labelled as "Paying Ether", don't switch up the vocabulary. Consistency creates less confusion.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <ToastMessage
+          message={"Transaction failed"}
+          mt={3}
+          variant={"failure"}
+        />
+      </Box>
     )
   }}
 </DoDont>
