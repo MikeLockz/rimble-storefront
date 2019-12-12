@@ -81,50 +81,101 @@ Some best practices for using `Tooltip` in your product.
 
 **Tooltips are for supporting information**
 
-They're for extra information that some might find useful but don't necessarily need to be on the interface for everyone. Tooltip information is hidden by default so shouldn't contain anything critical to someone using your product. For example, if you hover over a piece of UI that indicates your network status...
-
 <DoDont>
   {{
     positive: (
-      <Tooltip
-        placement="right"
-        variant="dark"
-        message="You're on the Rinkeby network"
-      >
-        <Button.Text icon="Check">Right network</Button.Text>
-      </Tooltip>
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+           Use tooltips for extra information that some might find useful but don't necessarily need to be on the interface for everyone.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <Tooltip
+          placement="right"
+          variant="dark"
+          message="You're on the Rinkeby network"
+        >
+          <Button.Text
+            icon="Check"
+            mt={3}
+          >
+              Right network
+          </Button.Text>
+        </Tooltip>
+      </Box>
     ),
     negative: (
-      <Tooltip
-        placement="right"
-        variant="dark"
-        message="To use this dapp you must be on the Rinkeby network"
-      >
-        <Button.Text icon="Warning">Wrong network</Button.Text>
-      </Tooltip>
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+           Tooltip information is hidden by default so shouldn't contain anything critical to someone using your product.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <Tooltip
+          placement="right"
+          variant="dark"
+          message="To use this dapp you must be on the Rinkeby network"
+        >
+          <Button.Text
+            icon="Warning"
+            mt={3}>
+              Wrong network
+          </Button.Text>
+        </Tooltip>
+      </Box>
     )
   }}
 </DoDont>
 
 **Tooltips aren't labels**
 
-Tooltips are for elaboration. Labels next to UI elements are always better than tooltips as it is not always clear that tooltips are there. And it's not always possible to hover.
+Tooltips are for elaboration. Labels next to UI elements are always better than tooltips as it is not always clear that tooltips are there.
 
 <DoDont>
   {{
     positive: (
-      <Tooltip
-        placement="bottom"
-        variant="light"
-        message="This will start the transaction"
-      >
-        <Button.Outline icon="Send">Send Ether</Button.Outline>
-      </Tooltip>
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+           Labels next to UI elements are always better than tooltips as it is not always clear that tooltips are there. And it's not always possible to hover.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <Tooltip
+          placement="bottom"
+          variant="light"
+          message="This will start the transaction"
+        >
+          <Button.Outline
+            icon="Send"
+            mt={3}
+          >
+            Send Ether
+          </Button.Outline>
+        </Tooltip>
+      </Box>
     ),
     negative: (
-      <Tooltip placement="bottom" variant="light" message="Send Ether">
-        <Button.Outline icon="Send" />
-      </Tooltip>
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+           Don't use tooltips to explain UI elements that could be labelled. They're for elaboration not explanation.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <Tooltip placement="bottom" variant="light" message="Send Ether">
+          <Button.Outline
+            icon="Send"
+            mt={3}
+          />
+        </Tooltip>
+      </Box>
     )
   }}
 </DoDont>

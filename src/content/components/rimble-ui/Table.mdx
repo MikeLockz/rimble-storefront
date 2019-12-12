@@ -64,7 +64,7 @@ import { Table } from 'rimble-ui';
 
 Use a `table` component so your users can easily scan and compare data in your product. They are not for layout.
 
-**Design and content**
+### Design and content
 
 Some best practice for using `Table`
 
@@ -85,54 +85,72 @@ Truncation prevents users from comparing data accurately. For example, if all da
 <DoDont>
   {{
     positive: (
-      <Table>
-        <thead>
-          <tr>
-            <th>1</th>
-            <th>2</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1st</td>
-            <td>row</td>
-          </tr>
-          <tr>
-            <td>2nd</td>
-            <td>row</td>
-          </tr>
-          <tr>
-            <td>3rd</td>
-            <td>row</td>
-          </tr>
-        </tbody>
-      </Table>
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+           Try and avoid having more rows than columns as they're easier to scan.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <Table mt={3}>
+          <thead>
+            <tr>
+              <th>1</th>
+              <th>2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1st</td>
+              <td>row</td>
+            </tr>
+            <tr>
+              <td>2nd</td>
+              <td>row</td>
+            </tr>
+            <tr>
+              <td>3rd</td>
+              <td>row</td>
+            </tr>
+          </tbody>
+        </Table>
+      </Box>
     ),
     negative: (
-      <Table>
-        <thead>
-          <tr>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>4</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1st</td>
-            <td>r</td>
-            <td>o</td>
-            <td>w</td>
-          </tr>
-          <tr>
-            <td>2nd</td>
-            <td>r</td>
-            <td>o</td>
-            <td>w</td>
-          </tr>
-        </tbody>
-      </Table>
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+           The more columns a user has to compare data across the harder it is. Consider other UI.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <Table mt={3}>
+          <thead>
+            <tr>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1st</td>
+              <td>r</td>
+              <td>o</td>
+              <td>w</td>
+            </tr>
+            <tr>
+              <td>2nd</td>
+              <td>r</td>
+              <td>o</td>
+              <td>w</td>
+            </tr>
+          </tbody>
+        </Table>
+      </Box>
     )
   }}
 </DoDont>
@@ -144,52 +162,70 @@ Make sure your headings are clear and give the user enough information about wha
 <DoDont>
   {{
     positive: (
-      <Table>
-        <thead>
-          <tr>
-            <th>Currency</th>
-            <th>Value change</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>ETH</td>
-            <td>Up 10%</td>
-          </tr>
-          <tr>
-            <td>BTC</td>
-            <td>Up 8%</td>
-          </tr>
-          <tr>
-            <td>DAI</td>
-            <td>Up 2%</td>
-          </tr>
-        </tbody>
-      </Table>
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+          Make sure your headings are clear and give the user enough information about what to expect in the data that follows.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <Table mt={3}>
+          <thead>
+            <tr>
+              <th>Currency</th>
+              <th>Value change</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ETH</td>
+              <td>Up 10%</td>
+            </tr>
+            <tr>
+              <td>BTC</td>
+              <td>Up 8%</td>
+            </tr>
+            <tr>
+              <td>DAI</td>
+              <td>Up 2%</td>
+            </tr>
+          </tbody>
+        </Table>
+      </Box>
     ),
     negative: (
-      <Table>
-        <thead>
-          <tr>
-            <th>$</th>
-            <th>%</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>ETH</td>
-            <td>Up 10%</td>
-          </tr>
-          <tr>
-            <td>BTC</td>
-            <td>Up 8%</td>
-          </tr>
-          <tr>
-            <td>DAI</td>
-            <td>Up 2%</td>
-          </tr>
-        </tbody>
-      </Table>
+      <Box>
+        <Text
+          fontSize={1}
+          mb={3}
+        >
+          Unclear titles make comparing data more difficult for users.
+        </Text>
+        <hr color="#f4f4f4"/>
+        <Table mt={3}>
+          <thead>
+            <tr>
+              <th>$</th>
+              <th>%</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ETH</td>
+              <td>Up 10%</td>
+            </tr>
+            <tr>
+              <td>BTC</td>
+              <td>Up 8%</td>
+            </tr>
+            <tr>
+              <td>DAI</td>
+              <td>Up 2%</td>
+            </tr>
+          </tbody>
+        </Table>
+      </Box>
     )
   }}
 </DoDont>
