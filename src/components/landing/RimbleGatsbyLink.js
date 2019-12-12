@@ -18,12 +18,12 @@ const RimbleGatsbyLink = styled(props => <Link {...props} />)`
     }
     &:hover{
       & > div {
-        box-shadow: ${props => props.theme.shadows[1]};
+        box-shadow: ${props => props.theme.shadows[2]};
       }
     }
     &:active {
       & > div {
-        box-shadow: ${props => props.theme.shadows[0]};
+        box-shadow: ${props => props.theme.shadows[1]};
       }
   }
 `;
