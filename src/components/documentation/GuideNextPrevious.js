@@ -1,12 +1,13 @@
 import React from "react";
-import { Box, Card, Flex, Icon, Text, Heading } from "rimble-ui";
+import { Box, Flex, Icon, Text, Heading } from "rimble-ui";
 import RimbleGatsbyLink from "./../landing/RimbleGatsbyLink";
+import HoverCard from "../global/HoverCard";
 
 const NavCard = ({ title, url, prev, next }) => {
   return (
     <Box width={[1, 1 / 2]} p={2}>
       <RimbleGatsbyLink title={title} to={url} height={"100%"}>
-        <Card
+        <HoverCard
           alignContent="center"
           border={0}
           borderRight={next ? 1 : 0}
@@ -42,7 +43,7 @@ const NavCard = ({ title, url, prev, next }) => {
               </Box>
             )}
           </Flex>
-        </Card>
+        </HoverCard>
       </RimbleGatsbyLink>
     </Box>
   );
