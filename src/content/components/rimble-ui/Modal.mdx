@@ -15,37 +15,30 @@ import { Modal } from 'rimble-ui';
 
 ## Example
 
+```
+import { Box, Flex, Modal, Button, Text, Card } from "rimble-ui";
+```
+
 ```js is=react-live
-class YourModal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false
-    };
-    this.closeModal = this.closeModal.bind(this);
-    this.openModal = this.openModal.bind(this);
-  }
+function ModalExample() {
+  const [isOpen, setIsOpen] = useState(false);
 
-  closeModal(e) {
+  const closeModal = e => {
     e.preventDefault();
-    this.setState((state, props) => ({
-      isOpen: false
-    }));
-  }
+    setIsOpen(false);
+  };
 
-  openModal(e) {
+  const openModal = e => {
     e.preventDefault();
-    this.setState((state, props) => ({
-      isOpen: true
-    }));
-  }
+    setIsOpen(true);
+  };
 
-  render() {
-    return (
-      <React.Fragment>
-        <Button onClick={this.openModal}>Open Modal</Button>
+  return (
+    <Box className="App" p={4}>
+      <Box>
+        <Button onClick={openModal}>Open Modal</Button>
 
-        <Modal isOpen={this.state.isOpen}>
+        <Modal isOpen={isOpen}>
           <Card width={"420px"} p={0}>
             <Button.Text
               icononly
@@ -56,7 +49,7 @@ class YourModal extends React.Component {
               right={0}
               mt={3}
               mr={3}
-              onClick={this.closeModal}
+              onClick={closeModal}
             />
 
             <Box p={4} mb={3}>
@@ -71,15 +64,16 @@ class YourModal extends React.Component {
               borderColor={"#E8E8E8"}
               justifyContent={"flex-end"}
             >
-              <Button.Outline onClick={this.closeModal}>Cancel</Button.Outline>
+              <Button.Outline onClick={closeModal}>Cancel</Button.Outline>
               <Button ml={3}>Confirm</Button>
             </Flex>
           </Card>
         </Modal>
-      </React.Fragment>
-    );
-  }
+      </Box>
+    </Box>
+  );
 }
+
 ```
 
 ## Props
