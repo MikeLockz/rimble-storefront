@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import codeTheme from "prism-react-renderer/themes/duotoneLight";
@@ -80,7 +80,9 @@ const localScope = {
   EthAddress,
   ThemeProvider,
   BaseStyles,
-  theme
+  theme,
+  useState,
+  useEffect
 };
 
 const CodeBox = styled(Box)`
