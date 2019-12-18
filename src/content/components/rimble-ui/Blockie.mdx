@@ -40,15 +40,9 @@ Some best practice for using `Blockie` in your product.
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Keep Blockies square so users have the most detail possible to identify their Ethereum address.
-        </Text>
-        <hr color="#f4f4f4"/>
+    positive: {
+      caption: "Keep Blockies square so users have the most detail possible to identify their Ethereum address.",
+      code: (
         <Box mt={3}>
           <Blockie
             opts={{
@@ -61,24 +55,18 @@ Some best practice for using `Blockie` in your product.
             }}
           />
         </Box>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Adding borderRadius makes it more difficult for users to visually identify their Ethereum address.
-        </Text>
-        <hr color="#f4f4f4"/>
+    )
+  },
+    negative: {
+      caption: "Adding borderRadius makes it more difficult for users to visually identify their Ethereum address.",
+        code: (
         <Avatar
           mt={3}
           size="medium"
           src="https://cdn-images-1.medium.com/max/1600/1*6E2bK3gagTUHroxhDsDP1w.jpeg"
         />
-      </Box>
-    )
+        )
+      }
   }}
 </DoDont>
 
