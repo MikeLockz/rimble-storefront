@@ -168,31 +168,20 @@ Some best practices for using `Button` in your product.
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Button copy helps with accessibility.
-        </Text>
-        <hr color="#f4f4f4"/>
+    positive: {
+      caption: "Button copy helps with accessibility.",
+      code: (
         <Button icon="Send" mt={3}>
           Send Ether
         </Button>
-      </Box>
-    ),
-    negative:
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Icons can be subjective. This relies on a user recognising this icon.
-        </Text>
-        <hr color="#f4f4f4"/>
+        )
+      },
+    negative: {
+      caption: "Icons can be subjective. This relies on a user recognising this icon.",
+      code: (
         <Button icon="Send" mt={3} />
-      </Box>
+      )
+    }
   }}
 </DoDont>
 
@@ -200,32 +189,22 @@ Some best practices for using `Button` in your product.
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Use <Link href="/components/rimble-ui/Link" title="To Link component" target="_blank">Link</Link> or Button.Text for navigational links.
-        </Text>
-        <hr color="#f4f4f4"/>
+    positive: {
+      caption: "Use <Link href="/components/rimble-ui/Link" title="To Link component" target="_blank">Link</Link> or Button.Text for navigational links.",
+      code: (
         <Box mt={3}>
           <Link>Transaction history</Link>
         </Box>
-      </Box>
-      ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Buttons are for actions like starting a process, confirming choices or acknowleding something.
-        </Text>
-        <hr color="#f4f4f4"/>
-        <Button mt={3}>Transaction history</Button>
-      </Box>
-      ),
+      )
+    },
+    negative: {
+      caption: "Buttons are for actions like starting a process, confirming choices or acknowleding something.",
+      code: (
+        <Button mt={3}>
+          Transaction history
+        </Button>
+      )
+    }
   }}
 </DoDont>
 
