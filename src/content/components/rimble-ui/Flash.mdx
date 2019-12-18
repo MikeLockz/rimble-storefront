@@ -87,15 +87,9 @@ Use the `Flash` banner if the information you want to get across remains relevan
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Use Flash if the information remains relevant until a certain action has taken place, like errors in a form. Or if it is relevant for a certain time period like planned maintenance.
-        </Text>
-        <hr color="#f4f4f4"/>
+    positive: {
+      caption: "Use Flash if the information remains relevant until a certain action has taken place, like errors in a form. Or if it is relevant for a certain time period like planned maintenance.",
+      code: (
         <Flash mt={3} variant={"danger"} display={"flex"}>
           <Box mr={3}>
             <Icon name="Warning" />
@@ -110,17 +104,11 @@ Use the `Flash` banner if the information you want to get across remains relevan
             </Text>
           </Box>
         </Flash>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Don't use a Flash banner if the message doesn't remain relevant for long. Consider using a <Link href="/components/rimble-ui/ToastMessage" title="To ToastMessage component" target="_blank">ToastMessage</Link> instead.
-        </Text>
-        <hr color="#f4f4f4"/>
+      )
+    },
+    negative: {
+      caption: (<>Don't use a Flash banner if the message doesn't remain relevant for long. Consider using a <Link href="/components/rimble-ui/ToastMessage" title="To ToastMessage component" target="_blank">ToastMessage</Link> instead.</>),
+      code: (
         <Flash mt={3} variant={"success"} display={"flex"}>
           <Box mr={3}>
             <Icon name="Mood" />
@@ -134,8 +122,8 @@ Use the `Flash` banner if the information you want to get across remains relevan
             </Text>
           </Box>
         </Flash>
-      </Box>
-    )
+      )
+    }
   }}
 </DoDont>
 
@@ -145,15 +133,9 @@ Users will still be able to interact with the surrounding page, so if it's criti
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Flash banners should have a single purpose or message so should only contain a maximum of one call to action.
-        </Text>
-        <hr color="#f4f4f4"/>
+    positive: {
+      caption: "Flash banners should have a single purpose or message so should only contain a maximum of one call to action.",
+      code: (
         <Flash mt={3} variant={"danger"} display={"flex"}>
           <Box mr={3}>
             <Icon name="Warning" />
@@ -171,17 +153,11 @@ Users will still be able to interact with the surrounding page, so if it's criti
             </Text>
           </Box>
         </Flash>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-           Multiple messages in a banner will both cause confusion and add unnecessary word count. It's better to separate them into two banners if you need to say two things and let the user address them separately.
-        </Text>
-        <hr color="#f4f4f4"/>
+      )
+    },
+    negative: {
+      caption: "Multiple messages in a banner will both cause confusion and add unnecessary word count. It's better to separate them into two banners if you need to say two things and let the user address them separately.",
+      code: (
         <Flash mt={3} variant={"danger"} display={"flex"}>
           <Box mr={3}>
             <Icon name="Warning" />
@@ -206,8 +182,8 @@ Users will still be able to interact with the surrounding page, so if it's criti
             </Text>
           </Box>
         </Flash>
-      </Box>
-    )
+      )
+    }
   }}
 </DoDont>
 

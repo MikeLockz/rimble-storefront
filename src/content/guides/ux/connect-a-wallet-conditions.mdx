@@ -16,32 +16,36 @@ That doesn't mean you can't let your users know that they won't be able to conne
 
 <DoDont>
   {{
-    positive: (
-      <Text>
-        <ul>
-          <li>Let the user explore before connecting</li>
-          <li>Only ask them to connect when they need to</li>
-          <li>
-            Educate them passively – don't force them to learn if they don't
-            need to know right now
-          </li>
-        </ul>
-      </Text>
-    ),
-    negative: (
-      <Text>
-        <ul>
-          <li>
-            Ask the user to accept a connection or signature request as soon as
-            they land on your dapp
-          </li>
-          <li>
-            Block the user from exploring your dapp until they've connected, if
-            you don't need to be connected to browse
-          </li>
-        </ul>
-      </Text>
-    )
+    positive: {
+      caption: (
+        <Text>
+          <ul>
+            <li>Let the user explore before connecting</li>
+            <li>Only ask them to connect when they need to</li>
+            <li>
+              Educate them passively – don't force them to learn if they don't
+              need to know right now
+            </li>
+          </ul>
+        </Text>
+      )
+    },
+    negative: {
+      caption: (
+        <Text>
+          <ul>
+            <li>
+              Ask the user to accept a connection or signature request as soon as
+              they land on your dapp
+            </li>
+            <li>
+              Block the user from exploring your dapp until they've connected, if
+              you don't need to be connected to browse
+            </li>
+          </ul>
+        </Text>
+      )
+    }
   }}
 </DoDont>
 
@@ -78,27 +82,31 @@ For new users they might not even be ready to switch to a correct network. You m
 
 <DoDont>
   {{
-    positive: (
-      <Text>
-        <ul>
-          <li>Tell them to switch to a browser that will support Web3</li>
-          <li>Chrome, Firefox, Opera or Brave for desktop users</li>
-          <li>A mobile wallet browser for mobile users</li>
-        </ul>
-      </Text>
-    ),
-    negative: (
-      <Text>
-        <ul>
-          <li>
-            Just provide a boilerplate "install MetaMask" message as this won't
-            work
-          </li>
-          <li>Just tell them their browser doesn't support Web3</li>
-          <li>Use "Web3" as a term</li>
-        </ul>
-      </Text>
-    )
+    positive: {
+      caption: (
+        <Text>
+          <ul>
+            <li>Tell them to switch to a browser that will support Web3</li>
+            <li>Chrome, Firefox, Opera or Brave for desktop users</li>
+            <li>A mobile wallet browser for mobile users</li>
+          </ul>
+        </Text>
+      )
+    },
+    negative: {
+      caption: (
+        <Text>
+          <ul>
+            <li>
+              Just provide a boilerplate "install MetaMask" message as this won't
+              work
+            </li>
+            <li>Just tell them their browser doesn't support Web3</li>
+            <li>Use "Web3" as a term</li>
+          </ul>
+        </Text>
+      )
+    }
   }}
 </DoDont>
 
@@ -108,37 +116,41 @@ For new users they might not even be ready to switch to a correct network. You m
 
 <DoDont>
   {{
-    positive: (
-      <Text>
-        <ul>
-          <li>
-            Explain that MetaMask is a browser extension that will allow you to
-            use the dapp
-          </li>
-          <li>Provide them a link to download MetaMask</li>
-          <li>
-            Give them some context as to what features this will unlock in your
-            dapp e.g. MetaMask will let you use our blockchain features, like
-            buying crypto collectibles
-          </li>
-          <li>
-            Set their expectations that MetaMask may take some time to set up
-          </li>
-        </ul>
-      </Text>
-    ),
-    negative: (
-      <Text>
-        <ul>
-          <li>Expect users to go and find MetaMask themselves</li>
-          <li>Assume users know what MetaMask is</li>
-          <li>
-            Start explaining MetaMask things like seed phrases here to avoid
-            overwhelming the user – that's MetaMask's job
-          </li>
-        </ul>
-      </Text>
-    )
+    positive: {
+      caption: (
+        <Text>
+          <ul>
+            <li>
+              Explain that MetaMask is a browser extension that will allow you to
+              use the dapp
+            </li>
+            <li>Provide them a link to download MetaMask</li>
+            <li>
+              Give them some context as to what features this will unlock in your
+              dapp e.g. MetaMask will let you use our blockchain features, like
+              buying crypto collectibles
+            </li>
+            <li>
+              Set their expectations that MetaMask may take some time to set up
+            </li>
+          </ul>
+        </Text>
+      )
+    },
+    negative: {
+      caption: (
+        <Text>
+          <ul>
+            <li>Expect users to go and find MetaMask themselves</li>
+            <li>Assume users know what MetaMask is</li>
+            <li>
+              Start explaining MetaMask things like seed phrases here to avoid
+              overwhelming the user – that's MetaMask's job
+            </li>
+          </ul>
+        </Text>
+      )
+    }
   }}
 </DoDont>
 
@@ -150,40 +162,44 @@ If your dapp experience is good on mobile, you may want to direct users to downl
 
 <DoDont>
   {{
-    positive: (
-      <Text>
-        <ul>
-          <li>Tell the user what network they need to be on</li>
-          <li>
-            Tell them where to change it (Desktop: in MetaMask, Mobile: in
-            Settings)
-          </li>
-          <li>
-            Be explicit about the above in the title – this is the main
-            information they need and users, especially experienced users, are
-            likely to just skim the heading
-          </li>
-          <li>
-            Tell them their current network – this acts as a good keyword for
-            them to hunt down the right place to change networks
-          </li>
-          <li>
-            Avoid words like "connecting" as this can cause confusion with
-            connecting to the dapp – "Set your network to X" or "Switch to X
-            network" work better and differentiate this process from connecting
-          </li>
-        </ul>
-      </Text>
-    ),
-    negative: (
-      <Text>
-        <ul>
-          <li>Assume users know which network they're on</li>
-          <li>Assume users understand what a network is</li>
-          <li>Assume they know where to change networks</li>
-        </ul>
-      </Text>
-    )
+    positive: {
+      caption: (
+        <Text>
+          <ul>
+            <li>Tell the user what network they need to be on</li>
+            <li>
+              Tell them where to change it (Desktop: in MetaMask, Mobile: in
+              Settings)
+            </li>
+            <li>
+              Be explicit about the above in the title – this is the main
+              information they need and users, especially experienced users, are
+              likely to just skim the heading
+            </li>
+            <li>
+              Tell them their current network – this acts as a good keyword for
+              them to hunt down the right place to change networks
+            </li>
+            <li>
+              Avoid words like "connecting" as this can cause confusion with
+              connecting to the dapp – "Set your network to X" or "Switch to X
+              network" work better and differentiate this process from connecting
+            </li>
+          </ul>
+        </Text>
+      )
+    },
+    negative: {
+      caption: (
+        <Text>
+          <ul>
+            <li>Assume users know which network they're on</li>
+            <li>Assume users understand what a network is</li>
+            <li>Assume they know where to change networks</li>
+          </ul>
+        </Text>
+      )
+    }
   }}
 </DoDont>
 

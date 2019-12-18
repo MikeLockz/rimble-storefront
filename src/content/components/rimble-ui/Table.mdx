@@ -84,15 +84,9 @@ Truncation prevents users from comparing data accurately. For example, if all da
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-           Try and avoid having more rows than columns as they're easier to scan.
-        </Text>
-        <hr color="#f4f4f4"/>
+    positive: {
+      caption: "Try and avoid having more rows than columns as they're easier to scan.",
+      code: (
         <Table mt={3}>
           <thead>
             <tr>
@@ -115,17 +109,11 @@ Truncation prevents users from comparing data accurately. For example, if all da
             </tr>
           </tbody>
         </Table>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-           The more columns a user has to compare data across the harder it is. Consider other UI.
-        </Text>
-        <hr color="#f4f4f4"/>
+      )
+    },
+    negative: {
+      caption: "The more columns a user has to compare data across the harder it is. Consider other UI.",
+      code: (
         <Table mt={3}>
           <thead>
             <tr>
@@ -150,8 +138,8 @@ Truncation prevents users from comparing data accurately. For example, if all da
             </tr>
           </tbody>
         </Table>
-      </Box>
-    )
+      )
+    }
   }}
 </DoDont>
 
@@ -159,15 +147,9 @@ Truncation prevents users from comparing data accurately. For example, if all da
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Make sure your headings are clear and give the user enough information about what to expect in the data that follows.
-        </Text>
-        <hr color="#f4f4f4"/>
+    positive: {
+      caption: "Make sure your headings are clear and give the user enough information about what to expect in the data that follows.",
+      code: (
         <Table mt={3}>
           <thead>
             <tr>
@@ -190,17 +172,11 @@ Truncation prevents users from comparing data accurately. For example, if all da
             </tr>
           </tbody>
         </Table>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Unclear titles make comparing data more difficult for users.
-        </Text>
-        <hr color="#f4f4f4"/>
+      )
+    },
+    negative: {
+      caption: "Unclear titles make comparing data more difficult for users.",
+      code: (
         <Table mt={3}>
           <thead>
             <tr>
@@ -223,7 +199,7 @@ Truncation prevents users from comparing data accurately. For example, if all da
             </tr>
           </tbody>
         </Table>
-      </Box>
-    )
+      )
+    }
   }}
 </DoDont>

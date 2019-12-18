@@ -94,40 +94,28 @@ Some best practices for writing `Heading` components.
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Make headings shorter and quicker to scan by removing articles (a, the, an).
-        </Text>
-        <hr color="#f4f4f4"/>
+    positive: {
+      caption: "Make headings shorter and quicker to scan by removing articles (a, the, an).",
+      code: (
         <Heading
           as={"h2"}
           mt={3}
         >
           Add wallet
         </Heading>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Add "a" wallet doesn't help with understanding so it can be removed.
-        </Text>
-        <hr color="#f4f4f4"/>
+      )
+    },
+    negative: {
+      caption: "Add 'a' wallet doesn't help with understanding so it can be removed.",
+      code: (
         <Heading
           as={"h2"}
           mt={3}
         >
           Add a wallet
         </Heading>
-      </Box>
-    ),
+      )
+    },
   }}
 </DoDont>
 
@@ -135,40 +123,28 @@ Some best practices for writing `Heading` components.
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Make sure the subject of your heading is put first and foremost in your copy – this will make it easier to scan and understand at a glance.
-        </Text>
-        <hr color="#f4f4f4"/>
+    positive: {
+      caption: "Make sure the subject of your heading is put first and foremost in your copy – this will make it easier to scan and understand at a glance.",
+      code: (
         <Heading
           as={"h2"}
           mt={3}
         >
           Withdraw ETH?
         </Heading>
-      </Box>
-      ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Are you sure, what? This could be phrased around what the user should be sure about, e.g. Withdraw ETH?
-        </Text>
-        <hr color="#f4f4f4"/>
+      )
+    },
+    negative: {
+      caption: "Are you sure, what? This could be phrased around what the user should be sure about, e.g. Withdraw ETH?",
+      code: (
         <Heading
           as={"h2"}
           mt={3}
         >
           Are you sure?
         </Heading>
-      </Box>
-    ),
+      )
+    },
   }}
 </DoDont>
 

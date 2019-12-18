@@ -167,15 +167,9 @@ Some best practices for using `Input` in your product.
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Use a label to provide instructions for completing the input – not a placeholder.
-        </Text>
-        <hr color="#f4f4f4" />
+    positive: {
+      caption: "Use a label to provide instructions for completing the input – not a placeholder.",
+      code: (
         <Field
           mt={3}
           label="ENS address"
@@ -187,17 +181,11 @@ Some best practices for using `Input` in your product.
             placeholder="e.g. aardvark.eth"
           />
         </Field>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Don't use placeholders – they disappear as the user enters the field and makes reviewing form entries difficult as you lose the explanation of the expected input.
-        </Text>
-        <hr color="#f4f4f4" />
+      )
+    },
+    negative: {
+      caption: "Don't use placeholders – they disappear as the user enters the field and makes reviewing form entries difficult as you lose the explanation of the expected input.",
+      code: (
         <Field mt={3}>
           <Input
             type="text"
@@ -206,8 +194,8 @@ Some best practices for using `Input` in your product.
             placeholder="ENS address"
           />
         </Field>
-      </Box>
-    )
+      )
+    }
   }}
 </DoDont>
 

@@ -95,16 +95,9 @@ Use the Text component for copy. Remember to keep your writing as simple as poss
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Left-align blocks of text to make it easier to read.
-        </Text>
-        <hr color="#f4f4f4"/>
-        <Heading.h4 mt={3}>The intent of Ethereum</Heading.h4>
+    positive: {
+      caption: "Left-align blocks of text to make it easier to read.",
+      code: (
         <Text mt={3}>
           The intent of Ethereum is to create an alternative protocol for building
           decentralized applications, providing a different set of tradeoffs that
@@ -114,17 +107,11 @@ Use the Text component for copy. Remember to keep your writing as simple as poss
           the ability of different applications to very efficiently interact, are
           important.
         </Text>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Centre-aligned text is harder to read across multiple lines because the starting point of each line changes.
-        </Text>
-        <hr color="#f4f4f4"/>
+      )
+    },
+    negative: {
+      caption: "Centre-aligned text is harder to read across multiple lines because the starting point of each line changes.",
+      code: (
         <Text
           mt={3}
           textAlign="center"
@@ -137,8 +124,8 @@ Use the Text component for copy. Remember to keep your writing as simple as poss
           the ability of different applications to very efficiently interact, are
           important.
         </Text>
-      </Box>
-    )
+      )
+    }
   }}
 </DoDont>
 
@@ -146,52 +133,44 @@ Use the Text component for copy. Remember to keep your writing as simple as poss
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Use the <Link href="/components/rimble-ui/Heading" title="To Heading component" title="_blank">Heading</Link> component to break up text and make it easier for users to find what they're looking for.
-        </Text>
-        <hr color="#f4f4f4"/>
-        <Heading.h4 mt={3}>The intent of Ethereum</Heading.h4>
-        <Text>
-          The intent of Ethereum is to create an alternative protocol for
-          building decentralized applications, providing a different set of
-          tradeoffs that we believe will be very useful for a large class of
-          decentralized applications.
-        </Text>
-        <Heading.h4 mt={3}>Where is Ethereum most important?</Heading.h4>
-        <Text>
-          Ethereum is particularly important for building decentralized
-          applications with particular emphasis on rapid development time,
-          security for small and rarely used applications, and the ability of
-          different applications to very efficiently interact, are important.
-        </Text>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Avoid large blocks of text without signposts. Reader behaviour suggests users will scan a page to look for headings that represent the information they're interested in.
-        </Text>
-        <hr color="#f4f4f4"/>
-        <Heading.h4 mt={3}>The intent of Ethereum</Heading.h4>
-        <Text mt={3}>
-          The intent of Ethereum is to create an alternative protocol for building
-          decentralized applications, providing a different set of tradeoffs that
-          we believe will be very useful for a large class of decentralized
-          applications, with particular emphasis on situations where rapid
-          development time, security for small and rarely used applications, and
-          the ability of different applications to very efficiently interact, are
-          important.
-        </Text>
-      </Box>
-    )
+    positive: {
+      caption: (<>Use the <Link href="/components/rimble-ui/Heading" title="To Heading component" title="_blank">Heading</Link> component to break up text and make it easier for users to find what they're looking for.</>),
+      code: (
+        <Box>
+          <Heading.h4 mt={3}>The intent of Ethereum</Heading.h4>
+          <Text>
+            The intent of Ethereum is to create an alternative protocol for
+            building decentralized applications, providing a different set of
+            tradeoffs that we believe will be very useful for a large class of
+            decentralized applications.
+          </Text>
+          <Heading.h4 mt={3}>Where is Ethereum most important?</Heading.h4>
+          <Text>
+            Ethereum is particularly important for building decentralized
+            applications with particular emphasis on rapid development time,
+            security for small and rarely used applications, and the ability of
+            different applications to very efficiently interact, are important.
+          </Text>
+        </Box>
+      )
+    },
+    negative: {
+      caption: "Avoid large blocks of text without signposts. Reader behaviour suggests users will scan a page to look for headings that represent the information they're interested in.",
+      code: (
+        <Box>
+          <Heading.h4 mt={3}>The intent of Ethereum</Heading.h4>
+          <Text mt={3}>
+            The intent of Ethereum is to create an alternative protocol for building
+            decentralized applications, providing a different set of tradeoffs that
+            we believe will be very useful for a large class of decentralized
+            applications, with particular emphasis on situations where rapid
+            development time, security for small and rarely used applications, and
+            the ability of different applications to very efficiently interact, are
+            important.
+          </Text>
+        </Box>
+      )
+    }
   }}
 </DoDont>
 
@@ -201,35 +180,23 @@ Use the Text component for copy. Remember to keep your writing as simple as poss
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          A low reading age isn't about dumbing down content it's about being more respectful of your users time.
-        </Text>
-        <hr color="#f4f4f4"/>
+    positive: {
+      caption: "A low reading age isn't about dumbing down content it's about being more respectful of your users time.",
+      code: (
         <Text mt={3}>
           Write in short sentences and avoid complex terms when there are simpler
           alternatives.
         </Text>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Assumed knowledge and complex terminology only makes your product more difficlt and less enjoyable to use.
-        </Text>
-        <hr color="#f4f4f4"/>
+      )
+    },
+    negative: {
+      caption: "Assumed knowledge and complex terminology only makes your product more difficlt and less enjoyable to use.",
+      code: (
         <Text mt={3}>
           Use jargon, technical language or complex sentence structures.
         </Text>
-      </Box>
-    )
+      )
+    }
   }}
 </DoDont>
 

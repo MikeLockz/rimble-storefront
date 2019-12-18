@@ -228,34 +228,22 @@ Some best practices for writing `Button` microcopy.
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Make sure the Button copy explains what pressing it will do.
-        </Text>
-        <hr color="#f4f4f4"/>
+    positive: {
+      caption: "Make sure the Button copy explains what pressing it will do.",
+      code: (
         <Button mt={3} size="medium">
           Send Ether
         </Button>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Avoid generic terms that leave the next steps unclear.
-        </Text>
-        <hr color="#f4f4f4"/>
+      )
+    },
+    negative: {
+      caption: "Avoid generic terms that leave the next steps unclear.",
+      code: (
         <Button mt={3} size="medium">
           Submit
         </Button>
-      </Box>
-    )
+      )
+    }
   }}
 </DoDont>
 
@@ -263,34 +251,22 @@ Some best practices for writing `Button` microcopy.
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Remove articles that don't contribute to meaning (a, the, an).
-        </Text>
-        <hr color="#f4f4f4"/>
+    positive: {
+      caption: "Remove articles that don't contribute to meaning (a, the, an).",
+      code: (
         <Button mt={3} size="medium">
           Add wallet
         </Button>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Unnecessary articles will make your Button copy longer and harder to scan.
-        </Text>
-        <hr color="#f4f4f4"/>
-        <Button mt={3} size="medium">
+      )
+    },
+    negative: {
+      caption: "Unnecessary articles will make your Button copy longer and harder to scan.",
+      code: (
+         <Button mt={3} size="medium">
           Add a wallet
         </Button>
-      </Box>
-    )
+      )
+    }
   }}
 </DoDont>
 
@@ -298,34 +274,22 @@ Some best practices for writing `Button` microcopy.
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Explain what the button will do at this stage in the flow. For example, if you have a button that launches a QR code for you to scan with your mobile...
-        </Text>
-        <hr color="#f4f4f4"/>
+    positive: {
+      caption: "Explain what the button will do at this stage in the flow. For example, if you have a button that launches a QR code for you to scan with your mobile...",
+      code: (
         <Button mt={3} size="medium">
           Show QR code
         </Button>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Don't label your Button with the end result. For example, pressing the Button below won't scan the QR code, it will show it so you can then scan it.
-        </Text>
-        <hr color="#f4f4f4"/>
+      )
+    },
+    negative: {
+      caption: "Don't label your Button with the end result. For example, pressing the Button below won't scan the QR code, it will show it so you can then scan it.",
+      code: (
         <Button mt={3} size="medium">
           Scan QR code
         </Button>
-      </Box>
-    )
+      )
+    }
   }}
 </DoDont>
 
@@ -333,36 +297,30 @@ Some best practices for writing `Button` microcopy.
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
+    positive: {
+      caption: "This will make it clear what will happen and to what when interacting with the Button.",
+      code: (
+        <Flex
+          flexDirection="column"
+          mt={3}
         >
-          This will make it clear what will happen and to what when interacting with the Button.
-        </Text>
-        <hr color="#f4f4f4"/>
-        <Box mt={3}>
           <Button mb={2} size="medium">Add wallet</Button>
-        </Box>
-        <Button size="medium">Send Ether</Button>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
+          <Button size="medium">Send Ether</Button>
+        </Flex>
+      )
+    },
+    negative: {
+      caption: "Don’t rely on the rest of the interface to inform the user about what their action relates to. However, universally understood actions like 'Save', 'Next' and 'Previous' may not need the noun.",
+      code: (
+        <Flex
+          flexDirection="column"
+          mt={3}
         >
-          Don’t rely on the rest of the interface to inform the user about what their action relates to. However, universally understood actions like "Save", "Next" and "Previous" may not need the noun.
-        </Text>
-        <hr color="#f4f4f4"/>
-        <Box mt={3}>
           <Button mb={2} icon="AddCircle">Add</Button>
-        </Box>
-        <Button icon="Send">Send</Button>
-    </Box>
-    )
+          <Button icon="Send">Send</Button>
+        </Flex>
+      )
+    }
   }}
 </DoDont>
 

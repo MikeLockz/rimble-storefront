@@ -34,8 +34,18 @@ This was far more successful than vague statements like "This might take a few m
 
 <DoDont>
   {{
-    positive: <Text>Estimated time{":"} less than 3 minutes</Text>,
-    negative: <Text>This might take a few minutes</Text>
+    positive: {
+      caption: "Provide a time range and make clear it's an estimate.",
+      code: (
+        <Text>Estimated time{":"} less than 3 minutes</Text>
+      )
+    },
+    negative: {
+      caption: "Avoid vague statements.",
+      code: (
+        <Text>This might take a few minutes</Text>
+      )
+    }
   }}
 </DoDont>
 
@@ -45,8 +55,18 @@ Users we tested with suggested that features like elapsed times and spinners wer
 
 <DoDont>
   {{
-    positive: <Text>Estimated time{":"} less than 3 minutes</Text>,
-    negative: <Loader />
+    positive: {
+      caption: "Provide a time range and make clear it's an estimate.",
+      code: (
+        <Text>Estimated time{":"} less than 3 minutes</Text>
+      )
+    },
+    negative: {
+      caption: "Spinners or loaders can make it seem like a long transaction has timed out.",
+      code: (
+        <Loader />
+      )
+    }
   }}
 </DoDont>
 

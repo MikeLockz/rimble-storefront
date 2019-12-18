@@ -40,15 +40,9 @@ Some best practices for using `Radio` in your product.
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Use a label to provide users with instructions on what to select.
-        </Text>
-        <hr color="#f4f4f4" />
+    positive: {
+      caption: "Use a label to provide users with instructions on what to select.",
+      code: (
         <Field
           mt={3}
           label="Would you like alerts when the price changes?"
@@ -56,21 +50,17 @@ Some best practices for using `Radio` in your product.
           <Radio required={true} label="Yes"  />
           <Radio required={true} label="No" />
         </Field>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Don't just provide a user with unlabelled choices.
-        </Text>
-        <hr color="#f4f4f4" />
-        <Radio required={true} label="Give me price changes" mt={3} />
-        <Radio required={true} label="Don't give me price changes" />
-      </Box>
-    )
+      )
+    },
+    negative: {
+      caption: "Don't just provide a user with unlabelled choices.",
+      code: (
+        <Box>
+          <Radio required={true} label="Give me price changes" mt={3} />
+          <Radio required={true} label="Don't give me price changes" />
+        </Box>
+      )
+    }
   }}
 </DoDont>
 
@@ -78,15 +68,9 @@ Some best practices for using `Radio` in your product.
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Radios are for times when your users can choose only one option.
-        </Text>
-        <hr color="#f4f4f4" />
+    positive: {
+      caption: "Radios are for times when your users can choose only one option.",
+      code: (
         <Field
           mt={3}
           label="Would you like alerts when the price changes?"
@@ -94,25 +78,19 @@ Some best practices for using `Radio` in your product.
           <Radio required={true} label="Yes" my={2} />
           <Radio required={true} label="No" my={2} />
         </Field>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Checkboxes are not suitable for decisions where you can select multiple options.
-        </Text>
-        <hr color="#f4f4f4" />
+      )
+    },
+    negative: {
+      caption: "Checkboxes are not suitable for decisions where you can select multiple options.",
+      code: (
         <Field mt={3} label="Choose any currencies you'd like to track">
           <Radio required={true} label="Ether (ETH)" my={2} />
           <Radio required={true} label="Bitcoin (BTC)" my={2} />
           <Radio required={true} label="Ethereum Classic (ETC)" my={2} />
           <Radio required={true} label="Litecoin (LTC)" my={2} />
         </Field>
-      </Box>
-    )
+      )
+    }
   }}
 </DoDont>
 
@@ -120,15 +98,9 @@ Some best practices for using `Radio` in your product.
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Use a <Link href="/components/rimble-ui/Select" title="To Select component" target="_blank">Select</Link> component when there are lots of options to choose from.
-        </Text>
-        <hr color="#f4f4f4" />
+    positive: {
+      caption: (<>Use a <Link href="/components/rimble-ui/Select" title="To Select component" target="_blank">Select</Link> component when there are lots of options to choose from.</>),
+      code: (
         <Field mt={3} label="Choose your default currency">
           <Select
             required={true}
@@ -141,18 +113,12 @@ Some best practices for using `Radio` in your product.
             ]}
           />
         </Field>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Don't present lots of choices to a user like this as it will clutter your interface.
-        </Text>
-        <hr color="#f4f4f4" />
-        <Field mt={4}label="Choose your default currency">
+      )
+    },
+    negative: {
+      caption: "Don't present lots of choices to a user like this as it will clutter your interface.",
+      code: (
+        <Field mt={4} label="Choose your default currency">
           <Radio required={true} label="ETH - Ether" my={2} />
           <Radio label="BTC - Bitcoin" my={2} />
           <Radio label="USD - Dollars" my={2} />
@@ -164,8 +130,8 @@ Some best practices for using `Radio` in your product.
           <Radio label="YEN" my={2} />
           <Radio label="INR - Rupee" my={2} />
         </Field>
-      </Box>
-    )
+      )
+    }
   }}
 </DoDont>
 

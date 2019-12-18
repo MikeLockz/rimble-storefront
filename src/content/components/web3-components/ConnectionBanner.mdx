@@ -136,30 +136,18 @@ We've provided some messages in this component that should work for most dApps. 
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Make your banner copy clear and instructional to inspire action.
-        </Text>
-        <hr color="#f4f4f4"/>
+    positive: {
+      caption: "Make your banner copy clear and instructional to inspire action.",
+      code: (
         <Text mt={3}>Switch to the Rinkeby network</Text>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Don't just state what's happened and assume your user knows what to do.
-        </Text>
-        <hr color="#f4f4f4"/>
+      )
+    },
+    negative: {
+      caption: "Don't just state what's happened and assume your user knows what to do.",
+      code: (
         <Text>The correct network was not detected</Text>
-      </Box>
-    ),
+      )
+    }
   }}
 </DoDont>
 
@@ -169,29 +157,17 @@ Technically, the functionality in this component tries to detect a Web3 provider
 
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Write messages without using Web3 jargon to make instructions clearer to everybody.
-        </Text>
-        <hr color="#f4f4f4"/>
+    positive: {
+      caption: "Write messages without using Web3 jargon to make instructions clearer to everybody.",
+      code: (
         <Text mt={3}>Switch browsers to use our blockchain features</Text>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Text
-          fontSize={1}
-          mb={3}
-        >
-          Web3 jargon is inherently inaccessible to anyone not building in this space.
-        </Text>
-        <hr color="#f4f4f4"/>
+      )
+    },
+    negative: {
+      caption: "Web3 jargon is inherently inaccessible to anyone not building in this space.",
+      code: (
         <Text mt={3}>No web3 detected</Text>
-      </Box>
-    ),
+      )
+    },
   }}
 </DoDont>

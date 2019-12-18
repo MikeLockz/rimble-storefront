@@ -7,28 +7,32 @@ Writing for products isn't difficult when you remember that your interface is a 
 
 ## Low reading age
 
-Writing for a low reading age isn't about dumbing stuff down it's about respecting your user's time. Content with a lower reading age is easier and quicker to understand.
-
 **Re-read your work and replace any words that have a simpler alternative**
 
 <DoDont>
   {{
-    positive: (
-      <Text>
-        <ul>
-          <li>Buy</li>
-          <li>Get</li>
-        </ul>
-      </Text>
-    ),
-    negative: (
-      <Text>
-        <ul>
-          <li>Purchase</li>
-          <li>Receive</li>
-        </ul>
-      </Text>
-    )
+    positive: {
+      caption: "Writing for a low reading age isn't about dumbing stuff down it's about respecting your user's time.",
+      code: (
+        <Text>
+          <ul>
+            <li>Buy</li>
+            <li>Get</li>
+          </ul>
+        </Text>
+      )
+    },
+    negative: {
+      caption: "Content with a higher reading age (for example, longer words) takes longer to understand.",
+      code: (
+        <Text>
+          <ul>
+            <li>Purchase</li>
+            <li>Receive</li>
+          </ul>
+        </Text>
+      )
+    }
   }}
 </DoDont>
 
@@ -36,26 +40,26 @@ Writing for a low reading age isn't about dumbing stuff down it's about respecti
 
 <DoDont>
   {{
-    positive: (
-      <Box>
+    positive: {
+      caption: "Grade: 6",
+      code: (
         <Text>
-          dapp only works on the Main Ethereum network. Switch networks in your
+          dApp only works on the Main Ethereum network. Switch networks in your
           MetaMask extension to continue. You’re currently using Ropsten, a test
           network that doesn’t use real funds.
         </Text>
-        <Text>Grade: 6</Text>
-      </Box>
-    ),
-    negative: (
-      <Box>
+      )
+    },
+    negative: {
+      caption: "Grade: 8",
+      code: (
         <Text>
-          dapp only works on the Main Ethereum network but you're using Ropsten,
+          dApp only works on the Main Ethereum network but you're using Ropsten,
           a test network that doesn’t use real funds. Switch networks in your
           MetaMask extension to continue.
         </Text>
-        <Text>Grade: 8</Text>
-      </Box>
-    )
+      )
+    }
   }}
 </DoDont>
 
@@ -72,12 +76,22 @@ Avoid words like:
 - Protocol
 - Web3 provider
 
-Look for overly technical words or system language and replace with more human words you'd use in conversation
+Look for overly technical words
 
 <DoDont>
   {{
-    positive: <Text>Choose</Text>,
-    negative: <Text>Select</Text>
+    positive: {
+      caption: "Replace system language with human words you'd use in conversation",
+      code: (
+        <Text>Choose</Text>
+      )
+    },
+    negative: {
+      caption: "Technical terms and system langauge can feel less natural. Are you more like to use 'Select' or 'Choose' in a sentence?",
+      code: (
+        <Text>Select</Text>
+      )
+    }
   }}
 </DoDont>
 
@@ -85,28 +99,34 @@ Look for overly technical words or system language and replace with more human w
 
 ## Use an active voice
 
-An active voice prevents your dapp from sounding like a textbook and more like you're talking to a human being. It will also help keep your content more direct, succinct and shorter. Plus it tends to inject some pace and even inspire action – CTAs are always written in an active voice.
+
 
 <DoDont>
   {{
-    positive: (
-      <Text>
-        <ul>
-          <li>You need Ether for this transaction</li>
-          <li>You got a Cryptokitty from 0x1234...5678</li>
-          <li>Enter a description</li>
-        </ul>
-      </Text>
-    ),
-    negative: (
-      <Text>
-        <ul>
-          <li>Ether is required to complete this transaction</li>
-          <li>Cryptokitty was received from 0x1234...5678</li>
-          <li>A description is needed</li>
-        </ul>
-      </Text>
-    )
+    positive: {
+      caption: "An active voice prevents your dapp from sounding like a textbook and more like you're talking to a human being. It will also help keep your content more direct, succinct and shorter. Plus it tends to inject some pace and even inspire action – CTAs are always written in an active voice.",
+      code: (
+        <Text>
+          <ul>
+            <li>You need Ether for this transaction</li>
+            <li>You got a Cryptokitty from 0x1234...5678</li>
+            <li>Enter a description</li>
+          </ul>
+        </Text>
+      )
+    },
+    negative: {
+      caption: "A passive voice sounds more robotic and creates ambiguity around who is doing what.",
+      code: (
+        <Text>
+          <ul>
+            <li>Ether is required to complete this transaction</li>
+            <li>Cryptokitty was received from 0x1234...5678</li>
+            <li>A description is needed</li>
+          </ul>
+        </Text>
+      )
+    }
   }}
 </DoDont>
 
@@ -116,27 +136,31 @@ An active voice prevents your dapp from sounding like a textbook and more like y
 
 ## Avoid system terms
 
-There's a habit in the community of just referring to everything as a transaction. But the beauty of Ethereum is the breadth of things it allows us to do in a decentralized way. Generalising everything as a transaction undermines that. Refer to things using the language you'd use in conversation or in real life. Ask yourself, have you ever submitted a transaction in real life?
-
 <DoDont>
   {{
-    positive: (
-      <Text>
-        <ul>
-          <li>Sending your ETH</li>
-          <li>Casting your vote</li>
-          <li>You bought a Cryptokitty</li>
-        </ul>
-      </Text>
-    ),
-    negative: (
-      <Text>
-        <ul>
-          <li>Processing your transaction</li>
-          <li>Your transaction was successful</li>
-        </ul>
-      </Text>
-    )
+    positive: {
+      caption: "Refer to things using the language you'd use in conversation or in real life. Ask yourself, have you ever submitted a transaction in real life?",
+      code: (
+        <Text>
+          <ul>
+            <li>Sending your ETH</li>
+            <li>Casting your vote</li>
+            <li>You bought a Cryptokitty</li>
+          </ul>
+        </Text>
+      )
+    },
+    negative: {
+      caption: "Generalising everything as a transaction undermines the breadth of things Ethereum allows us to do in a decentralized way.",
+      code: (
+        <Text>
+          <ul>
+            <li>Processing your transaction</li>
+            <li>Your transaction was successful</li>
+          </ul>
+        </Text>
+      )
+    }
   }}
 </DoDont>
 
@@ -150,11 +174,17 @@ Adoption won't come from explaining the technology behind your dapp. Most people
 
 <DoDont>
   {{
-    positive: (
-      <Text>With dapp you can manage all your data from one safe place</Text>
-    ),
-    negative: (
-      <Text>dapp is an all-in-one data management platform using IPFS</Text>
-    )
+    positive: {
+      caption: "Reference benefits before technology.",
+      code: (
+        <Text>With [dApp] you can manage all your data from one safe place</Text>
+      )
+    },
+    negative: {
+      caption: "Technology is rarely a reason to use an application.",
+      code: (
+        <Text>[dApp] is an all-in-one data management platform using IPFS</Text>
+      )
+    }
   }}
 </DoDont>

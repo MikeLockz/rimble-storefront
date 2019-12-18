@@ -26,36 +26,40 @@ Progressive disclosure can be used to add more detail...
 
 <DoDont>
   {{
-    positive: (
-      <Text>
-        <ul>
-          <li>
-            Give users a sense of how much they'll need to cover transaction
-            fees and provide a fiat currency to provide context if possible
-          </li>
-          <li>
-            Set user expectations: it can take a while to get set up on an
-            exchange
-          </li>
-          <li>
-            Indicate that you're waiting for some user action – they may not be
-            expecting to have to do anything if they haven't read all the
-            content
-          </li>
-        </ul>
-      </Text>
-    ),
-    negative: (
-      <Text>
-        <ul>
-          <li>
-            Baffle your users with talk of gas limits etc – save any mention of
-            transaction fee configuration to the transaction itself if necessary
-          </li>
-          <li>Expect users to know how to get ETH</li>
-        </ul>
-      </Text>
-    )
+    positive: {
+      caption: (
+        <Text>
+          <ul>
+            <li>
+              Give users a sense of how much they'll need to cover transaction
+              fees and provide a fiat currency to provide context if possible
+            </li>
+            <li>
+              Set user expectations: it can take a while to get set up on an
+              exchange
+            </li>
+            <li>
+              Indicate that you're waiting for some user action – they may not be
+              expecting to have to do anything if they haven't read all the
+              content
+            </li>
+          </ul>
+        </Text>
+      )
+    },
+    negative: {
+      caption: (
+        <Text>
+          <ul>
+            <li>
+              Baffle your users with talk of gas limits etc – save any mention of
+              transaction fee configuration to the transaction itself if necessary
+            </li>
+            <li>Expect users to know how to get ETH</li>
+          </ul>
+        </Text>
+      )
+    }
   }}
 </DoDont>
 
@@ -65,30 +69,34 @@ New users may be wondering what the heck transaction fees are. So you may want t
 
 <DoDont>
   {{
-    positive: (
-      <Text>
-        <ul>
-          <li>
-            Explain that your fees pay to use the blockchain, much like you pay
-            a fee for using a credit card
-          </li>
-          <li>
-            If you want to go into more detail, talk in benefits: remind the
-            user of the value the blockchain brings them – these should sound
-            very similar to the reasons you built your application using
-            blockchain technology
-          </li>
-        </ul>
-      </Text>
-    ),
-    negative: (
-      <Text>
-        Get bogged down in talk of incentivisation and miners unless your dapp
-        is aimed at a technical audience. Most Web 2 applications don't go into
-        detail about what's going on under the hood unless they have an explicit
-        engineering focus. This rule should apply in Web3 too.
-      </Text>
-    )
+    positive: {
+      caption: (
+        <Text>
+          <ul>
+            <li>
+              Explain that your fees pay to use the blockchain, much like you pay
+              a fee for using a credit card
+            </li>
+            <li>
+              If you want to go into more detail, talk in benefits: remind the
+              user of the value the blockchain brings them – these should sound
+              very similar to the reasons you built your application using
+              blockchain technology
+            </li>
+          </ul>
+        </Text>
+      )
+    },
+    negative: {
+      caption: (
+        <Text>
+          Get bogged down in talk of incentivisation and miners unless your dapp
+          is aimed at a technical audience. Most Web 2 applications don't go into
+          detail about what's going on under the hood unless they have an explicit
+          engineering focus. This rule should apply in Web3 too.
+        </Text>
+      )
+    }
   }}
 </DoDont>
 

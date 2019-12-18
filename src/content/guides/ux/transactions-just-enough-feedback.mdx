@@ -44,26 +44,32 @@ In our testing, most users didn't stick around to watch their transaction finish
 
 <DoDont>
   {{
-    positive: (
-      <Text>
-        <ul>
-          <li>Your ticket is on its way</li>
-          <li>Transferring your ticket</li>
-          <li>You're going to Devcon</li>
-        </ul>
-      </Text>
-    ),
-    negative: (
-      <Text>
-        <ul>
-          <li>Transaction started</li>
-          <li>Transaction pending</li>
-          <li>Transferring being mined</li>
-          <li>First block mined</li>
-          <li>Transaction done</li>
-        </ul>
-      </Text>
-    )
+    positive: {
+      caption: "Stick to the most important updates.",
+      code: (
+        <Text>
+          <ul>
+            <li>Your ticket is on its way</li>
+            <li>Transferring your ticket</li>
+            <li>You're going to Devcon</li>
+          </ul>
+        </Text>
+      )
+    },
+    negative: {
+      caption: "Avoid oversharing information about the process – too much information can be confusing.",
+      code: (
+        <Text>
+          <ul>
+            <li>Transaction started</li>
+            <li>Transaction pending</li>
+            <li>Transaction being mined</li>
+            <li>First block mined</li>
+            <li>Transaction done</li>
+          </ul>
+        </Text>
+      )
+    }
   }}
 </DoDont>
 
