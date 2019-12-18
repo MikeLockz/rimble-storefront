@@ -4,8 +4,8 @@ import { Table as RimbleTable } from "rimble-ui";
 
 const StyledTable = styled(RimbleTable)`
   & {
-    display: block;
-    width: 100%;
+    display: table;
+    max-width: 100%;
     overflow: auto;
     border-width: 0;
   }
