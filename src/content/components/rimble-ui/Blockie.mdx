@@ -38,29 +38,35 @@ Some best practice for using `Blockie` in your product.
 
 **Don't make blockies circular**
 
-This obscures some of the blockie, making it more difficult for users to visually identify their Ethereum address. This means they're not a good idea to use in place of avatars.
-
 <DoDont>
   {{
-    positive: (
-      <Blockie
-        opts={{
-          seed: "foo",
-          color: "#dfe",
-          bgcolor: "#a71",
-          size: 15,
-          scale: 3,
-          spotcolor: "#000"
-        }}
-      />
-    ),
-    negative: (
-      <Avatar
-        mb={3}
-        size="medium"
-        src="https://cdn-images-1.medium.com/max/1600/1*6E2bK3gagTUHroxhDsDP1w.jpeg"
-      />
+    positive: {
+      caption: "Keep Blockies square so users have the most detail possible to identify their Ethereum address.",
+      code: (
+        <Box mt={3}>
+          <Blockie
+            opts={{
+              seed: "foo",
+              color: "#dfe",
+              bgcolor: "#a71",
+              size: 15,
+              scale: 3,
+              spotcolor: "#000"
+            }}
+          />
+        </Box>
     )
+  },
+    negative: {
+      caption: "Adding borderRadius makes it more difficult for users to visually identify their Ethereum address.",
+        code: (
+        <Avatar
+          mt={3}
+          size="medium"
+          src="https://cdn-images-1.medium.com/max/1600/1*6E2bK3gagTUHroxhDsDP1w.jpeg"
+        />
+        )
+      }
   }}
 </DoDont>
 

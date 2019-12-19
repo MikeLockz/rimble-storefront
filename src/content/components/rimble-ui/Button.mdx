@@ -168,23 +168,43 @@ Some best practices for using `Button` in your product.
 
 <DoDont>
   {{
-    positive: (
-      <Button icon="Send" mb="3">
-        Send Ether
-      </Button>
-    ),
-    negative: <Button icon="Send" mb="3" />
+    positive: {
+      caption: "Button copy helps with accessibility.",
+      code: (
+        <Button icon="Send" mt={3}>
+          Send Ether
+        </Button>
+        )
+      },
+    negative: {
+      caption: "Icons can be subjective. This relies on a user recognising this icon.",
+      code: (
+        <Button icon="Send" mt={3} />
+      )
+    }
   }}
 </DoDont>
 
 **Don’t use `Button` for navigational links**
 
-`Button` is for action-based tasks. Use `Button.Text` instead.
-
 <DoDont>
   {{
-    positive: <Button.Text mb="3">Transaction history</Button.Text>,
-    negative: <Button mb="3">Transaction history</Button>
+    positive: {
+      caption: (<>Use <Link href="/components/rimble-ui/Link" title="To Link component" target="_blank">Link</Link> or Button.Text for navigational links.</>),
+      code: (
+        <Box mt={3}>
+          <Link>Transaction history</Link>
+        </Box>
+      )
+    },
+    negative: {
+      caption: "Buttons are for actions like starting a process, confirming choices or acknowleding something.",
+      code: (
+        <Button mt={3}>
+          Transaction history
+        </Button>
+      )
+    }
   }}
 </DoDont>
 
@@ -206,89 +226,103 @@ Some best practices for writing `Button` microcopy.
 
 **Explain what pressing the button will do**
 
-The user should understand exactly what will happen once they press the button.
-
 <DoDont>
   {{
-    positive: (
-      <Button my={3} size="medium">
-        Send Ether
-      </Button>
-    ),
-    negative: (
-      <Button my={3} size="medium">
-        Submit
-      </Button>
-    )
+    positive: {
+      caption: "Make sure the Button copy explains what pressing it will do.",
+      code: (
+        <Button mt={3} size="medium">
+          Send Ether
+        </Button>
+      )
+    },
+    negative: {
+      caption: "Avoid generic terms that leave the next steps unclear.",
+      code: (
+        <Button mt={3} size="medium">
+          Submit
+        </Button>
+      )
+    }
   }}
 </DoDont>
 
 **Keep copy concise**
 
-Don’t use articles (a, the, an) in microcopy. This will make your button quicker to scan and shorter.
-
 <DoDont>
   {{
-    positive: (
-      <Button my={3} size="medium">
-        Add wallet
-      </Button>
-    ),
-    negative: (
-      <Button my={3} size="medium">
-        Add a wallet
-      </Button>
-    )
+    positive: {
+      caption: "Remove articles that don't contribute to meaning (a, the, an).",
+      code: (
+        <Button mt={3} size="medium">
+          Add wallet
+        </Button>
+      )
+    },
+    negative: {
+      caption: "Unnecessary articles will make your Button copy longer and harder to scan.",
+      code: (
+         <Button mt={3} size="medium">
+          Add a wallet
+        </Button>
+      )
+    }
   }}
 </DoDont>
 
 **Explain the next step, not the end goal**
 
-Explain what the button will do at this stage in the flow.
-
-For example, if you have a button that launches a QR code for you to scan with your mobile...
-
 <DoDont>
   {{
-    positive: (
-      <Button my={3} size="medium">
-        Show QR code
-      </Button>
-    ),
-    negative: (
-      <Button my={3} size="medium">
-        Scan QR code
-      </Button>
-    )
+    positive: {
+      caption: "Explain what the button will do at this stage in the flow. For example, if you have a button that launches a QR code for you to scan with your mobile...",
+      code: (
+        <Button mt={3} size="medium">
+          Show QR code
+        </Button>
+      )
+    },
+    negative: {
+      caption: "Don't label your Button with the end result. For example, pressing the Button below won't scan the QR code, it will show it so you can then scan it.",
+      code: (
+        <Button mt={3} size="medium">
+          Scan QR code
+        </Button>
+      )
+    }
   }}
 </DoDont>
 
 **Lead with a verb and follow with a noun**
 
-Don’t rely on the rest of the interface to inform the user about what their action relates to.
-
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Box mb={3}>
-          <Button size="medium">Add wallet</Button>
-        </Box>
-        <Button size="medium">Send Ether</Button>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Box mb={3}>
-          <Button icon="AddCircle">Add</Button>
-        </Box>
-        <Button icon="Send">Send</Button>
-      </Box>
-    )
+    positive: {
+      caption: "This will make it clear what will happen and to what when interacting with the Button.",
+      code: (
+        <Flex
+          flexDirection="column"
+          mt={3}
+        >
+          <Button mb={2} size="medium">Add wallet</Button>
+          <Button size="medium">Send Ether</Button>
+        </Flex>
+      )
+    },
+    negative: {
+      caption: "Don’t rely on the rest of the interface to inform the user about what their action relates to. However, universally understood actions like 'Save', 'Next' and 'Previous' may not need the noun.",
+      code: (
+        <Flex
+          flexDirection="column"
+          mt={3}
+        >
+          <Button mb={2} icon="AddCircle">Add</Button>
+          <Button icon="Send">Send</Button>
+        </Flex>
+      )
+    }
   }}
 </DoDont>
-
-Universally understood actions like "Save", "Next" and "Previous" etc may not need the noun.
 
 ## Related components
 

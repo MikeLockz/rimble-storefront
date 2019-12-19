@@ -6,8 +6,14 @@ import ExampleCard from "./ExampleCard";
 class DoDont extends Component {
   static propTypes = {
     children: PropTypes.shape({
-      positive: PropTypes.node,
-      negative: PropTypes.node
+      positive: PropTypes.shape({
+        caption: PropTypes.string,
+        example: PropTypes.node
+      }),
+      negative: PropTypes.shape({
+        captions: PropTypes.string,
+        example: PropTypes.node
+      })
     })
   };
 
@@ -22,14 +28,20 @@ class DoDont extends Component {
         margin={[0, -2]}
       >
         <Box width={[1, 1 / 2]} my={3}>
-          <ExampleCard variant={"positive"} mx={[0, 2]}>
-            {positive}
-          </ExampleCard>
+          <ExampleCard
+            variant={"positive"}
+            mx={[0, 2]}
+            caption={positive.caption}
+            code={positive.code}
+          />
         </Box>
         <Box width={[1, 1 / 2]} my={3}>
-          <ExampleCard variant={"negative"} mx={[0, 2]}>
-            {negative}
-          </ExampleCard>
+          <ExampleCard
+            variant={"negative"}
+            mx={[0, 2]}
+            caption={negative.caption}
+            code={negative.code}
+          />
         </Box>
       </Flex>
     );

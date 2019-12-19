@@ -61,55 +61,68 @@ Some best practices for using `Checkbox` in your product.
 
 **Always use with a label**
 
-Your users will need instruction on what to select. Don't just provide them with their choices.
-
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Field label="Choose any currencies you'd like to track">
+    positive: {
+      caption: "Use a label to provide users with instructions on what to select.",
+      code: (
+        <Field
+          label="Choose any currencies you'd like to track"
+          mt={3}
+        >
           <Checkbox label="Ether (ETH)" required={true} my={2} />
           <Checkbox label="Bitcoin (BTC)" required={true} my={2} />
           <Checkbox label="Ethereum Classic (ETC)" required={true} my={2} />
           <Checkbox label="Litecoin (LTC)" required={true} my={2} />
         </Field>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Checkbox label="Ether (ETH)" required={true} my={2} />
-        <Checkbox label="Bitcoin (BTC)" required={true} my={2} />
-        <Checkbox label="Ethereum Classic (ETC)" required={true} my={2} />
-        <Checkbox label="Litecoin (LTC)" required={true} my={2} />
-      </Box>
-    )
+      )
+    },
+    negative: {
+      caption: "Don't just provide a user with unlabelled choices.",
+      code: (
+        <Box>
+          <Checkbox label="Ether (ETH)" required={true} mt={3} mb={2} />
+          <Checkbox label="Bitcoin (BTC)" required={true} my={2} />
+          <Checkbox label="Ethereum Classic (ETC)" required={true} my={2} />
+          <Checkbox label="Litecoin (LTC)" required={true} my={2} />
+        </Box>
+      )
+    }
   }}
 </DoDont>
 
 **Only use when users can make multiple selections**
 
-Checkboxes are for times when your users can choose multiple options or no options. This means they're not suitable for binary decisions like Yes/No.
-
-<DoDont>
+<DoDont caption="test">
   {{
-    positive: (
-      <Box>
-        <Field label="Choose any currencies you'd like to track">
-          <Checkbox label="Ether (ETH)" required={true} my={2} />
-          <Checkbox label="Bitcoin (BTC)" required={true} my={2} />
-          <Checkbox label="Ethereum Classic (ETC)" required={true} my={2} />
-          <Checkbox label="Litecoin (LTC)" required={true} my={2} />
-        </Field>
-      </Box>
-    ),
-    negative: (
-      <Box>
-        <Field label="Would you like alerts when the price changes?">
+    positive: {
+      caption: "Checkboxes are for times when your users can choose multiple options or no options.",
+      code: (
+        <Box>
+          <Field
+            mt={3}
+            label="Choose any currencies you'd like to track"
+          >
+            <Checkbox label="Ether (ETH)" required={true} my={2} />
+            <Checkbox label="Bitcoin (BTC)" required={true} my={2} />
+            <Checkbox label="Ethereum Classic (ETC)" required={true} my={2} />
+            <Checkbox label="Litecoin (LTC)" required={true} my={2} />
+          </Field>
+        </Box>
+      )
+    },
+    negative: {
+      caption: "Checkboxes are not suitable for binary decisions like Yes or No.",
+      code: (
+        <Field
+          mt={3}
+          label="Would you like alerts when the price changes?"
+        >
           <Checkbox label="Yes" required={true} my={2} />
           <Checkbox label="No" required={true} my={2} />
         </Field>
-      </Box>
-    )
+      )
+    }
   }}
 </DoDont>
 

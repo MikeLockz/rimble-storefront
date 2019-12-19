@@ -92,23 +92,59 @@ Some best practices for writing `Heading` components.
 
 **Avoid articles to keep headings succinct**
 
-Don’t use articles (a, the, an) in headings. This will make them shorter and quicker to scan.
-
 <DoDont>
   {{
-    positive: <Heading as={"h2"}>Add wallet</Heading>,
-    negative: <Heading as={"h2"}>Add a wallet</Heading>
+    positive: {
+      caption: "Make headings shorter and quicker to scan by removing articles (a, the, an).",
+      code: (
+        <Heading
+          as={"h2"}
+          mt={3}
+        >
+          Add wallet
+        </Heading>
+      )
+    },
+    negative: {
+      caption: "Add 'a' wallet doesn't help with understanding so it can be removed.",
+      code: (
+        <Heading
+          as={"h2"}
+          mt={3}
+        >
+          Add a wallet
+        </Heading>
+      )
+    },
   }}
 </DoDont>
 
 **Front load headings**
 
-Make sure the subject of your heading is put first and foremost in your copy – this will make it easier to scan and understand at a glance.
-
 <DoDont>
   {{
-    positive: <Heading as={"h2"}>Withdraw ETH?</Heading>,
-    negative: <Heading as={"h2"}>Are you sure?</Heading>
+    positive: {
+      caption: "Make sure the subject of your heading is put first and foremost in your copy – this will make it easier to scan and understand at a glance.",
+      code: (
+        <Heading
+          as={"h2"}
+          mt={3}
+        >
+          Withdraw ETH?
+        </Heading>
+      )
+    },
+    negative: {
+      caption: "Are you sure, what? This could be phrased around what the user should be sure about, e.g. Withdraw ETH?",
+      code: (
+        <Heading
+          as={"h2"}
+          mt={3}
+        >
+          Are you sure?
+        </Heading>
+      )
+    },
   }}
 </DoDont>
 

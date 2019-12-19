@@ -18,6 +18,7 @@ import { Select } from 'rimble-ui';
 ```js is=react-live
 <Field label="Choose your currency">
   <Select
+    required={true}
     options={[
       { value: "eth", label: "Ethereum" },
       { value: "btc", label: "Bitcoin" },
@@ -64,36 +65,42 @@ Some best practices for using `Select` in your product.
 
 **It's better to show your options**
 
-Only use the `Select` component when you have a lot of options that would clutter your interface. If you've only got a few options to choose from it might be better to show them to the user with a [Radio](/components/rimble-ui/Radio) component.
-
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Select
-          options={[
-            { value: "eth", label: "Ethereum" },
-            { value: "btc", label: "Bitcoin" },
-            { value: "gno", label: "Gnosis" },
-            { value: "gnt", label: "Golem" },
-            { value: "rep", label: "Augur" }
-          ]}
-        />
-        <Text my={4}>OR</Text>
-        <Radio label="ETH - Ether" my={2} />
-        <Radio label="FIAT e.g. USD" my={2} />
+    positive: {
+      caption: (<>Use a Select component if there are lots of choices that might clutter an interface. Or use a <Link href="/components/rimble-ui/Radio" title="To Radio component" target="_blank">Radio</Link> component instead.</>),
+      code: (
+        <Box>
+          <Box mt={3}>
+            <Select
+              options={[
+                { value: "eth", label: "Ethereum" },
+                { value: "btc", label: "Bitcoin" },
+                { value: "gno", label: "Gnosis" },
+                { value: "gnt", label: "Golem" },
+                { value: "rep", label: "Augur" }
+              ]}
+            />
+          </Box>
+          <Text my={4}>OR</Text>
+          <Radio label="ETH - Ether" my={2} />
+          <Radio label="FIAT e.g. USD" my={2} />
+        </Box>
+      )
+    },
+    negative: {
+      caption: "Don't use a Select component when there are only a few options as it'll be quicker and simpler to just display the available choices.",
+      code: (
+        <Box mt={3}>
+          <Select
+            options={[
+              { value: "eth", label: "Ethereum" },
+              { value: "fiat", label: "USD" }
+            ]}
+          />
       </Box>
-    ),
-    negative: (
-      <Box>
-        <Select
-          options={[
-            { value: "eth", label: "Ethereum" },
-            { value: "fiat", label: "USD" }
-          ]}
-        />
-      </Box>
-    )
+      )
+    }
   }}
 </DoDont>
 

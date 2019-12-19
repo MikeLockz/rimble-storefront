@@ -93,90 +93,110 @@ Use the Text component for copy. Remember to keep your writing as simple as poss
 
 **Don't center-align your text if it's over 3 lines**
 
-Centre-aligned text can make it more difficult to read.
-
 <DoDont>
   {{
-    positive: (
-      <Text>
-        The intent of Ethereum is to create an alternative protocol for building
-        decentralized applications, providing a different set of tradeoffs that
-        we believe will be very useful for a large class of decentralized
-        applications, with particular emphasis on situations where rapid
-        development time, security for small and rarely used applications, and
-        the ability of different applications to very efficiently interact, are
-        important.
-      </Text>
-    ),
-    negative: (
-      <Text textAlign="center">
-        The intent of Ethereum is to create an alternative protocol for building
-        decentralized applications, providing a different set of tradeoffs that
-        we believe will be very useful for a large class of decentralized
-        applications, with particular emphasis on situations where rapid
-        development time, security for small and rarely used applications, and
-        the ability of different applications to very efficiently interact, are
-        important.
-      </Text>
-    )
+    positive: {
+      caption: "Left-align blocks of text to make it easier to read.",
+      code: (
+        <Text mt={3}>
+          The intent of Ethereum is to create an alternative protocol for building
+          decentralized applications, providing a different set of tradeoffs that
+          we believe will be very useful for a large class of decentralized
+          applications, with particular emphasis on situations where rapid
+          development time, security for small and rarely used applications, and
+          the ability of different applications to very efficiently interact, are
+          important.
+        </Text>
+      )
+    },
+    negative: {
+      caption: "Centre-aligned text is harder to read across multiple lines because the starting point of each line changes.",
+      code: (
+        <Text
+          mt={3}
+          textAlign="center"
+        >
+          The intent of Ethereum is to create an alternative protocol for building
+          decentralized applications, providing a different set of tradeoffs that
+          we believe will be very useful for a large class of decentralized
+          applications, with particular emphasis on situations where rapid
+          development time, security for small and rarely used applications, and
+          the ability of different applications to very efficiently interact, are
+          important.
+        </Text>
+      )
+    }
   }}
 </DoDont>
 
 **Use `Heading` to break up long copy**
 
-Use the [Heading](/components/rimble-ui/Heading) component to break up text and make it easier for users to find what they're looking for.
-
 <DoDont>
   {{
-    positive: (
-      <Box>
-        <Heading.h4>The intent of Ethereum</Heading.h4>
-        <Text>
-          The intent of Ethereum is to create an alternative protocol for
-          building decentralized applications, providing a different set of
-          tradeoffs that we believe will be very useful for a large class of
-          decentralized applications.
-        </Text>
-        <Heading.h4>Where is Ethereum most important?</Heading.h4>
-        <Text>
-          Ethereum is particularly important for building decentralized
-          applications with particular emphasis on rapid development time,
-          security for small and rarely used applications, and the ability of
-          different applications to very efficiently interact, are important.
-        </Text>
-      </Box>
-    ),
-    negative: (
-      <Text textAlign="center">
-        The intent of Ethereum is to create an alternative protocol for building
-        decentralized applications, providing a different set of tradeoffs that
-        we believe will be very useful for a large class of decentralized
-        applications, with particular emphasis on situations where rapid
-        development time, security for small and rarely used applications, and
-        the ability of different applications to very efficiently interact, are
-        important.
-      </Text>
-    )
+    positive: {
+      caption: (<>Use the <Link href="/components/rimble-ui/Heading" title="To Heading component" title="_blank">Heading</Link> component to break up text and make it easier for users to find what they're looking for.</>),
+      code: (
+        <Box>
+          <Heading.h4 mt={3}>The intent of Ethereum</Heading.h4>
+          <Text>
+            The intent of Ethereum is to create an alternative protocol for
+            building decentralized applications, providing a different set of
+            tradeoffs that we believe will be very useful for a large class of
+            decentralized applications.
+          </Text>
+          <Heading.h4 mt={3}>Where is Ethereum most important?</Heading.h4>
+          <Text>
+            Ethereum is particularly important for building decentralized
+            applications with particular emphasis on rapid development time,
+            security for small and rarely used applications, and the ability of
+            different applications to very efficiently interact, are important.
+          </Text>
+        </Box>
+      )
+    },
+    negative: {
+      caption: "Avoid large blocks of text without signposts. Reader behaviour suggests users will scan a page to look for headings that represent the information they're interested in.",
+      code: (
+        <Box>
+          <Heading.h4 mt={3}>The intent of Ethereum</Heading.h4>
+          <Text mt={3}>
+            The intent of Ethereum is to create an alternative protocol for building
+            decentralized applications, providing a different set of tradeoffs that
+            we believe will be very useful for a large class of decentralized
+            applications, with particular emphasis on situations where rapid
+            development time, security for small and rarely used applications, and
+            the ability of different applications to very efficiently interact, are
+            important.
+          </Text>
+        </Box>
+      )
+    }
   }}
 </DoDont>
 
 **Aim for a low reading age**
 
-Make it easier for your users to read your copy. The lower the reading age, the simpler it will be for them to consume your information. [Hemingway app](http://www.hemingwayapp.com/) makes it easier to simplify your writing.
+[Hemingway app](http://www.hemingwayapp.com/) makes it easier to simplify your writing.
 
 <DoDont>
   {{
-    positive: (
-      <Text>
-        Write in short sentences and avoid complex terms when there are simpler
-        alternatives.
-      </Text>
-    ),
-    negative: (
-      <Text>
-        Use jargon, technical language or complex sentence structures.
-      </Text>
-    )
+    positive: {
+      caption: "A low reading age isn't about dumbing down content it's about being more respectful of your users time.",
+      code: (
+        <Text mt={3}>
+          Write in short sentences and avoid complex terms when there are simpler
+          alternatives.
+        </Text>
+      )
+    },
+    negative: {
+      caption: "Assumed knowledge and complex terminology only makes your product more difficult and less enjoyable to use.",
+      code: (
+        <Text mt={3}>
+          Use jargon, technical language or complex sentence structures.
+        </Text>
+      )
+    }
   }}
 </DoDont>
 

@@ -20,28 +20,34 @@ You need to make the most of your opportunity to explain what's going in the con
 
 ## Use specific language
 
-A wallet will speak in terms of a transaction, using very generic terms. When you can refer to the task at hand, it feel more natural and understandable.
+A wallet will speak in terms of a transaction, using very generic terms. When you can
 
 <DoDont>
   {{
-    positive: (
-      <Text>
-        <ul>
-          <li>Sending your ticket...</li>
-          <li>Vote cast</li>
-          <li>Cryptokitty failed to send</li>
-        </ul>
-      </Text>
-    ),
-    negative: (
-      <Text>
-        <ul>
-          <li> Processing transaction...</li>
-          <li> Transaction confirmed</li>
-          <li> Transaction failed</li>
-        </ul>
-      </Text>
-    )
+    positive: {
+      caption: "Refer to the task at hand – it feel more natural and understandable.",
+      code: (
+        <Text>
+          <ul>
+            <li>Sending your ticket...</li>
+            <li>Vote cast</li>
+            <li>Cryptokitty failed to send</li>
+          </ul>
+        </Text>
+      )
+    },
+    negative: {
+      caption: "Generic terms used by wallets won't help with task comprehension.",
+      code: (
+        <Text>
+          <ul>
+            <li> Processing transaction...</li>
+            <li> Transaction confirmed</li>
+            <li> Transaction failed</li>
+          </ul>
+        </Text>
+      )
+    }
   }}
 </DoDont>
 

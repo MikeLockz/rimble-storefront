@@ -79,12 +79,11 @@ Some best practice for using `Avatar` in your product.
 
 **Use with labels**
 
-Labels will help solidify the relationship between the entity and the avatar. This will also make your product more accessible to those using assistive technologies.
-
 <DoDont>
   {{
-    positive: (
-      <Card>
+    positive: {
+      caption: "Labels will help solidify the relationship between the entity and the avatar. This will also make your product more accessible to those using assistive technologies.",
+      code: (
         <Flex alignItems="center">
           <Avatar
             size="medium"
@@ -94,15 +93,16 @@ Labels will help solidify the relationship between the entity and the avatar. Th
             DAI
           </Text>
         </Flex>
-      </Card>
-    ),
-    negative: (
-      <Card>
+      )
+    },
+    negative: {
+      caption: "Failing to label entities like avatars assumes knowledge.",
+      code: (
         <Avatar
           size="medium"
           src="https://airswap-token-images.s3.amazonaws.com/DAI.png"
         />
-      </Card>
-    )
+      )
+    }
   }}
 </DoDont>

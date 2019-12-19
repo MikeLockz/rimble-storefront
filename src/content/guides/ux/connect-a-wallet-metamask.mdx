@@ -16,41 +16,45 @@ In testing we found these modals performed best when they were simple and instru
 
 <DoDont>
   {{
-    positive: (
-      <Text>
-        <ul>
-          <li>Warn them that a request should appear</li>
-          <li>Tell them where to find the request if it doesn't appear</li>
-          <li>
-            Indicate that you're waiting for some user action – they may not be
-            expecting to have to do anything if they haven't read all the
-            content
-          </li>
-          <li>
-            Tell them their current network – this acts as a good keyword for
-            them to hunt down the right place to change networks
-          </li>
-          <li>
-            Let them know it won't cost any Ether – to them it's a blockchain
-            action so it's important to mention this won't include transaction
-            fee
-          </li>
-        </ul>
-      </Text>
-    ),
-    negative: (
-      <Text>
-        <ul>
-          <li>
-            Mention subsequent steps – keep it focussed on the accepting the
-            request
-          </li>
-          <li>
-            Expect your users to hunt down the request if it doesn't appear
-          </li>
-        </ul>
-      </Text>
-    )
+    positive: {
+      caption: (
+        <Text>
+          <ul>
+            <li>Warn them that a request should appear</li>
+            <li>Tell them where to find the request if it doesn't appear</li>
+            <li>
+              Indicate that you're waiting for some user action – they may not be
+              expecting to have to do anything if they haven't read all the
+              content
+            </li>
+            <li>
+              Tell them their current network – this acts as a good keyword for
+              them to hunt down the right place to change networks
+            </li>
+            <li>
+              Let them know it won't cost any Ether – to them it's a blockchain
+              action so it's important to mention this won't include transaction
+              fee
+            </li>
+          </ul>
+        </Text>
+      )
+    },
+    negative: {
+      caption: (
+        <Text>
+          <ul>
+            <li>
+              Mention subsequent steps – keep it focussed on the accepting the
+              request
+            </li>
+            <li>
+              Expect your users to hunt down the request if it doesn't appear
+            </li>
+          </ul>
+        </Text>
+      )
+    }
   }}
 </DoDont>
 
@@ -62,50 +66,54 @@ _"To connect securely, sign the message in your MetaMask extension"_ is the Web3
 
 <DoDont>
   {{
-    positive: (
-      <Text>
-        <ul>
-          <li>
-            In addition to all the advice for the connection request, frame this
-            as a security procedure – a way to help you connect securely
-          </li>
-          <li>Explain that this is to prove ownership of the account</li>
-          <li>
-            Use the word "connect" – this will help users understand that this
-            is something they need to do to connect. This is especially
-            important when a connection request isn't triggered in this flow.
-          </li>
-          <li>
-            This might be because the user has recently accepted the connection
-            request or because your dapp hasn't implemented{" "}
-            <Link
-              href="https://medium.com/metamask/eip-1102-preparing-your-dapp-5027b2c9ed76"
-              target="_blank"
-              title="Read about EIP1102 on Medium"
-            >
-              EIP1102
-            </Link>{" "}
-            – which we suggest you do
-          </li>
-          <li>Use the same verb as MetaMask in your messaging e.g. Sign</li>
-          <li>
-            Write a meaningful message in MetaMask for your users to sign that
-            reflects the above
-          </li>
-        </ul>
-      </Text>
-    ),
-    negative: (
-      <Text>
-        <ul>
-          <li>
-            <em>See "Don't" for connection request</em>
-          </li>
-          <li>Use the phrase "nonce" – this is jargon</li>
-          <li>Expect your users to sign a random hash without any context</li>
-        </ul>
-      </Text>
-    )
+    positive: {
+      caption: (
+        <Text>
+          <ul>
+            <li>
+              In addition to all the advice for the connection request, frame this
+              as a security procedure – a way to help you connect securely
+            </li>
+            <li>Explain that this is to prove ownership of the account</li>
+            <li>
+              Use the word "connect" – this will help users understand that this
+              is something they need to do to connect. This is especially
+              important when a connection request isn't triggered in this flow.
+            </li>
+            <li>
+              This might be because the user has recently accepted the connection
+              request or because your dapp hasn't implemented{" "}
+              <Link
+                href="https://medium.com/metamask/eip-1102-preparing-your-dapp-5027b2c9ed76"
+                target="_blank"
+                title="Read about EIP1102 on Medium"
+              >
+                EIP1102
+              </Link>{" "}
+              – which we suggest you do
+            </li>
+            <li>Use the same verb as MetaMask in your messaging e.g. Sign</li>
+            <li>
+              Write a meaningful message in MetaMask for your users to sign that
+              reflects the above
+            </li>
+          </ul>
+        </Text>
+      )
+    },
+    negative: {
+      caption: (
+        <Text>
+          <ul>
+            <li>
+              <em>See "Don't" for connection request</em>
+            </li>
+            <li>Use the phrase "nonce" – this is jargon</li>
+            <li>Expect your users to sign a random hash without any context</li>
+          </ul>
+        </Text>
+      )
+    }
   }}
 </DoDont>
 
@@ -115,45 +123,49 @@ There's a good chance that some users won't read your dapp messaging around sign
 
 <DoDont>
   {{
-    positive: (
-      <Text>
-        <ul>
-          <li>
-            Add some personality: say Hi or reference your dapp's name so they
-            know it's coming from you
-          </li>
-          <li>Explain what this action will do: connect you securely</li>
-          <li>Explain what this action is for: prove you own the account</li>
-          <li>
-            This might be because the user has recently accepted the connection
-            request or because your dapp hasn't implemented{" "}
-            <Link
-              href="https://medium.com/metamask/eip-1102-preparing-your-dapp-5027b2c9ed76"
-              target="_blank"
-              title="Read about EIP1102 on Medium"
-            >
-              EIP1102
-            </Link>{" "}
-            – which we suggest you do
-          </li>
-          <li>
-            Include the nonce (e.g. d458fa15-dcab-4d85-a477–004d6febca12) as a
-            security procedure but add some context as to why they're seeing it!
-            Also make sure they're aware they don't need to remember this or
-            write it down
-          </li>
-          <li>Explain that it won't cost Ether</li>
-        </ul>
-      </Text>
-    ),
-    negative: (
-      <Text>
-        <ul>
-          <li>Use jargon like "nonce"</li>
-          <li>Expect your users to sign a random hash without any context</li>
-        </ul>
-      </Text>
-    )
+    positive: {
+      caption: (
+        <Text>
+          <ul>
+            <li>
+              Add some personality: say Hi or reference your dapp's name so they
+              know it's coming from you
+            </li>
+            <li>Explain what this action will do: connect you securely</li>
+            <li>Explain what this action is for: prove you own the account</li>
+            <li>
+              This might be because the user has recently accepted the connection
+              request or because your dapp hasn't implemented{" "}
+              <Link
+                href="https://medium.com/metamask/eip-1102-preparing-your-dapp-5027b2c9ed76"
+                target="_blank"
+                title="Read about EIP1102 on Medium"
+              >
+                EIP1102
+              </Link>{" "}
+              – which we suggest you do
+            </li>
+            <li>
+              Include the nonce (e.g. d458fa15-dcab-4d85-a477–004d6febca12) as a
+              security procedure but add some context as to why they're seeing it!
+              Also make sure they're aware they don't need to remember this or
+              write it down
+            </li>
+            <li>Explain that it won't cost Ether</li>
+          </ul>
+        </Text>
+      )
+    },
+    negative: {
+      caption: (
+        <Text>
+          <ul>
+            <li>Use jargon like "nonce"</li>
+            <li>Expect your users to sign a random hash without any context</li>
+          </ul>
+        </Text>
+      )
+    }
   }}
 </DoDont>
 
@@ -165,40 +177,44 @@ Of course you should respect their decision and offer them a way to actually rej
 
 <DoDont>
   {{
-    positive: (
-      <Text>
-        <ul>
-          <li>
-            Reiterate that they can't proceed with connection or use blockchain
-            features without accepting or signing the request
-          </li>
-          <li>
-            If possible include an example blockchain feature to provide extra
-            context
-          </li>
-          <li>
-            Show you respect their decision and reiterate that they can browse
-            your dapp as a guest if they wish
-          </li>
-          <li>
-            Re-trigger your dApps modals that explain the relevant request so
-            the user gets the instructions back
-          </li>
-        </ul>
-      </Text>
-    ),
-    negative: (
-      <Text>
-        <ul>
-          <li>
-            Use CTA copy like "Connect" or "Sign" – this button will only
-            trigger the MetaMask windows to appear again – it won't actually
-            accept the connection request or sign the message. Don't make users
-            feel like they have to do stuff twice.
-          </li>
-        </ul>
-      </Text>
-    )
+    positive: {
+      caption: (
+        <Text>
+          <ul>
+            <li>
+              Reiterate that they can't proceed with connection or use blockchain
+              features without accepting or signing the request
+            </li>
+            <li>
+              If possible include an example blockchain feature to provide extra
+              context
+            </li>
+            <li>
+              Show you respect their decision and reiterate that they can browse
+              your dapp as a guest if they wish
+            </li>
+            <li>
+              Re-trigger your dApps modals that explain the relevant request so
+              the user gets the instructions back
+            </li>
+          </ul>
+        </Text>
+      )
+    },
+    negative: {
+      caption: (
+        <Text>
+          <ul>
+            <li>
+              Use CTA copy like "Connect" or "Sign" – this button will only
+              trigger the MetaMask windows to appear again – it won't actually
+              accept the connection request or sign the message. Don't make users
+              feel like they have to do stuff twice.
+            </li>
+          </ul>
+        </Text>
+      )
+    }
   }}
 </DoDont>
 

@@ -6,7 +6,7 @@ const colors = {
   negative: "8, 86%, 46%"
 };
 
-const ExampleCard = ({ variant, ...props }) => {
+const ExampleCard = ({ variant, caption, code, ...rest }) => {
   let colorPrimary = "0,0%,0%",
     iconName = "ThumbDown",
     cardLabel = "{ missing variant }";
@@ -26,7 +26,7 @@ const ExampleCard = ({ variant, ...props }) => {
       bg={"blacks.0"}
       borderTop={`4px solid HSLA(${colorPrimary}, 1.00)`}
       height={"100%"}
-      {...props}
+      {...rest}
     >
       <Box
         border={1}
@@ -35,32 +35,47 @@ const ExampleCard = ({ variant, ...props }) => {
         p={4}
         height={"100%"}
       >
-        <Flex alignItems={"center"} mb={4}>
-          <Box
-            size={"3rem"}
-            bg={"white"}
-            border={`8px solid HSLA(${colorPrimary}, 0.25)`}
-            borderRadius={"100%"}
-          >
-            <Flex
-              size={"100%"}
-              border={`2px solid HSLA(${colorPrimary}, 1.00)`}
-              borderRadius={"100%"}
-              alignItems={"center"}
-              justifyContent={"center"}
-            >
-              <Icon
-                name={iconName}
-                size={"20px"}
-                color={`HSLA(${colorPrimary}, 1.00)`}
-              />
+        <Flex
+          flexDirection={"column"}
+          justifyContent="space-between"
+          height={"100%"}
+        >
+          <Box>
+            <Flex alignItems={"center"} mb={4}>
+              <Box
+                size={"3rem"}
+                bg={"white"}
+                border={`8px solid HSLA(${colorPrimary}, 0.25)`}
+                borderRadius={"100%"}
+              >
+                <Flex
+                  size={"100%"}
+                  border={`2px solid HSLA(${colorPrimary}, 1.00)`}
+                  borderRadius={"100%"}
+                  alignItems={"center"}
+                  justifyContent={"center"}
+                >
+                  <Icon
+                    name={iconName}
+                    size={"20px"}
+                    color={`HSLA(${colorPrimary}, 1.00)`}
+                  />
+                </Flex>
+              </Box>
+              <Text ml={3} fontSize={"18px"} fontWeight={3}>
+                {cardLabel}
+              </Text>
             </Flex>
+
+            <Text fontSize={1} mb={3}>
+              {caption}
+            </Text>
           </Box>
-          <Text ml={3} fontSize={"18px"} fontWeight={3}>
-            {cardLabel}
-          </Text>
+
+          <Box mt={3} pt={3} borderTop={"1px solid #f4f4f4"}>
+            {code}
+          </Box>
         </Flex>
-        {props.children}
       </Box>
     </Box>
   );

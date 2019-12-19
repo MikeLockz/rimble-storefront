@@ -134,12 +134,20 @@ We've provided some messages in this component that should work for most dApps. 
 
 **Keep it active**
 
-Make sure your banner copy is clear and inspires action
-
 <DoDont>
   {{
-    positive: <Text>Switch to the Rinkeby network</Text>,
-    negative: <Text>The correct network was not detected</Text>
+    positive: {
+      caption: "Make your banner copy clear and instructional to inspire action.",
+      code: (
+        <Text mt={3}>Switch to the Rinkeby network</Text>
+      )
+    },
+    negative: {
+      caption: "Don't just state what's happened and assume your user knows what to do.",
+      code: (
+        <Text>The correct network was not detected</Text>
+      )
+    }
   }}
 </DoDont>
 
@@ -149,7 +157,17 @@ Technically, the functionality in this component tries to detect a Web3 provider
 
 <DoDont>
   {{
-    positive: <Text>Switch browsers to use our blockchain features</Text>,
-    negative: <Text>No web3 detected</Text>
+    positive: {
+      caption: "Write messages without using Web3 jargon to make instructions clearer to everybody.",
+      code: (
+        <Text mt={3}>Switch browsers to use our blockchain features</Text>
+      )
+    },
+    negative: {
+      caption: "Web3 jargon is inherently inaccessible to anyone not building in this space.",
+      code: (
+        <Text mt={3}>No web3 detected</Text>
+      )
+    },
   }}
 </DoDont>
