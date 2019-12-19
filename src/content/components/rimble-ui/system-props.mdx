@@ -3,7 +3,12 @@ title: System Props
 description: System props are reused across many different components.
 ---
 
-Rimble Components utilizes [styled-system v4](https://github.com/styled-system/styled-system/tree/v4.2.3) to apply a standard set of props to each component. Using `styled-system`, groups of props are automatically applied to each component. Most components get the COMMON set of props which give the component access to color and space props (margin, padding, color and background color). These groups correspond to the color and space functions from `styled-system` which can be referenced in the `styled system` [table of style functions](https://github.com/styled-system/styled-system/blob/v4.2.3/docs/table.md#core).
+Rimble's components utilizes [styled-system v4](https://github.com/styled-system/styled-system/tree/v4.2.3). [Styled-system](https://styled-system.com/) allows you to apply css properties directly to a Rimble component's tag. Use the styled-system props to set values for the css property directly as a string value or reference variables from the global [ThemeProvider](/components/rimble-ui/theming)'s theme object. Use array syntax for the `styled-system` prop value to set different values responsively at different screen sizes. The props available to any Rimble component vary depending on the component. Each component's documentation page lists which `styled-system` props are supported. Rimble components ship with default styled-system prop values based on the Rimble theme.
+
+
+## Prop groups
+
+Using `styled-system`, groups of props are automatically applied to each component. Most components get the COMMON set of props which give the component access to color and space props (margin, padding, color and background color). These groups correspond to the color and space functions from `styled-system` which have examples below.
 
 To check which system props each component includes, check the documentation for that component.
 
@@ -19,8 +24,6 @@ import PropsList from "./../../../components/documentation/PropsList.js";
 
 System props are reused across many different components. To keep the documentation easy to read, we are showing the shared props in a single place.
 
-## System Props Table
-
 | Category     | Included Props                             | styled-system docs                                                                                                                                                                                                   |
 | ------------ | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `COMMON`     | <PropsList systemProps={COMMON_LIST}/>     | [styled-system core docs](https://github.com/styled-system/styled-system/blob/v4.2.3/docs/table.md#core)                                                                                                             |
@@ -29,3 +32,414 @@ System props are reused across many different components. To keep the documentat
 | `LAYOUT`     | <PropsList systemProps={LAYOUT_LIST}/>     | [styled-system layout docs](https://github.com/styled-system/styled-system/blob/v4.2.3/docs/table.md#layout) <br/> [styled-system misc docs](https://github.com/jxnblk/styled-system/blob/master/docs/table.md#misc) |
 | `POSITION`   | <PropsList systemProps={POSITION_LIST}/>   | [styled-system position docs](https://github.com/styled-system/styled-system/blob/v4.2.3/docs/table.md#position)                                                                                                     |
 | `FLEXBOX`    | <PropsList systemProps={FLEX_BOX_LIST}/>   | [styled-system flexbox docs](https://github.com/styled-system/styled-system/blob/v4.2.3/docs/table.md#flexbox)                                                                                                       |
+
+## Responsive styles
+
+`Styled-system` uses array syntax to set different values for a prop based on the current screen size. The first value is the default value and will be overridden by the next value in the array when the screen size is increased to the next breakpoint.
+
+Default breakpoints from the default Rimble theme:
+
+```js
+breakpoints: ["40em", "52em", "64em"],
+```
+
+**Example**
+
+Resize the screen to see the box change widths.
+
+```js is=react-live
+<Box 
+  height={"80px"}
+  bg={"primary"}
+  width={[
+    1, // default value, smallest screens only
+    1/2, // applies when screen is wider than 40em
+    1/3, // applies when screen is wider than 52em
+    1/4 // applies when screen is wider than 64em
+  ]}>
+  
+</Box>
+```
+
+## Prop API examples
+
+### Space
+
+The space utility converts shorthand margin and padding props to margin and padding CSS declarations.
+
+- Numbers from 0 to the length of `theme.space` are converted to values on the space scale.
+- Negative values can be used for negative margins.
+- Numbers greater than the length of the `theme.space` array are converted to raw pixel values.
+- String values are passed as raw CSS values.
+- And array values are converted into [responsive values](/components/rimble-ui/system-props#responsive-styles).
+
+Margin and padding props follow a shorthand syntax for specifying direction.
+
+| Prop                  | CSS Property                   |
+| --------------------- | ------------------------------ |
+| `margin`, `m`         | margin                         |
+| `marginTop`, `mt`     | margin-top                     |
+| `marginRight`, `mr`   | margin-right                   |
+| `marginBottom`, `mb`  | margin-bottom                  |
+| `marginLeft`, `ml`    | margin-left                    |
+| `marginX`, `mx`       | margin-left and margin-right   |
+| `marginY`, `my`       | margin-top and margin-bottom   |
+| `padding`, `p`        | padding                        |
+| `paddingTop`, `pt`    | padding-top                    |
+| `paddingRight`, `pr`  | padding-right                  |
+| `paddingBottom`, `pb` | padding-bottom                 |
+| `paddingLeft`, `pl`   | padding-left                   |
+| `paddingX`, `px`      | padding-left and padding-right |
+| `paddingY`, `py`      | padding-top and padding-bottom |
+
+```jsx
+// examples (margin prop)
+
+// sets margin value of `theme.space[2]`
+<Box m={2} />
+
+// sets margin value of `-1 * theme.space[2]`
+<Box m={-2} />
+
+// sets a margin value of `16px` since it's greater than `theme.space.length`
+<Box m={16} />
+
+// sets margin `'auto'`
+<Box m='auto' />
+
+// sets margin `8px` on all viewports and `16px` from the first breakpoint and up
+<Box m={[ 2, 3 ]} />
+```
+
+As of v4.0.0, verbose margin and padding props (e.g. `margin`, `marginTop`) can also be used instead of the shorthand props.
+
+### Color
+
+The color utility parses a component's `color` and `bg` props and converts them into CSS declarations.
+By default the raw value of the prop is returned.
+Color palettes can be configured with the [ThemeProvider][theming] to use keys as prop values, with support for dot notation.
+
+```jsx
+// examples
+// picks the value defined in `theme.colors.blue`
+<Box color='blue' />
+
+// picks up a nested color value using dot notation
+// `theme.colors.gray[0]`
+<Box color='gray.0' />
+
+// raw CSS color value
+<Box color='#f00' />
+
+// background colors
+<Box bg='blue' />
+
+// verbose prop
+<Box backgroundColor='blue' />
+```
+
+| Prop                    | CSS Property       | Theme Field |
+| ----------------------- | ------------------ | ----------- |
+| `color`                 | `color`            | `colors`    |
+| `bg`, `backgroundColor` | `background-color` | `colors`    |
+| `opacity`               | `opacity`          | none        |
+
+### Typography
+
+Typography props include `fontFamily`, `fontSize`, `fontWeight`, `lineHeight`, `letterSpacing`, `textAlign`, and `fontStyle`.
+
+```jsx
+// examples
+// font-size of `theme.fontSizes[3]`
+<Text fontSize={3} />
+
+// font-size `32px`
+<Text fontSize={32} />
+
+// font-size `'2em'`
+<Text fontSize='2em' />
+
+// font-size `10px` on all viewports and `12px` from the first breakpoint and up
+<Text fontSize={[ 10, 12 ]} />
+
+// fontFamily
+<Text fontFamily='mono' />
+
+// textAlign
+<Text textAlign='center' />
+<Text textAlign={[ 'center', 'left' ]} />
+
+// lineHeight
+<Text lineHeight='1.25' />
+
+// fontWeight
+<Text fontWeight='bold' />
+
+// letterSpacing
+<Text letterSpacing='0.1em' />
+```
+
+| Prop            | CSS Property     | Theme Field      |
+| --------------- | ---------------- | ---------------- |
+| `fontFamily`    | `font-family`    | `fonts`          |
+| `fontSize`      | `font-size`      | `fontSizes`      |
+| `fontWeight`    | `font-weight`    | `fontWeights`    |
+| `lineHeight`    | `line-height`    | `lineHeights`    |
+| `letterSpacing` | `letter-spacing` | `letterSpacings` |
+| `textAlign`     | `text-align`     | none             |
+| `fontStyle`     | `font-style`     | none             |
+
+### Layout
+
+The layout utility includes style props for `width`, `height`, `display`, `minWidth`, `minHeight`, `maxWidth`, `maxHeight`, `size`, `verticalAlign`, `overflow`, `overflowX`, and `overflowY`.
+
+The `width` prop is transformed based on the following:
+
+- Numbers from 0-1 are converted to percentage widths.
+- Numbers greater than 1 are converted to pixel values.
+- String values are passed as raw CSS values.
+- And arrays are converted to [responsive with values](/components/rimble-ui/system-props#responsive-styles).
+- If `theme.sizes` is defined, the `width` prop will attempt to pick up values from the theme
+
+```jsx
+// examples
+
+// width `50%`
+<Box width={1/2} />
+
+// width `256px`
+<Box width={256} />
+
+// width `'2em'`
+<Box width='2em' />
+
+// width `100%` on all viewports and `50%` from the smallest breakpoint and up
+<Box width={[ 1, 1/2 ]} />
+
+// width from `theme.sizes`
+<Box width='medium' />
+
+// display
+<Box display='inline-block' />
+<Box display={[ 'block', 'inline-block' ]} />
+
+// maxWidth
+<Box maxWidth={1024} />
+<Box maxWidth={[ 768, null, null, 1024 ]} />
+
+// minWidth
+<Box minWidth={128} />
+<Box minWidth={[ 96, 128 ]} />
+
+// height
+<Box height={64} />
+<Box height={[ 48, 64 ]} />
+
+// maxHeight
+<Box maxHeight={512} />
+<Box maxHeight={[ 384, 512 ]} />
+
+// minHeight
+<Box minHeight={512} />
+<Box minHeight={[ 384, 512 ]} />
+
+// size (width & height)
+<Box size={32} />
+<Box size={[ 32, 48 ]} />
+
+// overflow
+<Box overflow='hidden' />
+
+// overflowX
+<Box overflowX='hidden' />
+
+// overflowY
+<Box overflowY='hidden' />
+```
+
+| Prop            | CSS Property     | Theme Field |
+| --------------- | ---------------- | ----------- |
+| `width`         | `width`          | `sizes`     |
+| `height`        | `height`         | `sizes`     |
+| `minWidth`      | `min-width`      | `sizes`     |
+| `maxWidth`      | `max-width`      | `sizes`     |
+| `minHeight`     | `min-height`     | `sizes`     |
+| `maxHeight`     | `max-height`     | `sizes`     |
+| `size`          | `width` `height` | `sizes`     |
+| `display`       | `display`        | none        |
+| `verticalAlign` | `vertical-align` | none        |
+| `overflow`      | `overflow`       | none        |
+| `overflowX`     | `overflowX`      | none        |
+| `overflowY`     | `overflowY`      | none        |
+
+
+### Flexbox
+
+The `flexbox` utility includes style props for `alignItems`, `alignContent`, `justifyItems`, `justifyContent`, `flexWrap`, `flexDirection`, `flex`, `flexGrow`, `flexShrink`, `flexBasis`, `justifySelf`, `alignSelf`, and `order`.
+
+```jsx
+// alignItems
+<Flex alignItems='center' />
+
+// alignContent
+<Flex alignContent='center' />
+
+// justifyContent
+<Flex justifyContent='center' />
+
+// flexWrap
+<Flex flexWrap='wrap' />
+
+// flexBasis
+<Flex flexBasis='auto' />
+
+// flexDirection
+<Flex flexDirection='column' />
+
+// flex
+<Box flex='1 1 auto' />
+
+// justifySelf
+<Box justifySelf='center' />
+
+// alignSelf
+<Box alignSelf='center' />
+
+// order
+<Box order='2' />
+```
+
+| Prop             | CSS Property       | Theme Field |
+| ---------------- | ------------------ | ----------- |
+| `alignItems`     | `align-items`      | none        |
+| `alignContent`   | `align-content`    | none        |
+| `justifyItems`   | `justify-items`    | none        |
+| `justifyContent` | `justify-content`  | none        |
+| `flexWrap`       | `flex-wrap`        | none        |
+| `flexDirection`  | `flex-direction`   | none        |
+| `flex`           | `flex` (shorthand) | none        |
+| `flexGrow`       | `flex-grow`        | none        |
+| `flexShrink`     | `flex-shrink`      | none        |
+| `flexBasis`      | `flex-basis`       | none        |
+| `justifySelf`    | `justify-self`     | none        |
+| `alignSelf`      | `align-self`       | none        |
+| `order`          | `order`            | none        |
+
+
+### Background
+
+The `background` utility includes style props for `backgroundImage`, `backgroundSize`, `backgroundPosition`, and `backgroundRepeat`.
+
+```jsx
+// example
+<Box
+  backgroundImage="url('kitten.png')"
+  backgroundSize="cover"
+  backgroundPosition="center"
+  backgroundRepeat="repeat-x"
+/>
+```
+
+| Prop                 | CSS Property          | Theme Field |
+| -------------------- | --------------------- | ----------- |
+| `background`         | `background`          | none        |
+| `backgroundImage`    | `background-image`    | none        |
+| `backgroundSize`     | `background-size`     | none        |
+| `backgroundPosition` | `background-position` | none        |
+| `backgroundRepeat`   | `background-repeat`   | none        |
+
+### Border
+
+The `border` utility includes style props for `border`, `borderWidth`, `borderStyle`, `borderColor`, `borderRadius`, `borderTop`, `borderTopWidth`, `borderTopStyle`, `borderTopColor`, `borderTopLeftRadius`, `borderTopRightRadius`, `borderRight`, `borderRightWidth`, `borderRightStyle`, `borderRightColor`, `borderBottom`, `borderBottomWidth`, `borderBottomStyle`, `borderBottomColor`, `borderBottomLeftRadius`, `borderBottomRightRadius`, `borderLeft`, `borderLeftWidth`, `borderLeftStyle`, `borderLeftColor`, `borderX`, and `borderY`.
+
+```jsx
+<Box border='1px solid' />
+<Box borderTop='1px solid' />
+<Box borderRight='1px solid' />
+<Box borderBottom='1px solid' />
+<Box borderLeft='1px solid' />
+
+// borderWidth
+<Box borderWidth='4px' />
+
+// borderStyle
+<Box borderStyle='dotted' />
+
+// borderColor
+<Box borderColor='blue' />
+
+// borderRadius
+<Box borderRadius={4} />
+```
+
+| Prop                      | CSS Property                   | Theme Field    |
+| ------------------------- | ------------------------------ | -------------- |
+| `border`                  | `border`                       | `borders`      |
+| `borderWidth`             | `border-width`                 | `borderWidths` |
+| `borderStyle`             | `border-style`                 | `borderStyles` |
+| `borderColor`             | `border-color`                 | `colors`       |
+| `borderRadius`            | `border-radius`                | `radii`        |
+| `borderTop`               | `border-top`                   | `borders`      |
+| `borderTopWidth`          | `border-top-width`             | `borderWidths` |
+| `borderTopStyle`          | `border-top-style`             | `borderStyles` |
+| `borderTopColor`          | `border-top-color`             | `colors`       |
+| `borderTopLeftRadius`     | `border-top-left-radius`       | `radii`        |
+| `borderTopRightRadius`    | `border-top-right-radius`      | `radii`        |
+| `borderRight`             | `border-right`                 | `borders`      |
+| `borderRightWidth`        | `border-right-width`           | `borderWidths` |
+| `borderRightStyle`        | `border-right-style`           | `borderStyles` |
+| `borderRightColor`        | `border-right-color`           | `colors`       |
+| `borderBottom`            | `border-bottom`                | `borders`      |
+| `borderBottomWidth`       | `border-bottom-width`          | `borderWidths` |
+| `borderBottomStyle`       | `border-bottom-style`          | `borderStyles` |
+| `borderBottomColor`       | `border-bottom-color`          | `colors`       |
+| `borderBottomLeftRadius`  | `border-bottom-left-radius`    | `radii`        |
+| `borderBottomRightRadius` | `border-bottom-right-radius`   | `radii`        |
+| `borderLeft`              | `border-left`                  | `borders`      |
+| `borderLeftWidth`         | `border-left-width`            | `borderWidths` |
+| `borderLeftStyle`         | `border-left-style`            | `borderStyles` |
+| `borderLeftColor`         | `border-left-color`            | `colors`       |
+| `borderX`                 | `border-left` & `border-right` | `borders`      |
+| `borderY`                 | `border-top` & `border-bottom` | `borders`      |
+
+### Position
+
+The `position` utility includes style props for `position`, `zIndex`, `top`, `right`, `bottom`, and `left`.
+
+```jsx
+// position
+<Box position='absolute' />
+
+// zIndex
+<Absolute zIndex={2} />
+
+// top, right, bottom, left
+<Fixed
+  top='0'
+  right='0'
+  bottom='0'
+  left='0'
+/>
+```
+
+| Prop       | CSS Property | Theme Field |
+| ---------- | ------------ | ----------- |
+| `position` | `position`   | none        |
+| `zIndex`   | `z-index`    | `zIndices`  |
+| `top`      | `top`        | `space`     |
+| `right`    | `right`      | `space`     |
+| `bottom`   | `bottom`     | `space`     |
+| `left`     | `left`       | `space`     |
+
+### Shadow
+
+The `shadow` utility includes style props for `textShadow` and `boxShadow`.
+
+```jsx
+<Box textShadow="small" boxShadow="medium" />
+```
+
+| Prop         | CSS Property  | Theme Field |
+| ------------ | ------------- | ----------- |
+| `textShadow` | `text-shadow` | `shadows`   |
+| `boxShadow`  | `box-shadow`  | `shadows`   |
