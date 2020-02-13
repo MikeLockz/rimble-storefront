@@ -2,7 +2,6 @@ import React from "react";
 import Helmet from "react-helmet";
 import SEO from "../components/global/SEO";
 import { graphql } from "gatsby";
-// import Layout from "../components/layout";
 import Layout from "./../components/documentation/Layout";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Box, Text } from "rimble-ui";

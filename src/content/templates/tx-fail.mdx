@@ -1,0 +1,153 @@
+---
+title: Transaction failure modal
+description: Grab the code for a ready-made modal template to display when a user's transaction fails.
+image: "/images/tx-fail-template.png"
+---
+
+A transaction failure modal should let the user know their transaction has failed and what to do next.
+
+```js is=react-live hideCode
+// import { Modal, Card, Box, Blockie, Flex, Icon, Text, Link, Heading, Button } from "rimble-ui";
+
+<Card p={0} borderRadius={1} mb={4}>
+  <Box height="4px" bg="danger" borderRadius={["1rem 1rem 0 0"]} />
+  <Flex
+    justifyContent="space-between"
+    alignItems="center"
+    borderBottom={1}
+    borderColor="near-white"
+    p={[3, 4]}
+    pb={3}
+  >
+    <Icon name="Warning" color="danger" aria-label="Warning" />
+    <Heading textAlign="center" as="h1" fontSize={[2, 3]} px={[3, 0]}>
+      Buying 10 BAT failed
+    </Heading>
+    <Link>
+      <Icon
+        name="Close"
+        color="moon-gray"
+        aria-label="Close and cancel connection"
+      />
+    </Link>
+  </Flex>
+  <Text p={[3, 4]}>
+    We couldn’t confirm your purchase because your transaction fee proved too
+    low. Based on the network right now, we recommend trying again with a
+    transaction fee of at least 0.005 ETH.
+  </Text>
+  <Flex
+    p={[3, 4]}
+    borderTop={1}
+    borderColor="near-white"
+    justifyContent="flex-end"
+    flexDirection={["column", "row"]}
+    alignItems="center"
+  >
+    <Button.Outline mr={[0, 3]} mb={[2, 0]} width={["100%", "auto"]}>
+      View on Etherscan
+    </Button.Outline>
+    <Button width={["100%", "auto"]}>Try again</Button>
+  </Flex>
+</Card>
+```
+
+---
+
+## Template anatomy
+
+<Image
+  width="100%"
+  src="/images/transaction-fail-anatomy.png"
+  alt="An annotated image calling out the different elements of the template"
+  mt={3}
+  borderTop={1}
+  borderWidth={3}
+  borderColor="primary-light"
+/>
+<Heading as="h4"
+  color="dark-gray"
+  alignItem="flex-end"
+  mt={4}
+>
+  1. Title
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Let the user know that their transaction has failed in clear, straight-to-the-point terms.
+</Text>
+<Heading as="h4"
+  color="dark-gray"
+  alignItem="flex-end"
+>
+  2. Body
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Provide an explanation and include a potential remedy if possible.
+</Text>
+<Heading as="h4"
+  color="dark-gray">
+  3. CTA
+</Heading>
+<Text
+  color="mid-gray"
+  mb={4}
+>
+  Provide the user with an action that will get them back on track to achieve what they're trying to do. This might be to "Try again" or something more specific that will solve the problem.
+</Text>
+
+---
+
+## See demo
+
+<Flex
+  flexDirection="column"
+  mb={4}
+>
+  <Box mb={4}>
+    <Image src="/images/Transaction-states.png" alt="An illustration of Rimble's transaction UX journey"  />
+  </Box>
+  <Flex flexDirection="column">
+    <Box>
+      <Heading
+        as={"h3"}
+        fontSize={[2, 4]}
+        mb={3}
+      >
+        Transaction demo
+      </Heading>
+      <Text mb={3}>
+        Our transaction states demo, presented at Devcon V, shows
+        methods for updating a user on the status of their
+        transaction.
+      </Text>
+      <Link
+        href="https://rimble-devcon-demo.netlify.com/"
+        target="_blank"
+        rel="noopener"
+        title="Rimble's transaction states Devcon V demo"
+      >
+        <Flex alignItems="center">
+          Transaction states demo
+          <Icon name="Launch" size={"1em"} ml={2} />
+        </Flex>
+      </Link>
+    </Box>
+  </Flex>
+</Flex>
+
+---
+
+<GuideNextPrevious
+  previousTitle={"To template for Transaction Success modal"}
+  previousUrl={"/templates/tx-success"}
+  previousGuideName={"Transaction success modal"}
+  nextTitle={"To Not enough ETH modal"}
+  nextUrl={"/templates/not-enough-eth"}
+  nextGuideName={"Not enough ETH modal"}
+></GuideNextPrevious>

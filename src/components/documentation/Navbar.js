@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link as GatsbyLink } from "gatsby";
-import { Link as RimbleLink, Box, Image, Flex, Icon } from "rimble-ui";
-import theme from "./../../theme";
+import { Link as RimbleLink, Box, Image, Flex, Icon, theme } from "rimble-ui";
 import RimbleLogotype from "../../../static/rimble-blurple.svg";
 
 const StyledNavbar = styled(Box)`
@@ -45,16 +44,20 @@ const Navbar = ({ isNavOpen, setIsNavOpen, toggleNavOpen }) => {
         color={"primary"}
       >
         {isNavOpen ? (
-          <Flex alignItems="center"
-          aria-label="Close navigation"
-          aria-controls="mainNavigation">
-            <Icon mr={1} name="Close" aria-hidden="true"/> Hide menu
+          <Flex
+            alignItems="center"
+            aria-label="Close navigation"
+            aria-controls="mainNavigation"
+          >
+            <Icon mr={1} name="Close" aria-hidden="true" /> Hide menu
           </Flex>
         ) : (
-          <Flex alignItems="center"
-          aria-label="Show navigation"
-          aria-controls="mainNavigation">
-            <Icon mr={1} name="Menu" aria-hidden="true"/> Menu
+          <Flex
+            alignItems="center"
+            aria-label="Show navigation"
+            aria-controls="mainNavigation"
+          >
+            <Icon mr={1} name="Menu" aria-hidden="true" /> Menu
           </Flex>
         )}
       </RimbleLink>

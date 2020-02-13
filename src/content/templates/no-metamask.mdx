@@ -1,0 +1,129 @@
+---
+title: No MetaMask modal
+description: Grab the code for a ready-made modal template to display when a user is trying to connect but doesn't have MetaMask installed
+image: "/images/no-metamask-template.png"
+---
+
+The modal should instruct users to install MetaMask if they are trying to use a Web3 feature in your dApp but you can't detect a Web3 provider. This should only be displayed if the user is using a desktop browser that is compatible with MetaMask (e.g. not Safari). This modal should explain why the user needs MetaMask and provide a direct link to installation.
+
+<Flash>
+  This template is only relevant in edge cases where your dApp doesn't support alternative connection methods like <Link href="https://walletconnect.org/" title="To WalletConnect" target="_blank">WalletConnect</Link> or <Link href="https://portis.io" title="To Portis" target="_blank">Portis</Link>.
+</Flash>
+
+```js is=react-live hideCode
+// import { Heading, Text, Flex, Modal, MetaMaskButton, Box, Card } from "rimble-ui";
+
+<Card p={0} borderRadius={1}>
+  <Flex
+    justifyContent="space-between"
+    alignItems="center"
+    borderBottom={1}
+    borderColor="near-white"
+    p={[3, 4]}
+    pb={3}
+  >
+    <Image
+      src="/images/MetaMaskIcon.svg"
+      aria-label="MetaMask extension icon"
+      size="24px"
+    />
+    <Heading textAlign="center" as="h1" fontSize={[2, 3]} px={[3, 0]}>
+      Install MetaMask to use [dApp]
+    </Heading>
+    <Link>
+      <Icon
+        name="Close"
+        color="moon-gray"
+        aria-label="Close and cancel connection"
+      />
+    </Link>
+  </Flex>
+  <Box p={[3, 4]}>
+    <Text mb={4}>
+      MetaMask is a browser extension that will let you use our blockchain
+      features in this browser. It may take you a few minutes to set up your
+      MetaMask account.
+    </Text>
+    <Text italic>
+      Rather use your phone? You can use [dApp] in mobile browser wallets like{" "}
+      <Link>Status</Link>, <Link>Cipher</Link> or <Link>Coinbase wallet</Link>.
+    </Text>
+  </Box>
+  <Flex justifyContent="flex-end" borderTop={1} borderColor="light-gray" p={[3, 4]}>
+    <MetaMaskButton width={["100%", "auto"]}>
+      Install MetaMask
+    </MetaMaskButton>
+  </Flex>
+</Card>
+```
+
+---
+
+## Template anatomy
+
+<Image
+  width="100%"
+  src="/images/no-metamask-anatomy.png"
+  mt={3}
+  borderTop={1}
+  borderWidth={3}
+  borderColor="primary-light"
+/>
+<Heading as="h4"
+  color="dark-gray"
+  alignItem="flex-end"
+  mt={4}
+>
+  1. Title
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+ Clearly states that an extra step is needed to progress.
+</Text>
+<Heading as="h4"
+  color="dark-gray">
+  2. Body
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Explains what MetaMask is and why you need it. It also sets some expectations around the fact that there's a setup time for getting MetaMask ready.
+</Text>
+<Heading as="h4" color="dark-gray">
+  3. "Rather use your phone" copy
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  It may be easier to get users to onboard via a mobile wallet which will have experiences designed for getting users set up with a wallet.
+</Text>
+<Heading as="h4" color="dark-gray">
+  4. MetaMaskButton
+</Heading>
+<Text
+  color="mid-gray"
+  mb={4}
+>
+  Directs the user straight to the right page to avoid any dodgy sites or confusion.
+</Text>
+
+---
+
+## See demo
+
+<TemplateConnectionDemo />
+
+---
+
+<GuideNextPrevious
+  previousTitle={"Back to Wrong network"}
+  previousUrl={"/templates/wrong-network"}
+  previousGuideName={"Wrong network modal"}
+  nextTitle={"To template for Wrong browser modal"}
+  nextUrl={"/templates/wrong-browser"}
+  nextGuideName={"Wrong browser modal"}
+/>

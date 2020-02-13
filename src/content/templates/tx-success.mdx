@@ -1,0 +1,143 @@
+---
+title: Transaction success modal
+description: Grab the code for a ready-made modal template to display when a user's transaction completes successfully.
+image: "/images/tx-success-template.png"
+---
+
+A transaction success modal should let the user know their transaction has been successful and provide logical next steps.
+
+```js is=react-live hideCode
+// import { Modal, Card, Box, Blockie, Flex, Icon, Text, Link, Heading, Button } from "rimble-ui";
+
+<Card p={0} borderRadius={1} mb={4}>
+  <Box height="4px" bg="success" borderRadius={["1rem 1rem 0 0"]} />
+  <Flex
+    justifyContent="space-between"
+    alignItems="center"
+    borderBottom={1}
+    borderColor="near-white"
+    p={[3, 4]}
+    pb={3}
+  >
+    <Icon name="CheckCircle" color="success" aria-label="Success" />
+    <Heading textAlign="center" as="h1" fontSize={[2, 3]} px={[3, 0]}>
+      You're going to Devcon
+    </Heading>
+    <Link>
+      <Icon
+        name="Close"
+        color="moon-gray"
+        aria-label="Close and cancel connection"
+      />
+    </Link>
+  </Flex>
+  <Box p={[3, 4]} pb={2}>
+    <Text textAlign="center" mt={2}>
+      Your NFT ticket should now be in your wallet. Show it when you arrive at
+      the venue.
+    </Text>
+    <Flex mt={4} justifyContent="center">
+      <Card p={3} borderRadius={16}>
+        <Image src="/images/devcon-ticket-example.png" size="156px" />
+      </Card>
+    </Flex>
+  </Box>
+  <Flex pt={2} pb={4} justifyContent="center" flexDirection="column">
+    <Heading textAlign="center" as="h4">
+      Conference ticket - #32
+    </Heading>
+    <Link textAlign="center">Show ticket details</Link>
+  </Flex>
+
+  <Flex
+    pt={[4, 4]}
+    pb={[4, 4]}
+    p={[3, 4]}
+    borderTop={1}
+    borderColor="near-white"
+    justifyContent="flex-end"
+    flexDirection={["column", "row"]}
+    alignItems="center"
+  >
+    <Button.Outline mr={[0, 3]} mb={[2, 0]} width={["100%", "auto"]}>
+      Gift your ticket
+    </Button.Outline>
+    <Button width={["100%", "auto"]}>Share</Button>
+  </Flex>
+</Card>
+```
+
+---
+
+## Template anatomy
+
+<Image
+  width="100%"
+  src="/images/transaction-success-anatomy.png"
+  alt="An annotated image calling out the different elements of the template"
+  mt={3}
+  borderTop={1}
+  borderWidth={3}
+  borderColor="primary-light"
+/>
+<Heading as="h4"
+  color="dark-gray"
+  alignItem="flex-end"
+  mt={4}
+>
+  1. Title
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Reiterate that the user's transaction is done, using the language of the action they're doing. Avoid generic terms like "Transaction successful".
+</Text>
+<Heading as="h4"
+  color="dark-gray"
+  alignItem="flex-end"
+>
+  2. Body
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Explain to the user what they can do next now that their transaction has completed successfully.
+</Text>
+<Heading as="h4"
+  color="dark-gray">
+  3. Visual
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  You may want to show a visual to represent the transaction. Whether that's some visual reassurance that the user has sent funds between accounts successfully or showing an NFT that the user has just bought.
+</Text>
+<Heading as="h4" color="dark-gray">
+  4. CTAs
+</Heading>
+<Text
+  color="mid-gray"
+  mb={4}
+>
+  A place to give the user some next steps. What are the actions a user is likely to want to do next?
+</Text>
+
+---
+
+## See demo
+
+<TemplateDevConDemo />
+
+---
+
+<GuideNextPrevious
+  previousTitle={"To template for Transaction progress bar"}
+  previousUrl={"/templates/tx-progress"}
+  previousGuideName={"Transaction progress bar"}
+  nextTitle={"To template for Transaction Fail modal"}
+  nextUrl={"/templates/tx-fail"}
+  nextGuideName={"Transaction failure modal"}
+/>

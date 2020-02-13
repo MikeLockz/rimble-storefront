@@ -7,6 +7,19 @@ import StaticSideNav from "./StaticSideNav";
 import Navbar from "./Navbar";
 import Content from "./Content";
 
+// primary-ligher is used as link color on black background in templates
+// primary-extra-light is used as bg for icons in templates
+// primary-2x-light is used for bg of connection modal templates
+const customTheme = {
+  ...theme,
+  colors: {
+    ...theme.colors,
+    "primary-lighter": "#9387FF",
+    "primary-extra-light": "#d3c6d3",
+    "primary-2x-light": "#f6f6fc"
+  }
+};
+
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
   require("smooth-scroll")('a[href*="#"]', {
@@ -85,7 +98,7 @@ const Layout = ({ children, tableOfContents, title, componentType }) => {
         }
       `}
       render={data => (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={customTheme}>
           <BaseStyles>
             <SkipLink href="#reach-skip-nav" data-reach-skip-link="true">
               Skip to main content

@@ -1,0 +1,203 @@
+---
+title: Not enough ETH modal
+description: Grab the code for a ready-made modal template to display when a user can't submit a transaction due to insufficient funds of Ether.
+image: "/images/tx-fail-template.png"
+---
+
+A not enough ETH modal should let the user know how to update their balance and why in order for them to continue successfully with their transaction. It should be triggered by checking the user's balance once they go to transact.
+
+
+```js is=react-live hideCode
+// import { Modal, Card, Box, Blockie, Flex, Icon, Text, Link, Heading, Button } from "rimble-ui";
+
+<Box>
+  <Card p={0} borderRadius={1} mb={4}>
+    <Box height="4px" bg="danger" borderRadius={["1rem 1rem 0 0"]} />
+    <Flex
+      justifyContent="space-between"
+      alignItems="center"
+      borderBottom={1}
+      borderColor="near-white"
+      p={[3, 4]}
+      pb={3}
+    >
+      <Icon name="Warning" color="danger" aria-label="Warning" />
+      <Heading textAlign="center" as="h1" fontSize={[2, 3]} px={[3, 0]}>
+        Not enough ETH for transaction fees
+      </Heading>
+      <Link>
+        <Icon
+          name="Close"
+          color="moon-gray"
+          aria-label="Close and cancel connection"
+        />
+      </Link>
+    </Flex>
+    <Box p={[3, 4]}>
+      <Text my={2}>
+        Buy some Ether (ETH) or move some to this account to purchase your
+        ticket. You'll need at least 0.001 ETH ($0.10).
+      </Text>
+      <Text italic>
+        Every blockchain transaction has a fee to cover the network's processing
+        costs.
+      </Text>
+    </Box>
+    <Flex
+      p={[3, 4]}
+      borderTop={1}
+      borderColor="near-white"
+      justifyContent="space-between"
+      flexDirection={["column", "row"]}
+      alignItems="center"
+    >
+      <Button.Text mb={3}>Move ETH from another account</Button.Text>
+      <Button width={["100%", "auto"]}>Buy with card</Button>
+    </Flex>
+  </Card>
+
+  <Card p={0} borderRadius={1}>
+    <Flex
+      justifyContent="space-between"
+      alignItems="center"
+      borderBottom={1}
+      borderColor="near-white"
+      p={[3, 4]}
+      pb={3}
+    >
+      <Icon name="ArrowBack" color="primary" aria-label="Back" />
+      <Heading textAlign="center" as="h4" fontSize={[2, 3]} px={[3, 0]}>
+        Move ETH to this account
+      </Heading>
+      <Link>
+        <Icon
+          name="Close"
+          color="moon-gray"
+          aria-label="Close and cancel connection"
+        />
+      </Link>
+    </Flex>
+    <Box p={[3, 4]}>
+      <Text textAlign="center">
+        To send funds to this Ethereum address, scan this code using your mobile
+        wallet app
+      </Text>
+      <Flex my={4} justifyContent="center">
+        <Card p={3} borderRadius={16}>
+          <QR size="200" value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
+        </Card>
+      </Flex>
+      <EthAddress
+        required={true}
+        address="0x9505C8Fc1aD98b0aC651b91245d02D055fEc8E49"
+      />
+    </Box>
+  </Card>
+</Box>
+```
+
+---
+
+## Template anatomy
+<Image
+  width="100%"
+  src="/images/not-enough-eth-anatomy.png"
+  alt="An annotated image calling out the different elements of the template"
+  mt={3}
+  borderTop={1}
+  borderWidth={3}
+  borderColor="primary-light"
+/>
+
+<Heading as="h4"
+  color="dark-gray"
+  mt={4}
+>
+  1. Title
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Clearly explains the problem to the user when trying to transact.
+</Text>
+<Heading as="h4"
+  color="dark-gray">
+  2. Body
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Explains that the user should add funds to their account if they want to continue.
+</Text>
+<Heading as="h4" color="dark-gray">
+  3. CTAs
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  These represent the two paths a user can take in order to proceed with their transaction."Buy with card" should be used if you're integrated with a fiat on-ramp like <Link href="https://www.moonpay.io/" title="To Moonpay" title="_blank">Moonpay</Link> or <Link href="https://www.sendwyre.com/" title="To Wyre" target="_blank">Wyre</Link> – we believe this to be the best UX. Alternatively link to your preferred exchange.
+</Text>
+
+<Image
+  width="100%"
+  src="/images/not-enough-eth-move-eth-anatomy.png"
+  alt="An annotated image calling out the different elements of the template"
+  mt={3}
+  borderTop={1}
+  borderWidth={3}
+  borderColor="primary-light"
+/>
+<Heading
+  as="h4"
+  color="dark-gray"
+  mt={4}
+>
+  1. Title
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Reiterates the task at hand.
+</Text>
+<Heading as="h4" color="dark-gray">
+  2. Body copy
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Explains how to use the below QR code.
+</Text>
+<Heading as="h4" color="dark-gray">
+  3. QR code
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Gives experienced users a simple way to top-up via scanning and sending using a mobile wallet.
+</Text>
+<Heading as="h4" color="dark-gray">
+  4. ETH address
+</Heading>
+<Text
+  color="mid-gray"
+  mb={4}
+>
+  Provides a way for a user to copy/paste their Ethereum address in order to top up their Ethereum account.
+</Text>
+
+---
+
+<GuideNextPrevious
+  previousTitle={"To template for Transaction Fail modal"}
+  previousUrl={"/templates/tx-fail"}
+  previousGuideName={"Transaction fail modal"}
+  nextTitle={"To Templaes"}
+  nextUrl={"/templates"}
+  nextGuideName={"See more templates"}
+/>

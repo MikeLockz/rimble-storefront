@@ -1,0 +1,921 @@
+---
+title: Transaction summary modal
+description: Grab the code for a ready-made modal template to display before a user sends their transaction to the network – so they can double check the details.
+image: "/images/tx-summary-template.png"
+---
+
+A transaction summary should give the user a chance to double check some key information before initiating their transaction. The main objective here is to prevent mistakes and let the user know about important information like fees and estimated time. We like to think of this as a **checkout** screen.
+
+```js is=react-live hideCode
+// import { Tooltip, Modal, Card, Box, Icon, Text, Link, Heading, Button } from "rimble-ui";
+
+<Card borderRadius={1} p={0}>
+  <Flex
+    justifyContent="space-between"
+    alignItems="center"
+    borderBottom={1}
+    borderColor="near-white"
+    p={[3, 4]}
+    pb={3}
+  >
+    <Image
+      src="/images/MetaMaskIcon.svg"
+      aria-label="MetaMask extension icon"
+      size="24px"
+    />
+    <Heading textAlign="center" as="h1" fontSize={[2, 3]} px={[3, 0]}>
+      Confirm your purchase in [wallet]
+    </Heading>
+    <Link>
+      <Icon name="Close" color="moon-gray" aria-label="Close" />
+    </Link>
+  </Flex>
+  <Box p={[3, 4]}>
+    <Flex justifyContent={"space-between"} flexDirection={"column"}>
+      <Text textAlign="center">
+        Double check the details here – your purchase can't be refunded.
+      </Text>
+      <Flex
+        alignItems={"stretch"}
+        flexDirection={"column"}
+        borderRadius={2}
+        borderColor={"moon-gray"}
+        borderWidth={1}
+        borderStyle={"solid"}
+        overflow={"hidden"}
+        my={[3, 4]}
+      >
+        <Box bg={"primary"} px={3} py={2}>
+          <Text color={"white"}>Conference ticket</Text>
+        </Box>
+        <Flex
+          p={3}
+          borderBottom={"1px solid gray"}
+          borderColor={"moon-gray"}
+          alignItems={"center"}
+          flexDirection={["column", "row"]}
+        >
+          <Box
+            position={"relative"}
+            height={"2em"}
+            width={"2em"}
+            mr={[0, 3]}
+            mb={[3, 0]}
+          >
+            <Box position={"absolute"} top={"0"} left={"0"}>
+              <Loader size={"2em"} />
+            </Box>
+          </Box>
+          <Box>
+            <Text
+              textAlign={["center", "left"]}
+              fontWeight={"600"}
+              fontSize={1}
+              lineHeight={"1.25em"}
+            >
+              Waiting for confirmation...
+            </Text>
+            <Link fontWeight={100} lineHeight={"1.25em"} color={"primary"}>
+              Don't see the MetaMask popup?
+            </Link>
+          </Box>
+        </Flex>
+        <Flex
+          justifyContent={"space-between"}
+          bg="light-gray"
+          p={[2, 3]}
+          borderBottom={"1px solid gray"}
+          borderColor={"moon-gray"}
+          flexDirection={["column", "row"]}
+        >
+          <Text
+            textAlign={["center", "left"]}
+            color="near-black"
+            fontWeight="bold"
+          >
+            Your account
+          </Text>
+          <Link
+            href={"https://rinkeby.etherscan.io/address/"}
+            target={"_blank"}
+          >
+            <Tooltip message="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A">
+              <Flex
+                justifyContent={["center", "auto"]}
+                alignItems={"center"}
+                flexDirection="row-reverse"
+              >
+                <Text fontWeight="bold">0xAc03...1e5A</Text>
+                <Flex
+                  mr={2}
+                  p={1}
+                  borderRadius={"50%"}
+                  bg={"primary-extra-light"}
+                  height={"2em"}
+                  width={"2em"}
+                  alignItems="center"
+                  justifyContent="center"
+                >
+                  <Icon color={"primary"} name="RemoveRedEye" size={"1em"} />
+                </Flex>
+              </Flex>
+            </Tooltip>
+          </Link>
+        </Flex>
+        <Flex
+          justifyContent={"space-between"}
+          bg="near-white"
+          py={[2, 3]}
+          px={3}
+          alignItems={"center"}
+          borderBottom={"1px solid gray"}
+          borderColor={"moon-gray"}
+          flexDirection={["column", "row"]}
+        >
+          <Text
+            textAlign={["center", "left"]}
+            color="near-black"
+            fontWeight="bold"
+          >
+            Price
+          </Text>
+          <Flex
+            alignItems={["center", "flex-end"]}
+            flexDirection={["row", "column"]}
+          >
+            <Text
+              mr={[2, 0]}
+              color="near-black"
+              fontWeight="bold"
+              lineHeight={"1em"}
+            >
+              5.4 ETH
+            </Text>
+            <Text color="mid-gray" fontSize={1}>
+              $1450 USD
+            </Text>
+          </Flex>
+        </Flex>
+        <Flex
+          justifyContent={"space-between"}
+          bg="light-gray"
+          py={[2, 3]}
+          px={3}
+          alignItems={"center"}
+          borderBottom={"1px solid gray"}
+          borderColor={"moon-gray"}
+          flexDirection={["column", "row"]}
+        >
+          <Flex alignItems={"center"}>
+            <Text
+              textAlign={["center", "left"]}
+              color="near-black"
+              fontWeight="bold"
+            >
+              Transaction fee
+            </Text>
+            <Tooltip
+              message="Pays the Ethereum network to process your transaction. Spent even if the transaction fails."
+              position="top"
+            >
+              <Icon
+                ml={1}
+                name={"InfoOutline"}
+                size={"14px"}
+                color={"primary"}
+              />
+            </Tooltip>
+
+          </Flex>
+          <Flex
+            alignItems={["center", "flex-end"]}
+            flexDirection={["row", "column"]}
+          >
+            <Text
+              mr={[2, 0]}
+              color="near-black"
+              fontWeight="bold"
+              lineHeight={"1em"}
+            >
+              $0.42
+            </Text>
+            <Text color="mid-gray" fontSize={1}>
+              0.00112 ETH
+            </Text>
+          </Flex>
+        </Flex>
+        <Flex
+          justifyContent={"space-between"}
+          bg={"near-white"}
+          p={[2, 3]}
+          alignItems={"center"}
+          flexDirection={["column", "row"]}
+        >
+          <Text color="near-black" fontWeight="bold">
+            Estimated time
+          </Text>
+          <Text color={"mid-gray"}>Less than 2 minutes</Text>
+        </Flex>
+      </Flex>
+      <Button.Outline>Cancel purchase</Button.Outline>
+    </Flex>
+  </Box>
+</Card>
+```
+
+---
+
+## Template anatomy
+
+<Image
+  width="100%"
+  src="/images/transaction-summary-anatomy.png"
+  alt="An annotated image calling out the different elements of the template"
+  mt={3}
+  borderTop={1}
+  borderWidth={3}
+  borderColor="primary-light"
+/>
+<Heading as="h4"
+  color="dark-gray"
+  alignItem="flex-end"
+  mt={4}
+>
+  1. Title
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+Provides a clear instruction to the user to confirm their transaction in their wallet. This title and associated visual (e.g. MetaMask icon) should be dynamic based on the wallet provider.
+</Text>
+<Heading as="h4"
+  color="dark-gray"
+  alignItem="flex-end"
+>
+  2. Body
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Reminds/informs the user that blockchain transactions are final and invites them to doublecheck.
+</Text>
+<Heading as="h4"
+  color="dark-gray">
+  3. Waiting for confirmation
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Reminds the user that they haven't yet started the transaction. Our example includes a link where you might want to offer help to your users in confirming the transaction. Remove if you don't have content to support this.
+</Text>
+<Heading as="h4" color="dark-gray">
+  4. Account address
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Allows the user to double check they're transacting with their intended address.
+</Text>
+
+<Heading as="h4" color="dark-gray">
+  5. Transaction fee
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Opportune moment to explain transaction fees. And a necessary piece of information for the impending transaction.
+</Text>
+
+<Heading as="h4" color="dark-gray">
+  6. Currency
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Helps give the user a better sense of the value they're spending by showing it in crypto and fiat.
+</Text>
+
+<Heading as="h4" color="dark-gray">
+  7. Estimated time
+</Heading>
+<Text
+  color="mid-gray"
+  mb={4}
+>
+  Let the user know how long it might take so they can plan their next steps. We recommend basing this off the transaction fee and GasStation API. <RimbleGatsbyLink href="/guides/ux/transactions-set-user-expectations#how-we-did-it" title="To transaction status guide">Learn how we did this.</RimbleGatsbyLink>
+</Text>
+
+---
+
+## Use cases
+Here's how we might customise this template across different use cases. You may want to introduce different data points based on the transaction type.
+
+### Sending value
+
+```js is=react-live hideCode
+function CustomModal() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const closeModal = e => {
+    e.preventDefault();
+    setIsOpen(false);
+  };
+
+  const openModal = e => {
+    e.preventDefault();
+    setIsOpen(true);
+  };
+
+  return (
+    <Box>
+      <Flex alignItems={"center"}>
+        <Button onClick={openModal}>Send ETH</Button>
+        <Text ml={4}>Click button to see example modal</Text>
+      </Flex>
+
+      <Modal isOpen={isOpen}>
+        <Card borderRadius={1} p={0} overflow={"scroll"}>
+          <Flex
+            justifyContent="space-between"
+            alignItems="center"
+            borderBottom={1}
+            borderColor="near-white"
+            p={[3, 4]}
+            pb={3}
+          >
+            <Image
+              src="/images/MetaMaskIcon.svg"
+              aria-label="MetaMask extension icon"
+              size="24px"
+            />
+            <Heading textAlign="center" as="h1" fontSize={[2, 3]} px={[3, 0]}>
+              Confirm your transfer in [wallet]
+            </Heading>
+            <Link onClick={closeModal}>
+              <Icon name="Close" color="moon-gray" aria-label="Close" />
+            </Link>
+          </Flex>
+          <Box p={[3, 4]}>
+            <Flex justifyContent={"space-between"} flexDirection={"column"}>
+              <Text textAlign="center">
+                Double check the details here – your transfer can't be reversed.
+              </Text>
+              <Flex
+                alignItems={"stretch"}
+                flexDirection={"column"}
+                borderRadius={2}
+                borderColor={"moon-gray"}
+                borderWidth={1}
+                borderStyle={"solid"}
+                overflow={"hidden"}
+                my={[3, 4]}
+              >
+                <Box bg={"primary"} px={3} py={2}>
+                  <Text color={"white"}>ETH transfer</Text>
+                </Box>
+
+                <Flex
+                  p={3}
+                  borderBottom={"1px solid gray"}
+                  borderColor={"moon-gray"}
+                  alignItems={"center"}
+                  flexDirection={["column", "row"]}
+                >
+                  <Box
+                    position={"relative"}
+                    height={"2em"}
+                    width={"2em"}
+                    mr={[0, 3]}
+                    mb={[3, 0]}
+                  >
+                    <Box position={"absolute"} top={"0"} left={"0"}>
+                      <Loader size={"2em"} />
+                    </Box>
+                  </Box>
+                  <Box>
+                    <Text
+                      textAlign={["center", "left"]}
+                      fontWeight={"600"}
+                      fontSize={1}
+                      lineHeight={"1.25em"}
+                    >
+                      Waiting for confirmation...
+                    </Text>
+                    <Link
+                      fontWeight={100}
+                      lineHeight={"1.25em"}
+                      color={"primary"}
+                    >
+                      Don't see the MetaMask popup?
+                    </Link>
+                  </Box>
+                </Flex>
+
+                <Flex
+                  justifyContent={"space-between"}
+                  bg="near-white"
+                  p={[2, 3]}
+                  borderBottom={"1px solid gray"}
+                  borderColor={"moon-gray"}
+                  flexDirection={["column", "row"]}
+                >
+                  <Text
+                    textAlign={["center", "left"]}
+                    color="near-black"
+                    fontWeight="bold"
+                  >
+                    From (you)
+                  </Text>
+                  <Link
+                    href={"https://rinkeby.etherscan.io/address/"}
+                    target={"_blank"}
+                  >
+                    <Tooltip message="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A">
+                      <Flex
+                        justifyContent={["center", "auto"]}
+                        alignItems={"center"}
+                        flexDirection="row-reverse"
+                      >
+                        <Text fontWeight="bold">0xAc03...1e5A</Text>
+                        <Flex
+                          mr={2}
+                          p={1}
+                          borderRadius={"50%"}
+                          bg={"primary-extra-light"}
+                          height={"2em"}
+                          width={"2em"}
+                          alignItems="center"
+                          justifyContent="center"
+                        >
+                          <Icon
+                            color={"primary"}
+                            name="RemoveRedEye"
+                            size={"1em"}
+                          />
+                        </Flex>
+                      </Flex>
+                    </Tooltip>
+                  </Link>
+                </Flex>
+
+                <Flex
+                  justifyContent={"space-between"}
+                  bg="light-gray"
+                  p={[2, 3]}
+                  borderBottom={"1px solid gray"}
+                  borderColor={"moon-gray"}
+                  flexDirection={["column", "row"]}
+                >
+                  <Text
+                    textAlign={["center", "left"]}
+                    color="near-black"
+                    fontWeight="bold"
+                  >
+                    To
+                  </Text>
+                  <Link
+                    href={"https://rinkeby.etherscan.io/address/"}
+                    target={"_blank"}
+                  >
+                    <Tooltip message="0xD145f9c4f276be0e1a7Df3F4c52a0abDeea757F5">
+                      <Flex
+                        justifyContent={["center", "auto"]}
+                        alignItems={"center"}
+                        flexDirection="row-reverse"
+                      >
+                        <Text fontWeight="bold">0xD145...57F5</Text>
+                        <Flex
+                          mr={2}
+                          p={1}
+                          borderRadius={"50%"}
+                          bg={"primary-extra-light"}
+                          height={"2em"}
+                          width={"2em"}
+                          alignItems="center"
+                          justifyContent="center"
+                        >
+                          <Icon
+                            color={"primary"}
+                            name="RemoveRedEye"
+                            size={"1em"}
+                          />
+                        </Flex>
+                      </Flex>
+                    </Tooltip>
+                  </Link>
+                </Flex>
+
+                <Flex
+                  justifyContent={"space-between"}
+                  bg="near-white"
+                  py={[2, 3]}
+                  px={3}
+                  alignItems={"center"}
+                  borderBottom={"1px solid gray"}
+                  borderColor={"moon-gray"}
+                  flexDirection={["column", "row"]}
+                >
+                  <Text
+                    textAlign={["center", "left"]}
+                    color="near-black"
+                    fontWeight="bold"
+                  >
+                    Amount
+                  </Text>
+                  <Flex
+                    alignItems={["center", "flex-end"]}
+                    flexDirection={["row", "column"]}
+                  >
+                    <Text
+                      mr={[2, 0]}
+                      color="near-black"
+                      fontWeight="bold"
+                      lineHeight={"1em"}
+                    >
+                      5.4 ETH
+                    </Text>
+                    <Text color="mid-gray" fontSize={1}>
+                      $1450 USD
+                    </Text>
+                  </Flex>
+                </Flex>
+
+                <Flex
+                  justifyContent={"space-between"}
+                  bg="light-gray"
+                  py={[2, 3]}
+                  px={3}
+                  alignItems={"center"}
+                  borderBottom={"1px solid gray"}
+                  borderColor={"moon-gray"}
+                  flexDirection={["column", "row"]}
+                >
+                  <Flex alignItems={"center"}>
+                    <Text
+                      textAlign={["center", "left"]}
+                      color="near-black"
+                      fontWeight="bold"
+                    >
+                      Transaction fee
+                    </Text>
+                    <Tooltip
+                      message="Pays the Ethereum network to process your transaction. Spent even if the transaction fails."
+                      position="top"
+                    >
+                      <Icon
+                        ml={1}
+                        name={"InfoOutline"}
+                        size={"14px"}
+                        color={"primary"}
+                      />
+                    </Tooltip>
+                  </Flex>
+
+                  <Flex
+                    alignItems={["center", "flex-end"]}
+                    flexDirection={["row", "column"]}
+                  >
+                    <Text
+                      mr={[2, 0]}
+                      color="near-black"
+                      fontWeight="bold"
+                      lineHeight={"1em"}
+                    >
+                      $0.42
+                    </Text>
+                    <Text color="mid-gray" fontSize={1}>
+                      0.00112 ETH
+                    </Text>
+                  </Flex>
+                </Flex>
+
+                <Flex
+                  justifyContent={"space-between"}
+                  bg={"near-white"}
+                  p={[2, 3]}
+                  alignItems={"center"}
+                  flexDirection={["column", "row"]}
+                >
+                  <Text color="near-black" fontWeight="bold">
+                    Estimated time
+                  </Text>
+                  <Text color={"mid-gray"}>Less than 2 minutes</Text>
+                </Flex>
+              </Flex>
+              <Button.Outline onClick={closeModal}>
+                Cancel purchase
+              </Button.Outline>
+            </Flex>
+          </Box>
+        </Card>
+      </Modal>
+    </Box>
+  );
+}
+```
+
+### Voting
+
+```js is=react-live hideCode
+function CustomModal() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const closeModal = e => {
+    e.preventDefault();
+    setIsOpen(false);
+  };
+
+  const openModal = e => {
+    e.preventDefault();
+    setIsOpen(true);
+  };
+
+  return (
+    <Box>
+      <Flex alignItems={"center"}>
+        <Button onClick={openModal}>Vote</Button>
+        <Text ml={4}>Click button to see example modal</Text>
+      </Flex>
+
+      <Modal isOpen={isOpen}>
+        <Card borderRadius={1} p={0} overflow={"scroll"}>
+          <Flex
+            justifyContent="space-between"
+            alignItems="center"
+            borderBottom={1}
+            borderColor="near-white"
+            p={[3, 4]}
+            pb={3}
+          >
+            <Image
+              src="/images/MetaMaskIcon.svg"
+              aria-label="MetaMask extension icon"
+              size="24px"
+            />
+            <Heading textAlign="center" as="h1" fontSize={[2, 3]} px={[3, 0]}>
+              Confirm your vote in [wallet]
+            </Heading>
+            <Link onClick={closeModal}>
+              <Icon name="Close" color="moon-gray" aria-label="Close" />
+            </Link>
+          </Flex>
+          <Box p={[3, 4]}>
+            <Flex justifyContent={"space-between"} flexDirection={"column"}>
+              <Text textAlign="center">
+                Double check the details here – your vote can't be reversed.
+              </Text>
+              <Flex
+                alignItems={"stretch"}
+                flexDirection={"column"}
+                borderRadius={2}
+                borderColor={"moon-gray"}
+                borderWidth={1}
+                borderStyle={"solid"}
+                overflow={"hidden"}
+                my={[3, 4]}
+              >
+                <Box bg={"primary"} px={3} py={2}>
+                  <Text color={"white"}>VOTE: Is ETH money?</Text>
+                </Box>
+                <Flex
+                  p={3}
+                  borderBottom={"1px solid gray"}
+                  borderColor={"moon-gray"}
+                  alignItems={"center"}
+                  flexDirection={["column", "row"]}
+                >
+                  <Box
+                    position={"relative"}
+                    height={"2em"}
+                    width={"2em"}
+                    mr={[0, 3]}
+                    mb={[3, 0]}
+                  >
+                    <Box position={"absolute"} top={"0"} left={"0"}>
+                      <Loader size={"2em"} />
+                    </Box>
+                  </Box>
+
+                  <Box>
+                    <Text
+                      textAlign={["center", "left"]}
+                      fontWeight={"600"}
+                      fontSize={1}
+                      lineHeight={"1.25em"}
+                    >
+                      Waiting for confirmation...
+                    </Text>
+                    <Link
+                      fontWeight={100}
+                      lineHeight={"1.25em"}
+                      color={"primary"}
+                    >
+                      Don't see the MetaMask popup?
+                    </Link>
+                  </Box>
+                </Flex>
+
+                <Flex
+                  justifyContent={"space-between"}
+                  bg="near-white"
+                  p={[2, 3]}
+                  borderBottom={"1px solid gray"}
+                  borderColor={"moon-gray"}
+                  flexDirection={["column", "row"]}
+                >
+                  <Text
+                    textAlign={["center", "left"]}
+                    color="near-black"
+                    fontWeight="bold"
+                  >
+                    Vote
+                  </Text>
+                  <Text caps textAlign={["center", "left"]} fontWeight="bold">
+                    Yes
+                  </Text>
+                </Flex>
+
+                <Flex
+                  justifyContent={"space-between"}
+                  bg="light-gray"
+                  p={[2, 3]}
+                  borderBottom={"1px solid gray"}
+                  borderColor={"moon-gray"}
+                  flexDirection={["column", "row"]}
+                >
+                  <Text
+                    textAlign={["center", "left"]}
+                    color="near-black"
+                    fontWeight="bold"
+                  >
+                    Your account
+                  </Text>
+                  <Link
+                    href={"https://rinkeby.etherscan.io/address/"}
+                    target={"_blank"}
+                  >
+                    <Tooltip message="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A">
+                      <Flex
+                        justifyContent={["center", "auto"]}
+                        alignItems={"center"}
+                        flexDirection="row-reverse"
+                      >
+                        <Text fontWeight="bold">0xAc03...1e5A</Text>
+                        <Flex
+                          mr={2}
+                          p={1}
+                          borderRadius={"50%"}
+                          bg={"primary-extra-light"}
+                          height={"2em"}
+                          width={"2em"}
+                          alignItems="center"
+                          justifyContent="center"
+                        >
+                          <Icon
+                            color={"primary"}
+                            name="RemoveRedEye"
+                            size={"1em"}
+                          />
+                        </Flex>
+                      </Flex>
+                    </Tooltip>
+                  </Link>
+                </Flex>
+
+                <Flex
+                  justifyContent={"space-between"}
+                  bg="near-white"
+                  py={[2, 3]}
+                  px={3}
+                  alignItems={"center"}
+                  borderBottom={"1px solid gray"}
+                  borderColor={"moon-gray"}
+                  flexDirection={["column", "row"]}
+                >
+                  <Text
+                    textAlign={["center", "left"]}
+                    color="near-black"
+                    fontWeight="bold"
+                  >
+                    Stake
+                  </Text>
+                  <Flex
+                    alignItems={["center", "flex-end"]}
+                    flexDirection={["row", "column"]}
+                  >
+                    <Text
+                      mr={[2, 0]}
+                      color="near-black"
+                      fontWeight="bold"
+                      lineHeight={"1em"}
+                    >
+                      1 ETH
+                    </Text>
+                    <Text color="mid-gray" fontSize={1}>
+                      $140 USD
+                    </Text>
+                  </Flex>
+                </Flex>
+
+                <Flex
+                  justifyContent={"space-between"}
+                  bg="light-gray"
+                  py={[2, 3]}
+                  px={3}
+                  alignItems={"center"}
+                  borderBottom={"1px solid gray"}
+                  borderColor={"moon-gray"}
+                  flexDirection={["column", "row"]}
+                >
+                  <Flex alignItems={"center"}>
+                    <Text
+                      textAlign={["center", "left"]}
+                      color="near-black"
+                      fontWeight="bold"
+                    >
+                      Transaction fee
+                    </Text>
+                    <Tooltip
+                      message="Pays the Ethereum network to process your transaction. Spent even if the transaction fails."
+                      position="top"
+                    >
+                      <Icon
+                        ml={1}
+                        name={"InfoOutline"}
+                        size={"14px"}
+                        color={"primary"}
+                      />
+                    </Tooltip>
+                  </Flex>
+
+                  <Flex
+                    alignItems={["center", "flex-end"]}
+                    flexDirection={["row", "column"]}
+                  >
+                    <Text
+                      mr={[2, 0]}
+                      color="near-black"
+                      fontWeight="bold"
+                      lineHeight={"1em"}
+                    >
+                      $0.42
+                    </Text>
+                    <Text color="mid-gray" fontSize={1}>
+                      0.00112 ETH
+                    </Text>
+                  </Flex>
+                </Flex>
+
+                <Flex
+                  justifyContent={"space-between"}
+                  bg={"near-white"}
+                  p={[2, 3]}
+                  alignItems={"center"}
+                  flexDirection={["column", "row"]}
+                >
+                  <Flex flexDirection="column">
+                    <Text
+                      textAlign={["center", "left"]}
+                      color="near-black"
+                      fontWeight="bold"
+                    >
+                      Estimated time
+                    </Text>
+                    <Text color="near-black" fontWeight="100" fontSize={1}>
+                      To register your vote
+                    </Text>
+                  </Flex>
+                  <Text color={"mid-gray"}>Less than 2 minutes</Text>
+                </Flex>
+              </Flex>
+              <Button.Outline onClick={closeModal}>Cancel vote</Button.Outline>
+            </Flex>
+          </Box>
+        </Card>
+      </Modal>
+    </Box>
+  );
+}
+```
+---
+
+## See demo
+
+<TemplateDevConDemo />
+
+---
+
+<GuideNextPrevious
+  previousTitle={"Back to all templates"}
+  previousUrl={"/templates"}
+  previousGuideName={"Back to Templates"}
+  nextTitle={"To templates for Transaction started"}
+  nextUrl={"/templates/tx-started"}
+  nextGuideName={"Transaction started"}
+/>

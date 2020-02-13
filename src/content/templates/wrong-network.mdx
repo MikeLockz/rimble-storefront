@@ -1,0 +1,121 @@
+---
+title: Wrong network modal
+description: Grab the code for a ready-made modal template to display when the user on the wrong Ethereum network.
+image: "/images/wrong-network-template.png"
+---
+
+The modal should help users get on the right network to use your dApp. This modal should only appear if a user tries to do something that requires Web3 – not just when they land on your dApp.
+
+```js is=react-live hideCode
+// import { Heading, Text, Flex, Modal, Box, Loader, Card } from "rimble-ui";
+
+<Card p={0} borderRadius={1}>
+  <Flex
+    justifyContent="space-between"
+    alignItems="center"
+    borderBottom={1}
+    borderColor="near-white"
+    p={[3, 4]}
+    pb={3}
+  >
+    <Image
+      src="/images/MetaMaskIcon.svg"
+      aria-label="MetaMask extension icon"
+      size="24px"
+    />
+    <Heading textAlign="center" as="h1" fontSize={[2, 3]} px={[3, 0]}>
+      Switch to the Main Ethereum network
+    </Heading>
+    <Link>
+      <Icon
+        name="Close"
+        color="moon-gray"
+        aria-label="Close and cancel connection"
+      />
+    </Link>
+  </Flex>
+  <Box p={[3, 4]}>
+    <Text textAlign="center">
+      This dApp only works on the Main Ethereum network. You’re currently on{" "}
+      <b>Rinkeby</b>.
+    </Text>
+  </Box>
+  <Box px={[3, 4]} pb={[3, 4]}>
+    <Flex
+      flexDirection={["column", "row"]}
+      bg={"primary-2x-light"}
+      p={[3, 4]}
+      alignItems={["center", "auto"]}
+    >
+      <Loader size={"3em"} mr={[0, 3]} mb={[2, 0]} />
+      <Flex flexDirection="column" alignItems={["center", "flex-start"]}>
+        <Text fontWeight={4}>Waiting for the right network...</Text>
+        <Text fontWeight={2}>Switch networks from your wallet</Text>
+      </Flex>
+    </Flex>
+  </Box>
+</Card>
+```
+
+---
+
+## Template anatomy
+
+<Image
+  width="100%"
+  src="/images/wrong-network-anatomy.png"
+  alt="An annotated image calling out the different elements of the template"
+  mt={3}
+  borderTop={1}
+  borderWidth={3}
+  borderColor="primary-light"
+/>
+<Heading as="h4"
+  color="dark-gray"
+  alignItem="flex-end"
+  mt={4}
+>
+  1. Title
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Straight-to-the-point title which allows those with more Ethereum knowledge to quickly follow the instruction. "MetaMask" icon should change based on the wallet provider in use.
+</Text>
+<Heading as="h4"
+  color="dark-gray">
+  2. Body
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Explains why the user is being blocked by this modal. You might want to make this more explicit to reference the action the user is trying to do, for example "You can only send ETH on the Main Ethereum network". It also reiterates the user's current network as this can act as a good reference point for more inexperienced users when they're looking for where to switch networks.
+</Text>
+<Heading as="h4" color="dark-gray">
+  3. Waiting banner with loader
+</Heading>
+<Text
+  color="mid-gray"
+  mb={4}
+>
+  Indicates to the user that the dApp is waiting for them to complete an action.
+</Text>
+
+---
+
+## See demo
+
+<TemplateConnectionDemo />
+
+---
+
+<GuideNextPrevious
+  previousTitle={"Back to Network indicator"}
+  previousUrl={"/templates/network-indicator"}
+  previousGuideName={"Network indicator"}
+  nextTitle={"To template for No MetaMask modal"}
+  nextUrl={"/templates/no-metamask"}
+  nextGuideName={"No MetaMask modal"}
+/>

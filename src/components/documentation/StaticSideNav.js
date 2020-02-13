@@ -1,12 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import { Link as GatsbyLink } from "gatsby";
-import { Text, Box, Flex, Link } from "rimble-ui";
-import theme from "./../../theme";
+import { Text, Box, Flex, Link, theme } from "rimble-ui";
 import SearchInput from "./SearchInput";
 
 const RimbleGatsbyLink = props => (
   <Text fontSize={2} fontWeight={2} pb={2}>
+    <Link as={GatsbyLink} activeClassName={"-is-active"} {...props} />
+  </Text>
+);
+
+const RimbleCategoryLink = props => (
+  <Text mt={3} fontSize={3} fontWeight={3} pb={2}>
+    <Link as={GatsbyLink} activeClassName={"-is-active"} {...props} />
+  </Text>
+);
+
+const RimbleSubCategoryLink = props => (
+  <Text fontSize={2} fontWeight={3} pb={2}>
     <Link as={GatsbyLink} activeClassName={"-is-active"} {...props} />
   </Text>
 );
@@ -26,7 +37,6 @@ const StyledNav = styled.nav`
     -webkit-overflow-scrolling: touch;
     position: fixed;
     z-index: 9;
-
     & > a {
       transition: 0.2s right ease;
       right: calc(-100vw + 12em);
@@ -34,9 +44,6 @@ const StyledNav = styled.nav`
   }
   ul {
     list-style: none;
-  }
-  a {
-    display: block;
   }
   a:not(:hover):not(.-is-active) {
     color: inherit;
@@ -50,7 +57,6 @@ const StyledNav = styled.nav`
     transform: translateX(0);
     width: 100vw;
     position: absolute;
-
     & > a {
       right: ${props => props.theme.space[3]}px;
     }
@@ -58,11 +64,9 @@ const StyledNav = styled.nav`
   &.closed {
     transform: translateX(-100vw);
   }
-
   @media screen and (min-width: ${theme.breakpoints[2]}) {
     position: fixed;
     height: calc(100vh - 56px);
-
     &.open,
     &.closed {
       transform: translateX(0);
@@ -71,17 +75,17 @@ const StyledNav = styled.nav`
 `;
 
 const StaticLinkList = () => (
-  <Ul mt={0}>
+  <Ul mb={3} mx={4}>
     <Li>
-      <RimbleGatsbyLink to={"/components"}>Components</RimbleGatsbyLink>
+      <RimbleCategoryLink to={"/components"}>Components</RimbleCategoryLink>
     </Li>
     <Ul>
-      <Li mb={3}>
-        <RimbleGatsbyLink to={"/components/rimble-ui"}>
+      <Li>
+        <RimbleSubCategoryLink to={"/components/rimble-ui"}>
           Rimble UI
-        </RimbleGatsbyLink>
+        </RimbleSubCategoryLink>
       </Li>
-      <Ul>
+      <Ul ml={1} borderLeft={1} borderWidth={2} borderColor="#f4f4f4" pl={3}>
         <NavGroupHeading>Setup</NavGroupHeading>
         <Ul>
           <Li>
@@ -243,10 +247,7 @@ const StaticLinkList = () => (
             </RimbleGatsbyLink>
           </Li>
           <Li>
-            <RimbleGatsbyLink
-              to={"/components/rimble-ui/ToastMessageProvider"}
-              style={{ wordBreak: "break-word" }}
-            >
+            <RimbleGatsbyLink to={"/components/rimble-ui/ToastMessageProvider"}>
               ToastMessage Provider
             </RimbleGatsbyLink>
           </Li>
@@ -300,11 +301,11 @@ const StaticLinkList = () => (
         </Ul>
       </Ul>
       <Li>
-        <RimbleGatsbyLink to={"/components/web3-components"}>
+        <RimbleSubCategoryLink to={"/components/web3-components"}>
           Web3 Components
-        </RimbleGatsbyLink>
+        </RimbleSubCategoryLink>
       </Li>
-      <Ul>
+      <Ul ml={1} borderLeft={1} borderWidth={2} borderColor="#f4f4f4" pl={3}>
         <NavGroupHeading>Onboarding</NavGroupHeading>
         <Ul>
           <Li>
@@ -324,80 +325,177 @@ const StaticLinkList = () => (
         </Ul>
       </Ul>
     </Ul>
-    <Li fontWeight={4} color={"primary"}>
-      <RimbleGatsbyLink to={"/guides"}>Guides</RimbleGatsbyLink>
+    <Li>
+      <RimbleCategoryLink to={"/templates"}>Templates</RimbleCategoryLink>
+    </Li>
+    <Ul ml={1} borderLeft={1} borderWidth={2} borderColor="#f4f4f4" pl={3}>
+      <NavGroupHeading>Transactions</NavGroupHeading>
+      <Ul>
+        <Li>
+          <RimbleGatsbyLink to={"/templates/tx-summary"}>
+            Transaction summary modal
+          </RimbleGatsbyLink>
+        </Li>
+        <Li>
+          <RimbleGatsbyLink to={"/templates/tx-started"}>
+            Transaction started modal
+          </RimbleGatsbyLink>
+        </Li>
+        <Li>
+          <RimbleGatsbyLink to={"/templates/tx-progress"}>
+            Transaction progress banner
+          </RimbleGatsbyLink>
+        </Li>
+        <Li>
+          <RimbleGatsbyLink to={"/templates/tx-success"}>
+            Transaction success modal
+          </RimbleGatsbyLink>
+        </Li>
+        <Li>
+          <RimbleGatsbyLink to={"/templates/tx-fail"}>
+            Transaction failure modal
+          </RimbleGatsbyLink>
+        </Li>
+        <Li>
+          <RimbleGatsbyLink to={"/templates/not-enough-eth"}>
+            Not enough ETH modal
+          </RimbleGatsbyLink>
+        </Li>
+      </Ul>
+      <NavGroupHeading>Network and Web3</NavGroupHeading>
+      <Ul>
+        <Li>
+          <RimbleGatsbyLink to={"/templates/network-indicator"}>
+            Network indicator
+          </RimbleGatsbyLink>
+        </Li>
+        <Li>
+          <RimbleGatsbyLink to={"/templates/wrong-network"}>
+            Wrong network modal
+          </RimbleGatsbyLink>
+        </Li>
+        <Li>
+          <RimbleGatsbyLink to={"/templates/no-metamask"}>
+            No MetaMask modal
+          </RimbleGatsbyLink>
+        </Li>
+        <Li>
+          <RimbleGatsbyLink to={"/templates/wrong-browser"}>
+            Wrong browser modal
+          </RimbleGatsbyLink>
+        </Li>
+      </Ul>
+      <NavGroupHeading>Wallet connection</NavGroupHeading>
+      <Ul>
+        {/*<Li>
+          <RimbleGatsbyLink to={"/templates/before-you-connect"}>
+            Before you connect modal
+          </RimbleGatsbyLink>
+        </Li>*/}
+        <Li>
+          <RimbleGatsbyLink to={"/templates/connection-request"}>
+            Connection request modal
+          </RimbleGatsbyLink>
+        </Li>
+        <Li>
+          <RimbleGatsbyLink to={"/templates/signature-request"}>
+            Signature request modal
+          </RimbleGatsbyLink>
+        </Li>
+        <Li>
+          <RimbleGatsbyLink to={"/templates/connection-request-error"}>
+            Connection request error
+          </RimbleGatsbyLink>
+        </Li>
+        <Li>
+          <RimbleGatsbyLink to={"/templates/signature-request-error"}>
+            Signature request error
+          </RimbleGatsbyLink>
+        </Li>
+      </Ul>
+    </Ul>
+    <Li mt={3}>
+      <RimbleCategoryLink to={"/guides"}>Guides</RimbleCategoryLink>
     </Li>
     <Ul>
       <Li>
-        <RimbleGatsbyLink to={"/guides/ux"}>dapp patterns</RimbleGatsbyLink>
+        <RimbleSubCategoryLink to={"/guides/ux"}>
+          dApp patterns
+        </RimbleSubCategoryLink>
       </Li>
-      <Ul>
+      <Ul ml={1} borderLeft={1} borderWidth={2} borderColor="#f4f4f4" pl={3}>
         <NavGroupHeading>Connecting to a dapp</NavGroupHeading>
-        <Li>
-          <RimbleGatsbyLink to={"/guides/ux/connect-a-wallet-conditions"}>
-            1. Can they connect?
-          </RimbleGatsbyLink>
-        </Li>
-        <Li>
-          <RimbleGatsbyLink to={"/guides/ux/connect-a-wallet-before"}>
-            2. Before they connect
-          </RimbleGatsbyLink>
-        </Li>
-        <Li>
-          <RimbleGatsbyLink to={"/guides/ux/connect-a-wallet-metamask"}>
-            3. Help with MetaMask
-          </RimbleGatsbyLink>
-        </Li>
-        <Li>
-          <RimbleGatsbyLink to={"/guides/ux/connect-a-wallet-success"}>
-            4. Confim success
-          </RimbleGatsbyLink>
-        </Li>
-        <Li>
-          <RimbleGatsbyLink to={"/guides/ux/connect-a-wallet-low-funds"}>
-            5. No ETH, no problem
-          </RimbleGatsbyLink>
-        </Li>
-      </Ul>
-      <Ul>
+        <Ul>
+          <Li>
+            <RimbleGatsbyLink to={"/guides/ux/connect-a-wallet-conditions"}>
+              1. Can they connect?
+            </RimbleGatsbyLink>
+          </Li>
+          <Li>
+            <RimbleGatsbyLink to={"/guides/ux/connect-a-wallet-before"}>
+              2. Before they connect
+            </RimbleGatsbyLink>
+          </Li>
+          <Li>
+            <RimbleGatsbyLink to={"/guides/ux/connect-a-wallet-metamask"}>
+              3. Help with MetaMask
+            </RimbleGatsbyLink>
+          </Li>
+          <Li>
+            <RimbleGatsbyLink to={"/guides/ux/connect-a-wallet-success"}>
+              4. Confim success
+            </RimbleGatsbyLink>
+          </Li>
+          <Li>
+            <RimbleGatsbyLink to={"/guides/ux/connect-a-wallet-low-funds"}>
+              5. No ETH, no problem
+            </RimbleGatsbyLink>
+          </Li>
+        </Ul>
         <NavGroupHeading>Transaction states</NavGroupHeading>
-        <Li>
-          <RimbleGatsbyLink to={"/guides/ux/transaction-states"}>
-            Overview
-          </RimbleGatsbyLink>
-        </Li>
-        <Li>
-          <RimbleGatsbyLink to={"/guides/ux/transactions-wallet-ux"}>
-            1. Don't rely on wallet UX
-          </RimbleGatsbyLink>
-        </Li>
-        <Li>
-          <RimbleGatsbyLink to={"/guides/ux/transactions-prevent-errors"}>
-            2. Prevention is priority
-          </RimbleGatsbyLink>
-        </Li>
-        <Li>
-          <RimbleGatsbyLink
-            to={"/guides/ux/transactions-set-user-expectations"}
-          >
-            3. Set user expectation
-          </RimbleGatsbyLink>
-        </Li>
-        <Li>
-          <RimbleGatsbyLink to={"/guides/ux/transactions-just-enough-feedback"}>
-            4. Just enough feedback
-          </RimbleGatsbyLink>
-        </Li>
-        <Li>
-          <RimbleGatsbyLink to={"/guides/ux/transactions-design-next-steps"}>
-            5. Design for next steps
-          </RimbleGatsbyLink>
-        </Li>
+        <Ul>
+          <Li>
+            <RimbleGatsbyLink to={"/guides/ux/transaction-states"}>
+              Overview
+            </RimbleGatsbyLink>
+          </Li>
+          <Li>
+            <RimbleGatsbyLink to={"/guides/ux/transactions-wallet-ux"}>
+              1. Don't rely on wallet UX
+            </RimbleGatsbyLink>
+          </Li>
+          <Li>
+            <RimbleGatsbyLink to={"/guides/ux/transactions-prevent-errors"}>
+              2. Prevention is priority
+            </RimbleGatsbyLink>
+          </Li>
+          <Li>
+            <RimbleGatsbyLink
+              to={"/guides/ux/transactions-set-user-expectations"}
+            >
+              3. Set user expectation
+            </RimbleGatsbyLink>
+          </Li>
+          <Li>
+            <RimbleGatsbyLink
+              to={"/guides/ux/transactions-just-enough-feedback"}
+            >
+              4. Just enough feedback
+            </RimbleGatsbyLink>
+          </Li>
+          <Li>
+            <RimbleGatsbyLink to={"/guides/ux/transactions-design-next-steps"}>
+              5. Design for next steps
+            </RimbleGatsbyLink>
+          </Li>
+        </Ul>
       </Ul>
       <Li>
-        <RimbleGatsbyLink to={"guides/content"}>dapp Content</RimbleGatsbyLink>
+        <RimbleSubCategoryLink to={"guides/content"}>
+          dApp Content
+        </RimbleSubCategoryLink>
       </Li>
-      <Ul>
+      <Ul ml={1} borderLeft={1} orderWidth={2} borderColor="#f4f4f4" pl={3}>
         <Li>
           <RimbleGatsbyLink to={"/guides/content/writing-for-products"}>
             Writing for products
@@ -412,7 +510,6 @@ const StaticLinkList = () => (
     </Ul>
   </Ul>
 );
-
 const StaticSideNav = ({ isNavOpen, navbarHeight }) => {
   return (
     <StyledNav
@@ -433,10 +530,7 @@ const StaticSideNav = ({ isNavOpen, navbarHeight }) => {
         >
           <SearchInput />
         </Box>
-
         <Box
-          py={3}
-          px={4}
           borderRight={1}
           borderWidth={1}
           borderColor={"blacks.3"}
@@ -448,5 +542,4 @@ const StaticSideNav = ({ isNavOpen, navbarHeight }) => {
     </StyledNav>
   );
 };
-
 export default StaticSideNav;

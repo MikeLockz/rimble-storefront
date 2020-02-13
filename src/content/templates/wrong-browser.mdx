@@ -1,0 +1,147 @@
+---
+title: Wrong browser modal
+description: Grab the code for a ready-made modal template to display when the user can't connect because they're using an incompatible browser.
+image: "/images/wrong-browser-template.png"
+---
+
+We designed this modal to help desktop users change browsers if they want to use your dApp (if they're using Safari, for example). This modal should only appear if a user tries to do something that requires Web3.
+
+<Flash>You can avoid this modal if you integrate a service like <Link href="https://portis.io" tile="To Portis">Portis</Link> which allows desktop users to connect without a Web3 provider in their browser.</Flash>
+
+```js is=react-live hideCode
+// import { Heading, Text, Flex, Modal, Box, Card } from "rimble-ui";
+
+<Card p={0} borderRadius={1}>
+  <Flex
+    justifyContent="space-between"
+    alignItems="center"
+    borderBottom={1}
+    borderColor="near-white"
+    p={[3, 4]}
+    pb={3}
+  >
+    <Icon name="Warning" color="danger" aria-label="Warning" />
+    <Heading textAlign="center" as="h1" fontSize={[2, 3]} px={[3, 0]}>
+      Switch browsers to use [dApp]
+    </Heading>
+    <Link>
+      <Icon
+        name="Close"
+        color="moon-gray"
+        aria-label="Close and cancel connection"
+      />
+    </Link>
+  </Flex>
+  <Box p={[3, 4]}>
+    <Text mb={[3, 4]}>
+      You can't [dapp blockchain feature e.g. buy tokens] in this browser. in
+      this browser. Switch to <Link>Brave</Link>, <Link>FireFox</Link>,{" "}
+      <Link>Opera</Link>, or <Link>Chrome</Link> to continue.
+    </Text>
+    <Text italic>
+      Rather use your phone? You can use the Rimble App Demo in mobile browser
+      wallets like <Link>Status</Link>, <Link>Cipher</Link> or{" "}
+      <Link>Coinbase wallet</Link>.
+    </Text>
+  </Box>
+</Card>
+```
+
+### Mobile browser content
+
+```js is=react-live hideCode
+// import { Heading, Text, Flex, Modal, Box, Card } from "rimble-ui";
+
+<Card p={0} borderRadius={1}>
+  <Flex
+    justifyContent="space-between"
+    alignItems="center"
+    borderBottom={1}
+    borderColor="near-white"
+    p={[3, 4]}
+    pb={3}
+  >
+    <Icon name="Warning" color="danger" aria-label="Warning" />
+    <Heading textAlign="center" as="h1" fontSize={[2, 3]} px={[3, 0]}>
+      Switch browsers to use [dApp]
+    </Heading>
+    <Link>
+      <Icon
+        name="Close"
+        color="moon-gray"
+        aria-label="Close and cancel connection"
+      />
+    </Link>
+  </Flex>
+  <Box p={[3, 4]}>
+    <Text mb={[2, 4]}>
+      You can't [dapp blockchain feature, e.g. buy a cryptokitty] in this
+      browser. We recommend using mobile wallet browsers like{" "}
+      <Link>Status</Link>, <Link>Cipher</Link> or <Link>MetaMask wallet</Link>.
+    </Text>
+  </Box>
+</Card>
+```
+
+---
+
+## Template anatomy
+
+<Image
+  width="100%"
+  src="/images/wrong-browser-anatomy.png"
+  alt="An annotated image calling out the different elements of the template"
+  mt={3}
+  borderTop={1}
+  borderWidth={3}
+  borderColor="primary-light"
+/>
+<Heading as="h4"
+  color="dark-gray"
+  alignItem="flex-end"
+  mt={4}
+>
+  1. Title
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+ Sums up the main instruction.
+</Text>
+<Heading as="h4"
+  color="dark-gray">
+  2. Body
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Explains why and links users to a list of acceptable browsers. Because you can't install MetaMask extension on traditional mobile browsers, the content here should change between desktop and mobile. The mobile content should just link to mobile wallet browsers like Status or MetaMask wallet.
+</Text>
+<Heading as="h4" color="dark-gray">
+  3. "Rather use your phone" copy
+</Heading>
+<Text
+  color="mid-gray"
+  mb={4}
+>
+  It may be easier to get users to onboard via a mobile wallet which will have experiences designed for getting users set up with a wallet. <b>Only use this content on desktop.</b>
+</Text>
+
+---
+
+## See demo
+
+<TemplateConnectionDemo />
+
+---
+
+<GuideNextPrevious
+  previousTitle={"Back to No MetaMask modal"}
+  previousUrl={"/templates/no-metamask"}
+  previousGuideName={"No MetaMask modal"}
+  nextTitle={"To Templates"}
+  nextUrl={"/templates"}
+  nextGuideName={"See more Templates"}
+/>

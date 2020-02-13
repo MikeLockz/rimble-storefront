@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const StyledCard = styled(Card)`
   & {
-    text-decoration: none;
+    text-decoration: none !important;
     color: ${props => props.theme.colors["dark-gray"]};
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
     transition: all 0.15s ease;

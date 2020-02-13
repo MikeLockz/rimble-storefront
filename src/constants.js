@@ -1,5 +1,5 @@
 import * as styledSystem from "styled-system";
-import theme from "./theme";
+import { theme } from "rimble-ui";
 
 const { compose, get: getKey, themeGet } = styledSystem;
 

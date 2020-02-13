@@ -49,9 +49,13 @@ import GuideCard from "../documentation/GuideCard";
 import Code from "./Code";
 import SmartLink from "./SmartLink";
 import { Table as StyledTable } from "./Table";
+import Hr from "./Hr";
 import RimbleGatsbyLink from "./../landing/RimbleGatsbyLink";
 import ComponentCard from "./../documentation/ComponentCard";
+import TemplateCard from "./../documentation/TemplateCard";
 import LandingPageCard from "./../documentation/LandingPageCard";
+import TemplateConnectionDemo from "./../documentation/snippets/TemplateConnectionDemo";
+import TemplateDevConDemo from "./../documentation/snippets/TemplateDevConDemo";
 
 /* eslint-disable react/display-name */
 const mdxComponents = {
@@ -81,6 +85,7 @@ const mdxComponents = {
   image: props => <Image my={3} {...props} />,
   ul: props => <Text as={"ul"} pl={3} m={0} {...props} />,
   li: props => <Text as={"li"} {...props} />,
+  hr: props => <Hr {...props} />,
   Avatar: props => <Avatar {...props} />,
   Blockie: props => <Blockie {...props} />,
   Box: props => <Box {...props} />,
@@ -125,7 +130,10 @@ const mdxComponents = {
   ComponentCard,
   GuideNextPrevious,
   GuideCard,
-  LandingPageCard
+  TemplateCard,
+  LandingPageCard,
+  TemplateConnectionDemo,
+  TemplateDevConDemo
 };
 
 export default mdxComponents;

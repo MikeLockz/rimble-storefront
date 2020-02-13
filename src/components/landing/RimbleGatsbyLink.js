@@ -1,30 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { color, fontWeight, fontSize } from "styled-system";
+import { color, fontWeight, fontSize, space } from "styled-system";
 import { Link } from "gatsby";
 
 const RimbleGatsbyLink = styled(props => <Link {...props} />)`
   cursor: pointer;
   text-decoration: none;
-  font-weight: bold;
 
   ${color}
   ${fontSize}
   ${fontWeight}
+  ${space}
 
-  &:hover.active {
-      text-decoration: underline
+  &:hover {
+    text-decoration: underline
+    & > div {
+      text-decoration: none;
     }
-    &:hover{
-      & > div {
-        box-shadow: ${props => props.theme.shadows[2]};
-      }
-    }
-    &:active {
-      & > div {
-        box-shadow: ${props => props.theme.shadows[1]};
-      }
   }
 `;
 

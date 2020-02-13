@@ -3,7 +3,7 @@ import { Link as RimbleLink, Icon } from "rimble-ui";
 import RimbleGatsbyLink from "../landing/RimbleGatsbyLink";
 import isAbsoluteUrl from "is-absolute-url";
 
-const SmartLink = ({ to, href, ...props }) => {
+const SmartLink = ({ to, href, children, ...rest }) => {
   if (typeof href !== "undefined") {
     to = href;
   }
@@ -14,14 +14,14 @@ const SmartLink = ({ to, href, ...props }) => {
       target={"_blank"}
       display={"inline-flex"}
       alignItems={"center"}
-      {...props}
+      {...rest}
     >
-      {props.children}
+      {children}
       <Icon name={"OpenInNew"} size={"18px"} ml={1} mb={"1px"} />
     </RimbleLink>
   ) : (
-    <RimbleGatsbyLink to={to} {...props}>
-      {props.children}
+    <RimbleGatsbyLink to={to} {...rest}>
+      {children}
     </RimbleGatsbyLink>
   );
 };

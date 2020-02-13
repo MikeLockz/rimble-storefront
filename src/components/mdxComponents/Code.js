@@ -4,6 +4,7 @@ import Highlight, { defaultProps } from "prism-react-renderer";
 import codeTheme from "prism-react-renderer/themes/duotoneLight";
 import codeDarkTheme from "prism-react-renderer/themes/duotoneDark";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
+import CopyToClipboard from "../documentation/CopyToClipboard";
 
 import {
   Avatar,
@@ -94,6 +95,30 @@ const prismMap = {
   shell: "bash"
 };
 
+const StyledLiveEditor = styled(LiveEditor)`
+  &.fade-code {
+    max-height: 100px;
+    position: relative;
+
+    &:after {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      content: "";
+      height: 48px;
+      background-size: cover;
+      background-image: linear-gradient(
+        to bottom,
+        rgba(42, 39, 51, 0),
+        rgba(42, 39, 51, 1)
+      );
+    }
+  }
+`;
+
 const DefaultCodebox = ({ defaultProps, children, theme }) => {
   return (
     <Highlight
@@ -122,8 +147,8 @@ const LiveEditorCodebox = ({
   scope,
   noInline,
   toggleShowCode,
-  showCode,
-  theme
+  theme,
+  showCode
 }) => {
   return (
     <LiveProvider
@@ -138,17 +163,41 @@ const LiveEditorCodebox = ({
             <LivePreview />
             <LiveError />
           </Box>
-          {showCode && (
-            <LiveEditor style={{ fontSize: "16px" }} theme={theme} />
-          )}
-        </Box>
-        <Flex justifyContent={"flex-end"} mt={1}>
-          <Button.Text
-            size={"small"}
-            icon={"Code"}
-            onClick={toggleShowCode}
-            children={showCode ? `Hide code` : `Show code`}
+          <StyledLiveEditor
+            style={{ fontSize: "14px" }}
+            theme={theme}
+            className={showCode === false ? "fade-code" : ""}
           />
+        </Box>
+        <Flex justifyContent={"flex-end"} alignItems="center" t={1} mt={1}>
+          <CopyToClipboard text={children.trim()}>
+            {isCopied => (
+              <Button.Outline
+                size={"small"}
+                mainColor="rgba(42, 39, 51, 1)"
+                icon={isCopied ? "none" : "Assignment"}
+              >
+                {!isCopied ? (
+                  "Copy code"
+                ) : (
+                  <Flex alignItems="center">
+                    <Icon mr={1} name={"Check"} size="16px" />
+                    Copied
+                  </Flex>
+                )}
+              </Button.Outline>
+            )}
+          </CopyToClipboard>
+          {showCode !== "undefined" && (
+            <Button
+              ml={2}
+              size={"small"}
+              mainColor="rgba(42, 39, 51, 1)"
+              icon={"Code"}
+              onClick={toggleShowCode}
+              children={showCode ? `Hide code` : `Expand code`}
+            />
+          )}
         </Flex>
       </CodeBox>
     </LiveProvider>
@@ -176,8 +225,8 @@ const SyntaxHighlightCodebox = ({ defaultProps, children }) => {
   );
 };
 
-const Code = ({ is, children, lang, noInline }) => {
-  const [showCode, setShowCode] = useState(true);
+const Code = ({ is, children, lang, noInline, hideCode }) => {
+  const [showCode, setShowCode] = useState(hideCode ? false : "undefined");
 
   const toggleShowCode = e => {
     e.preventDefault();

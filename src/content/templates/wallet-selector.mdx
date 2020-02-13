@@ -1,0 +1,615 @@
+---
+title: Wallet selector
+description: Grab the code for a ready-made modal template for helping the user choose a wallet to connect to your dApp with.
+image: "/images/tx-fail-template.png"
+---
+
+```js is=react-live hideCode
+// import { Modal, Card, Box, Blockie, Flex, Icon, Text, Link, Heading, Button } from "rimble-ui";
+
+<Box>
+  <Heading mb={5} mt={3}>
+    Web3 detected
+  </Heading>
+  <Card p={0} borderRadius={1}>
+    <Flex
+      justifyContent="space-between"
+      alignItems="center"
+      borderBottom={1}
+      borderColor="near-white"
+      p={4}
+      pb={3}
+    >
+      <Icon name="AccountBalanceWallet" color="primary" aria-label="Back" />
+      <Heading textAlign="center" as="h4" fontSize={[2, 3]} px={[3, 0]}>
+        Connect wallet
+      </Heading>
+      <Link>
+        <Icon
+          name="Close"
+          color="moon-gray"
+          aria-label="Close and cancel connection"
+        />
+      </Link>
+    </Flex>
+    <Flex width={1} px={4} pt={4} pb={0}>
+      <Box width={1}>
+        <Link>
+          <Card p={3} borderRadius={2} borderColor="success" boxShadow={3}>
+            <Flex alignItems="center">
+              <Image
+                mx={3}
+                my={2}
+                src="/images/MetaMaskIcon.svg"
+                height="48px"
+              />
+              <Flex ml={3} flexDirection="column">
+                <Heading as={"h5"} color="near-black">
+                  MetaMask detected
+                </Heading>
+                <Text fontSize={1} lineHeight={1} color="mid-gray">
+                  Connect using your MetaMask extension.
+                </Text>
+              </Flex>
+            </Flex>
+          </Card>
+        </Link>
+      </Box>
+    </Flex>
+    <Flex width={1} mt={-10} p={4}>
+      <Box width={1}>
+        <Link>
+          <Card p={3} borderRadius={2}>
+            <Flex alignItems="center">
+              <Icon
+                mr={3}
+                ml={2}
+                name="Smartphone"
+                color="moon-gray"
+                size="64px"
+              />
+              <Flex ml={3} flexDirection="column">
+                <Heading color="near-black" as={"h5"}>
+                  Scan with your mobile wallet
+                </Heading>
+                <Text fontSize={1} lineHeight={1} color="mid-gray">
+                  Aim, scan, connect with mobile wallets like Rainbow, Trust and
+                  Argent.
+                </Text>
+              </Flex>
+            </Flex>
+          </Card>
+        </Link>
+      </Box>
+    </Flex>
+    <Flex width={1} mt={-40} p={4}>
+      <Box width={1}>
+        <Link>
+          <Card p={3} borderRadius={2}>
+            <Flex alignItems="center">
+              <Image mx={3} my={2} src="/images/PortisIcon.svg" width="48px" />
+              <Flex ml={3} flexDirection="column">
+                <Heading as={"h5"} color="near-black">
+                  Create wallet with Portis
+                </Heading>
+                <Text fontSize={1} lineHeight={1} color="mid-gray">
+                  Set up and access a wallet via your phone number or email
+                  address.
+                </Text>
+              </Flex>
+            </Flex>
+          </Card>
+        </Link>
+      </Box>
+    </Flex>
+  </Card>
+
+  <Heading mb={5} mt={5}>
+    Scan with phone
+  </Heading>
+  <Card p={0} borderRadius={1}>
+    <Flex
+      justifyContent="space-between"
+      alignItems="center"
+      borderBottom={1}
+      borderColor="near-white"
+      p={4}
+      pb={3}
+    >
+      <Icon name="ArrowBack" color="primary" aria-label="Back" />
+      <Heading textAlign="center" as="h4" fontSize={[2, 3]} px={[3, 0]}>
+        Scan with mobile wallet
+      </Heading>
+      <Link>
+        <Icon
+          name="Close"
+          color="moon-gray"
+          aria-label="Close and cancel connection"
+        />
+      </Link>
+    </Flex>
+    <Box px={4} pt={4}>
+      <Text textAlign="center">
+        Scan this QR code with your mobile wallet and follow the instructions.
+      </Text>
+      <Flex my={4} justifyContent="center">
+        <Card p={3} borderRadius={16}>
+          <QR size="200" value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
+        </Card>
+      </Flex>
+      <Text textAlign="center" mb={4}>
+        Not working?{" "}
+        <Link
+          href="https://walletconnect.org/apps"
+          target="_blank"
+          title="See compatible WalletConnect wallets"
+        >
+          {" "}
+          Check your mobile wallet supports WalletConnect
+        </Link>
+      </Text>
+    </Box>
+    <Box px={4} pb={4}>
+      <Flex
+        flexDirection={["column", "row"]}
+        bg={"primary-2x-light"}
+        p={4}
+        alignItems={["center", "auto"]}
+      >
+        <Loader size={"3em"} mr={[0, 3]} mb={[2, 0]} />
+        <Flex flexDirection="column" alignItems={["center", "flex-start"]}>
+          <Text fontWeight={4}>Waiting for you to scan...</Text>
+          <Text fontWeight={2}>This won’t cost you any Ether</Text>
+        </Flex>
+      </Flex>
+    </Box>
+  </Card>
+
+  <Heading mt={5}>No Web3 detected</Heading>
+  <Card p={0} borderRadius={1} mt={5}>
+    <Flex
+      justifyContent="space-between"
+      alignItems="center"
+      borderBottom={1}
+      borderColor="near-white"
+      p={4}
+      pb={3}
+    >
+      <Icon name="AccountBalanceWallet" color="primary" aria-label="Back" />
+      <Heading textAlign="center" as="h4" fontSize={[2, 3]} px={[3, 0]}>
+        Connect wallet
+      </Heading>
+      <Link>
+        <Icon
+          name="Close"
+          color="moon-gray"
+          aria-label="Close and cancel connection"
+        />
+      </Link>
+    </Flex>
+    <Flex width={1} p={4}>
+      <Box width={1}>
+        <Link>
+          <Card p={3} borderRadius={2}>
+            <Flex alignItems="center">
+              <Image mx={3} my={2} src="/images/PortisIcon.svg" width="48px" />
+              <Flex ml={3} flexDirection="column">
+                <Heading as={"h5"} color="near-black">
+                  Create wallet with Portis
+                </Heading>
+                <Text fontSize={1} lineHeight={1} color="mid-gray">
+                  Set up and access a wallet via your phone number or email
+                  address.
+                </Text>
+              </Flex>
+            </Flex>
+          </Card>
+        </Link>
+      </Box>
+    </Flex>
+    <Flex width={1} mt={-40} p={4}>
+      <Box width={1}>
+        <Link>
+          <Card p={3} borderRadius={2}>
+            <Flex alignItems="center">
+              <Icon
+                mr={3}
+                ml={2}
+                name="Smartphone"
+                color="moon-gray"
+                size="64px"
+              />
+              <Flex ml={3} flexDirection="column">
+                <Heading as={"h5"} color="near-black">
+                  Scan with your mobile wallet
+                </Heading>
+                <Text fontSize={1} lineHeight={1} color="mid-gray">
+                  Compatible with mobile wallets like Rainbow, Trust and Argent.
+                </Text>
+              </Flex>
+            </Flex>
+          </Card>
+        </Link>
+      </Box>
+    </Flex>
+    <Flex width={1} mt={-10} px={4} pb={4}>
+      <Box width={1}>
+        <Link>
+          <Card p={3} borderRadius={2}>
+            <Flex alignItems="center">
+              <Image
+                mx={3}
+                my={2}
+                src="/images/MetaMaskIcon.svg"
+                height="48px"
+              />
+              <Flex ml={3} flexDirection="column">
+                <Heading as={"h5"} color="near-black">
+                  Download MetaMask extension
+                </Heading>
+                <Text fontSize={1} lineHeight={1} color="mid-gray">
+                  Create a wallet and manage it from your browser.
+                </Text>
+              </Flex>
+            </Flex>
+          </Card>
+        </Link>
+      </Box>
+    </Flex>
+    <Flex width={1} mt={-30} p={4}>
+      <Flex width={1} justifyContent="space-around">
+        <Link textAlign="center">What the hell is a wallet?</Link>
+      </Flex>
+    </Flex>
+  </Card>
+
+  <Heading mt={5}>No Web3 detected (mobile)</Heading>
+  <Card p={0} borderRadius={1} mt={5}>
+    <Flex
+      justifyContent="space-between"
+      alignItems="center"
+      borderBottom={1}
+      borderColor="near-white"
+      p={4}
+      pb={3}
+    >
+      <Icon name="AccountBalanceWallet" color="primary" aria-label="Back" />
+      <Heading textAlign="center" as="h4" fontSize={[2, 3]} px={[3, 0]}>
+        Connect wallet
+      </Heading>
+      <Link>
+        <Icon
+          name="Close"
+          color="moon-gray"
+          aria-label="Close and cancel connection"
+        />
+      </Link>
+    </Flex>
+    <Flex width={1} p={4}>
+      <Box width={1}>
+        <Link>
+          <Card p={3} borderRadius={2}>
+            <Flex alignItems="center">
+              <Image mx={3} my={2} src="/images/PortisIcon.svg" width="48px" />
+              <Flex ml={3} flexDirection="column">
+                <Heading as={"h5"} color="near-black">
+                  Create wallet with Portis
+                </Heading>
+                <Text color="mid-gray" fontSize={1} lineHeight={1}>
+                  Set up and access a wallet via your phone number or email
+                  address.
+                </Text>
+              </Flex>
+            </Flex>
+          </Card>
+        </Link>
+      </Box>
+    </Flex>
+
+    <Flex width={1} mt={-10} px={4} pb={4}>
+      <Box width={1}>
+        <Link>
+          <Card p={3} borderRadius={2}>
+            <Flex alignItems="center">
+              <Icon mr={3} ml={2} name="GetApp" color="moon-gray" size="64px" />
+              <Flex ml={3} flexDirection="column">
+                <Heading as={"h5"} color="near-black">
+                  Get a wallet browser
+                </Heading>
+                <Text fontSize={1} lineHeight={1} color="mid-gray">
+                  Wallet browsers let you manage your crypto and connect to
+                  applications.
+                </Text>
+              </Flex>
+            </Flex>
+          </Card>
+        </Link>
+      </Box>
+    </Flex>
+    <Flex width={1} mt={-30} p={4}>
+      <Flex width={1} justifyContent="space-around">
+        <Link textAlign="center">What the hell is a wallet?</Link>
+      </Flex>
+    </Flex>
+  </Card>
+
+  <Heading mt={5}>Get a wallet browser (mobile)</Heading>
+  <Card p={0} borderRadius={1} mt={5}>
+    <Flex
+      justifyContent="space-between"
+      alignItems="center"
+      borderBottom={1}
+      borderColor="near-white"
+      p={4}
+      pb={3}
+    >
+      <Icon name="ArrowBack" color="primary" aria-label="Back" />
+      <Heading textAlign="center" as="h4" fontSize={[2, 3]} px={[3, 0]}>
+        Get a wallet browser
+      </Heading>
+      <Link>
+        <Icon
+          name="Close"
+          color="moon-gray"
+          aria-label="Close and cancel connection"
+        />
+      </Link>
+    </Flex>
+    <Text textAlign="center" p={4} pb={0}>
+      Here's a few wallet browsers we recommend
+    </Text>
+    <Flex width={1} p={4}>
+      <Box width={1}>
+        <Link>
+          <Card p={3} borderRadius={2} boxShadow={1}>
+            <Flex alignItems="center" justifyContent="space-between">
+              <Flex flexDirection="row" alignItems="center">
+                <Image
+                  mx={3}
+                  my={2}
+                  src="/images/MetaMaskIcon.svg"
+                  height="48px"
+                />
+                <Flex ml={3} flexDirection="column">
+                  <Flex display={["block", "none"]} mb={2}>
+                    <Pill color="success">Recommended</Pill>
+                  </Flex>
+                  <Heading as={"h5"} color="near-black">
+                    MetaMask wallet
+                  </Heading>
+                  <Text fontSize={1} lineHeight={1} color="mid-gray">
+                    The most used wallet provider in Ethereum.
+                  </Text>
+                </Flex>
+              </Flex>
+              <Flex display={["none", "block"]} mr={3}>
+                <Pill color="success">Recommended</Pill>
+              </Flex>
+            </Flex>
+          </Card>
+        </Link>
+      </Box>
+    </Flex>
+
+    <Flex width={1} mt={-10} px={4} pb={4}>
+      <Box width={1}>
+        <Link>
+          <Card p={3} borderRadius={2} boxShadow={1}>
+            <Flex alignItems="center">
+              <Icon mr={3} ml={2} name="Star" color="moon-gray" size="64px" />
+              <Flex ml={3} flexDirection="column">
+                <Heading as={"h5"} color="near-black">
+                  Coinbase wallet
+                </Heading>
+                <Text fontSize={1} lineHeight={1} color="mid-gray">
+                  If you buy your crypto from Coinbase there's no easier wallet.
+                </Text>
+              </Flex>
+            </Flex>
+          </Card>
+        </Link>
+      </Box>
+    </Flex>
+    <Flex width={1} mt={-10} px={4} pb={4}>
+      <Box width={1}>
+        <Link>
+          <Card p={3} borderRadius={2} boxShadow={1}>
+            <Flex alignItems="center">
+              <Icon mr={3} ml={2} name="Star" color="moon-gray" size="64px" />
+              <Flex ml={3} flexDirection="column">
+                <Heading as={"h5"} color="near-black">
+                  Argent wallet
+                </Heading>
+                <Text fontSize={1} lineHeight={1} color="mid-gray">
+                  Widely considered the Ethereum wallet with the best user
+                  experience.
+                </Text>
+              </Flex>
+            </Flex>
+          </Card>
+        </Link>
+      </Box>
+    </Flex>
+  </Card>
+
+  <Heading mt={5}>Education modal</Heading>
+  <Card p={0} borderRadius={1} mt={5}>
+    <Flex
+      justifyContent="space-between"
+      alignItems="center"
+      borderBottom={1}
+      borderColor="near-white"
+      p={4}
+      pb={3}
+    >
+      <Icon name="ArrowBack" color="primary" aria-label="Back" />
+      <Heading textAlign="center" as="h4" fontSize={[2, 3]} px={[3, 0]}>
+        What is a wallet?
+      </Heading>
+      <Link>
+        <Icon
+          name="Close"
+          color="moon-gray"
+          aria-label="Close and cancel connection"
+        />
+      </Link>
+    </Flex>
+    <Text p={4}>
+      An Ethereum wallet is a bit like your online bank account but for
+      Ethereum-based cryptocurrency like ETH, DAI and USDC. Anyone can create an
+      Ethereum wallet.
+    </Text>
+    <Heading as="h5" px={4}>
+      What you can do with a wallet
+    </Heading>
+    <Text px={4} pb={2}>
+      <ul>
+        <li>See your balance</li>
+        <li>Send and receive funds</li>
+        <li>Sign in to blockchain applications</li>
+      </ul>
+    </Text>
+    <Heading as="h5" pb={4} px={4}>
+      Get Started
+    </Heading>
+    <Flex flexDirection={["column", "row"]} px={4} pb={4}>
+      <Box width={[1, 1 / 2]}>
+        <Link>
+          <Card boxShadow={1} borderRadius={2} mr={[0, 2]} mb={[3, 0]}>
+            <Flex flexDirection={["row", "column"]}>
+              <Image
+                src="/images/MetaMaskIcon.svg"
+                size={["48px", "32px"]}
+                mr={[3, 0]}
+                mb={[0, 2]}
+              />
+              <Flex flexDirection="column">
+                <Heading as="h5" color="near-black">
+                  Download MetaMask
+                </Heading>
+                <Text fontSize={1} lineHeight={1} color="mid-gray">
+                  Access Ethereum via an extension on your browser.
+                </Text>
+              </Flex>
+            </Flex>
+          </Card>
+        </Link>
+      </Box>
+      <Box width={[1, 1 / 2]}>
+        <Link>
+          <Card borderRadius={2} boxShadow={1} ml={[0, 2]}>
+            <Flex flexDirection={["row", "column"]}>
+              <Image
+                src="/images/PortisIcon.svg"
+                size={["48px", "32px"]}
+                mr={[3, 0]}
+                mb={[0, 2]}
+              />
+              <Flex flexDirection="column">
+                <Heading as="h5" color="near-black">
+                  Set up Portis wallet
+                </Heading>
+                <Text lineHeight={1} fontSize={1} color="mid-gray">
+                  Access Ethereum via any device or any browser using your
+                  Portis login.
+                </Text>
+              </Flex>
+            </Flex>
+          </Card>
+        </Link>
+      </Box>
+    </Flex>
+  </Card>
+  <Heading mt={5}>Education modal (mobile)</Heading>
+  <Card p={0} borderRadius={1} mt={5}>
+    <Flex
+      justifyContent="space-between"
+      alignItems="center"
+      borderBottom={1}
+      borderColor="near-white"
+      p={4}
+      pb={3}
+    >
+      <Icon name="ArrowBack" color="primary" aria-label="Back" />
+      <Heading textAlign="center" as="h4" fontSize={[2, 3]} px={[3, 0]}>
+        What is a wallet?
+      </Heading>
+      <Link>
+        <Icon
+          name="Close"
+          color="moon-gray"
+          aria-label="Close and cancel connection"
+        />
+      </Link>
+    </Flex>
+    <Text p={4}>
+      An Ethereum wallet is a bit like your online bank account but for
+      Ethereum-based cryptocurrency like ETH, DAI and USDC. Anyone can create an
+      Ethereum wallet.
+    </Text>
+    <Heading as="h5" px={4}>
+      What you can do with a wallet
+    </Heading>
+    <Text px={4} pb={2}>
+      <ul>
+        <li>See your balance</li>
+        <li>Send and receive funds</li>
+        <li>Sign in to blockchain applications</li>
+      </ul>
+    </Text>
+    <Heading as="h5" pb={4} px={4}>
+      Get Started
+    </Heading>
+    <Flex flexDirection={["column", "row"]} px={4} pb={4}>
+      <Box width={[1, 1 / 2]}>
+        <Link>
+          <Card boxShadow={1} borderRadius={2} mr={[0, 2]} mb={[3, 0]}>
+            <Flex flexDirection={["row", "column"]}>
+              <Image
+                src="/images/MetaMaskIcon.svg"
+                size={["48px", "32px"]}
+                mr={[3, 0]}
+                mb={[0, 2]}
+              />
+              <Flex flexDirection="column">
+                <Flex alignItems="center">
+                  <Heading as="h5" color="near-black">
+                    MetaMask wallet
+                  </Heading>
+                  <Icon ml={1} name="Launch" size="14px" color="near-black" />
+                </Flex>
+                <Text fontSize={1} lineHeight={1} color="mid-gray">
+                  Access Ethereum via the MetaMask browser wallet.
+                </Text>
+              </Flex>
+            </Flex>
+          </Card>
+        </Link>
+      </Box>
+      <Box width={[1, 1 / 2]}>
+        <Link>
+          <Card borderRadius={2} boxShadow={1} ml={[0, 2]}>
+            <Flex flexDirection={["row", "column"]}>
+              <Image
+                src="/images/PortisIcon.svg"
+                size={["48px", "32px"]}
+                mr={[3, 0]}
+                mb={[0, 2]}
+              />
+              <Flex flexDirection="column">
+                <Heading as="h5" color="near-black">
+                  Set up Portis wallet
+                </Heading>
+                <Text lineHeight={1} fontSize={1} color="mid-gray">
+                  Access Ethereum via any device or any browser using your
+                  Portis login.
+                </Text>
+              </Flex>
+            </Flex>
+          </Card>
+        </Link>
+      </Box>
+    </Flex>
+  </Card>
+</Box>
+```

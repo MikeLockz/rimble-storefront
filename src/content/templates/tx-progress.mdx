@@ -1,0 +1,119 @@
+---
+title: Transaction progress banner
+description: Grab the code for a ready-made banner template to display while a user's transaction is in progress.
+image: "/images/tx-progress-template.png"
+---
+
+A transaction progress bar should deliver all the information a user needs about their transaction at a glance. While allowing them to continue to use your dApp.
+
+```js is=react-live hideCode
+// import { Modal, Box, Flex, Icon, Text, Link } from "rimble-ui";
+
+<Flex flexDirection="column">
+  <Box width="10%" height="8px" bg="success" />
+  <Box p={[2, 3]} color="near-white" width="100%" bg="dark-gray">
+    <Flex
+      flexDirection="row"
+      justifyContent="space-between"
+      alignItems="center"
+    >
+      <Flex alignItems="center">
+        <Flex
+          mr={[2, 3]}
+          bg={"silver"}
+          borderRadius={"50%"}
+          height={"3em"}
+          width={"3em"}
+          minWidth={"3em"}
+          justifyContent={"center"}
+          alignItems={"center"}
+        >
+          <Text>10%</Text>
+        </Flex>
+        <Flex flexDirection="column">
+          <Text fontWeight="bold">Sending...</Text>
+          <Text fontSize={1}>Less than 3 minutes remaining</Text>
+        </Flex>
+      </Flex>
+      <Link color="primary-lighter" ml={[2, 3]}>
+        <Flex alignItems="center">
+          Details
+          <Icon ml={1} name="Launch" size="16px" />
+        </Flex>
+      </Link>
+    </Flex>
+  </Box>
+</Flex>
+```
+---
+
+## Template anatomy
+
+<Image
+  width="100%"
+  src="/images/transaction-progress-anatomy.png"
+  alt="An annotated image calling out the different elements of the template"
+  mt={3}
+  borderTop={1}
+  borderWidth={3}
+  borderColor="primary-light"
+/>
+<Heading as="h4"
+  color="dark-gray"
+  alignItem="flex-end"
+  mt={4}
+>
+  1. Progress bar and percentage
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  This should let the user know how complete their transaction is and give a sense of how much longer they'll need to wait. <RimbleGatsbyLink to="/guides/ux/transactions-set-user-expectations#how-we-did-it" title="To transaction status guide">Learn how we did this.</RimbleGatsbyLink>
+</Text>
+<Heading as="h4"
+  color="dark-gray">
+  2. Progress message
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  This tells the user that their intended action is in progress. This message should reflect what the user is trying to achieve e.g. "Sending ETH" or "Buying BAT" etc.
+</Text>
+<Heading as="h4" color="dark-gray">
+  3. Secondary message
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Use this space to provide a time estimate for the transaction. Using the same method as the Progress bar and percentage.
+</Text>
+
+<Heading as="h4" color="dark-gray">
+  4. Link
+</Heading>
+<Text
+  color="mid-gray"
+  mb={4}
+>
+  Gives you the opportunity to link interested users to more information, via Etherscan for example.
+</Text>
+
+---
+
+## See demo
+
+<TemplateDevConDemo />
+
+---
+
+<GuideNextPrevious
+  previousTitle={"To template for Transaction started modal"}
+  previousUrl={"/templates/tx-started"}
+  previousGuideName={"Transaction started modal"}
+  nextTitle={"To template for Transaction Success modal"}
+  nextUrl={"/templates/tx-success"}
+  nextGuideName={"Transaction success modal"}
+/>

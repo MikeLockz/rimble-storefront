@@ -3,10 +3,10 @@ import { Box, Flex, Icon, Text, Heading } from "rimble-ui";
 import RimbleGatsbyLink from "./../landing/RimbleGatsbyLink";
 import HoverCard from "../global/HoverCard";
 
-const NavCard = ({ title, url, prev, next }) => {
+const NavCard = ({ urlTitle, url, prev, next, pageTitle }) => {
   return (
     <Box width={[1, 1 / 2]} p={2}>
-      <RimbleGatsbyLink title={title} to={url} height={"100%"}>
+      <RimbleGatsbyLink title={urlTitle} to={url} height={"100%"}>
         <HoverCard
           alignContent="center"
           border={0}
@@ -35,7 +35,7 @@ const NavCard = ({ title, url, prev, next }) => {
               <Text fontSize={3} fontWeight="bold" color="primary">
                 {prev ? "Previous" : "Next"}
               </Text>
-              <Text color="text">{title}</Text>
+              <Text color="text">{pageTitle}</Text>
             </Box>
             {next && (
               <Box>
@@ -55,7 +55,10 @@ const GuideNextPrevious = ({
   nextTitle,
   nextUrl,
   isFirstGuide,
-  isLastGuide
+  isLastGuide,
+  previousGuideName,
+  nextGuideName,
+  pageTitle,
 }) => {
   return (
     <Box aria-label="pagination">
@@ -64,15 +67,17 @@ const GuideNextPrevious = ({
       </Heading>
       <Flex justifyContent="space-between" mt={4} flexWrap={"wrap"} mx={-2}>
         <NavCard
-          title={previousTitle}
+          pageTitle={previousGuideName}
           url={previousUrl}
+          urlTitle={previousTitle}
           prev={true}
           isFirstGuide={isFirstGuide}
         />
 
         <NavCard
-          title={nextTitle}
+          pageTitle={nextGuideName}
           url={nextUrl}
+          urlTitle={nextTitle}
           next={true}
           isLastGuide={isLastGuide}
         />

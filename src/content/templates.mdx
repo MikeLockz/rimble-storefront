@@ -1,0 +1,117 @@
+---
+title: Templates
+description: Designed and tested layouts that use Rimble UI to help users achieve tasks.
+---
+
+Templates are pre-made screens, modals and component groupings that we've designed to help users use Ethereum dApps.
+
+## Transactions
+
+<Flex justifyContent="space-between" mt={4} flexWrap={'wrap'} mb={4}>
+  <TemplateCard
+    to="/templates/tx-summary"
+    title="Transaction summary"
+    src="tx-summary-template"
+    description="Tell users what they need to know before confirming their transaction."
+  />
+
+  <TemplateCard
+    to="/templates/tx-started"
+    title="Transaction started"
+    src="tx-started-template"
+    description="Show users that their transaction has started and indicate its progress."
+  />
+
+  <TemplateCard
+    to="/templates/tx-progress"
+    title="Transaction progress bar"
+    src="tx-progress-template"
+    description="Show transaction progress without blocking further actions."
+  />
+
+  <TemplateCard
+    to="/templates/tx-success"
+    title="Transaction success"
+    src="tx-success-template"
+    description="Let a user know that their transaction has been successful."
+  />
+
+  <TemplateCard
+    to="/templates/tx-fail"
+    title="Transaction fail"
+    src="tx-fail-template"
+    description="Let a user know that their transaction has failed and how to fix it."
+  />
+
+  <TemplateCard
+    to="/templates/not-enough-eth"
+    title="Not enough Ether"
+    src="not-enough-eth-template"
+    description="Help a user get ETH if they don't have enough to transact."
+  />
+</Flex>
+
+## Network and Web3
+
+<Flex justifyContent="space-between" mt={4} flexWrap={'wrap'} mb={4}>
+  <TemplateCard
+    to="/templates/network-indicator"
+    title="Network indicator"
+    src="network-indicator-template"
+    description="Passively indicate to the user whether they are on the correct network or not."
+  />
+
+  <TemplateCard
+    to="/templates/wrong-network"
+    title="Wrong network"
+    src="wrong-network-template"
+    description="Provide instructions for getting on the right network."
+  />
+
+  <TemplateCard
+    to="/templates/no-metamask"
+    title="No MetaMask"
+    src="no-metamask-template"
+    description="Tell the user that they need to install MetaMask to use your dApp."
+  />
+
+  <TemplateCard
+    to="/templates/wrong-browser"
+    title="Wrong browser"
+    src="wrong-browser-template"
+    description="If a user isn't using a compatible browser, link them to ones that are."
+  />
+</Flex>
+
+## Connection
+
+<Flex justifyContent="space-between" mt={4} flexWrap={'wrap'}>
+
+  <TemplateCard
+    to="/templates/connection-request"
+    title="Connection request"
+    src="connection-request-template"
+    description="Prompt users to confirm their connection in their wallet provider."
+  />
+
+  <TemplateCard
+    to="/templates/connection-request-error"
+    title="Connection request error"
+    src="connection-request-error-template"
+    description="Warn users that they can't use your dApp's features without connecting."
+  />
+
+  <TemplateCard
+    to="/templates/signature-request"
+    title="Signature request"
+    src="signature-request-template"
+    description="Prompt users to sign the message in their wallet provider."
+  />
+
+  <TemplateCard
+    to="/templates/signature-request-error"
+    title="Signature request error"
+    src="signature-request-error-template"
+    description="Warn users that they can't use your dApp's features without signing."
+  />
+</Flex>

@@ -1,0 +1,119 @@
+---
+title: Signature request modal
+description: Grab the code for a ready-made modal template to display when asking the user to sign the message.
+image: "/images/signature-request-template.png"
+---
+
+A signature reqeust modal should provide a user with instructions on how to sign the message to verify their account.
+
+This template should work with multiple Web3 providers because the MetaMask extension, WalletConnect and Portis all display a signature request in their own UI. This template prompts the user to respond to the message sent by the Web3 provider.
+
+```js is=react-live hideCode
+// import { Heading, Text, Modal, Flex, Box, Loader, Card } from "rimble-ui";
+
+<Card p={0} borderRadius={1}>
+  <Flex
+    justifyContent="space-between"
+    alignItems="center"
+    borderBottom={1}
+    borderColor="near-white"
+    p={[3, 4]}
+    pb={3}
+  >
+    <Icon name="Person" color="primary" aria-hidden="true" />
+    <Heading textAlign="center" as="h1" fontSize={[2, 3]} px={[3, 0]}>
+      Verify your Ethereum account
+    </Heading>
+    <Link>
+      <Icon
+        name="Close"
+        color="moon-gray"
+        aria-label="Close and cancel connection"
+      />
+    </Link>
+  </Flex>
+  <Box p={[3, 4]}>
+    <Text textAlign="center">
+      Sign the message that's just appeared and we'll connect you. This shows us
+      you have access to this account.
+    </Text>
+  </Box>
+  <Box px={[3, 4]} pb={[3, 4]}>
+    <Flex
+      flexDirection={["column", "row"]}
+      bg={"primary-2x-light"}
+      p={[3, 4]}
+      alignItems={["center", "auto"]}
+    >
+      <Loader size={"3em"} mr={[0, 3]} mb={[2, 0]} />
+      <Flex flexDirection="column" alignItems={["center", "flex-start"]}>
+        <Text fontWeight={4}>Waiting for you to sign...</Text>
+        <Text fontWeight={2}>This won’t cost you any Ether</Text>
+      </Flex>
+    </Flex>
+  </Box>
+</Card>
+```
+
+---
+
+## Template anatomy
+
+<Image
+  width="100%"
+  src="/images/signature-request-anatomy.png"
+  alt="An annotated image calling out the different elements of the template"
+  mt={3}
+  borderTop={1}
+  borderWidth={3}
+  borderColor="primary-light"
+/>
+<Heading as="h4"
+  color="dark-gray"
+  alignItem="flex-end"
+  mt={4}
+>
+  1. Title
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Explains the current task to the user.
+</Text>
+<Heading as="h4"
+  color="dark-gray">
+  2. Body
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  This content should explain what the user should do. It's worth reiterating here that this is part of the connection process and also explaining why (to demonstrate access) as this is not a familiar internet pattern.
+</Text>
+<Heading as="h4" color="dark-gray">
+  3. Waiting banner with loader
+</Heading>
+<Text
+  color="mid-gray"
+  mb={4}
+>
+  This indicates to the user that the dApp is waiting on user action to proceed. It's worth stating that this action doesn't require Ether because most blockchain actions do.
+</Text>
+
+---
+
+## See demo
+
+<TemplateConnectionDemo />
+
+---
+
+<GuideNextPrevious
+  previousTitle={"To template for Connection request modal"}
+  previousUrl={"/templates/connection-request"}
+  previousGuideName={"Connection request modal"}
+  nextTitle={"To template for Connection request error"}
+  nextUrl={"/templates/connection-request-error"}
+  nextGuideName={"Connection request error"}
+/>

@@ -1,0 +1,131 @@
+---
+title: Signature request error
+description: Grab the code for a ready-made modal that makes sure a user wanted to reject a signature request in your dApp.
+image: "/images/signature-request-error-template.png"
+---
+
+A signature request error modal should be displayed if the user cancels the signature request, especially if they were being prompted to connect after attempting to transact. "Sign message" should re-start the flow from where they cancelled without having to go through any earlier steps/screens.
+
+```js is=react-live hideCode
+// import { Heading, Text, Modal, Flex, Box, Button, Card, } from "rimble-ui";
+
+<Card p={0} borderRadius={1} mb={4}>
+  <Box height="4px" bg="danger" borderRadius={["1rem 1rem 0 0"]} />
+  <Flex
+    justifyContent="space-between"
+    alignItems="center"
+    borderBottom={1}
+    borderColor="near-white"
+    p={[3, 4]}
+    pb={3}
+  >
+    <Icon name="Warning" color="danger" aria-label="Warning" />
+    <Heading textAlign={["left", "center"]} as="h1" fontSize={[2, 3]} px={[3, 0]}>
+      Cancel connection?
+    </Heading>
+    <Link>
+      <Icon
+        name="Close"
+        color="moon-gray"
+        aria-label="Close and cancel connection"
+      />
+    </Link>
+  </Flex>
+  <Box p={[3, 4]}>
+    <Text>
+      To buy this Cryptokitty, sign the message to finish connecting.
+    </Text>
+  </Box>
+  <Flex
+    p={[3, 4]}
+    borderTop={1}
+    borderColor="near-white"
+    justifyContent="flex-end"
+    flexDirection={["column", "row"]}
+    alignItems="center"
+  >
+    <Button.Outline
+      variant="danger"
+      mr={[0, 3]}
+      mb={[2, 0]}
+      width={["100%", "auto"]}
+    >
+      Cancel connection
+    </Button.Outline>
+    <Button width={["100%", "auto"]}>Sign message</Button>
+  </Flex>
+</Card>
+```
+
+---
+
+## Template anatomy
+
+<Image
+  width="100%"
+  src="/images/signature-request-error-anatomy.png"
+  alt="An annotated image calling out the different elements of the template"
+  mt={3}
+  borderTop={1}
+  borderWidth={3}
+  borderColor="primary-light"
+/>
+<Heading as="h4"
+  color="dark-gray"
+  alignItem="flex-end"
+  mt={4}
+>
+  1. Title
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Makes sure the user is aware of their action.
+</Text>
+<Heading as="h4"
+  color="dark-gray">
+  2. Body
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Reiterates the impact of failing to sign the message in relation to the task (connecting).
+</Text>
+<Heading as="h4"
+  color="dark-gray">
+  3. Cancel connection button
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Provides a way for the user to confrim their connection cancellation.
+</Text>
+<Heading as="h4" color="dark-gray">
+  4. Sign message button
+</Heading>
+<Text
+  color="mid-gray"
+  mb={4}
+>
+  Re-prompts the signature request so the user doesn't have to go through any earlier steps.
+</Text>
+
+---
+
+## See demo
+
+<TemplateConnectionDemo />
+
+---
+
+<GuideNextPrevious
+  previousTitle={"To template for Connection request error"}
+  previousUrl={"/templates/connection-request-error"}
+  previousGuideName={"Connection request error"}
+  nextTitle={"To Templates"}
+  nextUrl={"/templates"}
+  nextGuideName={"See more Templates"}
+/>

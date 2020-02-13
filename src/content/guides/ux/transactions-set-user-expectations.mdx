@@ -30,6 +30,9 @@ Users want to know how long they'll be waiting so they can plan their next move.
 
 It can be tricky to get exact times. Yet users we spoke to would be happy with a best-guess, providing it wasn't wildly inaccurate. So it's best to speak in terms of time ranges e.g. less than 3 minutes and to make it clear that any time is an estimate.
 
+### How we did it
+We took the gas that is set for the transaction and then use the Gas station API to look at a list of recently completed transactions to see their price and duration. We then average the amount of time the completed transactions took to get our own estimate based on the gas price. The percentage and progress bar can then show the transaction's progress with reasonable accuracy.
+
 This was far more successful than vague statements like "This might take a few minutes" which sent experienced users to Etherscan. Novice users on the other hand could do nothing but sit and wait – not very respectful of their time. And not very respectful of the potential risk/anxiety they might be experiencing trying out a new technology.
 
 <DoDont>

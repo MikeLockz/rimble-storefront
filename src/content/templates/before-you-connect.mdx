@@ -1,0 +1,244 @@
+---
+title: Before you connect modal
+description: Grab the code for a ready-made modal template that helps educate users on what they should know before interacting with a blockchain application.
+image: "/images/before-you-connect-template.png"
+---
+
+The Before you connect modal is designed to educate users and provide some friendly warnings about what connecting means (e.g. the blockchain is public). This might not be necessary if your target user base are very blockchain-savvy.
+
+```js is=react-live hideCode
+// import { Heading, Text, Flex, Icon, Modal, MetaMaskButton, Box, Button, Card } from "rimble-ui";
+
+<Card borderRadius={1} p={0}>
+  <Box p={4}>
+    <Flex justifyContent="space-between">
+      <Heading as="h2" my={3}>
+        Before you connect
+      </Heading>
+      <Link>
+        <Icon
+          name="Close"
+          color="moon-gray"
+          aria-label="Close and cancel connection"
+          pl={4}
+        />
+      </Link>
+    </Flex>
+    <Text mb={4}>
+      Connecting lets you use [dApp name] via your Ethereum account.
+    </Text>
+    <Flex flexDirection="row" alignItems="center" mb={3}>
+      <Icon
+        name="Language"
+        size="40px"
+        mr={4}
+        color="primary"
+        display={["none", "block"]}
+      />
+      <Flex flexDirection="column">
+        <Text fontWeight="bold">The blockchain is public</Text>
+        <Text>
+          Your Ethereum blockchain activity is public. Choose an account you
+          don’t mind being linked with your activity here.
+        </Text>
+      </Flex>
+    </Flex>
+    <Flex flexDirection="row" alignItems="center" mb={3}>
+      <Icon
+        name="AccountBalanceWallet"
+        size="40px"
+        mr={4}
+        color="primary"
+        display={["none", "block"]}
+      />
+      <Flex flexDirection="column">
+        <Text fontWeight="bold">Have some Ether for fees</Text>
+        <Text>
+          Using the blockchain requires a fee (like a credit card fee) . Buy
+          Ether from exchanges like Coinbase.
+        </Text>
+      </Flex>
+    </Flex>
+    <Flex flexDirection="row" alignItems="center">
+      <Icon
+        name="PeopleOutline"
+        size="40px"
+        mr={4}
+        color="primary"
+        display={["none", "block"]}
+      />
+      <Flex flexDirection="column">
+        <Text fontWeight="bold">Have the right account ready</Text>
+        <Text>
+          If you have multiple Ethereum accounts, check that the one you want to
+          use is active in your browser.
+        </Text>
+      </Flex>
+    </Flex>
+  </Box>
+  <Flex
+    flexDirection={["column", "row"]}
+    borderTop={1}
+    borderColor={"light-gray"}
+    justifyContent="flex-end"
+  >
+    <Box p={4}>
+      <Button mb={[2, 0]} width={["100%", "auto"]}>
+        Connect
+      </Button>
+    </Box>
+  </Flex>
+</Card>
+```
+
+**If you provide multiple ways for the user to connect.**
+
+```js is=react-live hideCode
+<Card borderRadius={1} p={0}>
+  <Box p={4}>
+    <Flex justifyContent="space-between">
+      <Heading as="h2" my={3}>
+        Before you connect
+      </Heading>
+      <Link>
+        <Icon
+          name="Close"
+          color="moon-gray"
+          aria-label="Close and cancel connection"
+          pl={4}
+        />
+      </Link>
+    </Flex>
+    <Text mb={4}>
+      Connecting lets you use [dApp name] via your Ethereum account.
+    </Text>
+    <Flex flexDirection="row" alignItems="center" mb={3}>
+      <Icon
+        name="Language"
+        size="40px"
+        mr={4}
+        color="primary"
+        display={["none", "block"]}
+      />
+      <Flex flexDirection="column">
+        <Text fontWeight="bold">The blockchain is public</Text>
+        <Text>
+          Your Ethereum blockchain activity is public. Choose an account you
+          don’t mind being linked with your activity here.
+        </Text>
+      </Flex>
+    </Flex>
+    <Flex flexDirection="row" alignItems="center" mb={3}>
+      <Icon
+        name="AccountBalanceWallet"
+        size="40px"
+        mr={4}
+        color="primary"
+        display={["none", "block"]}
+      />
+      <Flex flexDirection="column">
+        <Text fontWeight="bold">Have some Ether for fees</Text>
+        <Text>
+          Using the blockchain requires a fee (like a credit card fee) . Buy
+          Ether from exchanges like Coinbase.
+        </Text>
+      </Flex>
+    </Flex>
+    <Flex flexDirection="row" alignItems="center">
+      <Icon
+        name="PeopleOutline"
+        size="40px"
+        mr={4}
+        color="primary"
+        display={["none", "block"]}
+      />
+      <Flex flexDirection="column">
+        <Text fontWeight="bold">Have the right account ready</Text>
+        <Text>
+          If you have multiple Ethereum accounts, check that the one you want to
+          use is active in your browser.
+        </Text>
+      </Flex>
+    </Flex>
+  </Box>
+  <Flex flexDirection="column" borderTop={1} borderColor={"light-gray"}>
+    <Box pt={4} px={4}>
+      <MetaMaskButton mb={2} width="100%">
+        Connect with MetaMask
+      </MetaMaskButton>
+    </Box>
+    <Box px={4} pt={1} pb={4}>
+      <Button mb={2} width="100%" mainColor="Blue">
+        Connect with WalletConnect
+      </Button>
+    </Box>
+    <Box px={4} pt={1} pb={4}>
+      <Button mb={2} width="100%" mainColor="Purple">
+        Connect with Portis
+      </Button>
+    </Box>
+  </Flex>
+</Card>
+```
+
+---
+
+## Template anatomy
+
+<Image
+  width="100%"
+  src="/images/before-you-connect-anatomy.png"
+  mt={3}
+  borderTop={1}
+  borderWidth={3}
+  borderColor="primary-light"
+/>
+<Heading as="h4"
+  color="dark-gray"
+  alignItem="flex-end"
+  mt={4}
+>
+  1. Title and copy
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  The word "Connect" reassures the user they've started the connection process. This area also provides an explanation of what connecting means to new users.
+</Text>
+<Heading as="h4"
+  color="dark-gray">
+  2. Things to be aware of
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  This content should help the user use Ethereum and your dApp safely and successfully. Our example warns the user that their blockchain activity is public, that they'll need some Ether and that they should check which account they're using. But you may want to add to or adapt these points based on what your dApp does. Think of these a bit like terms and conditions.
+</Text>
+<Heading as="h4" color="dark-gray">
+  3. Connect button
+</Heading>
+<Text
+  color="mid-gray"
+  mb={4}
+>
+  Starts the connection process.
+</Text>
+
+---
+
+## See demo
+
+<TemplateConnectionDemo />
+
+---
+
+<GuideNextPrevious
+  previousTitle={"Back to Templates"}
+  previousUrl={"/templates"}
+  previousGuideName={"Back to Templates"}
+  nextTitle={"To template for Connection Request modal"}
+  nextUrl={"/templates/connection-request"}
+  nextGuideName={"Connection request modal"}
+/>

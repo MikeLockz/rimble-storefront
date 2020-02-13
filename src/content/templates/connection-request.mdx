@@ -1,0 +1,250 @@
+---
+title: Connection request modal
+description: Grab the code for a ready-made modal template to display when asking the user to connect their Ethereum wallet to your dApp.
+image: "/images/connection-request-template.png"
+---
+
+A connection request modal should enable a user to connect their wallet or provide them with instructions on how to do so.
+
+## MetaMask extension example
+
+```js is=react-live hideCode
+// import { Heading, Text, Modal, Flex, Box, Loader, Card } from "rimble-ui";
+
+<Card p={0} borderRadius={1}>
+  <Flex
+    justifyContent="space-between"
+    alignItems="center"
+    borderBottom={1}
+    borderColor="near-white"
+    p={[3, 4]}
+    pb={3}
+  >
+    <Image
+      src="/images/MetaMaskIcon.svg"
+      aria-label="MetaMask extension icon"
+      size="24px"
+    />
+    <Heading textAlign="center" as="h1" fontSize={[2, 3]} px={[3, 0]}>
+      Confirm connection in MetaMask
+    </Heading>
+    <Link>
+      <Icon
+        name="Close"
+        color="moon-gray"
+        aria-label="Close and cancel connection"
+      />
+    </Link>
+  </Flex>
+  <Box p={[3, 4]}>
+    <Text textAlign="center">
+      Confirm the request that's just appeared. If you can't see a request, open
+      your MetaMask extension via your browser.
+    </Text>
+  </Box>
+  <Box px={[3, 4]} pb={[3, 4]}>
+    <Flex
+      flexDirection={["column", "row"]}
+      bg={"primary-2x-light"}
+      p={[3, 4]}
+      alignItems={["center", "auto"]}
+    >
+      <Loader size={"3em"} mr={[0, 3]} mb={[2, 0]} />
+      <Flex flexDirection="column" alignItems={["center", "flex-start"]}>
+        <Text fontWeight={4}>Waiting for connection confirmation...</Text>
+        <Text fontWeight={2}>This won’t cost you any Ether</Text>
+      </Flex>
+    </Flex>
+  </Box>
+</Card>
+```
+
+## WalletConnect example
+
+```js is=react-live hideCode
+// import { Heading, Text, Modal, Icon, Flex, Box, Loader, QR } from "rimble-ui";
+
+<Card p={0} borderRadius={1}>
+  <Flex
+    justifyContent="space-between"
+    alignItems="center"
+    borderBottom={1}
+    borderColor="near-white"
+    p={[3, 4]}
+    pb={3}
+  >
+    <Icon name="CenterFocusStrong" color="primary" aria-hidden="true" />
+    <Heading textAlign="center" as="h4" fontSize={[2, 3]} px={[3, 0]}>
+      Scan with mobile wallet
+    </Heading>
+    <Link>
+      <Icon
+        name="Close"
+        color="moon-gray"
+        aria-label="Close and cancel connection"
+      />
+    </Link>
+  </Flex>
+  <Box p={[3, 4]}>
+    <Text textAlign="center">
+      Scan this QR code with your mobile wallet and follow the instructions.
+    </Text>
+    <Flex my={4} justifyContent="center">
+      <Card p={3} borderRadius={16}>
+        <QR size="200" value="0xAc03BB73b6a9e108530AFf4Df5077c2B3D481e5A" />
+      </Card>
+    </Flex>
+    <Text textAlign={["left", "center"]}>
+      Not working?{" "}
+      <Link
+        href="https://walletconnect.org/apps"
+        target="_blank"
+        title="See compatible WalletConnect wallets"
+      >
+        {" "}
+        Check your mobile wallet supports WalletConnect
+      </Link>
+    </Text>
+  </Box>
+  <Box p={[3, 4]}>
+    <Flex
+      flexDirection={["column", "row"]}
+      bg={"primary-2x-light"}
+      p={[3, 4]}
+      alignItems={["center", "auto"]}
+    >
+      <Loader size={"3em"} mr={[0, 3]} mb={[2, 0]} />
+      <Flex flexDirection="column" alignItems={["center", "flex-start"]}>
+        <Text fontWeight={4}>Waiting for you to scan...</Text>
+        <Text fontWeight={2}>This won’t cost you any Ether</Text>
+      </Flex>
+    </Flex>
+  </Box>
+</Card>
+```
+
+---
+
+## Template anatomy
+
+<Image
+  width="100%"
+  src="/images/connection-request-anatomy.png"
+  alt="An annotated image calling out the different elements of the template"
+  mt={3}
+  borderTop={1}
+  borderWidth={3}
+  borderColor="primary-light"
+/>
+<Heading as="h4"
+  color="dark-gray"
+  alignItem="flex-end"
+  mt={4}
+>
+  1. Title
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Explains the current task to the user.
+</Text>
+<Heading as="h4"
+  color="dark-gray">
+  2. Body
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  This content should explain what the user should do. In the case of a MetaMask connection, a popup should appear prompting the user to connect, however this doesn't always work. Explaining to the user what to do if that popup doesn't appear here.
+</Text>
+<Heading as="h4" color="dark-gray">
+  3. Waiting banner with loader
+</Heading>
+<Text
+  color="mid-gray"
+  mb={4}
+>
+  This indicates to the user that the dApp is waiting on user action to proceed. It's worth stating that this action doesn't require Ether because most blockchain actions do.
+</Text>
+
+<Image
+  width="100%"
+  src="/images/connection-request-anatomy-walletconnect.png"
+  alt="An annotated image calling out the different elements of the template"
+  mt={3}
+  borderTop={1}
+  borderWidth={3}
+  borderColor="primary-light"
+/>
+<Heading as="h4"
+  color="dark-gray"
+  alignItem="flex-end"
+  mt={4}
+>
+  1. Title
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Explains the current task to the user.
+</Text>
+<Heading as="h4"
+  color="dark-gray">
+  2. Body
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  This content should explain what the user should do.
+</Text>
+<Heading as="h4"
+  color="dark-gray">
+  3. QR code
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  This should be the QR code the user should scan to start connecting.
+</Text>
+<Heading as="h4"
+  color="dark-gray">
+  4. Help copy
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Some users might think WalletConnect is a feature of all mobile wallets. It's worth putting this here so a user can check to see if their wallet of choice is supported.
+</Text>
+<Heading as="h4" color="dark-gray">
+  5. Waiting banner with loader
+</Heading>
+<Text
+  color="mid-gray"
+  mb={4}
+>
+  This indicates to the user that the dApp is waiting on user action to proceed. It's worth stating that this action doesn't require Ether because most blockchain actions do.
+</Text>
+
+
+---
+
+## See demo
+
+<TemplateConnectionDemo />
+
+---
+
+<GuideNextPrevious
+  previousTitle={"Back to Templates"}
+  previousUrl={"/templates"}
+  previousGuideName={"Back to Templates"}
+  nextTitle={"To template for Signature Request modal"}
+  nextUrl={"/templates/signature-request"}
+  nextGuideName={"Signature request modal"}
+/>

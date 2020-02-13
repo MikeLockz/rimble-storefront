@@ -1,0 +1,108 @@
+---
+title: Network indicator
+description: Grab the code for a ready-made network indicator template. This lets a user know if they are on the correct network or not.
+image: "/images/network-indicator-template.png"
+---
+
+The network indicator will passively tell the user about the network they're on and whether that's correct. This should be used in conjunction with a [Connection banner](/components/web3-components/ConnectionBanner) to provide more context and information.
+
+When a user goes to transact and must be on a certain network to transact successfully, you should also use a [Wrong network modal](/templates/wrong-network) to help explain what they need to do.
+
+```js is=react-live hideCode
+// import { Flex, Text, Icon, Tooltip, Box } from 'rimble-ui';
+
+<Box display="inline-block">
+  <Flex flexDirection="column">
+    <Text fontSize={1} color="silver" caps>
+      Current Network
+    </Text>
+    <Tooltip message="You're on the wrong network – switch to Main network">
+      <Flex>
+        <Text mr={2}>Rinkeby</Text>
+        <Icon name="Error" color="danger" />
+      </Flex>
+    </Tooltip>
+  </Flex>
+</Box>
+```
+
+```js is=react-live hideCode
+// import { Flex, Text, Icon, Tooltip, Box } from 'rimble-ui';
+
+<Box display="inline-block">
+  <Flex flexDirection="column">
+    <Text fontSize={1} color="silver" caps>
+      Current Network
+    </Text>
+    <Tooltip message="You're on the right network">
+      <Flex>
+        <Text mr={2}>Rinkeby</Text>
+        <Icon name="CheckCircle" color="success" />
+      </Flex>
+    </Tooltip>
+  </Flex>
+</Box>
+```
+
+---
+
+## Template anatomy
+
+<Image
+  width="100%"
+  src="/images/network-indicator-anatomy.png"
+  alt="An annotated image calling out the different elements of the template"
+  mt={3}
+  borderTop={1}
+  borderWidth={3}
+  borderColor="primary-light"
+/>
+<Heading as="h4"
+  color="dark-gray"
+  alignItem="flex-end"
+  mt={4}
+>
+  1. Label
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Simply explains to the user what they're seeing. This gives context to new users who may not know what Rinkeby or Main Ethereum means.
+</Text>
+<Heading as="h4"
+  color="dark-gray">
+  2. Network
+</Heading>
+<Text
+  color="mid-gray"
+  mb={3}
+>
+  Tells the user the network so that they don't need to check their wallet UI.
+</Text>
+<Heading as="h4" color="dark-gray">
+  3. Tooltip
+</Heading>
+<Text
+  color="mid-gray"
+  mb={4}
+>
+  Supports the correct/incorrect icon to confirm to the user whether the network is correct or not.
+</Text>
+
+---
+
+## See demo
+
+<TemplateConnectionDemo />
+
+---
+
+<GuideNextPrevious
+  previousTitle={"Back to all templates"}
+  previousUrl={"/templates"}
+  previousGuideName={"Back to Templates"}
+  nextTitle={"To template for Wrong network modal"}
+  nextUrl={"/templates/wrong-network"}
+  nextGuideName={"Wrong network modal"}
+/>
