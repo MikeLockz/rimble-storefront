@@ -30,6 +30,7 @@ import GlobalStyles from "../components/landing/GlobalStyles";
 import Container from "../components/landing/Container";
 import Hr from "../components/landing/Hr";
 import Footer from "../components/landing/footer";
+import RimbleGatsbyLink from "../components/landing/RimbleGatsbyLink";
 
 // import svg assets data:uri
 import StorefrontCardGuides from "../../static/images/storefront-card-guides.svg";
@@ -200,8 +201,7 @@ const IndexPage = () => (
                   <Text mb={3}>
                     Building blocks for putting your dApp interface together.
                   </Text>
-                  <Link
-                    forwardedAs={GatsbyLink}
+                  <RimbleGatsbyLink
                     to="/components"
                     title="To Rimble components"
                     fontSize={2}
@@ -213,7 +213,7 @@ const IndexPage = () => (
                   >
                     Documentation
                     <Icon name="ArrowForward" size="1rem" ml={2} />
-                  </Link>
+                  </RimbleGatsbyLink>
                 </OfferingCard>
               </Box>
 
@@ -225,8 +225,7 @@ const IndexPage = () => (
                   <Text mb={3}>
                     Research-led guides on overcoming dApp UX challenges.
                   </Text>
-                  <Link
-                    forwardedAs={GatsbyLink}
+                  <RimbleGatsbyLink
                     to="/guides"
                     title="To Rimble Guides"
                     fontSize={2}
@@ -238,7 +237,7 @@ const IndexPage = () => (
                   >
                     Guides
                     <Icon name="ArrowForward" size="1rem" ml={2} />
-                  </Link>
+                  </RimbleGatsbyLink>
                 </OfferingCard>
               </Box>
 

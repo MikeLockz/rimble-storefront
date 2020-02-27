@@ -42,7 +42,7 @@
     "react-instantsearch-dom": "^5.7.0",
     "react-live": "^2.1.1",
     "react-svg": "^10.0.2",
-    "rimble-ui": "^0.11.1",
+    "rimble-ui": "git://github.com/ConsenSys/rimble-ui.git#ge-styled-system-5",
     "smooth-scroll": "^16.1.0",
     "styled-components": "^4.4.1",
     "styled-system": "^4.2.4",

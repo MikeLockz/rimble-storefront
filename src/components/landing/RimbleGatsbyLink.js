@@ -7,17 +7,15 @@ import { Link } from "gatsby";
 const RimbleGatsbyLink = styled(props => <Link {...props} />)`
   cursor: pointer;
   text-decoration: none;
+  font-weight: 600;
 
   ${color}
   ${fontSize}
   ${fontWeight}
   ${space}
 
-  &:hover {
-    text-decoration: underline
-    & > div {
-      text-decoration: none;
-    }
+  &:hover::first-line {
+    text-decoration: underline;
   }
 `;
 
